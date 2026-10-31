@@ -3,547 +3,1648 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trend Pulse • Verified Intelligence Terminal</title>
-  
-  <style>
-    :root {
-      --bg: #080b11;
-      --card: #0f172a;
-      --card-hover: #17233f;
-      --border: #1e293b;
-      --accent: #3b82f6;
-      --accent-glow: rgba(59, 130, 246, 0.25);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 2.5rem 1rem;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-    }
-    .container { max-width: 880px; margin: 0 auto; }
+  <title>AI Trend Pulse — Editorial AI Market Intelligence</title>
+  <meta name="description" content="Hourly curated intelligence on frontier artificial intelligence developments, verifiable primary sources, and macro shifts.">
 
-    /* Top Bar */
-    .top-header {
+  <!-- Immediate theme script to prevent flash of wrong theme (FOUC) -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('ai_trend_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <style>
+    /* -------------------------------------------------------------
+       DESIGN TOKENS: LIGHT & DARK EDITORIAL SYSTEM
+       ------------------------------------------------------------- */
+    :root, [data-theme="light"] {
+      --bg-canvas: #fcfcfb;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f5f5f4;
+      --bg-elevated: #ffffff;
+      --bg-hover: #f0efed;
+      
+      --border-subtle: #e7e5e4;
+      --border-strong: #d6d3d1;
+      
+      --text-primary: #1c1917;
+      --text-secondary: #44403c;
+      --text-muted: #78716c;
+      --text-inverse: #ffffff;
+      
+      --accent-primary: #0f766e;
+      --accent-subtle: #f0fdfa;
+      --accent-border: #99f6e4;
+      
+      --link: #0369a1;
+      --link-hover: #0c4a6e;
+      
+      --status-fresh-bg: #ecfdf5;
+      --status-fresh-border: #a7f3d0;
+      --status-fresh-text: #065f46;
+      --status-fresh-dot: #10b981;
+      
+      --status-cached-bg: #fffbeb;
+      --status-cached-border: #fde68a;
+      --status-cached-text: #92400e;
+      --status-cached-dot: #f59e0b;
+      
+      --status-raw-bg: #f8fafc;
+      --status-raw-border: #cbd5e1;
+      --status-raw-text: #475569;
+      --status-raw-dot: #64748b;
+      
+      --badge-lab-bg: #f5f3ff;
+      --badge-lab-border: #ddd6fe;
+      --badge-lab-text: #5b21b6;
+      
+      --badge-journal-bg: #eff6ff;
+      --badge-journal-border: #bfdbfe;
+      --badge-journal-text: #1e40af;
+      
+      --badge-research-bg: #fef3c7;
+      --badge-research-border: #fde68a;
+      --badge-research-text: #92400e;
+
+      --focus-ring: rgba(15, 118, 110, 0.45);
+      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="dark"] {
+      --bg-canvas: #0c0a09;
+      --bg-surface: #171513;
+      --bg-subtle: #211e1c;
+      --bg-elevated: #1f1c19;
+      --bg-hover: #292524;
+      
+      --border-subtle: #2c2825;
+      --border-strong: #44403c;
+      
+      --text-primary: #f5f5f4;
+      --text-secondary: #d6d3d1;
+      --text-muted: #a8a29e;
+      --text-inverse: #0c0a09;
+      
+      --accent-primary: #2dd4bf;
+      --accent-subtle: rgba(45, 212, 191, 0.12);
+      --accent-border: rgba(45, 212, 191, 0.3);
+      
+      --link: #38bdf8;
+      --link-hover: #7dd3fc;
+      
+      --status-fresh-bg: rgba(16, 185, 129, 0.12);
+      --status-fresh-border: rgba(16, 185, 129, 0.3);
+      --status-fresh-text: #6ee7b7;
+      --status-fresh-dot: #34d399;
+      
+      --status-cached-bg: rgba(245, 158, 11, 0.12);
+      --status-cached-border: rgba(245, 158, 11, 0.3);
+      --status-cached-text: #fcd34d;
+      --status-cached-dot: #fbbf24;
+      
+      --status-raw-bg: rgba(148, 163, 184, 0.12);
+      --status-raw-border: rgba(148, 163, 184, 0.3);
+      --status-raw-text: #cbd5e1;
+      --status-raw-dot: #94a3b8;
+      
+      --badge-lab-bg: rgba(167, 139, 250, 0.12);
+      --badge-lab-border: rgba(167, 139, 250, 0.28);
+      --badge-lab-text: #c4b5fd;
+      
+      --badge-journal-bg: rgba(96, 165, 250, 0.12);
+      --badge-journal-border: rgba(96, 165, 250, 0.28);
+      --badge-journal-text: #93c5fd;
+      
+      --badge-research-bg: rgba(251, 191, 36, 0.12);
+      --badge-research-border: rgba(251, 191, 36, 0.28);
+      --badge-research-text: #fde68a;
+
+      --focus-ring: rgba(45, 212, 191, 0.4);
+      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --card-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    /* -------------------------------------------------------------
+       BASE TYPOGRAPHY & RESET
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 0 1.25rem 4rem 1.25rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .font-serif {
+      font-family: "Newsreader", "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+    }
+
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 1rem;
+      background: var(--text-primary);
+      color: var(--bg-canvas);
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-to-content:focus {
+      top: 1rem;
+      outline: 2px solid var(--accent-primary);
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    /* -------------------------------------------------------------
+       MASTHEAD / HEADER
+       ------------------------------------------------------------- */
+    .masthead {
+      border-bottom: 1px solid var(--border-strong);
+      padding: 2.25rem 0 1.5rem 0;
+      margin-bottom: 1.75rem;
+    }
+
+    .masthead-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    h1 { font-size: 2.3rem; margin: 0; letter-spacing: -0.02em; font-weight: 700; }
-    .subtitle { color: var(--text-muted); margin: 0.3rem 0 0 0; font-size: 1rem; }
-
-    /* Stat Bar */
-    .stat-bar {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      background: #0d1322;
-      border: 1px solid var(--border);
-      padding: 0.6rem 1rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      font-size: 0.82rem;
-      color: var(--text-muted);
+      gap: 1.25rem;
       flex-wrap: wrap;
     }
-    .stat-item { display: flex; align-items: center; gap: 0.4rem; }
-    .pulse-dot {
-      width: 8px; height: 8px; background-color: #10b981; border-radius: 50%;
-      box-shadow: 0 0 8px #10b981;
-    }
-    .pulse-dot.fallback { background-color: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
 
-    /* Buttons */
-    .action-group { display: flex; gap: 0.5rem; }
-    .btn {
-      background: #1e293b;
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 0.45rem 0.9rem;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s ease;
-      font-weight: 500;
+    .brand-group {
+      flex: 1 1 340px;
     }
-    .btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
-    .btn-audio.playing { background: #ef4444; border-color: #ef4444; color: white; }
 
-    /* The Big Picture Hero */
-    .takeaway-card {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      border: 1px solid #3b82f6;
-      box-shadow: 0 10px 25px -5px var(--accent-glow);
-      padding: 1.8rem;
-      border-radius: 16px;
-      margin-bottom: 2rem;
-    }
-    .takeaway-badge {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
+    .brand-kicker {
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
-    }
-    .takeaway-text {
-      margin: 0.8rem 0 0 0;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #f1f5f9;
-      line-height: 1.5;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    /* Search & Filter Pills */
-    .search-box {
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1rem;
-      border-radius: 10px;
-      color: white;
+    .brand-title {
+      font-size: 2.15rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 0.45rem;
+    }
+
+    .brand-desc {
       font-size: 0.95rem;
-      margin-bottom: 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .search-box:focus { border-color: var(--accent); }
-    .filter-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .pill {
-      background: #111827;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 0.35rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .pill:hover, .pill.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
+      color: var(--text-secondary);
+      max-width: 540px;
+      line-height: 1.45;
     }
 
-    /* Trust & Status Badges */
-    .tier-badge {
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-      display: inline-block;
-      margin-bottom: 0.6rem;
-    }
-    .tier-lab { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4); }
-    .tier-journal { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
-    .tier-research { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
-
-    /* Trend Cards */
-    .trend-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 1.6rem;
-      border-radius: 14px;
-      margin-bottom: 1.4rem;
-      transition: all 0.2s;
-    }
-    .trend-card:hover { background: var(--card-hover); border-color: #334155; }
-    .trend-title { margin: 0 0 0.8rem 0; font-size: 1.25rem; font-weight: 600; color: #fff; }
-    
-    .trend-block {
-      background: #090e1a;
-      padding: 0.9rem 1.1rem;
-      border-radius: 10px;
-      margin-bottom: 0.6rem;
-      border-left: 3px solid var(--accent);
-    }
-    .trend-block strong { display: block; font-size: 0.82rem; color: #93c5fd; margin-bottom: 0.2rem; }
-    .trend-block p { margin: 0; font-size: 0.95rem; color: #cbd5e1; }
-
-    /* Evidence Provenance Box */
-    .evidence-bar {
-      margin-top: 0.9rem;
-      padding-top: 0.7rem;
-      border-top: 1px solid #1e293b;
+    .masthead-actions {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.84rem;
+      font-weight: 500;
+      cursor: pointer;
+      line-height: 1.2;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .btn:hover {
+      background-color: var(--bg-hover);
+      border-color: var(--border-strong);
+    }
+    .btn:active {
+      transform: translateY(1px);
+    }
+    .btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .btn-audio.active {
+      background-color: #fee2e2;
+      border-color: #fca5a5;
+      color: #991b1b;
+    }
+    [data-theme="dark"] .btn-audio.active {
+      background-color: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    .btn-theme {
+      padding: 0.45rem 0.65rem;
+      min-width: 36px;
+    }
+
+    /* -------------------------------------------------------------
+       STATUS & METADATA BAR
+       ------------------------------------------------------------- */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1rem;
       font-size: 0.82rem;
       color: var(--text-muted);
       flex-wrap: wrap;
     }
-    .evidence-link {
-      color: #60a5fa;
-      text-decoration: none;
-      background: #1e293b;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      transition: background 0.15s;
-    }
-    .evidence-link:hover { text-decoration: underline; background: #2563eb; color: #fff; }
 
-    /* Stories Grid */
-    .stories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      border: 1px solid transparent;
     }
-    .story-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 1.2rem;
-      border-radius: 12px;
+    .status-pill.fresh {
+      background-color: var(--status-fresh-bg);
+      border-color: var(--status-fresh-border);
+      color: var(--status-fresh-text);
+    }
+    .status-pill.cached {
+      background-color: var(--status-cached-bg);
+      border-color: var(--status-cached-border);
+      color: var(--status-cached-text);
+    }
+    .status-pill.raw {
+      background-color: var(--status-raw-bg);
+      border-color: var(--status-raw-border);
+      color: var(--status-raw-text);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .status-pill.fresh .status-dot { background-color: var(--status-fresh-dot); }
+    .status-pill.cached .status-dot { background-color: var(--status-cached-dot); }
+    .status-pill.raw .status-dot { background-color: var(--status-raw-dot); }
+
+    .status-meta-info {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-divider {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: var(--border-strong);
+    }
+
+    /* -------------------------------------------------------------
+       SECTION COMMON STYLES
+       ------------------------------------------------------------- */
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    /* -------------------------------------------------------------
+       THE BIG PICTURE / EXECUTIVE SUMMARY
+       ------------------------------------------------------------- */
+    .big-picture-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--accent-primary);
+      border-radius: 8px;
+      padding: 1.65rem 1.85rem;
+      margin-bottom: 2.25rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    .big-picture-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .big-picture-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+    }
+
+    .big-picture-text {
+      font-size: 1.18rem;
+      line-height: 1.65;
+      color: var(--text-primary);
+      max-width: 76ch;
+      font-weight: 400;
+    }
+
+    /* -------------------------------------------------------------
+       DISCOVERY / SEARCH & FILTER CONTROLS
+       ------------------------------------------------------------- */
+    .discovery-panel {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .search-wrapper {
+      position: relative;
+      margin-bottom: 0.85rem;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      width: 16px;
+      height: 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.65rem 2.2rem 0.65rem 2.4rem;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+      font-family: inherit;
+    }
+    .search-input:focus {
+      border-color: var(--accent-primary);
+      background-color: var(--bg-surface);
+    }
+    .search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 0.25rem;
+      display: none;
+    }
+    .search-clear-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 0.25rem;
+    }
+
+    .filter-btn {
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      border-radius: 9999px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-btn:hover {
+      background-color: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    .filter-btn.active {
+      background-color: var(--text-primary);
+      border-color: var(--text-primary);
+      color: var(--bg-canvas);
+      font-weight: 600;
+    }
+
+    .search-feedback {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* -------------------------------------------------------------
+       KEY DEVELOPMENTS / TRENDS
+       ------------------------------------------------------------- */
+    .trends-list {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.2s;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
     }
-    .story-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .story-title { font-size: 0.98rem; font-weight: 600; margin: 0 0 0.4rem 0; color: #f1f5f9; }
-    .story-summary { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 1rem 0; line-height: 1.4; }
-    .story-link {
+
+    .trend-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.65rem 1.85rem;
+      box-shadow: var(--card-shadow);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .trend-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .trend-meta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .trend-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+      line-height: 1.25;
+    }
+    .badge-lab {
+      background-color: var(--badge-lab-bg);
+      border-color: var(--badge-lab-border);
+      color: var(--badge-lab-text);
+    }
+    .badge-journal {
+      background-color: var(--badge-journal-bg);
+      border-color: var(--badge-journal-border);
+      color: var(--badge-journal-text);
+    }
+    .badge-research {
+      background-color: var(--badge-research-bg);
+      border-color: var(--badge-research-border);
+      color: var(--badge-research-text);
+    }
+
+    .badge-status {
+      background-color: var(--bg-subtle);
+      border-color: var(--border-subtle);
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .trend-title {
+      font-size: 1.32rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 1.1rem;
+    }
+
+    .trend-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .trend-field {
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    .field-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .trend-field p {
+      color: var(--text-primary);
+    }
+
+    .trend-field.why {
+      background-color: var(--bg-subtle);
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent-primary);
+    }
+    .trend-field.why p {
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+    }
+
+    .trend-field.who {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .trend-field.who span {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* Evidence Provenance Accordion */
+    .evidence-details {
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .evidence-summary {
+      cursor: pointer;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #60a5fa;
+      color: var(--link);
+      user-select: none;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0;
+      border-radius: 4px;
+    }
+    .evidence-summary::-webkit-details-marker {
+      display: none;
+    }
+    .evidence-summary:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .evidence-list {
+      margin-top: 0.65rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .evidence-item {
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .evidence-link {
+      color: var(--link);
       text-decoration: none;
+      word-break: break-all;
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
     }
-    .story-link:hover { text-decoration: underline; }
+    .evidence-link:hover {
+      text-decoration: underline;
+      color: var(--link-hover);
+    }
 
-    footer {
+    /* -------------------------------------------------------------
+       ORIGINAL STORIES FEED
+       ------------------------------------------------------------- */
+    .stories-container {
+      margin-bottom: 4rem;
+    }
+
+    .stories-feed {
+      list-style: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      background-color: var(--bg-surface);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .story-item {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background-color 0.15s ease;
+    }
+    .story-item:last-child {
+      border-bottom: none;
+    }
+    .story-item:hover {
+      background-color: var(--bg-hover);
+    }
+
+    .story-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .story-source {
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .story-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+    }
+
+    .story-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+    .story-link:hover {
+      color: var(--link);
+      text-decoration: underline;
+    }
+    .story-link svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      color: var(--text-muted);
+      transform: translateY(1px);
+    }
+
+    .story-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* -------------------------------------------------------------
+       EMPTY & ERROR STATES
+       ------------------------------------------------------------- */
+    .state-box {
       text-align: center;
-      color: #64748b;
-      font-size: 0.82rem;
-      margin-top: 4rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
+      padding: 3rem 1.5rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .state-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .state-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER
+       ------------------------------------------------------------- */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-col {
+      flex: 1 1 260px;
+    }
+
+    .footer-heading {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .footer-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .footer-list a:hover {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    /* -------------------------------------------------------------
+       RESPONSIVE & ACCESSIBILITY ADJUSTMENTS
+       ------------------------------------------------------------- */
+    @media (max-width: 640px) {
+      body {
+        padding: 0 0.85rem 3rem 0.85rem;
+      }
+      .masthead {
+        padding: 1.5rem 0 1.25rem 0;
+      }
+      .brand-title {
+        font-size: 1.75rem;
+      }
+      .big-picture-card {
+        padding: 1.25rem;
+      }
+      .big-picture-text {
+        font-size: 1.05rem;
+      }
+      .trend-card {
+        padding: 1.25rem;
+      }
+      .story-item {
+        padding: 1rem 1.1rem;
+      }
+      .masthead-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .btn {
+        flex: 1 1 auto;
+      }
+      .btn-theme {
+        flex: 0 0 auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to briefing content</a>
+
   <div class="container">
-    <div class="top-header">
-      <div>
-        <h1>⚡ AI Trend Pulse</h1>
-        <p class="subtitle">Hourly market intelligence with traceable evidence & source verification.</p>
+    <!-- Header / Masthead -->
+    <header class="masthead">
+      <div class="masthead-top">
+        <div class="brand-group">
+          <div class="brand-kicker">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Hourly Intelligence Cycle
+          </div>
+          <h1 class="brand-title font-serif">AI Trend Pulse</h1>
+          <p class="brand-desc">Curated executive intelligence on frontier models, enterprise shifts, and verifiable developments.</p>
+        </div>
+
+        <div class="masthead-actions" role="toolbar" aria-label="Briefing tools">
+          <button id="btn-audio" class="btn btn-audio" onclick="toggleAudioBriefing()" aria-label="Listen to 2-minute audio briefing">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+            <span id="audio-label">Listen (2m)</span>
+          </button>
+
+          <button id="btn-copy" class="btn" onclick="copyBriefing()" aria-label="Copy full text briefing to clipboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="copy-label">Copy Briefing</span>
+          </button>
+
+          <button id="btn-theme" class="btn btn-theme" onclick="toggleTheme()" aria-label="Toggle theme mode">
+            <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+        </div>
       </div>
-      <div class="action-group">
-        <button class="btn btn-audio" onclick="toggleAudioBriefing()">🔊 Listen (2m)</button>
-        <button class="btn btn-copy" onclick="copyBriefing()">📋 Copy Briefing</button>
+
+      <!-- Live Status & Sync Bar -->
+      <div class="status-bar">
+        <div class="status-pill fresh" id="status-badge" role="status">
+          <span class="status-dot"></span>
+          <span id="status-text">Connecting to intelligence feed...</span>
+        </div>
+        <div class="status-meta-info">
+          <span>7 Verified Sources</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>~2 min read</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>Google Gemini synthesis</span>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <!-- Stat Bar -->
-    <div class="stat-bar">
-      <div class="stat-item"><div id="status-dot" class="pulse-dot"></div> <span id="sync-time">Checking feed...</span></div>
-      <div class="stat-item">⏱️ <span>2-Min Read</span></div>
-      <div class="stat-item">🏛️ <span>7 Verified Feeds</span></div>
-      <div class="stat-item">🤖 <span>Structured by Gemini 3.8 Flash</span></div>
-    </div>
+    <!-- Main Content Area -->
+    <main id="main-content">
+      <!-- The Big Picture / Lead Takeaway -->
+      <section class="big-picture-card" aria-labelledby="big-picture-title">
+        <div class="big-picture-header">
+          <span class="big-picture-label" id="big-picture-title">The Big Picture</span>
+          <span style="font-size: 0.78rem; color: var(--text-muted);">Executive Briefing</span>
+        </div>
+        <p id="takeaway-text" class="big-picture-text font-serif">Loading latest verified market synthesis...</p>
+      </section>
 
-    <!-- Hero Takeaway -->
-    <div class="takeaway-card">
-      <span class="takeaway-badge">THE BIG PICTURE</span>
-      <p id="takeaway" class="takeaway-text">Loading verified market intelligence...</p>
-    </div>
+      <!-- Discovery & Categorization Bar -->
+      <section class="discovery-panel" aria-label="Filter intelligence feed">
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="search-input" class="search-input" placeholder="Search developments, companies, models, or topics (e.g. OpenAI, agents, safety)..." oninput="handleSearchInput(this.value)" aria-label="Search developments">
+          <button id="search-clear" class="search-clear-btn" onclick="clearSearch()" aria-label="Clear search input">&times;</button>
+        </div>
 
-    <!-- Live Search & Category Filter -->
-    <input type="text" id="search-input" class="search-box" placeholder="🔍 Search topics, models, or companies (e.g. 'Nvidia', 'OpenAI', 'coding', 'agents')..." oninput="filterContent()">
-    
-    <div class="filter-pills">
-      <div class="pill active" onclick="setFilter('all', this)">All Stories</div>
-      <div class="pill" onclick="setFilter('Official Lab', this)">🏛️ Primary Labs</div>
-      <div class="pill" onclick="setFilter('Independent Journalism', this)">🔍 Verified Journalism</div>
-      <div class="pill" onclick="setFilter('Open Research', this)">🔬 Open Ecosystem</div>
-    </div>
+        <div class="filter-group" role="radiogroup" aria-label="Filter by source category">
+          <span class="filter-label">Filter:</span>
+          <button class="filter-btn active" role="radio" aria-checked="true" data-tier="all" onclick="setCategoryFilter('all', this)">All Feeds</button>
+          <button class="filter-btn" role="radio" aria-checked="false" data-tier="Official Lab" onclick="setCategoryFilter('Official Lab', this)">Primary Labs</button>
+          <button class="filter-btn" role="radio" aria-checked="false" data-tier="Independent Journalism" onclick="setCategoryFilter('Independent Journalism', this)">Verified Journalism</button>
+          <button class="filter-btn" role="radio" aria-checked="false" data-tier="Open Research" onclick="setCategoryFilter('Open Research', this)">Open Ecosystem</button>
+        </div>
 
-    <div style="font-size:1.3rem; font-weight:600; margin-bottom:1rem;">🔥 Key Macro Trends (With Source Evidence)</div>
-    <div id="trends-container">Loading verified trends...</div>
+        <div id="search-feedback" class="search-feedback" style="display: none;">
+          <span id="results-count">Showing matching items</span>
+          <button class="btn" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;" onclick="resetAllFilters()">Reset All Filters</button>
+        </div>
+      </section>
 
-    <div style="font-size:1.3rem; font-weight:600; margin: 2.5rem 0 1rem 0;">📰 Explore All Verified Stories & Original Sources</div>
-    <div id="stories-container" class="stories-grid">Loading stories...</div>
+      <!-- Key Developments / Trends Section -->
+      <section aria-labelledby="trends-heading">
+        <h2 id="trends-heading" class="section-title">Key Developments</h2>
+        <p class="section-subtitle">Macro movements synthesized across multi-source announcements and technical reporting.</p>
+        
+        <div id="trends-container" class="trends-list">
+          <div class="state-box">
+            <p class="state-title">Loading developments...</p>
+            <p class="state-desc">Connecting to verified data pipeline.</p>
+          </div>
+        </div>
+      </section>
 
-    <footer>
-      AI-assisted synthesis • Grounded in linked original sources • Verification tiers shown • No sponsored bias.
+      <!-- Original Stories Feed Section -->
+      <section class="stories-container" aria-labelledby="stories-heading">
+        <h2 id="stories-heading" class="section-title">Source Feed & Original Dispatches</h2>
+        <p class="section-subtitle">Direct, unedited primary releases and reporting from indexed publications.</p>
+        
+        <ul id="stories-container" class="stories-feed" role="list">
+          <li class="story-item">
+            <p class="story-summary">Loading indexed stories...</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-col" style="flex: 2 1 320px;">
+          <div class="footer-heading">Editorial Integrity & Architecture</div>
+          <p style="margin-bottom: 0.75rem;">
+            AI Trend Pulse aggregates primary dispatches hourly from indexed laboratory feeds and tech journalism desks.
+            Synthesis is structured via Google Gemini to highlight what happened, why it matters, and affected audiences, with strict provenance linking back to original URLs.
+          </p>
+          <p>
+            Zero sponsored bias. Every claim indicates whether it originates as an official lab release or independent report.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-heading">Monitored Sources</div>
+          <ul class="footer-list">
+            <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research & News ↗</a></li>
+            <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind Blog ↗</a></li>
+            <li><a href="https://www.technologyreview.com/" target="_blank" rel="noopener noreferrer">MIT Technology Review ↗</a></li>
+            <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
+            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI ↗</a></li>
+            <li><a href="https://arstechnica.com/" target="_blank" rel="noopener noreferrer">Ars Technica ↗</a></li>
+            <li><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>AI Trend Pulse • Static edge deployment with automated GitHub Actions pipeline</span>
+      </div>
     </footer>
   </div>
 
+  <!-- Application Logic -->
   <script>
-    let cachedData = null;
-    let activeFilter = 'all';
-    let isSpeaking = false;
+    'use strict';
 
-    // Safe DOM creator helpers (Prevents XSS completely)
-    function createEl(tag, className, textContent) {
-      const el = document.createElement(tag);
-      if (className) el.className = className;
-      if (textContent) el.textContent = textContent;
-      return el;
+    // Application state
+    let briefingData = null;
+    let currentFilter = 'all';
+    let searchQuery = '';
+    let isSpeaking = false;
+    let currentUtterance = null;
+
+    // Safe DOM creator helper (prevents XSS completely)
+    function el(tag, attributes, ...children) {
+      const element = document.createElement(tag);
+      if (attributes) {
+        for (const [key, val] of Object.entries(attributes)) {
+          if (key === 'className') {
+            element.className = val;
+          } else if (key === 'dataset') {
+            for (const [dKey, dVal] of Object.entries(val)) {
+              element.dataset[dKey] = dVal;
+            }
+          } else if (key.startsWith('on') && typeof val === 'function') {
+            element.addEventListener(key.substring(2).toLowerCase(), val);
+          } else if (val !== false && val !== null && val !== undefined) {
+            element.setAttribute(key, val);
+          }
+        }
+      }
+      for (const child of children) {
+        if (child === null || child === undefined) continue;
+        if (typeof child === 'string' || typeof child === 'number') {
+          element.appendChild(document.createTextNode(String(child)));
+        } else if (child instanceof Node) {
+          element.appendChild(child);
+        }
+      }
+      return element;
     }
 
-    function createSafeLink(href, text, className) {
+    // Safe Link creator ensuring strictly valid http/https URLs
+    function safeLink(href, text, className) {
       const a = document.createElement('a');
-      if (href && (href.startsWith('https://') || href.startsWith('http://'))) {
-        a.href = href;
-      } else {
-        a.href = '#';
-      }
-      a.textContent = text;
+      const valid = href && (typeof href === 'string') && (href.startsWith('https://') || href.startsWith('http://'));
+      a.href = valid ? href : '#';
+      a.textContent = text || 'Source';
       if (className) a.className = className;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
+      if (valid) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
       return a;
     }
 
-    function getTierBadgeClass(tier) {
-      if (tier && tier.includes('Official')) return 'tier-lab';
-      if (tier && tier.includes('Research')) return 'tier-research';
-      return 'tier-journal';
+    // Clean domain extractor for evidence links
+    function getDomainFromUrl(url) {
+      try {
+        const parsed = new URL(url);
+        return parsed.hostname.replace(/^www\./, '');
+      } catch (e) {
+        return 'source link';
+      }
     }
 
-    fetch('data.json?t=' + Date.now())
-      .then(res => res.json())
-      .then(data => {
-        cachedData = data;
-        document.getElementById('takeaway').textContent = data.takeaway || 'No takeaway available.';
-        
-        const syncTimeEl = document.getElementById('sync-time');
-        const statusDot = document.getElementById('status-dot');
+    // Format ISO Timestamp reliably into UTC & relative time
+    function formatBriefingTimestamp(isoString) {
+      if (!isoString) return 'Timestamp unavailable';
+      const date = new Date(isoString);
+      if (isNaN(date.getTime())) return 'Timestamp unavailable';
+      
+      const now = new Date();
+      const diffMs = now.getTime() - date.getTime();
+      const diffMins = Math.floor(diffMs / 60000);
+      const diffHours = Math.floor(diffMins / 60);
 
-        // Robust timestamp handling
-        const timestampStr = data.generated_at || data.last_updated;
-        if (!timestampStr) {
-          syncTimeEl.textContent = 'Timestamp unavailable';
-        } else {
-          const genDate = new Date(timestampStr);
-          const formattedTime = isNaN(genDate.getTime()) ? 'Recent' : genDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+      const timePart = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
 
-          if (data.data_status === 'cached_fallback') {
-            syncTimeEl.textContent = 'Cached Briefing (' + formattedTime + ')';
-            statusDot.className = 'pulse-dot fallback';
-          } else if (data.data_status === 'raw_headlines') {
-            syncTimeEl.textContent = 'Raw Headlines (' + formattedTime + ')';
-            statusDot.className = 'pulse-dot fallback';
-          } else {
-            syncTimeEl.textContent = 'Live Briefing (' + formattedTime + ')';
-            statusDot.className = 'pulse-dot';
-          }
+      if (diffHours < 1) {
+        return (diffMins <= 1 ? 'Just now' : diffMins + 'm ago') + ' (' + timePart + ')';
+      } else if (diffHours < 24) {
+        return diffHours + 'h ago (' + timePart + ')';
+      } else {
+        return date.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' (' + timePart + ')';
+      }
+    }
+
+    // Theme toggler & system sync
+    function initTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      updateThemeIcons(currentTheme);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('ai_trend_theme', next);
+      } catch (e) {}
+      updateThemeIcons(next);
+    }
+
+    function updateThemeIcons(theme) {
+      const sun = document.getElementById('theme-icon-sun');
+      const moon = document.getElementById('theme-icon-moon');
+      const btn = document.getElementById('btn-theme');
+      if (theme === 'dark') {
+        sun.style.display = 'block';
+        moon.style.display = 'none';
+        btn.setAttribute('aria-label', 'Switch to light theme');
+      } else {
+        sun.style.display = 'none';
+        moon.style.display = 'block';
+        btn.setAttribute('aria-label', 'Switch to dark theme');
+      }
+    }
+
+    // Fetch and bootstrap data
+    async function loadBriefing() {
+      const statusBadge = document.getElementById('status-badge');
+      const statusText = document.getElementById('status-text');
+
+      try {
+        const response = await fetch('data.json?t=' + Date.now());
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
         }
+        const data = await response.json();
+        briefingData = data;
+        renderPage(data);
+      } catch (err) {
+        console.error('Failed to load briefing data:', err);
+        statusBadge.className = 'status-pill raw';
+        statusText.textContent = 'Briefing updating • Displaying cached dispatches';
+        
+        document.getElementById('takeaway-text').textContent = 
+          'Hourly intelligence pipeline is currently synchronizing with upstream sources. Please check back in a few moments.';
+        
+        const trendsContainer = document.getElementById('trends-container');
+        trendsContainer.innerHTML = '';
+        trendsContainer.appendChild(
+          el('div', { className: 'state-box' },
+            el('p', { className: 'state-title' }, 'Briefing Updating'),
+            el('p', { className: 'state-desc' }, 'The intelligence pipeline is fetching and verifying the latest news feeds. Please refresh the page in a moment.')
+          )
+        );
+      }
+    }
 
-        renderTrends(data.trends || []);
-        renderStories(data.top_stories || []);
-      })
-      .catch(err => {
-        const c = document.getElementById('trends-container');
-        c.innerHTML = '';
-        c.appendChild(createEl('p', '', 'Briefing updating. Please refresh in a moment!'));
-      });
+    // Main render pipeline
+    function renderPage(data) {
+      const statusBadge = document.getElementById('status-badge');
+      const statusText = document.getElementById('status-text');
+      const takeawayEl = document.getElementById('takeaway-text');
 
+      // 1. Status Area & Freshness
+      const timestampText = formatBriefingTimestamp(data.generated_at || data.last_updated);
+      const isCached = data.data_status === 'cached_fallback';
+      const isRaw = data.data_status === 'raw_headlines';
+
+      if (isCached) {
+        statusBadge.className = 'status-pill cached';
+        statusText.textContent = 'Cached Briefing • ' + timestampText;
+      } else if (isRaw) {
+        statusBadge.className = 'status-pill raw';
+        statusText.textContent = 'Raw Dispatches • ' + timestampText;
+      } else {
+        statusBadge.className = 'status-pill fresh';
+        statusText.textContent = 'Verified Briefing • ' + timestampText;
+      }
+
+      // 2. Executive Takeaway
+      takeawayEl.textContent = data.takeaway || 'Macro intelligence synthesis currently processing.';
+
+      // 3. Trends & Stories
+      applyFiltersAndRender();
+    }
+
+    // Render Key Trends
     function renderTrends(trends) {
       const container = document.getElementById('trends-container');
       container.innerHTML = '';
-      
-      if (trends.length === 0) {
-        container.appendChild(createEl('p', '', 'Displaying verified original stories directly below.'));
+
+      if (!trends || trends.length === 0) {
+        container.appendChild(
+          el('div', { className: 'state-box' },
+            el('p', { className: 'state-title' }, 'No developments match your search'),
+            el('p', { className: 'state-desc' }, 'Try adjusting keywords or selecting "All Feeds" to explore full coverage.'),
+            el('button', { className: 'btn', onclick: resetAllFilters }, 'Clear Filters & Search')
+          )
+        );
         return;
       }
 
-      trends.forEach(t => {
-        const card = createEl('div', 'trend-card');
-        card.setAttribute('data-tier', t.tier || '');
-        card.setAttribute('data-status', t.status || '');
-        card.setAttribute('data-text', ((t.title || '') + ' ' + (t.what_happened || '')).toLowerCase());
+      trends.forEach((t) => {
+        const card = el('article', { className: 'trend-card' });
 
+        // Meta Header (Badges & Source)
         const isLab = (t.tier === 'Official Lab' || t.status === 'official_claim');
-        const badgeText = (isLab ? '🏢 Official Lab Announcement' : '🔍 Source-Linked Report') + ' • ' + (t.source || 'Publisher');
-        const badge = createEl('span', 'tier-badge ' + (isLab ? 'tier-lab' : 'tier-journal'), badgeText);
-        card.appendChild(badge);
+        const isJournalism = (t.tier === 'Independent Journalism');
+        const badgeClass = isLab ? 'badge-lab' : (isJournalism ? 'badge-journal' : 'badge-research');
+        const tierName = t.tier || (isLab ? 'Official Lab' : 'Independent Source');
 
-        const title = createEl('h3', 'trend-title', t.title);
+        const statusLabel = (t.status === 'official_claim') 
+          ? 'Official Lab Announcement' 
+          : 'Source-Linked Reporting';
+
+        const metaHeader = el('div', { className: 'trend-meta-header' },
+          el('div', { className: 'trend-badges' },
+            el('span', { className: 'badge ' + badgeClass }, tierName),
+            el('span', { className: 'badge badge-status' }, statusLabel)
+          ),
+          el('span', { style: 'font-size: 0.8rem; color: var(--text-muted); font-weight: 500;' }, t.source || 'Verified Source')
+        );
+        card.appendChild(metaHeader);
+
+        // Title
+        const title = el('h3', { className: 'trend-title' }, t.title || 'Untitled Development');
         card.appendChild(title);
 
-        // Block 1: What happened
-        const b1 = createEl('div', 'trend-block');
-        b1.appendChild(createEl('strong', '', '📌 WHAT HAPPENED:'));
-        b1.appendChild(createEl('p', '', t.what_happened || ''));
-        card.appendChild(b1);
+        // Structured Grid
+        const grid = el('div', { className: 'trend-grid' });
 
-        // Block 2: Why it matters
-        const b2 = createEl('div', 'trend-block');
-        b2.style.borderLeftColor = '#10b981';
-        const s2 = createEl('strong', '', '💡 WHY IT MATTERS:');
-        s2.style.color = '#6ee7b7';
-        b2.appendChild(s2);
-        b2.appendChild(createEl('p', '', t.why_it_matters || ''));
-        card.appendChild(b2);
-
-        // Block 3: Who is affected
-        if (t.who_affected) {
-          const b3 = createEl('div', 'trend-block');
-          b3.style.borderLeftColor = '#8b5cf6';
-          const s3 = createEl('strong', '', '👥 WHO IS AFFECTED:');
-          s3.style.color = '#c4b5fd';
-          b3.appendChild(s3);
-          b3.appendChild(createEl('p', '', t.who_affected));
-          card.appendChild(b3);
+        // What Happened
+        if (t.what_happened) {
+          grid.appendChild(
+            el('div', { className: 'trend-field' },
+              el('span', { className: 'field-label' }, 'What Happened'),
+              el('p', {}, t.what_happened)
+            )
+          );
         }
 
-        // Evidence Provenance Bar
-        if (t.evidence_urls && t.evidence_urls.length > 0) {
-          const evBar = createEl('div', 'evidence-bar');
-          evBar.appendChild(createEl('span', '', '📎 Supporting Evidence:'));
-          t.evidence_urls.forEach((u, idx) => {
-            evBar.appendChild(createSafeLink(u, 'Source ' + (idx + 1) + ' ↗', 'evidence-link'));
-          });
-          card.appendChild(evBar);
+        // Why It Matters
+        if (t.why_it_matters) {
+          grid.appendChild(
+            el('div', { className: 'trend-field why' },
+              el('span', { className: 'field-label', style: 'color: var(--accent-primary);' }, 'Why It Matters'),
+              el('p', {}, t.why_it_matters)
+            )
+          );
+        }
+
+        // Who Is Affected
+        if (t.who_affected) {
+          grid.appendChild(
+            el('div', { className: 'trend-field who' },
+              el('span', { className: 'field-label' }, 'Affected Audience'),
+              el('span', {}, t.who_affected)
+            )
+          );
+        }
+
+        card.appendChild(grid);
+
+        // Evidence Links (Progressive Disclosure)
+        if (t.evidence_urls && Array.isArray(t.evidence_urls) && t.evidence_urls.length > 0) {
+          const validUrls = t.evidence_urls.filter(u => typeof u === 'string' && (u.startsWith('http://') || u.startsWith('https://')));
+          if (validUrls.length > 0) {
+            const details = el('details', { className: 'evidence-details' });
+            const summary = el('summary', { className: 'evidence-summary' },
+              el('svg', { width: '13', height: '13', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+                el('path', { d: 'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' }),
+                el('path', { d: 'M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' })
+              ),
+              'Supporting Evidence (' + validUrls.length + ' source' + (validUrls.length > 1 ? 's' : '') + ')'
+            );
+            details.appendChild(summary);
+
+            const evList = el('ul', { className: 'evidence-list' });
+            validUrls.forEach((url, i) => {
+              const domain = getDomainFromUrl(url);
+              evList.appendChild(
+                el('li', { className: 'evidence-item' },
+                  el('span', { style: 'color: var(--text-muted); font-size: 0.75rem;' }, (i + 1) + '.'),
+                  safeLink(url, domain + ' ↗', 'evidence-link')
+                )
+              );
+            });
+            details.appendChild(evList);
+            card.appendChild(details);
+          }
         }
 
         container.appendChild(card);
       });
     }
 
+    // Render Original Stories Feed
     function renderStories(stories) {
       const container = document.getElementById('stories-container');
       container.innerHTML = '';
 
-      stories.forEach(s => {
-        const card = createEl('div', 'story-card');
-        card.setAttribute('data-tier', s.tier || '');
-        card.setAttribute('data-text', ((s.title || '') + ' ' + (s.one_liner || '')).toLowerCase());
-
-        const topDiv = createEl('div');
-        const badge = createEl('span', 'tier-badge ' + getTierBadgeClass(s.tier), (s.source || 'Source') + (s.published ? ' • ' + s.published : ''));
-        topDiv.appendChild(badge);
-
-        const title = createEl('div', 'story-title', s.title);
-        topDiv.appendChild(title);
-
-        const summary = createEl('div', 'story-summary', s.one_liner);
-        topDiv.appendChild(summary);
-
-        card.appendChild(topDiv);
-
-        const link = createSafeLink(s.link, 'Read Original Source ↗', 'story-link');
-        card.appendChild(link);
-
-        container.appendChild(card);
-      });
-    }
-
-    function setFilter(tier, el) {
-      activeFilter = tier;
-      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-      el.classList.add('active');
-      filterContent();
-    }
-
-    function filterContent() {
-      const query = document.getElementById('search-input').value.toLowerCase();
-      document.querySelectorAll('.trend-card, .story-card').forEach(card => {
-        const text = card.getAttribute('data-text') || '';
-        const tier = card.getAttribute('data-tier') || '';
-        const matchesTier = (activeFilter === 'all') || tier.toLowerCase().includes(activeFilter.toLowerCase());
-        const matchesQuery = !query || text.includes(query);
-        card.style.display = (matchesTier && matchesQuery) ? '' : 'none';
-      });
-    }
-
-    function toggleAudioBriefing() {
-      const btn = document.querySelector('.btn-audio');
-      if (isSpeaking) {
-        window.speechSynthesis.cancel();
-        isSpeaking = false;
-        btn.textContent = '🔊 Listen (2m)';
-        btn.classList.remove('playing');
+      if (!stories || stories.length === 0) {
+        container.appendChild(
+          el('li', { className: 'story-item', style: 'text-align: center; color: var(--text-muted);' },
+            'No dispatches matching current criteria.'
+          )
+        );
         return;
       }
 
-      if (!cachedData) return;
-      window.speechSynthesis.cancel();
+      stories.forEach((s) => {
+        const item = el('li', { className: 'story-item' });
 
-      let textToRead = "Today's AI Trend Briefing. The Big Picture: " + (cachedData.takeaway || "") + ". Top Macro Trends: ";
-      (cachedData.trends || []).forEach((t, i) => {
-        textToRead += "Trend " + (i + 1) + ": " + t.title + ". " + (t.what_happened || "") + ". ";
+        // Meta (Source & Published Date)
+        const meta = el('div', { className: 'story-meta' });
+        meta.appendChild(el('span', { className: 'story-source' }, s.source || 'Primary Source'));
+        if (s.tier) {
+          meta.appendChild(el('span', { className: 'meta-divider' }));
+          meta.appendChild(el('span', {}, s.tier));
+        }
+        if (s.published) {
+          meta.appendChild(el('span', { className: 'meta-divider' }));
+          meta.appendChild(el('span', {}, s.published));
+        }
+        item.appendChild(meta);
+
+        // Title with safe external link
+        const titleEl = el('h3', { className: 'story-title' });
+        const link = safeLink(s.link, s.title || 'Untitled Dispatch', 'story-link');
+        const extIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        extIcon.setAttribute('viewBox', '0 0 24 24');
+        extIcon.setAttribute('fill', 'none');
+        extIcon.setAttribute('stroke', 'currentColor');
+        extIcon.setAttribute('stroke-width', '2');
+        extIcon.setAttribute('stroke-linecap', 'round');
+        extIcon.setAttribute('stroke-linejoin', 'round');
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6');
+        const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        poly.setAttribute('points', '15 3 21 3 21 9');
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', '10'); line.setAttribute('y1', '14');
+        line.setAttribute('x2', '21'); line.setAttribute('y2', '3');
+        extIcon.appendChild(path); extIcon.appendChild(poly); extIcon.appendChild(line);
+        link.appendChild(extIcon);
+        titleEl.appendChild(link);
+        item.appendChild(titleEl);
+
+        // One-liner summary
+        if (s.one_liner) {
+          item.appendChild(el('p', { className: 'story-summary' }, s.one_liner));
+        }
+
+        container.appendChild(item);
+      });
+    }
+
+    // Unified Search & Filter Execution
+    function applyFiltersAndRender() {
+      if (!briefingData) return;
+
+      const q = searchQuery.toLowerCase().trim();
+      const allTrends = briefingData.trends || [];
+      const allStories = briefingData.top_stories || [];
+
+      // Filter Trends
+      const filteredTrends = allTrends.filter((t) => {
+        const matchesCategory = (currentFilter === 'all') || 
+          (t.tier && t.tier.toLowerCase().includes(currentFilter.toLowerCase())) ||
+          (currentFilter === 'Official Lab' && (t.status === 'official_claim' || (t.source && t.source.toLowerCase().includes('openai'))));
+
+        const searchable = [
+          t.title,
+          t.what_happened,
+          t.why_it_matters,
+          t.who_affected,
+          t.source
+        ].filter(Boolean).join(' ').toLowerCase();
+
+        const matchesSearch = !q || searchable.includes(q);
+
+        return matchesCategory && matchesSearch;
       });
 
-      const utterance = new SpeechSynthesisUtterance(textToRead);
+      // Filter Stories
+      const filteredStories = allStories.filter((s) => {
+        const matchesCategory = (currentFilter === 'all') ||
+          (s.tier && s.tier.toLowerCase().includes(currentFilter.toLowerCase()));
+
+        const searchable = [
+          s.title,
+          s.one_liner,
+          s.source,
+          s.tier
+        ].filter(Boolean).join(' ').toLowerCase();
+
+        const matchesSearch = !q || searchable.includes(q);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      // Update feedback bar
+      const feedback = document.getElementById('search-feedback');
+      const countEl = document.getElementById('results-count');
+      const isFiltered = (currentFilter !== 'all') || q.length > 0;
+
+      if (isFiltered) {
+        feedback.style.display = 'flex';
+        countEl.textContent = 'Showing ' + filteredTrends.length + ' development' + (filteredTrends.length === 1 ? '' : 's') + 
+          ' and ' + filteredStories.length + ' source dispatch' + (filteredStories.length === 1 ? '' : 'es');
+      } else {
+        feedback.style.display = 'none';
+      }
+
+      renderTrends(filteredTrends);
+      renderStories(filteredStories);
+    }
+
+    // Category Filter Handler
+    function setCategoryFilter(tier, buttonEl) {
+      currentFilter = tier;
+      document.querySelectorAll('.filter-btn').forEach((btn) => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-checked', 'false');
+      });
+      if (buttonEl) {
+        buttonEl.classList.add('active');
+        buttonEl.setAttribute('aria-checked', 'true');
+      }
+      applyFiltersAndRender();
+    }
+
+    // Search Input Handlers
+    function handleSearchInput(val) {
+      searchQuery = val;
+      const clearBtn = document.getElementById('search-clear');
+      clearBtn.style.display = val.length > 0 ? 'block' : 'none';
+      applyFiltersAndRender();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('search-input');
+      input.value = '';
+      searchQuery = '';
+      document.getElementById('search-clear').style.display = 'none';
+      input.focus();
+      applyFiltersAndRender();
+    }
+
+    function resetAllFilters() {
+      document.getElementById('search-input').value = '';
+      searchQuery = '';
+      document.getElementById('search-clear').style.display = 'none';
+      setCategoryFilter('all', document.querySelector('.filter-btn[data-tier="all"]'));
+    }
+
+    // Audio Briefing using Web SpeechSynthesis API
+    function toggleAudioBriefing() {
+      const btn = document.getElementById('btn-audio');
+      const label = document.getElementById('audio-label');
+
+      if (!('speechSynthesis' in window)) {
+        alert('Text-to-speech is not supported by your browser.');
+        return;
+      }
+
+      if (isSpeaking) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+        btn.classList.remove('active');
+        label.textContent = 'Listen (2m)';
+        return;
+      }
+
+      if (!briefingData) return;
+      window.speechSynthesis.cancel();
+
+      let speechText = 'AI Trend Pulse Briefing. ';
+      if (briefingData.takeaway) {
+        speechText += 'The Big Picture: ' + briefingData.takeaway + ' ';
+      }
+
+      const trends = briefingData.trends || [];
+      if (trends.length > 0) {
+        speechText += 'Here are the top key developments: ';
+        trends.forEach((t, i) => {
+          speechText += 'Development ' + (i + 1) + ': ' + (t.title || '') + '. ';
+          if (t.what_happened) speechText += t.what_happened + ' ';
+          if (t.why_it_matters) speechText += 'Why it matters: ' + t.why_it_matters + ' ';
+        });
+      }
+
+      const utterance = new SpeechSynthesisUtterance(speechText);
+      currentUtterance = utterance;
       utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+
+      utterance.onstart = () => {
+        isSpeaking = true;
+        btn.classList.add('active');
+        label.textContent = 'Stop Audio';
+      };
+
       utterance.onend = () => {
         isSpeaking = false;
-        btn.textContent = '🔊 Listen (2m)';
-        btn.classList.remove('playing');
+        btn.classList.remove('active');
+        label.textContent = 'Listen (2m)';
       };
+
       utterance.onerror = (e) => {
-        console.warn('Speech synthesis error:', e);
+        console.warn('Speech synthesis notice:', e);
         isSpeaking = false;
-        btn.textContent = '🔊 Listen (2m)';
-        btn.classList.remove('playing');
+        btn.classList.remove('active');
+        label.textContent = 'Listen (2m)';
       };
 
       window.speechSynthesis.speak(utterance);
-      isSpeaking = true;
-      btn.textContent = '⏹️ Stop Audio';
-      btn.classList.add('playing');
     }
 
+    // Copy Plain-Text Briefing to Clipboard
     function copyBriefing() {
-      if (!cachedData) return;
-      let text = `⚡ AI TREND PULSE • BRIEFING\n\n💡 THE BIG PICTURE:\n${cachedData.takeaway}\n\n🔥 MAJOR TRENDS:\n`;
-      (cachedData.trends || []).forEach((t, i) => {
-        text += `\n${i + 1}. ${t.title} [${t.source} • ${t.tier || ''}]\n   📌 What: ${t.what_happened || ''}\n   💡 Why it matters: ${t.why_it_matters || ''}\n`;
+      if (!briefingData) return;
+
+      const dateStr = briefingData.generated_at 
+        ? new Date(briefingData.generated_at).toUTCString()
+        : 'Recent';
+
+      let text = 'AI TREND PULSE — EXECUTIVE BRIEFING\n';
+      text += 'Generated: ' + dateStr + '\n';
+      text += 'URL: https://aitrend-pulse.netlify.app\n\n';
+
+      text += '=== THE BIG PICTURE ===\n';
+      text += (briefingData.takeaway || 'No takeaway available.') + '\n\n';
+
+      text += '=== KEY DEVELOPMENTS ===\n';
+      (briefingData.trends || []).forEach((t, i) => {
+        text += (i + 1) + '. ' + (t.title || 'Untitled') + '\n';
+        text += '   Source: ' + (t.source || 'Unknown') + ' (' + (t.tier || 'Verified') + ')\n';
+        if (t.what_happened) text += '   What happened: ' + t.what_happened + '\n';
+        if (t.why_it_matters) text += '   Why it matters: ' + t.why_it_matters + '\n';
+        if (t.who_affected) text += '   Affected audience: ' + t.who_affected + '\n';
         if (t.evidence_urls && t.evidence_urls.length > 0) {
-          text += `   📎 Evidence: ${t.evidence_urls.join(', ')}\n`;
+          text += '   Evidence: ' + t.evidence_urls.join(', ') + '\n';
         }
+        text += '\n';
       });
 
-      const btn = document.querySelector('.btn-copy');
+      text += '=== SOURCE DISPATCHES ===\n';
+      (briefingData.top_stories || []).forEach((s, i) => {
+        text += '• ' + (s.title || '') + ' — ' + (s.source || '') + '\n';
+        if (s.link) text += '  ' + s.link + '\n';
+      });
+
+      const label = document.getElementById('copy-label');
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
-          btn.textContent = '✅ Copied!';
-          setTimeout(() => { btn.textContent = '📋 Copy Briefing'; }, 2000);
-        }).catch(err => {
-          fallbackCopyText(text, btn);
+          label.textContent = 'Copied!';
+          setTimeout(() => { label.textContent = 'Copy Briefing'; }, 2000);
+        }).catch(() => {
+          fallbackCopyText(text, label);
         });
       } else {
-        fallbackCopyText(text, btn);
+        fallbackCopyText(text, label);
       }
     }
 
-    function fallbackCopyText(text, btn) {
+    function fallbackCopyText(text, labelEl) {
       try {
         const textarea = document.createElement('textarea');
         textarea.value = text;
         textarea.style.position = 'fixed';
         textarea.style.opacity = '0';
         document.body.appendChild(textarea);
+        textarea.focus();
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => { btn.textContent = '📋 Copy Briefing'; }, 2000);
-      } catch (e) {
-        alert('Briefing ready: Please select text on screen to copy.');
+        labelEl.textContent = 'Copied!';
+        setTimeout(() => { labelEl.textContent = 'Copy Briefing'; }, 2000);
+      } catch (err) {
+        alert('Briefing ready: Please select and copy text manually.');
       }
     }
 
+    // Cleanup audio speech on page unload
     window.addEventListener('beforeunload', () => {
-      if (isSpeaking) window.speechSynthesis.cancel();
+      if (isSpeaking && ('speechSynthesis' in window)) {
+        window.speechSynthesis.cancel();
+      }
+    });
+
+    // Initialize application
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      loadBriefing();
     });
   </script>
 </body>
