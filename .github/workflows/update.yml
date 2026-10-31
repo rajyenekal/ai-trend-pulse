@@ -2,8 +2,12 @@ name: Update AI Trends
 
 on:
   schedule:
-    - cron: '0 * * * *' # Automatically runs at the top of every hour
-  workflow_dispatch:      # Manual run button
+    - cron: '0 * * * *' # Hourly trigger
+  workflow_dispatch:
+
+concurrency:
+  group: update-ai-trends
+  cancel-in-progress: true
 
 jobs:
   update-data:
@@ -33,6 +37,10 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           if [ -f data.json ]; then
             git add data.json
-            git commit -m "Auto-update AI Trends" || echo "No changes to commit"
-            git push || echo "Push skipped"
+            if ! git diff --staged --quiet; then
+              git commit -m "Auto-update AI Trends"
+              git push
+            else
+              echo "No new news changes detected in data.json"
+            fi
           fi
