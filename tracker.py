@@ -4,9 +4,17 @@ import os
 import re
 import sys
 import time
-import feedparser
-from google import genai
-from google.genai import types
+try:
+  import feedparser
+except ImportError:
+  feedparser = None
+
+try:
+  from google import genai
+  from google.genai import types
+except ImportError:
+  genai = None
+  types = None
 
 # 3-Tier Source Architecture
 SOURCES = {
@@ -50,7 +58,8 @@ def normalize_url(raw_url):
   """Strips tracking query params, fragments, and trailing slashes."""
   if not raw_url:
     return ""
-  return raw_url.split("?")[0].split("#")[0].rstrip("/")
+  clean = raw_url.split("?")[0].split("#")[0].rstrip("/")
+  return clean
 
 
 def filter_and_deduplicate_articles(
@@ -188,6 +197,7 @@ def clean_and_validate_payload(data):
   if not isinstance(data, dict):
     return False
 
+  # Required root keys
   if not data.get("takeaway") or not isinstance(data.get("takeaway"), str):
     return False
   if not isinstance(data.get("trends"), list) or len(data["trends"]) == 0:
@@ -203,6 +213,7 @@ def clean_and_validate_payload(data):
     ):
       return False
 
+    # Normalize tier and status
     if t.get("tier") not in valid_tiers:
       t["tier"] = (
           "Official Lab"
@@ -217,6 +228,7 @@ def clean_and_validate_payload(data):
           else "source_linked"
       )
 
+    # Ensure evidence_urls is a list
     if not isinstance(t.get("evidence_urls"), list):
       t["evidence_urls"] = []
 
@@ -300,9 +312,7 @@ Return JSON with this exact schema:
 
           data = json.loads(response.text.strip())
           if clean_and_validate_payload(data):
-            data["trends"] = validate_evidence_provenance(
-                data["trends"], articles
-            )
+            data["trends"] = validate_evidence_provenance(data["trends"], articles)
             data["schema_version"] = 1
             data["data_status"] = "fresh"
             return data
@@ -326,6 +336,7 @@ Return JSON with this exact schema:
     except Exception as e:
       print(f"⚠️ Error reading prior data.json: {e}")
 
+  # If no prior file exists, display raw verified headlines directly
   print("✓ Displaying raw collected headlines with 'raw_headlines' status.")
   return {
       "schema_version": 1,
@@ -349,6 +360,109 @@ Return JSON with this exact schema:
   }
 
 
+def classify_topic(title, summary=""):
+  """Classifies an AI news story into one of the supported editorial categories."""
+  content = f"{title} {summary}".lower()
+  if any(k in content for k in ["agent", "autonomous", "runtime", "supervision", "tool use", "breakout", "workflow"]):
+    return "AI Agents"
+  if any(k in content for k in ["model", "gemini", "gpt", "claude", "llama", "multimodal", "frontier model", "carbon", "o1", "o3", "release", "benchmark"]):
+    return "Model Releases"
+  if any(k in content for k in ["safety", "alignment", "misalignment", "safeguard", "risk", "disarmament", "evaluations", "framework", "governance"]):
+    return "Research & Safety"
+  if any(k in content for k in ["enterprise", "business", "commercial", "partner", "adoption", "apple", "china", "finance", "legal", "servicenow", "credit saison"]):
+    return "AI Business"
+  if any(k in content for k in ["code", "coding", "developer", "programming", "copilot", "software", "ide"]):
+    return "AI Coding"
+  return "AI Tools & Ecosystem"
+
+
+def detect_company(text, source=""):
+  """Identifies the primary AI organization or research laboratory."""
+  t = f"{text} {source}".lower()
+  if "openai" in t:
+    return "openai"
+  if "deepmind" in t or "google" in t:
+    return "google"
+  if "anthropic" in t or "claude" in t:
+    return "anthropic"
+  if "apple" in t:
+    return "apple"
+  if "meta" in t or "llama" in t:
+    return "meta"
+  if "microsoft" in t:
+    return "microsoft"
+  if "hugging face" in t or "huggingface" in t:
+    return "huggingface"
+  if "mit" in t:
+    return "mit"
+  if "verge" in t:
+    return "verge"
+  if "techcrunch" in t:
+    return "techcrunch"
+  return "default"
+
+
+def estimate_reading_time(text):
+  """Calculates estimated reading time in minutes."""
+  words = len((text or "").split())
+  minutes = max(1, round(words / 160))
+  return f"{minutes} min read"
+
+
+def extract_audience_pills(who_affected_str):
+  """Extracts clean, scannable audience badge tags."""
+  if not who_affected_str:
+    return ["Enterprises", "Developers", "AI Teams"]
+  cleaned = who_affected_str.replace(" and ", ", ").replace(" & ", ", ")
+  parts = [p.strip().title() for p in cleaned.split(",") if p.strip() and len(p.strip()) < 35]
+  return parts[:4] if parts else ["Enterprises", "Developers"]
+
+
+def enrich_payload(payload):
+  """Enriches trends and stories with topic, company, reading time, and audience tags."""
+  for t in payload.get("trends", []):
+    if "topic" not in t:
+      t["topic"] = classify_topic(t.get("title", ""), t.get("what_happened", ""))
+    if "company" not in t:
+      t["company"] = detect_company(t.get("title", ""), t.get("source", ""))
+    if "reading_time" not in t:
+      full_text = f"{t.get('what_happened', '')} {t.get('why_it_matters', '')}"
+      t["reading_time"] = estimate_reading_time(full_text)
+    if "audience_pills" not in t:
+      t["audience_pills"] = extract_audience_pills(t.get("who_affected", ""))
+
+  for s in payload.get("top_stories", []):
+    if "topic" not in s:
+      s["topic"] = classify_topic(s.get("title", ""), s.get("one_liner", ""))
+    if "company" not in s:
+      s["company"] = detect_company(s.get("title", ""), s.get("source", ""))
+    if "reading_time" not in s:
+      s["reading_time"] = estimate_reading_time(s.get("one_liner", ""))
+
+  # Generate curated 4 items for The Pulse strip
+  pulse_items = []
+  for t in payload.get("trends", []):
+    pulse_items.append({
+        "title": t.get("title"),
+        "topic": t.get("topic", "AI Intelligence"),
+        "company": t.get("company", "default"),
+        "published": "Recent",
+        "link": t.get("evidence_urls", ["#"])[0] if t.get("evidence_urls") else "#"
+    })
+  for s in payload.get("top_stories", []):
+    if len(pulse_items) >= 4:
+      break
+    pulse_items.append({
+        "title": s.get("title"),
+        "topic": s.get("topic", "AI Developments"),
+        "company": s.get("company", "default"),
+        "published": s.get("published", "Recent"),
+        "link": s.get("link", "#")
+    })
+  payload["pulse_items"] = pulse_items[:4]
+  return payload
+
+
 def run_pipeline(dry_run=False, max_age_hours=72):
   """Full execution pipeline."""
   articles = collect_fresh_news(max_age_hours=max_age_hours)
@@ -357,11 +471,15 @@ def run_pipeline(dry_run=False, max_age_hours=72):
   payload = analyze_with_gemini(articles)
   payload["last_attempt_at"] = now_iso
 
-  # Timestamp bug fix: NEVER overwrite generated_at if we are using cached fallback
+  # Timestamp bug fix:
+  # NEVER overwrite generated_at if we are reusing cached data!
   if payload.get("data_status") != "cached_fallback" or not payload.get(
       "generated_at"
   ):
     payload["generated_at"] = now_iso
+
+  # Enrich with topics, companies, reading times, and Pulse strip
+  payload = enrich_payload(payload)
 
   if dry_run:
     print("\n🔍 DRY-RUN MODE: data.json will NOT be written.")
