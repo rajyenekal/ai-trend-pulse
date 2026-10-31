@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 import json
 import os
 import re
@@ -49,10 +50,7 @@ Output ONLY valid JSON with this exact schema:
   "takeaway": "1-sentence high-level summary"
 }}
 """
-
   client = genai.Client()
-
-  # Try primary model, then fallback model if server is busy
   models_to_try = ["gemini-3.8-flash", "gemini-2.0-flash"]
 
   for model_name in models_to_try:
@@ -72,8 +70,7 @@ Output ONLY valid JSON with this exact schema:
         print(f"⚠️ {model_name} attempt {attempt} failed: {e}")
         time.sleep(3)
 
-  # Graceful fallback: If Google API is completely unavailable, build report from raw headlines
-  print("⚡ Building graceful fallback from top news headlines...")
+  # Fallback from headlines if Google API is busy
   fallback_trends = []
   for a in articles[:3]:
     fallback_trends.append({
@@ -83,7 +80,6 @@ Output ONLY valid JSON with this exact schema:
         ),
         "source": a["source"],
     })
-
   return {
       "trends": fallback_trends,
       "takeaway": (
@@ -97,7 +93,10 @@ if __name__ == "__main__":
   articles = collect_news()
   analysis = analyze(articles)
 
+  # Add UTC timestamp for live sync display
+  analysis["last_updated"] = datetime.now(timezone.utc).isoformat()
+
   with open("data.json", "w") as f:
     json.dump(analysis, f, indent=2)
 
-  print("✅ data.json written successfully!")
+  print("✅ data.json written with timestamp!")
