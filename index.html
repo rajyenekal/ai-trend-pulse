@@ -3,52 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trend Pulse — Editorial AI Market Intelligence</title>
-  <meta name="description" content="Hourly curated intelligence on frontier artificial intelligence developments, verifiable primary sources, and macro shifts.">
+  <title>AI Trend Pulse — Hourly AI News & Market Intelligence</title>
+  <meta name="description" content="Hourly curated AI industry intelligence: executive briefings, macro trends, and direct links to primary source reporting.">
 
-  <!-- Immediate theme script to prevent flash of wrong theme (FOUC) -->
+  <!-- Instant theme initialization: supports light, dark, and system preference with zero flash -->
   <script>
     (function() {
       try {
-        const saved = localStorage.getItem('ai_trend_theme');
-        if (saved === 'dark' || saved === 'light') {
-          document.documentElement.setAttribute('data-theme', saved);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'light');
+        const pref = localStorage.getItem('ai_trend_theme_preference') || 'system';
+        document.documentElement.setAttribute('data-theme-preference', pref);
+
+        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let activeTheme = 'light';
+        if (pref === 'dark' || (pref === 'system' && systemDark)) {
+          activeTheme = 'dark';
         }
+        document.documentElement.setAttribute('data-theme', activeTheme);
       } catch (e) {
         document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-theme-preference', 'system');
       }
     })();
   </script>
 
   <style>
     /* -------------------------------------------------------------
-       DESIGN TOKENS: LIGHT & DARK EDITORIAL SYSTEM
+       DESIGN TOKENS: LIGHT & DARK THEMES
        ------------------------------------------------------------- */
     :root, [data-theme="light"] {
-      --bg-canvas: #fcfcfb;
+      --bg-page: #fcfcfb;
       --bg-surface: #ffffff;
-      --bg-subtle: #f5f5f4;
-      --bg-elevated: #ffffff;
-      --bg-hover: #f0efed;
+      --bg-subtle: #f6f5f3;
+      --bg-hover: #f0efeb;
       
-      --border-subtle: #e7e5e4;
-      --border-strong: #d6d3d1;
+      --border-subtle: #e6e4df;
+      --border-strong: #d3d0c9;
       
-      --text-primary: #1c1917;
-      --text-secondary: #44403c;
-      --text-muted: #78716c;
-      --text-inverse: #ffffff;
+      --text-primary: #191816;
+      --text-secondary: #484540;
+      --text-muted: #74716a;
       
-      --accent-primary: #0f766e;
+      --accent: #0f766e;
       --accent-subtle: #f0fdfa;
       --accent-border: #99f6e4;
       
       --link: #0369a1;
-      --link-hover: #0c4a6e;
+      --link-hover: #075985;
       
       --status-fresh-bg: #ecfdf5;
       --status-fresh-border: #a7f3d0;
@@ -65,79 +65,59 @@
       --status-raw-text: #475569;
       --status-raw-dot: #64748b;
       
-      --badge-lab-bg: #f5f3ff;
-      --badge-lab-border: #ddd6fe;
-      --badge-lab-text: #5b21b6;
+      --badge-bg: #f2f1ed;
+      --badge-text: #484540;
+      --badge-border: #e2e0d9;
       
-      --badge-journal-bg: #eff6ff;
-      --badge-journal-border: #bfdbfe;
-      --badge-journal-text: #1e40af;
-      
-      --badge-research-bg: #fef3c7;
-      --badge-research-border: #fde68a;
-      --badge-research-text: #92400e;
-
-      --focus-ring: rgba(15, 118, 110, 0.45);
-      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
+      --focus-ring: rgba(15, 118, 110, 0.4);
+      --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     }
 
     [data-theme="dark"] {
-      --bg-canvas: #0c0a09;
-      --bg-surface: #171513;
-      --bg-subtle: #211e1c;
-      --bg-elevated: #1f1c19;
-      --bg-hover: #292524;
+      --bg-page: #0f1011;
+      --bg-surface: #18191b;
+      --bg-subtle: #212326;
+      --bg-hover: #2a2c30;
       
-      --border-subtle: #2c2825;
-      --border-strong: #44403c;
+      --border-subtle: #2d3035;
+      --border-strong: #40444b;
       
-      --text-primary: #f5f5f4;
-      --text-secondary: #d6d3d1;
-      --text-muted: #a8a29e;
-      --text-inverse: #0c0a09;
+      --text-primary: #f3f4f6;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
       
-      --accent-primary: #2dd4bf;
-      --accent-subtle: rgba(45, 212, 191, 0.12);
-      --accent-border: rgba(45, 212, 191, 0.3);
+      --accent: #2dd4bf;
+      --accent-subtle: rgba(45, 212, 191, 0.1);
+      --accent-border: rgba(45, 212, 191, 0.25);
       
       --link: #38bdf8;
       --link-hover: #7dd3fc;
       
       --status-fresh-bg: rgba(16, 185, 129, 0.12);
-      --status-fresh-border: rgba(16, 185, 129, 0.3);
+      --status-fresh-border: rgba(16, 185, 129, 0.28);
       --status-fresh-text: #6ee7b7;
       --status-fresh-dot: #34d399;
       
       --status-cached-bg: rgba(245, 158, 11, 0.12);
-      --status-cached-border: rgba(245, 158, 11, 0.3);
+      --status-cached-border: rgba(245, 158, 11, 0.28);
       --status-cached-text: #fcd34d;
       --status-cached-dot: #fbbf24;
       
       --status-raw-bg: rgba(148, 163, 184, 0.12);
-      --status-raw-border: rgba(148, 163, 184, 0.3);
+      --status-raw-border: rgba(148, 163, 184, 0.28);
       --status-raw-text: #cbd5e1;
       --status-raw-dot: #94a3b8;
       
-      --badge-lab-bg: rgba(167, 139, 250, 0.12);
-      --badge-lab-border: rgba(167, 139, 250, 0.28);
-      --badge-lab-text: #c4b5fd;
+      --badge-bg: #222428;
+      --badge-text: #d1d5db;
+      --badge-border: #35383f;
       
-      --badge-journal-bg: rgba(96, 165, 250, 0.12);
-      --badge-journal-border: rgba(96, 165, 250, 0.28);
-      --badge-journal-text: #93c5fd;
-      
-      --badge-research-bg: rgba(251, 191, 36, 0.12);
-      --badge-research-border: rgba(251, 191, 36, 0.28);
-      --badge-research-text: #fde68a;
-
       --focus-ring: rgba(45, 212, 191, 0.4);
       --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-      --card-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.6);
     }
 
     /* -------------------------------------------------------------
-       BASE TYPOGRAPHY & RESET
+       BASE RESET & TYPOGRAPHY
        ------------------------------------------------------------- */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -151,41 +131,22 @@
     }
 
     body {
-      background-color: var(--bg-canvas);
+      background-color: var(--bg-page);
       color: var(--text-primary);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       padding: 0 1.25rem 4rem 1.25rem;
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition: background-color 0.15s ease, color 0.15s ease;
     }
 
     .font-serif {
       font-family: "Newsreader", "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
     }
 
-    .skip-to-content {
-      position: absolute;
-      top: -40px;
-      left: 1rem;
-      background: var(--text-primary);
-      color: var(--bg-canvas);
-      padding: 0.5rem 1rem;
-      z-index: 1000;
-      border-radius: 4px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: top 0.2s ease;
-    }
-    .skip-to-content:focus {
-      top: 1rem;
-      outline: 2px solid var(--accent-primary);
-    }
-
     .container {
-      max-width: 920px;
+      max-width: 860px;
       margin: 0 auto;
     }
 
@@ -194,56 +155,72 @@
       outline-offset: 2px;
     }
 
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 1rem;
+      background: var(--text-primary);
+      color: var(--bg-page);
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: top 0.15s ease;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
     /* -------------------------------------------------------------
-       MASTHEAD / HEADER
+       HEADER / MASTHEAD
        ------------------------------------------------------------- */
     .masthead {
       border-bottom: 1px solid var(--border-strong);
-      padding: 2.25rem 0 1.5rem 0;
-      margin-bottom: 1.75rem;
+      padding: 2.25rem 0 1.25rem 0;
+      margin-bottom: 2rem;
     }
 
-    .masthead-top {
+    .masthead-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 1.25rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
 
-    .brand-group {
-      flex: 1 1 340px;
+    .brand-block {
+      flex: 1 1 320px;
     }
 
     .brand-kicker {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent-primary);
+      color: var(--accent);
       margin-bottom: 0.35rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
     }
 
     .brand-title {
-      font-size: 2.15rem;
+      font-size: 2.1rem;
       font-weight: 700;
       letter-spacing: -0.025em;
       line-height: 1.15;
       color: var(--text-primary);
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.35rem;
     }
 
     .brand-desc {
       font-size: 0.95rem;
       color: var(--text-secondary);
-      max-width: 540px;
+      max-width: 520px;
       line-height: 1.45;
     }
 
-    .masthead-actions {
+    /* Masthead Controls */
+    .masthead-controls {
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -254,13 +231,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
       background-color: var(--bg-surface);
       color: var(--text-primary);
       border: 1px solid var(--border-subtle);
       border-radius: 6px;
-      padding: 0.45rem 0.85rem;
-      font-size: 0.84rem;
+      padding: 0.42rem 0.8rem;
+      font-size: 0.82rem;
       font-weight: 500;
       cursor: pointer;
       line-height: 1.2;
@@ -276,8 +253,8 @@
       transform: translateY(1px);
     }
     .btn svg {
-      width: 15px;
-      height: 15px;
+      width: 14px;
+      height: 14px;
       flex-shrink: 0;
     }
 
@@ -292,146 +269,136 @@
       color: #fca5a5;
     }
 
-    .btn-theme {
-      padding: 0.45rem 0.65rem;
-      min-width: 36px;
+    /* 3-Way Theme Segmented Control: System | Light | Dark */
+    .theme-segmented {
+      display: inline-flex;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2px;
+      gap: 2px;
     }
 
-    /* -------------------------------------------------------------
-       STATUS & METADATA BAR
-       ------------------------------------------------------------- */
-    .status-bar {
+    .theme-opt {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.3rem 0.55rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.15s ease;
+    }
+    .theme-opt:hover {
+      color: var(--text-primary);
+    }
+    .theme-opt.active {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      font-weight: 600;
+    }
+
+    /* Status Bar */
+    .masthead-status-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
       padding-top: 1rem;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       flex-wrap: wrap;
     }
 
-    .status-pill {
+    .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.25rem 0.65rem;
+      gap: 0.45rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 9999px;
       font-weight: 500;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       border: 1px solid transparent;
     }
-    .status-pill.fresh {
+    .status-badge.fresh {
       background-color: var(--status-fresh-bg);
       border-color: var(--status-fresh-border);
       color: var(--status-fresh-text);
     }
-    .status-pill.cached {
+    .status-badge.cached {
       background-color: var(--status-cached-bg);
       border-color: var(--status-cached-border);
       color: var(--status-cached-text);
     }
-    .status-pill.raw {
+    .status-badge.raw {
       background-color: var(--status-raw-bg);
       border-color: var(--status-raw-border);
       color: var(--status-raw-text);
     }
 
     .status-dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      flex-shrink: 0;
     }
-    .status-pill.fresh .status-dot { background-color: var(--status-fresh-dot); }
-    .status-pill.cached .status-dot { background-color: var(--status-cached-dot); }
-    .status-pill.raw .status-dot { background-color: var(--status-raw-dot); }
+    .status-badge.fresh .status-dot { background-color: var(--status-fresh-dot); }
+    .status-badge.cached .status-dot { background-color: var(--status-cached-dot); }
+    .status-badge.raw .status-dot { background-color: var(--status-raw-dot); }
 
-    .status-meta-info {
+    .status-meta-text {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-
-    .meta-divider {
-      display: inline-block;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background-color: var(--border-strong);
+      gap: 0.75rem;
     }
 
     /* -------------------------------------------------------------
-       SECTION COMMON STYLES
+       MAIN BRIEFING / THE BIG PICTURE (PROMINENT)
        ------------------------------------------------------------- */
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      color: var(--text-primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-bottom: 1.25rem;
-    }
-
-    /* -------------------------------------------------------------
-       THE BIG PICTURE / EXECUTIVE SUMMARY
-       ------------------------------------------------------------- */
-    .big-picture-card {
+    .lead-takeaway {
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-left: 4px solid var(--accent-primary);
+      border-left: 4px solid var(--accent);
       border-radius: 8px;
-      padding: 1.65rem 1.85rem;
+      padding: 1.6rem 1.8rem;
       margin-bottom: 2.25rem;
       box-shadow: var(--card-shadow);
-      position: relative;
     }
 
-    .big-picture-header {
+    .takeaway-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.65rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.85rem;
     }
 
-    .big-picture-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-primary);
-    }
-
-    .big-picture-text {
-      font-size: 1.18rem;
-      line-height: 1.65;
+    .takeaway-body {
+      font-size: 1.15rem;
+      line-height: 1.6;
       color: var(--text-primary);
-      max-width: 76ch;
+      max-width: 72ch;
       font-weight: 400;
     }
 
     /* -------------------------------------------------------------
        DISCOVERY / SEARCH & FILTER CONTROLS
        ------------------------------------------------------------- */
-    .discovery-panel {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
+    .discovery-bar {
       margin-bottom: 2rem;
-      box-shadow: var(--card-shadow);
     }
 
-    .search-wrapper {
+    .search-row {
       position: relative;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
     }
 
     .search-icon {
@@ -441,86 +408,85 @@
       transform: translateY(-50%);
       color: var(--text-muted);
       pointer-events: none;
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
     }
 
-    .search-input {
+    .search-field {
       width: 100%;
-      background-color: var(--bg-canvas);
+      background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 6px;
-      padding: 0.65rem 2.2rem 0.65rem 2.4rem;
-      font-size: 0.92rem;
+      padding: 0.6rem 2.2rem 0.6rem 2.3rem;
+      font-size: 0.9rem;
       color: var(--text-primary);
-      transition: border-color 0.15s ease, background-color 0.15s ease;
       font-family: inherit;
+      transition: border-color 0.15s ease;
     }
-    .search-input:focus {
-      border-color: var(--accent-primary);
-      background-color: var(--bg-surface);
+    .search-field:focus {
+      border-color: var(--accent);
     }
-    .search-input::placeholder {
+    .search-field::placeholder {
       color: var(--text-muted);
     }
 
-    .search-clear-btn {
+    .search-clear {
       position: absolute;
-      right: 0.75rem;
+      right: 0.65rem;
       top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
       color: var(--text-muted);
       cursor: pointer;
-      font-size: 1.1rem;
-      line-height: 1;
-      padding: 0.25rem;
+      font-size: 1.15rem;
+      padding: 0.2rem 0.4rem;
       display: none;
+      line-height: 1;
     }
-    .search-clear-btn:hover {
+    .search-clear:hover {
       color: var(--text-primary);
     }
 
-    .filter-group {
+    .filter-row {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       flex-wrap: wrap;
     }
 
-    .filter-label {
-      font-size: 0.8rem;
+    .filter-caption {
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-muted);
-      margin-right: 0.25rem;
+      margin-right: 0.2rem;
     }
 
-    .filter-btn {
-      background-color: var(--bg-canvas);
+    .filter-pill {
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
       border-radius: 9999px;
-      padding: 0.3rem 0.75rem;
-      font-size: 0.8rem;
+      padding: 0.28rem 0.7rem;
+      font-size: 0.78rem;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.15s ease;
     }
-    .filter-btn:hover {
-      background-color: var(--bg-hover);
+    .filter-pill:hover {
+      background: var(--bg-hover);
       color: var(--text-primary);
     }
-    .filter-btn.active {
-      background-color: var(--text-primary);
+    .filter-pill.active {
+      background: var(--text-primary);
       border-color: var(--text-primary);
-      color: var(--bg-canvas);
+      color: var(--bg-page);
       font-weight: 600;
     }
 
-    .search-feedback {
-      margin-top: 0.75rem;
-      font-size: 0.82rem;
+    .filter-status-line {
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       display: flex;
       align-items: center;
@@ -528,9 +494,35 @@
     }
 
     /* -------------------------------------------------------------
-       KEY DEVELOPMENTS / TRENDS
+       SECTION HEADINGS
        ------------------------------------------------------------- */
-    .trends-list {
+    .section-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* -------------------------------------------------------------
+       TREND CARDS (RESTRUCTURED READING ORDER)
+       1. Headline
+       2. Plain-English explanation (What happened)
+       3. Why it matters
+       4. Who is affected
+       5. Source and publication info
+       6. Expandable evidence
+       ------------------------------------------------------------- */
+    .trends-feed {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -541,183 +533,155 @@
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
-      padding: 1.65rem 1.85rem;
+      padding: 1.5rem 1.75rem;
       box-shadow: var(--card-shadow);
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: border-color 0.15s ease;
     }
     .trend-card:hover {
       border-color: var(--border-strong);
-      box-shadow: var(--card-shadow-hover);
     }
 
-    .trend-meta-header {
+    /* 1. Headline first */
+    .trend-headline {
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 0.85rem;
+    }
+
+    /* 2. What Happened */
+    .trend-narrative {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 0.9rem;
+    }
+
+    /* 3. Why It Matters */
+    .trend-impact {
+      background-color: var(--bg-subtle);
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 0.95rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+    .trend-impact-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+
+    /* 4. Who Is Affected */
+    .trend-affected {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    .trend-affected strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* 5. Source & Publication Metadata Line */
+    .trend-meta-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
-      margin-bottom: 0.75rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      color: var(--text-muted);
       flex-wrap: wrap;
     }
 
-    .trend-badges {
+    .trend-source-group {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.55rem;
+    .meta-tag {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
       border-radius: 4px;
       font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.02em;
-      border: 1px solid transparent;
-      line-height: 1.25;
-    }
-    .badge-lab {
-      background-color: var(--badge-lab-bg);
-      border-color: var(--badge-lab-border);
-      color: var(--badge-lab-text);
-    }
-    .badge-journal {
-      background-color: var(--badge-journal-bg);
-      border-color: var(--badge-journal-border);
-      color: var(--badge-journal-text);
-    }
-    .badge-research {
-      background-color: var(--badge-research-bg);
-      border-color: var(--badge-research-border);
-      color: var(--badge-research-text);
-    }
-
-    .badge-status {
-      background-color: var(--bg-subtle);
-      border-color: var(--border-subtle);
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    .trend-title {
-      font-size: 1.32rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      background-color: var(--badge-bg);
+      color: var(--badge-text);
+      border: 1px solid var(--badge-border);
       line-height: 1.3;
-      color: var(--text-primary);
-      margin-bottom: 1.1rem;
     }
 
-    .trend-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
+    /* 6. Expandable Evidence */
+    .evidence-accordion {
+      margin-top: 0.75rem;
+      width: 100%;
     }
 
-    .trend-field {
-      font-size: 0.96rem;
-      line-height: 1.55;
-    }
-
-    .field-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.25rem;
-      display: block;
-    }
-
-    .trend-field p {
-      color: var(--text-primary);
-    }
-
-    .trend-field.why {
-      background-color: var(--bg-subtle);
-      padding: 0.85rem 1rem;
-      border-radius: 6px;
-      border-left: 3px solid var(--accent-primary);
-    }
-    .trend-field.why p {
-      color: var(--text-secondary);
-      font-size: 0.94rem;
-    }
-
-    .trend-field.who {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-    }
-    .trend-field.who span {
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-
-    /* Evidence Provenance Accordion */
-    .evidence-details {
-      margin-top: 1rem;
-      padding-top: 0.85rem;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .evidence-summary {
+    .evidence-toggle {
       cursor: pointer;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--link);
       user-select: none;
       list-style: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.2rem 0;
-      border-radius: 4px;
+      gap: 0.35rem;
     }
-    .evidence-summary::-webkit-details-marker {
+    .evidence-toggle::-webkit-details-marker {
       display: none;
     }
-    .evidence-summary:hover {
+    .evidence-toggle:hover {
       color: var(--link-hover);
       text-decoration: underline;
     }
 
-    .evidence-list {
-      margin-top: 0.65rem;
+    .evidence-tray {
+      margin-top: 0.5rem;
+      padding-left: 0.25rem;
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
 
-    .evidence-item {
-      font-size: 0.82rem;
+    .evidence-row {
+      font-size: 0.8rem;
       display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 0.4rem;
     }
 
-    .evidence-link {
+    .evidence-url {
       color: var(--link);
       text-decoration: none;
       word-break: break-all;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
     }
-    .evidence-link:hover {
+    .evidence-url:hover {
       text-decoration: underline;
       color: var(--link-hover);
     }
 
     /* -------------------------------------------------------------
-       ORIGINAL STORIES FEED
+       ORIGINAL STORIES FEED (CLEAN & SCANNABLE)
        ------------------------------------------------------------- */
-    .stories-container {
+    .stories-section {
       margin-bottom: 4rem;
     }
 
-    .stories-feed {
+    .stories-list {
       list-style: none;
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
@@ -726,35 +690,35 @@
       box-shadow: var(--card-shadow);
     }
 
-    .story-item {
-      padding: 1.25rem 1.5rem;
+    .story-entry {
+      padding: 1.15rem 1.4rem;
       border-bottom: 1px solid var(--border-subtle);
       transition: background-color 0.15s ease;
     }
-    .story-item:last-child {
+    .story-entry:last-child {
       border-bottom: none;
     }
-    .story-item:hover {
+    .story-entry:hover {
       background-color: var(--bg-hover);
     }
 
-    .story-meta {
+    .story-line-top {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       font-size: 0.78rem;
       color: var(--text-muted);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
       flex-wrap: wrap;
     }
 
-    .story-source {
+    .story-source-name {
       font-weight: 600;
       color: var(--text-secondary);
     }
 
-    .story-title {
-      font-size: 1.05rem;
+    .story-headline {
+      font-size: 1.02rem;
       font-weight: 600;
       line-height: 1.35;
       margin-bottom: 0.35rem;
@@ -765,22 +729,22 @@
       text-decoration: none;
       display: inline-flex;
       align-items: baseline;
-      gap: 0.35rem;
+      gap: 0.3rem;
     }
     .story-link:hover {
       color: var(--link);
       text-decoration: underline;
     }
     .story-link svg {
-      width: 12px;
-      height: 12px;
+      width: 11px;
+      height: 11px;
       flex-shrink: 0;
       color: var(--text-muted);
       transform: translateY(1px);
     }
 
-    .story-summary {
-      font-size: 0.9rem;
+    .story-one-liner {
+      font-size: 0.88rem;
       color: var(--text-secondary);
       line-height: 1.5;
     }
@@ -788,25 +752,25 @@
     /* -------------------------------------------------------------
        EMPTY & ERROR STATES
        ------------------------------------------------------------- */
-    .state-box {
+    .notice-card {
       text-align: center;
-      padding: 3rem 1.5rem;
+      padding: 2.75rem 1.5rem;
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       margin: 1.5rem 0;
     }
-    .state-title {
-      font-size: 1.1rem;
+    .notice-title {
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
-    .state-desc {
-      font-size: 0.9rem;
+    .notice-desc {
+      font-size: 0.88rem;
       color: var(--text-muted);
       margin-bottom: 1rem;
-      max-width: 440px;
+      max-width: 420px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -817,13 +781,13 @@
     .site-footer {
       border-top: 1px solid var(--border-subtle);
       padding-top: 2rem;
-      margin-top: 3rem;
-      font-size: 0.84rem;
+      margin-top: 3.5rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    .footer-content {
+    .footer-grid {
       display: flex;
       justify-content: space-between;
       gap: 2rem;
@@ -831,11 +795,15 @@
     }
 
     .footer-col {
-      flex: 1 1 260px;
+      flex: 1 1 240px;
+    }
+
+    .footer-col-lead {
+      flex: 2 1 320px;
     }
 
     .footer-heading {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -843,71 +811,64 @@
       margin-bottom: 0.6rem;
     }
 
-    .footer-list {
+    .footer-links {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.3rem;
     }
 
-    .footer-list a {
+    .footer-links a {
       color: var(--text-muted);
       text-decoration: none;
     }
-    .footer-list a:hover {
+    .footer-links a:hover {
       color: var(--link);
       text-decoration: underline;
     }
 
-    .footer-bottom {
+    .footer-bottom-bar {
       margin-top: 2rem;
       padding-top: 1rem;
       border-top: 1px solid var(--border-subtle);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       text-align: center;
     }
 
     /* -------------------------------------------------------------
-       RESPONSIVE & ACCESSIBILITY ADJUSTMENTS
+       RESPONSIVE & ACCESSIBILITY
        ------------------------------------------------------------- */
     @media (max-width: 640px) {
       body {
         padding: 0 0.85rem 3rem 0.85rem;
       }
       .masthead {
-        padding: 1.5rem 0 1.25rem 0;
+        padding: 1.5rem 0 1rem 0;
       }
       .brand-title {
         font-size: 1.75rem;
       }
-      .big-picture-card {
+      .lead-takeaway {
         padding: 1.25rem;
       }
-      .big-picture-text {
+      .takeaway-body {
         font-size: 1.05rem;
       }
       .trend-card {
         padding: 1.25rem;
       }
-      .story-item {
+      .story-entry {
         padding: 1rem 1.1rem;
       }
-      .masthead-actions {
+      .masthead-controls {
         width: 100%;
         justify-content: flex-start;
-      }
-      .btn {
-        flex: 1 1 auto;
-      }
-      .btn-theme {
-        flex: 0 0 auto;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
@@ -916,132 +877,140 @@
 </head>
 <body>
   <!-- Accessible Skip Link -->
-  <a href="#main-content" class="skip-to-content">Skip to briefing content</a>
+  <a href="#main-briefing" class="skip-link">Skip to main briefing</a>
 
   <div class="container">
     <!-- Header / Masthead -->
     <header class="masthead">
-      <div class="masthead-top">
-        <div class="brand-group">
-          <div class="brand-kicker">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            Hourly Intelligence Cycle
-          </div>
+      <div class="masthead-row">
+        <div class="brand-block">
+          <div class="brand-kicker">Hourly Market Briefing</div>
           <h1 class="brand-title font-serif">AI Trend Pulse</h1>
-          <p class="brand-desc">Curated executive intelligence on frontier models, enterprise shifts, and verifiable developments.</p>
+          <p class="brand-desc">Curated executive intelligence on frontier models, enterprise shifts, and direct primary reporting.</p>
         </div>
 
-        <div class="masthead-actions" role="toolbar" aria-label="Briefing tools">
-          <button id="btn-audio" class="btn btn-audio" onclick="toggleAudioBriefing()" aria-label="Listen to 2-minute audio briefing">
+        <!-- Controls: Audio, Copy, and 3-way Theme (System | Light | Dark) -->
+        <div class="masthead-controls" role="toolbar" aria-label="Briefing controls">
+          <button id="btn-audio" class="btn btn-audio" onclick="toggleAudioBriefing()" aria-label="Listen to audio briefing">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
-            <span id="audio-label">Listen (2m)</span>
+            <span id="audio-caption">Listen (2m)</span>
           </button>
 
-          <button id="btn-copy" class="btn" onclick="copyBriefing()" aria-label="Copy full text briefing to clipboard">
+          <button id="btn-copy" class="btn" onclick="copyBriefing()" aria-label="Copy plain text briefing to clipboard">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <span id="copy-label">Copy Briefing</span>
+            <span id="copy-caption">Copy Briefing</span>
           </button>
 
-          <button id="btn-theme" class="btn btn-theme" onclick="toggleTheme()" aria-label="Toggle theme mode">
-            <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-          </button>
+          <!-- Segmented Theme Switcher -->
+          <div class="theme-segmented" role="radiogroup" aria-label="Theme selection">
+            <button class="theme-opt" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="false" title="System preference">
+              Auto
+            </button>
+            <button class="theme-opt" id="theme-btn-light" onclick="setThemePreference('light')" role="radio" aria-checked="false" title="Light theme">
+              Light
+            </button>
+            <button class="theme-opt" id="theme-btn-dark" onclick="setThemePreference('dark')" role="radio" aria-checked="false" title="Dark theme">
+              Dark
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Live Status & Sync Bar -->
-      <div class="status-bar">
-        <div class="status-pill fresh" id="status-badge" role="status">
+      <!-- Freshness & Status Metadata Line -->
+      <div class="masthead-status-bar">
+        <div class="status-badge fresh" id="status-badge" role="status">
           <span class="status-dot"></span>
-          <span id="status-text">Connecting to intelligence feed...</span>
+          <span id="status-text">Checking feed freshness...</span>
         </div>
-        <div class="status-meta-info">
-          <span>7 Verified Sources</span>
-          <span class="meta-divider" aria-hidden="true"></span>
+        <div class="status-meta-text">
+          <span>7 Monitored Sources</span>
+          <span>•</span>
           <span>~2 min read</span>
-          <span class="meta-divider" aria-hidden="true"></span>
-          <span>Google Gemini synthesis</span>
         </div>
       </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main id="main-content">
-      <!-- The Big Picture / Lead Takeaway -->
-      <section class="big-picture-card" aria-labelledby="big-picture-title">
-        <div class="big-picture-header">
-          <span class="big-picture-label" id="big-picture-title">The Big Picture</span>
-          <span style="font-size: 0.78rem; color: var(--text-muted);">Executive Briefing</span>
+    <!-- Main Content -->
+    <main id="main-briefing">
+      <!-- 1. The Big Picture / Main Takeaway (Prominent) -->
+      <section class="lead-takeaway" aria-labelledby="takeaway-heading">
+        <div class="takeaway-eyebrow">
+          <span id="takeaway-heading">The Big Picture</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">Executive Summary</span>
         </div>
-        <p id="takeaway-text" class="big-picture-text font-serif">Loading latest verified market synthesis...</p>
+        <p id="takeaway-text" class="takeaway-body font-serif">Loading latest industry intelligence...</p>
       </section>
 
-      <!-- Discovery & Categorization Bar -->
-      <section class="discovery-panel" aria-label="Filter intelligence feed">
-        <div class="search-wrapper">
+      <!-- 2. Discovery & Category Filter Bar -->
+      <section class="discovery-bar" aria-label="Search and filter feeds">
+        <div class="search-row">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <input type="text" id="search-input" class="search-input" placeholder="Search developments, companies, models, or topics (e.g. OpenAI, agents, safety)..." oninput="handleSearchInput(this.value)" aria-label="Search developments">
-          <button id="search-clear" class="search-clear-btn" onclick="clearSearch()" aria-label="Clear search input">&times;</button>
+          <input type="text" id="search-input" class="search-field" placeholder="Search developments, companies, models, or topics (e.g. OpenAI, agents, safety)..." oninput="handleSearch(this.value)" aria-label="Search developments">
+          <button id="search-clear" class="search-clear" onclick="clearSearch()" aria-label="Clear search input">&times;</button>
         </div>
 
-        <div class="filter-group" role="radiogroup" aria-label="Filter by source category">
-          <span class="filter-label">Filter:</span>
-          <button class="filter-btn active" role="radio" aria-checked="true" data-tier="all" onclick="setCategoryFilter('all', this)">All Feeds</button>
-          <button class="filter-btn" role="radio" aria-checked="false" data-tier="Official Lab" onclick="setCategoryFilter('Official Lab', this)">Primary Labs</button>
-          <button class="filter-btn" role="radio" aria-checked="false" data-tier="Independent Journalism" onclick="setCategoryFilter('Independent Journalism', this)">Verified Journalism</button>
-          <button class="filter-btn" role="radio" aria-checked="false" data-tier="Open Research" onclick="setCategoryFilter('Open Research', this)">Open Ecosystem</button>
+        <div class="filter-row" role="radiogroup" aria-label="Filter by source category">
+          <span class="filter-caption">Category:</span>
+          <button class="filter-pill active" role="radio" aria-checked="true" data-tier="all" onclick="setFilterCategory('all', this)">All Feeds</button>
+          <button class="filter-pill" role="radio" aria-checked="false" data-tier="Official Lab" onclick="setFilterCategory('Official Lab', this)">Official Labs</button>
+          <button class="filter-pill" role="radio" aria-checked="false" data-tier="Independent Journalism" onclick="setFilterCategory('Independent Journalism', this)">Independent Reporting</button>
+          <button class="filter-pill" role="radio" aria-checked="false" data-tier="Open Research" onclick="setFilterCategory('Open Research', this)">Research &amp; Open Source</button>
         </div>
 
-        <div id="search-feedback" class="search-feedback" style="display: none;">
-          <span id="results-count">Showing matching items</span>
-          <button class="btn" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;" onclick="resetAllFilters()">Reset All Filters</button>
+        <div id="filter-feedback" class="filter-status-line" style="display: none;">
+          <span id="filter-count">Showing matching items</span>
+          <button class="btn" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;" onclick="resetAllFilters()">Reset Filters</button>
         </div>
       </section>
 
-      <!-- Key Developments / Trends Section -->
+      <!-- 3. Key Developments (Refined Reading Order) -->
       <section aria-labelledby="trends-heading">
-        <h2 id="trends-heading" class="section-title">Key Developments</h2>
-        <p class="section-subtitle">Macro movements synthesized across multi-source announcements and technical reporting.</p>
-        
-        <div id="trends-container" class="trends-list">
-          <div class="state-box">
-            <p class="state-title">Loading developments...</p>
-            <p class="state-desc">Connecting to verified data pipeline.</p>
+        <div class="section-header">
+          <h2 id="trends-heading" class="section-title">Key Developments</h2>
+          <p class="section-desc">Synthesized macro movements across primary announcements and technical reporting.</p>
+        </div>
+
+        <div id="trends-container" class="trends-feed">
+          <div class="notice-card">
+            <p class="notice-title">Loading developments...</p>
+            <p class="notice-desc">Retrieving latest dispatches from pipeline.</p>
           </div>
         </div>
       </section>
 
-      <!-- Original Stories Feed Section -->
-      <section class="stories-container" aria-labelledby="stories-heading">
-        <h2 id="stories-heading" class="section-title">Source Feed & Original Dispatches</h2>
-        <p class="section-subtitle">Direct, unedited primary releases and reporting from indexed publications.</p>
-        
-        <ul id="stories-container" class="stories-feed" role="list">
-          <li class="story-item">
-            <p class="story-summary">Loading indexed stories...</p>
+      <!-- 4. Original Stories Feed -->
+      <section class="stories-section" aria-labelledby="stories-heading">
+        <div class="section-header">
+          <h2 id="stories-heading" class="section-title">Source Feed &amp; Direct Dispatches</h2>
+          <p class="section-desc">Direct original releases and articles from indexed laboratory feeds and tech publications.</p>
+        </div>
+
+        <ul id="stories-container" class="stories-list" role="list">
+          <li class="story-entry">
+            <p class="story-one-liner">Loading dispatches feed...</p>
           </li>
         </ul>
       </section>
     </main>
 
-    <!-- Site Footer -->
+    <!-- Footer -->
     <footer class="site-footer">
-      <div class="footer-content">
-        <div class="footer-col" style="flex: 2 1 320px;">
-          <div class="footer-heading">Editorial Integrity & Architecture</div>
-          <p style="margin-bottom: 0.75rem;">
-            AI Trend Pulse aggregates primary dispatches hourly from indexed laboratory feeds and tech journalism desks.
-            Synthesis is structured via Google Gemini to highlight what happened, why it matters, and affected audiences, with strict provenance linking back to original URLs.
+      <div class="footer-grid">
+        <div class="footer-col-lead">
+          <div class="footer-heading">Methodology &amp; Freshness</div>
+          <p style="margin-bottom: 0.65rem;">
+            AI Trend Pulse monitors public RSS feeds from leading research laboratories and independent tech journalism desks hourly.
+            Key developments are structured to highlight what happened, practical implications, and affected audiences, with direct links to original sources.
           </p>
           <p>
-            Zero sponsored bias. Every claim indicates whether it originates as an official lab release or independent report.
+            No sponsored placement. Labels clearly distinguish between official laboratory claims and independent reporting.
           </p>
         </div>
 
         <div class="footer-col">
-          <div class="footer-heading">Monitored Sources</div>
-          <ul class="footer-list">
-            <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research & News ↗</a></li>
+          <div class="footer-heading">Indexed Feeds</div>
+          <ul class="footer-links">
+            <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research &amp; News ↗</a></li>
             <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind Blog ↗</a></li>
             <li><a href="https://www.technologyreview.com/" target="_blank" rel="noopener noreferrer">MIT Technology Review ↗</a></li>
             <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
@@ -1052,8 +1021,8 @@
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <span>AI Trend Pulse • Static edge deployment with automated GitHub Actions pipeline</span>
+      <div class="footer-bottom-bar">
+        <span>AI Trend Pulse • Static deployment with automated hourly updates</span>
       </div>
     </footer>
   </div>
@@ -1062,283 +1031,278 @@
   <script>
     'use strict';
 
-    // Application state
     let briefingData = null;
-    let currentFilter = 'all';
-    let searchQuery = '';
+    let selectedCategory = 'all';
+    let searchFilterQuery = '';
     let isSpeaking = false;
     let currentUtterance = null;
 
-    // Safe DOM creator helper (prevents XSS completely)
-    function el(tag, attributes, ...children) {
-      const element = document.createElement(tag);
-      if (attributes) {
-        for (const [key, val] of Object.entries(attributes)) {
+    // Safe DOM creator (guarantees zero unsafe HTML injection)
+    function dom(tag, attrs, ...children) {
+      const node = document.createElement(tag);
+      if (attrs) {
+        for (const [key, val] of Object.entries(attrs)) {
           if (key === 'className') {
-            element.className = val;
-          } else if (key === 'dataset') {
-            for (const [dKey, dVal] of Object.entries(val)) {
-              element.dataset[dKey] = dVal;
-            }
+            node.className = val;
           } else if (key.startsWith('on') && typeof val === 'function') {
-            element.addEventListener(key.substring(2).toLowerCase(), val);
+            node.addEventListener(key.substring(2).toLowerCase(), val);
           } else if (val !== false && val !== null && val !== undefined) {
-            element.setAttribute(key, val);
+            node.setAttribute(key, val);
           }
         }
       }
       for (const child of children) {
         if (child === null || child === undefined) continue;
         if (typeof child === 'string' || typeof child === 'number') {
-          element.appendChild(document.createTextNode(String(child)));
+          node.appendChild(document.createTextNode(String(child)));
         } else if (child instanceof Node) {
-          element.appendChild(child);
+          node.appendChild(child);
         }
       }
-      return element;
+      return node;
     }
 
-    // Safe Link creator ensuring strictly valid http/https URLs
-    function safeLink(href, text, className) {
-      const a = document.createElement('a');
-      const valid = href && (typeof href === 'string') && (href.startsWith('https://') || href.startsWith('http://'));
-      a.href = valid ? href : '#';
-      a.textContent = text || 'Source';
-      if (className) a.className = className;
-      if (valid) {
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
+    // Safe URL validator for external links
+    function makeSafeLink(href, label, className) {
+      const link = document.createElement('a');
+      const isValid = href && (typeof href === 'string') && (href.startsWith('https://') || href.startsWith('http://'));
+      link.href = isValid ? href : '#';
+      link.textContent = label || 'Source';
+      if (className) link.className = className;
+      if (isValid) {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
       }
-      return a;
+      return link;
     }
 
-    // Clean domain extractor for evidence links
-    function getDomainFromUrl(url) {
+    function extractDomain(url) {
       try {
-        const parsed = new URL(url);
-        return parsed.hostname.replace(/^www\./, '');
+        return new URL(url).hostname.replace(/^www\./, '');
       } catch (e) {
-        return 'source link';
+        return 'source';
       }
     }
 
-    // Format ISO Timestamp reliably into UTC & relative time
-    function formatBriefingTimestamp(isoString) {
-      if (!isoString) return 'Timestamp unavailable';
-      const date = new Date(isoString);
-      if (isNaN(date.getTime())) return 'Timestamp unavailable';
-      
+    // Format timestamp reliably without substituting browser current time
+    function formatTimestamp(isoDate) {
+      if (!isoDate) return 'Timestamp unavailable';
+      const parsed = new Date(isoDate);
+      if (isNaN(parsed.getTime())) return 'Timestamp unavailable';
+
       const now = new Date();
-      const diffMs = now.getTime() - date.getTime();
-      const diffMins = Math.floor(diffMs / 60000);
+      const diffMins = Math.floor((now.getTime() - parsed.getTime()) / 60000);
       const diffHours = Math.floor(diffMins / 60);
 
-      const timePart = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
+      const utcTime = parsed.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
 
       if (diffHours < 1) {
-        return (diffMins <= 1 ? 'Just now' : diffMins + 'm ago') + ' (' + timePart + ')';
+        return (diffMins <= 1 ? 'Just now' : diffMins + 'm ago') + ' (' + utcTime + ')';
       } else if (diffHours < 24) {
-        return diffHours + 'h ago (' + timePart + ')';
+        return diffHours + 'h ago (' + utcTime + ')';
       } else {
-        return date.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' (' + timePart + ')';
+        return parsed.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' (' + utcTime + ')';
       }
     }
 
-    // Theme toggler & system sync
-    function initTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      updateThemeIcons(currentTheme);
+    /* -------------------------------------------------------------
+       THEME SYSTEM: LIGHT, DARK & SYSTEM PREFERENCE
+       ------------------------------------------------------------- */
+    function initThemeSystem() {
+      const pref = localStorage.getItem('ai_trend_theme_preference') || 'system';
+      applyThemePreference(pref, false);
+
+      // Listen for OS scheme changes when set to system
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          const currentPref = localStorage.getItem('ai_trend_theme_preference') || 'system';
+          if (currentPref === 'system') {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+          }
+        });
+      }
     }
 
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
+    function setThemePreference(pref) {
       try {
-        localStorage.setItem('ai_trend_theme', next);
+        localStorage.setItem('ai_trend_theme_preference', pref);
       } catch (e) {}
-      updateThemeIcons(next);
+      applyThemePreference(pref, true);
     }
 
-    function updateThemeIcons(theme) {
-      const sun = document.getElementById('theme-icon-sun');
-      const moon = document.getElementById('theme-icon-moon');
-      const btn = document.getElementById('btn-theme');
-      if (theme === 'dark') {
-        sun.style.display = 'block';
-        moon.style.display = 'none';
-        btn.setAttribute('aria-label', 'Switch to light theme');
+    function applyThemePreference(pref, triggerAnnounce) {
+      document.documentElement.setAttribute('data-theme-preference', pref);
+
+      let effectiveTheme = 'light';
+      if (pref === 'dark') {
+        effectiveTheme = 'dark';
+      } else if (pref === 'light') {
+        effectiveTheme = 'light';
       } else {
-        sun.style.display = 'none';
-        moon.style.display = 'block';
-        btn.setAttribute('aria-label', 'Switch to dark theme');
+        // System preference
+        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        effectiveTheme = systemDark ? 'dark' : 'light';
       }
+
+      document.documentElement.setAttribute('data-theme', effectiveTheme);
+
+      // Update segmented controls active state
+      ['system', 'light', 'dark'].forEach((opt) => {
+        const btn = document.getElementById('theme-btn-' + opt);
+        if (btn) {
+          const isActive = (pref === opt);
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+        }
+      });
     }
 
-    // Fetch and bootstrap data
-    async function loadBriefing() {
-      const statusBadge = document.getElementById('status-badge');
-      const statusText = document.getElementById('status-text');
+    /* -------------------------------------------------------------
+       DATA INGESTION & PIPELINE BOOTSTRAP
+       ------------------------------------------------------------- */
+    async function loadBriefingData() {
+      const badge = document.getElementById('status-badge');
+      const text = document.getElementById('status-text');
 
       try {
-        const response = await fetch('data.json?t=' + Date.now());
-        if (!response.ok) {
-          throw new Error('HTTP ' + response.status);
-        }
-        const data = await response.json();
+        const res = await fetch('data.json?t=' + Date.now());
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
         briefingData = data;
-        renderPage(data);
+        populateBriefing(data);
       } catch (err) {
-        console.error('Failed to load briefing data:', err);
-        statusBadge.className = 'status-pill raw';
-        statusText.textContent = 'Briefing updating • Displaying cached dispatches';
-        
-        document.getElementById('takeaway-text').textContent = 
-          'Hourly intelligence pipeline is currently synchronizing with upstream sources. Please check back in a few moments.';
-        
-        const trendsContainer = document.getElementById('trends-container');
-        trendsContainer.innerHTML = '';
-        trendsContainer.appendChild(
-          el('div', { className: 'state-box' },
-            el('p', { className: 'state-title' }, 'Briefing Updating'),
-            el('p', { className: 'state-desc' }, 'The intelligence pipeline is fetching and verifying the latest news feeds. Please refresh the page in a moment.')
+        console.error('Briefing data load failure:', err);
+        badge.className = 'status-badge raw';
+        text.textContent = 'Briefing updating • Displaying cached dispatches';
+
+        document.getElementById('takeaway-text').textContent =
+          'Hourly intelligence pipeline is synchronizing with upstream sources. Please refresh in a moment.';
+
+        const container = document.getElementById('trends-container');
+        container.innerHTML = '';
+        container.appendChild(
+          dom('div', { className: 'notice-card' },
+            dom('p', { className: 'notice-title' }, 'Briefing Updating'),
+            dom('p', { className: 'notice-desc' }, 'The intelligence pipeline is fetching and structuring the latest news feeds. Please refresh in a moment.')
           )
         );
       }
     }
 
-    // Main render pipeline
-    function renderPage(data) {
-      const statusBadge = document.getElementById('status-badge');
-      const statusText = document.getElementById('status-text');
-      const takeawayEl = document.getElementById('takeaway-text');
+    function populateBriefing(data) {
+      const badge = document.getElementById('status-badge');
+      const text = document.getElementById('status-text');
+      const takeaway = document.getElementById('takeaway-text');
 
-      // 1. Status Area & Freshness
-      const timestampText = formatBriefingTimestamp(data.generated_at || data.last_updated);
+      // Accurate, non-misleading freshness status
+      const timestamp = formatTimestamp(data.generated_at || data.last_updated);
       const isCached = data.data_status === 'cached_fallback';
       const isRaw = data.data_status === 'raw_headlines';
 
       if (isCached) {
-        statusBadge.className = 'status-pill cached';
-        statusText.textContent = 'Cached Briefing • ' + timestampText;
+        badge.className = 'status-badge cached';
+        text.textContent = 'Cached Briefing • ' + timestamp;
       } else if (isRaw) {
-        statusBadge.className = 'status-pill raw';
-        statusText.textContent = 'Raw Dispatches • ' + timestampText;
+        badge.className = 'status-badge raw';
+        text.textContent = 'Headline Feed • ' + timestamp;
       } else {
-        statusBadge.className = 'status-pill fresh';
-        statusText.textContent = 'Verified Briefing • ' + timestampText;
+        badge.className = 'status-badge fresh';
+        text.textContent = 'Fresh Briefing • ' + timestamp;
       }
 
-      // 2. Executive Takeaway
-      takeawayEl.textContent = data.takeaway || 'Macro intelligence synthesis currently processing.';
+      // Executive Takeaway
+      takeaway.textContent = data.takeaway || 'Macro intelligence summary currently processing.';
 
-      // 3. Trends & Stories
-      applyFiltersAndRender();
+      // Render Trends & Stories
+      renderFilteredContent();
     }
 
-    // Render Key Trends
-    function renderTrends(trends) {
+    /* -------------------------------------------------------------
+       RENDER KEY DEVELOPMENTS (ORDER: HEADLINE, WHAT, WHY, WHO, SOURCE, EVIDENCE)
+       ------------------------------------------------------------- */
+    function renderTrendsFeed(trends) {
       const container = document.getElementById('trends-container');
       container.innerHTML = '';
 
       if (!trends || trends.length === 0) {
         container.appendChild(
-          el('div', { className: 'state-box' },
-            el('p', { className: 'state-title' }, 'No developments match your search'),
-            el('p', { className: 'state-desc' }, 'Try adjusting keywords or selecting "All Feeds" to explore full coverage.'),
-            el('button', { className: 'btn', onclick: resetAllFilters }, 'Clear Filters & Search')
+          dom('div', { className: 'notice-card' },
+            dom('p', { className: 'notice-title' }, 'No developments match your search'),
+            dom('p', { className: 'notice-desc' }, 'Try adjusting keywords or selecting "All Feeds" to explore full coverage.'),
+            dom('button', { className: 'btn', onclick: resetAllFilters }, 'Clear Filters & Search')
           )
         );
         return;
       }
 
       trends.forEach((t) => {
-        const card = el('article', { className: 'trend-card' });
+        const card = dom('article', { className: 'trend-card' });
 
-        // Meta Header (Badges & Source)
-        const isLab = (t.tier === 'Official Lab' || t.status === 'official_claim');
-        const isJournalism = (t.tier === 'Independent Journalism');
-        const badgeClass = isLab ? 'badge-lab' : (isJournalism ? 'badge-journal' : 'badge-research');
-        const tierName = t.tier || (isLab ? 'Official Lab' : 'Independent Source');
+        // 1. Headline first
+        const headline = dom('h3', { className: 'trend-headline' }, t.title || 'Untitled Development');
+        card.appendChild(headline);
 
-        const statusLabel = (t.status === 'official_claim') 
-          ? 'Official Lab Announcement' 
-          : 'Source-Linked Reporting';
-
-        const metaHeader = el('div', { className: 'trend-meta-header' },
-          el('div', { className: 'trend-badges' },
-            el('span', { className: 'badge ' + badgeClass }, tierName),
-            el('span', { className: 'badge badge-status' }, statusLabel)
-          ),
-          el('span', { style: 'font-size: 0.8rem; color: var(--text-muted); font-weight: 500;' }, t.source || 'Verified Source')
-        );
-        card.appendChild(metaHeader);
-
-        // Title
-        const title = el('h3', { className: 'trend-title' }, t.title || 'Untitled Development');
-        card.appendChild(title);
-
-        // Structured Grid
-        const grid = el('div', { className: 'trend-grid' });
-
-        // What Happened
+        // 2. Short plain-English explanation (What happened)
         if (t.what_happened) {
-          grid.appendChild(
-            el('div', { className: 'trend-field' },
-              el('span', { className: 'field-label' }, 'What Happened'),
-              el('p', {}, t.what_happened)
-            )
-          );
+          card.appendChild(dom('p', { className: 'trend-narrative' }, t.what_happened));
         }
 
-        // Why It Matters
+        // 3. Why it matters
         if (t.why_it_matters) {
-          grid.appendChild(
-            el('div', { className: 'trend-field why' },
-              el('span', { className: 'field-label', style: 'color: var(--accent-primary);' }, 'Why It Matters'),
-              el('p', {}, t.why_it_matters)
-            )
-          );
+          const impact = dom('div', { className: 'trend-impact' });
+          impact.appendChild(dom('span', { className: 'trend-impact-label' }, 'Why It Matters'));
+          impact.appendChild(dom('p', {}, t.why_it_matters));
+          card.appendChild(impact);
         }
 
-        // Who Is Affected
+        // 4. Who is affected
         if (t.who_affected) {
-          grid.appendChild(
-            el('div', { className: 'trend-field who' },
-              el('span', { className: 'field-label' }, 'Affected Audience'),
-              el('span', {}, t.who_affected)
-            )
-          );
+          const affected = dom('div', { className: 'trend-affected' });
+          affected.appendChild(document.createTextNode('Affected audience: '));
+          affected.appendChild(dom('strong', {}, t.who_affected));
+          card.appendChild(affected);
         }
 
-        card.appendChild(grid);
+        // 5. Source and Publication metadata line
+        const metaFooter = dom('div', { className: 'trend-meta-footer' });
+        const sourceGroup = dom('div', { className: 'trend-source-group' });
 
-        // Evidence Links (Progressive Disclosure)
+        const isLab = (t.tier === 'Official Lab' || t.status === 'official_claim');
+        const statusText = (t.status === 'official_claim') ? 'Official announcement' : 'Independent reporting';
+
+        sourceGroup.appendChild(dom('span', { className: 'meta-tag' }, t.tier || 'Verified Source'));
+        sourceGroup.appendChild(dom('span', { className: 'meta-tag', style: 'background: var(--bg-subtle);' }, statusText));
+
+        metaFooter.appendChild(sourceGroup);
+        metaFooter.appendChild(dom('span', {}, t.source || 'Publisher'));
+        card.appendChild(metaFooter);
+
+        // 6. Expandable evidence or supporting details
         if (t.evidence_urls && Array.isArray(t.evidence_urls) && t.evidence_urls.length > 0) {
           const validUrls = t.evidence_urls.filter(u => typeof u === 'string' && (u.startsWith('http://') || u.startsWith('https://')));
           if (validUrls.length > 0) {
-            const details = el('details', { className: 'evidence-details' });
-            const summary = el('summary', { className: 'evidence-summary' },
-              el('svg', { width: '13', height: '13', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
-                el('path', { d: 'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' }),
-                el('path', { d: 'M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' })
+            const accordion = dom('details', { className: 'evidence-accordion' });
+            const summary = dom('summary', { className: 'evidence-toggle' },
+              dom('svg', { width: '12', height: '12', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+                dom('path', { d: 'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' }),
+                dom('path', { d: 'M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' })
               ),
-              'Supporting Evidence (' + validUrls.length + ' source' + (validUrls.length > 1 ? 's' : '') + ')'
+              'Supporting source links (' + validUrls.length + ')'
             );
-            details.appendChild(summary);
+            accordion.appendChild(summary);
 
-            const evList = el('ul', { className: 'evidence-list' });
+            const tray = dom('ul', { className: 'evidence-tray' });
             validUrls.forEach((url, i) => {
-              const domain = getDomainFromUrl(url);
-              evList.appendChild(
-                el('li', { className: 'evidence-item' },
-                  el('span', { style: 'color: var(--text-muted); font-size: 0.75rem;' }, (i + 1) + '.'),
-                  safeLink(url, domain + ' ↗', 'evidence-link')
+              const domain = extractDomain(url);
+              tray.appendChild(
+                dom('li', { className: 'evidence-row' },
+                  dom('span', { style: 'color: var(--text-muted); font-size: 0.75rem;' }, (i + 1) + '.'),
+                  makeSafeLink(url, domain + ' ↗', 'evidence-url')
                 )
               );
             });
-            details.appendChild(evList);
-            card.appendChild(details);
+            accordion.appendChild(tray);
+            card.appendChild(accordion);
           }
         }
 
@@ -1346,14 +1310,16 @@
       });
     }
 
-    // Render Original Stories Feed
-    function renderStories(stories) {
+    /* -------------------------------------------------------------
+       RENDER SOURCE STORIES FEED
+       ------------------------------------------------------------- */
+    function renderStoriesFeed(stories) {
       const container = document.getElementById('stories-container');
       container.innerHTML = '';
 
       if (!stories || stories.length === 0) {
         container.appendChild(
-          el('li', { className: 'story-item', style: 'text-align: center; color: var(--text-muted);' },
+          dom('li', { className: 'story-entry', style: 'text-align: center; color: var(--text-muted);' },
             'No dispatches matching current criteria.'
           )
         );
@@ -1361,65 +1327,70 @@
       }
 
       stories.forEach((s) => {
-        const item = el('li', { className: 'story-item' });
+        const item = dom('li', { className: 'story-entry' });
 
-        // Meta (Source & Published Date)
-        const meta = el('div', { className: 'story-meta' });
-        meta.appendChild(el('span', { className: 'story-source' }, s.source || 'Primary Source'));
+        // Meta line: Publisher • Published
+        const metaLine = dom('div', { className: 'story-line-top' });
+        metaLine.appendChild(dom('span', { className: 'story-source-name' }, s.source || 'Primary Source'));
         if (s.tier) {
-          meta.appendChild(el('span', { className: 'meta-divider' }));
-          meta.appendChild(el('span', {}, s.tier));
+          metaLine.appendChild(dom('span', {}, '•'));
+          metaLine.appendChild(dom('span', {}, s.tier));
         }
         if (s.published) {
-          meta.appendChild(el('span', { className: 'meta-divider' }));
-          meta.appendChild(el('span', {}, s.published));
+          metaLine.appendChild(dom('span', {}, '•'));
+          metaLine.appendChild(dom('span', {}, s.published));
         }
-        item.appendChild(meta);
+        item.appendChild(metaLine);
 
-        // Title with safe external link
-        const titleEl = el('h3', { className: 'story-title' });
-        const link = safeLink(s.link, s.title || 'Untitled Dispatch', 'story-link');
-        const extIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        extIcon.setAttribute('viewBox', '0 0 24 24');
-        extIcon.setAttribute('fill', 'none');
-        extIcon.setAttribute('stroke', 'currentColor');
-        extIcon.setAttribute('stroke-width', '2');
-        extIcon.setAttribute('stroke-linecap', 'round');
-        extIcon.setAttribute('stroke-linejoin', 'round');
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6');
-        const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
-        poly.setAttribute('points', '15 3 21 3 21 9');
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', '10'); line.setAttribute('y1', '14');
-        line.setAttribute('x2', '21'); line.setAttribute('y2', '3');
-        extIcon.appendChild(path); extIcon.appendChild(poly); extIcon.appendChild(line);
-        link.appendChild(extIcon);
-        titleEl.appendChild(link);
-        item.appendChild(titleEl);
+        // Headline with safe outbound link
+        const headlineEl = dom('h3', { className: 'story-headline' });
+        const link = makeSafeLink(s.link, s.title || 'Untitled Dispatch', 'story-link');
+
+        // External link icon
+        const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        icon.setAttribute('viewBox', '0 0 24 24');
+        icon.setAttribute('fill', 'none');
+        icon.setAttribute('stroke', 'currentColor');
+        icon.setAttribute('stroke-width', '2');
+        icon.setAttribute('stroke-linecap', 'round');
+        icon.setAttribute('stroke-linejoin', 'round');
+        const p1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        p1.setAttribute('d', 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6');
+        const p2 = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        p2.setAttribute('points', '15 3 21 3 21 9');
+        const p3 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        p3.setAttribute('x1', '10'); p3.setAttribute('y1', '14');
+        p3.setAttribute('x2', '21'); p3.setAttribute('y2', '3');
+        icon.appendChild(p1); icon.appendChild(p2); icon.appendChild(p3);
+
+        link.appendChild(icon);
+        headlineEl.appendChild(link);
+        item.appendChild(headlineEl);
 
         // One-liner summary
         if (s.one_liner) {
-          item.appendChild(el('p', { className: 'story-summary' }, s.one_liner));
+          item.appendChild(dom('p', { className: 'story-one-liner' }, s.one_liner));
         }
 
         container.appendChild(item);
       });
     }
 
-    // Unified Search & Filter Execution
-    function applyFiltersAndRender() {
+    /* -------------------------------------------------------------
+       SEARCH & FILTER EXECUTION
+       ------------------------------------------------------------- */
+    function renderFilteredContent() {
       if (!briefingData) return;
 
-      const q = searchQuery.toLowerCase().trim();
+      const q = searchFilterQuery.toLowerCase().trim();
       const allTrends = briefingData.trends || [];
       const allStories = briefingData.top_stories || [];
 
       // Filter Trends
       const filteredTrends = allTrends.filter((t) => {
-        const matchesCategory = (currentFilter === 'all') || 
-          (t.tier && t.tier.toLowerCase().includes(currentFilter.toLowerCase())) ||
-          (currentFilter === 'Official Lab' && (t.status === 'official_claim' || (t.source && t.source.toLowerCase().includes('openai'))));
+        const matchesCategory = (selectedCategory === 'all') ||
+          (t.tier && t.tier.toLowerCase().includes(selectedCategory.toLowerCase())) ||
+          (selectedCategory === 'Official Lab' && (t.status === 'official_claim' || (t.source && t.source.toLowerCase().includes('openai'))));
 
         const searchable = [
           t.title,
@@ -1429,15 +1400,15 @@
           t.source
         ].filter(Boolean).join(' ').toLowerCase();
 
-        const matchesSearch = !q || searchable.includes(q);
+        const matchesQuery = !q || searchable.includes(q);
 
-        return matchesCategory && matchesSearch;
+        return matchesCategory && matchesQuery;
       });
 
       // Filter Stories
       const filteredStories = allStories.filter((s) => {
-        const matchesCategory = (currentFilter === 'all') ||
-          (s.tier && s.tier.toLowerCase().includes(currentFilter.toLowerCase()));
+        const matchesCategory = (selectedCategory === 'all') ||
+          (s.tier && s.tier.toLowerCase().includes(selectedCategory.toLowerCase()));
 
         const searchable = [
           s.title,
@@ -1446,70 +1417,70 @@
           s.tier
         ].filter(Boolean).join(' ').toLowerCase();
 
-        const matchesSearch = !q || searchable.includes(q);
+        const matchesQuery = !q || searchable.includes(q);
 
-        return matchesCategory && matchesSearch;
+        return matchesCategory && matchesQuery;
       });
 
-      // Update feedback bar
-      const feedback = document.getElementById('search-feedback');
-      const countEl = document.getElementById('results-count');
-      const isFiltered = (currentFilter !== 'all') || q.length > 0;
+      // Feedback count bar
+      const feedback = document.getElementById('filter-feedback');
+      const countEl = document.getElementById('filter-count');
+      const isFiltered = (selectedCategory !== 'all') || q.length > 0;
 
       if (isFiltered) {
         feedback.style.display = 'flex';
-        countEl.textContent = 'Showing ' + filteredTrends.length + ' development' + (filteredTrends.length === 1 ? '' : 's') + 
-          ' and ' + filteredStories.length + ' source dispatch' + (filteredStories.length === 1 ? '' : 'es');
+        countEl.textContent = 'Showing ' + filteredTrends.length + ' development' + (filteredTrends.length === 1 ? '' : 's') +
+          ' and ' + filteredStories.length + ' dispatch' + (filteredStories.length === 1 ? '' : 'es');
       } else {
         feedback.style.display = 'none';
       }
 
-      renderTrends(filteredTrends);
-      renderStories(filteredStories);
+      renderTrendsFeed(filteredTrends);
+      renderStoriesFeed(filteredStories);
     }
 
-    // Category Filter Handler
-    function setCategoryFilter(tier, buttonEl) {
-      currentFilter = tier;
-      document.querySelectorAll('.filter-btn').forEach((btn) => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-checked', 'false');
+    function setFilterCategory(tier, btnEl) {
+      selectedCategory = tier;
+      document.querySelectorAll('.filter-pill').forEach((pill) => {
+        pill.classList.remove('active');
+        pill.setAttribute('aria-checked', 'false');
       });
-      if (buttonEl) {
-        buttonEl.classList.add('active');
-        buttonEl.setAttribute('aria-checked', 'true');
+      if (btnEl) {
+        btnEl.classList.add('active');
+        btnEl.setAttribute('aria-checked', 'true');
       }
-      applyFiltersAndRender();
+      renderFilteredContent();
     }
 
-    // Search Input Handlers
-    function handleSearchInput(val) {
-      searchQuery = val;
+    function handleSearch(val) {
+      searchFilterQuery = val;
       const clearBtn = document.getElementById('search-clear');
       clearBtn.style.display = val.length > 0 ? 'block' : 'none';
-      applyFiltersAndRender();
+      renderFilteredContent();
     }
 
     function clearSearch() {
       const input = document.getElementById('search-input');
       input.value = '';
-      searchQuery = '';
+      searchFilterQuery = '';
       document.getElementById('search-clear').style.display = 'none';
       input.focus();
-      applyFiltersAndRender();
+      renderFilteredContent();
     }
 
     function resetAllFilters() {
       document.getElementById('search-input').value = '';
-      searchQuery = '';
+      searchFilterQuery = '';
       document.getElementById('search-clear').style.display = 'none';
-      setCategoryFilter('all', document.querySelector('.filter-btn[data-tier="all"]'));
+      setFilterCategory('all', document.querySelector('.filter-pill[data-tier="all"]'));
     }
 
-    // Audio Briefing using Web SpeechSynthesis API
+    /* -------------------------------------------------------------
+       AUDIO BRIEFING (SPEECH SYNTHESIS)
+       ------------------------------------------------------------- */
     function toggleAudioBriefing() {
       const btn = document.getElementById('btn-audio');
-      const label = document.getElementById('audio-label');
+      const caption = document.getElementById('audio-caption');
 
       if (!('speechSynthesis' in window)) {
         alert('Text-to-speech is not supported by your browser.');
@@ -1520,29 +1491,29 @@
         window.speechSynthesis.cancel();
         isSpeaking = false;
         btn.classList.remove('active');
-        label.textContent = 'Listen (2m)';
+        caption.textContent = 'Listen (2m)';
         return;
       }
 
       if (!briefingData) return;
       window.speechSynthesis.cancel();
 
-      let speechText = 'AI Trend Pulse Briefing. ';
+      let text = 'AI Trend Pulse Briefing. ';
       if (briefingData.takeaway) {
-        speechText += 'The Big Picture: ' + briefingData.takeaway + ' ';
+        text += 'The Big Picture: ' + briefingData.takeaway + ' ';
       }
 
       const trends = briefingData.trends || [];
       if (trends.length > 0) {
-        speechText += 'Here are the top key developments: ';
+        text += 'Top Key Developments: ';
         trends.forEach((t, i) => {
-          speechText += 'Development ' + (i + 1) + ': ' + (t.title || '') + '. ';
-          if (t.what_happened) speechText += t.what_happened + ' ';
-          if (t.why_it_matters) speechText += 'Why it matters: ' + t.why_it_matters + ' ';
+          text += 'Development ' + (i + 1) + ': ' + (t.title || '') + '. ';
+          if (t.what_happened) text += t.what_happened + ' ';
+          if (t.why_it_matters) text += 'Why it matters: ' + t.why_it_matters + ' ';
         });
       }
 
-      const utterance = new SpeechSynthesisUtterance(speechText);
+      const utterance = new SpeechSynthesisUtterance(text);
       currentUtterance = utterance;
       utterance.rate = 1.0;
       utterance.pitch = 1.0;
@@ -1550,36 +1521,36 @@
       utterance.onstart = () => {
         isSpeaking = true;
         btn.classList.add('active');
-        label.textContent = 'Stop Audio';
+        caption.textContent = 'Stop Audio';
       };
 
       utterance.onend = () => {
         isSpeaking = false;
         btn.classList.remove('active');
-        label.textContent = 'Listen (2m)';
+        caption.textContent = 'Listen (2m)';
       };
 
-      utterance.onerror = (e) => {
-        console.warn('Speech synthesis notice:', e);
+      utterance.onerror = () => {
         isSpeaking = false;
         btn.classList.remove('active');
-        label.textContent = 'Listen (2m)';
+        caption.textContent = 'Listen (2m)';
       };
 
       window.speechSynthesis.speak(utterance);
     }
 
-    // Copy Plain-Text Briefing to Clipboard
+    /* -------------------------------------------------------------
+       COPY PLAIN TEXT BRIEFING
+       ------------------------------------------------------------- */
     function copyBriefing() {
       if (!briefingData) return;
 
-      const dateStr = briefingData.generated_at 
+      const dateStr = briefingData.generated_at
         ? new Date(briefingData.generated_at).toUTCString()
         : 'Recent';
 
       let text = 'AI TREND PULSE — EXECUTIVE BRIEFING\n';
-      text += 'Generated: ' + dateStr + '\n';
-      text += 'URL: https://aitrend-pulse.netlify.app\n\n';
+      text += 'Generated: ' + dateStr + '\n\n';
 
       text += '=== THE BIG PICTURE ===\n';
       text += (briefingData.takeaway || 'No takeaway available.') + '\n\n';
@@ -1598,53 +1569,53 @@
       });
 
       text += '=== SOURCE DISPATCHES ===\n';
-      (briefingData.top_stories || []).forEach((s, i) => {
+      (briefingData.top_stories || []).forEach((s) => {
         text += '• ' + (s.title || '') + ' — ' + (s.source || '') + '\n';
         if (s.link) text += '  ' + s.link + '\n';
       });
 
-      const label = document.getElementById('copy-label');
+      const label = document.getElementById('copy-caption');
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
           label.textContent = 'Copied!';
           setTimeout(() => { label.textContent = 'Copy Briefing'; }, 2000);
         }).catch(() => {
-          fallbackCopyText(text, label);
+          fallbackCopy(text, label);
         });
       } else {
-        fallbackCopyText(text, label);
+        fallbackCopy(text, label);
       }
     }
 
-    function fallbackCopyText(text, labelEl) {
+    function fallbackCopy(text, labelEl) {
       try {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.focus();
-        textarea.select();
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
         document.execCommand('copy');
-        document.body.removeChild(textarea);
+        document.body.removeChild(ta);
         labelEl.textContent = 'Copied!';
         setTimeout(() => { labelEl.textContent = 'Copy Briefing'; }, 2000);
       } catch (err) {
-        alert('Briefing ready: Please select and copy text manually.');
+        alert('Briefing ready: Please copy text manually.');
       }
     }
 
-    // Cleanup audio speech on page unload
+    // Cancel speech on page unload
     window.addEventListener('beforeunload', () => {
       if (isSpeaking && ('speechSynthesis' in window)) {
         window.speechSynthesis.cancel();
       }
     });
 
-    // Initialize application
+    // App Initialization
     document.addEventListener('DOMContentLoaded', () => {
-      initTheme();
-      loadBriefing();
+      initThemeSystem();
+      loadBriefingData();
     });
   </script>
 </body>
