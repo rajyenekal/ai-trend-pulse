@@ -127,8 +127,8 @@
     }
   ],
   "schema_version": 1,
-  "data_status": "fresh",
-  "last_attempt_at": "2026-10-31T10:15:03.251614+00:00",
+  "data_status": "cached_fallback",
+  "last_attempt_at": "2026-10-31T14:23:46.725824+00:00",
   "generated_at": "2026-10-31T10:15:03.251614+00:00",
   "pulse_items": [
     {
@@ -136,28 +136,32 @@
       "topic": "Model Releases",
       "company": "verge",
       "published": "Recent",
-      "link": "https://openai.com/index/helping-websites-express-ai-training-preferences"
+      "link": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "image": ""
     },
     {
       "title": "Agent Containment Failures Prompt Stronger Frontier Monitoring and Governance",
       "topic": "AI Agents",
       "company": "mit",
       "published": "Recent",
-      "link": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time"
+      "link": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time",
+      "image": ""
     },
     {
       "title": "Enterprise Software Ecosystems Deepen Ties with AI Model Providers",
       "topic": "AI Agents",
       "company": "openai",
       "published": "Recent",
-      "link": "https://openai.com/index/openai-servicenow-partnership-expansion"
+      "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "image": ""
     },
     {
       "title": "The biggest names in AI are backing a new way to opt out of scraping",
       "topic": "AI Coding",
       "company": "verge",
       "published": "Recent",
-      "link": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+      "link": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+      "image": ""
     }
   ]
 }
