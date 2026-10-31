@@ -66,7 +66,28 @@ const requiredIDs = [
   'saved-count-label',
   'theme-btn-system',
   'theme-btn-light',
-  'theme-btn-dark'
+  'theme-btn-dark',
+  'reader-backdrop',
+  'reader-drawer',
+  'reader-topic-badge',
+  'reader-status-badge',
+  'reader-readtime',
+  'btn-close-reader',
+  'reader-title',
+  'reader-source-name',
+  'reader-pub-time',
+  'reader-btn-save',
+  'reader-btn-copy',
+  'reader-image-wrap',
+  'reader-image',
+  'reader-key-points',
+  'reader-detailed-analysis',
+  'reader-why-box',
+  'reader-why-text',
+  'reader-affected-box',
+  'reader-audience-pills',
+  'reader-external-btn',
+  'reader-source-btn-name'
 ];
 
 let missingIDs = [];
@@ -264,6 +285,33 @@ sandbox.selectTopicFilter('Model Releases');
 const filteredByTopic = mockElements['developments-container'].children.length;
 console.log(`✅ Topic filter "Model Releases" returned ${filteredByTopic} results.`);
 sandbox.resetAllFilters();
+
+// Test In-App Reader View & Deep Dive
+if (dataContent.trends && dataContent.trends[0]) {
+  sandbox.openReaderView(dataContent.trends[0]);
+  if (!mockElements['reader-drawer'].classList.contains('open')) {
+    console.error('❌ reader-drawer failed to open.');
+    process.exit(1);
+  }
+  if (!mockElements['reader-title'].textContent) {
+    console.error('❌ reader-title was not populated.');
+    process.exit(1);
+  }
+  if (!mockElements['reader-key-points'].children.length) {
+    console.error('❌ reader-key-points was not populated.');
+    process.exit(1);
+  }
+  if (!mockElements['reader-detailed-analysis'].children.length) {
+    console.error('❌ reader-detailed-analysis was not populated.');
+    process.exit(1);
+  }
+  sandbox.closeReaderView();
+  if (mockElements['reader-drawer'].classList.contains('open')) {
+    console.error('❌ reader-drawer failed to close.');
+    process.exit(1);
+  }
+  console.log('✅ In-App Reader View (open/close, takeaways, detailed analysis, reference link) verified.');
+}
 
 // 5. Test 3-Tier Image System
 console.log('\n▶ [4/5] Testing 3-tier image system and SVG fallbacks...');

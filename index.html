@@ -1713,6 +1713,293 @@
     }
 
     /* -------------------------------------------------------------
+       9B. IN-APP READER VIEW / STORY DEEP DIVE DRAWER
+       ------------------------------------------------------------- */
+    .reader-drawer {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: min(720px, 94vw);
+      background: var(--bg-drawer);
+      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.45);
+      z-index: 102;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reader-drawer.open {
+      transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+      .reader-drawer {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 92vh;
+        border-radius: 20px 20px 0 0;
+        transform: translateY(100%);
+        box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+      }
+      .reader-drawer.open {
+        transform: translateY(0);
+      }
+      .reader-drawer::before {
+        content: '';
+        display: block;
+        width: 44px;
+        height: 5px;
+        background: var(--border-subtle);
+        border-radius: 3px;
+        margin: 10px auto 4px auto;
+        flex-shrink: 0;
+      }
+    }
+
+    .reader-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+    .reader-header-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .reader-readtime {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .reader-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 24px max(24px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .reader-headline {
+      font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .reader-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .reader-publisher-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .reader-source-icon {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-primary);
+    }
+    .reader-source-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .reader-source-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .reader-pub-time {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+    .reader-actions-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .reader-image-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+    }
+    .reader-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reader-takeaways-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .reader-takeaways-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .reader-points-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .reader-points-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+    }
+    .reader-points-list li::before {
+      content: '•';
+      position: absolute;
+      left: 6px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .reader-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 10px 0;
+    }
+    .reader-prose {
+      font-size: 0.96rem;
+      line-height: 1.72;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .reader-prose p {
+      margin: 0;
+    }
+
+    .reader-why-callout {
+      margin: 0;
+    }
+
+    .reader-affected-box {
+      background: var(--bg-subtle);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .reader-corroboration-box {
+      background: var(--bg-subtle);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .reader-subheading {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 8px 0;
+    }
+
+    .reader-reference-banner {
+      background: linear-gradient(135deg, var(--bg-surface), var(--bg-subtle));
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .reference-banner-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .reference-banner-heading {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 2px;
+    }
+    .reference-banner-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 4px 0 0 0;
+      line-height: 1.45;
+    }
+    .btn-reference-external {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+      min-height: 44px;
+    }
+    .btn-reference-external:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+
+    .btn-action-deep-dive {
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border-color: var(--accent-border);
+      font-weight: 600;
+      padding: 0 10px;
+      gap: 6px;
+    }
+    .btn-action-deep-dive:hover {
+      background: var(--accent-subtle);
+      border-color: var(--accent);
+      color: var(--text-primary);
+    }
+
+    /* -------------------------------------------------------------
        10. SEARCH MODAL & COMMAND PALETTE (⌘K)
        ------------------------------------------------------------- */
     .search-modal-backdrop {
@@ -2019,7 +2306,7 @@
 
             <!-- Hero Action Buttons -->
             <div class="hero-cta-row">
-              <a id="briefing-source-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-hero-primary">
+              <a id="briefing-source-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" onclick="openReaderForBriefing(event)">
                 <span>Read full story</span>
                 <span aria-hidden="true">➔</span>
               </a>
@@ -2185,6 +2472,99 @@
 
       <div id="saved-drawer-items" class="drawer-body">
         <!-- Dynamically rendered saved items -->
+      </div>
+    </aside>
+
+    <!-- IN-APP READER VIEW / STORY DEEP DIVE DRAWER -->
+    <div id="reader-backdrop" class="drawer-overlay" onclick="closeReaderView()"></div>
+    <aside id="reader-drawer" class="reader-drawer" aria-labelledby="reader-title" role="dialog" aria-modal="true">
+      <div class="reader-header">
+        <div class="reader-header-meta">
+          <span id="reader-topic-badge" class="badge-card-topic">AI Agents</span>
+          <span id="reader-status-badge" class="badge-status-pill source-linked">🔍 Source-Linked Report</span>
+          <span id="reader-readtime" class="reader-readtime">2 min read</span>
+        </div>
+        <button id="btn-close-reader" class="drawer-close-btn" onclick="closeReaderView()" aria-label="Close reader view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="reader-body">
+        <h2 id="reader-title" class="reader-headline font-serif">Headline Here</h2>
+
+        <div class="reader-meta-bar">
+          <div class="reader-publisher-info">
+            <span class="reader-source-icon" id="reader-source-logo"></span>
+            <div>
+              <div id="reader-source-name" class="reader-source-name">The Verge AI</div>
+              <div id="reader-pub-time" class="reader-pub-time">Published Oct 31, 2026</div>
+            </div>
+          </div>
+          <div class="reader-actions-bar">
+            <button id="reader-btn-save" class="btn-action-icon" onclick="toggleSaveCurrentReaderItem()" aria-label="Save this story">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              <span id="reader-save-label">Save</span>
+            </button>
+            <button id="reader-btn-copy" class="btn-action-icon" onclick="copyReaderStory()" aria-label="Copy story summary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span id="reader-copy-label">Copy</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="reader-image-wrap" class="reader-image-wrap">
+          <img id="reader-image" src="" alt="Story visual" loading="lazy" />
+        </div>
+
+        <!-- KEY TAKEAWAYS BULLET POINTS -->
+        <div class="reader-takeaways-card">
+          <div class="reader-takeaways-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>Executive Takeaways</span>
+          </div>
+          <ul id="reader-key-points" class="reader-points-list">
+            <!-- Populated dynamically -->
+          </ul>
+        </div>
+
+        <!-- IN-DEPTH STORY BREAKDOWN -->
+        <div class="reader-content-section">
+          <h3 class="reader-section-title">In-Depth Story &amp; Context</h3>
+          <div id="reader-detailed-analysis" class="reader-prose">
+            <!-- Multi-paragraph detailed analysis -->
+          </div>
+        </div>
+
+        <!-- WHY IT MATTERS CALLOUT -->
+        <div id="reader-why-box" class="card-why-callout reader-why-callout">
+          <div class="card-why-callout-title">Why It Matters</div>
+          <div id="reader-why-text" class="card-why-callout-body">Practical impact explanation...</div>
+        </div>
+
+        <!-- WHO IS AFFECTED -->
+        <div id="reader-affected-box" class="reader-affected-box">
+          <span class="hero-audience-label">Affected Industry / Stakeholders</span>
+          <div id="reader-audience-pills" class="hero-audience-pills"></div>
+        </div>
+
+        <!-- CORROBORATED SOURCES / PROVENANCE -->
+        <div id="reader-corroboration-box" class="reader-corroboration-box" style="display:none;">
+          <h4 class="reader-subheading">Corroborated Evidence Sources</h4>
+          <ul id="reader-evidence-links" class="evidence-list"></ul>
+        </div>
+
+        <!-- PINNED ORIGINAL SOURCE REFERENCE BANNER -->
+        <div class="reader-reference-banner">
+          <div class="reference-banner-content">
+            <span class="reference-banner-tag">Primary Source Provenance</span>
+            <div class="reference-banner-heading">Read the complete original publication</div>
+            <p class="reference-banner-sub">AI Trend Pulse synthesizes verified reports with direct source attribution.</p>
+          </div>
+          <a id="reader-external-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-reference-external">
+            <span>Read on <span id="reader-source-btn-name">Source</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
       </div>
     </aside>
 
@@ -2595,12 +2975,16 @@
         });
       }
 
-      items.slice(0, 4).forEach(item => {
+      items.slice(0, 4).forEach((item, idx) => {
         const card = document.createElement('a');
         card.className = 'pulse-card';
         card.href = item.link && item.link.startsWith('http') ? item.link : '#';
         card.target = '_blank';
         card.rel = 'noopener noreferrer';
+        card.onclick = (e) => {
+          e.preventDefault();
+          openReaderView(item);
+        };
 
         card.innerHTML = `
           <div class="pulse-logo-box" aria-hidden="true">
@@ -2739,7 +3123,7 @@
                     <span style="font-size:0.74rem; color:var(--text-muted);">${readTime}</span>
                   </div>
                   <h3 class="card-headline font-serif" style="margin-top:8px;">
-                    <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
+                    <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
                   </h3>
                   <p class="card-summary" style="margin-top:8px;">${escapeHTML(item.what_happened)}</p>
                   
@@ -2758,6 +3142,10 @@
                     <span>Recent</span>
                   </div>
                   <div class="card-actions">
+                    <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                      <span>Deep Dive</span>
+                    </button>
                     <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
                       <span>${isSaved ? 'Saved' : 'Save'}</span>
@@ -2765,7 +3153,7 @@
                     <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                     </button>
-                    <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open source link">
+                    <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </a>
                   </div>
@@ -2787,7 +3175,7 @@
               <span class="badge-status-pill official">Corroborated by ${item.evidence_urls.length} sources</span>
             </div>
             <h3 class="card-headline" style="margin-top:8px;">
-              <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
+              <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
             </h3>
             <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
 
@@ -2810,6 +3198,10 @@
                 <span>${readTime}</span>
               </div>
               <div class="card-actions">
+                <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                  <span>Deep Dive</span>
+                </button>
                 <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
                   <span>${isSaved ? 'Saved' : 'Save'}</span>
@@ -2839,7 +3231,7 @@
                   <span style="font-size:0.74rem; color:var(--text-muted);">${readTime}</span>
                 </div>
                 <h3 class="card-headline" style="margin-top:6px;">
-                  <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
+                  <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
                 </h3>
                 <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
 
@@ -2858,6 +3250,10 @@
                   <span>Recent</span>
                 </div>
                 <div class="card-actions">
+                  <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    <span>Deep Dive</span>
+                  </button>
                   <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
                     <span>${isSaved ? 'Saved' : 'Save'}</span>
@@ -2886,7 +3282,7 @@
       container.innerHTML = '';
 
       const stories = data.top_stories || [];
-      stories.forEach(story => {
+      stories.forEach((story, idx) => {
         const li = document.createElement('li');
         li.className = 'dispatch-item';
 
@@ -2904,11 +3300,15 @@
               <span>${escapeHTML(story.published || 'Recent')}</span>
             </div>
             <h3 class="dispatch-title">
-              <a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(story.title)} ↗</a>
+              <a href="${escapeHTML(url)}" onclick="openReaderForTopStory(${idx}, event)">${escapeHTML(story.title)} ↗</a>
             </h3>
             <p class="dispatch-summary">${escapeHTML(story.one_liner || '')}</p>
           </div>
           <div class="dispatch-actions">
+            <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTopStory(${idx}, event)" aria-label="Read full story details">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              <span>Deep Dive</span>
+            </button>
             <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(story.title)}', '${escapeAttr(story.source)}', '${escapeAttr(url)}', '${company}')" aria-label="Save dispatch">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
             </button>
@@ -3026,7 +3426,7 @@
           </div>
           <div class="saved-item-details">
             <h4 class="saved-item-title">
-              <a href="${escapeHTML(item.link || '#')}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
+              <a href="${escapeHTML(item.link || '#')}" onclick="openReaderForSavedStory('${escapeAttr(item.title)}', event)">${escapeHTML(item.title)}</a>
             </h4>
             <span class="saved-item-meta">${escapeHTML(item.source || 'Verified Source')}</span>
           </div>
@@ -3137,8 +3537,8 @@
         div.className = 'saved-item-card';
         div.style.cursor = 'pointer';
         div.onclick = () => {
-          const url = (item.evidence_urls && item.evidence_urls[0]) || item.link || '#';
-          if (url.startsWith('http')) window.open(url, '_blank', 'noopener,noreferrer');
+          closeSearchModal();
+          openReaderView(item);
         };
 
         const comp = item.company || detectCompany(item.title, item.source);
@@ -3167,8 +3567,266 @@
       } else if (e.key === 'Escape') {
         closeSearchModal();
         closeSavedDrawer();
+        closeReaderView();
       }
     });
+
+    /* -------------------------------------------------------------
+       14B. IN-APP READER VIEW & STORY DEEP DIVE (DRAWER / MODAL)
+       ------------------------------------------------------------- */
+    let currentReaderItem = null;
+
+    function openReaderView(item) {
+      if (!item) return;
+      currentReaderItem = item;
+
+      const drawer = document.getElementById('reader-drawer');
+      const backdrop = document.getElementById('reader-backdrop');
+      if (!drawer || !backdrop) return;
+
+      const topic = item.topic || classifyTopic(item.title, item.what_happened || item.one_liner || '');
+      const company = item.company || detectCompany(item.title, item.source);
+      const readTime = item.reading_time || calculateReadingTime(`${item.what_happened || item.one_liner || ''} ${item.why_it_matters || ''}`);
+      const isOfficial = item.status === 'official_claim' || item.tier === 'Official Lab';
+      const primaryUrl = item.link || (item.evidence_urls && item.evidence_urls[0]) || '#';
+      const isSaved = isItemSaved(item.title);
+
+      // Topic badge
+      const topicBadge = document.getElementById('reader-topic-badge');
+      if (topicBadge) topicBadge.textContent = topic;
+
+      // Status badge
+      const statusBadge = document.getElementById('reader-status-badge');
+      if (statusBadge) {
+        statusBadge.className = `badge-status-pill ${isOfficial ? 'official' : 'source-linked'}`;
+        statusBadge.textContent = isOfficial ? '🏢 Official Lab Announcement' : '🔍 Source-Linked Report';
+      }
+
+      // Read time
+      const readtimeEl = document.getElementById('reader-readtime');
+      if (readtimeEl) readtimeEl.textContent = readTime;
+
+      // Headline
+      const titleEl = document.getElementById('reader-title');
+      if (titleEl) titleEl.textContent = item.title;
+
+      // Publisher info
+      const srcName = document.getElementById('reader-source-name');
+      if (srcName) srcName.textContent = item.source || 'Verified Source';
+      const pubTime = document.getElementById('reader-pub-time');
+      if (pubTime) pubTime.textContent = item.published || 'Recent';
+      const logoEl = document.getElementById('reader-source-logo');
+      if (logoEl) logoEl.innerHTML = getCompanyLogoSVG(company);
+
+      // Story image
+      const imgWrap = document.getElementById('reader-image-wrap');
+      const imgEl = document.getElementById('reader-image');
+      if (imgWrap && imgEl) {
+        const imgUrl = getTopicImageUrl(topic, item.image);
+        imgEl.src = imgUrl;
+        imgEl.alt = item.title;
+        imgEl.onerror = () => handleImageFallback(imgEl, topic);
+      }
+
+      // Key Takeaways list
+      const keyPointsList = document.getElementById('reader-key-points');
+      if (keyPointsList) {
+        keyPointsList.innerHTML = '';
+        const points = (item.key_points && item.key_points.length) ? item.key_points : [
+          item.what_happened || item.one_liner || item.title,
+          item.why_it_matters || 'Important operational and industry implications.',
+          `Reported directly by ${item.source || 'editorial sources'}.`
+        ];
+        points.forEach(pt => {
+          const li = document.createElement('li');
+          li.textContent = pt;
+          keyPointsList.appendChild(li);
+        });
+      }
+
+      // Detailed in-depth analysis
+      const detailedEl = document.getElementById('reader-detailed-analysis');
+      if (detailedEl) {
+        detailedEl.innerHTML = '';
+        const rawAnalysis = item.detailed_analysis || `${item.what_happened || item.one_liner || ''}\n\n${item.why_it_matters || ''}`;
+        const paragraphs = rawAnalysis.split(/\n\s*\n/).filter(p => p.trim());
+        if (paragraphs.length) {
+          paragraphs.forEach(pText => {
+            const p = document.createElement('p');
+            p.textContent = pText.trim();
+            detailedEl.appendChild(p);
+          });
+        } else {
+          const p = document.createElement('p');
+          p.textContent = rawAnalysis;
+          detailedEl.appendChild(p);
+        }
+      }
+
+      // Why It Matters callout
+      const whyBox = document.getElementById('reader-why-box');
+      const whyText = document.getElementById('reader-why-text');
+      if (whyBox && whyText) {
+        if (item.why_it_matters) {
+          whyText.textContent = item.why_it_matters;
+          whyBox.style.display = 'block';
+        } else {
+          whyBox.style.display = 'none';
+        }
+      }
+
+      // Affected stakeholders / audience
+      const affectedBox = document.getElementById('reader-affected-box');
+      const audiencePills = document.getElementById('reader-audience-pills');
+      if (affectedBox && audiencePills) {
+        const pills = item.audience_pills || extractAudiencePills(item.who_affected || '');
+        if (pills && pills.length) {
+          audiencePills.innerHTML = '';
+          pills.forEach(aud => {
+            const span = document.createElement('span');
+            span.className = 'audience-pill';
+            span.textContent = aud;
+            audiencePills.appendChild(span);
+          });
+          affectedBox.style.display = 'block';
+        } else {
+          affectedBox.style.display = 'none';
+        }
+      }
+
+      // Corroborated evidence links
+      const corrobBox = document.getElementById('reader-corroboration-box');
+      const evidenceList = document.getElementById('reader-evidence-links');
+      if (corrobBox && evidenceList) {
+        const urls = item.evidence_urls || (item.link ? [item.link] : []);
+        if (urls && urls.length > 1) {
+          evidenceList.innerHTML = urls.map((u, i) => {
+            const host = cleanDomain(u);
+            return `<li>${i + 1}. <a class="evidence-link" href="${escapeHTML(u)}" target="_blank" rel="noopener noreferrer">${escapeHTML(host)} ↗</a></li>`;
+          }).join('');
+          corrobBox.style.display = 'block';
+        } else {
+          corrobBox.style.display = 'none';
+        }
+      }
+
+      // Reference Link Banner
+      const externalBtn = document.getElementById('reader-external-btn');
+      const srcBtnName = document.getElementById('reader-source-btn-name');
+      if (externalBtn) {
+        externalBtn.href = primaryUrl.startsWith('http') ? primaryUrl : '#';
+      }
+      if (srcBtnName) {
+        srcBtnName.textContent = item.source || 'Original Source';
+      }
+
+      // Save button state in reader
+      const saveBtn = document.getElementById('reader-btn-save');
+      const saveLabel = document.getElementById('reader-save-label');
+      if (saveBtn && saveLabel) {
+        saveBtn.classList.toggle('active', isSaved);
+        saveLabel.textContent = isSaved ? 'Saved' : 'Save';
+      }
+
+      // Open drawer & lock body scroll
+      backdrop.classList.add('open');
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeReaderView() {
+      const drawer = document.getElementById('reader-drawer');
+      const backdrop = document.getElementById('reader-backdrop');
+      if (drawer && backdrop) {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+      }
+      document.body.style.overflow = '';
+    }
+
+    function openReaderForBriefing(e) {
+      if (e) e.preventDefault();
+      if (cachedData && cachedData.trends && cachedData.trends[0]) {
+        openReaderView(cachedData.trends[0]);
+      }
+    }
+
+    function openReaderForTrend(idx, e) {
+      if (e) e.preventDefault();
+      if (cachedData && cachedData.trends && cachedData.trends[idx]) {
+        openReaderView(cachedData.trends[idx]);
+      }
+    }
+
+    function openReaderForTopStory(idx, e) {
+      if (e) e.preventDefault();
+      if (cachedData && cachedData.top_stories && cachedData.top_stories[idx]) {
+        openReaderView(cachedData.top_stories[idx]);
+      }
+    }
+
+    function openReaderForPulseItem(idx, e) {
+      if (e) e.preventDefault();
+      if (cachedData && cachedData.pulse_items && cachedData.pulse_items[idx]) {
+        openReaderView(cachedData.pulse_items[idx]);
+      }
+    }
+
+    function openReaderForSavedStory(title, e) {
+      if (e) e.preventDefault();
+      if (!cachedData) return;
+      const match = (cachedData.trends || []).find(t => t.title === title) ||
+                    (cachedData.top_stories || []).find(s => s.title === title) ||
+                    (cachedData.pulse_items || []).find(p => p.title === title);
+      if (match) {
+        closeSavedDrawer();
+        openReaderView(match);
+      } else {
+        const savedItems = getSavedItems();
+        const s = savedItems.find(i => i.title === title);
+        if (s) {
+          closeSavedDrawer();
+          openReaderView({
+            title: s.title,
+            source: s.source,
+            link: s.link,
+            company: s.company,
+            what_happened: s.title,
+            why_it_matters: 'Saved from your reading list.',
+            key_points: [s.title, `Source: ${s.source}`],
+            detailed_analysis: `This story was saved from ${s.source}. Read the original publication using the reference link below.`
+          });
+        }
+      }
+    }
+
+    function toggleSaveCurrentReaderItem() {
+      if (!currentReaderItem) return;
+      const company = currentReaderItem.company || detectCompany(currentReaderItem.title, currentReaderItem.source);
+      const primaryUrl = currentReaderItem.link || (currentReaderItem.evidence_urls && currentReaderItem.evidence_urls[0]) || '#';
+      toggleSaveItem(currentReaderItem.title, currentReaderItem.source, primaryUrl, company);
+      const isSaved = isItemSaved(currentReaderItem.title);
+      const saveBtn = document.getElementById('reader-btn-save');
+      const saveLabel = document.getElementById('reader-save-label');
+      if (saveBtn && saveLabel) {
+        saveBtn.classList.toggle('active', isSaved);
+        saveLabel.textContent = isSaved ? 'Saved' : 'Save';
+      }
+    }
+
+    function copyReaderStory() {
+      if (!currentReaderItem) return;
+      const primaryUrl = currentReaderItem.link || (currentReaderItem.evidence_urls && currentReaderItem.evidence_urls[0]) || '';
+      const text = `${currentReaderItem.title}\n\n${currentReaderItem.what_happened || currentReaderItem.one_liner}\n\nOriginal Source: ${primaryUrl}\n\nvia AI Trend Pulse`;
+      copyTextToClipboard(text).then(() => {
+        const copyLabel = document.getElementById('reader-copy-label');
+        if (copyLabel) {
+          const orig = copyLabel.textContent;
+          copyLabel.textContent = 'Copied!';
+          setTimeout(() => { copyLabel.textContent = orig; }, 2000);
+        }
+      });
+    }
 
     /* -------------------------------------------------------------
        15. CLIPBOARD & COPY FUNCTIONS
