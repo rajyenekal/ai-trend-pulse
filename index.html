@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trend Pulse • Executive Market Intelligence</title>
+  <title>AI Trend Pulse • Verified Market Intelligence</title>
   
   <style>
     :root {
@@ -58,6 +58,7 @@
       width: 8px; height: 8px; background-color: #10b981; border-radius: 50%;
       box-shadow: 0 0 8px #10b981;
     }
+    .pulse-dot.fallback { background-color: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
 
     /* Buttons */
     .action-group { display: flex; gap: 0.5rem; }
@@ -219,7 +220,7 @@
     <div class="top-header">
       <div>
         <h1>⚡ AI Trend Pulse</h1>
-        <p class="subtitle">Real-time intelligence from OpenAI, DeepMind, MIT Review, The Verge & Wired.</p>
+        <p class="subtitle">Hourly intelligence from OpenAI, DeepMind, MIT Review, The Verge & Wired.</p>
       </div>
       <div class="action-group">
         <button class="btn btn-audio" onclick="toggleAudioBriefing()">🔊 Listen (2m)</button>
@@ -229,8 +230,8 @@
 
     <!-- Stat Bar -->
     <div class="stat-bar">
-      <div class="stat-item"><div class="pulse-dot"></div> <span id="sync-time">Live Sync</span></div>
-      <div class="stat-item">⏱️ <span>2-Min Executive Read</span></div>
+      <div class="stat-item"><div id="status-dot" class="pulse-dot"></div> <span id="sync-time">Live Sync</span></div>
+      <div class="stat-item">⏱️ <span>2-Min Read</span></div>
       <div class="stat-item">🏛️ <span>7 Verified Sources</span></div>
       <div class="stat-item">🤖 <span>Grounded by Gemini 3.8 Flash</span></div>
     </div>
@@ -238,7 +239,7 @@
     <!-- Hero Takeaway -->
     <div class="takeaway-card">
       <span class="takeaway-badge">THE BIG PICTURE</span>
-      <p id="takeaway" class="takeaway-text">Loading latest market intelligence...</p>
+      <p id="takeaway" class="takeaway-text">Loading verified market intelligence...</p>
     </div>
 
     <!-- Live Search & Category Filter -->
@@ -254,11 +255,11 @@
     <div style="font-size:1.3rem; font-weight:600; margin-bottom:1rem;">🔥 Key Macro Trends Explained Simply</div>
     <div id="trends-container">Loading verified trends...</div>
 
-    <div style="font-size:1.3rem; font-weight:600; margin: 2.5rem 0 1rem 0;">📰 Explore All Recent Stories & Sources</div>
+    <div style="font-size:1.3rem; font-weight:600; margin: 2.5rem 0 1rem 0;">📰 Explore All Verified Stories & Original Sources</div>
     <div id="stories-container" class="stories-grid">Loading stories...</div>
 
     <footer>
-      Updated automatically every hour via GitHub Actions & Google Gemini 3.8 Flash • Zero Hallucinations, 100% Grounded.
+      AI-assisted synthesis • Grounded in linked original sources • Verification tiers shown • No sponsored bias.
     </footer>
   </div>
 
@@ -267,21 +268,27 @@
     let activeFilter = 'all';
     let isSpeaking = false;
 
-    fetch('data.json?t=' + Date.now())
-      .then(res => res.json())
-      .then(data => {
-        cachedData = data;
-        document.getElementById('takeaway').innerText = data.takeaway;
-        
-        const updateDate = data.last_updated ? new Date(data.last_updated) : new Date();
-        document.getElementById('sync-time').innerText = 'Synced ' + updateDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    // Safe DOM creator helpers (Prevents XSS completely)
+    function createEl(tag, className, textContent) {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (textContent) el.textContent = textContent;
+      return el;
+    }
 
-        renderTrends(data.trends);
-        renderStories(data.top_stories || []);
-      })
-      .catch(err => {
-        document.getElementById('trends-container').innerHTML = '<p>Briefing updating. Please refresh in a moment!</p>';
-      });
+    function createSafeLink(href, text, className) {
+      const a = document.createElement('a');
+      if (href && (href.startsWith('https://') || href.startsWith('http://'))) {
+        a.href = href;
+      } else {
+        a.href = '#';
+      }
+      a.textContent = text;
+      if (className) a.className = className;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      return a;
+    }
 
     function getTierBadgeClass(tier) {
       if (tier && tier.includes('Official')) return 'tier-lab';
@@ -289,43 +296,107 @@
       return 'tier-journal';
     }
 
+    fetch('data.json?t=' + Date.now())
+      .then(res => res.json())
+      .then(data => {
+        cachedData = data;
+        document.getElementById('takeaway').textContent = data.takeaway || 'No takeaway available.';
+        
+        const updateDate = data.last_updated ? new Date(data.last_updated) : new Date();
+        const syncTimeEl = document.getElementById('sync-time');
+        const statusDot = document.getElementById('status-dot');
+
+        if (data.status === 'cached_fallback') {
+          syncTimeEl.textContent = 'Cached Briefing (' + updateDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + ')';
+          statusDot.className = 'pulse-dot fallback';
+        } else {
+          syncTimeEl.textContent = 'Synced ' + updateDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        }
+
+        renderTrends(data.trends || []);
+        renderStories(data.top_stories || []);
+      })
+      .catch(err => {
+        const c = document.getElementById('trends-container');
+        c.innerHTML = '';
+        c.appendChild(createEl('p', '', 'Briefing updating. Please refresh in a moment!'));
+      });
+
     function renderTrends(trends) {
       const container = document.getElementById('trends-container');
       container.innerHTML = '';
+      
+      if (trends.length === 0) {
+        container.appendChild(createEl('p', '', 'Displaying verified original stories directly below.'));
+        return;
+      }
+
       trends.forEach(t => {
-        container.innerHTML += `
-          <div class="trend-card" data-tier="${t.tier || ''}" data-text="${(t.title + ' ' + (t.what_happened || '')).toLowerCase()}">
-            <span class="tier-badge ${getTierBadgeClass(t.tier)}">${t.tier || 'Verified News'} • ${t.source}</span>
-            <h3 class="trend-title">${t.title}</h3>
-            
-            <div class="trend-block">
-              <strong>📌 WHAT HAPPENED:</strong>
-              <p>${t.what_happened || t.explanation}</p>
-            </div>
-            
-            <div class="trend-block" style="border-left-color: #10b981;">
-              <strong style="color: #6ee7b7;">💡 WHY IT MATTERS:</strong>
-              <p>${t.why_it_matters || 'Major technological and industry development.'}</p>
-            </div>
-          </div>
-        `;
+        const card = createEl('div', 'trend-card');
+        card.setAttribute('data-tier', t.tier || '');
+        card.setAttribute('data-text', ((t.title || '') + ' ' + (t.what_happened || '')).toLowerCase());
+
+        const badge = createEl('span', 'tier-badge ' + getTierBadgeClass(t.tier), (t.tier || 'Verified News') + ' • ' + (t.source || 'Publisher'));
+        card.appendChild(badge);
+
+        const title = createEl('h3', 'trend-title', t.title);
+        card.appendChild(title);
+
+        // Block 1: What happened
+        const b1 = createEl('div', 'trend-block');
+        b1.appendChild(createEl('strong', '', '📌 WHAT HAPPENED:'));
+        b1.appendChild(createEl('p', '', t.what_happened || ''));
+        card.appendChild(b1);
+
+        // Block 2: Why it matters
+        const b2 = createEl('div', 'trend-block');
+        b2.style.borderLeftColor = '#10b981';
+        const s2 = createEl('strong', '', '💡 WHY IT MATTERS:');
+        s2.style.color = '#6ee7b7';
+        b2.appendChild(s2);
+        b2.appendChild(createEl('p', '', t.why_it_matters || ''));
+        card.appendChild(b2);
+
+        // Block 3: Who is affected
+        if (t.who_affected) {
+          const b3 = createEl('div', 'trend-block');
+          b3.style.borderLeftColor = '#8b5cf6';
+          const s3 = createEl('strong', '', '👥 WHO IS AFFECTED:');
+          s3.style.color = '#c4b5fd';
+          b3.appendChild(s3);
+          b3.appendChild(createEl('p', '', t.who_affected));
+          card.appendChild(b3);
+        }
+
+        container.appendChild(card);
       });
     }
 
     function renderStories(stories) {
       const container = document.getElementById('stories-container');
       container.innerHTML = '';
+
       stories.forEach(s => {
-        container.innerHTML += `
-          <div class="story-card" data-tier="${s.tier || ''}" data-text="${(s.title + ' ' + s.one_liner).toLowerCase()}">
-            <div>
-              <span class="tier-badge ${getTierBadgeClass(s.tier)}">${s.source}</span>
-              <div class="story-title">${s.title}</div>
-              <div class="story-summary">${s.one_liner}</div>
-            </div>
-            <a href="${s.link}" target="_blank" rel="noopener noreferrer" class="story-link">Read Original Source ↗</a>
-          </div>
-        `;
+        const card = createEl('div', 'story-card');
+        card.setAttribute('data-tier', s.tier || '');
+        card.setAttribute('data-text', ((s.title || '') + ' ' + (s.one_liner || '')).toLowerCase());
+
+        const topDiv = createEl('div');
+        const badge = createEl('span', 'tier-badge ' + getTierBadgeClass(s.tier), (s.source || 'Source') + (s.published ? ' • ' + s.published : ''));
+        topDiv.appendChild(badge);
+
+        const title = createEl('div', 'story-title', s.title);
+        topDiv.appendChild(title);
+
+        const summary = createEl('div', 'story-summary', s.one_liner);
+        topDiv.appendChild(summary);
+
+        card.appendChild(topDiv);
+
+        const link = createSafeLink(s.link, 'Read Original Source ↗', 'story-link');
+        card.appendChild(link);
+
+        container.appendChild(card);
       });
     }
 
@@ -338,59 +409,55 @@
 
     function filterContent() {
       const query = document.getElementById('search-input').value.toLowerCase();
-      
       document.querySelectorAll('.trend-card, .story-card').forEach(card => {
         const text = card.getAttribute('data-text') || '';
         const tier = card.getAttribute('data-tier') || '';
-        
         const matchesTier = (activeFilter === 'all') || tier.includes(activeFilter);
         const matchesQuery = !query || text.includes(query);
-        
         card.style.display = (matchesTier && matchesQuery) ? '' : 'none';
       });
     }
 
-    // Audio Read-Aloud Feature
     function toggleAudioBriefing() {
       const btn = document.querySelector('.btn-audio');
       if (isSpeaking) {
         window.speechSynthesis.cancel();
         isSpeaking = false;
-        btn.innerText = '🔊 Listen (2m)';
+        btn.textContent = '🔊 Listen (2m)';
         btn.classList.remove('playing');
         return;
       }
 
       if (!cachedData) return;
-      let textToRead = "Today's AI Trend Briefing. The Big Picture: " + cachedData.takeaway + ". Top Macro Trends: ";
-      cachedData.trends.forEach((t, i) => {
-        textToRead += "Trend " + (i + 1) + ": " + t.title + ". " + (t.what_happened || t.explanation) + ". ";
+      let textToRead = "Today's AI Trend Briefing. The Big Picture: " + (cachedData.takeaway || "") + ". Top Macro Trends: ";
+      (cachedData.trends || []).forEach((t, i) => {
+        textToRead += "Trend " + (i + 1) + ": " + t.title + ". " + (t.what_happened || "") + ". ";
       });
 
       const utterance = new SpeechSynthesisUtterance(textToRead);
       utterance.rate = 1.0;
       utterance.onend = () => {
         isSpeaking = false;
-        btn.innerText = '🔊 Listen (2m)';
+        btn.textContent = '🔊 Listen (2m)';
         btn.classList.remove('playing');
       };
 
       window.speechSynthesis.speak(utterance);
       isSpeaking = true;
-      btn.innerText = '⏹️ Stop Audio';
+      btn.textContent = '⏹️ Stop Audio';
       btn.classList.add('playing');
     }
 
     function copyBriefing() {
       if (!cachedData) return;
       let text = `⚡ AI TREND PULSE • BRIEFING\n\n💡 THE BIG PICTURE:\n${cachedData.takeaway}\n\n🔥 MAJOR TRENDS:\n`;
-      cachedData.trends.forEach((t, i) => {
-        text += `\n${i + 1}. ${t.title} [${t.source}]\n   📌 What: ${t.what_happened || t.explanation}\n   💡 Why it matters: ${t.why_it_matters || ''}\n`;
+      (cachedData.trends || []).forEach((t, i) => {
+        text += `\n${i + 1}. ${t.title} [${t.source} • ${t.tier || ''}]\n   📌 What: ${t.what_happened || ''}\n   💡 Why it matters: ${t.why_it_matters || ''}\n`;
       });
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.querySelector('.btn-copy');
-        btn.innerText = '✅ Copied!';
-        setTimeout(() => { btn.innerText = '📋 Copy Briefing'; }, 2000);
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => { btn.textContent = '📋 Copy Briefing'; }, 2000);
       });
     }
   </script>
