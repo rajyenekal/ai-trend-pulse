@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trend Pulse • Live Market Intelligence</title>
+  <title>AI Trend Pulse • Plain English Intelligence</title>
   
-  <!-- Social Media Preview Tags (WhatsApp / X / LinkedIn) -->
-  <meta property="og:title" content="AI Trend Pulse • Live AI Market Intelligence">
-  <meta property="og:description" content="Autonomous macro-trend synthesis generated directly from top AI tech publications.">
-  <meta property="og:type" content="website">
-
   <style>
     :root {
-      --bg: #0b0f19;
-      --card: #121826;
-      --card-hover: #172033;
+      --bg: #090d16;
+      --card: #121827;
+      --card-hover: #172136;
       --border: #1f293d;
       --accent: #3b82f6;
-      --accent-glow: rgba(59, 130, 246, 0.25);
+      --accent-glow: rgba(59, 130, 246, 0.2);
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --success: #10b981;
@@ -31,9 +26,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.6;
     }
-    .container { max-width: 820px; margin: 0 auto; }
+    .container { max-width: 860px; margin: 0 auto; }
     
-    /* Top Header Bar */
     .header-bar {
       display: flex;
       justify-content: space-between;
@@ -42,10 +36,9 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-    h1 { font-size: 2.2rem; margin: 0 0 0.3rem 0; letter-spacing: -0.02em; }
-    .subtitle { color: var(--text-muted); margin: 0; font-size: 1rem; }
+    h1 { font-size: 2.4rem; margin: 0 0 0.3rem 0; letter-spacing: -0.02em; }
+    .subtitle { color: var(--text-muted); margin: 0; font-size: 1.05rem; }
     
-    /* Action Buttons & Badges */
     .actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
     .status-badge {
       display: inline-flex;
@@ -73,9 +66,6 @@
       border-radius: 20px;
       font-size: 0.82rem;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
       transition: all 0.2s ease;
     }
     .btn-copy:hover {
@@ -84,12 +74,12 @@
       color: white;
     }
 
-    /* Key Takeaway Hero Card */
+    /* Big Picture Hero */
     .takeaway-card {
       background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
       border: 1px solid #3b82f6;
       box-shadow: 0 10px 25px -5px var(--accent-glow);
-      padding: 1.6rem;
+      padding: 1.8rem;
       border-radius: 16px;
       margin-bottom: 2.5rem;
     }
@@ -105,38 +95,34 @@
     }
     .takeaway-text {
       margin: 0.8rem 0 0 0;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 500;
       color: #f1f5f9;
       line-height: 1.5;
     }
 
-    /* Trend Cards */
+    /* Section Titles */
     .section-title {
-      font-size: 1.3rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1.2rem 0;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
+
+    /* Trend Cards with Plain English breakdowns */
     .trend-card {
       background: var(--card);
       border: 1px solid var(--border);
-      padding: 1.5rem;
+      padding: 1.6rem;
       border-radius: 14px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
       transition: all 0.2s ease;
     }
     .trend-card:hover {
       background: var(--card-hover);
       border-color: #334155;
-      transform: translateY(-2px);
-    }
-    .card-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.6rem;
     }
     .source-tag {
       font-size: 0.75rem;
@@ -145,15 +131,69 @@
       background: #1e293b;
       padding: 0.2rem 0.6rem;
       border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 0.6rem;
     }
-    .trend-title { margin: 0 0 0.5rem 0; font-size: 1.2rem; font-weight: 600; color: #fff; }
-    .trend-explanation { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
+    .trend-title { margin: 0 0 1rem 0; font-size: 1.25rem; font-weight: 600; color: #fff; }
     
+    .trend-block {
+      background: #0d1320;
+      padding: 0.9rem 1.1rem;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      border-left: 3px solid var(--accent);
+    }
+    .trend-block strong { display: block; font-size: 0.85rem; color: #93c5fd; margin-bottom: 0.2rem; }
+    .trend-block p { margin: 0; font-size: 0.95rem; color: #cbd5e1; }
+
+    /* Stories Grid */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .story-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.2rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .story-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .story-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      color: #f1f5f9;
+    }
+    .story-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0 0 1rem 0;
+      line-height: 1.4;
+    }
+    .story-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #60a5fa;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .story-link:hover { text-decoration: underline; }
+
     footer {
       text-align: center;
       color: #64748b;
       font-size: 0.85rem;
-      margin-top: 3.5rem;
+      margin-top: 4rem;
       border-top: 1px solid var(--border);
       padding-top: 1.5rem;
     }
@@ -164,67 +204,97 @@
     <div class="header-bar">
       <div>
         <h1>⚡ AI Trend Pulse</h1>
-        <p class="subtitle">Live macro intelligence synthesized from top AI tech portals.</p>
+        <p class="subtitle">Real-time intelligence from Wired, The Verge, TechCrunch & Ars Technica.</p>
       </div>
       <div class="actions">
         <div class="status-badge">
           <div class="pulse-dot"></div>
-          <span id="last-updated">Updating...</span>
+          <span id="last-updated">Live Sync</span>
         </div>
         <button class="btn-copy" onclick="copyBriefing()">📋 Copy Briefing</button>
       </div>
     </div>
 
+    <!-- Hero Takeaway -->
     <div class="takeaway-card">
-      <span class="takeaway-badge">EXECUTIVE TAKEAWAY</span>
-      <p id="takeaway" class="takeaway-text">Loading intelligence...</p>
+      <span class="takeaway-badge">THE BIG PICTURE</span>
+      <p id="takeaway" class="takeaway-text">Loading latest intelligence...</p>
     </div>
 
-    <div class="section-title">🔥 Top Macro Trends</div>
-    <div id="trends-container">Loading latest analysis...</div>
+    <!-- Plain English Trends -->
+    <div class="section-title">🔥 Major AI Trends Explained Simply</div>
+    <div id="trends-container">Loading trends...</div>
+
+    <!-- Stories Grid with Links -->
+    <div class="section-title">📰 Latest Stories & Deep Dives</div>
+    <div id="stories-container" class="stories-grid">Loading stories...</div>
 
     <footer>
-      Updated automatically every 6 hours via GitHub Actions & Google Gemini 3.8 Flash • Zero Server Cost
+      Powered by Google Gemini 3.8 Flash • Auto-synced every 6 hours from The Verge, TechCrunch, Wired & Ars Technica.
     </footer>
   </div>
 
   <script>
     let cachedData = null;
 
-    // Cache-busting: append timestamp query (?t=...) so updates load instantly
     fetch('data.json?t=' + Date.now())
       .then(res => res.json())
       .then(data => {
         cachedData = data;
         document.getElementById('takeaway').innerText = data.takeaway;
         
-        // Show update time
         const updateDate = data.last_updated ? new Date(data.last_updated) : new Date();
         document.getElementById('last-updated').innerText = 'Synced ' + updateDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
-        const container = document.getElementById('trends-container');
-        container.innerHTML = '';
+        // Render Trends (What Happened / Why It Matters)
+        const trendsContainer = document.getElementById('trends-container');
+        trendsContainer.innerHTML = '';
         data.trends.forEach(t => {
-          container.innerHTML += `
+          trendsContainer.innerHTML += `
             <div class="trend-card">
-              <div class="card-meta">
-                <span class="source-tag">${t.source || 'Industry Insight'}</span>
-              </div>
+              <span class="source-tag">${t.source || 'Industry Shift'}</span>
               <h3 class="trend-title">${t.title}</h3>
-              <p class="trend-explanation">${t.explanation}</p>
+              
+              <div class="trend-block">
+                <strong>📌 WHAT HAPPENED:</strong>
+                <p>${t.what_happened || t.explanation}</p>
+              </div>
+              
+              <div class="trend-block" style="border-left-color: #10b981;">
+                <strong style="color: #6ee7b7;">💡 WHY IT MATTERS:</strong>
+                <p>${t.why_it_matters || 'Major strategic shift across the AI and tech industry.'}</p>
+              </div>
             </div>
           `;
         });
+
+        // Render Individual Stories with clickable links
+        const storiesContainer = document.getElementById('stories-container');
+        storiesContainer.innerHTML = '';
+        if (data.top_stories && data.top_stories.length > 0) {
+          data.top_stories.forEach(s => {
+            storiesContainer.innerHTML += `
+              <div class="story-card">
+                <div>
+                  <span class="source-tag" style="margin-bottom:0.4rem;">${s.source}</span>
+                  <div class="story-title">${s.title}</div>
+                  <div class="story-summary">${s.one_liner}</div>
+                </div>
+                <a href="${s.link}" target="_blank" rel="noopener noreferrer" class="story-link">Read Full Story ↗</a>
+              </div>
+            `;
+          });
+        }
       })
       .catch(err => {
-        document.getElementById('trends-container').innerHTML = '<p>Briefing updating. Please check back shortly!</p>';
+        document.getElementById('trends-container').innerHTML = '<p>Briefing updating. Please refresh in a moment!</p>';
       });
 
     function copyBriefing() {
       if (!cachedData) return;
-      let text = `⚡ AI TREND PULSE BRIEFING\n\n💡 TAKEAWAY:\n${cachedData.takeaway}\n\n🔥 TOP TRENDS:\n`;
+      let text = `⚡ AI TREND PULSE BRIEFING\n\n💡 THE BIG PICTURE:\n${cachedData.takeaway}\n\n🔥 MAJOR TRENDS:\n`;
       cachedData.trends.forEach((t, i) => {
-        text += `\n${i + 1}. ${t.title} [${t.source}]\n   ${t.explanation}\n`;
+        text += `\n${i + 1}. ${t.title} [${t.source}]\n   📌 What: ${t.what_happened || t.explanation}\n   💡 Impact: ${t.why_it_matters || ''}\n`;
       });
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.querySelector('.btn-copy');
