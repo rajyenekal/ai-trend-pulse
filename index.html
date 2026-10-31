@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trend Pulse — Hourly AI News & Market Intelligence</title>
-  <meta name="description" content="Hourly curated AI industry intelligence: executive briefings, macro trends, and direct links to primary source reporting.">
+  <title>AI Trend Pulse — Daily AI Intelligence & Market Briefings</title>
+  <meta name="description" content="Hourly curated AI industry intelligence: executive briefings, trending AI topics, model launches, and primary source dispatches.">
 
   <!-- Instant theme initialization: supports light, dark, and system preference with zero flash -->
   <script>
@@ -28,24 +28,26 @@
 
   <style>
     /* -------------------------------------------------------------
-       DESIGN TOKENS: LIGHT & DARK THEMES
+       DESIGN TOKENS: MODERN EDITORIAL PALETTE (LIGHT & DARK)
        ------------------------------------------------------------- */
     :root, [data-theme="light"] {
-      --bg-page: #fcfcfb;
+      --bg-page: #fbfbf9;
       --bg-surface: #ffffff;
-      --bg-subtle: #f6f5f3;
-      --bg-hover: #f0efeb;
+      --bg-subtle: #f4f3ef;
+      --bg-elevated: #ffffff;
+      --bg-hover: #efeeea;
       
-      --border-subtle: #e6e4df;
-      --border-strong: #d3d0c9;
+      --border-subtle: #e5e4de;
+      --border-strong: #d2cfc7;
       
-      --text-primary: #191816;
-      --text-secondary: #484540;
-      --text-muted: #74716a;
+      --text-primary: #181816;
+      --text-secondary: #45433e;
+      --text-muted: #737068;
       
       --accent: #0f766e;
       --accent-subtle: #f0fdfa;
       --accent-border: #99f6e4;
+      --accent-text: #115e59;
       
       --link: #0369a1;
       --link-hover: #075985;
@@ -60,35 +62,33 @@
       --status-cached-text: #92400e;
       --status-cached-dot: #f59e0b;
       
-      --status-raw-bg: #f8fafc;
-      --status-raw-border: #cbd5e1;
-      --status-raw-text: #475569;
-      --status-raw-dot: #64748b;
+      --badge-topic-bg: #f0f4f8;
+      --badge-topic-text: #1e3a5f;
+      --badge-topic-border: #dbe4ee;
       
-      --badge-bg: #f2f1ed;
-      --badge-text: #484540;
-      --badge-border: #e2e0d9;
-      
+      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+      --card-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.06);
       --focus-ring: rgba(15, 118, 110, 0.4);
-      --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     }
 
     [data-theme="dark"] {
-      --bg-page: #0f1011;
-      --bg-surface: #18191b;
-      --bg-subtle: #212326;
-      --bg-hover: #2a2c30;
+      --bg-page: #0d0e10;
+      --bg-surface: #15171a;
+      --bg-subtle: #1e2024;
+      --bg-elevated: #23262b;
+      --bg-hover: #292d33;
       
-      --border-subtle: #2d3035;
-      --border-strong: #40444b;
+      --border-subtle: #292d33;
+      --border-strong: #3d424b;
       
-      --text-primary: #f3f4f6;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
+      --text-primary: #f4f5f6;
+      --text-secondary: #cfd2d7;
+      --text-muted: #969ba3;
       
       --accent: #2dd4bf;
       --accent-subtle: rgba(45, 212, 191, 0.1);
       --accent-border: rgba(45, 212, 191, 0.25);
+      --accent-text: #5eead4;
       
       --link: #38bdf8;
       --link-hover: #7dd3fc;
@@ -103,17 +103,13 @@
       --status-cached-text: #fcd34d;
       --status-cached-dot: #fbbf24;
       
-      --status-raw-bg: rgba(148, 163, 184, 0.12);
-      --status-raw-border: rgba(148, 163, 184, 0.28);
-      --status-raw-text: #cbd5e1;
-      --status-raw-dot: #94a3b8;
+      --badge-topic-bg: #1c222b;
+      --badge-topic-text: #93c5fd;
+      --badge-topic-border: #283344;
       
-      --badge-bg: #222428;
-      --badge-text: #d1d5db;
-      --badge-border: #35383f;
-      
-      --focus-ring: rgba(45, 212, 191, 0.4);
       --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.6);
+      --focus-ring: rgba(45, 212, 191, 0.4);
     }
 
     /* -------------------------------------------------------------
@@ -137,7 +133,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      padding: 0 1.25rem 4rem 1.25rem;
+      padding: 0 1.25rem 5rem 1.25rem;
       transition: background-color 0.15s ease, color 0.15s ease;
     }
 
@@ -146,7 +142,7 @@
     }
 
     .container {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -201,10 +197,13 @@
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
     .brand-title {
-      font-size: 2.1rem;
+      font-size: 2.25rem;
       font-weight: 700;
       letter-spacing: -0.025em;
       line-height: 1.15;
@@ -215,11 +214,11 @@
     .brand-desc {
       font-size: 0.95rem;
       color: var(--text-secondary);
-      max-width: 520px;
+      max-width: 540px;
       line-height: 1.45;
     }
 
-    /* Masthead Controls */
+    /* Masthead Action Toolbar */
     .masthead-controls {
       display: flex;
       align-items: center;
@@ -267,6 +266,13 @@
       background-color: rgba(239, 68, 68, 0.2);
       border-color: rgba(239, 68, 68, 0.4);
       color: #fca5a5;
+    }
+
+    .btn-saved.active {
+      background-color: var(--accent-subtle);
+      border-color: var(--accent-border);
+      color: var(--accent);
+      font-weight: 600;
     }
 
     /* 3-Way Theme Segmented Control: System | Light | Dark */
@@ -319,7 +325,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0.65rem;
       border-radius: 9999px;
       font-weight: 500;
       font-size: 0.78rem;
@@ -336,9 +342,9 @@
       color: var(--status-cached-text);
     }
     .status-badge.raw {
-      background-color: var(--status-raw-bg);
-      border-color: var(--status-raw-border);
-      color: var(--status-raw-text);
+      background-color: var(--bg-subtle);
+      border-color: var(--border-subtle);
+      color: var(--text-secondary);
     }
 
     .status-dot {
@@ -348,7 +354,7 @@
     }
     .status-badge.fresh .status-dot { background-color: var(--status-fresh-dot); }
     .status-badge.cached .status-dot { background-color: var(--status-cached-dot); }
-    .status-badge.raw .status-dot { background-color: var(--status-raw-dot); }
+    .status-badge.raw .status-dot { background-color: var(--text-muted); }
 
     .status-meta-text {
       display: flex;
@@ -357,48 +363,166 @@
     }
 
     /* -------------------------------------------------------------
-       MAIN BRIEFING / THE BIG PICTURE (PROMINENT)
+       SECTION 1: THE AI BRIEFING (FEATURED / HERO)
        ------------------------------------------------------------- */
-    .lead-takeaway {
+    .ai-briefing-card {
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-left: 4px solid var(--accent);
       border-radius: 8px;
-      padding: 1.6rem 1.8rem;
+      padding: 1.85rem 2rem;
       margin-bottom: 2.25rem;
       box-shadow: var(--card-shadow);
+      position: relative;
     }
 
-    .takeaway-eyebrow {
+    .briefing-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .briefing-tag {
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--accent);
+      background-color: var(--accent-subtle);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--accent-border);
+    }
+
+    .briefing-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .briefing-headline {
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 0.85rem;
+    }
+
+    .briefing-summary {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 0.95rem;
+    }
+
+    .briefing-why {
+      background-color: var(--bg-subtle);
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      margin-bottom: 1.15rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+    .briefing-why-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+
+    .briefing-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+    }
+
+    .briefing-source-info {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .briefing-btn-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 2: TRENDING IN AI (TOPIC NAVIGATION)
+       ------------------------------------------------------------- */
+    .trending-nav-bar {
+      margin-bottom: 2rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .trending-nav-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
       margin-bottom: 0.65rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .takeaway-body {
-      font-size: 1.15rem;
-      line-height: 1.6;
+    .topic-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.85rem;
+    }
+
+    .topic-pill {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      border-radius: 9999px;
+      padding: 0.32rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+    .topic-pill:hover {
+      background: var(--bg-hover);
       color: var(--text-primary);
-      max-width: 72ch;
-      font-weight: 400;
+    }
+    .topic-pill.active {
+      background: var(--text-primary);
+      border-color: var(--text-primary);
+      color: var(--bg-page);
+      font-weight: 600;
     }
 
-    /* -------------------------------------------------------------
-       DISCOVERY / SEARCH & FILTER CONTROLS
-       ------------------------------------------------------------- */
-    .discovery-bar {
-      margin-bottom: 2rem;
-    }
-
+    /* Search Input Inside Trending Bar */
     .search-row {
       position: relative;
-      margin-bottom: 0.75rem;
     }
 
     .search-icon {
@@ -414,7 +538,7 @@
 
     .search-field {
       width: 100%;
-      background-color: var(--bg-surface);
+      background-color: var(--bg-page);
       border: 1px solid var(--border-subtle);
       border-radius: 6px;
       padding: 0.6rem 2.2rem 0.6rem 2.3rem;
@@ -425,6 +549,7 @@
     }
     .search-field:focus {
       border-color: var(--accent);
+      background-color: var(--bg-surface);
     }
     .search-field::placeholder {
       color: var(--text-muted);
@@ -448,44 +573,8 @@
       color: var(--text-primary);
     }
 
-    .filter-row {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-caption {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-right: 0.2rem;
-    }
-
-    .filter-pill {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      border-radius: 9999px;
-      padding: 0.28rem 0.7rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .filter-pill:hover {
-      background: var(--bg-hover);
-      color: var(--text-primary);
-    }
-    .filter-pill.active {
-      background: var(--text-primary);
-      border-color: var(--text-primary);
-      color: var(--bg-page);
-      font-weight: 600;
-    }
-
-    .filter-status-line {
-      margin-top: 0.65rem;
+    .discovery-status-bar {
+      margin-top: 0.75rem;
       font-size: 0.8rem;
       color: var(--text-muted);
       display: flex;
@@ -494,83 +583,108 @@
     }
 
     /* -------------------------------------------------------------
-       SECTION HEADINGS
+       SECTION 3: LATEST DEVELOPMENTS (EDITORIAL CARDS)
        ------------------------------------------------------------- */
     .section-header {
       margin-bottom: 1.25rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .section-title {
-      font-size: 1.28rem;
+      font-size: 1.35rem;
       font-weight: 700;
       letter-spacing: -0.015em;
       color: var(--text-primary);
-      margin-bottom: 0.2rem;
     }
 
     .section-desc {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
     }
 
-    /* -------------------------------------------------------------
-       TREND CARDS (RESTRUCTURED READING ORDER)
-       1. Headline
-       2. Plain-English explanation (What happened)
-       3. Why it matters
-       4. Who is affected
-       5. Source and publication info
-       6. Expandable evidence
-       ------------------------------------------------------------- */
-    .trends-feed {
+    .developments-feed {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
       margin-bottom: 3.5rem;
     }
 
-    .trend-card {
+    .development-card {
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 1.5rem 1.75rem;
       box-shadow: var(--card-shadow);
-      transition: border-color 0.15s ease;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
-    .trend-card:hover {
+    .development-card:hover {
       border-color: var(--border-strong);
+      box-shadow: var(--card-shadow-hover);
     }
 
-    /* 1. Headline first */
-    .trend-headline {
+    .card-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .card-tags {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .topic-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background-color: var(--badge-topic-bg);
+      color: var(--badge-topic-text);
+      border: 1px solid var(--badge-topic-border);
+      padding: 0.18rem 0.55rem;
+      border-radius: 4px;
+      line-height: 1.2;
+    }
+
+    .read-time-tag {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .card-headline {
       font-size: 1.28rem;
       font-weight: 700;
-      letter-spacing: -0.015em;
       line-height: 1.35;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-summary {
+      font-size: 0.95rem;
+      line-height: 1.6;
       color: var(--text-primary);
       margin-bottom: 0.85rem;
     }
 
-    /* 2. What Happened */
-    .trend-narrative {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-primary);
-      margin-bottom: 0.9rem;
-    }
-
-    /* 3. Why It Matters */
-    .trend-impact {
+    .card-why-block {
       background-color: var(--bg-subtle);
       border-left: 3px solid var(--accent);
       padding: 0.75rem 0.95rem;
       border-radius: 4px;
       margin-bottom: 0.85rem;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       line-height: 1.55;
       color: var(--text-secondary);
     }
-    .trend-impact-label {
+    .card-why-label {
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -580,58 +694,89 @@
       display: block;
     }
 
-    /* 4. Who Is Affected */
-    .trend-affected {
-      font-size: 0.86rem;
+    .card-affected {
+      font-size: 0.85rem;
       color: var(--text-secondary);
       margin-bottom: 1rem;
     }
-    .trend-affected strong {
+    .card-affected strong {
       color: var(--text-primary);
       font-weight: 600;
     }
 
-    /* 5. Source & Publication Metadata Line */
-    .trend-meta-footer {
+    /* Card Action Bar: Source info + Save, Copy, Outbound link */
+    .card-action-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
       padding-top: 0.85rem;
       border-top: 1px solid var(--border-subtle);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       flex-wrap: wrap;
     }
 
-    .trend-source-group {
+    .card-source-info {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
     }
 
-    .meta-tag {
-      display: inline-block;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
+    .card-source-badge {
       font-size: 0.72rem;
-      font-weight: 600;
-      background-color: var(--badge-bg);
-      color: var(--badge-text);
-      border: 1px solid var(--badge-border);
-      line-height: 1.3;
+      padding: 0.15rem 0.5rem;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      font-weight: 500;
     }
 
-    /* 6. Expandable Evidence */
-    .evidence-accordion {
+    .card-button-group {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-action {
+      background: none;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.3rem 0.65rem;
+      font-size: 0.76rem;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all 0.15s ease;
+    }
+    .btn-action:hover {
+      background-color: var(--bg-hover);
+      color: var(--text-primary);
+    }
+    .btn-action.saved {
+      background-color: var(--accent-subtle);
+      border-color: var(--accent-border);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .btn-action svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Expandable Evidence Links */
+    .evidence-block {
       margin-top: 0.75rem;
       width: 100%;
     }
 
-    .evidence-toggle {
+    .evidence-summary {
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--link);
       user-select: none;
@@ -640,15 +785,15 @@
       align-items: center;
       gap: 0.35rem;
     }
-    .evidence-toggle::-webkit-details-marker {
+    .evidence-summary::-webkit-details-marker {
       display: none;
     }
-    .evidence-toggle:hover {
+    .evidence-summary:hover {
       color: var(--link-hover);
       text-decoration: underline;
     }
 
-    .evidence-tray {
+    .evidence-list {
       margin-top: 0.5rem;
       padding-left: 0.25rem;
       list-style: none;
@@ -657,25 +802,25 @@
       gap: 0.35rem;
     }
 
-    .evidence-row {
-      font-size: 0.8rem;
+    .evidence-item {
+      font-size: 0.78rem;
       display: flex;
       align-items: baseline;
       gap: 0.4rem;
     }
 
-    .evidence-url {
+    .evidence-link {
       color: var(--link);
       text-decoration: none;
       word-break: break-all;
     }
-    .evidence-url:hover {
+    .evidence-link:hover {
       text-decoration: underline;
       color: var(--link-hover);
     }
 
     /* -------------------------------------------------------------
-       ORIGINAL STORIES FEED (CLEAN & SCANNABLE)
+       SECTION 4: SOURCE STORIES FEED
        ------------------------------------------------------------- */
     .stories-section {
       margin-bottom: 4rem;
@@ -702,23 +847,24 @@
       background-color: var(--bg-hover);
     }
 
-    .story-line-top {
+    .story-meta-row {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.5rem;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
       flex-wrap: wrap;
     }
 
-    .story-source-name {
+    .story-source-tag {
       font-weight: 600;
       color: var(--text-secondary);
     }
 
     .story-headline {
-      font-size: 1.02rem;
+      font-size: 1.05rem;
       font-weight: 600;
       line-height: 1.35;
       margin-bottom: 0.35rem;
@@ -743,34 +889,41 @@
       transform: translateY(1px);
     }
 
-    .story-one-liner {
+    .story-summary {
       font-size: 0.88rem;
       color: var(--text-secondary);
       line-height: 1.5;
+      margin-bottom: 0.65rem;
+    }
+
+    .story-action-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
     /* -------------------------------------------------------------
-       EMPTY & ERROR STATES
+       EMPTY & NOTICE STATES
        ------------------------------------------------------------- */
-    .notice-card {
+    .empty-state {
       text-align: center;
-      padding: 2.75rem 1.5rem;
+      padding: 3rem 1.5rem;
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       margin: 1.5rem 0;
     }
-    .notice-title {
-      font-size: 1.05rem;
+    .empty-title {
+      font-size: 1.1rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
-    .notice-desc {
+    .empty-desc {
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
-      max-width: 420px;
+      margin-bottom: 1.15rem;
+      max-width: 440px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -780,8 +933,8 @@
        ------------------------------------------------------------- */
     .site-footer {
       border-top: 1px solid var(--border-subtle);
-      padding-top: 2rem;
-      margin-top: 3.5rem;
+      padding-top: 2.25rem;
+      margin-top: 4rem;
       font-size: 0.82rem;
       color: var(--text-muted);
       line-height: 1.6;
@@ -794,12 +947,12 @@
       flex-wrap: wrap;
     }
 
-    .footer-col {
-      flex: 1 1 240px;
+    .footer-col-main {
+      flex: 2 1 340px;
     }
 
-    .footer-col-lead {
-      flex: 2 1 320px;
+    .footer-col-side {
+      flex: 1 1 240px;
     }
 
     .footer-heading {
@@ -815,7 +968,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
+      gap: 0.35rem;
     }
 
     .footer-links a {
@@ -827,7 +980,7 @@
       text-decoration: underline;
     }
 
-    .footer-bottom-bar {
+    .footer-bottom {
       margin-top: 2rem;
       padding-top: 1rem;
       border-top: 1px solid var(--border-subtle);
@@ -836,11 +989,11 @@
     }
 
     /* -------------------------------------------------------------
-       RESPONSIVE & ACCESSIBILITY
+       RESPONSIVE ADJUSTMENTS
        ------------------------------------------------------------- */
     @media (max-width: 640px) {
       body {
-        padding: 0 0.85rem 3rem 0.85rem;
+        padding: 0 0.85rem 3.5rem 0.85rem;
       }
       .masthead {
         padding: 1.5rem 0 1rem 0;
@@ -848,14 +1001,17 @@
       .brand-title {
         font-size: 1.75rem;
       }
-      .lead-takeaway {
+      .ai-briefing-card {
         padding: 1.25rem;
       }
-      .takeaway-body {
-        font-size: 1.05rem;
+      .briefing-headline {
+        font-size: 1.22rem;
       }
-      .trend-card {
-        padding: 1.25rem;
+      .development-card {
+        padding: 1.2rem;
+      }
+      .card-headline {
+        font-size: 1.15rem;
       }
       .story-entry {
         padding: 1rem 1.1rem;
@@ -863,6 +1019,14 @@
       .masthead-controls {
         width: 100%;
         justify-content: flex-start;
+      }
+      .card-action-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .briefing-actions {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
@@ -877,33 +1041,36 @@
 </head>
 <body>
   <!-- Accessible Skip Link -->
-  <a href="#main-briefing" class="skip-link">Skip to main briefing</a>
+  <a href="#ai-briefing" class="skip-link">Skip to AI Briefing</a>
 
   <div class="container">
     <!-- Header / Masthead -->
     <header class="masthead">
       <div class="masthead-row">
         <div class="brand-block">
-          <div class="brand-kicker">Hourly Market Briefing</div>
+          <div class="brand-kicker">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Hourly Intelligence Cycle
+          </div>
           <h1 class="brand-title font-serif">AI Trend Pulse</h1>
           <p class="brand-desc">Curated executive intelligence on frontier models, enterprise shifts, and direct primary reporting.</p>
         </div>
 
-        <!-- Controls: Audio, Copy, and 3-way Theme (System | Light | Dark) -->
-        <div class="masthead-controls" role="toolbar" aria-label="Briefing controls">
+        <!-- Controls Toolbar: Listen, Saved Articles, and 3-Way Theme Switcher -->
+        <div class="masthead-controls" role="toolbar" aria-label="Briefing tools">
           <button id="btn-audio" class="btn btn-audio" onclick="toggleAudioBriefing()" aria-label="Listen to audio briefing">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
             <span id="audio-caption">Listen (2m)</span>
           </button>
 
-          <button id="btn-copy" class="btn" onclick="copyBriefing()" aria-label="Copy plain text briefing to clipboard">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <span id="copy-caption">Copy Briefing</span>
+          <button id="btn-saved-filter" class="btn btn-saved" onclick="toggleSavedFilter()" aria-label="View saved bookmarks">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            <span id="saved-count-label">Saved (0)</span>
           </button>
 
-          <!-- Segmented Theme Switcher -->
-          <div class="theme-segmented" role="radiogroup" aria-label="Theme selection">
-            <button class="theme-opt" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="false" title="System preference">
+          <!-- 3-Way Theme Segmented Control: Auto | Light | Dark -->
+          <div class="theme-segmented" role="radiogroup" aria-label="Theme mode selection">
+            <button class="theme-opt" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="false" title="System theme">
               Auto
             </button>
             <button class="theme-opt" id="theme-btn-light" onclick="setThemePreference('light')" role="radio" aria-checked="false" title="Light theme">
@@ -916,99 +1083,142 @@
         </div>
       </div>
 
-      <!-- Freshness & Status Metadata Line -->
+      <!-- Live Freshness Status -->
       <div class="masthead-status-bar">
         <div class="status-badge fresh" id="status-badge" role="status">
           <span class="status-dot"></span>
-          <span id="status-text">Checking feed freshness...</span>
+          <span id="status-text">Checking intelligence pipeline...</span>
         </div>
         <div class="status-meta-text">
           <span>7 Monitored Sources</span>
           <span>•</span>
-          <span>~2 min read</span>
+          <span>Hourly Synthesis</span>
         </div>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main id="main-briefing">
-      <!-- 1. The Big Picture / Main Takeaway (Prominent) -->
-      <section class="lead-takeaway" aria-labelledby="takeaway-heading">
-        <div class="takeaway-eyebrow">
-          <span id="takeaway-heading">The Big Picture</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">Executive Summary</span>
-        </div>
-        <p id="takeaway-text" class="takeaway-body font-serif">Loading latest industry intelligence...</p>
-      </section>
-
-      <!-- 2. Discovery & Category Filter Bar -->
-      <section class="discovery-bar" aria-label="Search and filter feeds">
-        <div class="search-row">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <input type="text" id="search-input" class="search-field" placeholder="Search developments, companies, models, or topics (e.g. OpenAI, agents, safety)..." oninput="handleSearch(this.value)" aria-label="Search developments">
-          <button id="search-clear" class="search-clear" onclick="clearSearch()" aria-label="Clear search input">&times;</button>
+    <main id="main-content">
+      <!-- 1. AI BRIEFING (FEATURED / LEAD DEVELOPMENT) -->
+      <section id="ai-briefing" class="ai-briefing-card" aria-labelledby="briefing-title">
+        <div class="briefing-header">
+          <span class="briefing-tag">The AI Briefing • Top Story</span>
+          <div class="briefing-meta">
+            <span id="briefing-readtime">2 min read</span>
+            <span>•</span>
+            <span id="briefing-time">Latest update</span>
+          </div>
         </div>
 
-        <div class="filter-row" role="radiogroup" aria-label="Filter by source category">
-          <span class="filter-caption">Category:</span>
-          <button class="filter-pill active" role="radio" aria-checked="true" data-tier="all" onclick="setFilterCategory('all', this)">All Feeds</button>
-          <button class="filter-pill" role="radio" aria-checked="false" data-tier="Official Lab" onclick="setFilterCategory('Official Lab', this)">Official Labs</button>
-          <button class="filter-pill" role="radio" aria-checked="false" data-tier="Independent Journalism" onclick="setFilterCategory('Independent Journalism', this)">Independent Reporting</button>
-          <button class="filter-pill" role="radio" aria-checked="false" data-tier="Open Research" onclick="setFilterCategory('Open Research', this)">Research &amp; Open Source</button>
+        <h2 id="briefing-title" class="briefing-headline font-serif">Loading primary AI development...</h2>
+        <p id="briefing-summary" class="briefing-summary">Gathering verified dispatches from frontier AI research laboratories.</p>
+
+        <div id="briefing-why-box" class="briefing-why" style="display: none;">
+          <span class="briefing-why-label">Why It Matters</span>
+          <p id="briefing-why-text"></p>
         </div>
 
-        <div id="filter-feedback" class="filter-status-line" style="display: none;">
-          <span id="filter-count">Showing matching items</span>
-          <button class="btn" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;" onclick="resetAllFilters()">Reset Filters</button>
-        </div>
-      </section>
-
-      <!-- 3. Key Developments (Refined Reading Order) -->
-      <section aria-labelledby="trends-heading">
-        <div class="section-header">
-          <h2 id="trends-heading" class="section-title">Key Developments</h2>
-          <p class="section-desc">Synthesized macro movements across primary announcements and technical reporting.</p>
-        </div>
-
-        <div id="trends-container" class="trends-feed">
-          <div class="notice-card">
-            <p class="notice-title">Loading developments...</p>
-            <p class="notice-desc">Retrieving latest dispatches from pipeline.</p>
+        <div class="briefing-actions">
+          <div class="briefing-source-info">
+            <span style="font-weight: 600;" id="briefing-source">Leading Lab</span>
+            <span>•</span>
+            <span id="briefing-tier">Official announcement</span>
+          </div>
+          <div class="briefing-btn-group">
+            <button id="briefing-save-btn" class="btn-action" onclick="toggleSaveCurrentBriefing()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              <span id="briefing-save-label">Save for later</span>
+            </button>
+            <button class="btn-action" onclick="copyCurrentBriefing()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span id="briefing-copy-label">Copy summary</span>
+            </button>
+            <a id="briefing-source-link" href="#" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.3rem 0.7rem; font-size: 0.78rem;">
+              Read Source ↗
+            </a>
           </div>
         </div>
       </section>
 
-      <!-- 4. Original Stories Feed -->
-      <section class="stories-section" aria-labelledby="stories-heading">
+      <!-- 2. TRENDING IN AI (TOPIC NAVIGATION & DISCOVERY) -->
+      <section class="trending-nav-bar" aria-label="Topic navigation and search">
+        <div class="trending-nav-title">
+          <span>Trending in AI</span>
+          <span id="trending-count" style="font-size: 0.72rem; color: var(--text-muted); font-weight: normal;">Filter by topic</span>
+        </div>
+
+        <!-- Supported Topic Pills -->
+        <div class="topic-pills" role="radiogroup" aria-label="Filter developments by topic">
+          <button class="topic-pill active" role="radio" aria-checked="true" data-topic="all" onclick="setTopicFilter('all', this)">All Topics</button>
+          <button class="topic-pill" role="radio" aria-checked="false" data-topic="agents" onclick="setTopicFilter('agents', this)">AI Agents</button>
+          <button class="topic-pill" role="radio" aria-checked="false" data-topic="models" onclick="setTopicFilter('models', this)">Model Releases</button>
+          <button class="topic-pill" role="radio" aria-checked="false" data-topic="safety" onclick="setTopicFilter('safety', this)">Research &amp; Safety</button>
+          <button class="topic-pill" role="radio" aria-checked="false" data-topic="enterprise" onclick="setTopicFilter('enterprise', this)">AI Business</button>
+          <button class="topic-pill" role="radio" aria-checked="false" data-topic="tools" onclick="setTopicFilter('tools', this)">AI Tools &amp; Ecosystem</button>
+        </div>
+
+        <!-- Live Search Field -->
+        <div class="search-row">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="search-input" class="search-field" placeholder="Search developments, companies, models, or topics (e.g. OpenAI, agents, safety, coding)..." oninput="handleSearch(this.value)" aria-label="Search AI news">
+          <button id="search-clear" class="search-clear" onclick="clearSearch()" aria-label="Clear search input">&times;</button>
+        </div>
+
+        <div id="discovery-status" class="discovery-status-bar" style="display: none;">
+          <span id="discovery-status-text">Showing matching items</span>
+          <button class="btn" style="padding: 0.15rem 0.5rem; font-size: 0.75rem;" onclick="resetAllFilters()">Reset All Filters</button>
+        </div>
+      </section>
+
+      <!-- 3. LATEST AI DEVELOPMENTS (EDITORIAL CARDS) -->
+      <section aria-labelledby="developments-title">
         <div class="section-header">
-          <h2 id="stories-heading" class="section-title">Source Feed &amp; Direct Dispatches</h2>
-          <p class="section-desc">Direct original releases and articles from indexed laboratory feeds and tech publications.</p>
+          <div>
+            <h2 id="developments-title" class="section-title">Latest AI Developments</h2>
+            <p class="section-desc">Key macro movements synthesized with what happened, why it matters, and direct evidence.</p>
+          </div>
+        </div>
+
+        <div id="developments-container" class="developments-feed">
+          <div class="empty-state">
+            <p class="empty-title">Loading developments...</p>
+            <p class="empty-desc">Connecting to verified news feeds.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SOURCE FEED & DIRECT DISPATCHES -->
+      <section class="stories-section" aria-labelledby="stories-title">
+        <div class="section-header">
+          <div>
+            <h2 id="stories-title" class="section-title">Source Dispatches Feed</h2>
+            <p class="section-desc">Unedited primary releases and reporting from indexed laboratory feeds and tech publications.</p>
+          </div>
         </div>
 
         <ul id="stories-container" class="stories-list" role="list">
           <li class="story-entry">
-            <p class="story-one-liner">Loading dispatches feed...</p>
+            <p class="story-summary">Loading source feed...</p>
           </li>
         </ul>
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Site Footer -->
     <footer class="site-footer">
       <div class="footer-grid">
-        <div class="footer-col-lead">
-          <div class="footer-heading">Methodology &amp; Freshness</div>
+        <div class="footer-col-main">
+          <div class="footer-heading">Editorial Methodology</div>
           <p style="margin-bottom: 0.65rem;">
-            AI Trend Pulse monitors public RSS feeds from leading research laboratories and independent tech journalism desks hourly.
-            Key developments are structured to highlight what happened, practical implications, and affected audiences, with direct links to original sources.
+            AI Trend Pulse aggregates primary dispatches hourly from indexed research laboratory feeds and technology journalism desks.
+            Synthesis highlights what happened, why it matters, and affected audiences, with strict provenance linking back to original URLs.
           </p>
           <p>
-            No sponsored placement. Labels clearly distinguish between official laboratory claims and independent reporting.
+            Zero sponsored placements. Transparent labels distinguish official announcements from independent reporting.
           </p>
         </div>
 
-        <div class="footer-col">
-          <div class="footer-heading">Indexed Feeds</div>
+        <div class="footer-col-side">
+          <div class="footer-heading">Monitored Feeds</div>
           <ul class="footer-links">
             <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research &amp; News ↗</a></li>
             <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind Blog ↗</a></li>
@@ -1021,8 +1231,8 @@
         </div>
       </div>
 
-      <div class="footer-bottom-bar">
-        <span>AI Trend Pulse • Static deployment with automated hourly updates</span>
+      <div class="footer-bottom">
+        <span>AI Trend Pulse • Static edge deployment with automated GitHub Actions updates</span>
       </div>
     </footer>
   </div>
@@ -1032,10 +1242,15 @@
     'use strict';
 
     let briefingData = null;
-    let selectedCategory = 'all';
-    let searchFilterQuery = '';
+    let selectedTopic = 'all';
+    let searchQuery = '';
+    let isShowingSavedOnly = false;
     let isSpeaking = false;
     let currentUtterance = null;
+
+    // LocalStorage keys
+    const SAVED_ITEMS_KEY = 'ai_trend_pulse_saved_v2';
+    const THEME_PREF_KEY = 'ai_trend_theme_preference';
 
     // Safe DOM creator (guarantees zero unsafe HTML injection)
     function dom(tag, attrs, ...children) {
@@ -1062,18 +1277,18 @@
       return node;
     }
 
-    // Safe URL validator for external links
-    function makeSafeLink(href, label, className) {
-      const link = document.createElement('a');
+    // Safe external link helper
+    function safeLink(href, label, className) {
+      const a = document.createElement('a');
       const isValid = href && (typeof href === 'string') && (href.startsWith('https://') || href.startsWith('http://'));
-      link.href = isValid ? href : '#';
-      link.textContent = label || 'Source';
-      if (className) link.className = className;
+      a.href = isValid ? href : '#';
+      a.textContent = label || 'Source';
+      if (className) a.className = className;
       if (isValid) {
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
       }
-      return link;
+      return a;
     }
 
     function extractDomain(url) {
@@ -1084,7 +1299,13 @@
       }
     }
 
-    // Format timestamp reliably without substituting browser current time
+    function calculateReadingTime(text) {
+      if (!text) return '1 min read';
+      const words = text.trim().split(/\s+/).length;
+      const mins = Math.max(1, Math.ceil(words / 180));
+      return mins + ' min read';
+    }
+
     function formatTimestamp(isoDate) {
       if (!isoDate) return 'Timestamp unavailable';
       const parsed = new Date(isoDate);
@@ -1106,16 +1327,97 @@
     }
 
     /* -------------------------------------------------------------
+       BOOKMARK / SAVE FOR LATER SYSTEM
+       ------------------------------------------------------------- */
+    function getSavedItems() {
+      try {
+        const stored = localStorage.getItem(SAVED_ITEMS_KEY);
+        return stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function isItemSaved(id) {
+      const items = getSavedItems();
+      return items.includes(id);
+    }
+
+    function toggleSaveItem(id, btnEl, labelEl) {
+      let items = getSavedItems();
+      const alreadySaved = items.includes(id);
+      if (alreadySaved) {
+        items = items.filter(x => x !== id);
+      } else {
+        items.push(id);
+      }
+
+      try {
+        localStorage.setItem(SAVED_ITEMS_KEY, JSON.stringify(items));
+      } catch (e) {}
+
+      updateSavedCountLabel();
+
+      if (btnEl) {
+        btnEl.classList.toggle('saved', !alreadySaved);
+      }
+      if (labelEl) {
+        labelEl.textContent = !alreadySaved ? 'Saved' : 'Save for later';
+      }
+
+      if (isShowingSavedOnly) {
+        renderFilteredContent();
+      }
+    }
+
+    function updateSavedCountLabel() {
+      const count = getSavedItems().length;
+      const label = document.getElementById('saved-count-label');
+      if (label) {
+        label.textContent = 'Saved (' + count + ')';
+      }
+    }
+
+    function toggleSavedFilter() {
+      isShowingSavedOnly = !isShowingSavedOnly;
+      const btn = document.getElementById('btn-saved-filter');
+      btn.classList.toggle('active', isShowingSavedOnly);
+      renderFilteredContent();
+    }
+
+    /* -------------------------------------------------------------
+       TOPIC CLASSIFIER (INTELLIGENT CONTENT TAGGING)
+       ------------------------------------------------------------- */
+    function classifyTopic(text) {
+      const lower = (text || '').toLowerCase();
+      if (lower.includes('agent') || lower.includes('autonomous') || lower.includes('breakout') || lower.includes('runtime')) {
+        return { slug: 'agents', label: 'AI Agents' };
+      }
+      if (lower.includes('model') || lower.includes('gemini') || lower.includes('gpt') || lower.includes('spec') || lower.includes('release') || lower.includes('carbon')) {
+        return { slug: 'models', label: 'Model Releases' };
+      }
+      if (lower.includes('safety') || lower.includes('misalignment') || lower.includes('compliance') || lower.includes('risk') || lower.includes('teen') || lower.includes('oversight')) {
+        return { slug: 'safety', label: 'Research & Safety' };
+      }
+      if (lower.includes('enterprise') || lower.includes('business') || lower.includes('finance') || lower.includes('legal') || lower.includes('credit') || lower.includes('servicenow')) {
+        return { slug: 'enterprise', label: 'AI Business' };
+      }
+      if (lower.includes('tool') || lower.includes('robots.txt') || lower.includes('developer') || lower.includes('coding') || lower.includes('training') || lower.includes('fair use')) {
+        return { slug: 'tools', label: 'AI Tools & Ecosystem' };
+      }
+      return { slug: 'models', label: 'AI Developments' };
+    }
+
+    /* -------------------------------------------------------------
        THEME SYSTEM: LIGHT, DARK & SYSTEM PREFERENCE
        ------------------------------------------------------------- */
     function initThemeSystem() {
-      const pref = localStorage.getItem('ai_trend_theme_preference') || 'system';
-      applyThemePreference(pref, false);
+      const pref = localStorage.getItem(THEME_PREF_KEY) || 'system';
+      applyThemePreference(pref);
 
-      // Listen for OS scheme changes when set to system
       if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          const currentPref = localStorage.getItem('ai_trend_theme_preference') || 'system';
+          const currentPref = localStorage.getItem(THEME_PREF_KEY) || 'system';
           if (currentPref === 'system') {
             document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
           }
@@ -1125,12 +1427,12 @@
 
     function setThemePreference(pref) {
       try {
-        localStorage.setItem('ai_trend_theme_preference', pref);
+        localStorage.setItem(THEME_PREF_KEY, pref);
       } catch (e) {}
-      applyThemePreference(pref, true);
+      applyThemePreference(pref);
     }
 
-    function applyThemePreference(pref, triggerAnnounce) {
+    function applyThemePreference(pref) {
       document.documentElement.setAttribute('data-theme-preference', pref);
 
       let effectiveTheme = 'light';
@@ -1139,14 +1441,12 @@
       } else if (pref === 'light') {
         effectiveTheme = 'light';
       } else {
-        // System preference
         const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         effectiveTheme = systemDark ? 'dark' : 'light';
       }
 
       document.documentElement.setAttribute('data-theme', effectiveTheme);
 
-      // Update segmented controls active state
       ['system', 'light', 'dark'].forEach((opt) => {
         const btn = document.getElementById('theme-btn-' + opt);
         if (btn) {
@@ -1158,9 +1458,9 @@
     }
 
     /* -------------------------------------------------------------
-       DATA INGESTION & PIPELINE BOOTSTRAP
+       FETCH AND INITIALIZE BRIEFING
        ------------------------------------------------------------- */
-    async function loadBriefingData() {
+    async function loadBriefing() {
       const badge = document.getElementById('status-badge');
       const text = document.getElementById('status-text');
 
@@ -1169,140 +1469,311 @@
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
         briefingData = data;
-        populateBriefing(data);
+        renderBriefingPage(data);
       } catch (err) {
-        console.error('Briefing data load failure:', err);
+        console.error('Failed to load briefing:', err);
         badge.className = 'status-badge raw';
         text.textContent = 'Briefing updating • Displaying cached dispatches';
 
-        document.getElementById('takeaway-text').textContent =
-          'Hourly intelligence pipeline is synchronizing with upstream sources. Please refresh in a moment.';
+        document.getElementById('briefing-title').textContent = 'Briefing Currently Updating';
+        document.getElementById('briefing-summary').textContent = 'The automated intelligence pipeline is currently synchronizing with upstream primary news sources. Please refresh in a moment.';
 
-        const container = document.getElementById('trends-container');
+        const container = document.getElementById('developments-container');
         container.innerHTML = '';
         container.appendChild(
-          dom('div', { className: 'notice-card' },
-            dom('p', { className: 'notice-title' }, 'Briefing Updating'),
-            dom('p', { className: 'notice-desc' }, 'The intelligence pipeline is fetching and structuring the latest news feeds. Please refresh in a moment.')
+          dom('div', { className: 'empty-state' },
+            dom('p', { className: 'empty-title' }, 'Pipeline Synchronizing'),
+            dom('p', { className: 'empty-desc' }, 'The hourly intelligence pipeline is ingesting fresh updates. Please refresh the page in a moment.')
           )
         );
       }
     }
 
-    function populateBriefing(data) {
+    function renderBriefingPage(data) {
       const badge = document.getElementById('status-badge');
       const text = document.getElementById('status-text');
-      const takeaway = document.getElementById('takeaway-text');
 
-      // Accurate, non-misleading freshness status
-      const timestamp = formatTimestamp(data.generated_at || data.last_updated);
+      // 1. Status Bar
+      const timestampText = formatTimestamp(data.generated_at || data.last_updated);
       const isCached = data.data_status === 'cached_fallback';
-      const isRaw = data.data_status === 'raw_headlines';
 
       if (isCached) {
         badge.className = 'status-badge cached';
-        text.textContent = 'Cached Briefing • ' + timestamp;
-      } else if (isRaw) {
-        badge.className = 'status-badge raw';
-        text.textContent = 'Headline Feed • ' + timestamp;
+        text.textContent = 'Cached Briefing • ' + timestampText;
       } else {
         badge.className = 'status-badge fresh';
-        text.textContent = 'Fresh Briefing • ' + timestamp;
+        text.textContent = 'Fresh Briefing • ' + timestampText;
       }
 
-      // Executive Takeaway
-      takeaway.textContent = data.takeaway || 'Macro intelligence summary currently processing.';
+      // 2. Featured "AI Briefing" Section
+      const topTrend = (data.trends && data.trends.length > 0) ? data.trends[0] : null;
 
-      // Render Trends & Stories
+      const titleEl = document.getElementById('briefing-title');
+      const summaryEl = document.getElementById('briefing-summary');
+      const whyBox = document.getElementById('briefing-why-box');
+      const whyText = document.getElementById('briefing-why-text');
+      const sourceEl = document.getElementById('briefing-source');
+      const tierEl = document.getElementById('briefing-tier');
+      const linkEl = document.getElementById('briefing-source-link');
+      const readtimeEl = document.getElementById('briefing-readtime');
+      const timeEl = document.getElementById('briefing-time');
+
+      if (topTrend) {
+        titleEl.textContent = topTrend.title || 'Leading AI Market Shift';
+        summaryEl.textContent = topTrend.what_happened || data.takeaway || '';
+        
+        if (topTrend.why_it_matters) {
+          whyBox.style.display = 'block';
+          whyText.textContent = topTrend.why_it_matters;
+        } else {
+          whyBox.style.display = 'none';
+        }
+
+        sourceEl.textContent = topTrend.source || 'Primary Lab';
+        tierEl.textContent = (topTrend.status === 'official_claim') ? 'Official announcement' : 'Independent reporting';
+
+        const mainUrl = (topTrend.evidence_urls && topTrend.evidence_urls[0]) ? topTrend.evidence_urls[0] : '#';
+        linkEl.href = mainUrl;
+
+        const totalWords = (topTrend.what_happened || '') + ' ' + (topTrend.why_it_matters || '');
+        readtimeEl.textContent = calculateReadingTime(totalWords);
+        timeEl.textContent = timestampText;
+
+        // Check if featured briefing is saved
+        const briefingId = 'briefing_' + (topTrend.title || '');
+        const isSaved = isItemSaved(briefingId);
+        const saveBtn = document.getElementById('briefing-save-btn');
+        const saveLabel = document.getElementById('briefing-save-label');
+        saveBtn.classList.toggle('saved', isSaved);
+        saveLabel.textContent = isSaved ? 'Saved' : 'Save for later';
+      } else {
+        titleEl.textContent = 'Macro AI Market Intelligence';
+        summaryEl.textContent = data.takeaway || 'No takeaway available.';
+        whyBox.style.display = 'none';
+      }
+
+      updateSavedCountLabel();
       renderFilteredContent();
     }
 
+    function toggleSaveCurrentBriefing() {
+      if (!briefingData || !briefingData.trends || !briefingData.trends[0]) return;
+      const id = 'briefing_' + (briefingData.trends[0].title || '');
+      const btn = document.getElementById('briefing-save-btn');
+      const label = document.getElementById('briefing-save-label');
+      toggleSaveItem(id, btn, label);
+    }
+
+    function copyCurrentBriefing() {
+      if (!briefingData || !briefingData.trends || !briefingData.trends[0]) return;
+      const t = briefingData.trends[0];
+      const text = `${t.title}\n\nSummary: ${t.what_happened}\nWhy it matters: ${t.why_it_matters || 'N/A'}\nSource: ${t.source}\nLink: ${(t.evidence_urls && t.evidence_urls[0]) || 'https://aitrend-pulse.netlify.app'}`;
+      
+      const label = document.getElementById('briefing-copy-label');
+      copyTextToClipboard(text, label);
+    }
+
     /* -------------------------------------------------------------
-       RENDER KEY DEVELOPMENTS (ORDER: HEADLINE, WHAT, WHY, WHO, SOURCE, EVIDENCE)
+       RENDER DEVELOPMENTS FEED & STORIES FEED
        ------------------------------------------------------------- */
-    function renderTrendsFeed(trends) {
-      const container = document.getElementById('trends-container');
+    function renderFilteredContent() {
+      if (!briefingData) return;
+
+      const q = searchQuery.toLowerCase().trim();
+      const allTrends = briefingData.trends || [];
+      const allStories = briefingData.top_stories || [];
+
+      // Filter Trends
+      const filteredTrends = allTrends.filter((t, index) => {
+        const topicInfo = classifyTopic(t.title + ' ' + t.what_happened);
+        const matchesTopic = (selectedTopic === 'all') || (topicInfo.slug === selectedTopic);
+
+        const cardId = 'trend_' + (t.title || index);
+        const matchesSaved = !isShowingSavedOnly || isItemSaved(cardId);
+
+        const searchable = [
+          t.title,
+          t.what_happened,
+          t.why_it_matters,
+          t.who_affected,
+          t.source,
+          topicInfo.label
+        ].filter(Boolean).join(' ').toLowerCase();
+
+        const matchesQuery = !q || searchable.includes(q);
+
+        return matchesTopic && matchesSaved && matchesQuery;
+      });
+
+      // Filter Stories
+      const filteredStories = allStories.filter((s, index) => {
+        const topicInfo = classifyTopic(s.title + ' ' + s.one_liner);
+        const matchesTopic = (selectedTopic === 'all') || (topicInfo.slug === selectedTopic);
+
+        const storyId = 'story_' + (s.title || index);
+        const matchesSaved = !isShowingSavedOnly || isItemSaved(storyId);
+
+        const searchable = [
+          s.title,
+          s.one_liner,
+          s.source,
+          s.tier,
+          topicInfo.label
+        ].filter(Boolean).join(' ').toLowerCase();
+
+        const matchesQuery = !q || searchable.includes(q);
+
+        return matchesTopic && matchesSaved && matchesQuery;
+      });
+
+      // Update Feedback Line
+      const feedbackBar = document.getElementById('discovery-status');
+      const feedbackText = document.getElementById('discovery-status-text');
+      const isFiltered = (selectedTopic !== 'all') || q.length > 0 || isShowingSavedOnly;
+
+      if (isFiltered) {
+        feedbackBar.style.display = 'flex';
+        let statusMsg = `Showing ${filteredTrends.length} development${filteredTrends.length === 1 ? '' : 's'}`;
+        if (isShowingSavedOnly) statusMsg += ' [Saved filter active]';
+        if (selectedTopic !== 'all') statusMsg += ` in "${selectedTopic}"`;
+        feedbackText.textContent = statusMsg;
+      } else {
+        feedbackBar.style.display = 'none';
+      }
+
+      renderDevelopments(filteredTrends);
+      renderStories(filteredStories);
+    }
+
+    function renderDevelopments(trends) {
+      const container = document.getElementById('developments-container');
       container.innerHTML = '';
 
       if (!trends || trends.length === 0) {
         container.appendChild(
-          dom('div', { className: 'notice-card' },
-            dom('p', { className: 'notice-title' }, 'No developments match your search'),
-            dom('p', { className: 'notice-desc' }, 'Try adjusting keywords or selecting "All Feeds" to explore full coverage.'),
-            dom('button', { className: 'btn', onclick: resetAllFilters }, 'Clear Filters & Search')
+          dom('div', { className: 'empty-state' },
+            dom('p', { className: 'empty-title' }, isShowingSavedOnly ? 'No saved items match' : 'No developments match your filter'),
+            dom('p', { className: 'empty-desc' }, 'Try clearing keywords or switching to "All Topics" to view the complete intelligence feed.'),
+            dom('button', { className: 'btn', onclick: resetAllFilters }, 'Clear All Filters')
           )
         );
         return;
       }
 
-      trends.forEach((t) => {
-        const card = dom('article', { className: 'trend-card' });
+      trends.forEach((t, i) => {
+        const cardId = 'trend_' + (t.title || i);
+        const card = dom('article', { className: 'development-card' });
 
-        // 1. Headline first
-        const headline = dom('h3', { className: 'trend-headline' }, t.title || 'Untitled Development');
+        const topic = classifyTopic(t.title + ' ' + t.what_happened);
+        const readingTime = calculateReadingTime((t.what_happened || '') + ' ' + (t.why_it_matters || ''));
+
+        // Meta Top Line
+        const metaTop = dom('div', { className: 'card-meta-top' },
+          dom('div', { className: 'card-tags' },
+            dom('span', { className: 'topic-tag' }, topic.label),
+            dom('span', { className: 'read-time-tag' }, readingTime)
+          ),
+          dom('span', { style: 'font-size: 0.75rem; color: var(--text-muted);' }, t.source || 'Primary Source')
+        );
+        card.appendChild(metaTop);
+
+        // 1. Headline
+        const headline = dom('h3', { className: 'card-headline' }, t.title || 'Untitled Development');
         card.appendChild(headline);
 
-        // 2. Short plain-English explanation (What happened)
+        // 2. Short Plain-English Summary
         if (t.what_happened) {
-          card.appendChild(dom('p', { className: 'trend-narrative' }, t.what_happened));
+          card.appendChild(dom('p', { className: 'card-summary' }, t.what_happened));
         }
 
-        // 3. Why it matters
+        // 3. Why It Matters
         if (t.why_it_matters) {
-          const impact = dom('div', { className: 'trend-impact' });
-          impact.appendChild(dom('span', { className: 'trend-impact-label' }, 'Why It Matters'));
-          impact.appendChild(dom('p', {}, t.why_it_matters));
-          card.appendChild(impact);
+          const whyBox = dom('div', { className: 'card-why-block' });
+          whyBox.appendChild(dom('span', { className: 'card-why-label' }, 'Why It Matters'));
+          whyBox.appendChild(dom('p', {}, t.why_it_matters));
+          card.appendChild(whyBox);
         }
 
-        // 4. Who is affected
+        // 4. Who Is Affected
         if (t.who_affected) {
-          const affected = dom('div', { className: 'trend-affected' });
+          const affected = dom('div', { className: 'card-affected' });
           affected.appendChild(document.createTextNode('Affected audience: '));
           affected.appendChild(dom('strong', {}, t.who_affected));
           card.appendChild(affected);
         }
 
-        // 5. Source and Publication metadata line
-        const metaFooter = dom('div', { className: 'trend-meta-footer' });
-        const sourceGroup = dom('div', { className: 'trend-source-group' });
+        // 5. Action Bar (Save, Copy, Outbound Link)
+        const actionBar = dom('div', { className: 'card-action-bar' });
+        const sourceInfo = dom('div', { className: 'card-source-info' });
 
-        const isLab = (t.tier === 'Official Lab' || t.status === 'official_claim');
-        const statusText = (t.status === 'official_claim') ? 'Official announcement' : 'Independent reporting';
+        const statusLabel = (t.status === 'official_claim') ? 'Official announcement' : 'Independent reporting';
+        sourceInfo.appendChild(dom('span', { className: 'card-source-badge' }, statusLabel));
+        actionBar.appendChild(sourceInfo);
 
-        sourceGroup.appendChild(dom('span', { className: 'meta-tag' }, t.tier || 'Verified Source'));
-        sourceGroup.appendChild(dom('span', { className: 'meta-tag', style: 'background: var(--bg-subtle);' }, statusText));
+        const btnGroup = dom('div', { className: 'card-button-group' });
 
-        metaFooter.appendChild(sourceGroup);
-        metaFooter.appendChild(dom('span', {}, t.source || 'Publisher'));
-        card.appendChild(metaFooter);
+        // Save Button
+        const isSaved = isItemSaved(cardId);
+        const saveBtn = dom('button', { className: 'btn-action' + (isSaved ? ' saved' : '') },
+          dom('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+            dom('path', { d: 'M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z' })
+          )
+        );
+        const saveLabel = dom('span', {}, isSaved ? 'Saved' : 'Save');
+        saveBtn.appendChild(saveLabel);
+        saveBtn.onclick = () => toggleSaveItem(cardId, saveBtn, saveLabel);
+        btnGroup.appendChild(saveBtn);
 
-        // 6. Expandable evidence or supporting details
+        // Copy Summary Button
+        const copyBtn = dom('button', { className: 'btn-action' },
+          dom('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+            dom('rect', { x: '9', y: '9', width: '13', height: '13', rx: '2', ry: '2' }),
+            dom('path', { d: 'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1' })
+          )
+        );
+        const copyLabel = dom('span', {}, 'Copy');
+        copyBtn.appendChild(copyLabel);
+        copyBtn.onclick = () => {
+          const textToCopy = `${t.title}\n\n${t.what_happened}\nWhy it matters: ${t.why_it_matters || 'N/A'}\nSource: ${t.source}`;
+          copyTextToClipboard(textToCopy, copyLabel);
+        };
+        btnGroup.appendChild(copyBtn);
+
+        // Primary Outbound Link
+        if (t.evidence_urls && t.evidence_urls[0]) {
+          const outLink = safeLink(t.evidence_urls[0], 'Read Source ↗', 'btn-action');
+          btnGroup.appendChild(outLink);
+        }
+
+        actionBar.appendChild(btnGroup);
+        card.appendChild(actionBar);
+
+        // 6. Expandable Supporting Details
         if (t.evidence_urls && Array.isArray(t.evidence_urls) && t.evidence_urls.length > 0) {
           const validUrls = t.evidence_urls.filter(u => typeof u === 'string' && (u.startsWith('http://') || u.startsWith('https://')));
           if (validUrls.length > 0) {
-            const accordion = dom('details', { className: 'evidence-accordion' });
-            const summary = dom('summary', { className: 'evidence-toggle' },
+            const details = dom('details', { className: 'evidence-block' });
+            const summary = dom('summary', { className: 'evidence-summary' },
               dom('svg', { width: '12', height: '12', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
                 dom('path', { d: 'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' }),
                 dom('path', { d: 'M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' })
               ),
               'Supporting source links (' + validUrls.length + ')'
             );
-            accordion.appendChild(summary);
+            details.appendChild(summary);
 
-            const tray = dom('ul', { className: 'evidence-tray' });
-            validUrls.forEach((url, i) => {
-              const domain = extractDomain(url);
-              tray.appendChild(
-                dom('li', { className: 'evidence-row' },
-                  dom('span', { style: 'color: var(--text-muted); font-size: 0.75rem;' }, (i + 1) + '.'),
-                  makeSafeLink(url, domain + ' ↗', 'evidence-url')
+            const list = dom('ul', { className: 'evidence-list' });
+            validUrls.forEach((u, idx) => {
+              const domain = extractDomain(u);
+              list.appendChild(
+                dom('li', { className: 'evidence-item' },
+                  dom('span', { style: 'color: var(--text-muted); font-size: 0.72rem;' }, (idx + 1) + '.'),
+                  safeLink(u, domain + ' ↗', 'evidence-link')
                 )
               );
             });
-            accordion.appendChild(tray);
-            card.appendChild(accordion);
+            details.appendChild(list);
+            card.appendChild(details);
           }
         }
 
@@ -1310,43 +1781,39 @@
       });
     }
 
-    /* -------------------------------------------------------------
-       RENDER SOURCE STORIES FEED
-       ------------------------------------------------------------- */
-    function renderStoriesFeed(stories) {
+    function renderStories(stories) {
       const container = document.getElementById('stories-container');
       container.innerHTML = '';
 
       if (!stories || stories.length === 0) {
         container.appendChild(
           dom('li', { className: 'story-entry', style: 'text-align: center; color: var(--text-muted);' },
-            'No dispatches matching current criteria.'
+            'No source dispatches matching current criteria.'
           )
         );
         return;
       }
 
-      stories.forEach((s) => {
+      stories.forEach((s, idx) => {
+        const storyId = 'story_' + (s.title || idx);
         const item = dom('li', { className: 'story-entry' });
 
-        // Meta line: Publisher • Published
-        const metaLine = dom('div', { className: 'story-line-top' });
-        metaLine.appendChild(dom('span', { className: 'story-source-name' }, s.source || 'Primary Source'));
-        if (s.tier) {
-          metaLine.appendChild(dom('span', {}, '•'));
-          metaLine.appendChild(dom('span', {}, s.tier));
-        }
-        if (s.published) {
-          metaLine.appendChild(dom('span', {}, '•'));
-          metaLine.appendChild(dom('span', {}, s.published));
-        }
+        const topic = classifyTopic(s.title + ' ' + s.one_liner);
+
+        // Meta Line
+        const metaLine = dom('div', { className: 'story-meta-row' },
+          dom('div', { style: 'display: flex; gap: 0.5rem; align-items: center;' },
+            dom('span', { className: 'story-source-tag' }, s.source || 'Publisher'),
+            dom('span', {}, '•'),
+            dom('span', {}, s.published || 'Recent')
+          ),
+          dom('span', { className: 'topic-tag', style: 'font-size: 0.7rem; padding: 0.1rem 0.4rem;' }, topic.label)
+        );
         item.appendChild(metaLine);
 
-        // Headline with safe outbound link
+        // Headline with Outbound Link
         const headlineEl = dom('h3', { className: 'story-headline' });
-        const link = makeSafeLink(s.link, s.title || 'Untitled Dispatch', 'story-link');
-
-        // External link icon
+        const link = safeLink(s.link, s.title || 'Untitled Dispatch', 'story-link');
         const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         icon.setAttribute('viewBox', '0 0 24 24');
         icon.setAttribute('fill', 'none');
@@ -1362,7 +1829,6 @@
         p3.setAttribute('x1', '10'); p3.setAttribute('y1', '14');
         p3.setAttribute('x2', '21'); p3.setAttribute('y2', '3');
         icon.appendChild(p1); icon.appendChild(p2); icon.appendChild(p3);
-
         link.appendChild(icon);
         headlineEl.appendChild(link);
         item.appendChild(headlineEl);
@@ -1372,76 +1838,45 @@
           item.appendChild(dom('p', { className: 'story-one-liner' }, s.one_liner));
         }
 
+        // Story Action Row (Save & Copy)
+        const actionRow = dom('div', { className: 'story-action-row' });
+
+        const isSaved = isItemSaved(storyId);
+        const saveBtn = dom('button', { className: 'btn-action' + (isSaved ? ' saved' : '') },
+          dom('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+            dom('path', { d: 'M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z' })
+          )
+        );
+        const saveLabel = dom('span', {}, isSaved ? 'Saved' : 'Save');
+        saveBtn.appendChild(saveLabel);
+        saveBtn.onclick = () => toggleSaveItem(storyId, saveBtn, saveLabel);
+        actionRow.appendChild(saveBtn);
+
+        const copyBtn = dom('button', { className: 'btn-action' },
+          dom('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+            dom('rect', { x: '9', y: '9', width: '13', height: '13', rx: '2', ry: '2' }),
+            dom('path', { d: 'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1' })
+          )
+        );
+        const copyLabel = dom('span', {}, 'Copy');
+        copyBtn.appendChild(copyLabel);
+        copyBtn.onclick = () => {
+          const text = `${s.title}\n${s.one_liner || ''}\nSource: ${s.source} (${s.link || ''})`;
+          copyTextToClipboard(text, copyLabel);
+        };
+        actionRow.appendChild(copyBtn);
+
+        item.appendChild(actionRow);
         container.appendChild(item);
       });
     }
 
     /* -------------------------------------------------------------
-       SEARCH & FILTER EXECUTION
+       INTERACTIONS: TOPIC FILTER & SEARCH
        ------------------------------------------------------------- */
-    function renderFilteredContent() {
-      if (!briefingData) return;
-
-      const q = searchFilterQuery.toLowerCase().trim();
-      const allTrends = briefingData.trends || [];
-      const allStories = briefingData.top_stories || [];
-
-      // Filter Trends
-      const filteredTrends = allTrends.filter((t) => {
-        const matchesCategory = (selectedCategory === 'all') ||
-          (t.tier && t.tier.toLowerCase().includes(selectedCategory.toLowerCase())) ||
-          (selectedCategory === 'Official Lab' && (t.status === 'official_claim' || (t.source && t.source.toLowerCase().includes('openai'))));
-
-        const searchable = [
-          t.title,
-          t.what_happened,
-          t.why_it_matters,
-          t.who_affected,
-          t.source
-        ].filter(Boolean).join(' ').toLowerCase();
-
-        const matchesQuery = !q || searchable.includes(q);
-
-        return matchesCategory && matchesQuery;
-      });
-
-      // Filter Stories
-      const filteredStories = allStories.filter((s) => {
-        const matchesCategory = (selectedCategory === 'all') ||
-          (s.tier && s.tier.toLowerCase().includes(selectedCategory.toLowerCase()));
-
-        const searchable = [
-          s.title,
-          s.one_liner,
-          s.source,
-          s.tier
-        ].filter(Boolean).join(' ').toLowerCase();
-
-        const matchesQuery = !q || searchable.includes(q);
-
-        return matchesCategory && matchesQuery;
-      });
-
-      // Feedback count bar
-      const feedback = document.getElementById('filter-feedback');
-      const countEl = document.getElementById('filter-count');
-      const isFiltered = (selectedCategory !== 'all') || q.length > 0;
-
-      if (isFiltered) {
-        feedback.style.display = 'flex';
-        countEl.textContent = 'Showing ' + filteredTrends.length + ' development' + (filteredTrends.length === 1 ? '' : 's') +
-          ' and ' + filteredStories.length + ' dispatch' + (filteredStories.length === 1 ? '' : 'es');
-      } else {
-        feedback.style.display = 'none';
-      }
-
-      renderTrendsFeed(filteredTrends);
-      renderStoriesFeed(filteredStories);
-    }
-
-    function setFilterCategory(tier, btnEl) {
-      selectedCategory = tier;
-      document.querySelectorAll('.filter-pill').forEach((pill) => {
+    function setTopicFilter(topicSlug, btnEl) {
+      selectedTopic = topicSlug;
+      document.querySelectorAll('.topic-pill').forEach((pill) => {
         pill.classList.remove('active');
         pill.setAttribute('aria-checked', 'false');
       });
@@ -1453,7 +1888,7 @@
     }
 
     function handleSearch(val) {
-      searchFilterQuery = val;
+      searchQuery = val;
       const clearBtn = document.getElementById('search-clear');
       clearBtn.style.display = val.length > 0 ? 'block' : 'none';
       renderFilteredContent();
@@ -1462,7 +1897,7 @@
     function clearSearch() {
       const input = document.getElementById('search-input');
       input.value = '';
-      searchFilterQuery = '';
+      searchQuery = '';
       document.getElementById('search-clear').style.display = 'none';
       input.focus();
       renderFilteredContent();
@@ -1470,9 +1905,11 @@
 
     function resetAllFilters() {
       document.getElementById('search-input').value = '';
-      searchFilterQuery = '';
+      searchQuery = '';
       document.getElementById('search-clear').style.display = 'none';
-      setFilterCategory('all', document.querySelector('.filter-pill[data-tier="all"]'));
+      isShowingSavedOnly = false;
+      document.getElementById('btn-saved-filter').classList.remove('active');
+      setTopicFilter('all', document.querySelector('.topic-pill[data-topic="all"]'));
     }
 
     /* -------------------------------------------------------------
@@ -1540,54 +1977,23 @@
     }
 
     /* -------------------------------------------------------------
-       COPY PLAIN TEXT BRIEFING
+       CLIPBOARD UTILITIES
        ------------------------------------------------------------- */
-    function copyBriefing() {
-      if (!briefingData) return;
-
-      const dateStr = briefingData.generated_at
-        ? new Date(briefingData.generated_at).toUTCString()
-        : 'Recent';
-
-      let text = 'AI TREND PULSE — EXECUTIVE BRIEFING\n';
-      text += 'Generated: ' + dateStr + '\n\n';
-
-      text += '=== THE BIG PICTURE ===\n';
-      text += (briefingData.takeaway || 'No takeaway available.') + '\n\n';
-
-      text += '=== KEY DEVELOPMENTS ===\n';
-      (briefingData.trends || []).forEach((t, i) => {
-        text += (i + 1) + '. ' + (t.title || 'Untitled') + '\n';
-        text += '   Source: ' + (t.source || 'Unknown') + ' (' + (t.tier || 'Verified') + ')\n';
-        if (t.what_happened) text += '   What happened: ' + t.what_happened + '\n';
-        if (t.why_it_matters) text += '   Why it matters: ' + t.why_it_matters + '\n';
-        if (t.who_affected) text += '   Affected audience: ' + t.who_affected + '\n';
-        if (t.evidence_urls && t.evidence_urls.length > 0) {
-          text += '   Evidence: ' + t.evidence_urls.join(', ') + '\n';
-        }
-        text += '\n';
-      });
-
-      text += '=== SOURCE DISPATCHES ===\n';
-      (briefingData.top_stories || []).forEach((s) => {
-        text += '• ' + (s.title || '') + ' — ' + (s.source || '') + '\n';
-        if (s.link) text += '  ' + s.link + '\n';
-      });
-
-      const label = document.getElementById('copy-caption');
+    function copyTextToClipboard(text, labelEl) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
-          label.textContent = 'Copied!';
-          setTimeout(() => { label.textContent = 'Copy Briefing'; }, 2000);
+          const original = labelEl.textContent;
+          labelEl.textContent = 'Copied!';
+          setTimeout(() => { labelEl.textContent = original; }, 2000);
         }).catch(() => {
-          fallbackCopy(text, label);
+          fallbackCopyText(text, labelEl);
         });
       } else {
-        fallbackCopy(text, label);
+        fallbackCopyText(text, labelEl);
       }
     }
 
-    function fallbackCopy(text, labelEl) {
+    function fallbackCopyText(text, labelEl) {
       try {
         const ta = document.createElement('textarea');
         ta.value = text;
@@ -1598,24 +2004,23 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
+        const original = labelEl.textContent;
         labelEl.textContent = 'Copied!';
-        setTimeout(() => { labelEl.textContent = 'Copy Briefing'; }, 2000);
+        setTimeout(() => { labelEl.textContent = original; }, 2000);
       } catch (err) {
         alert('Briefing ready: Please copy text manually.');
       }
     }
 
-    // Cancel speech on page unload
     window.addEventListener('beforeunload', () => {
       if (isSpeaking && ('speechSynthesis' in window)) {
         window.speechSynthesis.cancel();
       }
     });
 
-    // App Initialization
     document.addEventListener('DOMContentLoaded', () => {
       initThemeSystem();
-      loadBriefingData();
+      loadBriefing();
     });
   </script>
 </body>
