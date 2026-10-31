@@ -12,27 +12,8 @@ const dataContent = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 console.log('▶ [1/5] Checking HTML structure and semantics...');
 const requiredIDs = [
   'status-text',
-  'ai-briefing',
-  'briefing-title',
-  'briefing-summary',
-  'briefing-why-box',
-  'briefing-why-text',
-  'briefing-source',
-  'briefing-time',
-  'briefing-readtime',
-  'briefing-source-link',
   'btn-audio',
   'audio-caption',
-  'briefing-save-btn',
-  'briefing-save-label',
-  'briefing-copy-label',
-  'hero-visual-card',
-  'hero-image',
-  'hero-image-wrap',
-  'hero-audience-pills',
-  'pulse-section',
-  'pulse-heading',
-  'pulse-container',
   'topics-section',
   'topic-pills-bar',
   'feed-section',
@@ -214,18 +195,11 @@ vm.runInContext(mainScript, sandbox);
 sandbox.renderCompleteUI(dataContent);
 console.log('✅ renderCompleteUI executed successfully.');
 
-// Verify Hero Briefing
-if (!mockElements['briefing-title'].textContent) {
-  console.error('❌ briefing-title was not populated.');
-  process.exit(1);
-}
-console.log(`✅ Hero Title rendered: "${mockElements['briefing-title'].textContent.slice(0, 50)}..."`);
-
-// Verify Pulse Strip
-const pulseCount = mockElements['pulse-container'].children.length;
-console.log(`✅ Pulse strip populated with ${pulseCount} items.`);
-if (pulseCount !== 4) {
-  console.error(`❌ Expected 4 pulse items, got ${pulseCount}`);
+// Verify Dispatches Feed
+const dispatchCount = mockElements['stories-container'].children.length;
+console.log(`✅ Dispatches feed populated with ${dispatchCount} stories.`);
+if (dispatchCount < 1) {
+  console.error(`❌ Expected dispatch stories, got ${dispatchCount}`);
   process.exit(1);
 }
 

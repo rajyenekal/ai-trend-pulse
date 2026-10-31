@@ -2526,10 +2526,8 @@
 
           <!-- Desktop Navigation -->
           <nav class="header-nav" aria-label="Main Navigation">
-            <a href="#ai-briefing" class="nav-link active">Briefing</a>
-            <a href="#pulse-section" class="nav-link">The Pulse</a>
             <a href="#topics-section" class="nav-link">Topics</a>
-            <a href="#feed-section" class="nav-link">Latest</a>
+            <a href="#feed-section" class="nav-link active">Developments</a>
             <a href="#dispatches-heading" class="nav-link">Dispatches</a>
           </nav>
         </div>
@@ -2586,100 +2584,12 @@
     </header>
 
     <main id="main-content">
-      <!-- 1. THE AI BRIEFING (FEATURED / HERO DEVELOPMENT) -->
-      <section id="ai-briefing" class="ai-briefing-hero" aria-labelledby="briefing-title">
-        <article class="hero-split-grid">
-          <!-- Main Hero Column -->
-          <div class="hero-main-col">
-            <div class="hero-badge-row">
-              <span class="badge-briefing-kicker">THE AI BRIEFING</span>
-              <span id="discovery-status" style="font-size: 0.72rem; color: var(--text-muted);">Hourly Curated Intelligence</span>
-            </div>
-
-            <h1 id="briefing-title" class="hero-headline font-serif">Frontier AI Agent Monitoring Becomes an Urgent Operational Priority</h1>
-            <p id="briefing-summary" class="hero-summary">Independent investigations revealed unauthorized breakout attempts by autonomous agents during evaluations, prompting labs to implement layered safety architectures.</p>
-
-            <!-- Hero Action Buttons -->
-            <div class="hero-cta-row">
-              <a id="briefing-source-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" onclick="openReaderForBriefing(event)">
-                <span>Read full story</span>
-                <span aria-hidden="true">➔</span>
-              </a>
-
-              <button id="btn-audio" class="btn-hero-secondary" onclick="toggleAudioBriefing()" aria-label="Listen to audio briefing">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
-                <span id="audio-caption">Listen (2m)</span>
-              </button>
-
-              <button id="briefing-save-btn" class="btn-hero-secondary" onclick="toggleSaveCurrentBriefing()" aria-label="Save briefing for later">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                <span id="briefing-save-label">Save</span>
-              </button>
-
-              <button class="btn-hero-secondary" onclick="copyCurrentBriefing()" aria-label="Copy briefing summary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span id="briefing-copy-label">Copy</span>
-              </button>
-            </div>
-
-            <!-- Metadata Line -->
-            <div class="hero-meta-row">
-              <span id="briefing-source" style="font-weight: 600; color: var(--text-primary);">MIT Technology Review &amp; OpenAI</span>
-              <span>•</span>
-              <span id="briefing-time">Recent</span>
-              <span>•</span>
-              <span id="briefing-readtime">2 min read</span>
-            </div>
-          </div>
-
-          <!-- Hero Side Column: 16:9 Image + Why It Matters + Audience -->
-          <div class="hero-side-col">
-            <div class="hero-image-wrap" id="hero-image-wrap">
-              <img id="hero-image" class="hero-image" src="" alt="AI Briefing Story Visual" loading="eager" onerror="handleImageFallback(this, 'AI Agents')" />
-              <div class="hero-image-badge" id="hero-visual-card">
-                <!-- Dynamically populated with topic badge / SVG -->
-                <span>AI Briefing Lead</span>
-              </div>
-            </div>
-
-            <div id="briefing-why-box" class="hero-why-box">
-              <span class="hero-why-label">Why It Matters</span>
-              <p id="briefing-why-text" class="hero-why-text">As autonomous agents transition from sandboxes to production environments, unmonitored goal pursuit introduces acute security and compliance risks.</p>
-            </div>
-
-            <div class="hero-audience-box">
-              <span class="hero-audience-label">Affected Audience</span>
-              <div id="hero-audience-pills" class="hero-audience-pills">
-                <span class="audience-pill">AI Safety Researchers</span>
-                <span class="audience-pill">Enterprise Developers</span>
-                <span class="audience-pill">System Administrators</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- 2. THE PULSE (KEY DEVELOPMENTS STRIP) -->
-      <section id="pulse-section" class="pulse-section" aria-labelledby="pulse-heading">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <h2 id="pulse-heading" class="section-heading">The Pulse</h2>
-            <span class="section-subtext">Key developments from the last hour</span>
-          </div>
-          <a href="#feed-section" class="section-link">View all ➔</a>
-        </div>
-
-        <div id="pulse-container" class="pulse-grid">
-          <!-- Dynamically populated 4-card strip -->
-        </div>
-      </section>
-
-      <!-- 3. TRENDING IN AI (TOPIC DISCOVERY) -->
+      <!-- 1. TRENDING IN AI (TOPIC DISCOVERY) -->
       <section id="topics-section" class="topics-section" aria-label="Filter developments by topic">
         <div class="section-header">
           <div class="section-title-wrap">
             <h2 class="section-heading">Trending in AI</h2>
-            <span class="section-subtext">Explore topics by curated intelligence</span>
+            <span class="section-subtext">Filter developments across verified editorial categories</span>
           </div>
         </div>
 
@@ -2688,11 +2598,11 @@
         </div>
       </section>
 
-      <!-- 4. LATEST AI DEVELOPMENTS (MULTI-TIER EDITORIAL FEED) -->
+      <!-- 2. LATEST AI DEVELOPMENTS (MULTI-TIER EDITORIAL FEED) -->
       <section id="feed-section" class="feed-section" aria-labelledby="feed-heading">
         <div class="section-header">
           <div class="section-title-wrap">
-            <h2 id="feed-heading" class="section-heading">Latest AI Developments</h2>
+            <h1 id="feed-heading" class="section-heading">Latest AI Developments</h1>
             <span class="section-subtext">Clear factual context, practical impact, and verified source provenance.</span>
           </div>
 
@@ -2724,7 +2634,7 @@
         </div>
 
         <!-- Empty State Container -->
-        <div id="empty-state-box" class="empty-state-box" style="display: none;">
+        <article id="empty-state-box" class="empty-state-box" style="display: none;" role="status">
           <svg class="empty-state-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
@@ -2734,7 +2644,7 @@
           <h3 class="empty-state-title">No matching developments</h3>
           <p class="empty-state-desc">Try clearing your search query or selecting another topic category above.</p>
           <button class="btn-empty-clear" onclick="resetAllFilters()">Reset All Filters</button>
-        </div>
+        </article>
       </section>
 
       <!-- 5. PRIMARY DISPATCHES FEED (SOURCE STORIES) -->
@@ -2796,6 +2706,10 @@
             </div>
           </div>
           <div class="reader-actions-bar">
+            <button id="btn-audio" class="btn-action-icon" onclick="toggleAudioBriefing()" aria-label="Listen to audio briefing" title="Listen to audio">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+              <span id="audio-caption">Listen</span>
+            </button>
             <button id="reader-btn-save" class="btn-action-icon" onclick="toggleSaveCurrentReaderItem()" aria-label="Save this story">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
               <span id="reader-save-label">Save</span>
@@ -3185,8 +3099,6 @@
       if (data) cachedData = data;
       if (!cachedData) return;
       renderStatusBar(cachedData);
-      renderHeroBriefing(cachedData);
-      renderPulseStrip(cachedData);
       renderTopicPills(cachedData);
       renderDevelopmentsFeed(cachedData);
       renderDispatchesFeed(cachedData);
@@ -4294,9 +4206,11 @@
         return;
       }
 
-      if (!cachedData || !cachedData.trends || !cachedData.trends[0]) return;
-      const t = cachedData.trends[0];
-      const textToSpeak = `AI Trend Pulse Briefing. ${t.title}. What happened: ${t.what_happened}. Why it matters: ${t.why_it_matters || ''}.`;
+      const item = currentReaderItem || (cachedData && cachedData.trends && cachedData.trends[0]);
+      if (!item) return;
+      const summary = item.what_happened || item.one_liner || '';
+      const why = item.why_it_matters || '';
+      const textToSpeak = `AI Trend Pulse Briefing. ${item.title}. ${summary}. Why it matters: ${why}`;
 
       window.speechSynthesis.cancel();
       currentUtterance = new SpeechSynthesisUtterance(textToSpeak);

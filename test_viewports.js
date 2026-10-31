@@ -40,26 +40,20 @@ targetViewports.forEach(vp => {
     console.log('   • Header: Full desktop search bar & expanded nav active');
   }
 
-  // 3. Hero layout
-  if (w < 900) {
-    console.log('   • Hero: 1-column stacked flow, 16:9 controlled aspect ratio, no viewport lock');
-  } else {
-    console.log('   • Hero: 2-column editorial split (1.15fr / 0.85fr)');
-  }
-
-  // 4. The Pulse strip
-  if (w < 900) {
-    const cardW = Math.max(260, Math.min(290, Math.round(w * 0.78)));
-    console.log(`   • The Pulse: Horizontal touch momentum scroll, card width: ${cardW}px, zero page overflow`);
-  } else {
-    console.log('   • The Pulse: 4-column balanced editorial grid');
-  }
-
-  // 5. Developments feed
+  // 3. Developments feed
   if (w < 768) {
     console.log('   • Feed: Single-column editorial stack, full card breathing room');
   } else {
     console.log('   • Feed: 2-column responsive grid with full-width featured card');
+  }
+
+  // 4. Dispatches grid
+  if (w < 640) {
+    console.log('   • Dispatches: 1-column card stack');
+  } else if (w < 1024) {
+    console.log('   • Dispatches: 2-column responsive card grid');
+  } else {
+    console.log('   • Dispatches: 3-column wide editorial card grid');
   }
 
   // 6. Drawers / Modals
