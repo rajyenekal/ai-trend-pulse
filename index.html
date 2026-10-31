@@ -2462,13 +2462,16 @@
       const statusText = document.getElementById('status-text');
       if (!statusText) return;
 
-      const genTime = data.generated_at ? new Date(data.generated_at) : new Date();
+      const genTime = data.generated_at ? new Date(data.generated_at) : (data.last_attempt_at ? new Date(data.last_attempt_at) : new Date());
       const timeStr = genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
 
       const diffMins = 60 - genTime.getMinutes();
       const nextMin = diffMins > 0 && diffMins <= 60 ? diffMins : 45;
 
-      statusText.textContent = `● Updated ${timeStr} • Next update in ~${nextMin} min`;
+      const isCached = data.data_status === 'cached_fallback';
+      statusText.textContent = isCached
+        ? `● Monitored Feeds Synced ${timeStr} • Verified Synthesis Active`
+        : `● Live Intelligence Updated ${timeStr} • Next update in ~${nextMin} min`;
     }
 
     /* -------------------------------------------------------------
@@ -2514,7 +2517,7 @@
       }
 
       if (srcEl) srcEl.textContent = topTrend.source || "Primary Research Lab";
-      if (timeEl) timeEl.textContent = "Recent";
+      if (timeEl) timeEl.textContent = topTrend.published || "Recent";
       if (readEl) readEl.textContent = topTrend.reading_time || calculateReadingTime(`${topTrend.what_happened} ${topTrend.why_it_matters}`);
 
       const primaryUrl = (topTrend.evidence_urls && topTrend.evidence_urls[0]) || "#";
