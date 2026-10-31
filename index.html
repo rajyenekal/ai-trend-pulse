@@ -191,6 +191,7 @@
       padding: 0.15rem 0.5rem;
       border-radius: 4px;
       font-size: 0.75rem;
+      transition: background 0.15s;
     }
     .evidence-link:hover { text-decoration: underline; background: #2563eb; color: #fff; }
 
@@ -322,15 +323,27 @@
         cachedData = data;
         document.getElementById('takeaway').textContent = data.takeaway || 'No takeaway available.';
         
-        const updateDate = data.generated_at ? new Date(data.generated_at) : new Date();
         const syncTimeEl = document.getElementById('sync-time');
         const statusDot = document.getElementById('status-dot');
 
-        if (data.data_status === 'cached_fallback') {
-          syncTimeEl.textContent = 'Cached Briefing (' + updateDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + ')';
-          statusDot.className = 'pulse-dot fallback';
+        // Robust timestamp handling
+        const timestampStr = data.generated_at || data.last_updated;
+        if (!timestampStr) {
+          syncTimeEl.textContent = 'Timestamp unavailable';
         } else {
-          syncTimeEl.textContent = 'Synced ' + updateDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+          const genDate = new Date(timestampStr);
+          const formattedTime = isNaN(genDate.getTime()) ? 'Recent' : genDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+          if (data.data_status === 'cached_fallback') {
+            syncTimeEl.textContent = 'Cached Briefing (' + formattedTime + ')';
+            statusDot.className = 'pulse-dot fallback';
+          } else if (data.data_status === 'raw_headlines') {
+            syncTimeEl.textContent = 'Raw Headlines (' + formattedTime + ')';
+            statusDot.className = 'pulse-dot fallback';
+          } else {
+            syncTimeEl.textContent = 'Live Briefing (' + formattedTime + ')';
+            statusDot.className = 'pulse-dot';
+          }
         }
 
         renderTrends(data.trends || []);
@@ -353,11 +366,13 @@
 
       trends.forEach(t => {
         const card = createEl('div', 'trend-card');
-        card.setAttribute('data-tier', t.status || t.tier || '');
+        card.setAttribute('data-tier', t.tier || '');
+        card.setAttribute('data-status', t.status || '');
         card.setAttribute('data-text', ((t.title || '') + ' ' + (t.what_happened || '')).toLowerCase());
 
-        const badgeText = (t.status === 'official_claim' ? '🏢 Official Lab Announcement' : '🔍 Independently Verified') + ' • ' + (t.source || 'Publisher');
-        const badge = createEl('span', 'tier-badge ' + (t.status === 'official_claim' ? 'tier-lab' : 'tier-journal'), badgeText);
+        const isLab = (t.tier === 'Official Lab' || t.status === 'official_claim');
+        const badgeText = (isLab ? '🏢 Official Lab Announcement' : '🔍 Source-Linked Report') + ' • ' + (t.source || 'Publisher');
+        const badge = createEl('span', 'tier-badge ' + (isLab ? 'tier-lab' : 'tier-journal'), badgeText);
         card.appendChild(badge);
 
         const title = createEl('h3', 'trend-title', t.title);
@@ -443,7 +458,7 @@
       document.querySelectorAll('.trend-card, .story-card').forEach(card => {
         const text = card.getAttribute('data-text') || '';
         const tier = card.getAttribute('data-tier') || '';
-        const matchesTier = (activeFilter === 'all') || tier.includes(activeFilter);
+        const matchesTier = (activeFilter === 'all') || tier.toLowerCase().includes(activeFilter.toLowerCase());
         const matchesQuery = !query || text.includes(query);
         card.style.display = (matchesTier && matchesQuery) ? '' : 'none';
       });
@@ -460,6 +475,8 @@
       }
 
       if (!cachedData) return;
+      window.speechSynthesis.cancel();
+
       let textToRead = "Today's AI Trend Briefing. The Big Picture: " + (cachedData.takeaway || "") + ". Top Macro Trends: ";
       (cachedData.trends || []).forEach((t, i) => {
         textToRead += "Trend " + (i + 1) + ": " + t.title + ". " + (t.what_happened || "") + ". ";
@@ -468,6 +485,12 @@
       const utterance = new SpeechSynthesisUtterance(textToRead);
       utterance.rate = 1.0;
       utterance.onend = () => {
+        isSpeaking = false;
+        btn.textContent = '🔊 Listen (2m)';
+        btn.classList.remove('playing');
+      };
+      utterance.onerror = (e) => {
+        console.warn('Speech synthesis error:', e);
         isSpeaking = false;
         btn.textContent = '🔊 Listen (2m)';
         btn.classList.remove('playing');
@@ -483,13 +506,40 @@
       if (!cachedData) return;
       let text = `⚡ AI TREND PULSE • BRIEFING\n\n💡 THE BIG PICTURE:\n${cachedData.takeaway}\n\n🔥 MAJOR TRENDS:\n`;
       (cachedData.trends || []).forEach((t, i) => {
-        text += `\n${i + 1}. ${t.title} [${t.source}]\n   📌 What: ${t.what_happened || ''}\n   💡 Why it matters: ${t.why_it_matters || ''}\n`;
+        text += `\n${i + 1}. ${t.title} [${t.source} • ${t.tier || ''}]\n   📌 What: ${t.what_happened || ''}\n   💡 Why it matters: ${t.why_it_matters || ''}\n`;
+        if (t.evidence_urls && t.evidence_urls.length > 0) {
+          text += `   📎 Evidence: ${t.evidence_urls.join(', ')}\n`;
+        }
       });
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector('.btn-copy');
+
+      const btn = document.querySelector('.btn-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          btn.textContent = '✅ Copied!';
+          setTimeout(() => { btn.textContent = '📋 Copy Briefing'; }, 2000);
+        }).catch(err => {
+          fallbackCopyText(text, btn);
+        });
+      } else {
+        fallbackCopyText(text, btn);
+      }
+    }
+
+    function fallbackCopyText(text, btn) {
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
         btn.textContent = '✅ Copied!';
         setTimeout(() => { btn.textContent = '📋 Copy Briefing'; }, 2000);
-      });
+      } catch (e) {
+        alert('Briefing ready: Please select text on screen to copy.');
+      }
     }
 
     window.addEventListener('beforeunload', () => {
