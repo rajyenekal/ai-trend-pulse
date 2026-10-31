@@ -1,0 +1,17 @@
+{
+  "name": "ai-trend-pulse",
+  "version": "2.0.0",
+  "description": "Autonomous, hourly AI market intelligence with traceable evidence provenance and 3-tier source verification.",
+  "scripts": {
+    "test": "node test_qa.js && node test_viewports.js"
+  },
+  "keywords": [
+    "ai",
+    "market-intelligence",
+    "trends",
+    "news"
+  ],
+  "author": "Rajaneesh K B",
+  "license": "MIT"
+}
+

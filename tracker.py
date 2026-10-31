@@ -120,6 +120,36 @@ def filter_and_deduplicate_articles(
     )
     clean_summary = re.sub(r"<[^>]+>", "", summary)[:280].strip()
 
+    # Extract article image if present in media tags or enclosure
+    img_url = ""
+    media_content = (
+        entry.get("media_content", [])
+        if isinstance(entry, dict)
+        else getattr(entry, "media_content", [])
+    )
+    if isinstance(media_content, list) and media_content and isinstance(media_content[0], dict) and media_content[0].get("url"):
+      img_url = media_content[0]["url"]
+    if not img_url:
+      media_thumb = (
+          entry.get("media_thumbnail", [])
+          if isinstance(entry, dict)
+          else getattr(entry, "media_thumbnail", [])
+      )
+      if isinstance(media_thumb, list) and media_thumb and isinstance(media_thumb[0], dict) and media_thumb[0].get("url"):
+        img_url = media_thumb[0]["url"]
+    if not img_url:
+      enclosures = (
+          entry.get("enclosures", [])
+          if isinstance(entry, dict)
+          else getattr(entry, "enclosures", [])
+      )
+      if isinstance(enclosures, list) and enclosures and isinstance(enclosures[0], dict) and enclosures[0].get("href"):
+        img_url = enclosures[0]["href"]
+    if not img_url:
+      m = re.search(r'<img[^>]+src=["\'](https?://[^"\']+)["\']', summary)
+      if m:
+        img_url = m.group(1)
+
     seen_urls.add(clean_url)
     articles.append({
         "source": source_name,
@@ -127,6 +157,7 @@ def filter_and_deduplicate_articles(
         "title": title.strip(),
         "link": clean_url,
         "summary": clean_summary,
+        "image": img_url,
         "published": (
             pub_dt.strftime("%b %d, %H:%M UTC") if pub_dt else "Recent"
         ),
@@ -418,8 +449,14 @@ def extract_audience_pills(who_affected_str):
   return parts[:4] if parts else ["Enterprises", "Developers"]
 
 
-def enrich_payload(payload):
-  """Enriches trends and stories with topic, company, reading time, and audience tags."""
+def enrich_payload(payload, articles=None):
+  """Enriches trends and stories with topic, company, reading time, audience tags, and images."""
+  url_to_image = {}
+  if articles:
+    for a in articles:
+      if a.get("link") and a.get("image"):
+        url_to_image[a["link"]] = a["image"]
+
   for t in payload.get("trends", []):
     if "topic" not in t:
       t["topic"] = classify_topic(t.get("title", ""), t.get("what_happened", ""))
@@ -430,6 +467,12 @@ def enrich_payload(payload):
       t["reading_time"] = estimate_reading_time(full_text)
     if "audience_pills" not in t:
       t["audience_pills"] = extract_audience_pills(t.get("who_affected", ""))
+    if "image" not in t or not t.get("image"):
+      # Check if any evidence url has an article image
+      for u in t.get("evidence_urls", []):
+        if u in url_to_image:
+          t["image"] = url_to_image[u]
+          break
 
   for s in payload.get("top_stories", []):
     if "topic" not in s:
@@ -438,6 +481,8 @@ def enrich_payload(payload):
       s["company"] = detect_company(s.get("title", ""), s.get("source", ""))
     if "reading_time" not in s:
       s["reading_time"] = estimate_reading_time(s.get("one_liner", ""))
+    if ("image" not in s or not s.get("image")) and s.get("link") in url_to_image:
+      s["image"] = url_to_image[s["link"]]
 
   # Generate curated 4 items for The Pulse strip
   pulse_items = []
@@ -447,7 +492,8 @@ def enrich_payload(payload):
         "topic": t.get("topic", "AI Intelligence"),
         "company": t.get("company", "default"),
         "published": "Recent",
-        "link": t.get("evidence_urls", ["#"])[0] if t.get("evidence_urls") else "#"
+        "link": t.get("evidence_urls", ["#"])[0] if t.get("evidence_urls") else "#",
+        "image": t.get("image", "")
     })
   for s in payload.get("top_stories", []):
     if len(pulse_items) >= 4:
@@ -457,7 +503,8 @@ def enrich_payload(payload):
         "topic": s.get("topic", "AI Developments"),
         "company": s.get("company", "default"),
         "published": s.get("published", "Recent"),
-        "link": s.get("link", "#")
+        "link": s.get("link", "#"),
+        "image": s.get("image", "")
     })
   payload["pulse_items"] = pulse_items[:4]
   return payload
@@ -478,8 +525,8 @@ def run_pipeline(dry_run=False, max_age_hours=72):
   ):
     payload["generated_at"] = now_iso
 
-  # Enrich with topics, companies, reading times, and Pulse strip
-  payload = enrich_payload(payload)
+  # Enrich with topics, companies, reading times, images, and Pulse strip
+  payload = enrich_payload(payload, articles=articles)
 
   if dry_run:
     print("\n🔍 DRY-RUN MODE: data.json will NOT be written.")

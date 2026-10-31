@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-theme-preference="system">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Trend Pulse — Daily AI Intelligence & Market Briefings</title>
-  <meta name="description" content="Hourly curated AI industry intelligence: executive briefings, trending AI topics, model launches, and primary source dispatches.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="AI Trend Pulse — Autonomous hourly AI intelligence with traceable evidence provenance and 3-tier source verification." />
+  <meta name="theme-color" content="#0a0d12" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+  <title>AI Trend Pulse — Hourly AI Intelligence & Market Signals</title>
 
-  <!-- Instant theme initialization: supports light, dark, and system preference with zero flash -->
+  <!-- Prevent theme flicker on load -->
   <script>
     (function() {
       try {
         const pref = localStorage.getItem('ai_trend_theme_preference') || 'system';
         document.documentElement.setAttribute('data-theme-preference', pref);
-
-        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        let activeTheme = 'dark'; // Dark is default per editorial brief
-        if (pref === 'light') {
-          activeTheme = 'light';
-        } else if (pref === 'dark') {
-          activeTheme = 'dark';
-        } else if (pref === 'system') {
-          activeTheme = systemDark ? 'dark' : 'light';
-        }
-        document.documentElement.setAttribute('data-theme', activeTheme);
-      } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        document.documentElement.setAttribute('data-theme-preference', 'system');
-      }
+        const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let theme = 'dark';
+        if (pref === 'light') theme = 'light';
+        else if (pref === 'dark') theme = 'dark';
+        else if (pref === 'system') theme = sysDark ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
     })();
   </script>
 
+  <!-- Preconnect to image CDN for zero layout shift -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
   <style>
     /* -------------------------------------------------------------
-       DESIGN TOKENS: MODERN EDITORIAL PALETTE (LIGHT & DARK)
+       1. DESIGN TOKENS & SYSTEM VARIABLES (MOBILE-FIRST)
        ------------------------------------------------------------- */
     :root, [data-theme="light"] {
       --bg-page: #f8fafc;
@@ -41,10 +39,11 @@
       --bg-elevated: #ffffff;
       --bg-hover: #e2e8f0;
       --bg-drawer: #ffffff;
-      --bg-modal-backdrop: rgba(15, 23, 42, 0.5);
+      --bg-modal-backdrop: rgba(15, 23, 42, 0.6);
       
       --border-subtle: #e2e8f0;
       --border-strong: #cbd5e1;
+      --border-focus: #0d9488;
       
       --text-primary: #0f172a;
       --text-secondary: #334155;
@@ -73,31 +72,38 @@
       --badge-topic-bg: #f1f5f9;
       --badge-topic-text: #1e293b;
       --badge-topic-border: #cbd5e1;
+
+      --card-featured-bg: #ffffff;
+      --card-featured-border: #cbd5e1;
+      --card-why-bg: #f8fafc;
+      --card-why-border: #0d9488;
       
       --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-      --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-      --hero-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      --card-shadow-hover: 0 8px 20px -4px rgba(0, 0, 0, 0.08), 0 4px 8px -4px rgba(0, 0, 0, 0.04);
+      --hero-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
       --focus-ring: rgba(13, 148, 136, 0.4);
       
       --logo-box-bg: #f8fafc;
       --logo-box-border: #e2e8f0;
+      --logo-color: #0f172a;
     }
 
     [data-theme="dark"] {
-      --bg-page: #0b0d10;
-      --bg-surface: #12151a;
-      --bg-subtle: #181d24;
-      --bg-elevated: #1e242d;
-      --bg-hover: #262d38;
-      --bg-drawer: #12151a;
-      --bg-modal-backdrop: rgba(0, 0, 0, 0.75);
+      --bg-page: #0a0d12;
+      --bg-surface: #121720;
+      --bg-subtle: #18202c;
+      --bg-elevated: #1d2634;
+      --bg-hover: #242f40;
+      --bg-drawer: #121720;
+      --bg-modal-backdrop: rgba(0, 0, 0, 0.8);
       
-      --border-subtle: #222933;
-      --border-strong: #333d4d;
+      --border-subtle: #222d3d;
+      --border-strong: #334155;
+      --border-focus: #2dd4bf;
       
       --text-primary: #f8fafc;
       --text-secondary: #cbd5e1;
-      --text-muted: #8492a6;
+      --text-muted: #8899aa;
       
       --accent: #2dd4bf;
       --accent-hover: #14b8a6;
@@ -119,21 +125,27 @@
       --status-cached-text: #fcd34d;
       --status-cached-dot: #fbbf24;
       
-      --badge-topic-bg: #19202a;
-      --badge-topic-text: #93c5fd;
-      --badge-topic-border: #283344;
+      --badge-topic-bg: #192230;
+      --badge-topic-text: #a5c3e8;
+      --badge-topic-border: #29374c;
+
+      --card-featured-bg: #141a24;
+      --card-featured-border: #28374d;
+      --card-why-bg: rgba(45, 212, 191, 0.05);
+      --card-why-border: #2dd4bf;
       
-      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
-      --card-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.3);
-      --hero-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.55), 0 8px 10px rgba(0, 0, 0, 0.35);
+      --hero-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
       --focus-ring: rgba(45, 212, 191, 0.4);
       
-      --logo-box-bg: #161b22;
-      --logo-box-border: #2b3543;
+      --logo-box-bg: #161e2a;
+      --logo-box-border: #28374d;
+      --logo-color: #f8fafc;
     }
 
     /* -------------------------------------------------------------
-       BASE RESET & TYPOGRAPHY
+       2. BASE RESET & MOBILE-FIRST LAYOUT
        ------------------------------------------------------------- */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -144,163 +156,188 @@
     html {
       font-size: 16px;
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      max-width: 100%;
+      overflow-x: clip;
     }
 
     body {
       background-color: var(--bg-page);
       color: var(--text-primary);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.5;
+      max-width: 100%;
+      overflow-x: clip;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      padding: 0 1.25rem 5rem 1.25rem;
-      transition: background-color 0.2s ease, color 0.2s ease;
-      min-height: 100vh;
     }
 
+    /* Editorial serif font stack */
     .font-serif {
-      font-family: "Newsreader", "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+      font-family: Newsreader, Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
     }
 
-    .container {
-      max-width: 1180px;
+    /* Skip link for screen reader keyboard accessibility */
+    .skip-to-content {
+      position: absolute;
+      top: -9999px;
+      left: 12px;
+      background: var(--accent);
+      color: var(--accent-solid-text);
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      z-index: 10000;
+      text-decoration: none;
+    }
+    .skip-to-content:focus {
+      top: 12px;
+      outline: 3px solid var(--focus-ring);
+    }
+
+    /* Responsive Site Container */
+    .site-wrap {
+      width: 100%;
+      max-width: 1240px;
       margin: 0 auto;
+      padding: 0 clamp(12px, 3.5vw, 24px);
+      box-sizing: border-box;
+    }
+
+    /* Unified Touch target helper */
+    button, a, input, select, [role="button"], [role="radio"] {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     :focus-visible {
-      outline: 2px solid var(--focus-ring);
+      outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
 
-    /* Skip link for accessibility */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 10px;
-      background: var(--accent);
-      color: var(--accent-solid-text);
-      padding: 8px 14px;
-      z-index: 1000;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: top 0.15s ease;
-    }
-    .skip-link:focus {
-      top: 10px;
-    }
-
     /* -------------------------------------------------------------
-       HEADER & NAVIGATION BAR
+       3. SITE HEADER & NAVIGATION (MOBILE-FIRST)
        ------------------------------------------------------------- */
     .site-header {
-      padding: 1.25rem 0 0.75rem 0;
+      background-color: var(--bg-surface);
       border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 1rem;
+      width: 100%;
+      position: relative;
+      z-index: 40;
     }
 
     .header-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      height: 60px;
+      gap: 12px;
     }
 
     .brand-group {
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 16px;
+      min-width: 0;
     }
 
     .brand-link {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 8px;
       text-decoration: none;
       color: var(--text-primary);
+      min-width: 0;
+      flex-shrink: 0;
     }
 
     .brand-pulse-icon {
-      width: 22px;
-      height: 22px;
-      color: var(--accent);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      flex-shrink: 0;
     }
-
     .brand-pulse-icon svg {
-      width: 100%;
-      height: 100%;
+      width: 18px;
+      height: 18px;
     }
 
     .brand-name {
-      font-size: 1.25rem;
-      font-weight: 800;
+      font-size: clamp(1.05rem, 3vw, 1.28rem);
+      font-weight: 700;
       letter-spacing: -0.02em;
-      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
+    /* Desktop Navigation links - hidden on mobile, shown on desktop */
     .header-nav {
-      display: flex;
+      display: none;
       align-items: center;
-      gap: 1.25rem;
+      gap: 4px;
+      margin-left: 8px;
+    }
+
+    @media (min-width: 900px) {
+      .header-nav {
+        display: flex;
+      }
     }
 
     .nav-link {
+      padding: 6px 12px;
+      border-radius: 6px;
       font-size: 0.88rem;
       font-weight: 500;
       color: var(--text-secondary);
       text-decoration: none;
-      padding: 0.25rem 0;
-      position: relative;
-      transition: color 0.15s ease;
+      transition: color 0.15s, background-color 0.15s;
     }
     .nav-link:hover {
       color: var(--text-primary);
+      background-color: var(--bg-hover);
     }
     .nav-link.active {
-      color: var(--accent-text);
-      font-weight: 600;
-    }
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: var(--accent);
-      border-radius: 2px;
+      color: var(--accent);
+      background-color: var(--accent-subtle);
     }
 
+    /* Header action tools */
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 8px;
+      flex-shrink: 0;
     }
 
-    /* Global Search Bar (with ⌘K Badge) */
+    /* Desktop Search trigger */
     .search-bar-trigger {
-      display: flex;
+      display: none;
       align-items: center;
-      gap: 0.5rem;
-      background-color: var(--bg-surface);
+      gap: 8px;
+      background-color: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 0.42rem 0.85rem;
-      cursor: pointer;
       color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 8px;
       font-size: 0.82rem;
-      transition: all 0.15s ease;
-      min-width: 260px;
+      cursor: pointer;
+      transition: border-color 0.15s, background-color 0.15s;
+      min-height: 38px;
     }
     .search-bar-trigger:hover {
       border-color: var(--border-strong);
-      color: var(--text-secondary);
-      background-color: var(--bg-subtle);
+      color: var(--text-primary);
     }
     .search-bar-trigger svg {
       width: 15px;
@@ -308,355 +345,474 @@
       flex-shrink: 0;
     }
     .search-kbd {
-      font-family: inherit;
-      font-size: 0.68rem;
-      padding: 0.15rem 0.35rem;
-      background-color: var(--bg-subtle);
+      background: var(--bg-page);
       border: 1px solid var(--border-subtle);
       border-radius: 4px;
-      color: var(--text-muted);
-      margin-left: auto;
+      padding: 2px 5px;
+      font-size: 0.72rem;
+      font-family: inherit;
     }
 
-    /* Toolbar buttons (Saved, Theme) */
-    .btn-header {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      padding: 0.42rem 0.75rem;
+    @media (min-width: 820px) {
+      .search-bar-trigger {
+        display: flex;
+      }
+    }
+
+    /* Mobile search icon button */
+    .btn-mobile-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
       border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+    .btn-mobile-icon:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-strong);
+    }
+    .btn-mobile-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (min-width: 820px) {
+      .btn-mobile-icon.search-mobile-btn {
+        display: none;
+      }
+    }
+
+    /* Saved Stories Button */
+    .btn-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 44px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      color: var(--text-primary);
       font-size: 0.82rem;
       font-weight: 500;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s, border-color 0.15s;
     }
     .btn-header:hover {
-      background-color: var(--bg-hover);
-      color: var(--text-primary);
+      background: var(--bg-hover);
       border-color: var(--border-strong);
     }
     .btn-header svg {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
     }
 
-    /* Theme Segmented Switcher */
+    @media (max-width: 480px) {
+      .btn-header {
+        padding: 0 8px;
+        width: 44px;
+        justify-content: center;
+      }
+      .btn-header span {
+        display: none;
+      }
+    }
+
+    /* 3-Way Theme Switcher */
     .theme-switcher {
       display: flex;
       align-items: center;
-      background-color: var(--bg-subtle);
+      background: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 2px;
-      gap: 2px;
+      height: 40px;
     }
+
     .theme-opt-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      padding: 0.32rem 0.55rem;
-      font-size: 0.74rem;
-      font-weight: 600;
+      height: 34px;
+      padding: 0 10px;
       border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.25rem;
-      transition: all 0.15s ease;
+      justify-content: center;
+      transition: background-color 0.15s, color 0.15s;
     }
     .theme-opt-btn:hover {
       color: var(--text-primary);
     }
     .theme-opt-btn.active {
-      background-color: var(--bg-surface);
+      background: var(--bg-surface);
       color: var(--text-primary);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
     }
-    .theme-opt-btn svg {
-      width: 12px;
-      height: 12px;
+
+    @media (max-width: 420px) {
+      .theme-opt-btn {
+        padding: 0 6px;
+        font-size: 0.74rem;
+      }
     }
 
-    /* Live Freshness Status Bar */
+    /* Header Live Status Bar */
     .header-status-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      margin-top: 0.85rem;
-      padding-top: 0.65rem;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 0;
       font-size: 0.76rem;
       color: var(--text-muted);
-      flex-wrap: wrap;
+      border-top: 1px solid var(--border-subtle);
     }
 
     .status-left {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 8px;
+      min-width: 0;
     }
 
     .pulse-indicator {
-      display: inline-flex;
       position: relative;
+      display: inline-flex;
       width: 8px;
       height: 8px;
-    }
-    .pulse-indicator-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--status-fresh-dot);
-      border-radius: 50%;
+      flex-shrink: 0;
     }
     .pulse-indicator-ring {
       position: absolute;
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background-color: var(--status-fresh-dot);
+      background: var(--status-fresh-dot);
       opacity: 0.75;
-      animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
-    @keyframes pulse-ring {
-      0% { transform: scale(1); opacity: 0.75; }
-      100% { transform: scale(2.8); opacity: 0; }
+    .pulse-indicator-dot {
+      position: relative;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--status-fresh-dot);
+    }
+
+    @keyframes ping {
+      75%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
     }
 
     .status-right {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 580px) {
+      .status-right {
+        display: none;
+      }
     }
 
     /* -------------------------------------------------------------
-       SECTION 1: THE AI BRIEFING (HERO FEATURE)
+       4. HERO SECTION — THE AI BRIEFING
        ------------------------------------------------------------- */
     .ai-briefing-hero {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 2rem;
-      margin: 1.5rem 0 2.25rem 0;
-      box-shadow: var(--hero-shadow);
-      position: relative;
-      overflow: hidden;
+      padding: clamp(20px, 4vw, 36px) 0 clamp(16px, 3vw, 24px);
     }
 
     .hero-split-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 2.25rem;
-      align-items: start;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: clamp(16px, 3.5vw, 28px);
+      box-shadow: var(--hero-shadow);
+    }
+
+    @media (min-width: 900px) {
+      .hero-split-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 32px;
+        align-items: start;
+      }
     }
 
     .hero-main-col {
       display: flex;
       flex-direction: column;
+      gap: 14px;
+      min-width: 0;
     }
 
     .hero-badge-row {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.85rem;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .badge-briefing-kicker {
-      background-color: var(--accent-subtle);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--accent-subtle);
+      color: var(--accent);
       border: 1px solid var(--accent-border);
-      color: var(--accent-text);
+      padding: 3px 9px;
+      border-radius: 6px;
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 0.2rem 0.65rem;
-      border-radius: 9999px;
     }
 
     .hero-headline {
-      font-size: 2.1rem;
-      font-weight: 800;
-      line-height: 1.22;
-      letter-spacing: -0.025em;
+      font-size: clamp(1.35rem, 3.6vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
       color: var(--text-primary);
-      margin-bottom: 1rem;
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     .hero-summary {
-      font-size: 1.05rem;
-      line-height: 1.6;
+      font-size: clamp(0.92rem, 1.8vw, 1.05rem);
+      line-height: 1.55;
       color: var(--text-secondary);
-      margin-bottom: 1.5rem;
+      word-break: break-word;
     }
 
+    /* Hero CTA Row */
     .hero-cta-row {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
       flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      gap: 10px;
+      margin-top: 4px;
     }
 
-    /* Primary CTA Button */
     .btn-hero-primary {
-      background-color: var(--accent);
-      color: var(--accent-solid-text);
-      font-size: 0.88rem;
-      font-weight: 700;
-      padding: 0.6rem 1.15rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      transition: all 0.15s ease;
-      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+      justify-content: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--accent-solid-text);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.15s, transform 0.1s;
+      box-shadow: 0 2px 6px rgba(13, 148, 136, 0.25);
     }
     .btn-hero-primary:hover {
-      background-color: var(--accent-hover);
-      transform: translateY(-1px);
+      background: var(--accent-hover);
     }
 
     .btn-hero-secondary {
-      background-color: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-primary);
-      font-size: 0.84rem;
-      font-weight: 600;
-      padding: 0.6rem 0.95rem;
-      border-radius: 8px;
-      cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      transition: all 0.15s ease;
+      justify-content: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      font-size: 0.84rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.15s, border-color 0.15s;
     }
     .btn-hero-secondary:hover {
-      background-color: var(--bg-hover);
+      background: var(--bg-hover);
       border-color: var(--border-strong);
     }
-    .btn-hero-secondary svg {
-      width: 14px;
-      height: 14px;
-    }
     .btn-hero-secondary.active {
-      background-color: var(--accent-subtle);
+      background: var(--accent-subtle);
       border-color: var(--accent-border);
-      color: var(--accent-text);
+      color: var(--accent);
+    }
+    .btn-hero-secondary svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
     }
 
+    /* Hero Meta Row */
     .hero-meta-row {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
       color: var(--text-muted);
+      padding-top: 6px;
+      border-top: 1px solid var(--border-subtle);
     }
 
-    /* Hero Side Column: Lab visual + Why It Matters + Audience */
+    /* Hero Side Column */
     .hero-side-col {
       display: flex;
       flex-direction: column;
-      gap: 1.1rem;
+      gap: 16px;
+      min-width: 0;
     }
 
-    .hero-visual-card {
-      background-color: var(--logo-box-bg);
-      border: 1px solid var(--logo-box-border);
-      border-radius: 12px;
-      padding: 1.75rem;
+    /* Hero Image container with strict 16:9 aspect ratio */
+    .hero-image-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 280px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .hero-image-wrap:hover .hero-image {
+      transform: scale(1.02);
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      min-height: 150px;
-      position: relative;
+      gap: 6px;
+      background: rgba(10, 13, 18, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
-    .hero-visual-card svg {
-      max-width: 90px;
-      max-height: 90px;
-      color: var(--text-primary);
-      opacity: 0.9;
+    .hero-image-badge svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
     }
 
+    /* Hero Why It Matters Box */
     .hero-why-box {
-      background-color: var(--bg-subtle);
-      border-left: 3px solid var(--accent);
+      background: var(--card-why-bg);
+      border-left: 3px solid var(--card-why-border);
       border-radius: 0 8px 8px 0;
-      padding: 1rem 1.15rem;
+      padding: 12px 14px;
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
     }
+
     .hero-why-label {
+      display: inline-block;
       font-size: 0.74rem;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      color: var(--accent);
       text-transform: uppercase;
-      color: var(--accent-text);
-      display: block;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
     }
+
     .hero-why-text {
       font-size: 0.88rem;
       line-height: 1.5;
       color: var(--text-secondary);
     }
 
+    /* Hero Audience Box */
     .hero-audience-box {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 6px;
     }
+
     .hero-audience-label {
       font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--text-muted);
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      color: var(--text-muted);
     }
+
     .hero-audience-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 6px;
     }
+
     .audience-pill {
-      font-size: 0.72rem;
-      padding: 0.18rem 0.55rem;
-      border-radius: 4px;
-      background-color: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
       color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.74rem;
       font-weight: 500;
     }
 
     /* -------------------------------------------------------------
-       SECTION 2: THE PULSE (KEY DEVELOPMENTS STRIP)
+       5. THE PULSE — COMPACT EDITORIAL HIGHLIGHTS
        ------------------------------------------------------------- */
     .pulse-section {
-      margin-bottom: 2.5rem;
+      padding: clamp(16px, 3vw, 24px) 0;
     }
 
     .section-header {
       display: flex;
-      align-items: baseline;
+      align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 1rem;
-      gap: 1rem;
-      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .section-title-wrap {
       display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .section-heading {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.015em;
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
       color: var(--text-primary);
     }
 
@@ -667,82 +823,102 @@
 
     .section-link {
       font-size: 0.82rem;
-      color: var(--link);
-      text-decoration: none;
       font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
-      gap: 0.25rem;
     }
     .section-link:hover {
       text-decoration: underline;
-      color: var(--link-hover);
     }
 
+    /* The Pulse Grid: Horizontal swipeable track on mobile, 4-col on desktop */
     .pulse-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 4px 2px 12px 2px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .pulse-grid::-webkit-scrollbar {
+      display: none;
     }
 
     .pulse-card {
-      background-color: var(--bg-surface);
+      flex: 0 0 clamp(260px, 78vw, 290px);
+      scroll-snap-align: start;
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 10px;
-      padding: 1rem;
+      padding: 12px 14px;
       display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      cursor: pointer;
+      gap: 12px;
+      align-items: flex-start;
       text-decoration: none;
-      color: var(--text-primary);
-      transition: all 0.15s ease;
-      box-shadow: var(--card-shadow);
+      color: inherit;
+      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
     }
     .pulse-card:hover {
-      border-color: var(--border-strong);
       transform: translateY(-2px);
-      box-shadow: var(--card-shadow-hover);
-      background-color: var(--bg-hover);
+      border-color: var(--border-strong);
+      box-shadow: var(--card-shadow);
+    }
+
+    @media (min-width: 900px) {
+      .pulse-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+      .pulse-card {
+        flex: none;
+      }
     }
 
     .pulse-logo-box {
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       border-radius: 8px;
-      background-color: var(--logo-box-bg);
+      background: var(--logo-box-bg);
       border: 1px solid var(--logo-box-border);
+      color: var(--logo-color);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      padding: 6px;
     }
     .pulse-logo-box svg {
-      width: 24px;
-      height: 24px;
-      color: var(--text-primary);
+      width: 100%;
+      height: 100%;
     }
 
     .pulse-card-content {
-      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 4px;
+      min-width: 0;
     }
 
     .pulse-card-title {
-      font-size: 0.84rem;
-      font-weight: 700;
+      font-size: 0.88rem;
+      font-weight: 600;
       line-height: 1.35;
+      color: var(--text-primary);
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      color: var(--text-primary);
     }
 
     .pulse-card-meta {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       white-space: nowrap;
       overflow: hidden;
@@ -750,398 +926,568 @@
     }
 
     /* -------------------------------------------------------------
-       SECTION 3: TRENDING IN AI (TOPIC DISCOVERY)
+       6. TRENDING IN AI — TOPIC NAVIGATION
        ------------------------------------------------------------- */
     .topics-section {
-      margin-bottom: 2.5rem;
+      padding: clamp(10px, 2vw, 16px) 0;
     }
 
+    /* Horizontal scrollable track on mobile */
     .topic-pills-bar {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 8px;
       overflow-x: auto;
-      padding: 0.25rem 0.1rem 0.75rem 0.1rem;
-      scrollbar-width: thin;
+      scroll-snap-type: x proximity;
+      padding: 4px 2px 10px 2px;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+    .topic-pills-bar::-webkit-scrollbar {
+      display: none;
     }
 
     .topic-pill {
-      background-color: var(--bg-surface);
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 22px;
       border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
       color: var(--text-secondary);
-      padding: 0.45rem 0.95rem;
-      border-radius: 9999px;
       font-size: 0.82rem;
       font-weight: 500;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      white-space: nowrap;
-      transition: all 0.15s ease;
-      flex-shrink: 0;
+      gap: 8px;
+      transition: background-color 0.15s, border-color 0.15s, color 0.15s;
     }
     .topic-pill:hover {
-      background-color: var(--bg-hover);
+      background: var(--bg-hover);
       color: var(--text-primary);
-      border-color: var(--border-strong);
     }
     .topic-pill.active {
-      background-color: var(--text-primary);
-      color: var(--bg-page);
-      border-color: var(--text-primary);
-      font-weight: 700;
+      background: var(--accent);
+      color: var(--accent-solid-text);
+      border-color: var(--accent);
+      font-weight: 600;
     }
     .topic-pill .count {
-      font-size: 0.72rem;
-      opacity: 0.8;
-      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.08);
+      font-size: 0.7rem;
+    }
+    .topic-pill.active .count {
+      background: rgba(255, 255, 255, 0.25);
+      color: var(--accent-solid-text);
     }
 
     /* -------------------------------------------------------------
-       SECTION 4: LATEST AI DEVELOPMENTS (2-COLUMN GRID FEED)
+       7. LATEST AI DEVELOPMENTS — MULTI-TIER CARD FEED
        ------------------------------------------------------------- */
     .feed-section {
-      margin-bottom: 3.5rem;
-    }
-
-    .feed-toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
+      padding: clamp(16px, 3vw, 24px) 0;
     }
 
     .feed-controls-group {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 10px;
     }
 
     .sort-select {
-      background-color: var(--bg-surface);
+      height: 44px;
+      padding: 0 10px;
+      border-radius: 8px;
       border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      padding: 0.35rem 0.75rem;
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      font-weight: 500;
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      font-size: 0.82rem;
       cursor: pointer;
-    }
-    .sort-select:focus {
-      border-color: var(--accent);
-      outline: none;
     }
 
     .view-toggle-btns {
       display: flex;
       align-items: center;
-      background-color: var(--bg-subtle);
+      background: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 2px;
+      height: 44px;
     }
+
     .view-toggle-btn {
-      background: none;
+      width: 38px;
+      height: 38px;
       border: none;
+      border-radius: 6px;
+      background: transparent;
       color: var(--text-muted);
-      padding: 0.3rem 0.45rem;
       cursor: pointer;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-    }
-    .view-toggle-btn.active {
-      background-color: var(--bg-surface);
-      color: var(--text-primary);
-    }
-    .view-toggle-btn svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    /* 2-Column Responsive Developments Grid */
-    .developments-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-    .developments-grid.list-view {
-      grid-template-columns: 1fr;
-    }
-
-    .dev-card {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      box-shadow: var(--card-shadow);
-      transition: all 0.15s ease;
-      position: relative;
-    }
-    .dev-card:hover {
-      border-color: var(--border-strong);
-      box-shadow: var(--card-shadow-hover);
-      transform: translateY(-2px);
-    }
-
-    .dev-card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .dev-card-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .dev-card-kicker-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.72rem;
-    }
-
-    .badge-dev-topic {
-      background-color: var(--badge-topic-bg);
-      border: 1px solid var(--badge-topic-border);
-      color: var(--badge-topic-text);
-      font-weight: 600;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-    }
-
-    .dev-time {
-      color: var(--text-muted);
-    }
-
-    .dev-headline {
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.35;
-      color: var(--text-primary);
-    }
-    .dev-headline a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .dev-headline a:hover {
-      color: var(--link);
-    }
-
-    .dev-summary {
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--text-secondary);
-    }
-
-    .dev-logo-box {
-      width: 58px;
-      height: 58px;
-      border-radius: 10px;
-      background-color: var(--logo-box-bg);
-      border: 1px solid var(--logo-box-border);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      transition: background-color 0.15s, color 0.15s;
     }
-    .dev-logo-box svg {
-      width: 32px;
-      height: 32px;
+    .view-toggle-btn:hover {
       color: var(--text-primary);
     }
-
-    /* Why It Matters Callout inside Card */
-    .dev-why-box {
-      background-color: var(--bg-subtle);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 6px 6px 0;
-      padding: 0.65rem 0.85rem;
-      font-size: 0.82rem;
-      line-height: 1.45;
+    .view-toggle-btn.active {
+      background: var(--bg-surface);
+      color: var(--accent);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
     }
-    .dev-why-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent-text);
+    .view-toggle-btn svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* Editorial Feed Grid */
+    .developments-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .developments-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       STORY CARD SYSTEM — 5 DISTINCT CARD TYPES
+       ------------------------------------------------------------- */
+    .card-base {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .card-base:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--border-strong);
+    }
+
+    /* CARD TYPE 1: FEATURED STORY CARD (Spans full width) */
+    .card-featured {
+      grid-column: 1 / -1;
+      background: var(--card-featured-bg);
+      border: 1px solid var(--card-featured-border);
+    }
+
+    @media (min-width: 900px) {
+      .card-featured .card-featured-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 24px;
+      }
+    }
+
+    .card-featured-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--bg-subtle);
+      overflow: hidden;
+    }
+    .card-featured-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      margin-bottom: 0.2rem;
-    }
-    .dev-why-text {
-      color: var(--text-secondary);
     }
 
-    .dev-audience-row {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-    }
-    .dev-audience-row strong {
-      color: var(--text-secondary);
-      font-weight: 600;
+    .card-featured-body {
+      padding: clamp(14px, 3vw, 22px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: space-between;
     }
 
-    /* Card Action Bar */
-    .dev-card-footer {
+    /* CARD TYPE 2: STANDARD NEWS CARD */
+    .card-standard {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-standard-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-subtle);
+      overflow: hidden;
+    }
+    .card-standard-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-standard-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    /* CARD TYPE 3: COMPACT NEWS ITEM (Dense scanning) */
+    .card-compact {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* CARD TYPE 4: BREAKING / OFFICIAL LAB RELEASE CARD */
+    .card-breaking {
+      border-left: 4px solid var(--accent);
+      background: var(--bg-surface);
+    }
+
+    /* CARD TYPE 5: RELATED STORY GROUP (Multiple sources) */
+    .card-grouped {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 16px;
+    }
+
+    /* Common Card Internal Components */
+    .card-kicker-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.75rem;
-      padding-top: 0.85rem;
-      border-top: 1px solid var(--border-subtle);
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      gap: 8px;
       flex-wrap: wrap;
     }
 
-    .dev-source-info {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .dev-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .btn-action-icon {
-      background: none;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      padding: 0.32rem 0.6rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.74rem;
+    .badge-card-topic {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      transition: all 0.15s ease;
-      text-decoration: none;
-    }
-    .btn-action-icon:hover {
-      background-color: var(--bg-hover);
-      color: var(--text-primary);
-      border-color: var(--border-strong);
-    }
-    .btn-action-icon.saved {
-      background-color: var(--accent-subtle);
-      border-color: var(--accent-border);
-      color: var(--accent-text);
+      gap: 4px;
+      background: var(--badge-topic-bg);
+      color: var(--badge-topic-text);
+      border: 1px solid var(--badge-topic-border);
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-size: 0.72rem;
       font-weight: 600;
     }
-    .btn-action-icon svg {
-      width: 12px;
-      height: 12px;
+
+    .badge-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .badge-status-pill.official {
+      background: var(--status-fresh-bg);
+      color: var(--status-fresh-text);
+      border: 1px solid var(--status-fresh-border);
+    }
+    .badge-status-pill.source-linked {
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
     }
 
-    /* Expandable Evidence Links */
+    .card-headline {
+      font-size: clamp(1.02rem, 2vw, 1.25rem);
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-primary);
+      word-break: break-word;
+    }
+    .card-headline a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .card-headline a:hover {
+      color: var(--accent);
+    }
+
+    .card-summary {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      word-break: break-word;
+    }
+
+    /* Card Why It Matters Accordion / Callout */
+    .card-why-callout {
+      background: var(--card-why-bg);
+      border-left: 3px solid var(--card-why-border);
+      border-radius: 0 6px 6px 0;
+      padding: 8px 12px;
+      margin-top: 4px;
+    }
+    .card-why-callout-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+    .card-why-callout-body {
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
+    }
+
+    /* Expandable source links for Card Type 5 */
     .evidence-block {
-      margin-top: 0.5rem;
-      width: 100%;
+      margin-top: 6px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      background: var(--bg-subtle);
+      padding: 6px 10px;
     }
     .evidence-summary {
       font-size: 0.76rem;
-      color: var(--link);
-      cursor: pointer;
       font-weight: 600;
-      user-select: none;
+      color: var(--accent);
+      cursor: pointer;
       list-style: none;
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 0.35rem;
+      justify-content: space-between;
     }
     .evidence-summary::-webkit-details-marker {
       display: none;
     }
-    .evidence-summary:hover {
-      text-decoration: underline;
-      color: var(--link-hover);
-    }
     .evidence-list {
-      list-style: none;
-      margin-top: 0.4rem;
-      padding-left: 0.25rem;
+      margin-top: 6px;
+      padding-left: 14px;
+      font-size: 0.76rem;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
-    }
-    .evidence-item {
-      font-size: 0.74rem;
+      gap: 4px;
     }
     .evidence-link {
       color: var(--link);
       text-decoration: none;
+      word-break: break-all;
     }
     .evidence-link:hover {
       text-decoration: underline;
     }
 
+    /* Card Footer & Action Toolbar */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: auto;
+    }
+
+    .card-source-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-action-icon {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 0.76rem;
+      transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .btn-action-icon:hover {
+      color: var(--text-primary);
+      background: var(--bg-hover);
+      border-color: var(--border-strong);
+    }
+    .btn-action-icon.saved {
+      color: var(--accent);
+      background: var(--accent-subtle);
+      border-color: var(--accent-border);
+    }
+    .btn-action-icon svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    /* List View Modifier for Feed */
+    .developments-grid.list-view {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .developments-grid.list-view .card-base {
+      flex-direction: row;
+      align-items: center;
+      padding: 12px 16px;
+      gap: 16px;
+    }
+    .developments-grid.list-view .card-featured-media,
+    .developments-grid.list-view .card-standard-media {
+      width: 100px;
+      height: 70px;
+      flex-shrink: 0;
+      border-radius: 6px;
+    }
+    .developments-grid.list-view .card-featured-body,
+    .developments-grid.list-view .card-standard-body {
+      padding: 0;
+      width: 100%;
+    }
+    .developments-grid.list-view .card-why-callout {
+      display: none;
+    }
+
+    @media (max-width: 580px) {
+      .developments-grid.list-view .card-base {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .developments-grid.list-view .card-featured-media,
+      .developments-grid.list-view .card-standard-media {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+    }
+
+    /* Empty state */
+    .empty-state-box {
+      background: var(--bg-surface);
+      border: 1px dashed var(--border-strong);
+      border-radius: 12px;
+      padding: clamp(24px, 5vw, 40px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .empty-state-icon {
+      width: 44px;
+      height: 44px;
+      color: var(--text-muted);
+    }
+    .empty-state-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .empty-state-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 400px;
+    }
+    .btn-empty-clear {
+      margin-top: 6px;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: none;
+      background: var(--accent);
+      color: var(--accent-solid-text);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
     /* -------------------------------------------------------------
-       SECTION 5: PRIMARY DISPATCHES FEED (STORIES LIST)
+       8. MONITORED FEED DISPATCHES (PRIMARY SOURCES LIST)
        ------------------------------------------------------------- */
     .dispatches-section {
-      margin-bottom: 4rem;
+      padding: clamp(16px, 3vw, 24px) 0 clamp(24px, 4vw, 40px);
     }
 
     .dispatches-list {
       list-style: none;
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      background-color: var(--bg-surface);
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
     }
 
     .dispatch-item {
-      padding: 1.15rem 1.4rem;
-      border-bottom: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 12px 16px;
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
-      transition: background-color 0.15s ease;
-    }
-    .dispatch-item:last-child {
-      border-bottom: none;
+      gap: 14px;
+      transition: border-color 0.15s, transform 0.15s;
     }
     .dispatch-item:hover {
-      background-color: var(--bg-hover);
+      border-color: var(--border-strong);
+      transform: translateX(2px);
     }
 
     .dispatch-main {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 4px;
+      min-width: 0;
     }
 
     .dispatch-meta-row {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.72rem;
+      gap: 6px;
+      font-size: 0.74rem;
       color: var(--text-muted);
+      flex-wrap: wrap;
     }
 
     .dispatch-title {
-      font-size: 0.96rem;
-      font-weight: 700;
-      line-height: 1.4;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.35;
       color: var(--text-primary);
     }
     .dispatch-title a {
@@ -1149,93 +1495,116 @@
       text-decoration: none;
     }
     .dispatch-title a:hover {
-      color: var(--link);
+      color: var(--accent);
     }
 
     .dispatch-summary {
       font-size: 0.84rem;
       color: var(--text-secondary);
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     .dispatch-actions {
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 6px;
       flex-shrink: 0;
     }
 
-    /* -------------------------------------------------------------
-       MODALS: SAVED STORIES DRAWER & SEARCH COMMAND PALETTE
-       ------------------------------------------------------------- */
-    /* Drawer Overlay */
-    .drawer-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: var(--bg-modal-backdrop);
-      z-index: 1000;
-      display: none;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .drawer-overlay.open {
-      display: block;
-      opacity: 1;
+    @media (max-width: 580px) {
+      .dispatch-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .dispatch-actions {
+        align-self: flex-end;
+      }
     }
 
-    /* Slide-Over Saved Drawer */
+    /* -------------------------------------------------------------
+       9. SAVED STORIES DRAWER / BOTTOM SHEET
+       ------------------------------------------------------------- */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-modal-backdrop);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
     .saved-drawer {
       position: fixed;
       top: 0;
-      right: 0;
       bottom: 0;
-      width: 400px;
-      max-width: 90vw;
-      background-color: var(--bg-drawer);
-      border-left: 1px solid var(--border-subtle);
-      z-index: 1001;
+      right: 0;
+      width: min(440px, 92vw);
+      background: var(--bg-drawer);
+      box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
+      z-index: 101;
       display: flex;
       flex-direction: column;
       transform: translateX(100%);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: -8px 0 24px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .saved-drawer.open {
       transform: translateX(0);
     }
 
+    /* Mobile Bottom Sheet Style for Viewports < 640px */
+    @media (max-width: 640px) {
+      .saved-drawer {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 85vh;
+        border-radius: 18px 18px 0 0;
+        transform: translateY(100%);
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+      }
+      .saved-drawer.open {
+        transform: translateY(0);
+      }
+    }
+
     .drawer-header {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-subtle);
     }
+
     .drawer-title {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      color: var(--text-primary);
     }
+
     .drawer-subtitle {
-      font-size: 0.74rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
 
     .drawer-close-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      padding: 0.35rem;
-      border-radius: 6px;
-      display: flex;
-    }
-    .drawer-close-btn:hover {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-subtle);
       color: var(--text-primary);
-      background-color: var(--bg-hover);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
     .drawer-close-btn svg {
       width: 18px;
@@ -1245,46 +1614,50 @@
     .drawer-body {
       flex: 1;
       overflow-y: auto;
-      padding: 1.25rem 1.5rem;
+      padding: 16px 20px;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 12px;
     }
 
     .saved-item-card {
-      background-color: var(--bg-surface);
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
-      padding: 0.95rem;
+      padding: 12px;
       display: flex;
       align-items: flex-start;
-      gap: 0.85rem;
-      position: relative;
+      gap: 12px;
     }
+
     .saved-item-logo {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       border-radius: 6px;
-      background-color: var(--logo-box-bg);
+      background: var(--logo-box-bg);
       border: 1px solid var(--logo-box-border);
+      color: var(--logo-color);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      padding: 6px;
     }
     .saved-item-logo svg {
-      width: 20px;
-      height: 20px;
-      color: var(--text-primary);
+      width: 100%;
+      height: 100%;
     }
+
     .saved-item-details {
       flex: 1;
+      min-width: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 4px;
     }
+
     .saved-item-title {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 600;
       line-height: 1.35;
       color: var(--text-primary);
@@ -1294,107 +1667,146 @@
       text-decoration: none;
     }
     .saved-item-title a:hover {
-      color: var(--link);
+      color: var(--accent);
     }
+
     .saved-item-meta {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
     }
+
     .saved-item-remove-btn {
-      background: none;
+      width: 36px;
+      height: 36px;
       border: none;
+      background: transparent;
       color: var(--text-muted);
       cursor: pointer;
-      padding: 0.25rem;
-      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
     }
     .saved-item-remove-btn:hover {
       color: #ef4444;
-      background-color: var(--bg-hover);
+      background: rgba(239, 68, 68, 0.1);
     }
     .saved-item-remove-btn svg {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
     }
 
     .drawer-empty {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 40px 10px;
       color: var(--text-muted);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.75rem;
+      gap: 8px;
     }
     .drawer-empty svg {
-      width: 42px;
-      height: 42px;
-      opacity: 0.5;
+      width: 44px;
+      height: 44px;
+      stroke-width: 1.25;
+      margin-bottom: 4px;
     }
 
-    /* Search Command Palette Modal */
+    /* -------------------------------------------------------------
+       10. SEARCH MODAL & COMMAND PALETTE (⌘K)
+       ------------------------------------------------------------- */
     .search-modal-backdrop {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: var(--bg-modal-backdrop);
-      z-index: 1000;
-      display: none;
+      inset: 0;
+      background: var(--bg-modal-backdrop);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 10vh;
+      padding: clamp(12px, 4vw, 40px) 16px;
       opacity: 0;
-      transition: opacity 0.2s ease;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
     }
     .search-modal-backdrop.open {
-      display: flex;
       opacity: 1;
+      visibility: visible;
     }
 
     .search-modal-box {
-      width: 600px;
-      max-width: 92vw;
-      background-color: var(--bg-surface);
+      width: min(620px, 100%);
+      background: var(--bg-surface);
       border: 1px solid var(--border-strong);
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-radius: 14px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      max-height: 80vh;
+      animation: modalSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalSlide {
+      from { transform: translateY(-16px) scale(0.98); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    /* Mobile full sheet */
+    @media (max-width: 640px) {
+      .search-modal-backdrop {
+        padding: 0;
+      }
+      .search-modal-box {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        border: none;
+      }
     }
 
     .search-modal-input-row {
       display: flex;
       align-items: center;
-      padding: 0.85rem 1.25rem;
+      gap: 12px;
+      padding: 14px 18px;
       border-bottom: 1px solid var(--border-subtle);
-      gap: 0.75rem;
     }
     .search-modal-input-row svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       color: var(--text-muted);
       flex-shrink: 0;
     }
+
     .search-modal-input {
       flex: 1;
-      background: none;
       border: none;
-      font-size: 1rem;
+      background: transparent;
       color: var(--text-primary);
+      font-size: 1rem;
       outline: none;
     }
+    .search-modal-input::placeholder {
+      color: var(--text-muted);
+    }
+
     .search-modal-clear {
-      background: none;
+      width: 36px;
+      height: 36px;
       border: none;
+      background: transparent;
       color: var(--text-muted);
       cursor: pointer;
-      padding: 0.25rem;
-      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
     }
     .search-modal-clear:hover {
+      background: var(--bg-hover);
       color: var(--text-primary);
     }
     .search-modal-clear svg {
@@ -1405,213 +1817,123 @@
     .search-modal-filter-row {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.6rem 1.25rem;
+      gap: 6px;
+      padding: 8px 18px;
+      background: var(--bg-subtle);
       border-bottom: 1px solid var(--border-subtle);
-      background-color: var(--bg-subtle);
-      font-size: 0.76rem;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
+    .search-modal-filter-row::-webkit-scrollbar {
+      display: none;
+    }
+
     .search-filter-chip {
-      background: none;
+      height: 32px;
+      padding: 0 10px;
+      border-radius: 6px;
       border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
       color: var(--text-secondary);
-      padding: 0.2rem 0.6rem;
-      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 500;
       cursor: pointer;
+      white-space: nowrap;
     }
     .search-filter-chip.active {
-      background-color: var(--text-primary);
-      color: var(--bg-page);
-      border-color: var(--text-primary);
-      font-weight: 600;
+      background: var(--accent);
+      color: var(--accent-solid-text);
+      border-color: var(--accent);
     }
 
     .search-modal-results {
-      max-height: 400px;
+      flex: 1;
       overflow-y: auto;
-      padding: 0.75rem 1.25rem;
+      padding: 12px 18px;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 8px;
     }
 
     /* -------------------------------------------------------------
-       EMPTY STATE COMPONENT
-       ------------------------------------------------------------- */
-    .empty-state-box {
-      text-align: center;
-      padding: 4rem 1.5rem;
-      background-color: var(--bg-surface);
-      border: 1px dashed var(--border-strong);
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.85rem;
-    }
-    .empty-state-icon {
-      width: 48px;
-      height: 48px;
-      color: var(--text-muted);
-      opacity: 0.7;
-    }
-    .empty-state-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .empty-state-desc {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      max-width: 380px;
-    }
-    .btn-empty-clear {
-      background-color: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-primary);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.45rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 0.5rem;
-    }
-    .btn-empty-clear:hover {
-      background-color: var(--bg-hover);
-      border-color: var(--border-strong);
-    }
-
-    /* -------------------------------------------------------------
-       FOOTER: EDITORIAL METHODOLOGY & MONITORED FEEDS
+       11. SITE FOOTER
        ------------------------------------------------------------- */
     .site-footer {
-      margin-top: 5rem;
-      padding-top: 2.5rem;
+      margin-top: auto;
+      background: var(--bg-surface);
       border-top: 1px solid var(--border-subtle);
+      padding: clamp(24px, 4vw, 40px) 0 20px;
     }
 
     .footer-columns {
-      display: flex;
-      gap: 3.5rem;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
     }
 
-    .footer-col-methodology {
-      flex: 2 1 360px;
-    }
-
-    .footer-col-feeds {
-      flex: 1 1 240px;
+    @media (min-width: 768px) {
+      .footer-columns {
+        grid-template-columns: 1.5fr 1fr;
+      }
     }
 
     .footer-heading {
-      font-size: 0.76rem;
+      font-size: 0.88rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 0.85rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
     }
 
     .footer-desc {
-      font-size: 0.84rem;
-      line-height: 1.6;
+      font-size: 0.82rem;
+      line-height: 1.55;
       color: var(--text-muted);
-      margin-bottom: 0.85rem;
+      margin-bottom: 8px;
     }
 
     .footer-feeds-list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    .footer-feeds-list a {
-      color: var(--text-muted);
-      text-decoration: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
       font-size: 0.82rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
+    }
+
+    @media (min-width: 500px) {
+      .footer-feeds-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .footer-feeds-list a {
+      color: var(--link);
+      text-decoration: none;
     }
     .footer-feeds-list a:hover {
-      color: var(--link);
       text-decoration: underline;
     }
 
     .footer-bottom {
-      margin-top: 2.5rem;
-      padding-top: 1.25rem;
       border-top: 1px solid var(--border-subtle);
-      font-size: 0.76rem;
+      padding-top: 16px;
+      font-size: 0.74rem;
       color: var(--text-muted);
       text-align: center;
-    }
-
-    /* -------------------------------------------------------------
-       RESPONSIVE BREAKPOINTS
-       ------------------------------------------------------------- */
-    @media (max-width: 900px) {
-      .hero-split-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .pulse-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .developments-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      body {
-        padding: 0 0.85rem 4rem 0.85rem;
-      }
-      .header-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.85rem;
-      }
-      .header-actions {
-        width: 100%;
-        justify-content: space-between;
-      }
-      .search-bar-trigger {
-        min-width: unset;
-        flex: 1;
-      }
-      .hero-headline {
-        font-size: 1.5rem;
-      }
-      .pulse-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-columns {
-        gap: 2rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Accessible Skip Link -->
-  <a href="#ai-briefing" class="skip-link">Skip to AI Briefing</a>
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
 
-  <div class="container">
+  <div class="site-wrap">
     <!-- Header & Navigation Bar -->
-    <header class="site-header">
+    <header class="site-header" role="banner">
       <div class="header-top">
         <div class="brand-group">
-          <a href="#" class="brand-link">
+          <a href="#" class="brand-link" aria-label="AI Trend Pulse Homepage">
             <span class="brand-pulse-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
@@ -1620,29 +1942,36 @@
             <span class="brand-name font-serif">AI Trend Pulse</span>
           </a>
 
+          <!-- Desktop Navigation -->
           <nav class="header-nav" aria-label="Main Navigation">
             <a href="#ai-briefing" class="nav-link active">Briefing</a>
             <a href="#pulse-section" class="nav-link">The Pulse</a>
-            <a href="#feed-section" class="nav-link">Latest</a>
             <a href="#topics-section" class="nav-link">Topics</a>
+            <a href="#feed-section" class="nav-link">Latest</a>
+            <a href="#dispatches-heading" class="nav-link">Dispatches</a>
           </nav>
         </div>
 
         <div class="header-actions" role="toolbar" aria-label="Quick tools">
-          <!-- Search Bar Trigger -->
+          <!-- Desktop Search Trigger -->
           <div class="search-bar-trigger" onclick="openSearchModal()" role="button" tabindex="0" aria-label="Search AI news, companies, models">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <span>Search AI news, companies...</span>
+            <span>Search news, models...</span>
             <kbd class="search-kbd">⌘K</kbd>
           </div>
 
-          <!-- Saved Stories Drawer Button -->
+          <!-- Mobile Search Button -->
+          <button class="btn-mobile-icon search-mobile-btn" onclick="openSearchModal()" aria-label="Search AI news">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <!-- Saved Stories Button -->
           <button id="btn-saved-filter" class="btn-header" onclick="openSavedDrawer()" aria-label="View saved bookmarks">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
             <span id="saved-count-label">Saved (0)</span>
           </button>
 
-          <!-- 3-Way Theme Switcher: System | Light | Dark -->
+          <!-- 3-Way Theme Switcher: Auto | Light | Dark -->
           <div class="theme-switcher" role="radiogroup" aria-label="Theme mode selection">
             <button class="theme-opt-btn" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="false" title="System Theme">
               Auto
@@ -1664,12 +1993,12 @@
             <span class="pulse-indicator-ring"></span>
             <span class="pulse-indicator-dot"></span>
           </span>
-          <span id="status-text">● Updated 08:09 UTC • Next update in 35 min</span>
+          <span id="status-text">● Live Pipeline Active • Hourly updates</span>
         </div>
         <div class="status-right">
-          <span>7 monitored sources</span>
+          <span>7 monitored research sources</span>
           <span>•</span>
-          <span>Hourly synthesis</span>
+          <span>Strict provenance verified</span>
         </div>
       </div>
     </header>
@@ -1677,7 +2006,7 @@
     <main id="main-content">
       <!-- 1. THE AI BRIEFING (FEATURED / HERO DEVELOPMENT) -->
       <section id="ai-briefing" class="ai-briefing-hero" aria-labelledby="briefing-title">
-        <div class="hero-split-grid">
+        <article class="hero-split-grid">
           <!-- Main Hero Column -->
           <div class="hero-main-col">
             <div class="hero-badge-row">
@@ -1713,7 +2042,7 @@
 
             <!-- Metadata Line -->
             <div class="hero-meta-row">
-              <span id="briefing-source" style="font-weight: 600;">MIT Technology Review & OpenAI</span>
+              <span id="briefing-source" style="font-weight: 600; color: var(--text-primary);">MIT Technology Review &amp; OpenAI</span>
               <span>•</span>
               <span id="briefing-time">Recent</span>
               <span>•</span>
@@ -1721,10 +2050,14 @@
             </div>
           </div>
 
-          <!-- Hero Side Column: Vector Logo Visual + Why It Matters + Audience -->
+          <!-- Hero Side Column: 16:9 Image + Why It Matters + Audience -->
           <div class="hero-side-col">
-            <div class="hero-visual-card" id="hero-visual-card" aria-hidden="true">
-              <!-- Dynamically populated with crisp vector SVG of the leading lab -->
+            <div class="hero-image-wrap" id="hero-image-wrap">
+              <img id="hero-image" class="hero-image" src="" alt="AI Briefing Story Visual" loading="eager" onerror="handleImageFallback(this, 'AI Agents')" />
+              <div class="hero-image-badge" id="hero-visual-card">
+                <!-- Dynamically populated with topic badge / SVG -->
+                <span>AI Briefing Lead</span>
+              </div>
             </div>
 
             <div id="briefing-why-box" class="hero-why-box">
@@ -1741,7 +2074,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </section>
 
       <!-- 2. THE PULSE (KEY DEVELOPMENTS STRIP) -->
@@ -1764,7 +2097,7 @@
         <div class="section-header">
           <div class="section-title-wrap">
             <h2 class="section-heading">Trending in AI</h2>
-            <span class="section-subtext">Explore topics</span>
+            <span class="section-subtext">Explore topics by curated intelligence</span>
           </div>
         </div>
 
@@ -1773,17 +2106,17 @@
         </div>
       </section>
 
-      <!-- 4. LATEST AI DEVELOPMENTS (2-COLUMN EDITORIAL GRID) -->
+      <!-- 4. LATEST AI DEVELOPMENTS (MULTI-TIER EDITORIAL FEED) -->
       <section id="feed-section" class="feed-section" aria-labelledby="feed-heading">
         <div class="section-header">
           <div class="section-title-wrap">
             <h2 id="feed-heading" class="section-heading">Latest AI Developments</h2>
-            <span class="section-subtext">Key developments with what happened, why it matters, and reliable sources.</span>
+            <span class="section-subtext">Clear factual context, practical impact, and verified source provenance.</span>
           </div>
 
           <div class="feed-controls-group">
             <select id="sort-select" class="sort-select" onchange="handleSortChange(this.value)" aria-label="Sort developments">
-              <option value="latest">Sort by: Latest</option>
+              <option value="latest">Sort: Latest</option>
               <option value="reading-time">Reading Time</option>
               <option value="title">Headline (A-Z)</option>
             </select>
@@ -1799,13 +2132,13 @@
           </div>
         </div>
 
-        <!-- Hidden input for test compatibility -->
+        <!-- Hidden input and clear button for test script compatibility -->
         <input type="text" id="search-input" style="display:none;" />
         <button id="search-clear" style="display:none;"></button>
 
-        <!-- Developments Grid -->
+        <!-- Developments Multi-Tier Grid Container -->
         <div id="developments-container" class="developments-grid">
-          <!-- Dynamically populated cards -->
+          <!-- Dynamically populated multi-tier cards -->
         </div>
 
         <!-- Empty State Container -->
@@ -1816,9 +2149,9 @@
             <line x1="16" y1="13" x2="8" y2="13"></line>
             <line x1="16" y1="17" x2="8" y2="17"></line>
           </svg>
-          <h3 class="empty-state-title">No results found</h3>
-          <p class="empty-state-desc">Try a different search term or select another topic filter.</p>
-          <button class="btn-empty-clear" onclick="resetAllFilters()">Clear filters</button>
+          <h3 class="empty-state-title">No matching developments</h3>
+          <p class="empty-state-desc">Try clearing your search query or selecting another topic category above.</p>
+          <button class="btn-empty-clear" onclick="resetAllFilters()">Reset All Filters</button>
         </div>
       </section>
 
@@ -1837,13 +2170,13 @@
       </section>
     </main>
 
-    <!-- SAVED STORIES DRAWER (PANEL 5) -->
+    <!-- SAVED STORIES DRAWER / BOTTOM SHEET -->
     <div id="drawer-backdrop" class="drawer-overlay" onclick="closeSavedDrawer()"></div>
     <aside id="saved-drawer" class="saved-drawer" aria-labelledby="drawer-title" role="dialog" aria-modal="true">
       <div class="drawer-header">
         <div>
           <h2 id="drawer-title" class="drawer-title">Saved Stories</h2>
-          <span class="drawer-subtitle">Your saved AI developments. Stored locally in your browser.</span>
+          <span class="drawer-subtitle">Stored privately in your browser storage</span>
         </div>
         <button id="btn-close-drawer" class="drawer-close-btn" onclick="closeSavedDrawer()" aria-label="Close saved drawer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -1855,7 +2188,7 @@
       </div>
     </aside>
 
-    <!-- SEARCH EXPERIENCE COMMAND PALETTE MODAL (PANEL 3) -->
+    <!-- SEARCH EXPERIENCE COMMAND PALETTE MODAL -->
     <div id="search-modal" class="search-modal-backdrop" onclick="handleSearchBackdropClick(event)">
       <div class="search-modal-box" role="dialog" aria-label="Search AI News">
         <div class="search-modal-input-row">
@@ -1895,7 +2228,7 @@
         <div class="footer-col-feeds">
           <h3 class="footer-heading">Monitored Feeds</h3>
           <ul class="footer-feeds-list">
-            <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research & News ↗</a></li>
+            <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research &amp; News ↗</a></li>
             <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind Blog ↗</a></li>
             <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review ↗</a></li>
             <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
@@ -1912,7 +2245,7 @@
     </footer>
   </div>
 
-  <!-- APPLICATION LOGIC & VECTOR LOGOS -->
+  <!-- APPLICATION LOGIC, 3-TIER IMAGE SYSTEM & RETINA VECTOR SVGS -->
   <script>
     /* -------------------------------------------------------------
        1. EMBEDDED RETINA VECTOR SVGS FOR AI LABS
@@ -1933,7 +2266,67 @@
     }
 
     /* -------------------------------------------------------------
-       2. STATE & VARIABLES
+       2. 3-TIER EDITORIAL IMAGE SYSTEM
+       ------------------------------------------------------------- */
+    const TOPIC_IMAGES = {
+      'AI Agents': 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+      'Model Releases': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+      'AI Coding': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
+      'Research & Safety': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
+      'AI Business': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+      'AI Tools & Ecosystem': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+      'AI Infrastructure': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
+      'default': 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80'
+    };
+
+    function getTopicFallbackSVG(topic) {
+      const t = topic || 'AI Intelligence';
+      const colors = {
+        'AI Agents': ['#0f766e', '#0d9488', '#115e59'],
+        'Model Releases': ['#4338ca', '#6366f1', '#3730a3'],
+        'AI Coding': ['#065f46', '#10b981', '#047857'],
+        'Research & Safety': ['#9a3412', '#ea580c', '#7c2d12'],
+        'AI Business': ['#1e40af', '#3b82f6', '#1d4ed8'],
+        'AI Tools & Ecosystem': ['#334155', '#64748b', '#1e293b'],
+        'AI Infrastructure': ['#3730a3', '#4f46e5', '#312e81'],
+        'default': ['#0f172a', '#1e293b', '#0f172a']
+      };
+      const [c1, c2, c3] = colors[t] || colors.default;
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+        <defs>
+          <linearGradient id="g_${encodeURIComponent(t)}" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="${c1}"/>
+            <stop offset="50%" stop-color="${c2}"/>
+            <stop offset="100%" stop-color="${c3}"/>
+          </linearGradient>
+          <pattern id="grid_${encodeURIComponent(t)}" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="600" height="340" fill="url(#g_${encodeURIComponent(t)})"/>
+        <rect width="600" height="340" fill="url(#grid_${encodeURIComponent(t)})"/>
+        <circle cx="500" cy="80" r="140" fill="rgba(255,255,255,0.04)"/>
+        <circle cx="100" cy="280" r="100" fill="rgba(255,255,255,0.03)"/>
+        <g fill="#ffffff" opacity="0.9" transform="translate(40, 240)">
+          <text font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="20" font-weight="700" letter-spacing="1.5" text-transform="uppercase" fill="#ffffff">${escapeHTML(t)}</text>
+          <text y="25" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" fill="rgba(255,255,255,0.75)" letter-spacing="0.5">AI TREND PULSE • EDITORIAL PROVENANCE</text>
+        </g>
+      </svg>`;
+      return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    }
+
+    function getTopicImageUrl(topic, explicitImage) {
+      if (explicitImage && explicitImage.startsWith('http')) return explicitImage;
+      return TOPIC_IMAGES[topic] || TOPIC_IMAGES.default;
+    }
+
+    function handleImageFallback(img, topic) {
+      img.onerror = null;
+      img.src = getTopicFallbackSVG(topic);
+    }
+
+    /* -------------------------------------------------------------
+       3. STATE & DATA VARIABLES
        ------------------------------------------------------------- */
     let cachedData = null;
     let activeTopicFilter = 'All';
@@ -1955,7 +2348,7 @@
     ];
 
     /* -------------------------------------------------------------
-       3. THEME SYSTEM (Dark / Light / Auto)
+       4. THEME MANAGEMENT (System / Light / Dark)
        ------------------------------------------------------------- */
     function setThemePreference(pref) {
       try {
@@ -1995,7 +2388,7 @@
     }
 
     /* -------------------------------------------------------------
-       4. TOPIC & COMPANY CLASSIFIERS
+       5. TOPIC, COMPANY & TIME HELPERS
        ------------------------------------------------------------- */
     function classifyTopic(title, summary = '') {
       const content = `${title} ${summary}`.toLowerCase();
@@ -2034,7 +2427,7 @@
     }
 
     /* -------------------------------------------------------------
-       5. DATA FETCHING & INITIALIZATION
+       6. DATA FETCHING & PIPELINE SYNCHRONIZATION
        ------------------------------------------------------------- */
     async function loadData() {
       try {
@@ -2049,36 +2442,41 @@
     }
 
     function renderCompleteUI(data) {
-      renderStatusBar(data);
-      renderHeroBriefing(data);
-      renderPulseStrip(data);
-      renderTopicPills(data);
-      renderDevelopmentsFeed(data);
-      renderDispatchesFeed(data);
+      if (data) cachedData = data;
+      if (!cachedData) return;
+      renderStatusBar(cachedData);
+      renderHeroBriefing(cachedData);
+      renderPulseStrip(cachedData);
+      renderTopicPills(cachedData);
+      renderDevelopmentsFeed(cachedData);
+      renderDispatchesFeed(cachedData);
       updateSavedCountBadge();
     }
 
     /* -------------------------------------------------------------
-       6. STATUS & METADATA BAR
+       7. STATUS BAR RENDERING
        ------------------------------------------------------------- */
     function renderStatusBar(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
       const statusText = document.getElementById('status-text');
       if (!statusText) return;
 
       const genTime = data.generated_at ? new Date(data.generated_at) : new Date();
       const timeStr = genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
 
-      // Next update in ~X minutes
       const diffMins = 60 - genTime.getMinutes();
       const nextMin = diffMins > 0 && diffMins <= 60 ? diffMins : 45;
 
-      statusText.textContent = `● Updated ${timeStr} • Next update in ${nextMin} min`;
+      statusText.textContent = `● Updated ${timeStr} • Next update in ~${nextMin} min`;
     }
 
     /* -------------------------------------------------------------
-       7. HERO SECTION (THE AI BRIEFING)
+       8. HERO BRIEFING RENDERING
        ------------------------------------------------------------- */
     function renderHeroBriefing(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
       const topTrend = (data.trends && data.trends[0]) || {
         title: "Frontier AI Agent Monitoring Becomes an Urgent Operational Priority",
         what_happened: data.takeaway || "Leading AI research teams are deploying real-time safety guardrails.",
@@ -2087,6 +2485,9 @@
         who_affected: "AI safety researchers, enterprise developers, and administrators",
         evidence_urls: ["https://openai.com"]
       };
+
+      const topic = topTrend.topic || classifyTopic(topTrend.title, topTrend.what_happened || '');
+      const company = topTrend.company || detectCompany(topTrend.title, topTrend.source);
 
       const titleEl = document.getElementById('briefing-title');
       const sumEl = document.getElementById('briefing-summary');
@@ -2097,6 +2498,7 @@
       const readEl = document.getElementById('briefing-readtime');
       const linkEl = document.getElementById('briefing-source-link');
       const visualCard = document.getElementById('hero-visual-card');
+      const heroImg = document.getElementById('hero-image');
       const audienceBox = document.getElementById('hero-audience-pills');
 
       if (titleEl) titleEl.textContent = topTrend.title;
@@ -2117,13 +2519,21 @@
 
       const primaryUrl = (topTrend.evidence_urls && topTrend.evidence_urls[0]) || "#";
       if (linkEl) {
-        linkEl.href = primaryUrl.startsWith('https://') || primaryUrl.startsWith('http://') ? primaryUrl : '#';
+        linkEl.href = primaryUrl.startsWith('http') ? primaryUrl : '#';
       }
 
-      // Visual Logo
+      // Hero Image Setup
+      if (heroImg) {
+        heroImg.src = getTopicImageUrl(topic, topTrend.image);
+        heroImg.alt = `${topTrend.title} - ${topic}`;
+        heroImg.onerror = () => handleImageFallback(heroImg, topic);
+      }
+
       if (visualCard) {
-        const company = topTrend.company || detectCompany(topTrend.title, topTrend.source);
-        visualCard.innerHTML = getCompanyLogoSVG(company);
+        visualCard.innerHTML = `
+          <span style="display:inline-flex; width:16px; height:16px; align-items:center;">${getCompanyLogoSVG(company)}</span>
+          <span>${escapeHTML(topic)}</span>
+        `;
       }
 
       // Audience Pills
@@ -2138,7 +2548,7 @@
         });
       }
 
-      // Update save button state
+      // Update save button
       const saveBtn = document.getElementById('briefing-save-btn');
       const saveLabel = document.getElementById('briefing-save-label');
       if (saveBtn && saveLabel) {
@@ -2149,16 +2559,17 @@
     }
 
     /* -------------------------------------------------------------
-       8. THE PULSE STRIP (4-CARD COMPACT HORIZONTAL ROW)
+       9. THE PULSE STRIP RENDERING (4-CARD COMPACT RAIL)
        ------------------------------------------------------------- */
     function renderPulseStrip(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
       const container = document.getElementById('pulse-container');
       if (!container) return;
       container.innerHTML = '';
 
       let items = data.pulse_items || [];
       if (!items.length) {
-        // Fallback from trends + stories
         (data.trends || []).forEach(t => {
           items.push({
             title: t.title,
@@ -2202,14 +2613,15 @@
     }
 
     /* -------------------------------------------------------------
-       9. TRENDING IN AI (TOPIC DISCOVERY PILLS)
+       10. TRENDING TOPIC PILLS RENDERING
        ------------------------------------------------------------- */
     function renderTopicPills(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
       const bar = document.getElementById('topic-pills-bar');
       if (!bar) return;
       bar.innerHTML = '';
 
-      // Tally topic counts across both trends and top_stories
       const allItems = [...(data.trends || []), ...(data.top_stories || [])];
       const counts = { All: allItems.length };
       TOPIC_CATEGORIES.forEach(cat => { if (cat !== 'All') counts[cat] = 0; });
@@ -2242,9 +2654,11 @@
     }
 
     /* -------------------------------------------------------------
-       10. LATEST AI DEVELOPMENTS (2-COLUMN GRID FEED)
+       11. LATEST AI DEVELOPMENTS — MULTI-TIER CARD FEED
        ------------------------------------------------------------- */
     function renderDevelopmentsFeed(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
       const container = document.getElementById('developments-container');
       const emptyBox = document.getElementById('empty-state-box');
       if (!container) return;
@@ -2252,7 +2666,7 @@
 
       let items = [...(data.trends || [])];
 
-      // Apply topic filter
+      // Topic filter
       if (activeTopicFilter !== 'All') {
         items = items.filter(item => {
           const t = item.topic || classifyTopic(item.title, item.what_happened || '');
@@ -2260,7 +2674,7 @@
         });
       }
 
-      // Apply search query
+      // Search query filter
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         items = items.filter(item => {
@@ -2272,7 +2686,7 @@
         });
       }
 
-      // Apply sort
+      // Sort
       if (currentSort === 'reading-time') {
         items.sort((a, b) => (parseInt(a.reading_time) || 2) - (parseInt(b.reading_time) || 2));
       } else if (currentSort === 'title') {
@@ -2286,93 +2700,184 @@
         if (emptyBox) emptyBox.style.display = 'none';
       }
 
+      // Render cards with editorial hierarchy (Featured -> Standard -> Grouped -> Breaking)
       items.forEach((item, idx) => {
-        const card = document.createElement('article');
-        card.className = 'dev-card';
-
         const topic = item.topic || classifyTopic(item.title, item.what_happened || '');
         const company = item.company || detectCompany(item.title, item.source);
         const readTime = item.reading_time || calculateReadingTime(`${item.what_happened} ${item.why_it_matters}`);
         const primaryUrl = (item.evidence_urls && item.evidence_urls[0]) || '#';
         const isSaved = isItemSaved(item.title);
+        const imgUrl = getTopicImageUrl(topic, item.image);
 
-        // Supporting sources list
-        let evidenceHTML = '';
-        if (item.evidence_urls && item.evidence_urls.length > 1) {
+        // Check if item has multiple corroborated sources
+        const hasMultipleSources = item.evidence_urls && item.evidence_urls.length > 1;
+        const isOfficial = item.status === 'official_claim' || item.tier === 'Official Lab';
+
+        const card = document.createElement('article');
+
+        // Card Type Assignment
+        if (idx === 0) {
+          // Card Type 1: Featured Story Card
+          card.className = 'card-base card-featured';
+          card.innerHTML = `
+            <div class="card-featured-inner">
+              <div class="card-featured-media">
+                <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(item.title)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+                <div class="hero-image-badge">
+                  <span>${escapeHTML(topic)}</span>
+                </div>
+              </div>
+              <div class="card-featured-body">
+                <div>
+                  <div class="card-kicker-row">
+                    <span class="badge-status-pill ${isOfficial ? 'official' : 'source-linked'}">
+                      ${isOfficial ? '🏢 Official Lab Announcement' : '🔍 Source-Linked Report'}
+                    </span>
+                    <span style="font-size:0.74rem; color:var(--text-muted);">${readTime}</span>
+                  </div>
+                  <h3 class="card-headline font-serif" style="margin-top:8px;">
+                    <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
+                  </h3>
+                  <p class="card-summary" style="margin-top:8px;">${escapeHTML(item.what_happened)}</p>
+                  
+                  ${item.why_it_matters ? `
+                    <div class="card-why-callout">
+                      <div class="card-why-callout-title">Why It Matters</div>
+                      <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
+                    </div>
+                  ` : ''}
+                </div>
+
+                <div class="card-footer">
+                  <div class="card-source-meta">
+                    <span style="font-weight:600; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                    <span>•</span>
+                    <span>Recent</span>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                      <span>${isSaved ? 'Saved' : 'Save'}</span>
+                    </button>
+                    <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                    <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open source link">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (hasMultipleSources) {
+          // Card Type 5: Related Story Group
           const linksHTML = item.evidence_urls.map((u, i) => {
             const host = cleanDomain(u);
-            return `<li class="evidence-item">${i + 1}. <a class="evidence-link" href="${escapeHTML(u)}" target="_blank" rel="noopener noreferrer">${escapeHTML(host)} ↗</a></li>`;
+            return `<li>${i + 1}. <a class="evidence-link" href="${escapeHTML(u)}" target="_blank" rel="noopener noreferrer">${escapeHTML(host)} ↗</a></li>`;
           }).join('');
 
-          evidenceHTML = `
+          card.className = 'card-base card-grouped';
+          card.innerHTML = `
+            <div class="card-kicker-row">
+              <span class="badge-card-topic">${escapeHTML(topic)}</span>
+              <span class="badge-status-pill official">Corroborated by ${item.evidence_urls.length} sources</span>
+            </div>
+            <h3 class="card-headline" style="margin-top:8px;">
+              <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
+            </h3>
+            <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
+
+            ${item.why_it_matters ? `
+              <div class="card-why-callout">
+                <div class="card-why-callout-title">Why It Matters</div>
+                <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
+              </div>
+            ` : ''}
+
             <details class="evidence-block">
-              <summary class="evidence-summary">Supporting source links (${item.evidence_urls.length}) ↗</summary>
+              <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
               <ul class="evidence-list">${linksHTML}</ul>
             </details>
+
+            <div class="card-footer">
+              <div class="card-source-meta">
+                <span style="font-weight:600; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                <span>•</span>
+                <span>${readTime}</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                  <span>${isSaved ? 'Saved' : 'Save'}</span>
+                </button>
+                <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </div>
+          `;
+        } else {
+          // Card Type 2: Standard News Card
+          card.className = `card-base card-standard ${isOfficial ? 'card-breaking' : ''}`;
+          card.innerHTML = `
+            <div class="card-standard-media">
+              <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(item.title)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+              <div class="hero-image-badge" style="top:8px; left:8px;">
+                <span>${escapeHTML(topic)}</span>
+              </div>
+            </div>
+            <div class="card-standard-body">
+              <div>
+                <div class="card-kicker-row">
+                  <span class="badge-status-pill ${isOfficial ? 'official' : 'source-linked'}">
+                    ${isOfficial ? '🏢 Official Lab Announcement' : '🔍 Source-Linked'}
+                  </span>
+                  <span style="font-size:0.74rem; color:var(--text-muted);">${readTime}</span>
+                </div>
+                <h3 class="card-headline" style="margin-top:6px;">
+                  <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
+                </h3>
+                <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
+
+                ${item.why_it_matters ? `
+                  <div class="card-why-callout">
+                    <div class="card-why-callout-title">Why It Matters</div>
+                    <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
+                  </div>
+                ` : ''}
+              </div>
+
+              <div class="card-footer">
+                <div class="card-source-meta">
+                  <span style="font-weight:600; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                  <span>•</span>
+                  <span>Recent</span>
+                </div>
+                <div class="card-actions">
+                  <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                    <span>${isSaved ? 'Saved' : 'Save'}</span>
+                  </button>
+                  <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           `;
         }
 
-        const audienceText = (item.audience_pills && item.audience_pills.join(', ')) || item.who_affected || 'Developers, Enterprises';
-
-        card.innerHTML = `
-          <div class="dev-card-top">
-            <div class="dev-card-content">
-              <div class="dev-card-kicker-row">
-                <span class="badge-dev-topic">${escapeHTML(topic)}</span>
-                <span class="dev-time">Recent</span>
-              </div>
-              <h3 class="dev-headline">
-                <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.title)}</a>
-              </h3>
-              <p class="dev-summary">${escapeHTML(item.what_happened)}</p>
-            </div>
-            <div class="dev-logo-box" aria-hidden="true">
-              ${getCompanyLogoSVG(company)}
-            </div>
-          </div>
-
-          ${item.why_it_matters ? `
-            <div class="dev-why-box">
-              <span class="dev-why-label">Why It Matters</span>
-              <p class="dev-why-text">${escapeHTML(item.why_it_matters)}</p>
-            </div>
-          ` : ''}
-
-          <div class="dev-audience-row">
-            <strong>Affected audience:</strong> ${escapeHTML(audienceText)}
-          </div>
-
-          ${evidenceHTML}
-
-          <div class="dev-card-footer">
-            <div class="dev-source-info">
-              <span style="font-weight: 600;">${escapeHTML(item.source)}</span>
-              <span>•</span>
-              <span>${readTime}</span>
-            </div>
-            <div class="dev-actions">
-              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                <span>${isSaved ? 'Saved' : 'Save'}</span>
-              </button>
-              <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span>Copy</span>
-              </button>
-              <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open source article">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-          </div>
-        `;
         container.appendChild(card);
       });
     }
 
     /* -------------------------------------------------------------
-       11. DISPATCHES FEED (PRIMARY STORIES LIST)
+       12. DISPATCHES FEED RENDERING (MONITORED SOURCES LIST)
        ------------------------------------------------------------- */
     function renderDispatchesFeed(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
       const container = document.getElementById('stories-container');
       if (!container) return;
       container.innerHTML = '';
@@ -2401,10 +2906,10 @@
             <p class="dispatch-summary">${escapeHTML(story.one_liner || '')}</p>
           </div>
           <div class="dispatch-actions">
-            <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(story.title)}', '${escapeAttr(story.source)}', '${escapeAttr(url)}', '${company}')" title="Save story">
+            <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(story.title)}', '${escapeAttr(story.source)}', '${escapeAttr(url)}', '${company}')" aria-label="Save dispatch">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
             </button>
-            <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(story.title)}', '${escapeAttr(story.one_liner)}', this)" title="Copy summary">
+            <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(story.title)}', '${escapeAttr(story.one_liner)}', this)" aria-label="Copy dispatch summary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
             </button>
           </div>
@@ -2414,7 +2919,7 @@
     }
 
     /* -------------------------------------------------------------
-       12. SAVED STORIES DRAWER & LOCAL STORAGE PERSISTENCE
+       13. SAVED STORIES DRAWER & LOCAL STORAGE PERSISTENCE
        ------------------------------------------------------------- */
     function getSavedItems() {
       try {
@@ -2522,7 +3027,7 @@
             </h4>
             <span class="saved-item-meta">${escapeHTML(item.source || 'Verified Source')}</span>
           </div>
-          <button class="saved-item-remove-btn" onclick="toggleSaveItem('${escapeAttr(item.title)}')" title="Remove bookmark">
+          <button class="saved-item-remove-btn" onclick="toggleSaveItem('${escapeAttr(item.title)}')" aria-label="Remove bookmark">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
         `;
@@ -2536,7 +3041,7 @@
     }
 
     /* -------------------------------------------------------------
-       13. SEARCH EXPERIENCE & COMMAND PALETTE (⌘K)
+       14. SEARCH EXPERIENCE & COMMAND PALETTE (⌘K)
        ------------------------------------------------------------- */
     function openSearchModal() {
       const modal = document.getElementById('search-modal');
@@ -2663,7 +3168,7 @@
     });
 
     /* -------------------------------------------------------------
-       14. CLIPBOARD & COPY FUNCTIONS
+       15. CLIPBOARD & COPY FUNCTIONS
        ------------------------------------------------------------- */
     function copyTextToClipboard(text) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2716,7 +3221,7 @@
     }
 
     /* -------------------------------------------------------------
-       15. AUDIO SPEECH SYNTHESIS (LISTEN TO BRIEFING)
+       16. AUDIO SPEECH SYNTHESIS (LISTEN TO BRIEFING)
        ------------------------------------------------------------- */
     function toggleAudioBriefing() {
       if (!('speechSynthesis' in window)) {
@@ -2768,7 +3273,7 @@
     }
 
     /* -------------------------------------------------------------
-       16. CONTROLS: SORT & LAYOUT TOGGLES
+       17. CONTROLS: SORT & LAYOUT TOGGLES
        ------------------------------------------------------------- */
     function handleSortChange(sortVal) {
       currentSort = sortVal;
@@ -2798,7 +3303,7 @@
     }
 
     /* -------------------------------------------------------------
-       17. HELPERS & SAFETY
+       18. HELPERS & SAFETY
        ------------------------------------------------------------- */
     function escapeHTML(str) {
       if (!str) return '';
