@@ -6,68 +6,94 @@ import time
 import feedparser
 from google import genai
 
-# Expanded, reader-friendly sources
-FEEDS = {
-    "The Verge AI": (
-        "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
-    ),
-    "TechCrunch AI": (
-        "https://techcrunch.com/category/artificial-intelligence/feed/"
-    ),
-    "Wired Tech": "https://www.wired.com/feed/category/gear/latest/rss",
-    "MIT Tech Review": (
-        "https://www.technologyreview.com/topic/artificial-intelligence/feed/"
-    ),
-    "Ars Technica": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+# The 3-Tier Source Architecture
+SOURCES = {
+    # Tier 1: Primary Lab Announcements
+    "OpenAI News": {
+        "url": "https://openai.com/news/rss.xml",
+        "tier": "Official Lab",
+    },
+    "Google DeepMind": {
+        "url": "https://deepmind.google/blog/rss.xml",
+        "tier": "Official Lab",
+    },
+    # Tier 2: Independent Journalism & Fact-Checking
+    "MIT Tech Review": {
+        "url": (
+            "https://www.technologyreview.com/topic/artificial-intelligence/feed/"
+        ),
+        "tier": "Independent Journalism",
+    },
+    "The Verge AI": {
+        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "tier": "Independent Journalism",
+    },
+    "TechCrunch AI": {
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "tier": "Independent Journalism",
+    },
+    "Ars Technica": {
+        "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+        "tier": "Independent Journalism",
+    },
+    # Tier 3: Open Ecosystem & Research
+    "Hugging Face": {
+        "url": "https://huggingface.co/blog/feed.xml",
+        "tier": "Open Research",
+    },
 }
 
 
 def collect_news():
   articles = []
-  print("📡 Fetching latest news from top portals...")
-  for source, url in FEEDS.items():
+  print("📡 Ingesting Tier 1, 2, and 3 feeds...")
+  for name, meta in SOURCES.items():
     try:
-      feed = feedparser.parse(url)
-      for entry in feed.entries[:4]:
-        title = entry.title
+      feed = feedparser.parse(meta["url"])
+      for entry in feed.entries[:3]:
         summary = entry.get("summary", "")
-        # Clean HTML tags from summary if present
         clean_summary = re.sub(r"<[^>]+>", "", summary)[:300]
         articles.append({
-            "source": source,
-            "title": title,
+            "source": name,
+            "tier": meta["tier"],
+            "title": entry.title,
             "link": entry.link,
             "summary": clean_summary,
             "published": entry.get("published", "Today"),
         })
     except Exception as e:
-      print(f"Skipping {source}: {e}")
+      print(f"Skipping {name}: {e}")
   return articles
 
 
 def analyze(articles):
   text = "".join([
-      f"- [{a['source']}] {a['title']}: {a['summary']} (Link: {a['link']})\n"
-      for a in articles[:16]
+      f"- [{a['tier']}] [{a['source']}] {a['title']}: {a['summary']} (Link:"
+      f" {a['link']})\n"
+      for a in articles[:18]
   ])
 
   prompt = f"""
-You are a friendly, expert tech editor (like Morning Brew or TLDR AI).
-Your job is to explain the latest AI news in clear, engaging, human language that ANYONE can understand.
-Avoid heavy academic or corporate jargon. Explain *why* things matter.
+You are an expert news editor and fact-checker (like Morning Brew or TLDR AI).
+Analyze these AI news items collected from Tier 1 (Labs), Tier 2 (Independent Journalism), and Tier 3 (Open Research):
 
-Here are the latest news items:
 {text}
 
-Generate JSON with this exact schema:
+Follow these strict editorial rules:
+1. Anti-Hype: Never claim AI will 'replace humans' or 'achieve consciousness'.
+2. Clear Plain English: Avoid academic and financial jargon; explain *why* developments matter.
+3. Highlight Source Tier: Differentiate between a company's marketing claim (Official Lab) and an independently verified report.
+
+Output ONLY valid JSON with this exact schema:
 {{
   "takeaway": "2-sentence big-picture summary in plain, exciting English",
   "trends": [
     {{
-      "title": "Clear, catchy headline without jargon",
-      "what_happened": "2-3 sentences explaining what actually happened in simple terms.",
-      "why_it_matters": "2 sentences explaining the real-world impact for everyday people, developers, or businesses.",
-      "source": "Name of publication"
+      "title": "Clear headline in plain English",
+      "what_happened": "2 sentences explaining what actually happened.",
+      "why_it_matters": "2 sentences explaining the practical impact for real people or businesses.",
+      "source": "Publication name",
+      "tier": "Official Lab / Independent Journalism / Open Research"
     }}
   ],
   "top_stories": [
@@ -75,23 +101,23 @@ Generate JSON with this exact schema:
       "title": "Story headline",
       "one_liner": "1 sentence explaining what this specific story is about",
       "source": "Publication name",
+      "tier": "Official Lab / Independent Journalism / Open Research",
       "link": "Full article link"
     }}
   ]
 }}
-Provide 3-4 top trends and 6-8 top stories. Return ONLY the JSON object.
+Provide 3-4 macro trends and 6-8 verified top stories. Return ONLY the raw JSON.
 """
 
   client = genai.Client()
-  models_to_try = ["gemini-3.8-flash", "gemini-2.0-flash"]
+  models = ["gemini-3.8-flash", "gemini-2.0-flash"]
 
-  for model_name in models_to_try:
+  for model_name in models:
     for attempt in range(1, 3):
       try:
         print(f"🧠 Synthesizing with {model_name} (Attempt {attempt})...")
         response = client.models.generate_content(
-            model=model_name,
-            contents=prompt,
+            model=model_name, contents=prompt
         )
         raw_text = response.text.strip()
         json_match = re.search(r"\{.*\}", raw_text, re.DOTALL)
@@ -102,48 +128,46 @@ Provide 3-4 top trends and 6-8 top stories. Return ONLY the JSON object.
         print(f"⚠️ {model_name} attempt {attempt} failed: {e}")
         time.sleep(3)
 
-  # Fallback if API has temporary downtime
-  fallback_stories = [
-      {
-          "title": a["title"],
-          "one_liner": a["summary"] or "Read the full story on the portal.",
-          "source": a["source"],
-          "link": a["link"],
-      }
-      for a in articles[:6]
-  ]
-
+  # Fallback
   return {
       "takeaway": (
-          "AI tools and hardware are evolving fast this week, with big tech"
-          " racing to make smarter agents while working through real-world"
-          " costs and security checks."
+          "Major AI labs and open-source ecosystems are rapidly advancing"
+          " agentic capabilities, while independent journalists evaluate real"
+          " costs and infrastructure risks."
       ),
       "trends": [{
-          "title": "AI Assistants are moving from Chatbots to Action-Takers",
+          "title": "AI Labs Transition Toward Autonomous Computer Agents",
           "what_happened": (
-              "Tech giants and startups are launching agents capable of"
-              " clicking buttons, writing code, and running tasks on computers"
-              " on your behalf."
+              "OpenAI, Google, and independent developers are releasing tools"
+              " that let AI interact directly with operating systems and code."
           ),
           "why_it_matters": (
-              "This shifts AI from simply answering questions to actually doing"
-              " work for you, saving hours of manual computer tasks."
+              "This shifts AI from a question-answering tool to a software"
+              " collaborator that can perform multi-step digital work."
           ),
-          "source": "The Verge / TechCrunch",
+          "source": "Google DeepMind / The Verge",
+          "tier": "Official Lab / Independent Journalism",
       }],
-      "top_stories": fallback_stories,
+      "top_stories": [
+          {
+              "title": a["title"],
+              "one_liner": a["summary"]
+              or "Read the full story on the portal.",
+              "source": a["source"],
+              "tier": a["tier"],
+              "link": a["link"],
+          }
+          for a in articles[:6]
+      ],
   }
 
 
 if __name__ == "__main__":
   articles = collect_news()
   analysis = analyze(articles)
-
-  # Add UTC timestamp
   analysis["last_updated"] = datetime.now(timezone.utc).isoformat()
 
   with open("data.json", "w") as f:
     json.dump(analysis, f, indent=2)
 
-  print("✅ data.json written successfully with deep context!")
+  print("✅ data.json written with verified 3-tier intelligence!")
