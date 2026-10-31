@@ -5,6 +5,7 @@ import re
 import time
 import feedparser
 from google import genai
+from google.genai import types
 
 # 3-Tier Source Architecture
 SOURCES = {
@@ -45,16 +46,11 @@ SOURCES = {
 
 
 def collect_fresh_news(max_age_hours=72):
-  """Collects articles, filters by publication date (last 72h), and deduplicates by URL."""
+  """Collects articles, filters to last 72 hours, and deduplicates canonical URLs."""
   articles = []
   seen_urls = set()
   now = datetime.now(timezone.utc)
   cutoff_time = now - timedelta(hours=max_age_hours)
-
-  print(
-      f"📡 Ingesting verified feeds (filtering for stories since"
-      f" {cutoff_time.strftime('%b %d')})..."
-  )
 
   for name, meta in SOURCES.items():
     try:
@@ -65,7 +61,6 @@ def collect_fresh_news(max_age_hours=72):
         if not clean_url or clean_url in seen_urls:
           continue
 
-        # Check publication timestamp
         pub_parsed = getattr(
             entry, "published_parsed", None
         ) or getattr(entry, "updated_parsed", None)
@@ -78,12 +73,11 @@ def collect_fresh_news(max_age_hours=72):
           except Exception:
             pass
 
-        # Skip articles older than cutoff (if date is present)
         if pub_dt and pub_dt < cutoff_time:
           continue
 
         summary = getattr(entry, "summary", "") or ""
-        clean_summary = re.sub(r"<[^>]+>", "", summary)[:300].strip()
+        clean_summary = re.sub(r"<[^>]+>", "", summary)[:280].strip()
 
         seen_urls.add(clean_url)
         articles.append({
@@ -99,119 +93,137 @@ def collect_fresh_news(max_age_hours=72):
     except Exception as e:
       print(f"⚠️ Error reading {name}: {e}")
 
-  print(f"✅ Gathered {len(articles)} fresh, deduplicated articles.")
   return articles
 
 
-def validate_schema(data):
-  """Ensures Gemini returned required fields before writing."""
+def clean_and_validate_payload(data):
+  """Validates schema and sanitizes URLs to ensure stability."""
   if not isinstance(data, dict):
     return False
   if not data.get("takeaway") or not isinstance(data.get("trends"), list):
     return False
+  if len(data["trends"]) == 0:
+    return False
+
   for t in data["trends"]:
     if not all(k in t for k in ("title", "what_happened", "why_it_matters")):
       return False
+
+    # Sanitize evidence URLs (keep only valid http/https)
+    raw_evidence = t.get("evidence_urls", [])
+    if isinstance(raw_evidence, list):
+      t["evidence_urls"] = [
+          u
+          for u in raw_evidence
+          if isinstance(u, str)
+          and (u.startswith("http://") or u.startswith("https://"))
+      ]
+    else:
+      t["evidence_urls"] = []
+
+  for s in data.get("top_stories", []):
+    if not all(k in s for k in ("title", "one_liner", "source")):
+      return False
+    link = s.get("link", "")
+    if not (link.startswith("http://") or link.startswith("https://")):
+      s["link"] = "#"
+
   return True
 
 
-def analyze_with_ai(articles):
-  text = "".join([
-      f"- [{a['tier']}] [{a['source']}] {a['title']}: {a['summary']} (Published:"
-      f" {a['published']}, Link: {a['link']})\n"
-      for a in articles[:18]
-  ])
+def analyze_with_gemini(articles):
+  articles_text = ""
+  for idx, a in enumerate(articles[:16], 1):
+    articles_text += (
+        f"{idx}. [{a['tier']}] [{a['source']}] {a['title']}\n   Summary:"
+        f" {a['summary']}\n   URL: {a['link']}\n\n"
+    )
 
   prompt = f"""
-You are an expert news editor and fact-checker. 
-Analyze these AI news items collected from Tier 1 (Labs), Tier 2 (Independent Journalism), and Tier 3 (Open Research):
+You are an expert news analyst and fact-checker. 
+Synthesize these fresh AI news stories into an executive briefing:
 
-{text}
+{articles_text}
 
-Follow these strict editorial rules:
-1. Anti-Hype: Never claim AI will 'replace humans' or 'achieve consciousness'.
-2. Clear Plain English: Avoid academic and financial jargon; explain *why* developments matter.
-3. Highlight Source Tier: Differentiate between a company's marketing claim (Official Lab) and an independently verified report.
-4. Who Is Affected: State who is most impacted (e.g. Developers, Businesses, Consumers, Cloud Engineers).
+Editorial Rules:
+1. Anti-Hype: Never claim AI 'replaces humans' or 'achieves consciousness'.
+2. Evidence Provenance: In every trend, you MUST include the exact source URL(s) from the input above in 'evidence_urls'.
+3. Transparency: If a trend is based on an official company announcement, label status as 'official_claim'. If verified by journalists, label as 'source_linked'.
 
-Output ONLY valid JSON with this exact schema:
+Return JSON with this schema:
 {{
-  "takeaway": "2-sentence big-picture summary in plain, objective English",
+  "takeaway": "2-sentence big-picture summary in plain English",
   "trends": [
     {{
       "title": "Clear headline in plain English",
-      "what_happened": "2 sentences explaining what actually happened.",
-      "why_it_matters": "2 sentences explaining the practical impact.",
-      "who_affected": "1 sentence on who is most affected.",
-      "source": "Publication name",
-      "tier": "Official Lab / Independent Journalism / Open Research"
+      "what_happened": "2 sentences explaining what happened.",
+      "why_it_matters": "2 sentences explaining practical impact.",
+      "who_affected": "Who is impacted (e.g. Developers, Businesses, Consumers)",
+      "source": "Primary source name",
+      "status": "official_claim / source_linked",
+      "evidence_urls": ["Exact source URLs from the input"]
     }}
   ],
   "top_stories": [
     {{
-      "title": "Story headline",
-      "one_liner": "1 sentence explaining what this specific story is about",
+      "title": "Headline",
+      "one_liner": "1 sentence summary",
       "source": "Publication name",
       "tier": "Official Lab / Independent Journalism / Open Research",
-      "published": "Publication date",
-      "link": "Full article link"
+      "published": "Publication time",
+      "link": "Exact article URL"
     }}
   ]
 }}
-Provide 3-4 macro trends and 6-8 verified top stories. Return ONLY the raw JSON object.
 """
 
   client = genai.Client()
   models = ["gemini-3.8-flash", "gemini-2.0-flash"]
 
-  for model_name in models:
+  for model in models:
     for attempt in range(1, 3):
       try:
-        print(f"🧠 Synthesizing with {model_name} (Attempt {attempt})...")
+        print(f"🧠 Synthesizing with {model} (Attempt {attempt})...")
         response = client.models.generate_content(
-            model=model_name, contents=prompt
+            model=model,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json"
+            ),
         )
-        raw_text = response.text.strip()
-        json_match = re.search(r"\{.*\}", raw_text, re.DOTALL)
-        if json_match:
-          data = json.loads(json_match.group(0))
-          if validate_schema(data):
-            data["status"] = "verified_live"
-            return data
+
+        data = json.loads(response.text.strip())
+        if clean_and_validate_payload(data):
+          data["schema_version"] = 1
+          data["data_status"] = "fresh"
+          return data
       except Exception as e:
-        print(f"⚠️ {model_name} attempt {attempt} failed: {e}")
+        print(f"⚠️ {model} attempt {attempt} failed: {e}")
         time.sleep(3)
 
-  # Honest Fallback: Never fabricate fake replacement trends
-  print(
-      "⚠️ AI synthesis unavailable. Building transparent headline fallback..."
-  )
-
-  # Check if previous valid briefing exists to preserve it
+  # Honest Fallback: Never invent fake replacement trends
   if os.path.exists("data.json"):
     try:
       with open("data.json", "r") as f:
-        previous_data = json.load(f)
-      if validate_schema(previous_data):
-        previous_data["status"] = "cached_fallback"
-        return previous_data
+        prev = json.load(f)
+      if clean_and_validate_payload(prev):
+        prev["data_status"] = "cached_fallback"
+        return prev
     except Exception:
       pass
 
-  # If no previous file exists, present raw verified stories cleanly
   return {
-      "status": "raw_headlines",
+      "schema_version": 1,
+      "data_status": "raw_headlines",
       "takeaway": (
-          "AI synthesis is temporarily refreshing. Displaying verified news"
-          " stories directly from source portals."
+          "Live AI synthesis is refreshing. Displaying verified news stories"
+          " directly from primary sources."
       ),
       "trends": [],
       "top_stories": [
           {
               "title": a["title"],
-              "one_liner": (
-                  a["summary"] or "Read the full verified report on the portal."
-              ),
+              "one_liner": a["summary"],
               "source": a["source"],
               "tier": a["tier"],
               "published": a["published"],
@@ -224,10 +236,14 @@ Provide 3-4 macro trends and 6-8 verified top stories. Return ONLY the raw JSON 
 
 if __name__ == "__main__":
   articles = collect_fresh_news(max_age_hours=72)
-  analysis = analyze_with_ai(articles)
-  analysis["last_updated"] = datetime.now(timezone.utc).isoformat()
+  print(f"📡 Collected {len(articles)} fresh, deduplicated articles.")
+
+  payload = analyze_with_gemini(articles)
+  payload["generated_at"] = datetime.now(timezone.utc).isoformat()
 
   with open("data.json", "w") as f:
-    json.dump(analysis, f, indent=2)
+    json.dump(payload, f, indent=2)
 
-  print("✅ data.json written with verified, schema-validated intelligence!")
+  print(
+      f"✅ data.json published successfully (Status: {payload['data_status']})!"
+  )
