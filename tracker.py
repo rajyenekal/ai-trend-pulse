@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import feedparser
 from google import genai
 
@@ -14,6 +15,7 @@ FEEDS = {
 
 def collect_news():
   articles = []
+  print("Fetching news feeds...")
   for source, url in FEEDS.items():
     feed = feedparser.parse(url)
     for entry in feed.entries[:3]:
@@ -32,24 +34,30 @@ def analyze(articles):
       f"- [{a['source']}] {a['title']}: {a['summary']}\n" for a in articles
   ])
   prompt = f"""
-You are an expert AI analyst. Based on these fresh stories:
+You are an expert AI industry analyst. Based on these fresh stories:
 {text}
 
-Output JSON with this exact schema:
+Output ONLY valid JSON with this exact schema:
 {{
   "trends": [
     {{"title": "Trend name", "explanation": "2-sentence breakdown", "source": "Source name"}}
   ],
   "takeaway": "1-sentence high-level summary"
 }}
-Return ONLY raw JSON, without markdown formatting or backticks.
 """
+  print("Calling Gemini 3.8 Flash...")
   client = genai.Client()
   response = client.models.generate_content(
-      model="gemini-2.5-flash", contents=prompt
+      model="gemini-3.8-flash",
+      contents=prompt,
   )
-  clean_json = response.text.strip().replace("```json", "").replace("```", "")
-  return json.loads(clean_json)
+
+  # Extract JSON even if wrapped in markdown formatting
+  raw_text = response.text.strip()
+  json_match = re.search(r"\{.*\}", raw_text, re.DOTALL)
+  if json_match:
+    return json.loads(json_match.group(0))
+  return json.loads(raw_text)
 
 
 if __name__ == "__main__":
