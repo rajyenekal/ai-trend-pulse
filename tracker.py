@@ -2,6 +2,7 @@ from datetime import datetime, timedelta, timezone
 import json
 import os
 import re
+import sys
 import time
 import feedparser
 from google import genai
@@ -45,80 +46,178 @@ SOURCES = {
 }
 
 
-def collect_fresh_news(max_age_hours=72):
-  """Collects articles, filters to last 72 hours, and deduplicates canonical URLs."""
+def normalize_url(raw_url):
+  """Strips tracking query params, fragments, and trailing slashes."""
+  if not raw_url:
+    return ""
+  return raw_url.split("?")[0].split("#")[0].rstrip("/")
+
+
+def filter_and_deduplicate_articles(
+    entries, source_name, tier, max_age_hours=72, seen_urls=None
+):
+  """Deduplicates entries by normalized canonical URL and filters to the freshness window."""
+  if seen_urls is None:
+    seen_urls = set()
+
   articles = []
-  seen_urls = set()
   now = datetime.now(timezone.utc)
   cutoff_time = now - timedelta(hours=max_age_hours)
+
+  for entry in entries:
+    raw_url = (
+        entry.get("link", "")
+        if isinstance(entry, dict)
+        else getattr(entry, "link", "")
+    )
+    clean_url = normalize_url(raw_url)
+    if not clean_url or clean_url in seen_urls:
+      continue
+
+    # Date parsing
+    pub_parsed = (
+        entry.get("published_parsed")
+        if isinstance(entry, dict)
+        else getattr(entry, "published_parsed", None)
+    )
+    if not pub_parsed:
+      pub_parsed = (
+          entry.get("updated_parsed")
+          if isinstance(entry, dict)
+          else getattr(entry, "updated_parsed", None)
+      )
+
+    pub_dt = None
+    if pub_parsed:
+      try:
+        pub_dt = datetime.fromtimestamp(
+            time.mktime(pub_parsed), tz=timezone.utc
+        )
+      except Exception:
+        pass
+
+    if pub_dt and pub_dt < cutoff_time:
+      continue
+
+    title = (
+        entry.get("title", "")
+        if isinstance(entry, dict)
+        else getattr(entry, "title", "")
+    )
+    summary = (
+        entry.get("summary", "")
+        if isinstance(entry, dict)
+        else getattr(entry, "summary", "")
+    )
+    clean_summary = re.sub(r"<[^>]+>", "", summary)[:280].strip()
+
+    seen_urls.add(clean_url)
+    articles.append({
+        "source": source_name,
+        "tier": tier,
+        "title": title.strip(),
+        "link": clean_url,
+        "summary": clean_summary,
+        "published": (
+            pub_dt.strftime("%b %d, %H:%M UTC") if pub_dt else "Recent"
+        ),
+    })
+
+  return articles, seen_urls
+
+
+def collect_fresh_news(max_age_hours=72):
+  """Iterates through all sources, applying deduplication and freshness checks."""
+  all_articles = []
+  seen_urls = set()
+  print(f"📡 Ingesting verified feeds (Freshness window: {max_age_hours}h)...")
 
   for name, meta in SOURCES.items():
     try:
       feed = feedparser.parse(meta["url"])
-      for entry in feed.entries:
-        raw_url = getattr(entry, "link", "")
-        clean_url = raw_url.split("?")[0].rstrip("/")
-        if not clean_url or clean_url in seen_urls:
-          continue
-
-        pub_parsed = getattr(
-            entry, "published_parsed", None
-        ) or getattr(entry, "updated_parsed", None)
-        pub_dt = None
-        if pub_parsed:
-          try:
-            pub_dt = datetime.fromtimestamp(
-                time.mktime(pub_parsed), tz=timezone.utc
-            )
-          except Exception:
-            pass
-
-        if pub_dt and pub_dt < cutoff_time:
-          continue
-
-        summary = getattr(entry, "summary", "") or ""
-        clean_summary = re.sub(r"<[^>]+>", "", summary)[:280].strip()
-
-        seen_urls.add(clean_url)
-        articles.append({
-            "source": name,
-            "tier": meta["tier"],
-            "title": entry.title.strip(),
-            "link": clean_url,
-            "summary": clean_summary,
-            "published": (
-                pub_dt.strftime("%b %d, %H:%M UTC") if pub_dt else "Recent"
-            ),
-        })
+      articles, seen_urls = filter_and_deduplicate_articles(
+          feed.entries,
+          name,
+          meta["tier"],
+          max_age_hours=max_age_hours,
+          seen_urls=seen_urls,
+      )
+      all_articles.extend(articles)
+      print(f"   ✓ {name}: {len(articles)} fresh articles")
     except Exception as e:
-      print(f"⚠️ Error reading {name}: {e}")
+      print(f"   ⚠️ Error ingesting {name}: {e}")
 
-  return articles
+  print(f"📊 Total unique fresh articles gathered: {len(all_articles)}")
+  return all_articles
+
+
+def validate_evidence_provenance(trends, collected_articles):
+  """Ensures every evidence URL belongs strictly to the collected source article set.
+
+  Eliminates AI hallucinations in evidence citations.
+  """
+  collected_urls = {a["link"] for a in collected_articles}
+
+  for t in trends:
+    raw_evidence = t.get("evidence_urls", [])
+    valid_evidence = []
+    if isinstance(raw_evidence, list):
+      for u in raw_evidence:
+        if isinstance(u, str):
+          normalized = normalize_url(u)
+          if normalized in collected_urls or any(
+              normalized.startswith(c) for c in collected_urls
+          ):
+            valid_evidence.append(normalized)
+
+    # Fallback to source article if model did not return exact URL match
+    if not valid_evidence:
+      matching_sources = [
+          a["link"] for a in collected_articles if a["source"] == t.get("source")
+      ]
+      if matching_sources:
+        valid_evidence = matching_sources[:2]
+
+    t["evidence_urls"] = valid_evidence
+
+  return trends
 
 
 def clean_and_validate_payload(data):
-  """Validates schema and sanitizes URLs to ensure stability."""
+  """Strict schema contract validation."""
   if not isinstance(data, dict):
     return False
-  if not data.get("takeaway") or not isinstance(data.get("trends"), list):
+
+  if not data.get("takeaway") or not isinstance(data.get("takeaway"), str):
     return False
-  if len(data["trends"]) == 0:
+  if not isinstance(data.get("trends"), list) or len(data["trends"]) == 0:
     return False
+
+  valid_tiers = {"Official Lab", "Independent Journalism", "Open Research"}
+  valid_statuses = {"official_claim", "source_linked", "independently_confirmed"}
 
   for t in data["trends"]:
-    if not all(k in t for k in ("title", "what_happened", "why_it_matters")):
+    if not all(
+        k in t and isinstance(t[k], str) and t[k].strip()
+        for k in ("title", "what_happened", "why_it_matters")
+    ):
       return False
 
-    # Sanitize evidence URLs (keep only valid http/https)
-    raw_evidence = t.get("evidence_urls", [])
-    if isinstance(raw_evidence, list):
-      t["evidence_urls"] = [
-          u
-          for u in raw_evidence
-          if isinstance(u, str)
-          and (u.startswith("http://") or u.startswith("https://"))
-      ]
-    else:
+    if t.get("tier") not in valid_tiers:
+      t["tier"] = (
+          "Official Lab"
+          if t.get("source") in ["OpenAI News", "Google DeepMind"]
+          else "Independent Journalism"
+      )
+
+    if t.get("status") not in valid_statuses:
+      t["status"] = (
+          "official_claim"
+          if t.get("tier") == "Official Lab"
+          else "source_linked"
+      )
+
+    if not isinstance(t.get("evidence_urls"), list):
       t["evidence_urls"] = []
 
   for s in data.get("top_stories", []):
@@ -132,6 +231,7 @@ def clean_and_validate_payload(data):
 
 
 def analyze_with_gemini(articles):
+  """Synthesizes structured trends using Gemini with native JSON mode."""
   articles_text = ""
   for idx, a in enumerate(articles[:16], 1):
     articles_text += (
@@ -150,7 +250,7 @@ Editorial Rules:
 2. Evidence Provenance: In every trend, you MUST include the exact source URL(s) from the input above in 'evidence_urls'.
 3. Transparency: If a trend is based on an official company announcement, label status as 'official_claim'. If verified by journalists, label as 'source_linked'.
 
-Return JSON with this schema:
+Return JSON with this exact schema:
 {{
   "takeaway": "2-sentence big-picture summary in plain English",
   "trends": [
@@ -160,6 +260,7 @@ Return JSON with this schema:
       "why_it_matters": "2 sentences explaining practical impact.",
       "who_affected": "Who is impacted (e.g. Developers, Businesses, Consumers)",
       "source": "Primary source name",
+      "tier": "Official Lab / Independent Journalism / Open Research",
       "status": "official_claim / source_linked",
       "evidence_urls": ["Exact source URLs from the input"]
     }}
@@ -177,41 +278,55 @@ Return JSON with this schema:
 }}
 """
 
-  client = genai.Client()
-  models = ["gemini-3.8-flash", "gemini-2.0-flash"]
+  client = None
+  try:
+    client = genai.Client()
+  except Exception as e:
+    print(f"⚠️ Could not initialize Gemini client: {e}")
 
-  for model in models:
-    for attempt in range(1, 3):
-      try:
-        print(f"🧠 Synthesizing with {model} (Attempt {attempt})...")
-        response = client.models.generate_content(
-            model=model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            ),
-        )
+  if client:
+    models = ["gemini-3.8-flash", "gemini-2.0-flash"]
+    for model in models:
+      for attempt in range(1, 3):
+        try:
+          print(f"🧠 Synthesizing with {model} (Attempt {attempt})...")
+          response = client.models.generate_content(
+              model=model,
+              contents=prompt,
+              config=types.GenerateContentConfig(
+                  response_mime_type="application/json"
+              ),
+          )
 
-        data = json.loads(response.text.strip())
-        if clean_and_validate_payload(data):
-          data["schema_version"] = 1
-          data["data_status"] = "fresh"
-          return data
-      except Exception as e:
-        print(f"⚠️ {model} attempt {attempt} failed: {e}")
-        time.sleep(3)
+          data = json.loads(response.text.strip())
+          if clean_and_validate_payload(data):
+            data["trends"] = validate_evidence_provenance(
+                data["trends"], articles
+            )
+            data["schema_version"] = 1
+            data["data_status"] = "fresh"
+            return data
+        except Exception as e:
+          print(f"⚠️ {model} attempt {attempt} failed: {e}")
+          time.sleep(3)
 
-  # Honest Fallback: Never invent fake replacement trends
+  # Honest Fallback: Never fabricate replacement trends
+  print("⚠️ AI generation unavailable. Checking for previous valid briefing...")
   if os.path.exists("data.json"):
     try:
       with open("data.json", "r") as f:
         prev = json.load(f)
       if clean_and_validate_payload(prev):
+        print(
+            "✓ Preserving previous valid briefing with 'cached_fallback'"
+            " status."
+        )
         prev["data_status"] = "cached_fallback"
         return prev
-    except Exception:
-      pass
+    except Exception as e:
+      print(f"⚠️ Error reading prior data.json: {e}")
 
+  print("✓ Displaying raw collected headlines with 'raw_headlines' status.")
   return {
       "schema_version": 1,
       "data_status": "raw_headlines",
@@ -234,16 +349,42 @@ Return JSON with this schema:
   }
 
 
-if __name__ == "__main__":
-  articles = collect_fresh_news(max_age_hours=72)
-  print(f"📡 Collected {len(articles)} fresh, deduplicated articles.")
+def run_pipeline(dry_run=False, max_age_hours=72):
+  """Full execution pipeline."""
+  articles = collect_fresh_news(max_age_hours=max_age_hours)
+  now_iso = datetime.now(timezone.utc).isoformat()
 
   payload = analyze_with_gemini(articles)
-  payload["generated_at"] = datetime.now(timezone.utc).isoformat()
+  payload["last_attempt_at"] = now_iso
+
+  # Timestamp bug fix: NEVER overwrite generated_at if we are using cached fallback
+  if payload.get("data_status") != "cached_fallback" or not payload.get(
+      "generated_at"
+  ):
+    payload["generated_at"] = now_iso
+
+  if dry_run:
+    print("\n🔍 DRY-RUN MODE: data.json will NOT be written.")
+    print(f"   Status: {payload['data_status']}")
+    print(f"   Takeaway: {payload['takeaway'][:80]}...")
+    print(f"   Trends count: {len(payload['trends'])}")
+    print(f"   Stories count: {len(payload['top_stories'])}")
+    print(
+        f"   Generated At: {payload['generated_at']} (Attempt:"
+        f" {payload['last_attempt_at']})"
+    )
+    return payload
 
   with open("data.json", "w") as f:
     json.dump(payload, f, indent=2)
 
   print(
-      f"✅ data.json published successfully (Status: {payload['data_status']})!"
+      f"✅ data.json written successfully! Status: {payload['data_status']},"
+      f" Generated: {payload['generated_at']}"
   )
+  return payload
+
+
+if __name__ == "__main__":
+  is_dry_run = "--dry-run" in sys.argv
+  run_pipeline(dry_run=is_dry_run)
