@@ -359,21 +359,49 @@ Return JSON with this exact schema:
     print(f"⚠️ Could not initialize Gemini client: {e}")
 
   if client:
-    # Use real production Gemini models
-    models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    # Primary model is gemini-3.8-flash (explicitly required by Google GenAI API in 2026)
+    models = ["gemini-3.8-flash", "gemini-3.8-pro", "gemini-3-flash"]
+
+    # Dynamically probe for any available models supporting generateContent
+    try:
+      discovered = []
+      for m in client.models.list():
+        m_name = getattr(m, "name", "") or ""
+        clean_name = m_name.replace("models/", "")
+        methods = getattr(m, "supported_generation_methods", []) or getattr(m, "supported_actions", [])
+        if "generateContent" in methods and "embed" not in clean_name.lower():
+          discovered.append(clean_name)
+      if discovered:
+        print(f"📋 Available API models: {', '.join(discovered[:8])}")
+        for dm in discovered:
+          if dm not in models:
+            models.append(dm)
+    except Exception as e:
+      print(f"ℹ️ Model discovery note: {e}")
+
     for model in models:
       for attempt in range(1, 3):
         try:
           print(f"🧠 Synthesizing with {model} (Attempt {attempt})...")
+          config = None
+          if types and attempt == 1:
+            try:
+              config = types.GenerateContentConfig(
+                  response_mime_type="application/json"
+              )
+            except Exception:
+              config = None
+
           response = client.models.generate_content(
               model=model,
               contents=prompt,
-              config=types.GenerateContentConfig(
-                  response_mime_type="application/json"
-              ),
+              config=config,
           )
 
-          raw_text = response.text.strip()
+          raw_text = (getattr(response, "text", "") or "").strip()
+          if not raw_text:
+            raise ValueError(f"Empty response text received from {model}")
+
           # Strip markdown code blocks if present
           if "```" in raw_text:
             m = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", raw_text)
