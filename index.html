@@ -73,13 +73,32 @@
       --badge-topic-text: #1e293b;
       --badge-topic-border: #cbd5e1;
 
+      /* 3-Tier Source Architecture Colorways (Light Mode) */
+      --tier-1-bg: #f5f3ff;
+      --tier-1-border: #ddd6fe;
+      --tier-1-text: #6d28d9;
+      --tier-1-dot: #8b5cf6;
+      --tier-1-glow: rgba(139, 92, 246, 0.22);
+
+      --tier-2-bg: #eff6ff;
+      --tier-2-border: #bfdbfe;
+      --tier-2-text: #1d4ed8;
+      --tier-2-dot: #3b82f6;
+      --tier-2-glow: rgba(59, 130, 246, 0.22);
+
+      --tier-3-bg: #ecfdf5;
+      --tier-3-border: #a7f3d0;
+      --tier-3-text: #047857;
+      --tier-3-dot: #10b981;
+      --tier-3-glow: rgba(16, 185, 129, 0.22);
+
       --card-featured-bg: #ffffff;
       --card-featured-border: #cbd5e1;
       --card-why-bg: #f8fafc;
       --card-why-border: #0d9488;
       
-      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-      --card-shadow-hover: 0 8px 20px -4px rgba(0, 0, 0, 0.08), 0 4px 8px -4px rgba(0, 0, 0, 0.04);
+      --card-shadow: 0 2px 8px -1px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+      --card-shadow-hover: 0 16px 32px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
       --hero-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
       --focus-ring: rgba(13, 148, 136, 0.4);
       
@@ -129,13 +148,32 @@
       --badge-topic-text: #a5c3e8;
       --badge-topic-border: #29374c;
 
+      /* 3-Tier Source Architecture Colorways (Dark Mode) */
+      --tier-1-bg: rgba(139, 92, 246, 0.16);
+      --tier-1-border: rgba(167, 139, 250, 0.38);
+      --tier-1-text: #c4b5fd;
+      --tier-1-dot: #a78bfa;
+      --tier-1-glow: rgba(167, 139, 250, 0.32);
+
+      --tier-2-bg: rgba(59, 130, 246, 0.16);
+      --tier-2-border: rgba(96, 165, 250, 0.38);
+      --tier-2-text: #93c5fd;
+      --tier-2-dot: #60a5fa;
+      --tier-2-glow: rgba(96, 165, 250, 0.32);
+
+      --tier-3-bg: rgba(16, 185, 129, 0.16);
+      --tier-3-border: rgba(52, 211, 153, 0.38);
+      --tier-3-text: #6ee7b7;
+      --tier-3-dot: #34d399;
+      --tier-3-glow: rgba(52, 211, 153, 0.32);
+
       --card-featured-bg: #141a24;
       --card-featured-border: #28374d;
       --card-why-bg: rgba(45, 212, 191, 0.05);
       --card-why-border: #2dd4bf;
       
-      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-      --card-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.55), 0 8px 10px rgba(0, 0, 0, 0.35);
+      --card-shadow: 0 4px 14px -1px rgba(0, 0, 0, 0.45), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 20px 36px -4px rgba(0, 0, 0, 0.7), 0 8px 16px -2px rgba(0, 0, 0, 0.5);
       --hero-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
       --focus-ring: rgba(45, 212, 191, 0.4);
       
@@ -1067,19 +1105,23 @@
     }
 
     /* -------------------------------------------------------------
-       STORY CARD SYSTEM — 5 DISTINCT CARD TYPES
+       STORY CARD SYSTEM — 5 DISTINCT CARD TYPES (PREMIUM EDITORIAL)
        ------------------------------------------------------------- */
     .card-base {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.2s ease;
+      position: relative;
     }
     .card-base:hover {
-      transform: translateY(-2px);
+      transform: translateY(-4px);
       box-shadow: var(--card-shadow-hover);
       border-color: var(--border-strong);
     }
@@ -1089,13 +1131,15 @@
       grid-column: 1 / -1;
       background: var(--card-featured-bg);
       border: 1px solid var(--card-featured-border);
+      border-radius: 18px;
     }
 
     @media (min-width: 900px) {
       .card-featured .card-featured-inner {
         display: grid;
-        grid-template-columns: 1.1fr 1fr;
-        gap: 24px;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 28px;
+        align-items: stretch;
       }
     }
 
@@ -1106,18 +1150,30 @@
       background: var(--bg-subtle);
       overflow: hidden;
     }
+    @media (min-width: 900px) {
+      .card-featured-media {
+        border-radius: 14px;
+        margin: 14px;
+        width: calc(100% - 28px);
+        height: calc(100% - 28px);
+      }
+    }
     .card-featured-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-featured:hover .card-featured-media img {
+      transform: scale(1.04);
     }
 
     .card-featured-body {
-      padding: clamp(14px, 3vw, 22px);
+      padding: clamp(18px, 3.2vw, 28px);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
       justify-content: space-between;
     }
 
@@ -1125,12 +1181,13 @@
     .card-standard {
       display: flex;
       flex-direction: column;
+      border-radius: 16px;
     }
 
     .card-standard-media {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 9;
       background: var(--bg-subtle);
       overflow: hidden;
     }
@@ -1139,23 +1196,28 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-standard:hover .card-standard-media img {
+      transform: scale(1.04);
     }
 
     .card-standard-body {
-      padding: 16px;
+      padding: clamp(18px, 2.8vw, 24px);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       flex-grow: 1;
       justify-content: space-between;
     }
 
     /* CARD TYPE 3: COMPACT NEWS ITEM (Dense scanning) */
     .card-compact {
-      padding: 14px 16px;
+      padding: 16px 20px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      border-radius: 14px;
     }
 
     /* CARD TYPE 4: BREAKING / OFFICIAL LAB RELEASE CARD */
@@ -1168,7 +1230,11 @@
     .card-grouped {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      padding: 16px;
+      border-radius: 16px;
+      padding: clamp(18px, 2.8vw, 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     /* Common Card Internal Components */
@@ -1176,6 +1242,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .card-kicker-left {
+      display: flex;
+      align-items: center;
       gap: 8px;
       flex-wrap: wrap;
     }
@@ -1187,62 +1259,185 @@
       background: var(--badge-topic-bg);
       color: var(--badge-topic-text);
       border: 1px solid var(--badge-topic-border);
-      padding: 2px 8px;
-      border-radius: 5px;
+      padding: 3px 9px;
+      border-radius: 6px;
       font-size: 0.72rem;
       font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    /* -------------------------------------------------------------
+       3-TIER SOURCE SYSTEM BADGES
+       Tier 1: Official Labs (OpenAI, Google DeepMind)
+       Tier 2: Independent Journalism (MIT Tech Review, The Verge, TechCrunch, Ars Technica)
+       Tier 3: Open Research (Hugging Face)
+       ------------------------------------------------------------- */
+    .badge-tier {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      white-space: nowrap;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .badge-tier-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulseDot 2.4s infinite ease-in-out;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    /* Tier 1: Official Labs */
+    .badge-tier.tier-1 {
+      background: var(--tier-1-bg);
+      color: var(--tier-1-text);
+      border: 1px solid var(--tier-1-border);
+      box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.08), 0 2px 8px var(--tier-1-glow);
+    }
+    .badge-tier.tier-1 .badge-tier-dot {
+      background: var(--tier-1-dot);
+      box-shadow: 0 0 8px var(--tier-1-dot);
+    }
+
+    /* Tier 2: Independent Journalism */
+    .badge-tier.tier-2 {
+      background: var(--tier-2-bg);
+      color: var(--tier-2-text);
+      border: 1px solid var(--tier-2-border);
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.08), 0 2px 8px var(--tier-2-glow);
+    }
+    .badge-tier.tier-2 .badge-tier-dot {
+      background: var(--tier-2-dot);
+      box-shadow: 0 0 8px var(--tier-2-dot);
+    }
+
+    /* Tier 3: Open Research */
+    .badge-tier.tier-3 {
+      background: var(--tier-3-bg);
+      color: var(--tier-3-text);
+      border: 1px solid var(--tier-3-border);
+      box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.08), 0 2px 8px var(--tier-3-glow);
+    }
+    .badge-tier.tier-3 .badge-tier-dot {
+      background: var(--tier-3-dot);
+      box-shadow: 0 0 8px var(--tier-3-dot);
     }
 
     .badge-status-pill {
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      padding: 2px 7px;
-      border-radius: 4px;
-      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
       font-weight: 600;
     }
     .badge-status-pill.official {
-      background: var(--status-fresh-bg);
-      color: var(--status-fresh-text);
-      border: 1px solid var(--status-fresh-border);
+      background: var(--tier-1-bg);
+      color: var(--tier-1-text);
+      border: 1px solid var(--tier-1-border);
     }
     .badge-status-pill.source-linked {
-      background: var(--bg-subtle);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-subtle);
+      background: var(--tier-2-bg);
+      color: var(--tier-2-text);
+      border: 1px solid var(--tier-2-border);
     }
 
     .card-headline {
-      font-size: clamp(1.02rem, 2vw, 1.25rem);
+      font-size: clamp(1.12rem, 2.2vw, 1.4rem);
       font-weight: 700;
-      line-height: 1.35;
+      line-height: 1.34;
       color: var(--text-primary);
       word-break: break-word;
+      letter-spacing: -0.015em;
+    }
+    .card-featured .card-headline {
+      font-size: clamp(1.28rem, 2.8vw, 1.68rem);
+      line-height: 1.28;
     }
     .card-headline a {
       color: inherit;
       text-decoration: none;
-      transition: color 0.15s;
+      transition: color 0.15s ease;
     }
     .card-headline a:hover {
       color: var(--accent);
     }
 
     .card-summary {
-      font-size: 0.88rem;
-      line-height: 1.5;
+      font-size: 0.92rem;
+      line-height: 1.55;
       color: var(--text-secondary);
       word-break: break-word;
+    }
+
+    /* On-Card Key Takeaways (Rundown AI style bullet points) */
+    .card-takeaways {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-top: 2px;
+    }
+    .takeaways-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .takeaways-icon {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .takeaways-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-left: 0;
+      margin: 0;
+    }
+    .takeaways-list li {
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      position: relative;
+      padding-left: 16px;
+    }
+    .takeaways-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1.3;
     }
 
     /* Card Why It Matters Accordion / Callout */
     .card-why-callout {
       background: var(--card-why-bg);
       border-left: 3px solid var(--card-why-border);
-      border-radius: 0 6px 6px 0;
-      padding: 8px 12px;
-      margin-top: 4px;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin-top: 2px;
     }
     .card-why-callout-title {
       font-size: 0.72rem;
@@ -1250,21 +1445,24 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--accent);
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
     .card-why-callout-body {
-      font-size: 0.84rem;
-      line-height: 1.45;
+      font-size: 0.85rem;
+      line-height: 1.48;
       color: var(--text-secondary);
     }
 
     /* Expandable source links for Card Type 5 */
     .evidence-block {
-      margin-top: 6px;
+      margin-top: 4px;
       border: 1px solid var(--border-subtle);
-      border-radius: 6px;
+      border-radius: 8px;
       background: var(--bg-subtle);
-      padding: 6px 10px;
+      padding: 8px 12px;
     }
     .evidence-summary {
       font-size: 0.76rem;
@@ -1301,17 +1499,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      padding-top: 10px;
+      gap: 10px;
+      padding-top: 14px;
       border-top: 1px solid var(--border-subtle);
       margin-top: auto;
+      flex-wrap: wrap;
     }
 
     .card-source-meta {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1325,11 +1524,41 @@
       flex-shrink: 0;
     }
 
+    /* High-Impact Read Deep Dive Pill Action */
+    .btn-read-deep-dive {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 9999px;
+      background: var(--accent);
+      color: var(--accent-solid-text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 2px 6px rgba(13, 148, 136, 0.2);
+      white-space: nowrap;
+    }
+    .btn-read-deep-dive:hover {
+      background: var(--accent-hover);
+      transform: translateX(1px);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    }
+    .btn-read-deep-dive svg {
+      transition: transform 0.15s ease;
+    }
+    .btn-read-deep-dive:hover svg {
+      transform: translateX(2px);
+    }
+
     .btn-action-icon {
       min-width: 44px;
       min-height: 44px;
-      padding: 0 8px;
-      border-radius: 6px;
+      padding: 0 10px;
+      border-radius: 8px;
       border: 1px solid var(--border-subtle);
       background: var(--bg-subtle);
       color: var(--text-muted);
@@ -1438,70 +1667,140 @@
     }
 
     /* -------------------------------------------------------------
-       8. MONITORED FEED DISPATCHES (PRIMARY SOURCES LIST)
+       8. MONITORED FEED DISPATCHES (MULTI-COLUMN CARD GRID)
        ------------------------------------------------------------- */
     .dispatches-section {
       padding: clamp(16px, 3vw, 24px) 0 clamp(24px, 4vw, 40px);
     }
 
+    .dispatches-grid,
     .dispatches-list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+      padding: 0;
     }
 
+    @media (min-width: 640px) {
+      .dispatches-grid,
+      .dispatches-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .dispatches-grid,
+      .dispatches-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+
+    .dispatch-card,
     .dispatch-item {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 12px 16px;
+      border-radius: 14px;
+      padding: clamp(16px, 2.5vw, 20px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.2s ease;
+      min-width: 0;
+    }
+    .dispatch-card:hover,
+    .dispatch-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--border-strong);
+    }
+
+    .dispatch-header-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      transition: border-color 0.15s, transform 0.15s;
-    }
-    .dispatch-item:hover {
-      border-color: var(--border-strong);
-      transform: translateX(2px);
-    }
-
-    .dispatch-main {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      min-width: 0;
-    }
-
-    .dispatch-meta-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.74rem;
-      color: var(--text-muted);
+      gap: 8px;
       flex-wrap: wrap;
     }
 
+    .dispatch-source-brand {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .dispatch-source-brand svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .dispatch-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-grow: 1;
+    }
+
     .dispatch-title {
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+      font-weight: 700;
       line-height: 1.35;
       color: var(--text-primary);
+      letter-spacing: -0.01em;
+      word-break: break-word;
     }
     .dispatch-title a {
       color: inherit;
       text-decoration: none;
+      transition: color 0.15s ease;
     }
     .dispatch-title a:hover {
       color: var(--accent);
     }
 
     .dispatch-summary {
-      font-size: 0.84rem;
+      font-size: 0.88rem;
       color: var(--text-secondary);
-      line-height: 1.45;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .dispatch-bullet {
+      background: var(--bg-subtle);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      line-height: 1.42;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .dispatch-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+
+    .dispatch-meta-time {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
     .dispatch-actions {
@@ -1511,14 +1810,10 @@
       flex-shrink: 0;
     }
 
-    @media (max-width: 580px) {
-      .dispatch-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .dispatch-actions {
-        align-self: flex-end;
-      }
+    .dispatch-actions .btn-read-deep-dive {
+      min-height: 38px;
+      padding: 0 12px;
+      font-size: 0.78rem;
     }
 
     /* -------------------------------------------------------------
@@ -2451,7 +2746,7 @@
           </div>
         </div>
 
-        <ul id="stories-container" class="dispatches-list">
+        <ul id="stories-container" class="dispatches-grid dispatches-list">
           <!-- Dynamically populated source stories -->
         </ul>
       </section>
@@ -2481,7 +2776,7 @@
       <div class="reader-header">
         <div class="reader-header-meta">
           <span id="reader-topic-badge" class="badge-card-topic">AI Agents</span>
-          <span id="reader-status-badge" class="badge-status-pill source-linked">🔍 Source-Linked Report</span>
+          <span id="reader-status-badge" class="badge-tier tier-2"><span class="badge-tier-dot"></span><span class="badge-tier-label">Tier 2: Independent Press</span></span>
           <span id="reader-readtime" class="reader-readtime">2 min read</span>
         </div>
         <button id="btn-close-reader" class="drawer-close-btn" onclick="closeReaderView()" aria-label="Close reader view">
@@ -2797,6 +3092,71 @@
       return `${mins} min read`;
     }
 
+    /* -------------------------------------------------------------
+       2B. 3-TIER SOURCE ARCHITECTURE & PROVENANCE ENGINE
+       Tier 1 (Official Labs): OpenAI News, Google DeepMind
+       Tier 2 (Independent Journalism): MIT Tech Review, The Verge, TechCrunch, Ars Technica
+       Tier 3 (Open Research): Hugging Face
+       ------------------------------------------------------------- */
+    function getTierMeta(source, tier) {
+      const s = (source || '').toLowerCase();
+      const t = (tier || '').toLowerCase();
+
+      // Tier 1: Primary Lab Announcements & Official Research
+      if (
+        s.includes('openai') ||
+        s.includes('deepmind') ||
+        s.includes('anthropic') ||
+        t.includes('official') ||
+        t.includes('tier 1')
+      ) {
+        return {
+          tierNum: 1,
+          tierClass: 'tier-1',
+          badgeLabel: 'Tier 1 • Official Lab',
+          badgeShort: 'Tier 1: Official Lab',
+          icon: '🏢',
+          sourceName: source || 'Official Lab'
+        };
+      }
+
+      // Tier 3: Open Ecosystem & Research Repositories
+      if (
+        s.includes('hugging face') ||
+        s.includes('huggingface') ||
+        s.includes('arxiv') ||
+        t.includes('open research') ||
+        t.includes('tier 3')
+      ) {
+        return {
+          tierNum: 3,
+          tierClass: 'tier-3',
+          badgeLabel: 'Tier 3 • Open Research',
+          badgeShort: 'Tier 3: Open Research',
+          icon: '🔬',
+          sourceName: source || 'Hugging Face'
+        };
+      }
+
+      // Tier 2: Independent Journalism & Fact-Checking Press (The Verge, TechCrunch, MIT Tech Review, Ars Technica)
+      return {
+        tierNum: 2,
+        tierClass: 'tier-2',
+        badgeLabel: 'Tier 2 • Independent Journalism',
+        badgeShort: 'Tier 2: Independent Press',
+        icon: '📰',
+        sourceName: source || 'Independent Press'
+      };
+    }
+
+    function getTierBadgeHTML(source, tier) {
+      const meta = getTierMeta(source, tier);
+      return `<span class="badge-tier ${meta.tierClass}" title="${escapeAttr(meta.badgeLabel)}">
+        <span class="badge-tier-dot"></span>
+        <span class="badge-tier-label">${escapeHTML(meta.badgeShort)}</span>
+      </span>`;
+    }
+
     function extractAudiencePills(whoAffected) {
       if (!whoAffected) return ['Enterprises', 'Developers'];
       return whoAffected.replace(/\band\b|\&/gi, ',')
@@ -3099,6 +3459,31 @@
         // Check if item has multiple corroborated sources
         const hasMultipleSources = item.evidence_urls && item.evidence_urls.length > 1;
         const isOfficial = item.status === 'official_claim' || item.tier === 'Official Lab';
+        const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier);
+
+        // Extract key takeaways bullets (up to 3)
+        const keyPoints = (item.key_points && item.key_points.length) ? item.key_points.slice(0, 3) : [];
+        const takeawaysHTML = keyPoints.length ? `
+          <div class="card-takeaways">
+            <div class="takeaways-header">
+              <svg class="takeaways-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>Key Takeaways</span>
+            </div>
+            <ul class="takeaways-list">
+              ${keyPoints.map(kp => `<li>${escapeHTML(kp)}</li>`).join('')}
+            </ul>
+          </div>
+        ` : '';
+
+        const whyItMattersHTML = item.why_it_matters ? `
+          <div class="card-why-callout">
+            <div class="card-why-callout-title">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>Why It Matters</span>
+            </div>
+            <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
+          </div>
+        ` : '';
 
         const card = document.createElement('article');
 
@@ -3117,43 +3502,38 @@
               <div class="card-featured-body">
                 <div>
                   <div class="card-kicker-row">
-                    <span class="badge-status-pill ${isOfficial ? 'official' : 'source-linked'}">
-                      ${isOfficial ? '🏢 Official Lab Announcement' : '🔍 Source-Linked Report'}
-                    </span>
-                    <span style="font-size:0.74rem; color:var(--text-muted);">${readTime}</span>
+                    <div class="card-kicker-left">
+                      ${tierBadgeHTML}
+                      <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                    </div>
+                    <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${readTime}</span>
                   </div>
                   <h3 class="card-headline font-serif" style="margin-top:8px;">
                     <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
                   </h3>
                   <p class="card-summary" style="margin-top:8px;">${escapeHTML(item.what_happened)}</p>
-                  
-                  ${item.why_it_matters ? `
-                    <div class="card-why-callout">
-                      <div class="card-why-callout-title">Why It Matters</div>
-                      <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
-                    </div>
-                  ` : ''}
+                  ${takeawaysHTML}
+                  ${whyItMattersHTML}
                 </div>
 
                 <div class="card-footer">
                   <div class="card-source-meta">
-                    <span style="font-weight:600; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                    <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
                     <span>•</span>
                     <span>Recent</span>
                   </div>
                   <div class="card-actions">
-                    <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                      <span>Deep Dive</span>
+                    <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                      <span>Read Deep Dive</span>
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
-                    <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
+                    <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story" title="Save Story">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                      <span>${isSaved ? 'Saved' : 'Save'}</span>
                     </button>
-                    <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
+                    <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary" title="Copy Summary">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                     </button>
-                    <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly">
+                    <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </a>
                   </div>
@@ -3171,20 +3551,18 @@
           card.className = 'card-base card-grouped';
           card.innerHTML = `
             <div class="card-kicker-row">
-              <span class="badge-card-topic">${escapeHTML(topic)}</span>
+              <div class="card-kicker-left">
+                ${tierBadgeHTML}
+                <span class="badge-card-topic">${escapeHTML(topic)}</span>
+              </div>
               <span class="badge-status-pill official">Corroborated by ${item.evidence_urls.length} sources</span>
             </div>
             <h3 class="card-headline" style="margin-top:8px;">
               <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
             </h3>
             <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
-
-            ${item.why_it_matters ? `
-              <div class="card-why-callout">
-                <div class="card-why-callout-title">Why It Matters</div>
-                <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
-              </div>
-            ` : ''}
+            ${takeawaysHTML}
+            ${whyItMattersHTML}
 
             <details class="evidence-block">
               <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
@@ -3193,22 +3571,24 @@
 
             <div class="card-footer">
               <div class="card-source-meta">
-                <span style="font-weight:600; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
                 <span>•</span>
-                <span>${readTime}</span>
+                <span>⏱ ${readTime}</span>
               </div>
               <div class="card-actions">
-                <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                  <span>Deep Dive</span>
+                <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                  <span>Read Deep Dive</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
-                <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
+                <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story" title="Save Story">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                  <span>${isSaved ? 'Saved' : 'Save'}</span>
                 </button>
-                <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
+                <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary" title="Copy Summary">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
+                <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
             </div>
           `;
@@ -3225,42 +3605,40 @@
             <div class="card-standard-body">
               <div>
                 <div class="card-kicker-row">
-                  <span class="badge-status-pill ${isOfficial ? 'official' : 'source-linked'}">
-                    ${isOfficial ? '🏢 Official Lab Announcement' : '🔍 Source-Linked'}
-                  </span>
-                  <span style="font-size:0.74rem; color:var(--text-muted);">${readTime}</span>
+                  <div class="card-kicker-left">
+                    ${tierBadgeHTML}
+                    <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                  </div>
+                  <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${readTime}</span>
                 </div>
-                <h3 class="card-headline" style="margin-top:6px;">
+                <h3 class="card-headline" style="margin-top:8px;">
                   <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
                 </h3>
                 <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
-
-                ${item.why_it_matters ? `
-                  <div class="card-why-callout">
-                    <div class="card-why-callout-title">Why It Matters</div>
-                    <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
-                  </div>
-                ` : ''}
+                ${takeawaysHTML}
+                ${whyItMattersHTML}
               </div>
 
               <div class="card-footer">
                 <div class="card-source-meta">
-                  <span style="font-weight:600; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                  <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
                   <span>•</span>
                   <span>Recent</span>
                 </div>
                 <div class="card-actions">
-                  <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                    <span>Deep Dive</span>
+                  <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                    <span>Read Deep Dive</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </button>
-                  <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story">
+                  <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story" title="Save Story">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                    <span>${isSaved ? 'Saved' : 'Save'}</span>
                   </button>
-                  <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary">
+                  <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary" title="Copy Summary">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                   </button>
+                  <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -3284,37 +3662,55 @@
       const stories = data.top_stories || [];
       stories.forEach((story, idx) => {
         const li = document.createElement('li');
-        li.className = 'dispatch-item';
+        li.className = 'card-base dispatch-card dispatch-item';
 
         const company = story.company || detectCompany(story.title, story.source);
         const url = story.link && story.link.startsWith('http') ? story.link : '#';
         const isSaved = isItemSaved(story.title);
+        const readTime = story.reading_time || calculateReadingTime(story.one_liner || story.title);
+        const tierBadgeHTML = getTierBadgeHTML(story.source, story.tier);
+
+        // Highlight first key point if available
+        const topBullet = (story.key_points && story.key_points[0]) ? story.key_points[0] : '';
 
         li.innerHTML = `
-          <div class="dispatch-main">
-            <div class="dispatch-meta-row">
-              <span style="font-weight: 600; color: var(--text-primary);">${escapeHTML(story.source)}</span>
-              <span>•</span>
-              <span>${escapeHTML(story.tier || 'Independent Journalism')}</span>
-              <span>•</span>
-              <span>${escapeHTML(story.published || 'Recent')}</span>
+          <div class="dispatch-header-row">
+            <div class="dispatch-source-brand">
+              ${getCompanyLogoSVG(company)}
+              <span>${escapeHTML(story.source)}</span>
             </div>
+            ${tierBadgeHTML}
+          </div>
+
+          <div class="dispatch-body">
             <h3 class="dispatch-title">
               <a href="${escapeHTML(url)}" onclick="openReaderForTopStory(${idx}, event)">${escapeHTML(story.title)} ↗</a>
             </h3>
             <p class="dispatch-summary">${escapeHTML(story.one_liner || '')}</p>
+            ${topBullet && topBullet !== story.one_liner ? `
+              <div class="dispatch-bullet">
+                <strong>Key Takeaway:</strong> ${escapeHTML(topBullet)}
+              </div>
+            ` : ''}
           </div>
-          <div class="dispatch-actions">
-            <button class="btn-action-icon btn-action-deep-dive" onclick="openReaderForTopStory(${idx}, event)" aria-label="Read full story details">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-              <span>Deep Dive</span>
-            </button>
-            <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(story.title)}', '${escapeAttr(story.source)}', '${escapeAttr(url)}', '${company}')" aria-label="Save dispatch">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            </button>
-            <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(story.title)}', '${escapeAttr(story.one_liner)}', this)" aria-label="Copy dispatch summary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            </button>
+
+          <div class="dispatch-footer">
+            <span class="dispatch-meta-time">⏱ ${readTime} • ${escapeHTML(story.published || 'Recent')}</span>
+            <div class="dispatch-actions">
+              <button class="btn-read-deep-dive" onclick="openReaderForTopStory(${idx}, event)" aria-label="Read full story details">
+                <span>Deep Dive</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(story.title)}', '${escapeAttr(story.source)}', '${escapeAttr(url)}', '${company}')" aria-label="Save dispatch" title="Save dispatch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              </button>
+              <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(story.title)}', '${escapeAttr(story.one_liner)}', this)" aria-label="Copy dispatch summary" title="Copy summary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+              <a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source" title="Open source">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
           </div>
         `;
         container.appendChild(li);
@@ -3595,11 +3991,12 @@
       const topicBadge = document.getElementById('reader-topic-badge');
       if (topicBadge) topicBadge.textContent = topic;
 
-      // Status badge
+      // Tier / Status badge
+      const tierMeta = getTierMeta(item.source, item.tier);
       const statusBadge = document.getElementById('reader-status-badge');
       if (statusBadge) {
-        statusBadge.className = `badge-status-pill ${isOfficial ? 'official' : 'source-linked'}`;
-        statusBadge.textContent = isOfficial ? '🏢 Official Lab Announcement' : '🔍 Source-Linked Report';
+        statusBadge.className = `badge-tier ${tierMeta.tierClass}`;
+        statusBadge.innerHTML = `<span class="badge-tier-dot"></span><span class="badge-tier-label">${escapeHTML(tierMeta.badgeLabel)}</span>`;
       }
 
       // Read time
