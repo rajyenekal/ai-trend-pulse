@@ -257,29 +257,34 @@
     }
 
     /* -------------------------------------------------------------
-       3. SITE HEADER & NAVIGATION (MOBILE-FIRST)
+       3. SITE HEADER & NAVIGATION (MOBILE-FIRST & STICKY DESKTOP)
        ------------------------------------------------------------- */
     .site-header {
       background-color: var(--bg-surface);
       border-bottom: 1px solid var(--border-subtle);
       width: 100%;
-      position: relative;
-      z-index: 40;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
 
     .header-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 60px;
-      gap: 12px;
+      min-height: 58px;
+      gap: clamp(8px, 1.4vw, 16px);
     }
 
     .brand-group {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: clamp(10px, 1.4vw, 18px);
       min-width: 0;
+      flex-shrink: 0;
     }
 
     .brand-link {
@@ -310,35 +315,35 @@
     }
 
     .brand-name {
-      font-size: clamp(1.05rem, 3vw, 1.28rem);
+      font-size: clamp(1.0rem, 2.2vw, 1.25rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      flex-shrink: 0;
     }
 
     /* Desktop Navigation links - hidden on mobile, shown on desktop */
     .header-nav {
       display: none;
       align-items: center;
-      gap: 4px;
-      margin-left: 8px;
+      gap: clamp(2px, 0.4vw, 6px);
+      flex-shrink: 1;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 920px) {
       .header-nav {
         display: flex;
       }
     }
 
     .nav-link {
-      padding: 6px 12px;
+      padding: 6px clamp(6px, 0.7vw, 10px);
       border-radius: 6px;
-      font-size: 0.88rem;
+      font-size: clamp(0.78rem, 0.9vw, 0.85rem);
       font-weight: 500;
       color: var(--text-secondary);
       text-decoration: none;
+      white-space: nowrap;
       transition: color 0.15s, background-color 0.15s;
     }
     .nav-link:hover {
@@ -354,7 +359,7 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: clamp(6px, 0.8vw, 10px);
       flex-shrink: 0;
     }
 
@@ -366,12 +371,14 @@
       background-color: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      padding: 6px 12px;
+      padding: 0 10px;
       border-radius: 8px;
       font-size: 0.82rem;
       cursor: pointer;
       transition: border-color 0.15s, background-color 0.15s;
-      min-height: 38px;
+      height: 38px;
+      width: clamp(130px, 13vw, 190px);
+      min-width: 0;
     }
     .search-bar-trigger:hover {
       border-color: var(--border-strong);
@@ -382,6 +389,12 @@
       height: 15px;
       flex-shrink: 0;
     }
+    .search-bar-trigger span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
     .search-kbd {
       background: var(--bg-page);
       border: 1px solid var(--border-subtle);
@@ -389,6 +402,7 @@
       padding: 2px 5px;
       font-size: 0.72rem;
       font-family: inherit;
+      flex-shrink: 0;
     }
 
     @media (min-width: 820px) {
@@ -404,11 +418,14 @@
       justify-content: center;
       width: 44px;
       height: 44px;
+      min-width: 44px;
+      min-height: 44px;
       border-radius: 8px;
       border: 1px solid var(--border-subtle);
       background: var(--bg-subtle);
       color: var(--text-primary);
       cursor: pointer;
+      flex-shrink: 0;
       transition: background-color 0.15s, border-color 0.15s;
     }
     .btn-mobile-icon:hover {
@@ -426,13 +443,15 @@
       }
     }
 
-    /* Saved Stories Button */
+    /* Saved Stories & Methodology Buttons */
     .btn-header {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
-      height: 44px;
-      padding: 0 12px;
+      height: 38px;
+      min-height: 38px;
+      padding: 0 clamp(8px, 1vw, 12px);
       border-radius: 8px;
       border: 1px solid var(--border-subtle);
       background: var(--bg-subtle);
@@ -440,6 +459,8 @@
       font-size: 0.82rem;
       font-weight: 500;
       cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
       transition: background-color 0.15s, border-color 0.15s;
     }
     .btn-header:hover {
@@ -452,11 +473,27 @@
       flex-shrink: 0;
     }
 
+    @media (max-width: 1140px) {
+      #btn-methodology {
+        padding: 0 10px;
+      }
+      #btn-methodology .btn-header-label {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1020px) {
+      #btn-saved-filter {
+        padding: 0 10px;
+      }
+    }
+
     @media (max-width: 480px) {
       .btn-header {
-        padding: 0 8px;
-        width: 44px;
-        justify-content: center;
+        height: 44px;
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0;
       }
       .btn-header span {
         display: none;
@@ -471,17 +508,20 @@
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 2px;
-      height: 40px;
+      height: 38px;
+      min-height: 38px;
+      flex-shrink: 0;
     }
 
     .theme-opt-btn {
-      height: 34px;
-      padding: 0 10px;
+      height: 32px;
+      min-height: 32px;
+      padding: 0 clamp(6px, 0.8vw, 10px);
       border-radius: 6px;
       border: none;
       background: transparent;
       color: var(--text-muted);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
@@ -500,8 +540,8 @@
 
     @media (max-width: 420px) {
       .theme-opt-btn {
-        padding: 0 6px;
-        font-size: 0.74rem;
+        padding: 0 5px;
+        font-size: 0.70rem;
       }
     }
 
@@ -569,10 +609,77 @@
       }
     }
 
+    /* Mobile Quick Section Navigation Pill Bar */
+    .mobile-section-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 6px 0 8px;
+      border-top: 1px solid var(--border-subtle);
+      scrollbar-width: none;
+    }
+    .mobile-section-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 920px) {
+      .mobile-section-nav {
+        display: none;
+      }
+    }
+
+    .mobile-nav-pill {
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .mobile-nav-pill:active,
+    .mobile-nav-pill.active {
+      color: var(--accent);
+      background: var(--accent-subtle);
+      border-color: var(--accent-border);
+    }
+
     /* -------------------------------------------------------------
        4. EDITORIAL SECTIONS & LAYOUT COMPONENTS
        ------------------------------------------------------------- */
     .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 680px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .feed-controls-group {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .sort-select {
+        flex: 1;
+        min-width: 0;
+      }
+    }
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
@@ -2342,9 +2449,9 @@
 <body>
   <a href="#main-content" class="skip-to-content">Skip to content</a>
 
-  <div class="site-wrap">
-    <!-- Header & Navigation Bar -->
-    <header class="site-header" role="banner">
+  <!-- Header & Navigation Bar (Full-Bleed Sticky Surface) -->
+  <header class="site-header" role="banner">
+    <div class="site-wrap">
       <div class="header-top">
         <div class="brand-group">
           <a href="#" class="brand-link" aria-label="AI Trend Pulse Homepage">
@@ -2358,13 +2465,12 @@
 
           <!-- Desktop Navigation -->
           <nav class="header-nav" aria-label="Main Navigation">
+            <a href="#feed-section" class="nav-link active">Developments</a>
             <a href="#topics-section" class="nav-link">Topics</a>
             <a href="#ai-tools-section" class="nav-link">AI Tools</a>
             <a href="#dev-radar-section" class="nav-link">Dev Radar</a>
-            <a href="#research-safety-section" class="nav-link">Safety/Policy</a>
-            <a href="#feed-section" class="nav-link active">Developments</a>
+            <a href="#research-safety-section" class="nav-link">Safety &amp; Policy</a>
             <a href="#dispatches-section" class="nav-link">Dispatches</a>
-            <a href="#methodology-modal" onclick="openMethodologyModal(event)" class="nav-link">Methodology</a>
           </nav>
         </div>
 
@@ -2384,7 +2490,7 @@
           <!-- Methodology Button -->
           <button id="btn-methodology" class="btn-header" onclick="openMethodologyModal(event)" aria-label="View editorial and source methodology" title="Source & Scoring Methodology">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-            <span>Methodology</span>
+            <span class="btn-header-label">Methodology</span>
           </button>
 
           <!-- Saved Stories Button -->
@@ -2418,13 +2524,25 @@
           <span id="status-text">● Live Pipeline Active • Hourly updates</span>
         </div>
         <div class="status-right">
-          <span>21 monitored research sources</span>
+          <span>22 monitored research sources</span>
           <span>•</span>
           <span>Strict provenance verified</span>
         </div>
       </div>
-    </header>
 
+      <!-- Mobile Quick Section Navigation Pill Bar -->
+      <nav class="mobile-section-nav" aria-label="Quick section navigation">
+        <a href="#feed-section" class="mobile-nav-pill active">Developments</a>
+        <a href="#topics-section" class="mobile-nav-pill">Topics</a>
+        <a href="#ai-tools-section" class="mobile-nav-pill">AI Tools</a>
+        <a href="#dev-radar-section" class="mobile-nav-pill">Dev Radar</a>
+        <a href="#research-safety-section" class="mobile-nav-pill">Safety/Policy</a>
+        <a href="#dispatches-section" class="mobile-nav-pill">Dispatches</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="site-wrap">
     <main id="main-content">
       <!-- 1. TRENDING IN AI (TOPIC DISCOVERY) -->
       <section id="topics-section" class="topics-section" aria-label="Filter developments by topic">
@@ -2440,46 +2558,7 @@
         </div>
       </section>
 
-      <!-- 2. AI TOOLS YOU CAN USE (PRACTICAL WORKFLOWS) -->
-      <section id="ai-tools-section" class="curated-section" aria-labelledby="ai-tools-heading">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <h2 id="ai-tools-heading" class="section-heading">AI Tools You Can Use</h2>
-            <span class="section-subtext">Practical tools, consumer applications, and developer productivity workflows.</span>
-          </div>
-        </div>
-        <div id="ai-tools-container" class="curated-grid">
-          <!-- Dynamically populated AI tools -->
-        </div>
-      </section>
-
-      <!-- 3. DEVELOPER RADAR (CODING AGENTS & INFRASTRUCTURE) -->
-      <section id="dev-radar-section" class="curated-section" aria-labelledby="dev-radar-heading">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <h2 id="dev-radar-heading" class="section-heading">Developer Radar</h2>
-            <span class="section-subtext">Coding agents, APIs, open-source weights, MCP protocols, and infrastructure.</span>
-          </div>
-        </div>
-        <div id="dev-radar-container" class="curated-grid">
-          <!-- Dynamically populated developer radar -->
-        </div>
-      </section>
-
-      <!-- 4. RESEARCH, SAFETY & POLICY -->
-      <section id="research-safety-section" class="curated-section" aria-labelledby="research-safety-heading">
-        <div class="section-header">
-          <div class="section-title-wrap">
-            <h2 id="research-safety-heading" class="section-heading">Research, Safety &amp; Policy</h2>
-            <span class="section-subtext">Frontier lab alignment, arXiv preprints, governance standards, and policy updates.</span>
-          </div>
-        </div>
-        <div id="research-safety-container" class="curated-grid">
-          <!-- Dynamically populated research, safety and policy -->
-        </div>
-      </section>
-
-      <!-- 5. LATEST AI DEVELOPMENTS (MULTI-TIER EDITORIAL FEED) -->
+      <!-- 2. LATEST AI DEVELOPMENTS (HERO & MULTI-TIER EDITORIAL FEED) -->
       <section id="feed-section" class="feed-section" aria-labelledby="feed-heading">
         <div class="section-header">
           <div class="section-title-wrap">
@@ -2528,7 +2607,46 @@
         </article>
       </section>
 
-      <!-- 5. PRIMARY DISPATCHES FEED (SOURCE STORIES) -->
+      <!-- 3. AI TOOLS YOU CAN USE (PRACTICAL WORKFLOWS) -->
+      <section id="ai-tools-section" class="curated-section" aria-labelledby="ai-tools-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 id="ai-tools-heading" class="section-heading">AI Tools You Can Use</h2>
+            <span class="section-subtext">Practical tools, consumer applications, and developer productivity workflows.</span>
+          </div>
+        </div>
+        <div id="ai-tools-container" class="curated-grid">
+          <!-- Dynamically populated AI tools -->
+        </div>
+      </section>
+
+      <!-- 4. DEVELOPER RADAR (CODING AGENTS & INFRASTRUCTURE) -->
+      <section id="dev-radar-section" class="curated-section" aria-labelledby="dev-radar-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 id="dev-radar-heading" class="section-heading">Developer Radar</h2>
+            <span class="section-subtext">Coding agents, APIs, open-source weights, MCP protocols, and infrastructure.</span>
+          </div>
+        </div>
+        <div id="dev-radar-container" class="curated-grid">
+          <!-- Dynamically populated developer radar -->
+        </div>
+      </section>
+
+      <!-- 5. RESEARCH, SAFETY & POLICY -->
+      <section id="research-safety-section" class="curated-section" aria-labelledby="research-safety-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 id="research-safety-heading" class="section-heading">Research, Safety &amp; Policy</h2>
+            <span class="section-subtext">Frontier lab alignment, arXiv preprints, governance standards, and policy updates.</span>
+          </div>
+        </div>
+        <div id="research-safety-container" class="curated-grid">
+          <!-- Dynamically populated research, safety and policy -->
+        </div>
+      </section>
+
+      <!-- 6. PRIMARY DISPATCHES FEED (SOURCE STORIES) -->
       <section class="dispatches-section" id="dispatches-section" aria-labelledby="dispatches-heading">
         <div class="section-header">
           <div class="section-title-wrap">
