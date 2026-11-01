@@ -2985,6 +2985,7 @@
         <div id="reader-affected-box" class="reader-affected-box">
           <span class="hero-audience-label">Affected Industry / Stakeholders</span>
           <div id="reader-audience-pills" class="hero-audience-pills"></div>
+          <div id="reader-audience-impact-statement" class="reader-impact-statement" style="display:none; margin-top:10px; padding:10px 14px; border-radius:8px; background:var(--bg-surface); border-left:3px solid #6366f1; font-size:0.84rem; line-height:1.45; color:var(--text-secondary);"></div>
         </div>
 
         <!-- CORROBORATED SOURCES / PROVENANCE -->
@@ -3542,12 +3543,12 @@
             <div>
               <div class="catch-me-target">${escapeHTML(targetAudience)}</div>
               <h4 class="catch-me-headline">
-                <a href="${escapeHTML(link)}" onclick="openReaderForTopStory(${idx}, event)">${escapeHTML(headline)}</a>
+                <a href="${escapeHTML(link)}" onclick="openReaderForDailyItem(${idx}, event)">${escapeHTML(headline)}</a>
               </h4>
               <p class="catch-me-why">${escapeHTML(why)}</p>
             </div>
             <div style="display:flex; align-items:center; justify-content:space-between; margin-top:4px;">
-              <button class="btn-read-deep-dive" style="padding:4px 8px; font-size:0.75rem;" onclick="openReaderForTopStory(${idx}, event)">
+              <button class="btn-read-deep-dive" style="padding:4px 8px; font-size:0.75rem;" onclick="openReaderForDailyItem(${idx}, event)">
                 <span>Read Details ↗</span>
               </button>
             </div>
@@ -3597,6 +3598,7 @@
       activeTopicFilter = topic;
       renderTopicPills(cachedData);
       renderDevelopmentsFeed(cachedData);
+      renderDispatchesFeed(cachedData);
     }
 
     /* -------------------------------------------------------------
@@ -3894,8 +3896,39 @@
       if (!container) return;
       container.innerHTML = '';
 
-      const stories = data.top_stories || [];
+      let stories = [...(data.top_stories || [])];
+
+      // Topic filter with normalization
+      if (activeTopicFilter !== 'All') {
+        stories = stories.filter(item => {
+          const t = item.topic || classifyTopic(item.title, item.summary || item.one_liner || '');
+          return normalizeTopic(t) === normalizeTopic(activeTopicFilter);
+        });
+      }
+
+      // Search query filter
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        stories = stories.filter(item => {
+          const t = (item.title || '').toLowerCase();
+          const w = (item.summary || item.one_liner || '').toLowerCase();
+          const s = (item.source || '').toLowerCase();
+          return t.includes(q) || w.includes(q) || s.includes(q);
+        });
+      }
+
       currentFilteredStories = stories;
+      if (stories.length === 0) {
+        const emptyLi = document.createElement('li');
+        emptyLi.style.padding = '18px';
+        emptyLi.style.textAlign = 'center';
+        emptyLi.style.color = 'var(--text-muted)';
+        emptyLi.style.fontSize = '0.9rem';
+        emptyLi.textContent = 'No dispatches match the selected filter.';
+        container.appendChild(emptyLi);
+        return;
+      }
+
       stories.forEach((story, idx) => {
         const li = document.createElement('li');
         li.className = 'card-base dispatch-card dispatch-item';
@@ -4368,6 +4401,7 @@
       searchQuery = query;
       updateModalSearchResults();
       renderDevelopmentsFeed(cachedData);
+      renderDispatchesFeed(cachedData);
       const legacy = document.getElementById('search-input');
       if (legacy && legacy.value !== query) legacy.value = query;
     }
@@ -4597,16 +4631,37 @@
       // Affected stakeholders / audience
       const affectedBox = document.getElementById('reader-affected-box');
       const audiencePills = document.getElementById('reader-audience-pills');
-      if (affectedBox && audiencePills) {
-        const pills = item.audience_pills || extractAudiencePills(item.who_affected || '');
-        if (pills && pills.length) {
+      const impactStmtEl = document.getElementById('reader-audience-impact-statement');
+      if (affectedBox) {
+        let pills = item.audience_pills || extractAudiencePills(item.who_affected || '');
+        const targetAud = item.target_audience || (item.audience_impact && item.audience_impact.target);
+        if ((!pills || pills.length === 0) && targetAud) {
+          pills = [targetAud];
+        }
+        if (audiencePills) {
           audiencePills.innerHTML = '';
-          pills.forEach(aud => {
-            const span = document.createElement('span');
-            span.className = 'audience-pill';
-            span.textContent = aud;
-            audiencePills.appendChild(span);
-          });
+          if (pills && pills.length) {
+            pills.forEach(aud => {
+              const span = document.createElement('span');
+              span.className = 'audience-pill';
+              span.textContent = aud;
+              audiencePills.appendChild(span);
+            });
+          }
+        }
+
+        const impactText = item.audience_impact_statement || (item.audience_impact && item.audience_impact.impact) || '';
+        if (impactStmtEl) {
+          if (impactText) {
+            const displayTarget = targetAud || 'Target Audience';
+            impactStmtEl.innerHTML = `<strong>💡 Practical Impact (${escapeHTML(displayTarget)}):</strong> ${escapeHTML(simplifyJargon(impactText))}`;
+            impactStmtEl.style.display = 'block';
+          } else {
+            impactStmtEl.style.display = 'none';
+          }
+        }
+
+        if ((pills && pills.length) || impactText) {
           affectedBox.style.display = 'block';
         } else {
           affectedBox.style.display = 'none';
@@ -4675,6 +4730,33 @@
                    (cachedData && cachedData.trends && cachedData.trends[idx]);
       if (item) {
         openReaderView(item);
+      }
+    }
+
+    function openReaderForDailyItem(idx, e) {
+      if (e) e.preventDefault();
+      const overview = cachedData && cachedData.daily_overview;
+      const topDevs = (overview && overview.top_developments) ? overview.top_developments : [];
+      const dev = topDevs[idx];
+      if (!dev) return;
+      const allStories = [...(cachedData.trends || []), ...(cachedData.top_stories || [])];
+      const match = allStories.find(s => s.link === dev.link || s.title === dev.title);
+      if (match) {
+        openReaderView(match);
+      } else {
+        const topic = normalizeTopic(dev.topic || 'AI Models');
+        openReaderView({
+          title: dev.title,
+          source: dev.source,
+          link: dev.link,
+          topic: topic,
+          what_happened: dev.why_it_matters || dev.title,
+          why_it_matters: dev.why_it_matters,
+          target_audience: dev.target_audience,
+          audience_impact_statement: dev.impact,
+          audience_impact: { target: dev.target_audience, impact: dev.impact },
+          published: 'Today'
+        });
       }
     }
 
