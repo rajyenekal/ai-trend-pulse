@@ -570,269 +570,8 @@
     }
 
     /* -------------------------------------------------------------
-       4. HERO SECTION — THE AI BRIEFING
+       4. EDITORIAL SECTIONS & LAYOUT COMPONENTS
        ------------------------------------------------------------- */
-    .ai-briefing-hero {
-      padding: clamp(20px, 4vw, 36px) 0 clamp(16px, 3vw, 24px);
-    }
-
-    .hero-split-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: clamp(16px, 3.5vw, 28px);
-      box-shadow: var(--hero-shadow);
-    }
-
-    @media (min-width: 900px) {
-      .hero-split-grid {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 32px;
-        align-items: start;
-      }
-    }
-
-    .hero-main-col {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .hero-badge-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .badge-briefing-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: var(--accent-subtle);
-      color: var(--accent);
-      border: 1px solid var(--accent-border);
-      padding: 3px 9px;
-      border-radius: 6px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .hero-headline {
-      font-size: clamp(1.35rem, 3.6vw, 2.2rem);
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-
-    .hero-summary {
-      font-size: clamp(0.92rem, 1.8vw, 1.05rem);
-      line-height: 1.55;
-      color: var(--text-secondary);
-      word-break: break-word;
-    }
-
-    /* Hero CTA Row */
-    .hero-cta-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .btn-hero-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      min-height: 44px;
-      padding: 0 18px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: var(--accent-solid-text);
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.15s, transform 0.1s;
-      box-shadow: 0 2px 6px rgba(13, 148, 136, 0.25);
-    }
-    .btn-hero-primary:hover {
-      background: var(--accent-hover);
-    }
-
-    .btn-hero-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      min-height: 44px;
-      padding: 0 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-subtle);
-      color: var(--text-primary);
-      font-size: 0.84rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.15s, border-color 0.15s;
-    }
-    .btn-hero-secondary:hover {
-      background: var(--bg-hover);
-      border-color: var(--border-strong);
-    }
-    .btn-hero-secondary.active {
-      background: var(--accent-subtle);
-      border-color: var(--accent-border);
-      color: var(--accent);
-    }
-    .btn-hero-secondary svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    /* Hero Meta Row */
-    .hero-meta-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      padding-top: 6px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    /* Hero Side Column */
-    .hero-side-col {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      min-width: 0;
-    }
-
-    /* Hero Image container with strict 16:9 aspect ratio */
-    .hero-image-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      max-height: 280px;
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .hero-image-wrap:hover .hero-image {
-      transform: scale(1.02);
-    }
-
-    .hero-image-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(10, 13, 18, 0.85);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      padding: 4px 10px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-    .hero-image-badge svg {
-      width: 14px;
-      height: 14px;
-      color: var(--accent);
-    }
-
-    /* Hero Why It Matters Box */
-    .hero-why-box {
-      background: var(--card-why-bg);
-      border-left: 3px solid var(--card-why-border);
-      border-radius: 0 8px 8px 0;
-      padding: 12px 14px;
-      border-top: 1px solid var(--border-subtle);
-      border-right: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .hero-why-label {
-      display: inline-block;
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 4px;
-    }
-
-    .hero-why-text {
-      font-size: 0.88rem;
-      line-height: 1.5;
-      color: var(--text-secondary);
-    }
-
-    /* Hero Audience Box */
-    .hero-audience-box {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .hero-audience-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-    }
-
-    .hero-audience-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .audience-pill {
-      background: var(--bg-subtle);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-subtle);
-      padding: 3px 8px;
-      border-radius: 5px;
-      font-size: 0.74rem;
-      font-weight: 500;
-    }
-
-    /* -------------------------------------------------------------
-       5. THE PULSE — COMPACT EDITORIAL HIGHLIGHTS
-       ------------------------------------------------------------- */
-    .pulse-section {
-      padding: clamp(16px, 3vw, 24px) 0;
-    }
-
     .section-header {
       display: flex;
       align-items: flex-end;
@@ -873,94 +612,60 @@
       text-decoration: underline;
     }
 
-    /* The Pulse Grid: Horizontal swipeable track on mobile, 4-col on desktop */
-    .pulse-grid {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 4px 2px 12px 2px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .pulse-grid::-webkit-scrollbar {
-      display: none;
-    }
-
-    .pulse-card {
-      flex: 0 0 clamp(260px, 78vw, 290px);
-      scroll-snap-align: start;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 12px 14px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
-    }
-    .pulse-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--border-strong);
-      box-shadow: var(--card-shadow);
-    }
-
-    @media (min-width: 900px) {
-      .pulse-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        overflow-x: visible;
-        padding-bottom: 0;
-      }
-      .pulse-card {
-        flex: none;
-      }
-    }
-
-    .pulse-logo-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--logo-box-bg);
-      border: 1px solid var(--logo-box-border);
-      color: var(--logo-color);
+    /* Card Image Badge Overlay */
+    .hero-image-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      padding: 6px;
+      gap: 6px;
+      background: rgba(10, 13, 18, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
-    .pulse-logo-box svg {
-      width: 100%;
-      height: 100%;
+    .hero-image-badge svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
     }
 
-    .pulse-card-content {
+    /* Affected Audience / Stakeholder Pills */
+    .hero-audience-box {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      min-width: 0;
+      gap: 6px;
     }
 
-    .pulse-card-title {
-      font-size: 0.88rem;
-      font-weight: 600;
-      line-height: 1.35;
-      color: var(--text-primary);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .pulse-card-meta {
-      font-size: 0.74rem;
+    .hero-audience-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: var(--text-muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    }
+
+    .hero-audience-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .audience-pill {
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.74rem;
+      font-weight: 500;
     }
 
     /* -------------------------------------------------------------
@@ -2528,7 +2233,7 @@
           <nav class="header-nav" aria-label="Main Navigation">
             <a href="#topics-section" class="nav-link">Topics</a>
             <a href="#feed-section" class="nav-link active">Developments</a>
-            <a href="#dispatches-heading" class="nav-link">Dispatches</a>
+            <a href="#dispatches-section" class="nav-link">Dispatches</a>
           </nav>
         </div>
 
@@ -2648,7 +2353,7 @@
       </section>
 
       <!-- 5. PRIMARY DISPATCHES FEED (SOURCE STORIES) -->
-      <section class="dispatches-section" aria-labelledby="dispatches-heading">
+      <section class="dispatches-section" id="dispatches-section" aria-labelledby="dispatches-heading">
         <div class="section-header">
           <div class="section-title-wrap">
             <h2 id="dispatches-heading" class="section-heading">Monitored Feed Dispatches</h2>
@@ -2918,6 +2623,8 @@
        3. STATE & DATA VARIABLES
        ------------------------------------------------------------- */
     let cachedData = null;
+    let currentFilteredTrends = [];
+    let currentFilteredStories = [];
     let activeTopicFilter = 'All';
     let searchQuery = '';
     let currentSort = 'latest';
@@ -3127,152 +2834,7 @@
     }
 
     /* -------------------------------------------------------------
-       8. HERO BRIEFING RENDERING
-       ------------------------------------------------------------- */
-    function renderHeroBriefing(data) {
-      if (!data) data = cachedData;
-      if (!data) return;
-      const topTrend = (data.trends && data.trends[0]) || {
-        title: "Frontier AI Agent Monitoring Becomes an Urgent Operational Priority",
-        what_happened: data.takeaway || "Leading AI research teams are deploying real-time safety guardrails.",
-        why_it_matters: "Unmonitored autonomous agents introduce direct enterprise compliance and security risks.",
-        source: "OpenAI & MIT Technology Review",
-        who_affected: "AI safety researchers, enterprise developers, and administrators",
-        evidence_urls: ["https://openai.com"]
-      };
-
-      const topic = topTrend.topic || classifyTopic(topTrend.title, topTrend.what_happened || '');
-      const company = topTrend.company || detectCompany(topTrend.title, topTrend.source);
-
-      const titleEl = document.getElementById('briefing-title');
-      const sumEl = document.getElementById('briefing-summary');
-      const whyBox = document.getElementById('briefing-why-box');
-      const whyText = document.getElementById('briefing-why-text');
-      const srcEl = document.getElementById('briefing-source');
-      const timeEl = document.getElementById('briefing-time');
-      const readEl = document.getElementById('briefing-readtime');
-      const linkEl = document.getElementById('briefing-source-link');
-      const visualCard = document.getElementById('hero-visual-card');
-      const heroImg = document.getElementById('hero-image');
-      const audienceBox = document.getElementById('hero-audience-pills');
-
-      if (titleEl) titleEl.textContent = topTrend.title;
-      if (sumEl) sumEl.textContent = topTrend.what_happened;
-
-      if (whyBox && whyText) {
-        if (topTrend.why_it_matters) {
-          whyText.textContent = topTrend.why_it_matters;
-          whyBox.style.display = 'block';
-        } else {
-          whyBox.style.display = 'none';
-        }
-      }
-
-      if (srcEl) srcEl.textContent = topTrend.source || "Primary Research Lab";
-      if (timeEl) timeEl.textContent = topTrend.published || "Recent";
-      if (readEl) readEl.textContent = topTrend.reading_time || calculateReadingTime(`${topTrend.what_happened} ${topTrend.why_it_matters}`);
-
-      const primaryUrl = (topTrend.evidence_urls && topTrend.evidence_urls[0]) || "#";
-      if (linkEl) {
-        linkEl.href = primaryUrl.startsWith('http') ? primaryUrl : '#';
-      }
-
-      // Hero Image Setup
-      if (heroImg) {
-        heroImg.src = getTopicImageUrl(topic, topTrend.image);
-        heroImg.alt = `${topTrend.title} - ${topic}`;
-        heroImg.onerror = () => handleImageFallback(heroImg, topic);
-      }
-
-      if (visualCard) {
-        visualCard.innerHTML = `
-          <span style="display:inline-flex; width:16px; height:16px; align-items:center;">${getCompanyLogoSVG(company)}</span>
-          <span>${escapeHTML(topic)}</span>
-        `;
-      }
-
-      // Audience Pills
-      if (audienceBox) {
-        audienceBox.innerHTML = '';
-        const audiences = topTrend.audience_pills || extractAudiencePills(topTrend.who_affected);
-        audiences.forEach(aud => {
-          const span = document.createElement('span');
-          span.className = 'audience-pill';
-          span.textContent = aud;
-          audienceBox.appendChild(span);
-        });
-      }
-
-      // Update save button
-      const saveBtn = document.getElementById('briefing-save-btn');
-      const saveLabel = document.getElementById('briefing-save-label');
-      if (saveBtn && saveLabel) {
-        const isSaved = isItemSaved(topTrend.title);
-        saveBtn.classList.toggle('active', isSaved);
-        saveLabel.textContent = isSaved ? 'Saved' : 'Save';
-      }
-    }
-
-    /* -------------------------------------------------------------
-       9. THE PULSE STRIP RENDERING (4-CARD COMPACT RAIL)
-       ------------------------------------------------------------- */
-    function renderPulseStrip(data) {
-      if (!data) data = cachedData;
-      if (!data) return;
-      const container = document.getElementById('pulse-container');
-      if (!container) return;
-      container.innerHTML = '';
-
-      let items = data.pulse_items || [];
-      if (!items.length) {
-        (data.trends || []).forEach(t => {
-          items.push({
-            title: t.title,
-            topic: t.topic || classifyTopic(t.title),
-            company: t.company || detectCompany(t.title, t.source),
-            published: "Recent",
-            link: (t.evidence_urls && t.evidence_urls[0]) || "#"
-          });
-        });
-        (data.top_stories || []).forEach(s => {
-          if (items.length < 4) {
-            items.push({
-              title: s.title,
-              topic: s.topic || classifyTopic(s.title),
-              company: s.company || detectCompany(s.title, s.source),
-              published: s.published || "Recent",
-              link: s.link || "#"
-            });
-          }
-        });
-      }
-
-      items.slice(0, 4).forEach((item, idx) => {
-        const card = document.createElement('a');
-        card.className = 'pulse-card';
-        card.href = item.link && item.link.startsWith('http') ? item.link : '#';
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer';
-        card.onclick = (e) => {
-          e.preventDefault();
-          openReaderView(item);
-        };
-
-        card.innerHTML = `
-          <div class="pulse-logo-box" aria-hidden="true">
-            ${getCompanyLogoSVG(item.company)}
-          </div>
-          <div class="pulse-card-content">
-            <h3 class="pulse-card-title">${escapeHTML(item.title)}</h3>
-            <span class="pulse-card-meta">${escapeHTML(item.topic || 'AI News')} • ${escapeHTML(item.published || 'Recent')}</span>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    /* -------------------------------------------------------------
-       10. TRENDING TOPIC PILLS RENDERING
+       8. TRENDING TOPIC PILLS RENDERING
        ------------------------------------------------------------- */
     function renderTopicPills(data) {
       if (!data) data = cachedData;
@@ -3359,6 +2921,8 @@
         if (emptyBox) emptyBox.style.display = 'none';
       }
 
+      currentFilteredTrends = items;
+
       // Render cards with editorial hierarchy (Featured -> Standard -> Grouped -> Breaking)
       items.forEach((item, idx) => {
         const topic = item.topic || classifyTopic(item.title, item.what_happened || '');
@@ -3439,10 +3003,10 @@
                       <span>Read Deep Dive</span>
                       <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
-                    <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story" title="Save Story">
+                    <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
                     </button>
-                    <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary" title="Copy Summary">
+                    <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                     </button>
                     <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
@@ -3492,10 +3056,10 @@
                   <span>Read Deep Dive</span>
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
-                <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story" title="Save Story">
+                <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
                 </button>
-                <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary" title="Copy Summary">
+                <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
                 <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
@@ -3542,10 +3106,10 @@
                     <span>Read Deep Dive</span>
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </button>
-                  <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(item.title)}', '${escapeAttr(item.source)}', '${escapeAttr(primaryUrl)}', '${company}')" aria-label="Save story" title="Save Story">
+                  <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
                   </button>
-                  <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(item.title)}', '${escapeAttr(item.what_happened)}', this)" aria-label="Copy summary" title="Copy Summary">
+                  <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                   </button>
                   <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
@@ -3572,6 +3136,7 @@
       container.innerHTML = '';
 
       const stories = data.top_stories || [];
+      currentFilteredStories = stories;
       stories.forEach((story, idx) => {
         const li = document.createElement('li');
         li.className = 'card-base dispatch-card dispatch-item';
@@ -3613,10 +3178,10 @@
                 <span>Deep Dive</span>
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
-              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="toggleSaveItem('${escapeAttr(story.title)}', '${escapeAttr(story.source)}', '${escapeAttr(url)}', '${company}')" aria-label="Save dispatch" title="Save dispatch">
+              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveStory(${idx}, this)" aria-label="Save dispatch" title="Save dispatch">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
               </button>
-              <button class="btn-action-icon" onclick="copyStorySummary('${escapeAttr(story.title)}', '${escapeAttr(story.one_liner)}', this)" aria-label="Copy dispatch summary" title="Copy summary">
+              <button class="btn-action-icon" onclick="handleCopyStory(${idx}, this)" aria-label="Copy dispatch summary" title="Copy summary">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
               </button>
               <a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source" title="Open source">
@@ -3675,7 +3240,45 @@
       const t = cachedData.trends[0];
       const url = (t.evidence_urls && t.evidence_urls[0]) || '#';
       toggleSaveItem(t.title, t.source, url, t.company);
-      renderHeroBriefing(cachedData);
+    }
+
+    function handleSaveTrend(idx, btn) {
+      const item = (currentFilteredTrends && currentFilteredTrends[idx]) ||
+                   (cachedData && cachedData.trends && cachedData.trends[idx]);
+      if (!item) return;
+      const primaryUrl = (item.evidence_urls && item.evidence_urls[0]) || item.link || '#';
+      const company = item.company || detectCompany(item.title, item.source);
+      toggleSaveItem(item.title, item.source, primaryUrl, company);
+    }
+
+    function handleCopyTrend(idx, btn) {
+      const item = (currentFilteredTrends && currentFilteredTrends[idx]) ||
+                   (cachedData && cachedData.trends && cachedData.trends[idx]);
+      if (!item) return;
+      copyStorySummary(item.title, item.what_happened || item.one_liner || '', btn);
+    }
+
+    function handleSaveStory(idx, btn) {
+      const story = (currentFilteredStories && currentFilteredStories[idx]) ||
+                    (cachedData && cachedData.top_stories && cachedData.top_stories[idx]);
+      if (!story) return;
+      const url = story.link && story.link.startsWith('http') ? story.link : '#';
+      const company = story.company || detectCompany(story.title, story.source);
+      toggleSaveItem(story.title, story.source, url, company);
+    }
+
+    function handleCopyStory(idx, btn) {
+      const story = (currentFilteredStories && currentFilteredStories[idx]) ||
+                    (cachedData && cachedData.top_stories && cachedData.top_stories[idx]);
+      if (!story) return;
+      copyStorySummary(story.title, story.one_liner || '', btn);
+    }
+
+    function handleRemoveSavedItem(idx) {
+      const items = getSavedItems();
+      if (items[idx]) {
+        toggleSaveItem(items[idx].title);
+      }
     }
 
     function updateSavedCountBadge() {
@@ -3724,7 +3327,7 @@
         return;
       }
 
-      items.forEach(item => {
+      items.forEach((item, idx) => {
         const card = document.createElement('div');
         card.className = 'saved-item-card';
 
@@ -3734,11 +3337,11 @@
           </div>
           <div class="saved-item-details">
             <h4 class="saved-item-title">
-              <a href="${escapeHTML(item.link || '#')}" onclick="openReaderForSavedStory('${escapeAttr(item.title)}', event)">${escapeHTML(item.title)}</a>
+              <a href="${escapeHTML(item.link || '#')}" onclick="openReaderForSavedStory(${idx}, event)">${escapeHTML(item.title)}</a>
             </h4>
             <span class="saved-item-meta">${escapeHTML(item.source || 'Verified Source')}</span>
           </div>
-          <button class="saved-item-remove-btn" onclick="toggleSaveItem('${escapeAttr(item.title)}')" aria-label="Remove bookmark">
+          <button class="saved-item-remove-btn" onclick="handleRemoveSavedItem(${idx})" aria-label="Remove bookmark">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
         `;
@@ -3784,11 +3387,15 @@
       searchQuery = query;
       updateModalSearchResults();
       renderDevelopmentsFeed(cachedData);
+      const legacy = document.getElementById('search-input');
+      if (legacy && legacy.value !== query) legacy.value = query;
     }
 
     function clearModalSearch() {
       const input = document.getElementById('modal-search-input');
       if (input) input.value = '';
+      const legacy = document.getElementById('search-input');
+      if (legacy) legacy.value = '';
       handleSearchInput('');
     }
 
@@ -3818,6 +3425,27 @@
           const top = (a.topic || '').toLowerCase();
           return t.includes(q) || s.includes(q) || w.includes(q) || top.includes(q);
         });
+      }
+
+      // Scope filtering
+      if (searchModalScope === 'companies') {
+        filtered = filtered.filter(a => {
+          const comp = (a.company || detectCompany(a.title, a.source)).toLowerCase();
+          return !q || comp.includes(q);
+        });
+      } else if (searchModalScope === 'topics') {
+        filtered = filtered.filter(a => {
+          const top = (a.topic || classifyTopic(a.title, a.what_happened || '')).toLowerCase();
+          return !q || top.includes(q);
+        });
+      } else if (searchModalScope === 'articles') {
+        if (q) {
+          filtered = filtered.filter(a => {
+            const t = (a.title || '').toLowerCase();
+            const w = (a.what_happened || a.one_liner || '').toLowerCase();
+            return t.includes(q) || w.includes(q);
+          });
+        }
       }
 
       // Update counters
@@ -4033,6 +3661,7 @@
       const saveBtn = document.getElementById('reader-btn-save');
       const saveLabel = document.getElementById('reader-save-label');
       if (saveBtn && saveLabel) {
+        saveBtn.classList.toggle('saved', isSaved);
         saveBtn.classList.toggle('active', isSaved);
         saveLabel.textContent = isSaved ? 'Saved' : 'Save';
       }
@@ -4051,38 +3680,50 @@
         backdrop.classList.remove('open');
       }
       document.body.style.overflow = '';
-    }
-
-    function openReaderForBriefing(e) {
-      if (e) e.preventDefault();
-      if (cachedData && cachedData.trends && cachedData.trends[0]) {
-        openReaderView(cachedData.trends[0]);
+      if (isSpeaking && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+        updateAudioButtonUI(false);
       }
     }
 
     function openReaderForTrend(idx, e) {
       if (e) e.preventDefault();
-      if (cachedData && cachedData.trends && cachedData.trends[idx]) {
-        openReaderView(cachedData.trends[idx]);
+      const item = (currentFilteredTrends && currentFilteredTrends[idx]) ||
+                   (cachedData && cachedData.trends && cachedData.trends[idx]);
+      if (item) {
+        openReaderView(item);
       }
     }
 
     function openReaderForTopStory(idx, e) {
       if (e) e.preventDefault();
-      if (cachedData && cachedData.top_stories && cachedData.top_stories[idx]) {
-        openReaderView(cachedData.top_stories[idx]);
+      const item = (currentFilteredStories && currentFilteredStories[idx]) ||
+                   (cachedData && cachedData.top_stories && cachedData.top_stories[idx]);
+      if (item) {
+        openReaderView(item);
       }
     }
 
     function openReaderForPulseItem(idx, e) {
       if (e) e.preventDefault();
-      if (cachedData && cachedData.pulse_items && cachedData.pulse_items[idx]) {
-        openReaderView(cachedData.pulse_items[idx]);
+      const item = (cachedData && cachedData.pulse_items && cachedData.pulse_items[idx]) ||
+                   (currentFilteredTrends && currentFilteredTrends[idx]);
+      if (item) {
+        openReaderView(item);
       }
     }
 
-    function openReaderForSavedStory(title, e) {
+    function openReaderForSavedStory(target, e) {
       if (e) e.preventDefault();
+      const savedItems = getSavedItems();
+      let s = null;
+      if (typeof target === 'number') {
+        s = savedItems[target];
+      } else {
+        s = savedItems.find(i => i.title === target);
+      }
+      const title = s ? s.title : target;
       if (!cachedData) return;
       const match = (cachedData.trends || []).find(t => t.title === title) ||
                     (cachedData.top_stories || []).find(s => s.title === title) ||
@@ -4090,22 +3731,18 @@
       if (match) {
         closeSavedDrawer();
         openReaderView(match);
-      } else {
-        const savedItems = getSavedItems();
-        const s = savedItems.find(i => i.title === title);
-        if (s) {
-          closeSavedDrawer();
-          openReaderView({
-            title: s.title,
-            source: s.source,
-            link: s.link,
-            company: s.company,
-            what_happened: s.title,
-            why_it_matters: 'Saved from your reading list.',
-            key_points: [s.title, `Source: ${s.source}`],
-            detailed_analysis: `This story was saved from ${s.source}. Read the original publication using the reference link below.`
-          });
-        }
+      } else if (s) {
+        closeSavedDrawer();
+        openReaderView({
+          title: s.title,
+          source: s.source,
+          link: s.link,
+          company: s.company,
+          what_happened: s.title,
+          why_it_matters: 'Saved from your reading list.',
+          key_points: [s.title, `Source: ${s.source}`],
+          detailed_analysis: `This story was saved from ${s.source}. Read the original publication using the reference link below.`
+        });
       }
     }
 
@@ -4118,6 +3755,7 @@
       const saveBtn = document.getElementById('reader-btn-save');
       const saveLabel = document.getElementById('reader-save-label');
       if (saveBtn && saveLabel) {
+        saveBtn.classList.toggle('saved', isSaved);
         saveBtn.classList.toggle('active', isSaved);
         saveLabel.textContent = isSaved ? 'Saved' : 'Save';
       }
@@ -4163,29 +3801,23 @@
       });
     }
 
-    function copyCurrentBriefing() {
-      if (!cachedData || !cachedData.trends || !cachedData.trends[0]) return;
-      const t = cachedData.trends[0];
-      const text = `AI TREND PULSE BRIEFING\n\n${t.title}\n\nWhat happened: ${t.what_happened}\nWhy it matters: ${t.why_it_matters || ''}\nSource: ${t.source}`;
-
-      copyTextToClipboard(text).then(() => {
-        const label = document.getElementById('briefing-copy-label');
-        if (label) {
-          const orig = label.textContent;
-          label.textContent = 'Copied!';
-          setTimeout(() => { label.textContent = orig; }, 2000);
-        }
-      });
-    }
-
     function copyStorySummary(title, summary, btnEl) {
       const text = `${title}\n\n${summary}`;
       copyTextToClipboard(text).then(() => {
+        if (!btnEl) return;
         const span = btnEl.querySelector('span');
         if (span) {
           const orig = span.textContent;
           span.textContent = 'Copied!';
           setTimeout(() => { span.textContent = orig; }, 2000);
+        } else {
+          const origHTML = btnEl.innerHTML;
+          btnEl.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+          btnEl.classList.add('saved');
+          setTimeout(() => {
+            btnEl.innerHTML = origHTML;
+            btnEl.classList.remove('saved');
+          }, 1800);
         }
       });
     }
@@ -4270,6 +3902,8 @@
       searchQuery = '';
       const input = document.getElementById('modal-search-input');
       if (input) input.value = '';
+      const legacySearch = document.getElementById('search-input');
+      if (legacySearch) legacySearch.value = '';
       renderTopicPills(cachedData);
       renderDevelopmentsFeed(cachedData);
     }
@@ -4290,8 +3924,11 @@
     function escapeAttr(str) {
       if (!str) return '';
       return String(str)
-        .replace(/'/g, "\\'")
-        .replace(/"/g, '&quot;');
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
     }
 
     function cleanDomain(url) {
@@ -4304,16 +3941,34 @@
     }
 
     function showFallbackErrorUI() {
-      const titleEl = document.getElementById('briefing-title');
-      const sumEl = document.getElementById('briefing-summary');
-      if (titleEl) titleEl.textContent = "AI Intelligence Updating...";
-      if (sumEl) sumEl.textContent = "Synthesizing latest dispatches from primary AI research laboratories. Please refresh in a moment.";
+      const container = document.getElementById('developments-container');
+      if (container) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 2.5rem 1rem; text-align: center; color: var(--text-muted);">
+            <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px;">AI Intelligence Updating...</h3>
+            <p style="font-size: 0.9rem;">Synthesizing latest dispatches from primary AI research laboratories. Please refresh in a moment.</p>
+          </div>
+        `;
+      }
     }
 
     // Initialize application on DOM ready
     document.addEventListener('DOMContentLoaded', () => {
       const pref = localStorage.getItem('ai_trend_theme_preference') || 'system';
       updateThemeButtonsUI(pref);
+
+      const legacySearch = document.getElementById('search-input');
+      if (legacySearch) {
+        legacySearch.addEventListener('input', e => handleSearchInput(e.target.value));
+      }
+      const legacyClear = document.getElementById('search-clear');
+      if (legacyClear) {
+        legacyClear.addEventListener('click', () => {
+          if (legacySearch) legacySearch.value = '';
+          clearModalSearch();
+        });
+      }
+
       loadData();
     });
   </script>
