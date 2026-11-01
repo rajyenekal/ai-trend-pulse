@@ -8,6 +8,12 @@
   <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
   <title>AI Trend Pulse — Hourly AI Intelligence & Market Signals</title>
 
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
   <!-- Prevent theme flicker on load -->
   <script>
     (function() {
@@ -322,7 +328,7 @@
       flex-shrink: 0;
     }
 
-    /* Desktop Navigation links - hidden on mobile, shown on desktop */
+    /* Desktop Navigation links - hidden on mobile/tablet, shown on wide desktop */
     .header-nav {
       display: none;
       align-items: center;
@@ -330,7 +336,7 @@
       flex-shrink: 1;
     }
 
-    @media (min-width: 920px) {
+    @media (min-width: 1140px) {
       .header-nav {
         display: flex;
       }
@@ -488,6 +494,12 @@
       }
     }
 
+    @media (max-width: 560px) {
+      #btn-methodology {
+        display: none;
+      }
+    }
+
     @media (max-width: 480px) {
       .btn-header {
         height: 44px;
@@ -497,6 +509,15 @@
       }
       .btn-header span {
         display: none;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header-top {
+        gap: 6px;
+      }
+      .brand-name {
+        font-size: 0.98rem;
       }
     }
 
@@ -542,6 +563,20 @@
       .theme-opt-btn {
         padding: 0 5px;
         font-size: 0.70rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .theme-switcher {
+        height: 34px;
+        min-height: 34px;
+        padding: 1px;
+      }
+      .theme-opt-btn {
+        height: 28px;
+        min-height: 28px;
+        padding: 0 4px;
+        font-size: 0.67rem;
       }
     }
 
@@ -624,17 +659,22 @@
       display: none;
     }
 
-    @media (min-width: 920px) {
+    @media (min-width: 1140px) {
       .mobile-section-nav {
         display: none;
       }
     }
 
     .mobile-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       white-space: nowrap;
-      padding: 6px 12px;
+      padding: 0 14px;
+      height: 38px;
+      min-height: 38px;
       border-radius: 9999px;
-      font-size: 0.78rem;
+      font-size: 0.80rem;
       font-weight: 600;
       color: var(--text-secondary);
       background: var(--bg-subtle);
@@ -642,6 +682,11 @@
       text-decoration: none;
       flex-shrink: 0;
       transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+    .mobile-nav-pill:hover {
+      background: var(--bg-hover);
+      color: var(--text-primary);
     }
     .mobile-nav-pill:active,
     .mobile-nav-pill.active {
@@ -679,12 +724,6 @@
         flex: 1;
         min-width: 0;
       }
-    }
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
     }
 
     .section-title-wrap {
