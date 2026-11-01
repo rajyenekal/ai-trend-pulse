@@ -78,7 +78,14 @@ const requiredIDs = [
   'dev-radar-section',
   'dev-radar-container',
   'research-safety-section',
-  'research-safety-container'
+  'research-safety-container',
+  'reader-facts-box',
+  'reader-facts-list',
+  'reader-impact-box',
+  'reader-potential-impact',
+  'reader-limitations-box',
+  'reader-limitations-text',
+  'status-source-telemetry'
 ];
 
 let missingIDs = [];
@@ -301,6 +308,25 @@ if (dataContent.trends && dataContent.trends[0]) {
   if (!mockElements['reader-detailed-analysis'].children.length) {
     console.error('❌ reader-detailed-analysis was not populated.');
     process.exit(1);
+  }
+  // Check editorial grounding sections
+  if (dataContent.trends[0].reported_facts && dataContent.trends[0].reported_facts.length > 0) {
+    if (!mockElements['reader-facts-list'].children.length) {
+      console.error('❌ reader-facts-list was not populated for story with reported_facts.');
+      process.exit(1);
+    }
+  }
+  if (dataContent.trends[0].potential_impact) {
+    if (!mockElements['reader-potential-impact'].textContent) {
+      console.error('❌ reader-potential-impact was not populated.');
+      process.exit(1);
+    }
+  }
+  if (dataContent.trends[0].analysis_limitations) {
+    if (!mockElements['reader-limitations-text'].textContent) {
+      console.error('❌ reader-limitations-text was not populated.');
+      process.exit(1);
+    }
   }
   sandbox.closeReaderView();
   if (mockElements['reader-drawer'].classList.contains('open')) {

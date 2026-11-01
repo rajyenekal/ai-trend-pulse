@@ -871,6 +871,331 @@ class TestBackendPipeline(unittest.TestCase):
       if os.path.exists(test_file):
         os.remove(test_file)
 
+  def test_paired_evidence_validation_and_anti_hallucination(self):
+    art1 = {
+        "article_id": "art_openai_101",
+        "link": "https://openai.com/news/o3-model",
+        "title": "OpenAI releases o3 reasoning model with competitive math benchmarks",
+        "summary": "OpenAI announced o3 reasoning model with frontier benchmark evaluations.",
+        "publisher_group_id": "openai",
+        "trust_tier": 1,
+    }
+    art2 = {
+        "article_id": "art_verge_202",
+        "link": "https://theverge.com/ai/o3-review",
+        "title": "The Verge tests OpenAI o3 reasoning model",
+        "summary": "Independent testing confirms frontier performance on math and code.",
+        "publisher_group_id": "vox_media",
+        "trust_tier": 2,
+    }
+    raw_articles_list = [art1, art2]
+    synthesis_ids = {"art_openai_101", "art_verge_202"}
+
+    # 1. Valid paired reference
+    trend_valid = {
+        "title": "OpenAI Releases o3 Model",
+        "trend_type": "single_development",
+        "evidence": [{
+            "article_id": "art_openai_101",
+            "canonical_url": "https://openai.com/news/o3-model",
+            "supporting_excerpt": "OpenAI announced o3 reasoning model with frontier benchmark evaluations."
+        }]
+    }
+    res_valid = tracker.validate_evidence_provenance([trend_valid], raw_articles_list, synthesis_ids)
+    self.assertEqual(len(res_valid), 1)
+    valid_trend = res_valid[0]
+    self.assertEqual(len(valid_trend["evidence"]), 1)
+    self.assertEqual(valid_trend["evidence"][0]["publisher_group_id"], "openai")
+    self.assertTrue(valid_trend["evidence"][0]["text_verified"])
+
+    # 2. Mismatched pair: article ID from art1, URL from art2 -> MUST REJECT
+    trend_mismatch = {
+        "title": "OpenAI Releases o3 Model",
+        "trend_type": "single_development",
+        "evidence": [{
+            "article_id": "art_openai_101",
+            "canonical_url": "https://theverge.com/ai/o3-review"
+        }]
+    }
+    res_mismatch = tracker.validate_evidence_provenance([trend_mismatch], raw_articles_list, synthesis_ids)
+    self.assertEqual(len(res_mismatch), 0)
+
+    # 3. Fabricated article ID -> MUST REJECT
+    trend_fake_id = {
+        "title": "Hallucinated Trend",
+        "trend_type": "single_development",
+        "evidence": [{
+            "article_id": "art_fabricated_99999",
+            "canonical_url": "https://openai.com/news/o3-model"
+        }]
+    }
+    res_fake_id = tracker.validate_evidence_provenance([trend_fake_id], raw_articles_list, synthesis_ids)
+    self.assertEqual(len(res_fake_id), 0)
+
+    # 4. Fabricated URL -> MUST REJECT
+    trend_fake_url = {
+        "title": "Hallucinated URL",
+        "trend_type": "single_development",
+        "evidence": [{
+            "article_id": "art_openai_101",
+            "canonical_url": "https://fake-hallucination.com/fake-news"
+        }]
+    }
+    res_fake_url = tracker.validate_evidence_provenance([trend_fake_url], raw_articles_list, synthesis_ids)
+    self.assertEqual(len(res_fake_url), 0)
+
+    # 5. Untrusted model publisher group ignored; trusted publisher group resolved from metadata
+    trend_spoof_pub = {
+        "title": "Spoofed Publisher",
+        "trend_type": "single_development",
+        "evidence": [{
+            "article_id": "art_openai_101",
+            "canonical_url": "https://openai.com/news/o3-model",
+            "publisher_group_id": "fabricated_independent_entity"
+        }]
+    }
+    res_spoof = tracker.validate_evidence_provenance([trend_spoof_pub], raw_articles_list, synthesis_ids)
+    self.assertEqual(len(res_spoof), 1)
+    self.assertEqual(res_spoof[0]["evidence"][0]["publisher_group_id"], "openai")
+
+    # 6. Article not in synthesis input IDs -> MUST REJECT
+    res_filtered = tracker.validate_evidence_provenance([trend_valid], raw_articles_list, synthesis_input_ids={"art_verge_202"})
+    self.assertEqual(len(res_filtered), 0)
+
+    # 7. Deduplication of identical references
+    trend_dup = {
+        "title": "Deduplicated References",
+        "trend_type": "single_development",
+        "evidence": [
+            {"article_id": "art_openai_101", "canonical_url": "https://openai.com/news/o3-model"},
+            {"article_id": "art_openai_101", "canonical_url": "https://openai.com/news/o3-model"}
+        ]
+    }
+    res_dup = tracker.validate_evidence_provenance([trend_dup], raw_articles_list, synthesis_ids)
+    self.assertEqual(len(res_dup), 1)
+    self.assertEqual(len(res_dup[0]["evidence"]), 1)
+
+  def test_supporting_excerpt_verification(self):
+    article = {
+        "title": "Google DeepMind unveils AlphaQubit quantum error correction architecture",
+        "summary": "AlphaQubit applies transformer neural networks to decode topological quantum errors in Sycamore processors.",
+    }
+
+    # High overlap excerpt verified
+    good_excerpt = "AlphaQubit applies transformer neural networks to decode topological quantum errors"
+    self.assertTrue(tracker.verify_supporting_excerpt(good_excerpt, article))
+
+    # Exact title excerpt verified
+    self.assertTrue(tracker.verify_supporting_excerpt("unveils AlphaQubit quantum error correction architecture", article))
+
+    # Unrelated or fabricated excerpt rejected
+    bad_excerpt = "Anthropic raised 50 billion dollars from Saudi Aramco to build fusion reactors"
+    self.assertFalse(tracker.verify_supporting_excerpt(bad_excerpt, article))
+
+    # Empty / whitespace excerpt rejected
+    self.assertFalse(tracker.verify_supporting_excerpt("", article))
+    self.assertFalse(tracker.verify_supporting_excerpt("   ", article))
+
+  def test_claim_corroboration_vs_trend_signal_diversity(self):
+    art_aws = {
+        "article_id": "art_aws",
+        "link": "https://aws.amazon.com/blog/freight-optimization",
+        "title": "AWS launches Worldwide Express freight optimization platform",
+        "summary": "Amazon Web Services announces cloud logistics optimization.",
+        "publisher_group_id": "amazon",
+        "trust_tier": 1,
+    }
+    art_legora = {
+        "article_id": "art_legora",
+        "link": "https://techcrunch.com/legora-diligence",
+        "title": "Legora raises seed round for legal contract diligence",
+        "summary": "Legora deploys agentic legal review for venture transactions.",
+        "publisher_group_id": "yahoo_techcrunch",
+        "trust_tier": 2,
+    }
+    articles_theme_list = [art_aws, art_legora]
+
+    # Theme connecting distinct developments: diversity = 2, but claim corroboration = 1
+    theme_trend = {
+        "title": "Autonomous Enterprise Operations Expand",
+        "trend_type": "emerging_theme",
+        "theme_relationship": "Connects multi-modal freight logistics with enterprise contract legal diligence.",
+        "claims": [
+            {
+                "claim_id": "cl_1",
+                "text": "AWS launches freight routing optimization",
+                "evidence": [{"article_id": "art_aws", "canonical_url": "https://aws.amazon.com/blog/freight-optimization"}]
+            },
+            {
+                "claim_id": "cl_2",
+                "text": "Legora launches contract diligence agent",
+                "evidence": [{"article_id": "art_legora", "canonical_url": "https://techcrunch.com/legora-diligence"}]
+            }
+        ]
+    }
+    res_theme = tracker.validate_evidence_provenance([theme_trend], articles_theme_list, {"art_aws", "art_legora"})
+    self.assertEqual(len(res_theme), 1)
+    theme_out = res_theme[0]
+    self.assertEqual(theme_out["trend_type"], "emerging_theme")
+    self.assertEqual(theme_out["status"], "emerging_theme")
+    self.assertEqual(theme_out["trend_signal_diversity"], 2)
+    self.assertEqual(theme_out["claim_corroboration"], 1)  # Distinct events do NOT corroborate each other!
+    self.assertEqual(theme_out["claims"][0]["claim_corroboration"], 1)
+    self.assertEqual(theme_out["claims"][1]["claim_corroboration"], 1)
+
+    # Single development corroborated across multiple independent publisher groups
+    art_dm = {
+        "article_id": "art_dm",
+        "link": "https://deepmind.google/blog/alpha-math",
+        "title": "DeepMind solves Olympiad geometry benchmark",
+        "summary": "AlphaGeometry achieves gold-medal standard reasoning on Olympiad geometry.",
+        "publisher_group_id": "alphabet",
+        "trust_tier": 1,
+    }
+    art_tc = {
+        "article_id": "art_tc",
+        "link": "https://techcrunch.com/deepmind-alphageometry",
+        "title": "TechCrunch tests DeepMind AlphaGeometry benchmark",
+        "summary": "Independent evaluation verifies gold-medal mathematical reasoning.",
+        "publisher_group_id": "yahoo_techcrunch",
+        "trust_tier": 2,
+    }
+    articles_dev_list = [art_dm, art_tc]
+    dev_trend = {
+        "title": "DeepMind AlphaGeometry Achieves Olympiad Benchmark",
+        "trend_type": "single_development",
+        "claims": [
+            {
+                "claim_id": "cl_geom",
+                "text": "DeepMind AlphaGeometry achieves Olympiad gold-medal geometry reasoning",
+                "evidence": [
+                    {"article_id": "art_dm", "canonical_url": "https://deepmind.google/blog/alpha-math"},
+                    {"article_id": "art_tc", "canonical_url": "https://techcrunch.com/deepmind-alphageometry"}
+                ]
+            }
+        ]
+    }
+    res_dev = tracker.validate_evidence_provenance([dev_trend], articles_dev_list, {"art_dm", "art_tc"})
+    self.assertEqual(len(res_dev), 1)
+    dev_out = res_dev[0]
+    self.assertEqual(dev_out["trend_type"], "single_development")
+    self.assertEqual(dev_out["status"], "independently_corroborated")
+    self.assertEqual(dev_out["claim_corroboration"], 2)  # Two independent publisher groups corroborate claim!
+    self.assertEqual(dev_out["trend_signal_diversity"], 2)
+
+  def test_source_health_monitoring_and_operating_cases(self):
+    # Case A: Normal healthy run
+    mock_health_healthy = {
+        "status": "healthy",
+        "configured_sources_count": 22,
+        "enabled_sources_count": 22,
+        "successful_fetches_count": 22,
+        "failed_fetches_count": 0,
+        "valid_empty_sources_count": 0,
+        "total_articles_received": 50,
+        "rejected_by_relevance_count": 10,
+        "rejected_by_freshness_count": 5,
+        "fresh_articles_accepted_count": 35,
+        "unique_article_count": 35,
+    }
+    self.assertEqual(mock_health_healthy["status"], "healthy")
+    self.assertEqual(mock_health_healthy["failed_fetches_count"], 0)
+
+    # Case C: Degraded run (1 source fails, processing continues)
+    mock_health_degraded = {
+        "status": "degraded",
+        "configured_sources_count": 22,
+        "enabled_sources_count": 22,
+        "successful_fetches_count": 21,
+        "failed_fetches_count": 1,
+        "valid_empty_sources_count": 0,
+        "total_articles_received": 45,
+        "rejected_by_relevance_count": 5,
+        "rejected_by_freshness_count": 5,
+        "fresh_articles_accepted_count": 35,
+        "unique_article_count": 35,
+    }
+    self.assertEqual(mock_health_degraded["status"], "degraded")
+    self.assertGreater(mock_health_degraded["fresh_articles_accepted_count"], 0)
+
+    # Case D: Total upstream failure -> run_pipeline raises PipelineExecutionError and preserves data
+    test_file_total_fail = "test_total_fail.json"
+    init_data = {
+        "schema_version": 2,
+        "data_status": "fresh",
+        "generated_at": "2026-11-01T12:00:00Z",
+        "top_stories": [{"title": "Verified Existing Story", "trust_tier": 1, "overall_score": 85}],
+    }
+    with open(test_file_total_fail, "w", encoding="utf-8") as f:
+      json.dump(init_data, f)
+
+    try:
+      total_failure_telemetry = {
+          "status": "total_failure",
+          "configured_sources_count": 22,
+          "enabled_sources_count": 22,
+          "successful_fetches_count": 0,
+          "failed_fetches_count": 22,
+          "valid_empty_sources_count": 0,
+          "total_articles_received": 0,
+          "rejected_by_relevance_count": 0,
+          "rejected_by_freshness_count": 0,
+          "fresh_articles_accepted_count": 0,
+          "unique_article_count": 0,
+      }
+      with patch("tracker.collect_fresh_news", return_value=([], total_failure_telemetry, [])):
+        with self.assertRaises(tracker.PipelineExecutionError):
+          tracker.run_pipeline(dry_run=False, output_file=test_file_total_fail)
+
+        # Ensure dataset was PRESERVED and not corrupted/emptied
+        with open(test_file_total_fail, "r", encoding="utf-8") as f:
+          restored = json.load(f)
+        self.assertEqual(restored["top_stories"][0]["title"], "Verified Existing Story")
+    finally:
+      if os.path.exists(test_file_total_fail):
+        os.remove(test_file_total_fail)
+
+  def test_editorial_grounding_fields(self):
+    dummy_articles = [{
+        "title": "Anthropic releases Claude 3.5 Sonnet computer use capability in API",
+        "summary": "Anthropic announces general availability of programmatic computer use API allowing Claude to control desktop software, browse, and fill forms.",
+        "source": "Anthropic News & Research",
+        "source_id": "anthropic_news",
+        "publisher_id": "anthropic",
+        "publisher_group_id": "anthropic",
+        "trust_tier": 1,
+        "is_official": True,
+        "link": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+        "published": "Oct 31, 14:00 UTC",
+        "published_datetime": None,
+    }]
+    clustered = tracker.cluster_and_deduplicate_articles(dummy_articles)
+    payload = tracker.build_complete_payload(clustered)
+    story = payload["top_stories"][0]
+
+    # Verify reported_facts is a non-empty list of factual bullets
+    self.assertIsInstance(story["reported_facts"], list)
+    self.assertGreaterEqual(len(story["reported_facts"]), 1)
+    for fact in story["reported_facts"]:
+      self.assertGreaterEqual(len(fact), 15)
+
+    # Verify what_changed, why_it_matters, potential_impact, analysis_limitations
+    self.assertIsInstance(story["what_changed"], str)
+    self.assertGreaterEqual(len(story["what_changed"]), 15)
+
+    self.assertIsInstance(story["why_it_matters"], str)
+    self.assertGreaterEqual(len(story["why_it_matters"]), 15)
+
+    self.assertIsInstance(story["potential_impact"], str)
+    self.assertGreaterEqual(len(story["potential_impact"]), 15)
+
+    self.assertIsInstance(story["analysis_limitations"], str)
+    self.assertGreaterEqual(len(story["analysis_limitations"]), 15)
+
+    # Verify no generic template boilerplate
+    self.assertNotIn("could impact developers and businesses without specifics", story["why_it_matters"])
+    self.assertNotIn("Lorem ipsum", story["what_changed"])
+
 
 if __name__ == "__main__":
   unittest.main()

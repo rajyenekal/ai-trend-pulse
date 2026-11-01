@@ -73,14 +73,16 @@ $$\text{Pulse Score} = 0.30 \times \text{Importance} + 0.20 \times \text{Audienc
    - Transparent disclosure of the 4-tier source registry, scoring formula, and anti-hallucination policies.
    - Accessible via keyboard shortcuts (`Escape` to close).
 
-4. **Provenance & Anti-Hallucination Safeguards**:
+4. **Provenance, Claim Verification & Anti-Hallucination Safeguards**:
+   - **Paired Evidence References**: Every citation is an atomic object (`article_id`, `canonical_url`, `publisher_group_id`, `supporting_excerpt`, and `text_verified`). Unpaired lists, prefix matching, and mismatched article ID / URL pairs are strictly rejected.
+   - **Decoupled Claim Corroboration vs Trend Diversity**: Decouples independent press corroboration (multiple publisher groups reporting the exact same fact) from theme signal diversity (multiple distinct developments forming a broad industry pattern).
    - **Deterministic Article IDs**: Every article receives a unique, content-grounded identifier (`art_{source_id}_{hash12}`). AI briefings must cite exact matching article IDs.
    - **Exact Normalized URL Matching**: Prefix matching is eliminated. Exact URL equality is required, and hallucinated or unverified citations are rejected rather than substituted with unrelated stories.
    - **Independent Publisher Group Counting**: Distinguishes between feed IDs and corporate publisher groups. Multiple outlets owned by Alphabet/Google, Microsoft, Amazon, or Yahoo/TechCrunch each count as a single publishing entity. Hacker News and social discovery feeds do not add to independent press counts.
    - **Strict Temporal Truth**: Missing or ambiguous publication dates are explicitly displayed as "Date unavailable" and never assigned the current time.
    - **Parameter-Clean URLs**: Strips tracking parameters (`utm_*`, `ref`, `fbclid`, etc.) to guarantee clean provenance and user privacy.
-   - **Cross-Publisher Story Clustering**: Suffix-stemmed Jaccard token overlap clusters syndicated reporting, presenting the primary lab as the authoritative source while preserving journalism links.
-   - **Atomic File Writes & Failure Handling**: Payload is validated and written to a temporary file before atomic rename. If an ingestion or synthesis failure occurs, the previous dataset is preserved intact, temporary files are removed, and the pipeline fails with a non-zero exit status to alert CI. Zero new articles is treated cleanly as a valid operational cycle.
+   - **Editorial Grounding & Epistemic Bounds**: Distinct fields provide verified reported facts, what changed, real-world why it matters, labeled analytical impact projections, and epistemic verification limitations.
+   - **Source Health Monitoring & Zero Silent Failures**: Continuous telemetry tracks all 22 monitored feeds across 5 deterministic operating cases (Normal, Valid Zero, Degraded, Total Upstream Failure Halt, All Content Filtered). If upstream networks fail completely, the pipeline halts with a non-zero exit code to alert CI while preserving verified datasets intact.
 
 ---
 

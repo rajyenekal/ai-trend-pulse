@@ -929,6 +929,273 @@
       background: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
     }
+    .badge-evidence-theme {
+      color: #c084fc;
+      background: rgba(192, 132, 252, 0.14);
+      border: 1px solid rgba(192, 132, 252, 0.35);
+    }
+    .badge-evidence-development {
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.32);
+    }
+
+    /* Source Health Telemetry Badge */
+    .badge-source-health {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.73rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      line-height: 1.3;
+    }
+    .badge-source-health.healthy {
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+    }
+    .badge-source-health.degraded {
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.28);
+    }
+    .badge-source-health.failed {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.28);
+    }
+    .health-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* Emerging Theme Card Callouts */
+    .card-theme-banner {
+      margin-top: 10px;
+      padding: 9px 12px;
+      background: rgba(192, 132, 252, 0.08);
+      border: 1px solid rgba(192, 132, 252, 0.24);
+      border-left: 3px solid #a855f7;
+      border-radius: 6px;
+    }
+    .card-theme-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #c084fc;
+      margin-bottom: 3px;
+    }
+    .card-theme-relationship {
+      font-size: 0.82rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Claims Breakdown on Trend Cards */
+    .card-claims-breakdown {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+    }
+    .claims-header {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .claims-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .claim-item {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+    }
+    .claim-bullet {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .claim-text {
+      flex: 1;
+    }
+    .claim-corrob-pill {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    /* Reader View Editorial Grounding Sections */
+    .reader-facts-card {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid #10b981;
+      border-radius: 8px;
+    }
+    .reader-facts-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #10b981;
+      margin-bottom: 8px;
+    }
+    .reader-facts-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .reader-facts-list li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+    .reader-facts-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #10b981;
+      font-weight: 700;
+    }
+
+    .reader-impact-card {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid #6366f1;
+      border-radius: 8px;
+    }
+    .reader-impact-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #818cf8;
+      margin-bottom: 8px;
+    }
+    .projection-disclaimer {
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(99, 102, 241, 0.12);
+      color: #818cf8;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .reader-impact-body {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    .reader-limitations-callout {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: var(--bg-subtle);
+      border: 1px dashed var(--border-medium);
+      border-radius: 8px;
+    }
+    .reader-limitations-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .reader-limitations-body {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+    }
+
+    /* Paired Evidence List in Reader View */
+    .paired-evidence-list {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .paired-evidence-item {
+      padding: 8px 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+    }
+    .paired-evidence-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.78rem;
+      margin-bottom: 4px;
+    }
+    .paired-evidence-publisher {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .paired-evidence-verified {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #10b981;
+    }
+    .paired-evidence-excerpt {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin: 0;
+    }
+
     .score-pill {
       font-size: 0.7rem;
       font-weight: 600;
@@ -2906,7 +3173,7 @@
           </span>
           <span id="status-text">● Live Pipeline Active • Hourly updates</span>
         </div>
-        <div class="status-right">
+        <div class="status-right" id="status-source-telemetry">
           <span>22 monitored research sources</span>
           <span>•</span>
           <span>Strict provenance tracking</span>
@@ -3152,6 +3419,15 @@
           </ul>
         </div>
 
+        <!-- VERIFIED REPORTED FACTS (SOURCE-GROUNDED) -->
+        <div id="reader-facts-box" class="reader-facts-card" style="display:none;">
+          <div class="reader-facts-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Verified Reported Facts</span>
+          </div>
+          <ul id="reader-facts-list" class="reader-facts-list"></ul>
+        </div>
+
         <!-- IN-DEPTH STORY BREAKDOWN -->
         <div class="reader-content-section">
           <h3 class="reader-section-title">In-Depth Story &amp; Context</h3>
@@ -3160,10 +3436,31 @@
           </div>
         </div>
 
+        <!-- ANALYTICAL PROJECTION & POTENTIAL IMPACT -->
+        <div id="reader-impact-box" class="reader-impact-card" style="display:none;">
+          <div class="reader-impact-header">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              <span>Potential Impact</span>
+            </div>
+            <span class="projection-disclaimer">Analytical Projection</span>
+          </div>
+          <div id="reader-potential-impact" class="reader-impact-body"></div>
+        </div>
+
         <!-- WHY IT MATTERS CALLOUT -->
         <div id="reader-why-box" class="card-why-callout reader-why-callout">
           <div class="card-why-callout-title">Why It Matters</div>
           <div id="reader-why-text" class="card-why-callout-body">Practical impact explanation...</div>
+        </div>
+
+        <!-- EPISTEMIC BOUNDS & LIMITATIONS -->
+        <div id="reader-limitations-box" class="reader-limitations-callout" style="display:none;">
+          <div class="reader-limitations-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span>Verification Bounds &amp; Epistemic Limitations</span>
+          </div>
+          <div id="reader-limitations-text" class="reader-limitations-body"></div>
         </div>
 
         <!-- WHO IS AFFECTED -->
@@ -3313,6 +3610,17 @@
               <li><strong>AI News:</strong> General AI ecosystem updates, corporate partnerships, and industry leadership statements.</li>
             </ul>
           </div>
+
+          <div class="methodology-card">
+            <h3>5. Ingestion Health &amp; Source Telemetry</h3>
+            <p>To eliminate silent pipeline failures and provide absolute transparency into upstream data feeds, AI Trend Pulse continuously records end-to-end ingestion telemetry across all 22 monitored sources:</p>
+            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
+              <li><strong>Live Health Tracking:</strong> Every source records <code>fetch_status</code> (success, failed, empty), HTTP status codes, timestamp of last success, and exact counts of articles received vs accepted.</li>
+              <li><strong>Zero Silent Failures:</strong> In the event of a total network outage or upstream block, the ingestion pipeline halts with a non-zero exit code, triggering GitHub Actions alerts while preserving the verified dataset without destructive replacement.</li>
+              <li><strong>Graceful Degradation:</strong> When individual feeds experience upstream latency or transient 5xx errors, the pipeline flags the system as degraded, logs the diagnostic error, and safely processes available fresh dispatches.</li>
+              <li><strong>Epistemic Verification Bounds:</strong> When stories are derived from single sources or preprints, the UI explicitly highlights epistemic boundaries and verification limitations so readers know exactly what is confirmed and what requires corroboration.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -3331,7 +3639,7 @@
         </div>
 
         <div class="footer-col-feeds">
-          <h3 class="footer-heading">Monitored Feeds (21 Verified Sources)</h3>
+          <h3 class="footer-heading">Monitored Feeds (22 Verified Sources)</h3>
           <ul class="footer-feeds-list">
             <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research &amp; News ↗</a></li>
             <li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News &amp; Research ↗</a></li>
@@ -3889,12 +4197,18 @@
     function getEvidenceBadgeHTML(item) {
       if (!item) return '';
       const status = item.evidence_status;
-      const count = item.independent_source_count || (item.evidence_urls ? item.evidence_urls.length : (item.covered_by_sources_count || 1));
+      const trendType = item.trend_type || (status === 'emerging_theme' ? 'emerging_theme' : 'single_development');
+      const signalDiversity = item.trend_signal_diversity || (item.evidence_urls ? item.evidence_urls.length : 1);
+      const claimCorrob = item.claim_corroboration || item.independent_source_count || (item.evidence_urls ? item.evidence_urls.length : (item.covered_by_sources_count || 1));
       const isOfficial = item.is_official || item.tier === 'Official Lab' || status === 'official_announcement' || item.status === 'official_claim';
 
+      if (trendType === 'emerging_theme' || status === 'emerging_theme') {
+        return `<span class="badge-evidence badge-evidence-theme" title="Emerging multi-development theme synthesizing ${signalDiversity} distinct industry signals">🌐 Emerging Theme (${signalDiversity} Signals)</span>`;
+      }
+
       if (isOfficial) {
-        if (count >= 2) {
-          return `<span class="badge-evidence badge-evidence-corroborated" title="Official lab release confirmed across ${count} independent sources">🏛️ Official + ${count - 1} Sources</span>`;
+        if (claimCorrob >= 2) {
+          return `<span class="badge-evidence badge-evidence-corroborated" title="Official lab release confirmed across ${claimCorrob} independent publisher groups">🏛️ Official + ${claimCorrob - 1} Sources</span>`;
         }
         return `<span class="badge-evidence badge-evidence-official" title="Direct announcement from official lab or developer">🏛️ Official Source</span>`;
       }
@@ -3902,10 +4216,10 @@
         return `<span class="badge-evidence badge-evidence-research" title="Research paper preprint / academic evaluation">📄 Research Preprint</span>`;
       }
       if (status === 'practitioner_report' || item.trust_tier === 4) {
-        return `<span class="badge-evidence badge-evidence-practitioner" title="Practitioner observation or real-world evaluation">🔬 Practitioner Report</span>`;
+        return `<span class="badge-evidence badge-evidence-practitioner" title="Practitioner observation or community discovery signal">🔬 Practitioner Report</span>`;
       }
-      if (count >= 2) {
-        return `<span class="badge-evidence badge-evidence-corroborated" title="Reported across ${count} independent publications">✓ ${count} Independent Sources</span>`;
+      if (claimCorrob >= 2) {
+        return `<span class="badge-evidence badge-evidence-corroborated" title="Reported and corroborated across ${claimCorrob} independent publisher groups">✓ ${claimCorrob} Independent Sources</span>`;
       }
       return `<span class="badge-evidence badge-evidence-single" title="Reported by a single tech news outlet">📰 Single Source</span>`;
     }
@@ -4015,6 +4329,23 @@
 
       statusText.innerHTML = `<strong>● ${statusCategory}</strong>: ${escapeHTML(statusDesc)}`;
       statusText.setAttribute('title', `Last build: ${formatISTDateTime(genTime)} / ${utcTimeStr} (${isoStr})`);
+
+      const telemetryRight = typeof document !== 'undefined' && document.getElementById ? document.getElementById('status-source-telemetry') : null;
+      if (telemetryRight && data.source_health_summary) {
+        const sh = data.source_health_summary;
+        const total = sh.enabled_sources_count || 22;
+        const success = sh.successful_fetches_count || total;
+        const failed = sh.failed_fetches_count || 0;
+        const healthClass = failed === 0 ? 'healthy' : (success === 0 ? 'failed' : 'degraded');
+        const healthLabel = failed === 0 ? `${success}/${total} Feeds Healthy` : `${success}/${total} Feeds Active (${failed} delayed)`;
+        telemetryRight.innerHTML = `
+          <span class="badge-source-health ${healthClass}" title="${escapeAttr(sh.status || 'healthy')}: ${success} healthy, ${failed} failed">
+            <span class="health-dot"></span>${escapeHTML(healthLabel)}
+          </span>
+          <span>•</span>
+          <span>Claim-Level Provenance</span>
+        `;
+      }
     }
 
     /* -------------------------------------------------------------
@@ -4253,6 +4584,32 @@
           </div>
         ` : '';
 
+        const isTheme = item.trend_type === 'emerging_theme' || item.status === 'emerging_theme';
+        const themeBannerHTML = isTheme ? `
+          <div class="card-theme-banner">
+            <div class="card-theme-title">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Emerging Industry Theme</span>
+            </div>
+            <p class="card-theme-relationship">${escapeHTML(item.theme_relationship || 'Synthesizes multiple distinct industry developments into a cross-cutting pattern.')}</p>
+          </div>
+        ` : '';
+
+        const claimsBreakdownHTML = (item.claims && item.claims.length) ? `
+          <div class="card-claims-breakdown">
+            <div class="claims-header">Constituent Claims &amp; Evidence (${item.claims.length})</div>
+            <ul class="claims-list">
+              ${item.claims.slice(0, 2).map(c => `
+                <li class="claim-item">
+                  <span class="claim-bullet">•</span>
+                  <span class="claim-text">${escapeHTML(c.text)}</span>
+                  <span class="claim-corrob-pill">${c.claim_corroboration > 1 ? c.claim_corroboration + ' sources' : '1 source'}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : '';
+
         const card = document.createElement('article');
 
         // Card Type Assignment
@@ -4285,6 +4642,8 @@
                   ${takeawaysHTML}
                   ${whyItMattersHTML}
                   ${audienceCalloutHTML}
+                  ${themeBannerHTML}
+                  ${claimsBreakdownHTML}
                 </div>
 
                 <div class="card-footer">
@@ -4327,7 +4686,7 @@
                 <span class="badge-card-topic">${escapeHTML(topic)}</span>
                 ${scorePillHTML}
               </div>
-              <span class="badge-status-pill official">Corroborated by ${item.evidence_urls.length} sources</span>
+              ${isTheme ? `<span class="badge-status-pill theme" style="background:rgba(192,132,252,0.15); color:#c084fc; border:1px solid rgba(192,132,252,0.35);">🌐 Theme (${item.trend_signal_diversity || item.evidence_urls.length} signals)</span>` : (corroborationCount > 1 ? `<span class="badge-status-pill official">Corroborated by ${corroborationCount} sources</span>` : `<span class="badge-status-pill single">Single Source</span>`)}
             </div>
             <h3 class="card-headline" style="margin-top:8px;">
               <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
@@ -4336,6 +4695,8 @@
             ${takeawaysHTML}
             ${whyItMattersHTML}
             ${audienceCalloutHTML}
+            ${themeBannerHTML}
+            ${claimsBreakdownHTML}
 
             <details class="evidence-block">
               <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
@@ -4393,6 +4754,8 @@
                 ${takeawaysHTML}
                 ${whyItMattersHTML}
                 ${audienceCalloutHTML}
+                ${themeBannerHTML}
+                ${claimsBreakdownHTML}
               </div>
 
               <div class="card-footer">
@@ -5221,6 +5584,24 @@
         });
       }
 
+      // 1B. Verified Reported Facts (source-grounded factual bullets)
+      const factsBox = document.getElementById('reader-facts-box');
+      const factsList = document.getElementById('reader-facts-list');
+      if (factsBox && factsList) {
+        factsList.innerHTML = '';
+        const facts = Array.isArray(item.reported_facts) ? item.reported_facts : [];
+        if (facts.length > 0) {
+          facts.forEach(f => {
+            const li = document.createElement('li');
+            li.textContent = f;
+            factsList.appendChild(li);
+          });
+          factsBox.style.display = 'block';
+        } else {
+          factsBox.style.display = 'none';
+        }
+      }
+
       // 2. Detailed in-depth analysis (narrative prose without repetitive label prefixes or duplicate paragraphs)
       const detailedEl = document.getElementById('reader-detailed-analysis');
       if (detailedEl) {
@@ -5307,6 +5688,19 @@
         }
       }
 
+      // 2B. Analytical Projection & Potential Impact Callout
+      const impactBox = document.getElementById('reader-impact-box');
+      const impactEl = document.getElementById('reader-potential-impact');
+      if (impactBox && impactEl) {
+        const impactText = (item.potential_impact || '').trim();
+        if (impactText && impactText.length > 15) {
+          impactEl.textContent = impactText;
+          impactBox.style.display = 'block';
+        } else {
+          impactBox.style.display = 'none';
+        }
+      }
+
       // 3. Why It Matters callout (strategic significance, never duplicates preceding text or title)
       const whyBox = document.getElementById('reader-why-box');
       const whyText = document.getElementById('reader-why-text');
@@ -5321,6 +5715,19 @@
           whyBox.style.display = 'block';
         } else {
           whyBox.style.display = 'none';
+        }
+      }
+
+      // 3B. Verification Bounds & Epistemic Limitations Callout
+      const limitBox = document.getElementById('reader-limitations-box');
+      const limitText = document.getElementById('reader-limitations-text');
+      if (limitBox && limitText) {
+        const lim = (item.analysis_limitations || '').trim();
+        if (lim && lim.length > 15) {
+          limitText.textContent = lim;
+          limitBox.style.display = 'block';
+        } else {
+          limitBox.style.display = 'none';
         }
       }
 
@@ -5365,19 +5772,69 @@
         }
       }
 
-      // Corroborated evidence links
+      // Corroborated evidence links with paired reference support
       const corrobBox = document.getElementById('reader-corroboration-box');
       const evidenceList = document.getElementById('reader-evidence-links');
       if (corrobBox && evidenceList) {
-        const urls = item.evidence_urls || (item.link ? [item.link] : []);
-        if (urls && urls.length > 1) {
-          evidenceList.innerHTML = urls.map((u, i) => {
-            const host = cleanDomain(u);
-            return `<li>${i + 1}. <a class="evidence-link" href="${escapeHTML(u)}" target="_blank" rel="noopener noreferrer">${escapeHTML(host)} ↗</a></li>`;
-          }).join('');
+        if (item.claims && item.claims.length) {
+          let html = '';
+          item.claims.forEach((cl, ci) => {
+            html += `<div style="margin-bottom:12px; padding:10px; background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:6px;">
+              <div style="font-size:0.8rem; font-weight:700; color:var(--text-primary); margin-bottom:6px;">
+                Claim ${ci + 1}: ${escapeHTML(cl.text)}
+                <span style="float:right; font-size:0.7rem; font-weight:600; color:var(--accent);">(${cl.claim_corroboration > 1 ? cl.claim_corroboration + ' sources' : '1 source'})</span>
+              </div>
+              <ul class="paired-evidence-list">`;
+            (cl.evidence || []).forEach(ev => {
+              const host = cleanDomain(ev.canonical_url);
+              const excerpt = ev.supporting_excerpt ? `<p class="paired-evidence-excerpt">"${escapeHTML(ev.supporting_excerpt)}"</p>` : '';
+              const verifiedBadge = ev.text_verified ? `<span class="paired-evidence-verified">✓ Excerpt Verified</span>` : '';
+              html += `
+                <li class="paired-evidence-item">
+                  <div class="paired-evidence-header">
+                    <span class="paired-evidence-publisher">${escapeHTML(ev.publisher_group_id || 'source')}</span>
+                    ${verifiedBadge}
+                  </div>
+                  ${excerpt}
+                  <a class="evidence-link" href="${escapeHTML(ev.canonical_url)}" target="_blank" rel="noopener noreferrer" style="font-size:0.78rem; margin-top:4px; display:inline-block;">${escapeHTML(host)} ↗</a>
+                </li>
+              `;
+            });
+            html += `</ul></div>`;
+          });
+          evidenceList.innerHTML = html;
+          corrobBox.style.display = 'block';
+        } else if (item.evidence && item.evidence.length) {
+          let html = `<ul class="paired-evidence-list">`;
+          item.evidence.forEach(ev => {
+            const host = cleanDomain(ev.canonical_url);
+            const excerpt = ev.supporting_excerpt ? `<p class="paired-evidence-excerpt">"${escapeHTML(ev.supporting_excerpt)}"</p>` : '';
+            const verifiedBadge = ev.text_verified ? `<span class="paired-evidence-verified">✓ Excerpt Verified</span>` : '';
+            html += `
+              <li class="paired-evidence-item">
+                <div class="paired-evidence-header">
+                  <span class="paired-evidence-publisher">${escapeHTML(ev.publisher_group_id || 'source')}</span>
+                  ${verifiedBadge}
+                </div>
+                ${excerpt}
+                <a class="evidence-link" href="${escapeHTML(ev.canonical_url)}" target="_blank" rel="noopener noreferrer" style="font-size:0.78rem; margin-top:4px; display:inline-block;">${escapeHTML(host)} ↗</a>
+              </li>
+            `;
+          });
+          html += `</ul>`;
+          evidenceList.innerHTML = html;
           corrobBox.style.display = 'block';
         } else {
-          corrobBox.style.display = 'none';
+          const urls = item.evidence_urls || (item.link ? [item.link] : []);
+          if (urls && urls.length > 1) {
+            evidenceList.innerHTML = urls.map((u, i) => {
+              const host = cleanDomain(u);
+              return `<li>${i + 1}. <a class="evidence-link" href="${escapeHTML(u)}" target="_blank" rel="noopener noreferrer">${escapeHTML(host)} ↗</a></li>`;
+            }).join('');
+            corrobBox.style.display = 'block';
+          } else {
+            corrobBox.style.display = 'none';
+          }
         }
       }
 

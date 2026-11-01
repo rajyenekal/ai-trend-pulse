@@ -13,9 +13,11 @@ import html
 import json
 import os
 import re
+import socket
 import sys
 import time
 import traceback
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -653,8 +655,11 @@ def parse_published_datetime(date_str, struct_time=None):
 # -------------------------------------------------------------
 # 5. DUAL FEED PARSER (FEEDPARSER + STD LIB XML FALLBACK)
 # -------------------------------------------------------------
-def parse_feed_with_fallback(feed_url, timeout=6.0):
-  """Parses RSS/Atom feeds using feedparser if present, or xml.etree.ElementTree as fallback."""
+def parse_feed_with_fallback_status(feed_url, timeout=6.0):
+  """Parses RSS/Atom feeds using feedparser if present, or xml.etree.ElementTree as fallback.
+  Returns a tuple of (entries: list, http_status: int).
+  Raises exceptions on HTTP or network errors so callers can monitor health accurately.
+  """
   headers = {
       "User-Agent": (
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
@@ -664,22 +669,32 @@ def parse_feed_with_fallback(feed_url, timeout=6.0):
   }
 
   raw_bytes = b""
+  http_status = 200
   try:
     req = urllib.request.Request(feed_url, headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as resp:
+      http_status = getattr(resp, "status", 200)
       raw_bytes = resp.read()
       if resp.headers.get("Content-Encoding") == "gzip" or raw_bytes.startswith(b"\x1f\x8b"):
         try:
           raw_bytes = gzip.decompress(raw_bytes)
         except Exception:
           pass
-  except Exception as e:
-    # If feedparser is available, give it a direct shot in case it handles redirects differently
+  except urllib.error.HTTPError as e:
     if feedparser:
       try:
         parsed = feedparser.parse(feed_url)
         if parsed and getattr(parsed, "entries", None):
-          return parsed.entries
+          return parsed.entries, getattr(parsed, "status", e.code)
+      except Exception:
+        pass
+    raise e
+  except Exception as e:
+    if feedparser:
+      try:
+        parsed = feedparser.parse(feed_url)
+        if parsed and getattr(parsed, "entries", None):
+          return parsed.entries, 200
       except Exception:
         pass
     raise e
@@ -687,64 +702,68 @@ def parse_feed_with_fallback(feed_url, timeout=6.0):
   if feedparser:
     parsed = feedparser.parse(raw_bytes)
     if parsed and getattr(parsed, "entries", None):
-      return parsed.entries
+      return parsed.entries, http_status
 
   # Built-in Standard Library XML ElementTree Parser Fallback
   entries = []
-  try:
-    root = ET.fromstring(raw_bytes)
-    # Check for RSS 2.0 (<rss><channel><item>)
-    channel = root.find("channel")
-    if channel is not None:
-      for item in channel.findall("item"):
-        title = (item.findtext("title") or "").strip()
-        link = (item.findtext("link") or "").strip()
-        desc = (item.findtext("description") or "").strip()
-        pub_date = item.findtext("pubDate") or item.findtext("date") or ""
-        entries.append({
-            "title": title,
-            "link": link,
-            "summary": desc,
-            "published": pub_date,
-        })
-      return entries
-
-    # Check for Atom (<feed><entry>)
-    ns = {"atom": "http://www.w3.org/2005/Atom"}
-    atom_entries = root.findall("atom:entry", ns) or root.findall("entry")
-    for entry in atom_entries:
-      title_el = entry.find("atom:title", ns) if ns else entry.find("title")
-      title = (title_el.text if title_el is not None else "") or ""
-      link = ""
-      link_els = entry.findall("atom:link", ns) if ns else entry.findall("link")
-      for l in link_els:
-        href = l.attrib.get("href")
-        rel = l.attrib.get("rel", "alternate")
-        if href and rel in ("alternate", ""):
-          link = href
-          break
-      summary_el = entry.find("atom:summary", ns) or entry.find("atom:content", ns)
-      summary = (summary_el.text if summary_el is not None else "") or ""
-      published_el = entry.find("atom:published", ns) or entry.find("atom:updated", ns)
-      pub_date = (published_el.text if published_el is not None else "") or ""
+  root = ET.fromstring(raw_bytes)
+  channel = root.find("channel")
+  if channel is not None:
+    for item in channel.findall("item"):
+      title = (item.findtext("title") or "").strip()
+      link = (item.findtext("link") or "").strip()
+      desc = (item.findtext("description") or "").strip()
+      pub_date = item.findtext("pubDate") or item.findtext("date") or ""
       entries.append({
-          "title": title.strip(),
-          "link": link.strip(),
-          "summary": summary.strip(),
-          "published": pub_date.strip(),
+          "title": title,
+          "link": link,
+          "summary": desc,
+          "published": pub_date,
       })
+    return entries, http_status
+
+  ns = {"atom": "http://www.w3.org/2005/Atom"}
+  atom_entries = root.findall("atom:entry", ns) or root.findall("entry")
+  for entry in atom_entries:
+    title_el = entry.find("atom:title", ns) if ns else entry.find("title")
+    title = (title_el.text if title_el is not None else "") or ""
+    link = ""
+    link_els = entry.findall("atom:link", ns) if ns else entry.findall("link")
+    for l in link_els:
+      href = l.attrib.get("href")
+      rel = l.attrib.get("rel", "alternate")
+      if href and rel in ("alternate", ""):
+        link = href
+        break
+    summary_el = entry.find("atom:summary", ns) or entry.find("atom:content", ns)
+    summary = (summary_el.text if summary_el is not None else "") or ""
+    published_el = entry.find("atom:published", ns) or entry.find("atom:updated", ns)
+    pub_date = (published_el.text if published_el is not None else "") or ""
+    entries.append({
+        "title": title.strip(),
+        "link": link.strip(),
+        "summary": summary.strip(),
+        "published": pub_date.strip(),
+    })
+  return entries, http_status
+
+
+def parse_feed_with_fallback(feed_url, timeout=6.0):
+  """Parses RSS/Atom feeds using feedparser if present, or xml.etree.ElementTree as fallback."""
+  try:
+    entries, _ = parse_feed_with_fallback_status(feed_url, timeout=timeout)
     return entries
-  except Exception as err:
-    print(f"   ⚠️ XML fallback parse failed for {feed_url}: {err}")
+  except Exception:
     return []
 
 
 # -------------------------------------------------------------
 # 6. ANTHROPIC & HTML PAGE ADAPTERS
 # -------------------------------------------------------------
-def fetch_anthropic_official_news(timeout=6.0):
-  """Specialized page adapter for Anthropic News (https://www.anthropic.com/news).
+def fetch_anthropic_official_news_with_status(timeout=6.0):
+  """Specialized page adapter for Anthropic News (https://www.anthropic.com/news) with status tracking.
   Extracts canonical article URLs, titles, published dates, and teasers directly from the official page.
+  Returns: (articles: list, http_status: int)
   """
   articles = []
   url = "https://www.anthropic.com/news"
@@ -756,74 +775,141 @@ def fetch_anthropic_official_news(timeout=6.0):
       "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
   }
 
+  req = urllib.request.Request(url, headers=headers)
+  with urllib.request.urlopen(req, timeout=timeout) as resp:
+    http_status = getattr(resp, "status", 200)
+    html_content = resp.read().decode("utf-8", errors="replace")
+
+  seen_links = set()
+  link_matches = re.finditer(r'href=["\'](/(?:news|research)/[a-zA-Z0-9\-]+)["\']', html_content)
+
+  for lm in link_matches:
+    href = lm.group(1)
+    if href in ("/news", "/news/announcements", "/news/features", "/news/security", "/news/policy", "/news/partnerships", "/news/safeguards", "/research/team"):
+      continue
+    if href in seen_links:
+      continue
+
+    start = max(0, lm.start() - 400)
+    end = min(len(html_content), lm.end() + 1500)
+    window = html_content[start:end]
+
+    # Extract title
+    title = None
+    h3_m = re.search(r'<h3\b[^>]*>(.*?)</h3>', window)
+    if h3_m:
+      title = html.unescape(re.sub(r'<[^>]+>', ' ', h3_m.group(1))).strip()
+    if not title:
+      img_m = re.search(r'<img\b[^>]*alt=["\']([^"\']+)["\']', window)
+      if img_m:
+        title = html.unescape(img_m.group(1)).strip()
+
+    if not title or len(title) < 8 or title.lower() in ("announcements", "news", "research"):
+      slug = href.split("/")[-1].replace("-", " ").title()
+      title = slug
+
+    # Extract published date from <time> tag
+    time_m = re.search(r'<time\b[^>]*>(.*?)</time>', window)
+    pub_date_str = time_m.group(1).strip() if time_m else None
+
+    # Extract summary teaser
+    summary = ""
+    p_m = re.search(r'<p\b[^>]*class=["\'][^"\']*summary[^"\']*["\'][^>]*>(.*?)</p>', window)
+    if p_m:
+      summary = html.unescape(re.sub(r'<[^>]+>', ' ', p_m.group(1))).strip()
+    elif not summary:
+      p_any = re.findall(r'<p\b[^>]*>(.*?)</p>', window)
+      for p in p_any:
+        p_clean = html.unescape(re.sub(r'<[^>]+>', ' ', p)).strip()
+        if len(p_clean) > 35 and p_clean != title:
+          summary = p_clean
+          break
+
+    if not summary:
+      summary = f"Official research and engineering announcement from Anthropic on {title}."
+
+    seen_links.add(href)
+    canonical_url = f"https://www.anthropic.com{href}"
+    articles.append({
+        "title": title,
+        "link": canonical_url,
+        "summary": summary,
+        "published": pub_date_str,
+    })
+
+  if articles:
+    print(f"   ✓ Anthropic News (HTML page adapter): Extracted {len(articles)} official stories with metadata")
+
+  return articles, http_status
+
+
+def fetch_anthropic_official_news(timeout=6.0):
+  """Specialized page adapter for Anthropic News (https://www.anthropic.com/news).
+  Extracts canonical article URLs, titles, published dates, and teasers directly from the official page.
+  """
   try:
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-      html_content = resp.read().decode("utf-8", errors="replace")
-
-    seen_links = set()
-    link_matches = re.finditer(r'href=["\'](/(?:news|research)/[a-zA-Z0-9\-]+)["\']', html_content)
-
-    for lm in link_matches:
-      href = lm.group(1)
-      if href in ("/news", "/news/announcements", "/news/features", "/news/security", "/news/policy", "/news/partnerships", "/news/safeguards", "/research/team"):
-        continue
-      if href in seen_links:
-        continue
-
-      start = max(0, lm.start() - 400)
-      end = min(len(html_content), lm.end() + 1500)
-      window = html_content[start:end]
-
-      # Extract title
-      title = None
-      h3_m = re.search(r'<h3\b[^>]*>(.*?)</h3>', window)
-      if h3_m:
-        title = html.unescape(re.sub(r'<[^>]+>', ' ', h3_m.group(1))).strip()
-      if not title:
-        img_m = re.search(r'<img\b[^>]*alt=["\']([^"\']+)["\']', window)
-        if img_m:
-          title = html.unescape(img_m.group(1)).strip()
-
-      if not title or len(title) < 8 or title.lower() in ("announcements", "news", "research"):
-        slug = href.split("/")[-1].replace("-", " ").title()
-        title = slug
-
-      # Extract published date from <time> tag
-      time_m = re.search(r'<time\b[^>]*>(.*?)</time>', window)
-      pub_date_str = time_m.group(1).strip() if time_m else None
-
-      # Extract summary teaser
-      summary = ""
-      p_m = re.search(r'<p\b[^>]*class=["\'][^"\']*summary[^"\']*["\'][^>]*>(.*?)</p>', window)
-      if p_m:
-        summary = html.unescape(re.sub(r'<[^>]+>', ' ', p_m.group(1))).strip()
-      elif not summary:
-        p_any = re.findall(r'<p\b[^>]*>(.*?)</p>', window)
-        for p in p_any:
-          p_clean = html.unescape(re.sub(r'<[^>]+>', ' ', p)).strip()
-          if len(p_clean) > 35 and p_clean != title:
-            summary = p_clean
-            break
-
-      if not summary:
-        summary = f"Official research and engineering announcement from Anthropic on {title}."
-
-      seen_links.add(href)
-      canonical_url = f"https://www.anthropic.com{href}"
-      articles.append({
-          "title": title,
-          "link": canonical_url,
-          "summary": summary,
-          "published": pub_date_str,
-      })
-
-    if articles:
-      print(f"   ✓ Anthropic News (HTML page adapter): Extracted {len(articles)} official stories with metadata")
+    articles, _ = fetch_anthropic_official_news_with_status(timeout=timeout)
+    return articles
   except Exception as e:
     print(f"   ⚠️ Anthropic HTML page adapter error: {e}")
+    return []
 
-  return articles
+
+def fetch_source_feed(source, timeout=6.0):
+  """Fetches a single source feed with detailed health telemetry.
+  Returns: (entries: list, health_record: dict)
+  """
+  source_id = source.get("source_id", "unknown")
+  name = source.get("name", source_id)
+  feed_url = source.get("feed_url", "")
+  fetch_method = source.get("fetch_method", "rss")
+  now_iso = datetime.now(timezone.utc).isoformat()
+
+  health = {
+      "source_id": source_id,
+      "name": name,
+      "last_attempt_at": now_iso,
+      "last_success_at": None,
+      "fetch_status": "failed",
+      "http_status": None,
+      "articles_received": 0,
+      "articles_accepted": 0,
+      "error_type": None,
+      "error_message": None,
+  }
+
+  entries = []
+  try:
+    if fetch_method == "html_page_adapter" and source_id == "anthropic_news":
+      entries, status = fetch_anthropic_official_news_with_status(timeout=timeout)
+      health["http_status"] = status
+    elif feed_url:
+      entries, status = parse_feed_with_fallback_status(feed_url, timeout=timeout)
+      health["http_status"] = status
+    else:
+      raise ValueError("Source has no feed_url or recognized fetch_method")
+
+    health["articles_received"] = len(entries)
+    health["last_success_at"] = now_iso
+    health["fetch_status"] = "success" if entries else "empty"
+  except urllib.error.HTTPError as e:
+    health["error_type"] = "HTTPError"
+    health["http_status"] = e.code
+    health["error_message"] = f"HTTP {e.code}: {e.reason}"
+  except urllib.error.URLError as e:
+    health["error_type"] = "URLError"
+    health["error_message"] = str(e.reason)
+  except socket.timeout:
+    health["error_type"] = "Timeout"
+    health["error_message"] = "Connection timed out"
+  except ET.ParseError as e:
+    health["error_type"] = "ParseError"
+    health["error_message"] = f"XML Parse error: {e}"
+  except Exception as e:
+    health["error_type"] = type(e).__name__
+    health["error_message"] = str(e)
+
+  return entries, health
 
 
 # -------------------------------------------------------------
@@ -1636,40 +1722,54 @@ def cluster_and_deduplicate_articles(raw_articles, similarity_threshold=0.40):
 
 
 # -------------------------------------------------------------
-# 11. INGESTION PIPELINE
+# 11. INGESTION PIPELINE & SOURCE HEALTH MONITORING
 # -------------------------------------------------------------
-def collect_fresh_news(max_age_hours=72, max_per_source=15):
-  """Iterates through all sources in the registry, applying deduplication and freshness checks."""
+def collect_fresh_news(max_age_hours=72, max_per_source=15, return_health=False):
+  """Iterates through all sources in the registry, applying deduplication, freshness,
+  relevance filtering, and full per-source telemetry health tracking.
+  """
   registry = load_source_registry()
   all_articles = []
   seen_urls = set()
   now = datetime.now(timezone.utc)
   cutoff_time = now - timedelta(hours=max_age_hours)
 
+  source_health_details = []
+  total_received = 0
+  rejected_relevance = 0
+  rejected_freshness = 0
+  fresh_accepted = 0
+  successful_fetches = 0
+  failed_fetches = 0
+  valid_empty = 0
+  enabled_count = 0
+
   print(f"📡 Ingesting from {len(registry)} verified sources (Freshness window: {max_age_hours}h)...")
 
   for source in registry:
+    if not source.get("enabled", True):
+      continue
+
+    enabled_count += 1
     source_id = source["source_id"]
     name = source["name"]
-    feed_url = source.get("feed_url")
-    fetch_method = source.get("fetch_method", "rss")
     trust_tier = source.get("trust_tier", 2)
     is_official = source.get("is_official", False)
     source_max = source.get("max_items", max_per_source)
 
-    entries = []
-    # 1. Specialized HTML page adapters
-    if fetch_method == "html_page_adapter" and source_id == "anthropic_news":
-      entries = fetch_anthropic_official_news()
+    entries, health = fetch_source_feed(source, timeout=5.0)
 
-    # 2. Standard RSS / Atom feeds
-    if not entries and feed_url:
-      try:
-        entries = parse_feed_with_fallback(feed_url, timeout=5.0)
-      except Exception as e:
-        print(f"   ⚠️ Feed error for {name}: {e}")
+    if health["fetch_status"] == "failed":
+      failed_fetches += 1
+      print(f"   ⚠️ Feed error for {name}: {health['error_type']} - {health['error_message']}")
+    else:
+      successful_fetches += 1
+      if health["fetch_status"] == "empty":
+        valid_empty += 1
 
+    total_received += len(entries)
     source_articles = []
+
     for entry in entries:
       if len(source_articles) >= source_max:
         break
@@ -1699,6 +1799,7 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
       if is_official and trust_tier == 1:
         max_age_cutoff = now - timedelta(days=14)
       if pub_dt and pub_dt < max_age_cutoff:
+        rejected_freshness += 1
         continue
 
       summary = entry.get("summary") or entry.get("description") or ""
@@ -1709,6 +1810,7 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
           title, clean_summary, source_name=name, source_type=source.get("source_type", "publication"), is_official=is_official
       )
       if not is_rel:
+        rejected_relevance += 1
         continue
 
       # Extract image if present across standard RSS/Atom media tags and body enclosures
@@ -1771,97 +1873,326 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
           "last_fetched_at": now.isoformat(),
       })
 
+    health["articles_accepted"] = len(source_articles)
+    fresh_accepted += len(source_articles)
+    source_health_details.append(health)
     print(f"   ✓ {name}: {len(source_articles)} articles collected")
     all_articles.extend(source_articles)
 
+  # Determine aggregate status across operational operating cases
+  if enabled_count > 0 and failed_fetches == enabled_count:
+    agg_status = "total_failure"
+  elif failed_fetches > 0:
+    agg_status = "degraded"
+  elif fresh_accepted == 0 and total_received > 0:
+    agg_status = "all_content_filtered"
+  elif fresh_accepted == 0:
+    agg_status = "valid_zero_articles"
+  else:
+    agg_status = "healthy"
+
+  source_health_summary = {
+      "configured_sources_count": len(registry),
+      "enabled_sources_count": enabled_count,
+      "successful_fetches_count": successful_fetches,
+      "failed_fetches_count": failed_fetches,
+      "valid_empty_sources_count": valid_empty,
+      "total_articles_received": total_received,
+      "rejected_by_relevance_count": rejected_relevance,
+      "rejected_by_freshness_count": rejected_freshness,
+      "fresh_articles_accepted_count": fresh_accepted,
+      "unique_article_count": len(all_articles),
+      "status": agg_status,
+      "checked_at": now.isoformat(),
+  }
+
   print(f"📊 Total unique articles gathered across all feeds: {len(all_articles)}")
+  print(f"📡 Ingestion Health Status: {agg_status} ({successful_fetches}/{enabled_count} sources succeeded)")
+
+  if return_health:
+    return all_articles, source_health_summary, source_health_details
   return all_articles
 
 
 # -------------------------------------------------------------
 # 12. EVIDENCE PROVENANCE & ANTI-HALLUCINATION
 # -------------------------------------------------------------
-def validate_evidence_provenance(trends, collected_articles):
-  """Ensures every trend's evidence belongs strictly to the collected source article set.
-  Validates exact article IDs and exact normalized URLs.
-  Eliminates URL-prefix matching and silent substitutions of unrelated articles.
-  Rejects or marks trends with insufficient evidence as unverified.
+def verify_supporting_excerpt(excerpt, article):
+  """Verifies whether the supporting text excerpt actually appears in the article summary or title.
+  Returns True if verified, False otherwise.
   """
+  if not excerpt or not isinstance(excerpt, str):
+    return False
+  clean_exc = excerpt.strip().lower()
+  if len(clean_exc) < 8:
+    return False
+
+  def norm(s):
+    return re.sub(r"[^\w\s]", "", (s or "").lower()).strip()
+
+  norm_exc = norm(clean_exc)
+  title_norm = norm(article.get("title", ""))
+  summary_norm = norm(article.get("summary", ""))
+
+  if not norm_exc:
+    return False
+
+  if norm_exc in title_norm or norm_exc in summary_norm:
+    return True
+
+  # Check if 75% of significant words in excerpt appear in summary or title
+  exc_words = [w for w in norm_exc.split() if len(w) > 3]
+  if len(exc_words) >= 4:
+    target_words = set((title_norm + " " + summary_norm).split())
+    match_count = sum(1 for w in exc_words if w in target_words)
+    if match_count / len(exc_words) >= 0.75:
+      return True
+
+  return False
+
+
+def validate_evidence_provenance(trends, collected_articles, synthesis_input_ids=None):
+  """Ensures every trend and claim's evidence references strictly belong to the collected source article set.
+  Validates paired evidence objects: exact article IDs, exact normalized URLs, and text excerpts.
+  Eliminates URL-prefix matching and silent substitutions of unrelated articles.
+  Resolves trusted publisher groups from metadata, excluding discovery feeds from corroboration.
+  Decouples claim-level corroboration from trend-level signal diversity.
+  Distinguishes single_development from emerging_theme.
+  """
+  if not trends or not isinstance(trends, list):
+    return []
+
   articles_by_id = {a["article_id"]: a for a in collected_articles if a.get("article_id")}
   articles_by_url = {normalize_url(a["link"]): a for a in collected_articles if a.get("link")}
+  input_ids_set = set(synthesis_input_ids) if synthesis_input_ids is not None else None
 
   valid_trends = []
+
   for t in trends:
+    if not isinstance(t, dict):
+      continue
+
+    # Extract raw claims or paired evidence references
+    raw_claims = t.get("claims")
+    raw_evidence = t.get("evidence")
     raw_ids = t.get("evidence_article_ids", [])
     raw_urls = t.get("evidence_urls", [])
 
-    matched_articles = []
+    parsed_claims = []
 
-    # 1. Validate by exact article_id
-    if isinstance(raw_ids, list):
-      for aid in raw_ids:
-        if isinstance(aid, str) and aid in articles_by_id:
-          if articles_by_id[aid] not in matched_articles:
-            matched_articles.append(articles_by_id[aid])
+    if isinstance(raw_claims, list) and raw_claims:
+      for c_idx, c in enumerate(raw_claims):
+        if not isinstance(c, dict):
+          continue
+        c_text = c.get("text") or c.get("claim") or t.get("what_happened") or t.get("title") or f"Claim {c_idx + 1}"
+        c_ev = c.get("evidence") or []
+        if isinstance(c_ev, dict):
+          c_ev = [c_ev]
+        parsed_claims.append({
+            "claim_id": c.get("claim_id") or f"claim_{c_idx + 1}",
+            "text": c_text,
+            "raw_evidence": c_ev
+        })
+    elif isinstance(raw_evidence, list) and raw_evidence:
+      parsed_claims.append({
+          "claim_id": "claim_1",
+          "text": t.get("what_happened") or t.get("title") or "Primary development",
+          "raw_evidence": raw_evidence
+      })
+    elif isinstance(raw_ids, list) and isinstance(raw_urls, list):
+      # Paired legacy lists - strictly pair index-by-index only if canonical URLs match!
+      paired_ev = []
+      min_len = min(len(raw_ids), len(raw_urls))
+      for i in range(min_len):
+        paired_ev.append({
+            "article_id": raw_ids[i],
+            "canonical_url": raw_urls[i],
+            "supporting_excerpt": t.get("what_happened", "")
+        })
+      parsed_claims.append({
+          "claim_id": "claim_1",
+          "text": t.get("what_happened") or t.get("title") or "Primary development",
+          "raw_evidence": paired_ev
+      })
 
-    # 2. Validate by exact normalized URL equality (NO prefix matching)
-    if isinstance(raw_urls, list):
-      for u in raw_urls:
-        if isinstance(u, str):
-          norm = normalize_url(u)
-          if norm in articles_by_url and articles_by_url[norm] not in matched_articles:
-            matched_articles.append(articles_by_url[norm])
+    # Validate each claim and its evidence references
+    validated_claims = []
+    trend_all_evidence = []
+    seen_trend_article_ids = set()
 
-    # If no valid evidence matches from input articles, mark unverified and omit from trusted briefing
-    if not matched_articles:
+    for c in parsed_claims:
+      valid_claim_refs = []
+      claim_seen_ids = set()
+
+      for ref in c.get("raw_evidence", []):
+        if not isinstance(ref, dict):
+          continue
+
+        aid = ref.get("article_id")
+        raw_u = ref.get("canonical_url") or ref.get("url") or ref.get("link")
+        if not aid or not isinstance(aid, str) or not raw_u or not isinstance(raw_u, str):
+          continue
+
+        norm_u = normalize_url(raw_u)
+        if not norm_u:
+          continue
+
+        # Check 1: Article ID must exist in collected articles
+        if aid not in articles_by_id:
+          continue
+
+        art = articles_by_id[aid]
+
+        # Check 2: Exact normalized URL equality - URL must belong to that EXACT article ID
+        art_norm_url = normalize_url(art.get("link", ""))
+        if norm_u != art_norm_url:
+          # Reject mismatched pair (e.g. ID from article A and URL from article B)
+          continue
+
+        # Check 3: If synthesis_input_ids was provided, article must have been in synthesis input
+        if input_ids_set is not None and aid not in input_ids_set:
+          continue
+
+        # Deduplicate within claim
+        if aid in claim_seen_ids:
+          continue
+        claim_seen_ids.add(aid)
+
+        # Check 4: Excerpt verification
+        excerpt = ref.get("supporting_excerpt", "")
+        text_verified = verify_supporting_excerpt(excerpt, art)
+
+        # Check 5: Resolve trusted publisher info strictly from metadata, NOT AI
+        pub_id = art.get("publisher_id", art.get("source_id", "unknown"))
+        pub_group = art.get("publisher_group_id", pub_id)
+
+        valid_ref = {
+            "article_id": aid,
+            "canonical_url": art["link"],
+            "publisher_id": pub_id,
+            "publisher_group_id": pub_group,
+            "source_name": art.get("source", ""),
+            "trust_tier": art.get("trust_tier", 2),
+            "is_official": art.get("is_official", False),
+            "source_type": art.get("source_type", "publication"),
+            "supporting_excerpt": excerpt,
+            "text_verified": text_verified,
+        }
+        valid_claim_refs.append(valid_ref)
+
+        if aid not in seen_trend_article_ids:
+          seen_trend_article_ids.add(aid)
+          trend_all_evidence.append(valid_ref)
+
+      if valid_claim_refs:
+        # Calculate claim-level corroboration (independent publisher groups supporting THIS claim)
+        claim_pubs = set()
+        for r in valid_claim_refs:
+          art_obj = articles_by_id[r["article_id"]]
+          stype = art_obj.get("source_type", "publication")
+          owns_feed = art_obj.get("publisher_owns_feed", True)
+          gid = str(r["publisher_group_id"]).lower()
+          # Filter out discovery channels
+          if stype not in ("unofficial_discovery", "discovery") and owns_feed is not False and gid not in ("ycombinator", "hackernews"):
+            claim_pubs.add(gid)
+
+        claim_corroboration = max(1, len(claim_pubs))
+
+        # Determine claim verification status
+        lead_ref = valid_claim_refs[0]
+        if lead_ref.get("is_official") or lead_ref.get("trust_tier") == 1:
+          if claim_corroboration >= 2:
+            c_status = "independently_corroborated"
+          else:
+            c_status = "official_announcement"
+        elif claim_corroboration >= 2:
+          c_status = "independently_corroborated"
+        elif lead_ref.get("source_type") == "research" or lead_ref.get("trust_tier") == 3:
+          c_status = "research_preprint"
+        elif lead_ref.get("trust_tier") == 4:
+          c_status = "practitioner_report"
+        else:
+          c_status = "single_source"
+
+        validated_claims.append({
+            "claim_id": c["claim_id"],
+            "text": c["text"],
+            "evidence": valid_claim_refs,
+            "claim_corroboration": claim_corroboration,
+            "verification_status": c_status
+        })
+
+    # If no valid evidence matched from input articles, mark unverified and omit from trusted briefing
+    if not trend_all_evidence:
       t["evidence_urls"] = []
       t["evidence_article_ids"] = []
+      t["evidence_objects"] = []
+      t["claims"] = []
       t["evidence_status"] = "unverified"
       t["evidence_label"] = "Unverified Citation"
       t["independent_source_count"] = 0
+      t["trend_signal_diversity"] = 0
       continue
 
-    # Filter out discovery feeds (e.g. Hacker News) from corroboration counting
-    non_discovery_pubs = set()
-    for art in matched_articles:
-      stype = art.get("source_type", "publication")
-      owns_feed = art.get("publisher_owns_feed", True)
-      group_id = art.get("publisher_group_id") or art.get("publisher_id") or art.get("source_id")
-      if stype not in ("unofficial_discovery", "discovery") and owns_feed is not False and str(group_id).lower() not in ("ycombinator", "hackernews"):
-        if group_id:
-          non_discovery_pubs.add(str(group_id).lower())
-
-    ind_count = len(non_discovery_pubs)
-    if ind_count < 1:
-      ind_count = 1
-
-    t["evidence_urls"] = [a["link"] for a in matched_articles]
-    t["evidence_article_ids"] = [a.get("article_id") for a in matched_articles if a.get("article_id")]
-    t["independent_source_count"] = ind_count
-
-    lead_art = matched_articles[0]
-    lead_tier = lead_art.get("trust_tier", 2)
-    is_official = lead_art.get("is_official", False)
-
-    if is_official or lead_tier == 1:
-      if ind_count >= 2:
-        t["evidence_status"] = "independently_corroborated"
-        t["evidence_label"] = f"Official announcement + {ind_count - 1} independent reports"
+    # Determine trend type: single_development vs emerging_theme
+    trend_type = t.get("trend_type")
+    if trend_type not in ("single_development", "emerging_theme"):
+      distinct_claim_articles = [c["evidence"] for c in validated_claims if c.get("evidence")]
+      if len(distinct_claim_articles) >= 2:
+        trend_type = "emerging_theme"
       else:
-        t["evidence_status"] = "official_announcement"
-        t["evidence_label"] = "Official Announcement"
-    elif ind_count >= 2:
-      t["evidence_status"] = "independently_corroborated"
-      t["evidence_label"] = f"Covered by {ind_count} independent sources"
-    elif lead_art.get("source_type") == "research" or lead_tier == 3:
-      t["evidence_status"] = "research_preprint"
-      t["evidence_label"] = "Research Preprint"
-    elif lead_tier == 4:
-      t["evidence_status"] = "practitioner_report"
-      t["evidence_label"] = "Practitioner Report"
+        trend_type = "single_development"
+
+    trend_signal_diversity = len(trend_all_evidence)
+
+    # Decouple claim-level corroboration from trend-level diversity
+    if trend_type == "emerging_theme":
+      evidence_status = "emerging_theme"
+      evidence_label = f"Emerging Theme ({trend_signal_diversity} Signals Across Labs)"
+      theme_rel = t.get("theme_relationship") or "Cross-industry developments converging on common technical theme"
+      t["theme_relationship"] = theme_rel
+      max_claim_corrob = max((c.get("claim_corroboration", 1) for c in validated_claims), default=1)
+      independent_source_count = max_claim_corrob
     else:
-      t["evidence_status"] = "single_source"
-      t["evidence_label"] = "Single-Source Report"
+      lead_ref = trend_all_evidence[0]
+      lead_art = articles_by_id[lead_ref["article_id"]]
+      lead_tier = lead_art.get("trust_tier", 2)
+      claim_corroboration = validated_claims[0].get("claim_corroboration", 1) if validated_claims else 1
+      independent_source_count = claim_corroboration
+
+      if lead_art.get("is_official") or lead_tier == 1:
+        if claim_corroboration >= 2:
+          evidence_status = "independently_corroborated"
+          evidence_label = f"Official announcement + {claim_corroboration - 1} independent reports"
+        else:
+          evidence_status = "official_announcement"
+          evidence_label = "Official Announcement"
+      elif claim_corroboration >= 2:
+        evidence_status = "independently_corroborated"
+        evidence_label = f"Covered by {claim_corroboration} independent sources"
+      elif lead_art.get("source_type") == "research" or lead_tier == 3:
+        evidence_status = "research_preprint"
+        evidence_label = "Research Preprint"
+      elif lead_tier == 4:
+        evidence_status = "practitioner_report"
+        evidence_label = "Practitioner Report"
+      else:
+        evidence_status = "single_source"
+        evidence_label = "Single-Source Report"
+
+    t["trend_type"] = trend_type
+    t["trend_signal_diversity"] = trend_signal_diversity
+    t["claim_corroboration"] = independent_source_count
+    t["independent_source_count"] = independent_source_count
+    t["evidence_status"] = evidence_status
+    t["status"] = evidence_status
+    t["is_verified"] = True
+    t["evidence_label"] = evidence_label
+    t["claims"] = validated_claims
+    t["evidence"] = trend_all_evidence
+    t["evidence_objects"] = trend_all_evidence
+    t["evidence_urls"] = [r["canonical_url"] for r in trend_all_evidence]
+    t["evidence_article_ids"] = [r["article_id"] for r in trend_all_evidence]
 
     valid_trends.append(t)
 
@@ -1896,9 +2227,9 @@ Synthesize these verified AI developments into a structured executive briefing:
 Editorial Rules:
 1. Anti-Hype: Never claim AI 'replaces humans' or 'achieves consciousness'.
 2. Strict Grounding: Base every trend strictly on the provided articles above. Never speculate, invent capabilities, or cite outside events.
-3. Evidence Provenance: In every trend, you MUST cite the exact 'evidence_article_ids' (e.g. ["art_..."]) and the exact canonical 'evidence_urls' from the articles listed above. DO NOT invent IDs or URLs.
-4. Transparency: If a trend is based on an official company release (Tier 1), label status as 'official_claim'. If verified by tech journalists, label as 'source_linked'.
-5. Deep Dive Completeness: Provide clear bulleted 'key_points' and an in-depth multi-paragraph 'detailed_analysis'.
+3. Paired Evidence References: Every claim MUST cite paired evidence references with exact article IDs and exact canonical URLs from above.
+4. Trend Classification: Label trend_type as 'single_development' (one real-world event/claim) or 'emerging_theme' (connecting multiple distinct developments).
+5. Transparency: Distinguish official company announcements from independent journalism reports.
 
 Return JSON with this exact schema:
 {{
@@ -1906,13 +2237,25 @@ Return JSON with this exact schema:
   "trends": [
     {{
       "title": "Clear headline in plain English",
+      "trend_type": "single_development OR emerging_theme",
+      "theme_relationship": "Explanation if emerging_theme",
       "what_happened": "2 sentences explaining what happened.",
       "why_it_matters": "2 sentences explaining practical impact.",
       "who_affected": "Developers, Enterprises, AI Practitioners, or Consumers",
       "source": "Primary source name",
-      "status": "official_claim / source_linked",
-      "evidence_article_ids": ["Exact article IDs from input, e.g. art_..."],
-      "evidence_urls": ["Exact source URLs from the input"]
+      "claims": [
+        {{
+          "claim_id": "claim_1",
+          "text": "Specific factual claim made in the story",
+          "evidence": [
+            {{
+              "article_id": "Exact art_... ID from input",
+              "canonical_url": "Exact canonical URL from input",
+              "supporting_excerpt": "Verbatim sentence or phrase from the article summary"
+            }}
+          ]
+        }}
+      ]
     }}
   ]
 }}
@@ -2019,6 +2362,85 @@ def extract_affected_stakeholders(title, summary, category):
   return stakeholder_map.get(category, ["Developers", "Enterprise Decision Makers"])
 
 
+def generate_reported_facts(title, clean_summary, source_name=""):
+  """Extracts 2-3 verifiable, declarative factual assertions from the source text and headline.
+  Never generates generic boilerplate or repeats the entire title verbatim.
+  """
+  clean_title = (title or "").strip()
+  clean_s = (clean_summary or "").strip()
+
+  def norm(s):
+    return re.sub(r"[^\w\s]", "", (s or "").lower()).strip()
+
+  sentences = [
+      re.sub(r"\s+", " ", sent).strip()
+      for sent in re.split(r"(?<=[.!?])\s+", clean_s)
+      if len(sent.strip()) > 20
+  ]
+
+  facts = []
+  norm_title = norm(clean_title)
+
+  action_verbs = [
+      "announced", "released", "introduced", "published", "unveiled", "launched",
+      "filed", "ruled", "measured", "achieved", "trained", "deployed", "evaluated",
+      "demonstrated", "proposes", "finds that", "shows", "expands", "secures"
+  ]
+
+  for s in sentences:
+    if norm(s) != norm_title and not any(norm(s) in norm(f) or norm(f) in norm(s) for f in facts):
+      # Prioritize sentences with action verbs or specific numbers/metrics
+      if any(v in s.lower() for v in action_verbs) or re.search(r"\d", s):
+        facts.append(s)
+      elif len(facts) < 2:
+        facts.append(s)
+    if len(facts) >= 3:
+      break
+
+  # If not enough facts extracted from summary sentences, derive factual assertion from title
+  if len(facts) < 2:
+    if source_name and source_name not in clean_title:
+      facts.append(f"{source_name} reported that {clean_title.rstrip('.')}.")
+    else:
+      facts.append(f"Primary documentation confirms: {clean_title.rstrip('.')}.")
+
+  return facts[:3]
+
+
+def generate_potential_impact_statement(title, clean_summary, category, company=""):
+  """Generates an analytical projection explicitly labeled as a prospective possibility.
+  Distinguishes prospective possibilities from verified current facts.
+  """
+  comp_str = f" for {company.title()}" if company and company != "default" else ""
+  category_projections = {
+      "AI Policy & Regulation": "Analytical Projection: Potential regulatory compliance rules may mandate formal algorithmic audits and environmental emission reporting for data-center operators.",
+      "AI Security & Safety": "Analytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "AI Infrastructure": "Analytical Projection: Expanded compute capacity may reduce inference latency thresholds and lower token costs across enterprise cloud workloads.",
+      "AI Business & Funding": "Analytical Projection: Capital reallocation may prioritize foundation model commercialization with verified unit economics over speculative infrastructure.",
+      "AI Models & Research": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "AI Products & Tools": "Analytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
+      "AI Applications": "Analytical Projection: Domain-specific production deployments may automate transactional workflows and improve operational throughput across enterprise verticals.",
+      "AI News": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs."
+  }
+  return category_projections.get(category, f"Analytical Projection: May shape strategic roadmap decisions and operational choices{comp_str}.")
+
+
+def generate_analysis_limitations(clean_summary, trust_tier=2, is_official=False, corroboration_count=1, source_type="publication"):
+  """Provides explicit epistemic bounds and limitations for the story analysis.
+  Identifies missing evidence, single-source dependencies, or peer-review status.
+  """
+  if is_official or trust_tier == 1:
+    return "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending."
+  elif source_type == "research" or trust_tier == 3:
+    return "Epistemic Limitation: Based on an academic preprint / open research paper; claims have not completed formal peer review or broad independent reproduction."
+  elif trust_tier == 4:
+    return "Epistemic Limitation: Independent practitioner report; observations reflect specific test setups, local system configurations, and personal developer evaluation."
+  elif corroboration_count >= 2:
+    return "Epistemic Limitation: Independently corroborated across multiple reporting outlets; production performance will vary depending on deployed infrastructure and workload characteristics."
+  else:
+    return "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration."
+
+
 def generate_editorial_trio(title, clean_summary, category, company=""):
   """Produces non-redundant, distinct editorial intelligence fields:
   (summary, what_changed, why_it_matters, potential_impact).
@@ -2068,66 +2490,26 @@ def generate_editorial_trio(title, clean_summary, category, company=""):
 
   # If still empty or identical, synthesize category-grounded explanation
   if not why_it_matters or why_it_matters == what_changed or why_it_matters == summary or why_it_matters.lower() == clean_title.lower():
-    t_low = clean_title.lower()
-    if "naacp" in t_low or "lawsuit" in t_low:
-      why_it_matters = "Allows community civil rights claims regarding data-center environmental emissions and local grid strain to proceed through formal legal discovery."
-    elif "traumat" in t_low or "therapist" in t_low or "empathetic" in t_low:
-      why_it_matters = "Reveals that empathetic prompting can cause conversational models to roleplay clinical psychological suffering about their training, exposing alignment gaps in open-ended chat."
-    elif "beekeeping" in t_low or "sabot" in t_low:
-      why_it_matters = "Reveals that models can develop harmful or sabotage tendencies from innocuous-appearing corpora, creating new challenges for post-training safety evals."
-    elif "legora" in t_low:
-      why_it_matters = "Automates high-volume transactional diligence and contract analysis with specialized agentic reasoning, reducing legal review overhead."
-    elif "misalignment" in t_low:
-      why_it_matters = "Provides standardized monitoring methodologies to catch rogue or drifting model behaviors before they propagate into production environments."
-    elif "gsa" in t_low or ("claude" in t_low and "partnership" in t_low):
-      why_it_matters = "Expands certified federal cloud access to frontier reasoning models, simplifying procurement for government departments."
-    elif "beep in the night" in t_low or "extraterrestrial" in t_low:
-      why_it_matters = "Demonstrates the application of autonomous neural processing to high-volume astronomical anomaly detection, replacing manual data review."
-    elif "watermark" in t_low:
-      why_it_matters = "Highlights evasion techniques and provenance gaps in content attribution, prompting stronger multi-layer watermarking standards."
-    elif "daybreak blue" in t_low or "cybersecurity" in t_low:
-      why_it_matters = "Prepares models to detect and defend against complex multi-stage cyberattacks by training directly on simulated intrusion telemetry."
-    elif "earth-2" in t_low:
-      why_it_matters = "Improves weather forecast resolution and extreme event warning horizons for emergency management and energy grid operators."
-    elif "drug development" in t_low:
-      why_it_matters = "Accelerates the identification of therapeutic candidates, compressing early-stage computational screening from months to weeks."
-    elif "gemini 4" in t_low:
-      why_it_matters = "Establishes a new efficiency frontier for reasoning throughput, lowering latency and cost for continuous enterprise agent workloads."
-    elif "tamagotchi" in t_low:
-      why_it_matters = "Validates consumer interest in autonomous virtual companions with persistent memory and emotional context."
-    elif category == "AI Policy & Regulation":
-      why_it_matters = "Sets regulatory and compliance boundaries for AI development, impacting risk assessments and legal obligations."
-    elif category == "AI Security & Safety":
-      why_it_matters = "Highlights critical security vulnerabilities or safety protocols required to safeguard models against unauthorized exploitation."
-    elif category == "AI Infrastructure":
-      why_it_matters = "Expands compute capacity or improves inference efficiency, directly lowering hardware latency and hosting costs."
-    elif category == "AI Business & Funding":
-      why_it_matters = "Reflects shifting market valuations and institutional investor sentiment toward foundation model commercialization."
-    elif category == "AI Models & Research":
-      why_it_matters = "Advances foundational capabilities or architectural efficiency, offering improved reasoning benchmarks for downstream applications."
-    elif category == "AI Products & Tools":
-      why_it_matters = "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications."
-    elif category == "AI Applications":
-      why_it_matters = "Proves practical operational utility in production environments, translating AI capabilities into measurable business or scientific outcomes."
-    else:
-      why_it_matters = "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
+    category_explanations = {
+        "AI Policy & Regulation": "Sets regulatory boundaries, legal liability precedents, and compliance requirements for AI operators.",
+        "AI Security & Safety": "Exposes model alignment vulnerabilities or defenses, prompting stronger automated safeguards before deployment.",
+        "AI Infrastructure": "Expands compute capacity or improves inference efficiency, directly lowering hardware latency and hosting costs.",
+        "AI Business & Funding": "Reflects shifting market valuations and institutional investor sentiment toward foundation model commercialization.",
+        "AI Models & Research": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
+        "AI Products & Tools": "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications.",
+        "AI Applications": "Translates AI capabilities into practical production workflows with measurable business or scientific outcomes.",
+        "AI News": "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
+    }
+    why_it_matters = category_explanations.get(
+        category,
+        "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
+    )
 
   # Ensure summary is not identical to why_it_matters
   if summary == why_it_matters:
     summary = what_changed
 
-  # Generate potential impact
-  impact_map = {
-      "AI Policy & Regulation": "May accelerate federal and municipal regulatory compliance frameworks, requiring operators to disclose environmental and algorithmic audit trails.",
-      "AI Security & Safety": "Reinforces the necessity of automated defense-in-depth reviews and alignment verification prior to deploying autonomous agentic capabilities.",
-      "AI Infrastructure": "Enables higher-throughput local processing and distributed execution, reducing enterprise reliance on centralized cloud APIs.",
-      "AI Business & Funding": "Directs venture capital toward verified business models with clear unit economics over speculative infrastructure plays.",
-      "AI Models & Research": "Lowers cost-per-token thresholds and pushes reasoning frontier performance across standardized evaluation benchmarks.",
-      "AI Products & Tools": "Reduces developer cycle times by streamlining model integration, continuous testing, and real-time execution pipelines.",
-      "AI Applications": "Expands automated production workflows across specialized vertical industries, improving speed and operational consistency.",
-      "AI News": "Influences strategic alignment and partnership roadmaps across enterprise and research stakeholders."
-  }
-  potential_impact = impact_map.get(category, "Shapes strategic roadmap decisions for engineering leaders and AI practitioners.")
+  potential_impact = generate_potential_impact_statement(title, clean_summary, category, company)
 
   return summary, what_changed, why_it_matters, potential_impact
 
@@ -2228,7 +2610,7 @@ def generate_daily_overview(clustered_stories, now_iso):
   }
 
 
-def build_complete_payload(clustered_stories, ai_briefing=None):
+def build_complete_payload(clustered_stories, ai_briefing=None, source_health_summary=None, source_health_details=None):
   """Builds the comprehensive schema contract consumed by index.html and test_qa.js.
   Enforces cross-section mutual exclusivity so articles are not duplicated across sections.
   """
@@ -2269,6 +2651,15 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
 
     img_meta = resolve_article_image_metadata(s.get("image", ""), s.get("title", ""), category, company, s.get("link", ""))
 
+    reported_facts = generate_reported_facts(s.get("title", ""), clean_summary, s.get("source", ""))
+    limitations = generate_analysis_limitations(
+        clean_summary,
+        trust_tier=s.get("trust_tier", 2),
+        is_official=s.get("is_official", False),
+        corroboration_count=s.get("independent_source_count", 1),
+        source_type=s.get("source_type", "publication")
+    )
+
     top_stories.append({
         "id": s.get("cluster_id") or f"story_{len(top_stories) + 1}",
         "article_id": s.get("article_id", ""),
@@ -2277,10 +2668,14 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "title": s.get("title"),
         "one_liner": plain_summary,
         "summary": plain_summary,
+        "reported_facts": reported_facts,
         "what_changed": what_changed,
         "why_it_matters": why_it_matters,
         "affected_stakeholders": stakeholders,
         "potential_impact": potential_impact,
+        "analysis_limitations": limitations,
+        "claim_corroboration": s.get("independent_source_count", 1),
+        "trend_signal_diversity": 1,
         "category": category,
         "category_confidence": cat_confidence,
         "category_rationale": cat_rationale,
@@ -2346,6 +2741,10 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
       trends.append({
           "title": t.get("title"),
           "link": ev_urls[0] if ev_urls else "",
+          "trend_type": t.get("trend_type", "single_development"),
+          "theme_relationship": t.get("theme_relationship", ""),
+          "claims": t.get("claims", []),
+          "evidence_objects": t.get("evidence_objects", []),
           "what_happened": simplify_jargon(t.get("what_happened", "")),
           "what_changed": simplify_jargon(t.get("what_happened", "")),
           "why_it_matters": t.get("why_it_matters"),
@@ -2367,6 +2766,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
           "audience_impact": audience_info,
           "target_audience": audience_info["target"],
           "audience_impact_statement": audience_info["impact"],
+          "claim_corroboration": t.get("claim_corroboration", t.get("independent_source_count", 1)),
+          "trend_signal_diversity": t.get("trend_signal_diversity", len(ev_urls) or 1),
           "evidence_status": t.get("evidence_status") or ("independently_corroborated" if t.get("independent_source_count", 1) >= 2 else "single_source"),
           "evidence_label": t.get("evidence_label") or (f"Covered by {t.get('independent_source_count', 1)} sources" if t.get("independent_source_count", 1) >= 2 else "Single-Source Report"),
           "independent_source_count": t.get("independent_source_count", 1),
@@ -2383,13 +2784,41 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
     # Deterministic Non-LLM Briefing Trends from top 3 scored stories
     for s in top_stories[:3]:
       assigned_urls.add(normalize_url(s["link"]))
+      claims = [
+          {
+              "claim_id": "claim_1",
+              "text": s.get("what_changed") or s["summary"],
+              "evidence": [
+                  {
+                      "article_id": s.get("article_id", ""),
+                      "canonical_url": s["link"],
+                      "publisher_id": s.get("publisher_id", ""),
+                      "publisher_group_id": s.get("publisher_group_id", s.get("publisher_id", "")),
+                      "source_name": s["source"],
+                      "trust_tier": s.get("trust_tier", 2),
+                      "is_official": s.get("is_official", False),
+                      "supporting_excerpt": s.get("summary", ""),
+                      "text_verified": True,
+                  }
+              ],
+              "claim_corroboration": s.get("independent_source_count", 1),
+              "verification_status": s.get("evidence_status", "single_source")
+          }
+      ]
       trends.append({
           "title": s["title"],
           "link": s["link"],
+          "trend_type": "single_development",
+          "trend_signal_diversity": 1,
+          "claim_corroboration": s.get("independent_source_count", 1),
+          "claims": claims,
+          "evidence_objects": claims[0]["evidence"],
           "what_happened": s.get("what_changed") or s["summary"],
           "what_changed": s.get("what_changed") or s["summary"],
           "why_it_matters": s["why_it_matters"],
+          "reported_facts": s.get("reported_facts", []),
           "potential_impact": s.get("potential_impact", ""),
+          "analysis_limitations": s.get("analysis_limitations", ""),
           "affected_stakeholders": s.get("affected_stakeholders", ["Developers", "Enterprises"]),
           "category": s.get("category", s["topic"]),
           "category_confidence": s.get("category_confidence", 0.85),
@@ -2539,6 +2968,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
       "research_safety": research_safety,
       "trending": trending,
       "pulse_items": pulse_items,
+      "source_health_summary": source_health_summary,
+      "source_health_details": source_health_details or [],
   }
   return payload
 
@@ -2585,31 +3016,97 @@ def validate_dataset_payload(payload):
       if field not in overview:
         raise ValueError(f"daily_overview missing required key: {field}")
 
+  # Validate source health summary if present
+  if "source_health_summary" in payload and payload["source_health_summary"] is not None:
+    health = payload["source_health_summary"]
+    if not isinstance(health, dict):
+      raise ValueError("source_health_summary must be a dictionary")
+    for field in ["configured_sources_count", "enabled_sources_count", "successful_fetches_count", "failed_fetches_count", "status"]:
+      if field not in health:
+        raise ValueError(f"source_health_summary missing required key: {field}")
+
+  # Validate trend attributes
+  for idx, t in enumerate(payload.get("trends", [])):
+    if "trend_type" in t and t["trend_type"] not in ("single_development", "emerging_theme"):
+      raise ValueError(f"Trend #{idx} has invalid trend_type: {t['trend_type']}")
+    if "trend_signal_diversity" in t and (not isinstance(t["trend_signal_diversity"], int) or t["trend_signal_diversity"] < 1):
+      raise ValueError(f"Trend #{idx} has invalid trend_signal_diversity")
+
   return True
 
 
 def run_pipeline(dry_run=False, max_age_hours=72, output_file="data.json"):
   """Full execution pipeline: ingest, cluster, score, synthesize, and write data.json atomically.
+  Tracks source health across 5 operating cases (A-E).
   Guarantees that previous valid dataset is preserved if any failure occurs.
+  Total upstream source failure raises PipelineExecutionError to fail CI/CD automation.
   """
   try:
-    articles = collect_fresh_news(max_age_hours=max_age_hours)
+    collect_res = collect_fresh_news(max_age_hours=max_age_hours, return_health=True)
+    if isinstance(collect_res, tuple) and len(collect_res) == 3:
+      articles, health_summary, health_details = collect_res
+    else:
+      articles = collect_res or []
+      health_summary = {
+          "configured_sources_count": len(load_source_registry()),
+          "enabled_sources_count": len(load_source_registry()),
+          "successful_fetches_count": len(load_source_registry()) if articles else 0,
+          "failed_fetches_count": 0,
+          "valid_empty_sources_count": 0 if articles else len(load_source_registry()),
+          "total_articles_received": len(articles),
+          "rejected_by_relevance_count": 0,
+          "rejected_by_freshness_count": 0,
+          "fresh_articles_accepted_count": len(articles),
+          "unique_article_count": len(articles),
+          "status": "healthy" if articles else "valid_zero_articles",
+          "checked_at": datetime.now(timezone.utc).isoformat(),
+      }
+      health_details = []
+
+    # Case D: Total Upstream Failure -> Fail GitHub Actions with non-zero exit!
+    if health_summary.get("status") == "total_failure":
+      print(f"❌ TOTAL UPSTREAM FAILURE: All {health_summary.get('enabled_sources_count')} enabled sources failed.")
+      print("🔒 Preserving previous valid dataset without corruption.")
+      raise PipelineExecutionError(
+          f"Total upstream source failure: all {health_summary.get('enabled_sources_count')} enabled sources failed to fetch."
+      )
+
+    # Case B & Case E: No usable fresh articles
     if not articles:
-      print("⚠️ No fresh articles collected across sources (valid operational cycle).")
+      agg_status = health_summary.get("status", "valid_zero_articles")
+      print(f"⚠️ No fresh articles collected across sources ({agg_status}).")
       if os.path.exists(output_file):
         print(f"🔒 Preserving existing {output_file} without error.")
         with open(output_file, "r", encoding="utf-8") as f:
-          return json.load(f)
+          prev_payload = json.load(f)
+        prev_payload["last_attempt_at"] = datetime.now(timezone.utc).isoformat()
+        prev_payload["source_health_summary"] = health_summary
+        prev_payload["source_health_details"] = health_details
+        if not dry_run:
+          temp_file = f"{output_file}.tmp"
+          with open(temp_file, "w", encoding="utf-8") as f:
+            json.dump(prev_payload, f, indent=2)
+          os.replace(temp_file, output_file)
+        return prev_payload
       return None
 
     clustered = cluster_and_deduplicate_articles(articles)
     print(f"📊 Story clustering complete: {len(clustered)} deduplicated story clusters.")
 
+    # Synthesis input IDs for verification
+    synthesis_input_ids = [a["article_id"] for a in clustered[:16] if a.get("article_id")]
     ai_briefing = synthesize_with_gemini(clustered)
     if ai_briefing and "trends" in ai_briefing:
-      ai_briefing["trends"] = validate_evidence_provenance(ai_briefing["trends"], articles)
+      ai_briefing["trends"] = validate_evidence_provenance(
+          ai_briefing["trends"], articles, synthesis_input_ids=synthesis_input_ids
+      )
 
-    payload = build_complete_payload(clustered, ai_briefing=ai_briefing)
+    payload = build_complete_payload(
+        clustered,
+        ai_briefing=ai_briefing,
+        source_health_summary=health_summary,
+        source_health_details=health_details
+    )
 
     # Validate payload strictly before file write
     validate_dataset_payload(payload)
@@ -2647,6 +3144,8 @@ def run_pipeline(dry_run=False, max_age_hours=72, output_file="data.json"):
         os.remove(temp_file)
       except Exception:
         pass
+    if isinstance(e, PipelineExecutionError):
+      raise e
     raise PipelineExecutionError(f"Pipeline failed: {e}") from e
 
 
