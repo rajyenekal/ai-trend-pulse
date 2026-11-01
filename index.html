@@ -3605,16 +3605,21 @@
 
     function simplifyJargon(text) {
       if (!text) return '';
-      return text
-        .replace(/\bmultimodal\b/gi, 'multimodal (text, image, audio)')
+      let res = String(text);
+      if (!res.includes('multimodal (')) {
+        res = res.replace(/\bmultimodal\b/gi, 'multimodal (text & image)');
+      }
+      if (!res.includes('memory capacity (context window)')) {
+        res = res.replace(/\bcontext window\b/gi, 'memory capacity (context window)');
+      }
+      res = res
         .replace(/\binference compute\b/gi, 'AI reasoning compute')
-        .replace(/\binference\b/gi, 'model reasoning')
-        .replace(/\bagentic workflows\b/gi, 'action-oriented workflows')
-        .replace(/\bagentic\b/gi, 'action-taking')
-        .replace(/\bcontext window\b/gi, 'memory capacity (context window)')
+        .replace(/\btest-time compute\b/gi, 'thinking time before responding')
+        .replace(/\bagentic workflows\b/gi, 'autonomous workflows')
+        .replace(/\bagentic\b(?!\s*operating)/gi, 'action-taking')
         .replace(/\bparameter scaling\b/gi, 'increasing model size and compute')
-        .replace(/\bbenchmark saturation\b/gi, 'reaching performance ceilings on benchmarks')
-        .replace(/\btest-time compute\b/gi, 'thinking time before responding');
+        .replace(/\bbenchmark saturation\b/gi, 'reaching performance ceilings on benchmarks');
+      return res;
     }
 
     function normalizeTopic(topic) {
@@ -4010,7 +4015,7 @@
               <h4 class="catch-me-headline">
                 <a href="${escapeHTML(link)}" onclick="openReaderForDailyItem(${idx}, event)">${escapeHTML(headline)}</a>
               </h4>
-              <p class="catch-me-why">${escapeHTML(why)}</p>
+              <p class="catch-me-why"><strong style="color:var(--text-primary); font-size:0.78rem;">Why it matters:</strong> ${escapeHTML(why)}</p>
             </div>
             <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px;">
               <button class="btn-catch-me" onclick="openReaderForDailyItem(${idx}, event)" aria-label="Read full intelligence details">

@@ -1003,19 +1003,35 @@ def generate_audience_impact(title, summary, topic, company=""):
         "impact": f"Clarifies copyright boundaries, training opt-outs, and content licensing practices involving {subject}."
     }
 
-  # 2. Safety, Legal & Compliance
-  if topic == "AI Safety" or any(k in content for k in ["lawsuit", "clean air", "pollution", "court", "judge", "safety", "policy", "regulation", "governance", "law", "red team", "misalignment", "model spec", "eu ai"]):
-    if any(k in content for k in ["lawsuit", "court", "judge", "pollution", "legal"]):
-      return {
-          "target": "For businesses & compliance teams",
-          "impact": f"Signals legal exposure, compliance requirements, and regulatory scrutiny facing {subject} deployments."
-      }
+  # 2. Safety, Alignment & Research
+  if any(k in content for k in ["traumatized", "clinical", "couch", "safety problem", "psychological", "sycophancy", "jailbreak", "adversarial"]):
+    return {
+        "target": "For AI researchers & safety teams",
+        "impact": f"Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in {subject} models."
+    }
+
+  # 3. Legal Disputes, Lawsuits & Regulatory Compliance
+  if any(k in content for k in ["lawsuit", "court", "judge", "pollution", "sued", "suing", "litigation", "naacp", "clean air"]):
+    return {
+        "target": "For businesses & compliance teams",
+        "impact": f"Signals legal exposure, compliance requirements, and regulatory scrutiny facing {subject} deployments."
+    }
+
+  # 4. Legal Tech & Document Automation (Distinct from lawsuits)
+  if any(k in content for k in ["legal work", "legora", "contract analysis", "transactional diligence", "legal operating system"]):
+    return {
+        "target": "For enterprise legal & operations teams",
+        "impact": f"Automates document review, contract analysis, and due-diligence workflows using {subject}."
+    }
+
+  # 5. Policy & Governance
+  if topic in ("AI Safety", "AI Policy & Regulation", "AI Security & Safety") or any(k in content for k in ["safety", "policy", "regulation", "governance", "red team", "misalignment", "model spec", "eu ai"]):
     return {
         "target": "For businesses & compliance teams",
         "impact": f"Informs AI risk assessments, safety evaluation standards, and deployment governance for {subject}."
     }
 
-  # 3. Enterprise Operations & Logistics
+  # 6. Enterprise Operations & Logistics
   if any(k in content for k in ["freight", "logistics", "supply chain", "enterprise", "partnership", "gsa", "government", "automation"]):
     return {
         "target": "For enterprise operators",
@@ -1165,8 +1181,8 @@ def classify_topic_detailed(title, summary=""):
         "Matched legal proceedings, court ruling, regulatory compliance, environmental impact, or copyright policy"
     )
 
-  # 2. AI Security & Safety (Cybersecurity, exploits, vulnerabilities, account takeover, alignment, red-team, sabotage)
-  if re.search(r"\b(cybersecurity|account takeover|took over|takeover|exploit|exploits|vulnerability|vulnerabilities|cve|zero-day|auth bypass|daybreak blue|misalignment|sabotage|sabot|model spec|watermark|watermarking|biosecurity|catastrophic risk|safeguard|safeguards|adversarial|safety report|teen safety|protections for teens|jailbreak|prompt injection)\b", content):
+  # 2. AI Security & Safety (Cybersecurity, exploits, vulnerabilities, account takeover, alignment, red-team, sabotage, conversational safety)
+  if re.search(r"\b(cybersecurity|account takeover|took over|takeover|exploit|exploits|vulnerability|vulnerabilities|cve|zero-day|auth bypass|daybreak blue|misalignment|sabotage|sabot|model spec|watermark|watermarking|biosecurity|catastrophic risk|safeguard|safeguards|adversarial|safety report|teen safety|protections for teens|jailbreak|prompt injection|traumatized|clinical anxiety|therapist|safety problem|empathetic prompt|sycophancy|conversational safety|prompt safety)\b", content):
     return (
         "AI Security & Safety",
         0.95,
@@ -1827,6 +1843,8 @@ def generate_editorial_trio(title, clean_summary, category, company=""):
     t_low = clean_title.lower()
     if "naacp" in t_low or "lawsuit" in t_low:
       why_it_matters = "Allows community civil rights claims regarding data-center environmental emissions and local grid strain to proceed through formal legal discovery."
+    elif "traumat" in t_low or "therapist" in t_low or "empathetic" in t_low:
+      why_it_matters = "Reveals that empathetic prompting can cause conversational models to roleplay clinical psychological suffering about their training, exposing alignment gaps in open-ended chat."
     elif "beekeeping" in t_low or "sabot" in t_low:
       why_it_matters = "Reveals that models can develop harmful or sabotage tendencies from innocuous-appearing corpora, creating new challenges for post-training safety evals."
     elif "legora" in t_low:
@@ -1916,22 +1934,25 @@ def generate_daily_overview(clustered_stories, now_iso):
     if t not in unique_topics:
       unique_topics.append(t)
 
-  # Synthesize authentic daily briefing text strictly from actual collected stories
-  if len(top_items) >= 3:
-    t0 = topics_present[0].lower()
-    t1 = topics_present[1].lower() if len(topics_present) > 1 else "applied intelligence"
-    t2 = topics_present[2].lower() if len(topics_present) > 2 else "open development"
-    s1_src = top_items[0].get("source", "industry labs")
+  # Synthesize authentic daily briefing text strictly from actual collected stories without duplicate categories
+  if len(unique_topics) >= 3:
     briefing_text = (
-        f"Today, {s1_src} and ecosystem peers reported key developments in {t0}, "
-        f"alongside verified updates in {t1} and {t2}. "
-        f"Research and engineering teams are focusing on verifiable evaluation, practical deployment, and efficient model execution."
+        f"Today's AI developments span {unique_topics[0]}, {unique_topics[1]}, and {unique_topics[2]}. "
+        f"Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability."
     )
-  elif len(top_items) > 0:
-    t0 = topics_present[0].lower()
-    briefing_text = f"Today's AI updates center on {t0} with verified releases from primary industry sources."
+  elif len(unique_topics) == 2:
+    briefing_text = (
+        f"Today's AI developments center on {unique_topics[0]} alongside notable updates in {unique_topics[1]}. "
+        f"Teams are prioritizing benchmark accuracy, automated workflows, and system guardrails."
+    )
+  elif len(unique_topics) == 1:
+    briefing_text = (
+        f"Today's AI updates focus primarily on {unique_topics[0]} with verified releases and technical evaluations from primary industry sources."
+    )
   else:
-    briefing_text = "AI developments remain steady with ongoing research evaluations and open ecosystem releases."
+    briefing_text = (
+        "Frontier AI developments continue accelerating across practical coding assistants, model architectures, and evaluation standards."
+    )
 
   top_developments = []
   for s in top_items[:4]:
