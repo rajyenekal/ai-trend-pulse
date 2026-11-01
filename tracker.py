@@ -816,6 +816,9 @@ OFFICIAL_LAB_VISUALS = {
     "huggingface": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
     "mistral": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
     "deepseek": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    "xai": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    "amazon": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    "apple": "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=1200&q=80",
 }
 
 TOPIC_FALLBACK_VISUALS = {
@@ -832,6 +835,31 @@ TOPIC_FALLBACK_VISUALS = {
     "Research & Safety": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
     "AI Business": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
     "AI Tools & Ecosystem": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+}
+
+PUBLISHER_ORGANIZATION_MAP = {
+    "OpenAI News": "OpenAI",
+    "Anthropic Official News": "Anthropic",
+    "Anthropic Community Discovery (HNRSS)": "HackerNews/Community",
+    "Google DeepMind": "Google",
+    "Google AI Blog": "Google",
+    "Microsoft AI News": "Microsoft",
+    "NVIDIA Blog": "NVIDIA",
+    "AWS Machine Learning": "Amazon",
+    "Amazon Science": "Amazon",
+    "Hugging Face Blog": "Hugging Face",
+    "GitHub Blog AI": "Microsoft/GitHub",
+    "Mistral AI News": "Mistral AI",
+    "MIT Technology Review": "MIT Tech Review",
+    "The Verge AI": "Vox Media",
+    "TechCrunch AI": "Yahoo/TechCrunch",
+    "Ars Technica": "Conde Nast/Ars Technica",
+    "The Decoder": "The Decoder",
+    "arXiv cs.AI": "arXiv",
+    "arXiv cs.LG": "arXiv",
+    "BAIR Blog": "UC Berkeley",
+    "Simon Willison Weblog": "Simon Willison",
+    "Import AI": "Jack Clark",
 }
 
 
@@ -858,72 +886,171 @@ def simplify_jargon(text):
   return s
 
 
-def generate_audience_impact(title, summary, topic):
+def evaluate_article_relevance(title, summary="", source_name="", source_type="", is_official=False):
+  """Evaluates whether an article represents a genuine, meaningful AI development.
+  Filters out lifestyle/holiday fluff, generic conference tickets/promotions, and non-AI general news.
+  Returns: (is_relevant: bool, relevance_score: float, reason: str)
+  """
+  clean_title = (title or "").strip()
+  if len(clean_title) < 8:
+    return False, 0.0, "Title too short"
+
+  t_lower = clean_title.lower()
+  content_lower = f"{clean_title} {summary}".lower()
+
+  # 1. Hard filter: Lifestyle, holiday, deals, costume, consumer shopping fluff in title
+  fluff_title_patterns = [
+      r"\b(costume|costumes|halloween costume|gift guide|gift ideas|black friday|cyber monday|deals of the day|best tech deals|best gifts|stocking stuffers|unboxing|fashion trend|gadget deal)\b"
+  ]
+  for pat in fluff_title_patterns:
+    if re.search(pat, t_lower):
+      return False, 10.0, "Lifestyle or promotional consumer fluff"
+
+  # 2. Hard filter: Event registrations, ticket sales, webinar marketing, call for speakers
+  event_patterns = [
+      r"\b(call for speakers|register now for|buy tickets|ticket sale|early bird registration|visit our booth|join us live at booth|webinar recording|rsvp now|discount code for)\b"
+  ]
+  for pat in event_patterns:
+    if re.search(pat, t_lower):
+      return False, 15.0, "Event registration or marketing announcement"
+
+  # 3. If from a Tier 1 official AI lab, it is inherently relevant unless it matches the hard filters above
+  if is_official or source_type in ("official", "research"):
+    return True, 90.0, "Official AI lab announcement or research preprint"
+
+  # 4. For general tech journalism, verify meaningful AI development connection
+  ai_core_terms = [
+      r"\b(ai|artificial intelligence|machine learning|deep learning|llm|llms|vlm|gpt|claude|gemini|deepseek|llama|mistral|frontier model|reasoning model|neural|agent|agents|agentic|prompt|robotics|diffusion|transformer|dataset|fine-tuning|inference|context window|rag|embeddings|safety|alignment|eval|evals|red team|copilot|synthetic data|anthropic|openai|deepmind|cohere|hugging face|huggingface|midjourney|sora|runway|elevenlabs|perplexity|grok|xai|supercomputer|gpu|h100|b200|tpu|open weight|open weights)\b"
+  ]
+  has_ai_signal = any(bool(re.search(pat, content_lower)) for pat in ai_core_terms)
+  if not has_ai_signal:
+    return False, 20.0, "General tech story without substantial AI development connection"
+
+  return True, 80.0, "Verified AI development news"
+
+
+def generate_audience_impact(title, summary, topic, company=""):
   """Generates a practical, grounded audience impact statement answering
   'Why should I care?' and 'How does this affect my work, learning, or business?'
   Assigns exactly one primary relevant audience.
   """
   content = f"{title} {summary}".lower()
+  subject = company.title() if company and company != "default" else "frontier AI"
 
   # 1. Creators & Publishers (Scraping, robots.txt, copyright, training opt-out)
-  if any(k in content for k in ["scraping", "opt-out", "robots.txt", "copyright", "creator", "publisher"]):
+  if any(k in content for k in ["scraping", "opt-out", "robots.txt", "copyright", "creator", "publisher", "fair use"]):
     return {
         "target": "For creators & publishers",
-        "impact": "Establishes unified standards to signal AI training preferences directly via robots.txt."
+        "impact": f"Clarifies copyright boundaries, training opt-outs, and content licensing practices involving {subject}."
     }
 
-  # 2. AI Safety, Policy, and Governance
-  if topic == "AI Safety" or any(k in content for k in ["safety", "policy", "regulation", "governance", "law", "red team", "misalignment", "eu ai"]):
+  # 2. Safety, Legal & Compliance
+  if topic == "AI Safety" or any(k in content for k in ["lawsuit", "clean air", "pollution", "court", "judge", "safety", "policy", "regulation", "governance", "law", "red team", "misalignment", "model spec", "eu ai"]):
+    if any(k in content for k in ["lawsuit", "court", "judge", "pollution", "legal"]):
+      return {
+          "target": "For businesses & compliance teams",
+          "impact": f"Signals legal exposure, compliance requirements, and regulatory scrutiny facing {subject} deployments."
+      }
     return {
         "target": "For businesses & compliance teams",
-        "impact": "Clarifies risk management standards, pre-deployment evaluation requirements, and regulatory timelines."
+        "impact": f"Informs AI risk assessments, safety evaluation standards, and deployment governance for {subject}."
     }
 
-  # 3. AI Coding & Developer tooling (using word boundaries to avoid false positives like 'scraping' matching 'api')
-  is_coding = topic == "AI Coding" or bool(re.search(r"\b(code|coding|developer|developers|api|apis|sdk|sdks|ide|mcp|copilot|github|cursor|prompt engineering)\b", content))
-  if is_coding:
-    target = "For developers"
-    if bool(re.search(r"\b(mcp|model context protocol)\b", content)):
-      impact = "Standardizes tool integrations and context across coding assistants without custom glue code."
-    elif bool(re.search(r"\b(api|apis|sdk|sdks|endpoints)\b", content)):
-      impact = "Introduces new programmatic endpoints for building agentic features and tool connections."
-    elif bool(re.search(r"\b(copilot|ide|cursor|code completion)\b", content)):
-      impact = "Directly impacts code completion speed, automated refactoring, and multi-file editing velocity."
-    else:
-      impact = "Affects your software development workflows, API integrations, and developer tooling choices."
-    return {"target": target, "impact": impact}
+  # 3. Enterprise Operations & Logistics
+  if any(k in content for k in ["freight", "logistics", "supply chain", "enterprise", "partnership", "gsa", "government", "automation"]):
+    return {
+        "target": "For enterprise operators",
+        "impact": f"Demonstrates practical operational automation and procurement pathways using {subject}."
+    }
 
-  # 4. Open Source
+  # 4. Coding & Developers
+  if topic == "AI Coding" or bool(re.search(r"\b(code|coding|developer|developers|api|apis|sdk|sdks|ide|mcp|copilot|github|cursor|prompt engineering|datasette)\b", content)):
+    if bool(re.search(r"\b(api|apis|sdk|sdks|datasette|endpoint)\b", content)):
+      return {
+          "target": "For developers",
+          "impact": f"Expands programmatic API endpoints and tooling integrations available for {subject}."
+      }
+    return {
+        "target": "For developers",
+        "impact": f"Directly impacts developer workflows, IDE efficiency, and code generation with {subject}."
+    }
+
+  # 5. Open Source
   if topic == "Open Source" or any(k in content for k in ["open source", "weights", "llama.cpp", "ollama", "open-source", "open-weight"]):
     return {
         "target": "For open-source builders",
-        "impact": "Provides locally deployable model weights, avoiding vendor lock-in and reducing cloud API costs."
-    }
-
-  # 5. Business & Funding
-  if topic == "Business & Funding" or any(k in content for k in ["enterprise", "funding", "startup", "revenue", "invest", "venture", "acquisition", "commercial", "valuation", "billion"]):
-    return {
-        "target": "For businesses & founders",
-        "impact": "Signals shifting vendor economics, enterprise adoption patterns, and investment priorities."
+        "impact": f"Provides open weights and accessible tools for self-hosted {subject} implementations."
     }
 
   # 6. Research
-  if topic == "Research" or any(k in content for k in ["paper", "arxiv", "study", "benchmark", "ablation", "dataset"]):
+  if topic == "Research" or any(k in content for k in ["paper", "arxiv", "academic study", "research study", "benchmark", "ablation", "dataset", "extraterrestrial"]):
     return {
-        "target": "For researchers & learners",
-        "impact": "Advances empirical benchmarks and foundational architectures for future generative systems."
+        "target": "For AI researchers",
+        "impact": f"Advances research methodologies and empirical evaluations for {subject} architectures."
     }
 
-  # 7. Everyday users & General practitioners
-  if any(k in content for k in ["search", "chatgpt", "gemini", "app", "assistant", "free", "consumer"]):
+  # 7. Everyday Users
+  if any(k in content for k in ["search", "chatgpt", "gemini", "app", "assistant", "consumer", "free tier"]):
     return {
         "target": "For everyday users",
-        "impact": "Enhances everyday search, drafting, and conversational assistance without requiring technical expertise."
+        "impact": f"Enhances daily workflow speed and conversational assistance powered by {subject}."
     }
 
   return {
       "target": "For practitioners & teams",
-      "impact": "Expands practical AI capabilities and efficiency across daily knowledge work."
+      "impact": f"Offers new practical efficiencies and tooling options for {subject} workflows."
+  }
+
+
+def determine_evidence_metadata(lead_article, related_sources):
+  """Computes truthful, evidence-grounded independent source count, status, and label.
+  Avoids counting syndicated copies or multiple feeds from the same parent organization as independent.
+  """
+  lead_source = lead_article.get("source", "")
+  lead_tier = lead_article.get("trust_tier", 2)
+  is_official = lead_article.get("is_official", False)
+  source_type = lead_article.get("source_type", "publication")
+
+  # Distinct parent organizations across the cluster
+  all_source_names = [lead_source] + [s.get("source_name", "") for s in related_sources]
+  parent_orgs = set()
+  for src in all_source_names:
+    org = PUBLISHER_ORGANIZATION_MAP.get(src, src)
+    if org:
+      parent_orgs.add(org)
+
+  independent_source_count = len(parent_orgs)
+  if independent_source_count < 1:
+    independent_source_count = 1
+
+  if is_official or lead_tier == 1:
+    if independent_source_count >= 2:
+      status = "independently_corroborated"
+      label = f"Official announcement + {independent_source_count - 1} independent reports"
+    else:
+      status = "official_announcement"
+      label = "Official Announcement"
+  elif source_type == "research" or "arxiv" in lead_source.lower() or "bair" in lead_source.lower():
+    if independent_source_count >= 2:
+      status = "independently_corroborated"
+      label = f"Research preprint covered by {independent_source_count} sources"
+    else:
+      status = "research_preprint"
+      label = "Research Preprint"
+  elif lead_tier == 4 or "simon" in lead_source.lower() or "import" in lead_source.lower():
+    status = "practitioner_report"
+    label = "Practitioner Report"
+  elif independent_source_count >= 2:
+    status = "independently_corroborated"
+    label = f"Covered by {independent_source_count} independent sources"
+  else:
+    status = "single_source"
+    label = "Single-Source Report"
+
+  return {
+      "evidence_status": status,
+      "evidence_label": label,
+      "independent_source_count": independent_source_count,
   }
 
 
@@ -957,80 +1084,76 @@ def resolve_article_image_metadata(img_url, title, topic, company, link=""):
 def classify_topic(title, summary=""):
   """Classifies an AI news story into one of the 8 core editorial categories:
   AI Models, AI Agents, AI Coding, AI Products, Research, Business & Funding, Open Source, AI Safety.
+  Uses word boundaries and specific term matching to prevent accidental substring collisions.
   """
   content = f"{title} {summary}".lower()
-  if any(k in content for k in [
-      "safety", "alignment", "governance", "policy", "regulation", "law",
-      "risk", "red team", "watermark", "nist", "copyright", "eu ai", "misalignment",
-      "catastrophic", "oversight"
-  ]):
+
+  # 1. AI Safety & Policy (Explicit safety, governance, alignment, model spec)
+  if re.search(r"\b(model spec|safety|alignment|governance|policy|regulation|regulatory|executive order|watermark|copyright opt-out|ai act|nist|catastrophic risk|misalignment|red team|red-teaming|pre-deployment|biosecurity|safeguard|safeguards)\b", content):
     return "AI Safety"
-  if any(k in content for k in [
-      "mcp", "protocol", "coding agent", "code", "copilot", "developer",
-      "ide", "api", "sdk", "cursor", "windsurf", "repository", "github", "prompt engineering"
-  ]):
+
+  # 2. AI Coding (Developer tooling, coding assistants, code generation, IDE, SDKs, MCP)
+  if re.search(r"\b(coding agent|code generation|copilot|cursor|windsurf|mcp|model context protocol|ide|sdk|sdks|api endpoint|github copilot|swe-bench|datasette)\b", content):
     return "AI Coding"
-  if any(k in content for k in [
-      "agent", "agentic", "autonomous", "supervision", "workflow", "tool use", "runtime",
-      "orchestration", "multi-agent"
-  ]):
+
+  # 3. AI Agents (Autonomous agents, workflows, tool use, runtime orchestration)
+  if re.search(r"\b(agent|agents|agentic|autonomous agent|workflow automation|tool use|function calling|runtime orchestration|multi-agent|computer use)\b", content):
     return "AI Agents"
-  if any(k in content for k in [
-      "open source", "open-source", "open weight", "open-weight", "hugging face",
-      "huggingface", "weights", "llama.cpp", "ollama", "apache 2.0"
-  ]):
+
+  # 4. Open Source (Open weights, open-source models, Hugging Face, Ollama)
+  if re.search(r"\b(open source|open-source|open weight|open-weights|open-weight|hugging face|huggingface|llama\.cpp|ollama|vllm|apache 2\.0)\b", content):
     return "Open Source"
-  if any(k in content for k in [
-      "model", "gemini", "gpt", "claude", "llama", "frontier model", "o1", "o3",
-      "deepseek", "mistral", "reasoning model", "architecture", "llm", "vlm",
-      "multimodal", "parameters"
-  ]):
+
+  # 5. AI Models (Frontier models, reasoning models, LLMs, multimodality)
+  if re.search(r"\b(frontier model|reasoning model|claude|gemini|gpt|llama|deepseek|mistral|qwen|o1|o3|llm|llms|vlm|multimodal model|parameter scaling)\b", content):
     return "AI Models"
-  if any(k in content for k in [
-      "paper", "arxiv", "bair", "science", "benchmark", "dataset", "ablation",
-      "study", "researchers", "laboratory", "experiment"
-  ]):
+
+  # 6. Research (Academic papers, preprints, arXiv, empirical evaluations)
+  if re.search(r"\b(arxiv|bair|paper|preprint|academic study|research study|ablation|benchmark|dataset|interpretability|mechanistic)\b", content):
     return "Research"
-  if any(k in content for k in [
-      "funding", "startup", "revenue", "invest", "venture", "acquisition",
-      "commercial", "enterprise", "market", "valuation", "billion", "ipo", "partnership"
-  ]):
+
+  # 7. Business & Funding (Enterprise investments, funding, commercial deals)
+  if re.search(r"\b(funding|startup|revenue|invest|venture|acquisition|commercial|market valuation|valuation|billion|ipo|partnership|gsa)\b", content):
     return "Business & Funding"
+
   return "AI Products"
 
 
 def detect_company(text, source=""):
-  """Identifies the primary AI organization or research laboratory."""
+  """Identifies the primary AI organization or research laboratory using word-boundary matching."""
   t = f"{text} {source}".lower()
-  if "openai" in t:
+
+  if re.search(r"\b(xai|grok)\b", t):
+    return "xai"
+  if re.search(r"\b(openai|chatgpt)\b", t):
     return "openai"
-  if "deepmind" in t or "google" in t:
-    return "google"
-  if "anthropic" in t or "claude" in t:
+  if re.search(r"\b(anthropic|claude)\b", t):
     return "anthropic"
-  if "meta" in t or "llama" in t:
-    return "meta"
-  if "microsoft" in t:
-    return "microsoft"
-  if "nvidia" in t:
-    return "nvidia"
-  if "hugging face" in t or "huggingface" in t:
-    return "huggingface"
-  if "mistral" in t:
+  if re.search(r"\b(deepmind|google)\b", t):
+    return "google"
+  if re.search(r"\b(mistral)\b", t):
     return "mistral"
-  if "deepseek" in t:
+  if re.search(r"\b(deepseek)\b", t):
     return "deepseek"
-  if "cohere" in t:
+  if re.search(r"\b(meta|llama)\b", t):
+    return "meta"
+  if re.search(r"\b(microsoft|copilot)\b", t):
+    return "microsoft"
+  if re.search(r"\b(nvidia)\b", t):
+    return "nvidia"
+  if re.search(r"\b(hugging face|huggingface)\b", t):
+    return "huggingface"
+  if re.search(r"\b(cohere)\b", t):
     return "cohere"
-  if "amazon" in t or "aws" in t:
+  if re.search(r"\b(amazon|aws|bedrock)\b", t):
     return "amazon"
-  if "apple" in t:
+  if re.search(r"\b(apple)\b", t):
     return "apple"
-  if "mit" in t:
+  if re.search(r"\b(mit)\b", t):
     return "mit"
-  if "verge" in t:
+  if re.search(r"\b(the verge|verge)\b", t):
     return "verge"
-  if "techcrunch" in t:
+  if re.search(r"\b(techcrunch)\b", t):
     return "techcrunch"
   return "default"
 
@@ -1245,8 +1368,12 @@ def cluster_and_deduplicate_articles(raw_articles, similarity_threshold=0.40):
     lead["related_sources"] = related_sources
     lead["covered_by_sources_count"] = 1 + len(related_sources)
 
+    # Truthful evidence provenance and independent source counting
+    evidence_meta = determine_evidence_metadata(lead, related_sources)
+    lead.update(evidence_meta)
+
     # Calculate scores with grounded corroboration signal
-    scores = calculate_story_scores(lead, corroboration_count=lead["covered_by_sources_count"])
+    scores = calculate_story_scores(lead, corroboration_count=lead["independent_source_count"])
     lead.update(scores)
     clustered_stories.append(lead)
 
@@ -1299,7 +1426,8 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
       if not clean_url or clean_url in seen_urls:
         continue
 
-      title = (entry.get("title") or "").strip()
+      raw_title = (entry.get("title") or "").strip()
+      title = re.sub(r"\s+", " ", html.unescape(raw_title)).strip()
       if not title or len(title) < 5:
         continue
 
@@ -1321,21 +1449,44 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
         continue
 
       summary = entry.get("summary") or entry.get("description") or ""
-      clean_summary = re.sub(r"<[^>]+>", "", summary)[:320].strip()
-      clean_summary = html.unescape(clean_summary)
+      clean_summary = re.sub(r"<[^>]+>", "", summary)[:400].strip()
+      clean_summary = re.sub(r"\s+", " ", html.unescape(clean_summary)).strip()
 
-      # Extract image if present
+      # Editorial relevance filter: exclude non-AI tech stories, marketing promotions, and lifestyle fluff
+      is_rel, rel_score, rel_reason = evaluate_article_relevance(
+          title, clean_summary, source_name=name, source_type=source.get("source_type", "publication"), is_official=is_official
+      )
+      if not is_rel:
+        continue
+
+      # Extract image if present across standard RSS/Atom media tags and body enclosures
       img_url = ""
       if "media_content" in entry and entry["media_content"] and isinstance(entry["media_content"], list):
-        first_m = entry["media_content"][0]
-        if isinstance(first_m, dict) and first_m.get("url"):
-          img_url = first_m["url"]
+        for m_item in entry["media_content"]:
+          if isinstance(m_item, dict) and m_item.get("url"):
+            img_url = m_item["url"]
+            break
       if not img_url and "media_thumbnail" in entry and entry["media_thumbnail"] and isinstance(entry["media_thumbnail"], list):
-        first_t = entry["media_thumbnail"][0]
-        if isinstance(first_t, dict) and first_t.get("url"):
-          img_url = first_t["url"]
+        for t_item in entry["media_thumbnail"]:
+          if isinstance(t_item, dict) and t_item.get("url"):
+            img_url = t_item["url"]
+            break
+      if not img_url and "enclosures" in entry and entry["enclosures"] and isinstance(entry["enclosures"], list):
+        for enc in entry["enclosures"]:
+          if isinstance(enc, dict) and enc.get("type", "").startswith("image/") and enc.get("href"):
+            img_url = enc["href"]
+            break
+      full_html = ""
+      if "content" in entry and isinstance(entry["content"], list) and entry["content"]:
+        full_html = entry["content"][0].get("value", "")
+      elif "summary_detail" in entry and isinstance(entry["summary_detail"], dict):
+        full_html = entry["summary_detail"].get("value", "")
+      if not img_url and full_html:
+        m = re.search(r'<img[^>]+src=["\'](https?://[^"\']+\.(?:png|jpg|jpeg|webp)(?:\?[^"\']*)?)["\']', full_html, re.I)
+        if m:
+          img_url = m.group(1)
       if not img_url:
-        m = re.search(r'<img[^>]+src=["\'](https?://[^"\']+)["\']', summary)
+        m = re.search(r'<img[^>]+src=["\'](https?://[^"\']+)["\']', summary, re.I)
         if m:
           img_url = m.group(1)
 
@@ -1512,28 +1663,38 @@ def extract_key_points(summary, title, source_name=""):
   return points[:3]
 
 
-def generate_factual_why_it_matters(title, summary, topic):
-  """Generates a concise, factual explanation of impact grounded in the topic and content without boilerplate."""
-  # Look for causal/impact sentences in summary
+def generate_factual_why_it_matters(title, summary, topic, company=""):
+  """Generates a concise, factual explanation of impact grounded in the article's actual content without boilerplate."""
+  clean_title = (title or "").strip()
   clean_summary = (summary or "").strip()
-  sentences = re.split(r"(?<=[.!?])\s+", clean_summary)
-  for s in sentences:
-    s_clean = s.strip()
-    s_lower = s_clean.lower()
-    if any(k in s_lower for k in ["enables", "allows", "designed to", "aims to", "improves", "reduces", "provides", "features", "introduces"]):
-      if 30 <= len(s_clean) <= 240:
-        return s_clean
+  sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", clean_summary) if len(s.strip()) > 20]
 
-  # Topic-grounded contextual impact
-  topic_impact_map = {
-      "AI Coding": "Directly impacts developer workflows, automated test generation, and IDE code intelligence.",
-      "AI Agents": "Affects autonomous task execution, runtime tool-calling reliability, and workflow orchestration.",
-      "Model Releases": "Establishes new performance baselines for reasoning, latency, and context efficiency.",
-      "Research & Safety": "Informs model evaluation protocols, safety alignment standards, and governance policies.",
-      "AI Business": "Influences enterprise AI adoption, commercial infrastructure costs, and platform strategy.",
-      "AI Tools & Ecosystem": "Expands practical integration options and tooling capabilities across production systems.",
-  }
-  return topic_impact_map.get(topic, "Expands practical AI tooling options and ecosystem integration across production workflows.")
+  action_words = [
+      "enables", "allows", "designed to", "aims to", "improves", "reduces", "provides",
+      "features", "introduces", "helps", "lets", "supports", "unveiled", "launched",
+      "announced", "powers", "brings", "automates", "integrates", "gives", "standardizes",
+      "addresses", "tackles", "replaces", "accelerates", "cuts", "saves", "expands",
+      "proposes", "finds that", "shows", "demonstrates", "prevents", "protects",
+      "rules that", "decided", "mandates", "open-sources", "releases", "publishes",
+      "updates", "trains", "evaluates", "measures", "used by", "built with"
+  ]
+
+  # 1. Look for an action sentence that is not a verbatim copy of the title
+  for s in sentences:
+    s_lower = s.lower()
+    if any(w in s_lower for w in action_words):
+      if s_lower != clean_title.lower() and len(s) <= 280:
+        return s
+
+  # 2. If multiple sentences exist, take the second sentence if distinct from title
+  if len(sentences) >= 2 and sentences[1].lower() != clean_title.lower():
+    return sentences[1]
+  elif len(sentences) == 1 and sentences[0].lower() != clean_title.lower():
+    return sentences[0]
+
+  # 3. Grounded fallback referencing the subject and action
+  subject = company.title() if company and company != "default" else "Frontier AI"
+  return f"Provides verified operational updates and architectural details regarding {clean_title.lower().rstrip('.')}."
 
 
 def generate_detailed_analysis(summary, title):
@@ -1608,9 +1769,20 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
   now_iso = datetime.now(timezone.utc).isoformat()
   daily_overview = generate_daily_overview(clustered_stories, now_iso)
 
-  # 1. Format Top Stories (Dispatches) - capped to top 45 scored stories
+  # 1. Format Top Stories (Dispatches) - capped to top 45 scored stories with publisher diversity
   top_stories = []
-  for s in clustered_stories[:45]:
+  publisher_counts = {}
+  MAX_PER_PUBLISHER = 6
+
+  for s in clustered_stories:
+    if len(top_stories) >= 45:
+      break
+    src = s.get("source", "")
+    pub = PUBLISHER_ORGANIZATION_MAP.get(src, src)
+    if publisher_counts.get(pub, 0) >= MAX_PER_PUBLISHER and len(clustered_stories) > 35:
+      continue
+    publisher_counts[pub] = publisher_counts.get(pub, 0) + 1
+
     company = detect_company(s.get("title", ""), s.get("source", ""))
     topic = classify_topic(s.get("title", ""), s.get("summary", ""))
     reading_time = estimate_reading_time(s.get("summary", ""))
@@ -1623,8 +1795,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
     plain_summary = simplify_jargon(clean_summary)
     key_points = extract_key_points(clean_summary, s.get("title", ""), s.get("source", ""))
     detailed_analysis = generate_detailed_analysis(clean_summary, s.get("title", ""))
-    why_it_matters = generate_factual_why_it_matters(s.get("title", ""), clean_summary, topic)
-    audience_info = generate_audience_impact(s.get("title", ""), clean_summary, topic)
+    why_it_matters = generate_factual_why_it_matters(s.get("title", ""), clean_summary, topic, company)
+    audience_info = generate_audience_impact(s.get("title", ""), clean_summary, topic, company)
     img_meta = resolve_article_image_metadata(s.get("image", ""), s.get("title", ""), topic, company, s.get("link", ""))
 
     top_stories.append({
@@ -1663,6 +1835,9 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "confidence_score": s.get("confidence_score", 85),
         "overall_score": s.get("overall_score", 70.0),
         "confidence_label": s.get("confidence_label", "medium"),
+        "evidence_status": s.get("evidence_status", "single_source"),
+        "evidence_label": s.get("evidence_label", "Single-Source Report"),
+        "independent_source_count": s.get("independent_source_count", 1),
         "related_sources": s.get("related_sources", []),
         "covered_by_sources_count": s.get("covered_by_sources_count", 1),
     })
@@ -1680,11 +1855,11 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
       ev_urls = t.get("evidence_urls", [])
 
       for u in ev_urls:
-        assigned_urls.add(u)
+        assigned_urls.add(normalize_url(u))
 
       kp = [t.get("what_happened"), t.get("why_it_matters")]
       clean_kp = [p for p in kp if p and len(p.strip()) > 10]
-      audience_info = generate_audience_impact(t.get("title", ""), t.get("what_happened", ""), topic)
+      audience_info = generate_audience_impact(t.get("title", ""), t.get("what_happened", ""), topic, company)
       img_meta = resolve_article_image_metadata("", t.get("title", ""), topic, company, ev_urls[0] if ev_urls else "")
 
       trends.append({
@@ -1703,6 +1878,9 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
           "audience_impact": audience_info,
           "target_audience": audience_info["target"],
           "audience_impact_statement": audience_info["impact"],
+          "evidence_status": t.get("evidence_status", "independently_corroborated" if len(ev_urls) > 1 else "single_source"),
+          "evidence_label": t.get("evidence_label", f"Covered by {len(ev_urls)} sources" if len(ev_urls) > 1 else "Single-Source Report"),
+          "independent_source_count": len(ev_urls) if ev_urls else 1,
           "key_points": clean_kp if clean_kp else [t.get("title")],
           "detailed_analysis": f"{t.get('what_happened')}\n\n{t.get('why_it_matters')}",
           "image": img_meta["image_url"],
@@ -1715,7 +1893,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
   else:
     # Deterministic Non-LLM Briefing Trends from top 3 scored stories
     for s in top_stories[:3]:
-      assigned_urls.add(s["link"])
+      assigned_urls.add(normalize_url(s["link"]))
       trends.append({
           "title": s["title"],
           "what_happened": s["summary"],
@@ -1732,6 +1910,9 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
           "audience_impact": s.get("audience_impact"),
           "target_audience": s.get("target_audience"),
           "audience_impact_statement": s.get("audience_impact_statement"),
+          "evidence_status": s.get("evidence_status", "single_source"),
+          "evidence_label": s.get("evidence_label", "Single-Source Report"),
+          "independent_source_count": s.get("independent_source_count", 1),
           "key_points": s["key_points"],
           "detailed_analysis": s["detailed_analysis"],
           "image": s.get("image", ""),
@@ -1746,7 +1927,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
   # AI Tools: actual products, tools, assistants, platform features
   ai_tools = []
   for s in top_stories:
-    if s["link"] in assigned_urls:
+    norm_link = normalize_url(s["link"])
+    if norm_link in assigned_urls:
       continue
     is_tool = (
         s["topic"] in ("AI Products", "AI Coding", "AI Tools & Ecosystem") or
@@ -1754,14 +1936,15 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
     )
     if is_tool:
       ai_tools.append(s)
-      assigned_urls.add(s["link"])
+      assigned_urls.add(norm_link)
       if len(ai_tools) >= 4:
         break
 
   # Developer Radar: APIs, SDKs, frameworks, libraries, coding agents, MCP
   dev_radar = []
   for s in top_stories:
-    if s["link"] in assigned_urls:
+    norm_link = normalize_url(s["link"])
+    if norm_link in assigned_urls:
       continue
     is_dev = (
         s["topic"] in ("AI Coding", "AI Agents", "Open Source") or
@@ -1769,34 +1952,36 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
     )
     if is_dev:
       dev_radar.append(s)
-      assigned_urls.add(s["link"])
+      assigned_urls.add(norm_link)
       if len(dev_radar) >= 4:
         break
 
   # Research & Safety: safety, alignment, security, policy, governance, preprints
   research_safety = []
   for s in top_stories:
-    if s["link"] in assigned_urls:
+    norm_link = normalize_url(s["link"])
+    if norm_link in assigned_urls:
       continue
     is_research = (
         s["topic"] in ("AI Safety", "Research", "Research & Safety") or
         s["trust_tier"] in (3, 4) or
-        any(k in s["title"].lower() for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark", "risk", "security", "copyright", "red team", "misalignment"])
+        any(k in s["title"].lower() for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark", "risk", "security", "copyright", "red team", "misalignment", "model spec"])
     )
     if is_research:
       research_safety.append(s)
-      assigned_urls.add(s["link"])
+      assigned_urls.add(norm_link)
       if len(research_safety) >= 4:
         break
 
-  # Trending: Stories with corroborated multi-outlet coverage (covered_by_sources_count > 1) or high overall score
+  # Trending: Stories with corroborated multi-outlet coverage (independent_source_count > 1) or high overall score
   trending = []
   for s in top_stories:
-    if s["link"] in assigned_urls:
+    norm_link = normalize_url(s["link"])
+    if norm_link in assigned_urls:
       continue
-    if s.get("covered_by_sources_count", 1) > 1 or s.get("overall_score", 0) >= 80:
+    if s.get("independent_source_count", 1) > 1 or s.get("overall_score", 0) >= 80:
       trending.append(s)
-      assigned_urls.add(s["link"])
+      assigned_urls.add(norm_link)
       if len(trending) >= 4:
         break
 
@@ -1872,11 +2057,13 @@ def validate_dataset_payload(payload):
     raise ValueError("Payload top_stories must be a non-empty list")
 
   for idx, s in enumerate(payload["top_stories"][:10]):
-    for field in ["title", "link", "source", "trust_tier", "overall_score"]:
+    for field in ["title", "link", "source", "trust_tier", "overall_score", "evidence_status", "audience_impact"]:
       if field not in s or s[field] is None:
         raise ValueError(f"Story #{idx} missing required field '{field}'")
     if not (s["link"].startswith("http://") or s["link"].startswith("https://")):
       raise ValueError(f"Story #{idx} has invalid link: {s['link']}")
+    if not (0 <= s["overall_score"] <= 100):
+      raise ValueError(f"Story #{idx} score out of bounds: {s['overall_score']}")
 
   if "daily_overview" in payload and payload["daily_overview"] is not None:
     overview = payload["daily_overview"]

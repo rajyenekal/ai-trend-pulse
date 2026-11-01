@@ -811,6 +811,42 @@
       border-radius: 4px;
       white-space: nowrap;
     }
+    .badge-evidence {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+      line-height: 1.3;
+    }
+    .badge-evidence-official {
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+    }
+    .badge-evidence-research {
+      color: #a78bfa;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.28);
+    }
+    .badge-evidence-practitioner {
+      color: #06b6d4;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.28);
+    }
+    .badge-evidence-corroborated {
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.14);
+      border: 1px solid rgba(99, 102, 241, 0.32);
+    }
+    .badge-evidence-single {
+      color: var(--text-muted);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+    }
     .score-pill {
       font-size: 0.7rem;
       font-weight: 600;
@@ -3431,6 +3467,30 @@
       </span>`;
     }
 
+    function getEvidenceBadgeHTML(item) {
+      if (!item) return '';
+      const status = item.evidence_status;
+      const count = item.independent_source_count || (item.evidence_urls ? item.evidence_urls.length : (item.covered_by_sources_count || 1));
+      const isOfficial = item.is_official || item.tier === 'Official Lab' || status === 'official_announcement' || item.status === 'official_claim';
+
+      if (isOfficial) {
+        if (count >= 2) {
+          return `<span class="badge-evidence badge-evidence-corroborated" title="Official lab release confirmed across ${count} independent sources">🏛️ Official + ${count - 1} Sources</span>`;
+        }
+        return `<span class="badge-evidence badge-evidence-official" title="Direct announcement from official lab or developer">🏛️ Official Source</span>`;
+      }
+      if (status === 'research_preprint' || item.topic === 'Research' || item.source_type === 'research' || (item.source && item.source.toLowerCase().includes('arxiv'))) {
+        return `<span class="badge-evidence badge-evidence-research" title="Research paper preprint / academic evaluation">📄 Research Preprint</span>`;
+      }
+      if (status === 'practitioner_report' || item.trust_tier === 4) {
+        return `<span class="badge-evidence badge-evidence-practitioner" title="Practitioner observation or real-world evaluation">🔬 Practitioner Report</span>`;
+      }
+      if (count >= 2) {
+        return `<span class="badge-evidence badge-evidence-corroborated" title="Reported across ${count} independent publications">✓ ${count} Independent Sources</span>`;
+      }
+      return `<span class="badge-evidence badge-evidence-single" title="Reported by a single tech news outlet">📰 Single Source</span>`;
+    }
+
     function extractAudiencePills(whoAffected) {
       if (!whoAffected) return ['Enterprises', 'Developers'];
       return whoAffected.replace(/\band\b|\&/gi, ',')
@@ -3660,17 +3720,14 @@
         const isSaved = isItemSaved(item.title);
         const imgUrl = getTopicImageUrl(topic, item.image || item.image_url);
 
-        // Corroboration and importance scoring
-        const corroborationCount = (item.evidence_urls && item.evidence_urls.length) || item.covered_by_sources_count || 1;
-        const hasMultipleSources = corroborationCount > 1;
-        const isOfficial = item.status === 'official_claim' || item.tier === 'Official Lab' || item.is_official;
+        // Evidence and importance scoring
         const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier);
-
+        const evidenceBadgeHTML = getEvidenceBadgeHTML(item);
         const scoreVal = item.overall_score ? Math.round(item.overall_score) : (item.importance_score ? Math.round(item.importance_score) : null);
         const scorePillHTML = scoreVal ? `<span class="score-pill" title="Algorithmic Importance Score (0-100)">⚡ ${scoreVal}</span>` : '';
-        const corroborationBadgeHTML = hasMultipleSources
-          ? `<span class="badge-corroborated" title="${corroborationCount} independent sources confirming">✓ ${corroborationCount} Sources</span>`
-          : `<span class="badge-corroborated" style="opacity:0.85;">✓ 1 Source</span>`;
+        const corroborationCount = item.independent_source_count || (item.evidence_urls ? item.evidence_urls.length : (item.covered_by_sources_count || 1));
+        const hasMultipleSources = corroborationCount > 1 && item.evidence_urls && item.evidence_urls.length > 1;
+        const isOfficial = item.is_official || item.tier === 'Official Lab' || item.status === 'official_claim' || item.evidence_status === 'official_announcement';
 
         // Plain English text
         const headline = simplifyJargon(item.title || '');
@@ -3735,7 +3792,7 @@
                       ${tierBadgeHTML}
                       <span class="badge-card-topic">${escapeHTML(topic)}</span>
                       ${scorePillHTML}
-                      ${corroborationBadgeHTML}
+                      ${evidenceBadgeHTML}
                     </div>
                     <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${readTime}</span>
                   </div>
@@ -3843,7 +3900,7 @@
                     ${tierBadgeHTML}
                     <span class="badge-card-topic">${escapeHTML(topic)}</span>
                     ${scorePillHTML}
-                    ${corroborationBadgeHTML}
+                    ${evidenceBadgeHTML}
                   </div>
                   <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${readTime}</span>
                 </div>
@@ -3942,11 +3999,7 @@
         const tierBadgeHTML = getTierBadgeHTML(story.source, story.tier);
         const imgUrl = getTopicImageUrl(topic, story.image || story.image_url);
 
-        const corroborationCount = story.covered_by_sources_count || 1;
-        const corroborationBadgeHTML = corroborationCount > 1
-          ? `<span class="badge-corroborated" title="${corroborationCount} independent sources confirming">✓ ${corroborationCount} Sources</span>`
-          : '';
-
+        const evidenceBadgeHTML = getEvidenceBadgeHTML(story);
         const scoreVal = story.overall_score ? Math.round(story.overall_score) : null;
         const scorePillHTML = scoreVal ? `<span class="score-pill" title="Importance Score">⚡ ${scoreVal}</span>` : '';
 
@@ -3977,7 +4030,7 @@
               <span>${escapeHTML(story.source)}</span>
             </div>
             <div style="display:flex; align-items:center; gap:6px;">
-              ${corroborationBadgeHTML}
+              ${evidenceBadgeHTML}
               ${scorePillHTML}
               ${tierBadgeHTML}
             </div>
@@ -4062,7 +4115,7 @@
             <span>${escapeHTML(item.source)}</span>
           </div>
           <div style="display:flex; align-items:center; gap:6px;">
-            ${corroborationCount > 1 ? `<span class="badge-corroborated" title="${corroborationCount} independent sources reporting">✓ ${corroborationCount} Sources</span>` : ''}
+            ${getEvidenceBadgeHTML(item)}
             ${scoreVal ? `<span class="score-pill" title="Algorithmic Pulse Score (0-100)">⚡ ${scoreVal}</span>` : ''}
             ${tierBadgeHTML}
           </div>
@@ -4552,7 +4605,8 @@
       const statusBadge = document.getElementById('reader-status-badge');
       if (statusBadge) {
         statusBadge.className = `badge-tier ${tierMeta.tierClass}`;
-        statusBadge.innerHTML = `<span class="badge-tier-dot"></span><span class="badge-tier-label">${escapeHTML(tierMeta.badgeLabel)}</span>`;
+        const displayLabel = item.evidence_label || tierMeta.badgeLabel;
+        statusBadge.innerHTML = `<span class="badge-tier-dot"></span><span class="badge-tier-label">${escapeHTML(displayLabel)}</span>`;
       }
 
       // Read time

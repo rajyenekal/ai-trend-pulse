@@ -467,6 +467,107 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertIn("why_it_matters", overview["top_developments"][0])
     self.assertIn("target_audience", overview["top_developments"][0])
 
+  def test_evaluate_article_relevance(self):
+    # Genuine AI stories must pass
+    rel1, _, _ = tracker.evaluate_article_relevance(
+        "OpenAI announces o3 reasoning model with major benchmark gains",
+        "New frontier model exhibits advanced reasoning capabilities.",
+        "TechCrunch AI", "publication", False
+    )
+    self.assertTrue(rel1)
+
+    # Official lab stories pass
+    rel2, _, _ = tracker.evaluate_article_relevance(
+        "Anthropic collaborates with GSA", "Cloud deployment for government",
+        "Anthropic Official News", "official", True
+    )
+    self.assertTrue(rel2)
+
+    # Lifestyle fluff (Halloween costumes) must be rejected
+    rel3, _, reason3 = tracker.evaluate_article_relevance(
+        "Last-minute Halloween costumes for tech nerds",
+        "Here are 10 funny DIY costumes for developers.",
+        "TechCrunch AI", "publication", False
+    )
+    self.assertFalse(rel3)
+    self.assertIn("fluff", reason3.lower())
+
+    # Conference ticket marketing must be rejected
+    rel4, _, reason4 = tracker.evaluate_article_relevance(
+        "Register now for TechCrunch Disrupt 2026 early bird tickets",
+        "Save $500 with promo code.",
+        "TechCrunch AI", "publication", False
+    )
+    self.assertFalse(rel4)
+    self.assertIn("event", reason4.lower())
+
+    # Generic non-AI tech stories without AI connection must be rejected
+    rel5, _, reason5 = tracker.evaluate_article_relevance(
+        "New bicycle lock uses titanium steel shackles",
+        "A heavy duty physical lock designed to prevent bike theft.",
+        "The Verge AI", "publication", False
+    )
+    self.assertFalse(rel5)
+
+  def test_detect_company_accuracy(self):
+    # xAI should be detected and not confused with Amazon due to 'lawsuit'
+    lawsuit_title = "Judge allows NAACP lawsuit over xAI data center pollution to move forward"
+    self.assertEqual(tracker.detect_company(lawsuit_title, "TechCrunch AI"), "xai")
+
+    # AWS should be detected with word boundaries
+    aws_title = "Deploying deep learning workloads with AWS Bedrock"
+    self.assertEqual(tracker.detect_company(aws_title, "TechCrunch AI"), "amazon")
+
+    # 'submit' or 'transmit' should NOT trigger MIT
+    submit_title = "Researchers transmit optical signals over transatlantic fiber"
+    self.assertNotEqual(tracker.detect_company(submit_title, "Ars Technica"), "mit")
+
+  def test_classify_topic_accuracy(self):
+    # Model Spec is AI Safety, not AI Coding
+    t1 = tracker.classify_topic("An updated Model Spec for more capable and beneficial AI", "Rules for model behavior")
+    self.assertEqual(t1, "AI Safety")
+
+    # Legal agent operating system is AI Agents, not AI Safety
+    t2 = tracker.classify_topic("Legora is building the agentic operating system for legal work", "Legal workflow automation")
+    self.assertEqual(t2, "AI Agents")
+
+    # Freight exception automation is AI Products, not AI Coding
+    t3 = tracker.classify_topic("How Worldwide Express automated freight exceptions with Amazon Bedrock", "Logistics automation case study with Amazon Bedrock")
+    self.assertEqual(t3, "AI Products")
+    self.assertNotEqual(t3, "AI Coding")
+
+  def test_evidence_metadata_determination(self):
+    # Single official announcement
+    lead_official = {"source": "OpenAI News", "trust_tier": 1, "is_official": True, "source_type": "official"}
+    meta1 = tracker.determine_evidence_metadata(lead_official, [])
+    self.assertEqual(meta1["evidence_status"], "official_announcement")
+    self.assertEqual(meta1["independent_source_count"], 1)
+
+    # Multi-source corroborated story
+    related = [{"source_name": "TechCrunch AI"}, {"source_name": "The Verge AI"}]
+    meta2 = tracker.determine_evidence_metadata(lead_official, related)
+    self.assertEqual(meta2["evidence_status"], "independently_corroborated")
+    self.assertGreaterEqual(meta2["independent_source_count"], 2)
+
+    # Syndicated copies from same publisher do NOT increase independent source count
+    lead_google = {"source": "Google DeepMind", "trust_tier": 1, "is_official": True, "source_type": "official"}
+    related_same = [{"source_name": "Google AI Blog"}]
+    meta3 = tracker.determine_evidence_metadata(lead_google, related_same)
+    self.assertEqual(meta3["independent_source_count"], 1)
+
+  def test_story_specific_why_it_matters_uniqueness(self):
+    stories = [
+        ("OpenAI releases o3 reasoning model", "OpenAI released o3, a reasoning model that achieves breakthrough performance on competitive programming. It introduces dynamic test-time compute scaling for difficult proofs.", "AI Models", "openai"),
+        ("Legora launches agentic legal operating system", "Legora unveiled an agentic software suite for law firms. The platform automates complex contract review and regulatory filings across corporate law teams.", "AI Agents", "openai"),
+        ("Worldwide Express automates freight exceptions", "Worldwide Express used Amazon Bedrock to resolve carrier transit delays. Six months after deployment, the company cut active exception tickets by 75% and improved settlement speed.", "AI Products", "amazon"),
+    ]
+    whys = [tracker.generate_factual_why_it_matters(t, s, top, comp) for t, s, top, comp in stories]
+    # All 3 why_it_matters statements must be unique and non-empty
+    self.assertEqual(len(set(whys)), 3)
+    for w in whys:
+      self.assertTrue(len(w) > 20)
+      self.assertNotIn("Expands practical AI tooling options and ecosystem integration across production workflows.", w)
+
 
 if __name__ == "__main__":
   unittest.main()
