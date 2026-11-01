@@ -31,6 +31,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python tracker.py
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Test Suite
+        run: npm test
+
       - name: Safely Commit and Push data.json
         run: |
           git config --global user.name "github-actions[bot]"

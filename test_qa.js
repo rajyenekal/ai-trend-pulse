@@ -68,7 +68,17 @@ const requiredIDs = [
   'reader-affected-box',
   'reader-audience-pills',
   'reader-external-btn',
-  'reader-source-btn-name'
+  'reader-source-btn-name',
+  'btn-methodology',
+  'methodology-backdrop',
+  'methodology-modal',
+  'btn-close-methodology',
+  'ai-tools-section',
+  'ai-tools-container',
+  'dev-radar-section',
+  'dev-radar-container',
+  'research-safety-section',
+  'research-safety-container'
 ];
 
 let missingIDs = [];
@@ -219,6 +229,18 @@ if (devCardCount < 1) {
   process.exit(1);
 }
 
+// Verify Curated Domain Sections
+const aiToolsCount = mockElements['ai-tools-container'].children.length;
+const devRadarCount = mockElements['dev-radar-container'].children.length;
+const researchSafetyCount = mockElements['research-safety-container'].children.length;
+console.log(`✅ AI Tools section populated with ${aiToolsCount} cards.`);
+console.log(`✅ Developer Radar section populated with ${devRadarCount} cards.`);
+console.log(`✅ Research & Safety section populated with ${researchSafetyCount} cards.`);
+if (aiToolsCount < 1 || devRadarCount < 1 || researchSafetyCount < 1) {
+  console.error('❌ Curated domain sections failed to populate cards.');
+  process.exit(1);
+}
+
 // 4. Test Interactive Functions (Save, Search, Theme, Filter, Sort)
 console.log('\n▶ [3/5] Testing state, storage, search and filtering...');
 
@@ -286,6 +308,19 @@ if (dataContent.trends && dataContent.trends[0]) {
   }
   console.log('✅ In-App Reader View (open/close, takeaways, detailed analysis, reference link) verified.');
 }
+
+// Test Methodology Modal
+sandbox.openMethodologyModal();
+if (!mockElements['methodology-backdrop'].classList.contains('open')) {
+  console.error('❌ methodology-backdrop failed to open.');
+  process.exit(1);
+}
+sandbox.closeMethodologyModal();
+if (mockElements['methodology-backdrop'].classList.contains('open')) {
+  console.error('❌ methodology-backdrop failed to close.');
+  process.exit(1);
+}
+console.log('✅ Methodology Modal (open/close, transparency tables, scoring formula) verified.');
 
 // 5. Test 3-Tier Image System
 console.log('\n▶ [4/5] Testing 3-tier image system and SVG fallbacks...');

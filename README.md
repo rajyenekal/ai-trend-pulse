@@ -1,73 +1,156 @@
 # ⚡ AI Trend Pulse
 
-> **Autonomous, hourly AI market intelligence with traceable evidence provenance, 3-tier source verification, and a mobile-first editorial reading experience.**
+> **Autonomous, hourly AI market intelligence with traceable evidence provenance, 4-tier source verification, multi-source story clustering, and a mobile-first editorial reading experience.**
 
-- GitHub Pages: **[https://rajyenekal.github.io/ai-trend-pulse/](https://rajyenekal.github.io/ai-trend-pulse/)**
-- Live Mirror: **[https://aitrend-pulse.netlify.app](https://aitrend-pulse.netlify.app)**
+- **Live Deployment**: [https://rajyenekal.github.io/ai-trend-pulse/](https://rajyenekal.github.io/ai-trend-pulse/)
+- **Mirror Deployment**: [https://aitrend-pulse.netlify.app](https://aitrend-pulse.netlify.app)
+- **Repository**: [https://github.com/rajyenekal/ai-trend-pulse](https://github.com/rajyenekal/ai-trend-pulse)
 
 ---
 
-## 🏛️ Editorial Architecture (3-Tier Verification)
+## 🏛️ Editorial Architecture & 4-Tier Source Registry
 
-AI Trend Pulse separates company announcements from independent journalism and open ecosystem benchmarks:
+AI Trend Pulse organizes monitored feeds into four transparent verification tiers codified in [`sources.json`](sources.json), distinguishing primary research releases from independent journalism, cloud engineering, and preprint analysis:
 
-| Tier | Sources | Purpose | Status Label |
-| :--- | :--- | :--- | :--- |
-| **Tier 1: Official Labs** | OpenAI News, Google DeepMind | Primary model launches, API changes, and direct lab announcements. | `🏢 Official Lab Announcement` (`official_claim`) |
-| **Tier 2: Independent Journalism** | MIT Technology Review, The Verge AI, TechCrunch AI, Ars Technica | Independent evaluation, hype fact-checking, and societal/business impact. | `🔍 Source-Linked Report` (`source_linked`) |
-| **Tier 3: Open Ecosystem** | Hugging Face | Open-weights models, developer benchmarks, and community research. | `🔬 Open Ecosystem` (`source_linked`) |
+| Tier | Tier Name | Monitored Sources & Research Desks | Primary Role | Weight |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tier 1** | **Primary AI Labs & Frontier Developers** | OpenAI Research & News, Anthropic Official News, Google DeepMind Blog, Google AI Blog, Microsoft AI Blog, Meta AI Research, xAI, Mistral AI | Primary model weights, architecture specs, safety evaluations, and official API releases | `1.00` |
+| **Tier 2** | **Independent Technology Journalism** | MIT Technology Review, The Verge AI, TechCrunch AI, Ars Technica, The Decoder | Independent evaluation, investigative reporting, antitrust scrutiny, and societal impact | `0.95` |
+| **Tier 3** | **Open Research & Cloud Infrastructure** | Hugging Face Blog, NVIDIA Developer Blog, AWS Machine Learning Blog, Amazon Science | Open weights, inference optimization, enterprise clusters, and hardware benchmarks | `0.90` |
+| **Tier 4** | **Community, Academic & Practitioner Analysis** | arXiv (cs.AI, cs.LG, cs.CL), Simon Willison Weblog, Berkeley AI Research (BAIR), Import AI (Jack Clark) | Preprints, empirical engineering evaluations, MCP standards, and frontier capability tracking | `0.85` |
 
 ### Verification Status Definitions
-- **`official_claim`**: Official announcement from a primary research laboratory or company.
-- **`source_linked`**: Independently reported story verified against a reputable tech journalism publication with direct URL provenance.
-- **`independently_confirmed`**: Corroborated across multiple independent reporting outlets.
-- **`cached_fallback`**: Live AI synthesis temporarily unavailable; previous verified briefing preserved with its original timestamp.
-- **`raw_headlines`**: Fallback mode displaying verified headlines directly from source feeds with zero fabricated trends.
+- **`official_claim`**: Direct announcement from a primary research lab or frontier developer.
+- **`source_linked`**: Independently verified report grounded with direct URL provenance to a reputable journalism or engineering outlet.
+- **`independently_confirmed`**: Cross-corroborated development confirmed across two or more independent sources via Jaccard clustering.
+- **`cached_fallback`**: Live ingestion preserved healthy previous dataset when upstream networks fail, maintaining valid timestamps.
+- **`raw_headlines`**: Non-LLM deterministic fallback displaying verified headlines directly from source feeds with zero fabricated content.
 
 ---
 
-## 📱 Mobile-First UI/UX & Editorial System
+## 🔬 Grounding in Industry Research
 
-1. **Mobile-First Responsiveness**:
-   - Zero horizontal overflow across all device viewports: `320px`, `360px`, `375px`, `390px`, `414px`, `430px`, `768px`, `1024px`, `1280px`, `1440px`.
-   - Fluid typography using CSS `clamp()`.
-   - Accessible touch targets (minimum 44px) for all interactive controls.
-   - Mobile bottom sheet for Saved Stories and full-sheet search palette with iOS safe-area support (`env(safe-area-inset-bottom)`).
+The product and curation mechanics of AI Trend Pulse are aligned with empirical research across AI engineering and information trust:
 
-2. **5-Tier Story Card Design System**:
-   - **Card Type 1 (Featured Story)**: Full-width lead development with 16:9 thumbnail, headline, summary, Why It Matters callout, and action toolbar.
-   - **Card Type 2 (Standard News Card)**: 16:10 thumbnail, topic badge, concise explanation, and quick save/copy actions.
-   - **Card Type 3 (Compact News Item)**: High-density item for secondary developments to reduce mobile scroll fatigue.
-   - **Card Type 4 (Breaking / Official Lab Release)**: Distinctive accent border, official badge, and direct lab links.
-   - **Card Type 5 (Related Story Group)**: Multi-source corroboration with expandable source provenance links.
-
-3. **3-Tier Reliable Image System**:
-   - Priority 1: Actual article image extracted from RSS feeds where available.
-   - Priority 2: Curated high-resolution editorial imagery mapped by topic category.
-   - Priority 3: Instant inline SVG vector artwork with topic-matched gradients and zero layout shift on network error.
-
-4. **Features & Controls**:
-   - **Why It Matters**: Concise explanation of the real-world operational and business impact.
-   - **The Pulse**: Touch-momentum swipeable horizontal highlights bar on mobile, 4-column grid on desktop.
-   - **Trending in AI**: Horizontal topic discovery chips with live story counts.
-   - **Saved Stories**: Private browser storage with bookmarking and removal.
-   - **Search Experience**: Command palette (`⌘K` or `/`) with live multi-field filtering.
-   - **Theme Selector**: System (Auto) / Light / Dark modes persisted with zero flicker.
-   - **Audio Briefing**: Web Speech API text-to-speech synthesis ("Listen (2m)").
+1. **Stack Overflow 2026 Developer Survey**: Highlights that over 75% of engineers integrate AI tooling into daily workflows, requiring dedicated signals for coding agents, SDK APIs, and open-weights models. AI Trend Pulse delivers this via the **Developer Radar** section.
+2. **Pew Research Center (2026 AI Public Awareness Study)**: Reveals growing public demand for transparent provenance and distinct separation between corporate PR and independent evaluation. Addressed via our **4-Tier verification badges** and clear source attribution.
+3. **Reuters Institute Digital News Report (2026)**: Notes a migration toward concise, evidence-grounded syntheses over unstructured headline feeds. Addressed via **"Why It Matters"** impact callouts, **Key Takeaways**, and canonical source links.
+4. **Epoch AI (Empirical Compute & Frontier Capability Studies)**: Demonstrates the velocity of benchmark and compute transitions. Addressed via our **Algorithmic Pulse Ranking Formula** and **Research, Safety & Policy** coverage.
 
 ---
 
-## 🧪 Testing & Quality Assurance
+## ⚡ Algorithmic Pulse Scoring Formula
 
-Run the automated QA test suite:
+Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, freshness, and multi-source corroboration:
+
+$$\text{Score} = 0.30 \times \text{Importance} + 0.25 \times \text{Audience Relevance} + 0.20 \times \text{Freshness} + 0.15 \times \text{Popularity Signal} + 0.10 \times \text{Source Confidence}$$
+
+### Component Breakdown
+- **Importance ($0.30$)**: Measures architectural significance, benchmark capability jumps, reasoning leaps, safety framework updates, and API releases.
+- **Audience Relevance ($0.25$)**: Assesses practical utility for developers, ML engineers, security researchers, and enterprise architects.
+- **Freshness ($0.20$)**: Exponential half-life decay function anchored to verified publication timestamps:
+  $$\text{Freshness} = \exp\left(-\frac{\Delta t}{48\text{ hours}}\right)$$
+- **Popularity Signal ($0.15$)**: Multi-source corroboration count derived from cross-publisher story clustering.
+- **Source Confidence ($0.10$)**: Verification weight assigned to the primary publishing tier ($1.00$ to $0.85$).
+
+---
+
+## 🧩 Key Product Features & Information Architecture
+
+1. **Curated Domain Sections**:
+   - **AI Tools You Can Use**: Practical tools, consumer applications, and developer productivity workflows.
+   - **Developer Radar**: Coding agents, APIs, open-source weights, MCP protocols, and infrastructure.
+   - **Research, Safety & Policy**: Frontier lab alignment, arXiv preprints, governance standards, and policy updates.
+   - **Top Pulse**: Hourly highlights with touch-momentum swipeable bar on mobile and grid on desktop.
+   - **Developments Feed**: Multi-tier editorial feed with topic filtering, search query matching, and sorting.
+   - **Dispatches Feed**: Chronological list of verified stories with full metadata.
+
+2. **In-App Reader View & Story Deep Dive**:
+   - Slide-over drawer on desktop, bottom sheet on mobile.
+   - Displays topic badge, tier status badge, estimated read time, key takeaways, detailed operational analysis, Why It Matters callout, affected audience tags, and direct canonical source button.
+
+3. **Editorial & Scoring Methodology Modal**:
+   - Accessible via `#btn-methodology` or header navigation.
+   - Transparent disclosure of the 4-tier source registry, scoring formula, and anti-hallucination policies.
+   - Accessible via keyboard shortcuts (`Escape` to close).
+
+4. **Provenance & Anti-Hallucination Safeguards**:
+   - **Zero Fabricated Timestamps**: Missing or ambiguous publication dates remain "Recent" or null; the system never fabricates the current time.
+   - **Parameter-Clean URLs**: Strips tracking parameters (`utm_*`, `ref`, `fbclid`, etc.) to guarantee clean provenance and privacy.
+   - **Cross-Publisher Story Clustering**: Suffix-stemmed Jaccard token overlap clusters syndicated reporting, presenting the primary lab as the authoritative source while preserving journalism links.
+   - **Atomic File Writes**: Payload is validated and written to a temporary file before atomic rename, preventing data corruption.
+
+---
+
+## 📱 Mobile-First UI/UX Engineering
+
+- **Viewport Support**: Zero horizontal overflow across all 10 target viewports: `320px`, `360px`, `375px`, `390px`, `414px`, `430px`, `768px`, `1024px`, `1280px`, `1440px`.
+- **Fluid Typography**: Dynamic scaling via CSS `clamp()` without sudden layout shifts.
+- **Touch Targets**: Minimum 44px for all buttons and interactive controls.
+- **Safe Area Insets**: Support for iOS notch and home indicator (`env(safe-area-inset-bottom)`).
+- **Theme Persistence**: Light, Dark, and System (Auto) modes persisted via `localStorage` with zero flicker.
+- **Audio Briefing**: In-browser speech synthesis for audio playback of top stories.
+
+---
+
+## 🧪 Testing & Verification
+
+Run the complete test suite:
 
 ```bash
 npm test
 ```
 
-This verifies:
-1. HTML semantics and required element IDs.
-2. Full JavaScript execution in a sandbox environment.
-3. Bookmarking, search filtering, and theme switching.
-4. 3-tier image system and SVG fallbacks.
-5. Mobile-first CSS rules and all 10 target viewports.
+This automatically runs:
+1. **`python3 test_backend.py`**:
+   - Validates `sources.json` schema and 4-tier coverage.
+   - Verifies URL normalization and tracking parameter removal.
+   - Tests publication timestamp parsing without fabrication.
+   - Tests suffix-stemmed Jaccard story clustering across syndications.
+   - Verifies scoring function determinism.
+   - Validates payload structure and atomic write guarantees.
+2. **`node test_qa.js`**:
+   - Validates HTML semantic tags and all required DOM element IDs.
+   - Tests full JavaScript runtime execution in a headless sandbox.
+   - Verifies rendering of Dispatches, Topic Pills, Developments Feed, AI Tools, Developer Radar, and Research/Safety sections.
+   - Tests theme switching, bookmarking/saving, search filtering, topic filtering, Reader View open/close, and Methodology modal open/close.
+   - Tests 3-tier image system and SVG fallbacks.
+   - Verifies 12 mobile-first CSS architecture patterns.
+3. **`node test_viewports.js`**:
+   - Performs responsive QA across all 10 device viewports from `320px` to `1440px`.
+
+---
+
+## 🛠️ Local Development & Execution
+
+### Prerequisites
+- Python 3.9+
+- Node.js 18+
+
+### Setup
+```bash
+git clone https://github.com/rajyenekal/ai-trend-pulse.git
+cd ai-trend-pulse
+```
+
+### Ingestion & Data Refresh
+```bash
+python3 tracker.py
+```
+
+### Run Tests
+```bash
+npm test
+```
+
+### Preview Frontend
+```bash
+# Serve locally using any static file server
+python3 -m http.server 8080
+```
+Open `http://localhost:8080` in your browser.
+
+---
+
+## 📄 License
+MIT License. Free and open-source for personal and educational use.

@@ -668,6 +668,133 @@
       font-weight: 500;
     }
 
+    /* Curated Feature Sections (AI Tools, Dev Radar, Research/Safety) */
+    .curated-section {
+      padding: clamp(14px, 2.5vw, 22px) 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .curated-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    @media (min-width: 640px) {
+      .curated-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .curated-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+    }
+    .badge-corroborated {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent-border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .score-pill {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* Methodology Modal */
+    .methodology-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 11, 16, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .methodology-modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .methodology-modal-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 820px;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+    }
+    .methodology-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: var(--bg-surface);
+      z-index: 10;
+    }
+    .methodology-body {
+      padding: 24px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .methodology-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .methodology-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .methodology-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 8px;
+    }
+    .methodology-table th, .methodology-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: left;
+    }
+    .methodology-table th {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
     /* -------------------------------------------------------------
        6. TRENDING IN AI — TOPIC NAVIGATION
        ------------------------------------------------------------- */
@@ -2232,8 +2359,12 @@
           <!-- Desktop Navigation -->
           <nav class="header-nav" aria-label="Main Navigation">
             <a href="#topics-section" class="nav-link">Topics</a>
+            <a href="#ai-tools-section" class="nav-link">AI Tools</a>
+            <a href="#dev-radar-section" class="nav-link">Dev Radar</a>
+            <a href="#research-safety-section" class="nav-link">Safety/Policy</a>
             <a href="#feed-section" class="nav-link active">Developments</a>
             <a href="#dispatches-section" class="nav-link">Dispatches</a>
+            <a href="#methodology-modal" onclick="openMethodologyModal(event)" class="nav-link">Methodology</a>
           </nav>
         </div>
 
@@ -2248,6 +2379,12 @@
           <!-- Mobile Search Button -->
           <button class="btn-mobile-icon search-mobile-btn" onclick="openSearchModal()" aria-label="Search AI news">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <!-- Methodology Button -->
+          <button id="btn-methodology" class="btn-header" onclick="openMethodologyModal(event)" aria-label="View editorial and source methodology" title="Source & Scoring Methodology">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>Methodology</span>
           </button>
 
           <!-- Saved Stories Button -->
@@ -2281,7 +2418,7 @@
           <span id="status-text">● Live Pipeline Active • Hourly updates</span>
         </div>
         <div class="status-right">
-          <span>7 monitored research sources</span>
+          <span>21 monitored research sources</span>
           <span>•</span>
           <span>Strict provenance verified</span>
         </div>
@@ -2303,7 +2440,46 @@
         </div>
       </section>
 
-      <!-- 2. LATEST AI DEVELOPMENTS (MULTI-TIER EDITORIAL FEED) -->
+      <!-- 2. AI TOOLS YOU CAN USE (PRACTICAL WORKFLOWS) -->
+      <section id="ai-tools-section" class="curated-section" aria-labelledby="ai-tools-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 id="ai-tools-heading" class="section-heading">AI Tools You Can Use</h2>
+            <span class="section-subtext">Practical tools, consumer applications, and developer productivity workflows.</span>
+          </div>
+        </div>
+        <div id="ai-tools-container" class="curated-grid">
+          <!-- Dynamically populated AI tools -->
+        </div>
+      </section>
+
+      <!-- 3. DEVELOPER RADAR (CODING AGENTS & INFRASTRUCTURE) -->
+      <section id="dev-radar-section" class="curated-section" aria-labelledby="dev-radar-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 id="dev-radar-heading" class="section-heading">Developer Radar</h2>
+            <span class="section-subtext">Coding agents, APIs, open-source weights, MCP protocols, and infrastructure.</span>
+          </div>
+        </div>
+        <div id="dev-radar-container" class="curated-grid">
+          <!-- Dynamically populated developer radar -->
+        </div>
+      </section>
+
+      <!-- 4. RESEARCH, SAFETY & POLICY -->
+      <section id="research-safety-section" class="curated-section" aria-labelledby="research-safety-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 id="research-safety-heading" class="section-heading">Research, Safety &amp; Policy</h2>
+            <span class="section-subtext">Frontier lab alignment, arXiv preprints, governance standards, and policy updates.</span>
+          </div>
+        </div>
+        <div id="research-safety-container" class="curated-grid">
+          <!-- Dynamically populated research, safety and policy -->
+        </div>
+      </section>
+
+      <!-- 5. LATEST AI DEVELOPMENTS (MULTI-TIER EDITORIAL FEED) -->
       <section id="feed-section" class="feed-section" aria-labelledby="feed-heading">
         <div class="section-header">
           <div class="section-title-wrap">
@@ -2506,6 +2682,89 @@
       </div>
     </div>
 
+    <!-- EDITORIAL & SCORING METHODOLOGY MODAL -->
+    <div id="methodology-backdrop" class="methodology-modal-backdrop" onclick="handleMethodologyBackdropClick(event)">
+      <div id="methodology-modal" class="methodology-modal-box" role="dialog" aria-labelledby="methodology-modal-title" aria-modal="true">
+        <div class="methodology-header">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <h2 id="methodology-modal-title" style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin: 0;">Editorial Methodology &amp; Scoring Framework</h2>
+          </div>
+          <button id="btn-close-methodology" class="search-modal-clear" onclick="closeMethodologyModal()" aria-label="Close methodology modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+
+        <div class="methodology-body">
+          <div class="methodology-card">
+            <h3>1. Multi-Tier Source Verification Architecture</h3>
+            <p>AI Trend Pulse continuously indexes 21 primary sources structured across four distinct verification tiers to eliminate sensationalism and ensure zero sponsored bias:</p>
+            <table class="methodology-table">
+              <thead>
+                <tr>
+                  <th>Tier Level</th>
+                  <th>Source Classification</th>
+                  <th>Monitored Outlets &amp; Research Desks</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge-tier tier-official"><span class="badge-tier-dot"></span>Tier 1</span></td>
+                  <td><strong>Primary Labs &amp; Frontier Developers</strong></td>
+                  <td>OpenAI, Anthropic, Google DeepMind, Google AI, Microsoft AI, Meta AI, xAI, Mistral AI</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td><span class="badge-tier tier-journalism"><span class="badge-tier-dot"></span>Tier 2</span></td>
+                  <td><strong>Independent Technology Journalism</strong></td>
+                  <td>MIT Technology Review, The Verge AI, TechCrunch AI, Ars Technica, The Decoder</td>
+                  <td>0.95</td>
+                </tr>
+                <tr>
+                  <td><span class="badge-tier tier-research"><span class="badge-tier-dot"></span>Tier 3</span></td>
+                  <td><strong>Open Research &amp; Cloud Infrastructure</strong></td>
+                  <td>Hugging Face Blog, NVIDIA Developer, AWS ML Blog, Amazon Science</td>
+                  <td>0.90</td>
+                </tr>
+                <tr>
+                  <td><span class="badge-tier tier-community"><span class="badge-tier-dot"></span>Tier 4</span></td>
+                  <td><strong>Community, Academic Preprints &amp; Analysis</strong></td>
+                  <td>arXiv (cs.AI, cs.LG, cs.CL), Simon Willison Weblog, Berkeley AI Research (BAIR), Import AI</td>
+                  <td>0.85</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="methodology-card">
+            <h3>2. Algorithmic Pulse Scoring Formula</h3>
+            <p>Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, and multi-source corroboration:</p>
+            <div style="background:var(--bg-elevated); padding:12px 16px; border-radius:8px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent); margin:10px 0; border:1px solid var(--border-subtle);">
+              Score = 0.30 × Importance + 0.25 × Relevance + 0.20 × Freshness + 0.15 × Popularity + 0.10 × Confidence
+            </div>
+            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
+              <li><strong>Importance (30%):</strong> Architectural milestones, frontier benchmark breakthroughs, safety framework updates, and API releases.</li>
+              <li><strong>Audience Relevance (25%):</strong> Direct utility for software developers, ML researchers, enterprise architects, and product builders.</li>
+              <li><strong>Freshness (20%):</strong> Time-decay function anchored to verified publication timestamps with an exponential 48-hour half-life.</li>
+              <li><strong>Popularity &amp; Corroboration (15%):</strong> Cross-publisher reporting frequency and multi-outlet story clustering.</li>
+              <li><strong>Source Confidence (10%):</strong> Verification weight determined by the tier classification of the primary publishing entity.</li>
+            </ul>
+          </div>
+
+          <div class="methodology-card">
+            <h3>3. Evidence Provenance &amp; Anti-Hallucination Policy</h3>
+            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
+              <li><strong>Strict Temporal Truth:</strong> Missing or ambiguous publication dates are displayed as "Recent" and scored conservatively. AI Trend Pulse never fabricates timestamps.</li>
+              <li><strong>Story Deduplication &amp; Canonical Clustering:</strong> When independent journalists syndicate a lab announcement, Jaccard token clustering identifies the relationship, presenting the primary lab as the authoritative source while linking secondary journalism for context.</li>
+              <li><strong>Parameter-Clean URLs:</strong> All outgoing reference URLs are sanitized to strip ad-tracking parameters (<code>utm_*</code>, <code>ref</code>, <code>fbclid</code>, etc.), guaranteeing clean provenance and privacy.</li>
+              <li><strong>Zero Vanity Metrics:</strong> Engagement signals are grounded in objective multi-source corroboration counts rather than simulated or unverified clicks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- FOOTER: EDITORIAL METHODOLOGY & MONITORED FEEDS -->
     <footer class="site-footer">
       <div class="footer-columns">
@@ -2520,15 +2779,19 @@
         </div>
 
         <div class="footer-col-feeds">
-          <h3 class="footer-heading">Monitored Feeds</h3>
+          <h3 class="footer-heading">Monitored Feeds (21 Verified Sources)</h3>
           <ul class="footer-feeds-list">
             <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research &amp; News ↗</a></li>
+            <li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News &amp; Research ↗</a></li>
             <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind Blog ↗</a></li>
+            <li><a href="https://blogs.microsoft.com/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI Blog ↗</a></li>
             <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review ↗</a></li>
             <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
             <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI ↗</a></li>
             <li><a href="https://arstechnica.com/information-technology/" target="_blank" rel="noopener noreferrer">Ars Technica ↗</a></li>
             <li><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a></li>
+            <li><a href="https://developer.nvidia.com/blog" target="_blank" rel="noopener noreferrer">NVIDIA Developer Blog ↗</a></li>
+            <li><a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer">arXiv Computer Science AI ↗</a></li>
           </ul>
         </div>
       </div>
@@ -2808,6 +3071,9 @@
       renderStatusBar(cachedData);
       renderTopicPills(cachedData);
       renderDevelopmentsFeed(cachedData);
+      renderAITools(cachedData);
+      renderDeveloperRadar(cachedData);
+      renderResearchSafety(cachedData);
       renderDispatchesFeed(cachedData);
       updateSavedCountBadge();
     }
@@ -3195,6 +3461,169 @@
     }
 
     /* -------------------------------------------------------------
+       12B. CURATED DOMAIN SECTIONS (AI TOOLS, DEV RADAR, RESEARCH/SAFETY)
+       ------------------------------------------------------------- */
+    function renderCuratedCard(item, idx, category) {
+      const div = document.createElement('div');
+      div.className = 'card-base dispatch-card curated-item';
+      const company = item.company || detectCompany(item.title, item.source);
+      const url = item.link && item.link.startsWith('http') ? item.link : '#';
+      const isSaved = isItemSaved(item.title);
+      const readTime = item.reading_time || calculateReadingTime(item.one_liner || item.title);
+      const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier);
+      const scoreVal = item.score ? Math.round(item.score * 100) : null;
+      const corroborationCount = (item.evidence_urls && item.evidence_urls.length) || item.corroborating_count || 1;
+
+      div.innerHTML = `
+        <div class="dispatch-header-row">
+          <div class="dispatch-source-brand">
+            ${getCompanyLogoSVG(company)}
+            <span>${escapeHTML(item.source)}</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            ${corroborationCount > 1 ? `<span class="badge-corroborated" title="${corroborationCount} independent sources reporting">✓ ${corroborationCount} Sources</span>` : ''}
+            ${scoreVal ? `<span class="score-pill" title="Algorithmic Pulse Score (0-100)">⚡ ${scoreVal}</span>` : ''}
+            ${tierBadgeHTML}
+          </div>
+        </div>
+
+        <div class="dispatch-body">
+          <h3 class="dispatch-title">
+            <a href="${escapeHTML(url)}" onclick="openReaderForCuratedItem('${category}', ${idx}, event)">${escapeHTML(item.title)} ↗</a>
+          </h3>
+          <p class="dispatch-summary">${escapeHTML(item.what_happened || item.one_liner || '')}</p>
+          ${item.why_it_matters ? `
+            <div class="card-why-callout" style="margin-top:10px;">
+              <div class="card-why-callout-title">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Why It Matters</span>
+              </div>
+              <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
+            </div>
+          ` : ''}
+        </div>
+
+        <div class="dispatch-footer">
+          <span class="dispatch-meta-time">⏱ ${readTime} • ${escapeHTML(item.published || 'Recent')}</span>
+          <div class="dispatch-actions">
+            <button class="btn-read-deep-dive" onclick="openReaderForCuratedItem('${category}', ${idx}, event)" aria-label="Deep dive into story">
+              <span>Deep Dive</span>
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveCuratedItem('${category}', ${idx}, this)" aria-label="Save story" title="Save story">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            </button>
+            <button class="btn-action-icon" onclick="handleCopyCuratedItem('${category}', ${idx}, this)" aria-label="Copy summary" title="Copy summary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+            <a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source" title="Open source">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      `;
+      return div;
+    }
+
+    function renderAITools(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
+      const container = document.getElementById('ai-tools-container');
+      if (!container) return;
+      container.innerHTML = '';
+      const items = data.ai_tools || [];
+      if (items.length === 0) {
+        container.innerHTML = '<div style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Curating latest practical AI tools...</div>';
+        return;
+      }
+      items.slice(0, 4).forEach((item, idx) => {
+        container.appendChild(renderCuratedCard(item, idx, 'ai_tools'));
+      });
+    }
+
+    function renderDeveloperRadar(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
+      const container = document.getElementById('dev-radar-container');
+      if (!container) return;
+      container.innerHTML = '';
+      const items = data.dev_radar || [];
+      if (items.length === 0) {
+        container.innerHTML = '<div style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Monitoring developer SDKs and coding agents...</div>';
+        return;
+      }
+      items.slice(0, 4).forEach((item, idx) => {
+        container.appendChild(renderCuratedCard(item, idx, 'dev_radar'));
+      });
+    }
+
+    function renderResearchSafety(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
+      const container = document.getElementById('research-safety-container');
+      if (!container) return;
+      container.innerHTML = '';
+      const items = data.research_safety || [];
+      if (items.length === 0) {
+        container.innerHTML = '<div style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Tracking safety alignment papers and policy standards...</div>';
+        return;
+      }
+      items.slice(0, 4).forEach((item, idx) => {
+        container.appendChild(renderCuratedCard(item, idx, 'research_safety'));
+      });
+    }
+
+    function openReaderForCuratedItem(category, idx, e) {
+      if (e) e.preventDefault();
+      const list = cachedData ? (cachedData[category] || []) : [];
+      if (list && list[idx]) {
+        openReaderView(list[idx]);
+      }
+    }
+
+    function handleSaveCuratedItem(category, idx, btn) {
+      const list = cachedData ? (cachedData[category] || []) : [];
+      const item = list[idx];
+      if (!item) return;
+      const url = item.link && item.link.startsWith('http') ? item.link : '#';
+      const company = item.company || detectCompany(item.title, item.source);
+      toggleSaveItem(item.title, item.source, url, company);
+    }
+
+    function handleCopyCuratedItem(category, idx, btn) {
+      const list = cachedData ? (cachedData[category] || []) : [];
+      const item = list[idx];
+      if (!item) return;
+      copyStorySummary(item.title, item.what_happened || item.one_liner || '', btn);
+    }
+
+    /* -------------------------------------------------------------
+       12C. EDITORIAL & METHODOLOGY MODAL HANDLERS
+       ------------------------------------------------------------- */
+    function openMethodologyModal(e) {
+      if (e) e.preventDefault();
+      const backdrop = document.getElementById('methodology-backdrop');
+      if (backdrop) {
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMethodologyModal() {
+      const backdrop = document.getElementById('methodology-backdrop');
+      if (backdrop) {
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleMethodologyBackdropClick(e) {
+      if (e.target && e.target.id === 'methodology-backdrop') {
+        closeMethodologyModal();
+      }
+    }
+
+    /* -------------------------------------------------------------
        13. SAVED STORIES DRAWER & LOCAL STORAGE PERSISTENCE
        ------------------------------------------------------------- */
     function getSavedItems() {
@@ -3231,6 +3660,9 @@
 
       updateSavedCountBadge();
       renderDevelopmentsFeed(cachedData);
+      renderAITools(cachedData);
+      renderDeveloperRadar(cachedData);
+      renderResearchSafety(cachedData);
       renderDispatchesFeed(cachedData);
       renderSavedDrawerItems();
     }
@@ -3504,6 +3936,7 @@
         closeSearchModal();
         closeSavedDrawer();
         closeReaderView();
+        closeMethodologyModal();
       }
     });
 
