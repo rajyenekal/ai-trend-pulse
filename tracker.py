@@ -37,7 +37,7 @@ SCORING_WEIGHTS = {
     "importance": 0.30,
     "audience_relevance": 0.25,
     "freshness": 0.20,
-    "popularity_signal": 0.15,
+    "coverage_corroboration": 0.15,
     "source_confidence": 0.10,
 }
 
@@ -57,134 +57,418 @@ SOURCES_REGISTRY_FILE = "sources.json"
 
 
 # -------------------------------------------------------------
-# 2. SOURCE REGISTRY MANAGEMENT
+# 2. SOURCE REGISTRY & SCHEMA VALIDATION
 # -------------------------------------------------------------
+FALLBACK_SOURCE_REGISTRY = [
+    {
+        "source_id": "openai_news",
+        "name": "OpenAI News",
+        "canonical_listing_url": "https://openai.com/news",
+        "feed_url": "https://openai.com/news/rss.xml",
+        "source_type": "official",
+        "topic_tags": ["models", "apis", "company"],
+        "trust_tier": 1,
+        "confidence_score": 100,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "anthropic_news",
+        "name": "Anthropic Official News",
+        "canonical_listing_url": "https://www.anthropic.com/news",
+        "feed_url": "https://www.anthropic.com/news",
+        "source_type": "official",
+        "topic_tags": ["models", "research", "safety", "agents"],
+        "trust_tier": 1,
+        "confidence_score": 100,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "html_page_adapter",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "anthropic_hn_discovery",
+        "name": "Anthropic Community Discovery (HNRSS)",
+        "canonical_listing_url": "https://news.ycombinator.com",
+        "feed_url": "https://hnrss.org/newest?q=anthropic.com",
+        "source_type": "unofficial_discovery",
+        "topic_tags": ["community", "discovery", "mentions"],
+        "trust_tier": 4,
+        "confidence_score": 60,
+        "is_official": False,
+        "feed_is_official": False,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "deepmind_blog",
+        "name": "Google DeepMind",
+        "canonical_listing_url": "https://deepmind.google/blog/",
+        "feed_url": "https://deepmind.google/blog/rss.xml",
+        "source_type": "official",
+        "topic_tags": ["research", "models", "science"],
+        "trust_tier": 1,
+        "confidence_score": 100,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "google_ai_blog",
+        "name": "Google AI Blog",
+        "canonical_listing_url": "https://blog.google/technology/ai/",
+        "feed_url": "https://blog.google/technology/ai/rss/",
+        "source_type": "official",
+        "topic_tags": ["tools", "models", "products"],
+        "trust_tier": 1,
+        "confidence_score": 95,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "microsoft_ai_news",
+        "name": "Microsoft AI News",
+        "canonical_listing_url": "https://news.microsoft.com/source/topics/ai/",
+        "feed_url": "https://news.microsoft.com/source/topics/ai/feed/",
+        "source_type": "official",
+        "topic_tags": ["enterprise", "copilot", "infrastructure"],
+        "trust_tier": 1,
+        "confidence_score": 95,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "nvidia_blog",
+        "name": "NVIDIA Blog",
+        "canonical_listing_url": "https://blogs.nvidia.com/blog/category/ai/",
+        "feed_url": "https://blogs.nvidia.com/feed/",
+        "source_type": "official",
+        "topic_tags": ["infrastructure", "hardware", "models"],
+        "trust_tier": 1,
+        "confidence_score": 95,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "aws_ml_blog",
+        "name": "AWS Machine Learning",
+        "canonical_listing_url": "https://aws.amazon.com/blogs/machine-learning/",
+        "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+        "source_type": "official",
+        "topic_tags": ["infrastructure", "cloud", "developers"],
+        "trust_tier": 1,
+        "confidence_score": 90,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "amazon_science",
+        "name": "Amazon Science",
+        "canonical_listing_url": "https://www.amazon.science/",
+        "feed_url": "https://www.amazon.science/index.rss",
+        "source_type": "official",
+        "topic_tags": ["research", "models", "robotics"],
+        "trust_tier": 1,
+        "confidence_score": 90,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "huggingface_blog",
+        "name": "Hugging Face Blog",
+        "canonical_listing_url": "https://huggingface.co/blog",
+        "feed_url": "https://huggingface.co/blog/feed.xml",
+        "source_type": "research",
+        "topic_tags": ["open-source", "models", "tools", "developers"],
+        "trust_tier": 3,
+        "confidence_score": 90,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "github_blog_ai",
+        "name": "GitHub Blog AI",
+        "canonical_listing_url": "https://github.blog/category/ai-and-ml/",
+        "feed_url": "https://github.blog/category/ai-and-ml/feed/",
+        "source_type": "official",
+        "topic_tags": ["coding", "developers", "tools"],
+        "trust_tier": 1,
+        "confidence_score": 90,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "mistral_news",
+        "name": "Mistral AI News",
+        "canonical_listing_url": "https://mistral.ai/news/",
+        "feed_url": "https://mistral.ai/news/rss",
+        "source_type": "official",
+        "topic_tags": ["models", "open-source", "apis"],
+        "trust_tier": 1,
+        "confidence_score": 95,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "mit_tech_review",
+        "name": "MIT Technology Review",
+        "canonical_listing_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+        "feed_url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+        "source_type": "publication",
+        "topic_tags": ["policy", "research", "safety", "society"],
+        "trust_tier": 2,
+        "confidence_score": 85,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "the_verge_ai",
+        "name": "The Verge AI",
+        "canonical_listing_url": "https://www.theverge.com/ai-artificial-intelligence",
+        "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "source_type": "publication",
+        "topic_tags": ["products", "industry", "policy", "tools"],
+        "trust_tier": 2,
+        "confidence_score": 85,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "techcrunch_ai",
+        "name": "TechCrunch AI",
+        "canonical_listing_url": "https://techcrunch.com/category/artificial-intelligence/",
+        "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "source_type": "publication",
+        "topic_tags": ["startups", "business", "funding", "tools"],
+        "trust_tier": 2,
+        "confidence_score": 85,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "ars_technica",
+        "name": "Ars Technica",
+        "canonical_listing_url": "https://arstechnica.com/ai/",
+        "feed_url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+        "source_type": "publication",
+        "topic_tags": ["security", "policy", "infrastructure", "hardware"],
+        "trust_tier": 2,
+        "confidence_score": 85,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "the_decoder",
+        "name": "The Decoder",
+        "canonical_listing_url": "https://the-decoder.com/",
+        "feed_url": "https://the-decoder.com/feed/",
+        "source_type": "publication",
+        "topic_tags": ["models", "research", "industry"],
+        "trust_tier": 2,
+        "confidence_score": 80,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "arxiv_cs_ai",
+        "name": "arXiv cs.AI",
+        "canonical_listing_url": "https://arxiv.org/list/cs.AI/recent",
+        "feed_url": "https://rss.arxiv.org/rss/cs.AI",
+        "source_type": "research",
+        "topic_tags": ["research", "preprints", "theory"],
+        "trust_tier": 3,
+        "confidence_score": 80,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 120,
+    },
+    {
+        "source_id": "arxiv_cs_lg",
+        "name": "arXiv cs.LG",
+        "canonical_listing_url": "https://arxiv.org/list/cs.LG/recent",
+        "feed_url": "https://rss.arxiv.org/rss/cs.LG",
+        "source_type": "research",
+        "topic_tags": ["research", "machine-learning", "preprints"],
+        "trust_tier": 3,
+        "confidence_score": 80,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 120,
+    },
+    {
+        "source_id": "bair_blog",
+        "name": "BAIR Blog",
+        "canonical_listing_url": "https://bair.berkeley.edu/blog/",
+        "feed_url": "https://bair.berkeley.edu/blog/feed.xml",
+        "source_type": "research",
+        "topic_tags": ["research", "robotics", "agents"],
+        "trust_tier": 3,
+        "confidence_score": 85,
+        "is_official": True,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 120,
+    },
+    {
+        "source_id": "simon_willison",
+        "name": "Simon Willison Weblog",
+        "canonical_listing_url": "https://simonwillison.net/",
+        "feed_url": "https://simonwillison.net/atom/everything/",
+        "source_type": "community",
+        "topic_tags": ["tools", "prompt-injection", "developers", "coding"],
+        "trust_tier": 4,
+        "confidence_score": 75,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "atom",
+        "enabled": True,
+        "poll_interval_minutes": 60,
+    },
+    {
+        "source_id": "import_ai",
+        "name": "Import AI",
+        "canonical_listing_url": "https://importai.substack.com/",
+        "feed_url": "https://importai.substack.com/feed",
+        "source_type": "community",
+        "topic_tags": ["policy", "safety", "research"],
+        "trust_tier": 4,
+        "confidence_score": 75,
+        "is_official": False,
+        "feed_is_official": True,
+        "fetch_method": "rss",
+        "enabled": True,
+        "poll_interval_minutes": 120,
+    },
+]
+
+
+def validate_source_record(source):
+  """Strict schema validation for source registry records."""
+  if not isinstance(source, dict):
+    return False, "Source record must be a dict"
+
+  required_fields = ["source_id", "name", "canonical_listing_url", "source_type", "trust_tier", "confidence_score"]
+  for f in required_fields:
+    if f not in source or source[f] is None:
+      return False, f"Missing required field: {f}"
+
+  if not isinstance(source["source_id"], str) or not source["source_id"].strip():
+    return False, "source_id must be non-empty string"
+
+  if not isinstance(source["name"], str) or not source["name"].strip():
+    return False, "name must be non-empty string"
+
+  if source["trust_tier"] not in (1, 2, 3, 4):
+    return False, f"trust_tier must be 1, 2, 3, or 4; got {source['trust_tier']}"
+
+  if not (0 <= source["confidence_score"] <= 100):
+    return False, f"confidence_score must be between 0 and 100; got {source['confidence_score']}"
+
+  valid_types = {"official", "publication", "research", "community", "unofficial_discovery"}
+  if source["source_type"] not in valid_types:
+    return False, f"source_type must be one of {valid_types}; got {source['source_type']}"
+
+  canon_url = source.get("canonical_listing_url", "")
+  if not (canon_url.startswith("http://") or canon_url.startswith("https://")):
+    return False, f"canonical_listing_url must start with http:// or https://: {canon_url}"
+
+  feed_url = source.get("feed_url", "")
+  if feed_url and not (feed_url.startswith("http://") or feed_url.startswith("https://")):
+    return False, f"feed_url must start with http:// or https://: {feed_url}"
+
+  # Unofficial discovery vs Official consistency
+  if source["source_type"] == "unofficial_discovery":
+    if source.get("is_official") is True:
+      return False, "unofficial_discovery source cannot be marked is_official=True"
+    if source.get("feed_is_official") is True:
+      return False, "unofficial_discovery source cannot be marked feed_is_official=True"
+
+  # Official Anthropic verification
+  if source["source_id"] == "anthropic_news":
+    if source.get("fetch_method") != "html_page_adapter":
+      return False, "anthropic_news must use html_page_adapter fetch_method"
+    if not source.get("is_official"):
+      return False, "anthropic_news must be is_official=True"
+
+  return True, "Valid"
+
+
 def load_source_registry(filepath=SOURCES_REGISTRY_FILE):
-  """Loads the centralized source registry, falling back to core sources if missing."""
+  """Loads and validates the centralized source registry, falling back to verified sources if missing."""
+  candidates = []
   if os.path.exists(filepath):
     try:
       with open(filepath, "r", encoding="utf-8") as f:
         registry = json.load(f)
       if isinstance(registry, list) and len(registry) > 0:
-        return [s for s in registry if s.get("enabled", True)]
+        candidates = registry
     except Exception as e:
       print(f"⚠️ Error reading {filepath}: {e}")
 
-  # Resilient fallback registry
-  return [
-      {
-          "source_id": "openai_news",
-          "name": "OpenAI News",
-          "canonical_listing_url": "https://openai.com/news",
-          "feed_url": "https://openai.com/news/rss.xml",
-          "source_type": "official",
-          "topic_tags": ["models", "apis"],
-          "trust_tier": 1,
-          "confidence_score": 100,
-          "is_official": True,
-          "feed_is_official": True,
-          "fetch_method": "rss",
-          "enabled": True,
-      },
-      {
-          "source_id": "anthropic_news",
-          "name": "Anthropic News",
-          "canonical_listing_url": "https://www.anthropic.com/news",
-          "feed_url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml",
-          "source_type": "official",
-          "topic_tags": ["models", "research", "safety"],
-          "trust_tier": 1,
-          "confidence_score": 100,
-          "is_official": True,
-          "feed_is_official": False,
-          "fetch_method": "html_page_adapter",
-          "enabled": True,
-      },
-      {
-          "source_id": "deepmind_blog",
-          "name": "Google DeepMind",
-          "canonical_listing_url": "https://deepmind.google/blog/",
-          "feed_url": "https://deepmind.google/blog/rss.xml",
-          "source_type": "official",
-          "topic_tags": ["research", "models"],
-          "trust_tier": 1,
-          "confidence_score": 100,
-          "is_official": True,
-          "feed_is_official": True,
-          "fetch_method": "rss",
-          "enabled": True,
-      },
-      {
-          "source_id": "mit_tech_review",
-          "name": "MIT Technology Review",
-          "canonical_listing_url": "https://www.technologyreview.com/topic/artificial-intelligence/",
-          "feed_url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
-          "source_type": "publication",
-          "topic_tags": ["policy", "research", "safety"],
-          "trust_tier": 2,
-          "confidence_score": 85,
-          "is_official": False,
-          "feed_is_official": True,
-          "fetch_method": "rss",
-          "enabled": True,
-      },
-      {
-          "source_id": "the_verge_ai",
-          "name": "The Verge AI",
-          "canonical_listing_url": "https://www.theverge.com/ai-artificial-intelligence",
-          "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-          "source_type": "publication",
-          "topic_tags": ["products", "industry"],
-          "trust_tier": 2,
-          "confidence_score": 85,
-          "is_official": False,
-          "feed_is_official": True,
-          "fetch_method": "rss",
-          "enabled": True,
-      },
-      {
-          "source_id": "techcrunch_ai",
-          "name": "TechCrunch AI",
-          "canonical_listing_url": "https://techcrunch.com/category/artificial-intelligence/",
-          "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
-          "source_type": "publication",
-          "topic_tags": ["startups", "business"],
-          "trust_tier": 2,
-          "confidence_score": 85,
-          "is_official": False,
-          "feed_is_official": True,
-          "fetch_method": "rss",
-          "enabled": True,
-      },
-      {
-          "source_id": "ars_technica",
-          "name": "Ars Technica",
-          "canonical_listing_url": "https://arstechnica.com/ai/",
-          "feed_url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
-          "source_type": "publication",
-          "topic_tags": ["security", "policy"],
-          "trust_tier": 2,
-          "confidence_score": 85,
-          "is_official": False,
-          "feed_is_official": True,
-          "fetch_method": "rss",
-          "enabled": True,
-      },
-      {
-          "source_id": "huggingface_blog",
-          "name": "Hugging Face Blog",
-          "canonical_listing_url": "https://huggingface.co/blog",
-          "feed_url": "https://huggingface.co/blog/feed.xml",
-          "source_type": "research",
-          "topic_tags": ["open-source", "models"],
-          "trust_tier": 3,
-          "confidence_score": 90,
-          "is_official": True,
-          "feed_is_official": True,
-          "fetch_method": "rss",
-          "enabled": True,
-      },
-  ]
+  if not candidates:
+    candidates = FALLBACK_SOURCE_REGISTRY
+
+  valid_sources = []
+  for s in candidates:
+    is_valid, reason = validate_source_record(s)
+    if is_valid:
+      if s.get("enabled", True):
+        valid_sources.append(s)
+    else:
+      print(f"⚠️ Skipping invalid source record {s.get('source_id')}: {reason}")
+
+  return valid_sources
 
 
 # -------------------------------------------------------------
@@ -647,26 +931,27 @@ def calculate_story_scores(article, corroboration_count=1):
   else:
     freshness = 50
 
-  # 4. Popularity Signal (Grounded only in repeated independent coverage; neutral if single-source)
+  # 4. Coverage & Corroboration Signal (Grounded in verified multi-source coverage; neutral if single-source)
   if corroboration_count >= 4:
-    popularity_signal = 95
+    coverage_signal = 95
   elif corroboration_count == 3:
-    popularity_signal = 85
+    coverage_signal = 85
   elif corroboration_count == 2:
-    popularity_signal = 75
+    coverage_signal = 75
   else:
     # Single-source items receive a neutral baseline (50) so niche technical research is not penalized
-    popularity_signal = 50
+    coverage_signal = 50
 
   # 5. Source Confidence
   source_confidence = CONFIDENCE_TIER_SCORES.get(trust_tier, 80)
 
   # Weighted Overall Score
+  cov_weight = SCORING_WEIGHTS.get("coverage_corroboration", SCORING_WEIGHTS.get("popularity_signal", 0.15))
   overall_score = round(
       SCORING_WEIGHTS["importance"] * importance +
       SCORING_WEIGHTS["audience_relevance"] * audience_relevance +
       SCORING_WEIGHTS["freshness"] * freshness +
-      SCORING_WEIGHTS["popularity_signal"] * popularity_signal +
+      cov_weight * coverage_signal +
       SCORING_WEIGHTS["source_confidence"] * source_confidence,
       1
   )
@@ -677,7 +962,8 @@ def calculate_story_scores(article, corroboration_count=1):
       "importance_score": importance,
       "relevance_score": audience_relevance,
       "freshness_score": freshness,
-      "popularity_score": popularity_signal,
+      "coverage_score": coverage_signal,
+      "popularity_score": coverage_signal,  # Backward compatibility alias
       "confidence_score": source_confidence,
       "overall_score": overall_score,
       "confidence_label": confidence_label,
@@ -1018,8 +1304,73 @@ Return JSON with this exact schema:
 # -------------------------------------------------------------
 # 14. PAYLOAD CONSTRUCTION & EDITORIAL SECTIONS
 # -------------------------------------------------------------
+def extract_key_points(summary, title, source_name=""):
+  """Extracts factual bullet points from the actual summary and title without generic boilerplate."""
+  clean_summary = (summary or "").strip()
+  sentences = [
+      re.sub(r"\s+", " ", sent).strip()
+      for sent in re.split(r"(?<=[.!?])\s+", clean_summary)
+      if len(sent.strip()) > 20
+  ]
+  boilerplate_phrases = [
+      "reported directly by", "verified against", "refer to the direct publication",
+      "relevant to practitioners", "click here", "read more"
+  ]
+  valid_sentences = [
+      s for s in sentences
+      if not any(b in s.lower() for b in boilerplate_phrases)
+  ]
+  points = []
+  for s in valid_sentences:
+    if s not in points:
+      points.append(s)
+    if len(points) >= 3:
+      break
+
+  if not points:
+    points.append(title.strip())
+  elif len(points) == 1 and title.strip() not in points:
+    points.insert(0, title.strip())
+
+  return points[:3]
+
+
+def generate_factual_why_it_matters(title, summary, topic):
+  """Generates a concise, factual explanation of impact grounded in the topic and content without boilerplate."""
+  # Look for causal/impact sentences in summary
+  clean_summary = (summary or "").strip()
+  sentences = re.split(r"(?<=[.!?])\s+", clean_summary)
+  for s in sentences:
+    s_clean = s.strip()
+    s_lower = s_clean.lower()
+    if any(k in s_lower for k in ["enables", "allows", "designed to", "aims to", "improves", "reduces", "provides", "features", "introduces"]):
+      if 30 <= len(s_clean) <= 240:
+        return s_clean
+
+  # Topic-grounded contextual impact
+  topic_impact_map = {
+      "AI Coding": "Directly impacts developer workflows, automated test generation, and IDE code intelligence.",
+      "AI Agents": "Affects autonomous task execution, runtime tool-calling reliability, and workflow orchestration.",
+      "Model Releases": "Establishes new performance baselines for reasoning, latency, and context efficiency.",
+      "Research & Safety": "Informs model evaluation protocols, safety alignment standards, and governance policies.",
+      "AI Business": "Influences enterprise AI adoption, commercial infrastructure costs, and platform strategy.",
+      "AI Tools & Ecosystem": "Expands practical integration options and tooling capabilities across production systems.",
+  }
+  return topic_impact_map.get(topic, "Expands practical AI tooling options and ecosystem integration across production workflows.")
+
+
+def generate_detailed_analysis(summary, title):
+  """Formats factual analysis from the source text without boilerplate placeholders."""
+  clean_summary = (summary or "").strip()
+  if clean_summary and clean_summary != title:
+    return clean_summary
+  return f"{title}."
+
+
 def build_complete_payload(clustered_stories, ai_briefing=None):
-  """Builds the comprehensive schema contract consumed by index.html and test_qa.js."""
+  """Builds the comprehensive schema contract consumed by index.html and test_qa.js.
+  Enforces cross-section mutual exclusivity so articles are not duplicated across sections.
+  """
   now_iso = datetime.now(timezone.utc).isoformat()
 
   # 1. Format Top Stories (Dispatches) - capped to top 45 scored stories
@@ -1033,11 +1384,16 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "Open Research" if s.get("trust_tier") == 3 else "Independent Journalism"
     )
 
+    clean_summary = (s.get("summary") or s.get("title") or "").strip()
+    key_points = extract_key_points(clean_summary, s.get("title", ""), s.get("source", ""))
+    detailed_analysis = generate_detailed_analysis(clean_summary, s.get("title", ""))
+    why_it_matters = generate_factual_why_it_matters(s.get("title", ""), clean_summary, topic)
+
     top_stories.append({
         "id": s.get("cluster_id") or f"story_{len(top_stories) + 1}",
         "title": s.get("title"),
-        "one_liner": s.get("summary"),
-        "summary": s.get("summary"),
+        "one_liner": clean_summary,
+        "summary": clean_summary,
         "source": s.get("source"),
         "tier": tier_label,
         "trust_tier": s.get("trust_tier", 2),
@@ -1050,22 +1406,13 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "topic": topic,
         "company": company,
         "reading_time": reading_time,
-        "key_points": [
-            s.get("summary") or s.get("title"),
-            f"Reported directly by {s.get('source')}.",
-            "Verified against primary editorial sources.",
-        ],
-        "detailed_analysis": (
-            f"{s.get('summary', '')}\n\n"
-            f"This development was published by {s.get('source')}. "
-            f"Refer to the direct publication URL for complete technical specifications and code samples."
-        ),
-        "why_it_matters": (
-            f"Relevant to practitioners tracking {topic.lower()} developments and implementation workflows."
-        ),
+        "key_points": key_points,
+        "detailed_analysis": detailed_analysis,
+        "why_it_matters": why_it_matters,
         "importance_score": s.get("importance_score", 70),
         "relevance_score": s.get("relevance_score", 70),
         "freshness_score": s.get("freshness_score", 50),
+        "coverage_score": s.get("coverage_score", 50),
         "popularity_score": s.get("popularity_score", 50),
         "confidence_score": s.get("confidence_score", 85),
         "overall_score": s.get("overall_score", 70.0),
@@ -1073,6 +1420,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "related_sources": s.get("related_sources", []),
         "covered_by_sources_count": s.get("covered_by_sources_count", 1),
     })
+
+  assigned_urls = set()
 
   # 2. Format Trends (Lead Briefing Stories)
   trends = []
@@ -1082,6 +1431,13 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
       company = detect_company(t.get("title", ""), t.get("source", ""))
       reading_time = estimate_reading_time(f"{t.get('what_happened', '')} {t.get('why_it_matters', '')}")
       who_affected = t.get("who_affected", "Developers and Enterprise Teams")
+      ev_urls = t.get("evidence_urls", [])
+
+      for u in ev_urls:
+        assigned_urls.add(u)
+
+      kp = [t.get("what_happened"), t.get("why_it_matters")]
+      clean_kp = [p for p in kp if p and len(p.strip()) > 10]
 
       trends.append({
           "title": t.get("title"),
@@ -1091,25 +1447,18 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
           "source": t.get("source", "Primary Lab"),
           "tier": "Official Lab" if "openai" in company or "deepmind" in company or "anthropic" in company else "Independent Journalism",
           "status": t.get("status", "source_linked"),
-          "evidence_urls": t.get("evidence_urls", []),
+          "evidence_urls": ev_urls,
           "topic": topic,
           "company": company,
           "reading_time": reading_time,
           "audience_pills": extract_audience_pills(who_affected),
-          "key_points": [
-              t.get("what_happened"),
-              t.get("why_it_matters"),
-              f"Reported by {t.get('source')}.",
-          ],
-          "detailed_analysis": (
-              f"{t.get('what_happened')}\n\n"
-              f"{t.get('why_it_matters')}\n\n"
-              f"Verified across primary source dispatches with evidence provenance."
-          ),
+          "key_points": clean_kp if clean_kp else [t.get("title")],
+          "detailed_analysis": f"{t.get('what_happened')}\n\n{t.get('why_it_matters')}",
       })
   else:
     # Deterministic Non-LLM Briefing Trends from top 3 scored stories
     for s in top_stories[:3]:
+      assigned_urls.add(s["link"])
       trends.append({
           "title": s["title"],
           "what_happened": s["summary"],
@@ -1128,11 +1477,85 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
           "image": s.get("image", ""),
       })
 
-  # 3. Categorized Sections (AI Tools, Developer Radar, Research/Safety)
-  ai_tools = [s for s in top_stories if s["topic"] in ("AI Tools & Ecosystem", "AI Coding") or any(k in s["title"].lower() for k in ["tool", "app", "release", "feature", "assist", "workflow"])][:4]
-  dev_radar = [s for s in top_stories if s["topic"] in ("AI Coding", "AI Agents", "AI Infrastructure") or any(k in s["title"].lower() for k in ["sdk", "api", "code", "agent", "open-source", "weight", "benchmark", "mcp", "library"])][:4]
-  research_safety = [s for s in top_stories if s["topic"] in ("Research & Safety", "Policy & Governance") or s["trust_tier"] in (3, 4) or any(k in s["title"].lower() for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark"])][:4]
-  trending = [s for s in top_stories if s["covered_by_sources_count"] > 1 or s["overall_score"] >= 80][:4]
+  # 3. Purpose-driven curated domain sections with cross-section exclusivity
+  # AI Tools: actual products, tools, assistants, platform features
+  ai_tools = []
+  for s in top_stories:
+    if s["link"] in assigned_urls:
+      continue
+    is_tool = (
+        s["topic"] in ("AI Tools & Ecosystem", "AI Coding") or
+        any(k in s["title"].lower() for k in ["tool", "app", "release", "feature", "assist", "workflow", "platform", "extension", "plugin", "suite"])
+    )
+    if is_tool:
+      ai_tools.append(s)
+      assigned_urls.add(s["link"])
+      if len(ai_tools) >= 4:
+        break
+
+  # Developer Radar: APIs, SDKs, frameworks, libraries, coding agents, MCP
+  dev_radar = []
+  for s in top_stories:
+    if s["link"] in assigned_urls:
+      continue
+    is_dev = (
+        s["topic"] in ("AI Coding", "AI Agents") or
+        any(k in s["title"].lower() for k in ["sdk", "api", "code", "agent", "open-source", "weight", "benchmark", "mcp", "library", "framework", "repo", "github", "inference"])
+    )
+    if is_dev:
+      dev_radar.append(s)
+      assigned_urls.add(s["link"])
+      if len(dev_radar) >= 4:
+        break
+
+  # Research & Safety: safety, alignment, security, policy, governance, preprints
+  research_safety = []
+  for s in top_stories:
+    if s["link"] in assigned_urls:
+      continue
+    is_research = (
+        s["topic"] in ("Research & Safety",) or
+        s["trust_tier"] in (3, 4) or
+        any(k in s["title"].lower() for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark", "risk", "security", "copyright", "red team", "misalignment"])
+    )
+    if is_research:
+      research_safety.append(s)
+      assigned_urls.add(s["link"])
+      if len(research_safety) >= 4:
+        break
+
+  # Trending: Stories with corroborated multi-outlet coverage (covered_by_sources_count > 1) or high overall score
+  trending = []
+  for s in top_stories:
+    if s["link"] in assigned_urls:
+      continue
+    if s.get("covered_by_sources_count", 1) > 1 or s.get("overall_score", 0) >= 80:
+      trending.append(s)
+      assigned_urls.add(s["link"])
+      if len(trending) >= 4:
+        break
+
+  # The Pulse: Key quick developments from the last hours, excluding the lead briefing trend when possible
+  pulse_items = []
+  lead_trend_url = trends[0].get("link") if trends and "link" in trends[0] else (trends[0].get("evidence_urls", [None])[0] if trends else None)
+  for s in top_stories:
+    if lead_trend_url and s["link"] == lead_trend_url and len(top_stories) > 1:
+      continue
+    pulse_items.append({
+        "title": s["title"],
+        "topic": s["topic"],
+        "company": s["company"],
+        "published": s.get("published", "Date unavailable"),
+        "what_happened": s.get("what_happened") or s.get("one_liner") or s.get("summary", ""),
+        "one_liner": s.get("one_liner") or s.get("summary", ""),
+        "summary": s.get("summary", ""),
+        "why_it_matters": s.get("why_it_matters", ""),
+        "link": s["link"],
+        "source": s["source"],
+        "tier": s["tier"],
+    })
+    if len(pulse_items) >= 4:
+      break
 
   takeaway = (
       ai_briefing.get("takeaway")
@@ -1152,63 +1575,105 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
       "dev_radar": dev_radar,
       "research_safety": research_safety,
       "trending": trending,
-      "pulse_items": [
-          {
-              "title": s["title"],
-              "topic": s["topic"],
-              "company": s["company"],
-              "published": s.get("published", "Date unavailable"),
-              "what_happened": s.get("what_happened") or s.get("one_liner") or s.get("summary", ""),
-              "one_liner": s.get("one_liner") or s.get("summary", ""),
-              "summary": s.get("summary", ""),
-              "why_it_matters": s.get("why_it_matters", ""),
-              "link": s["link"],
-              "source": s["source"],
-              "tier": s["tier"],
-          }
-          for s in top_stories[:4]
-      ],
+      "pulse_items": pulse_items,
   }
   return payload
 
 
 # -------------------------------------------------------------
-# 15. MAIN PIPELINE EXECUTION
+# 15. PAYLOAD VALIDATION & RESILIENT PIPELINE
 # -------------------------------------------------------------
-def run_pipeline(dry_run=False, max_age_hours=72):
-  """Full execution pipeline: ingest, cluster, score, synthesize, and write data.json atomically."""
-  articles = collect_fresh_news(max_age_hours=max_age_hours)
-  clustered = cluster_and_deduplicate_articles(articles)
-  print(f"📊 Story clustering complete: {len(clustered)} deduplicated story clusters.")
+def validate_dataset_payload(payload):
+  """Strict schema validation for the final dataset payload before saving."""
+  if not isinstance(payload, dict):
+    raise ValueError("Payload must be a dictionary")
 
-  ai_briefing = synthesize_with_gemini(clustered)
-  if ai_briefing and "trends" in ai_briefing:
-    ai_briefing["trends"] = validate_evidence_provenance(ai_briefing["trends"], articles)
+  required_keys = [
+      "schema_version", "data_status", "generated_at", "last_attempt_at",
+      "takeaway", "trends", "top_stories", "ai_tools", "dev_radar",
+      "research_safety", "pulse_items"
+  ]
+  for k in required_keys:
+    if k not in payload:
+      raise ValueError(f"Payload missing required top-level key: {k}")
 
-  payload = build_complete_payload(clustered, ai_briefing=ai_briefing)
+  if not isinstance(payload["top_stories"], list) or len(payload["top_stories"]) == 0:
+    raise ValueError("Payload top_stories must be a non-empty list")
 
-  if dry_run:
-    print("\n🔍 DRY-RUN MODE: data.json will NOT be written.")
-    print(f"   Status: {payload['data_status']}")
-    print(f"   Trends count: {len(payload['trends'])}")
-    print(f"   Stories count: {len(payload['top_stories'])}")
-    print(f"   Generated: {payload['generated_at']}")
+  for idx, s in enumerate(payload["top_stories"][:10]):
+    for field in ["title", "link", "source", "trust_tier", "overall_score"]:
+      if field not in s or s[field] is None:
+        raise ValueError(f"Story #{idx} missing required field '{field}'")
+    if not (s["link"].startswith("http://") or s["link"].startswith("https://")):
+      raise ValueError(f"Story #{idx} has invalid link: {s['link']}")
+
+  return True
+
+
+def run_pipeline(dry_run=False, max_age_hours=72, output_file="data.json"):
+  """Full execution pipeline: ingest, cluster, score, synthesize, and write data.json atomically.
+  Guarantees that previous valid dataset is preserved if any failure occurs.
+  """
+  try:
+    articles = collect_fresh_news(max_age_hours=max_age_hours)
+    if not articles:
+      print("⚠️ No fresh articles collected across sources. Preserving last known-good data.json.")
+      if os.path.exists(output_file):
+        with open(output_file, "r", encoding="utf-8") as f:
+          return json.load(f)
+      return None
+
+    clustered = cluster_and_deduplicate_articles(articles)
+    print(f"📊 Story clustering complete: {len(clustered)} deduplicated story clusters.")
+
+    ai_briefing = synthesize_with_gemini(clustered)
+    if ai_briefing and "trends" in ai_briefing:
+      ai_briefing["trends"] = validate_evidence_provenance(ai_briefing["trends"], articles)
+
+    payload = build_complete_payload(clustered, ai_briefing=ai_briefing)
+
+    # Validate payload strictly before file write
+    validate_dataset_payload(payload)
+
+    if dry_run:
+      print("\n🔍 DRY-RUN MODE: data.json will NOT be written.")
+      print(f"   Status: {payload['data_status']}")
+      print(f"   Trends count: {len(payload['trends'])}")
+      print(f"   Stories count: {len(payload['top_stories'])}")
+      print(f"   Generated: {payload['generated_at']}")
+      return payload
+
+    # Atomic write to temporary file
+    temp_file = f"{output_file}.tmp"
+    with open(temp_file, "w", encoding="utf-8") as f:
+      json.dump(payload, f, indent=2)
+
+    # Validate that temporary file reloads and passes schema validation
+    with open(temp_file, "r", encoding="utf-8") as f:
+      test_load = json.load(f)
+      validate_dataset_payload(test_load)
+
+    # Atomic file replacement
+    os.replace(temp_file, output_file)
+    print(f"✅ {output_file} written atomically! Status: {payload['data_status']}, Stories: {len(payload['top_stories'])}")
     return payload
 
-  # Atomic file write to protect against corrupted output
-  temp_file = "data.json.tmp"
-  with open(temp_file, "w", encoding="utf-8") as f:
-    json.dump(payload, f, indent=2)
-
-  # Validate that output is non-empty and valid JSON
-  with open(temp_file, "r", encoding="utf-8") as f:
-    test_load = json.load(f)
-    if not isinstance(test_load, dict) or not test_load.get("top_stories"):
-      raise ValueError("Pipeline generated invalid or empty payload; preserving previous data.json.")
-
-  os.replace(temp_file, "data.json")
-  print(f"✅ data.json written atomically! Status: {payload['data_status']}, Stories: {len(payload['top_stories'])}")
-  return payload
+  except Exception as e:
+    print(f"❌ Pipeline execution encountered an error: {e}")
+    print("🔒 Preserving previous valid dataset. No files were corrupted.")
+    temp_file = f"{output_file}.tmp"
+    if os.path.exists(temp_file):
+      try:
+        os.remove(temp_file)
+      except Exception:
+        pass
+    if os.path.exists(output_file):
+      try:
+        with open(output_file, "r", encoding="utf-8") as f:
+          return json.load(f)
+      except Exception:
+        pass
+    raise e
 
 
 if __name__ == "__main__":

@@ -2741,14 +2741,14 @@
             <h3>2. Algorithmic Pulse Scoring Formula</h3>
             <p>Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, and multi-source corroboration:</p>
             <div style="background:var(--bg-elevated); padding:12px 16px; border-radius:8px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent); margin:10px 0; border:1px solid var(--border-subtle);">
-              Score = 0.30 × Importance + 0.25 × Relevance + 0.20 × Freshness + 0.15 × Popularity + 0.10 × Confidence
+              Score = 0.30 × Importance + 0.25 × Relevance + 0.20 × Freshness + 0.15 × Coverage + 0.10 × Confidence
             </div>
             <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
-              <li><strong>Importance (30%):</strong> Architectural milestones, frontier benchmark breakthroughs, safety framework updates, and API releases.</li>
+              <li><strong>Importance (30%):</strong> Architectural milestones, frontier benchmark breakthroughs, safety framework updates, and API releases. Safety, security, alignment, and policy stories receive a guaranteed minimum protected importance score of 75.</li>
               <li><strong>Audience Relevance (25%):</strong> Direct utility for software developers, ML researchers, enterprise architects, and product builders.</li>
-              <li><strong>Freshness (20%):</strong> Time-decay function anchored to verified publication timestamps with an exponential 48-hour half-life.</li>
-              <li><strong>Popularity &amp; Corroboration (15%):</strong> Cross-publisher reporting frequency and multi-outlet story clustering.</li>
-              <li><strong>Source Confidence (10%):</strong> Verification weight determined by the tier classification of the primary publishing entity.</li>
+              <li><strong>Freshness (20%):</strong> Time-decay function anchored to verified publication timestamps; stories with missing dates receive a neutral baseline (50) without artificial freshness boosting.</li>
+              <li><strong>Coverage &amp; Corroboration (15%):</strong> Grounded strictly in verified multi-outlet corroboration and cross-publisher clustering. Independent single-source stories receive a neutral baseline (50) to ensure specialized technical research is never penalized.</li>
+              <li><strong>Source Confidence (10%):</strong> Verification weight determined by the tier classification of the primary publishing entity (Tier 1 = 100, Tier 2 = 85, Tier 3 = 80, Tier 4 = 65).</li>
             </ul>
           </div>
 
