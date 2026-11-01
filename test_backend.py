@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 import json
 import os
 import unittest
+from unittest.mock import patch
 import tracker
 
 
@@ -387,11 +388,19 @@ class TestBackendPipeline(unittest.TestCase):
       json.dump(initial_data, f)
 
     try:
-      # If max_age_hours is 0 (or sources return empty), run_pipeline must preserve the existing dataset
-      result = tracker.run_pipeline(dry_run=False, max_age_hours=0, output_file=test_file)
-      with open(test_file, "r", encoding="utf-8") as f:
-        preserved = json.load(f)
-      self.assertEqual(preserved["top_stories"][0]["title"], "Old Story", "Original dataset must be preserved")
+      # 1. When source feeds return empty, run_pipeline must preserve the existing dataset
+      with patch("tracker.collect_fresh_news", return_value=[]):
+        result = tracker.run_pipeline(dry_run=False, max_age_hours=0, output_file=test_file)
+        with open(test_file, "r", encoding="utf-8") as f:
+          preserved = json.load(f)
+        self.assertEqual(preserved["top_stories"][0]["title"], "Old Story", "Original dataset must be preserved when feeds are empty")
+
+      # 2. When source feeds encounter unexpected errors/exceptions, run_pipeline must preserve the existing dataset
+      with patch("tracker.collect_fresh_news", side_effect=RuntimeError("Simulated upstream network failure")):
+        result = tracker.run_pipeline(dry_run=False, max_age_hours=0, output_file=test_file)
+        with open(test_file, "r", encoding="utf-8") as f:
+          preserved_err = json.load(f)
+        self.assertEqual(preserved_err["top_stories"][0]["title"], "Old Story", "Original dataset must be preserved on upstream failure")
     finally:
       if os.path.exists(test_file):
         os.remove(test_file)

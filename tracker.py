@@ -1707,7 +1707,7 @@ Return JSON with this exact schema:
       print(f"⚠️ Could not initialize Gemini client: {e}")
 
   if client:
-    models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    models = ["gemini-3.8-flash", "gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
     for model in models:
       try:
         print(f"🧠 Synthesizing executive briefing with {model}...")
