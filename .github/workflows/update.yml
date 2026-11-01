@@ -2,12 +2,26 @@ name: Update AI Trends
 
 on:
   schedule:
-    - cron: '0 * * * *' # Hourly trigger
+    # Run at off-peak minutes (:17 and :47)
+    # Avoids GitHub Actions queue congestion at ':00' which causes dropped or delayed cron runs
+    - cron: '17,47 * * * *'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'data.json'
+      - 'README.md'
+      - 'DATA_PIPELINE.md'
+      - '.gitignore'
+      - 'favicon.*'
+      - 'apple-touch-icon.png'
   workflow_dispatch:
+  repository_dispatch:
+    types: [hourly-update, external-ping]
 
 concurrency:
   group: update-ai-trends
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update-data:
