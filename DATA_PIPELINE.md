@@ -59,29 +59,31 @@ flowchart TD
 
 ## 🌐 Source Registry (`sources.json`) & 4-Tier Hierarchy
 
-The sources are centralized in [`sources.json`](sources.json). Each entry adheres to the schema specified in Part 8 of the product brief:
+The sources are centralized in [`sources.json`](sources.json). Each entry adheres to the schema validated by `validate_source_record`:
 
 ```json
 {
-  "id": "openai_news",
+  "source_id": "openai_news",
   "name": "OpenAI News",
-  "type": "rss",
-  "url": "https://openai.com/news/rss.xml",
-  "tier": 1,
-  "tier_label": "Official Lab",
-  "category": "ai_labs",
-  "verification_status": "verified",
-  "adapter": "default",
-  "source_domain": "openai.com",
-  "topics": ["Model Releases", "Research & Safety", "AI Coding"],
-  "importance_weight": 1.0,
-  "confidence_weight": 1.0,
-  "max_items": 15
+  "canonical_listing_url": "https://openai.com/news",
+  "feed_url": "https://openai.com/news/rss.xml",
+  "source_type": "official",
+  "trust_tier": 1,
+  "confidence_score": 100,
+  "is_official": true,
+  "feed_is_official": true,
+  "fetch_method": "rss",
+  "enabled": true,
+  "poll_interval_minutes": 60,
+  "publisher_id": "openai",
+  "publisher_group_id": "openai",
+  "is_primary_source": true,
+  "publisher_owns_feed": true
 }
 ```
 
-### Verified Sources Coverage (21 Monitored Feeds)
-1. **Tier 1 (Official Labs)**:
+### Verified Sources Coverage (22 Monitored Feeds)
+1. **Tier 1 (Official Labs & Frontier Developers)**:
    - OpenAI News (`openai.com/news/rss.xml`)
    - Anthropic Official News (`anthropic.com/news` via HTML adapter)
    - Anthropic Research Bridge (`hnrss.org/newest?q=anthropic.com` community discovery)
@@ -168,46 +170,44 @@ When a major AI lab announces a breakthrough (e.g., a new model release), tech j
 
 Stories are ranked using a multi-factor scoring formula:
 
-$$\text{Score} = 0.30 \times \text{Importance} + 0.25 \times \text{Audience Relevance} + 0.20 \times \text{Freshness} + 0.15 \times \text{Popularity Signal} + 0.10 \times \text{Source Confidence}$$
+$$\text{Pulse Score} = 0.30 \times \text{Importance} + 0.20 \times \text{Audience Relevance} + 0.20 \times \text{Freshness} + 0.15 \times \text{Coverage Corroboration} + 0.15 \times \text{Source Quality}$$
 
 ### Component Calculations
-1. **Importance ($w = 0.30$)**: Base weight derived from source tier (`1.0` for Tier 1 down to `0.85` for Tier 4) plus keyword bonuses for architectural breakthroughs (`weights`, `benchmark`, `frontier`, `api`, `safety`, `breakthrough`).
-2. **Audience Relevance ($w = 0.25$)**: Keyword matching for practical developer and enterprise utility (`developer`, `coding`, `agent`, `sdk`, `inference`, `deploy`).
-3. **Freshness ($w = 0.20$)**: Calculated via exponential decay with a 48-hour half-life:
-   $$\text{Freshness} = \exp\left(-\frac{\Delta t_{\text{hours}}}{48}\right)$$
-   Missing dates receive a neutral baseline score of $0.60$.
-4. **Popularity Signal ($w = 0.15$)**: Computed based on multi-source corroboration:
-   $$\text{Popularity} = \min\left(1.0, 0.40 + 0.25 \times (\text{corroboration\_count} - 1)\right)$$
-5. **Source Confidence ($w = 0.10$)**: Direct tier weight assigned in `sources.json`.
+1. **Importance ($w = 0.30$)**: Measures architectural significance, benchmark capability jumps, reasoning advances, safety framework updates, and API releases. Safety, security, alignment, and policy stories receive a guaranteed minimum protected importance score of 75.
+2. **Audience Relevance ($w = 0.20$)**: Evaluates practical developer utility and enterprise application value (`developer`, `coding`, `agent`, `sdk`, `inference`, `deploy`).
+3. **Freshness ($w = 0.20$)**: Calculated via time-decay anchored to verified publication timestamps; stories with missing dates receive a neutral baseline score of 50.
+4. **Coverage & Corroboration ($w = 0.15$)**: Grounded strictly in distinct corporate publisher groups. Multiple stories or feeds from the same parent organization (e.g. Google DeepMind + Google AI) count as one publisher group; community discovery channels do not count as independent press.
+5. **Source Quality & Authority ($w = 0.15$)**: Verification weight determined by the tier classification of the primary publishing entity (Tier 1 = 100, Tier 2 = 85, Tier 3 = 80, Tier 4 = 65).
 
 ---
 
 ## 📂 Categorized Slicing & Section Allocation
 
 After scoring, clusters are partitioned into specialized sections in `data.json`:
-- **`top_stories`**: Top 15 scored clusters formatted for chronological dispatches.
-- **`trends`**: Top 6 clusters formatted as major curated developments with Why It Matters and key takeaways.
-- **`pulse_items`**: Top 8 high-velocity developments for the top pulse strip.
-- **`ai_tools`**: Practical consumer tools, user workflows, and app releases.
-- **`dev_radar`**: Coding agents, APIs, open weights, benchmarks, and infrastructure.
+- **`top_stories`**: Top scored clusters formatted for chronological dispatches with publisher diversity capping.
+- **`trends`**: Curated developments with Why It Matters, Key Takeaways, and verified evidence article IDs.
+- **`pulse_items`**: High-velocity developments for the top pulse strip.
+- **`ai_tools`**: Practical consumer tools, user workflows, and app releases (with strict rejection of lawsuits and controversies).
+- **`dev_radar`**: Coding agents, APIs, open weights, benchmarks, and developer infrastructure.
 - **`research_safety`**: Frontier alignment, preprints, evals, and governance policies.
 
 ---
 
 ## 🛡️ Atomic File Persistence & Resilient Fallbacks
 
-### Atomic Disk Replacement (`atomic_write_json`)
+### Atomic Disk Replacement
 To eliminate the risk of serving corrupted or partial JSON files to client browsers:
-1. The serialized payload is written to a temporary file in the same directory (`data.json.tmp.<pid>`).
-2. The file is flushed to disk (`flush()`) and verified via `os.fsync()`.
-3. An integrity check confirms the temporary file contains valid JSON and non-empty sections.
-4. An atomic rename (`os.replace()`) overwrites `data.json`. On POSIX systems, `os.replace` is guaranteed atomic.
+1. The serialized payload is written to a temporary file (`data.json.tmp`).
+2. An integrity check reloads `data.json.tmp` and confirms it adheres strictly to schema validation (`validate_dataset_payload`).
+3. An atomic rename (`os.replace()`) overwrites `data.json`. On POSIX systems, `os.replace` is guaranteed atomic.
 
-### Safe Fallback Mechanisms
-If upstream network connectivity fails or an external feed is unreachable:
-1. `tracker.py` catches the network exception.
-2. If `data.json` already exists and contains valid data, the existing dataset is preserved and marked with `data_status: "cached_fallback"`. The previous `generated_at` timestamp is retained to maintain provenance.
-3. If no cached file exists, a non-LLM `raw_headlines` fallback is generated directly from the available feeds with zero fabricated content.
+### Failure Handling & Last-Known-Good Preservation
+If an unhandled technical exception occurs during feed ingestion, Gemini synthesis, or payload validation:
+1. `run_pipeline` catches the exception and logs the complete traceback.
+2. Temporary files (`data.json.tmp`) are safely removed.
+3. The previous `data.json` is preserved untouched.
+4. The pipeline raises `PipelineExecutionError` and the CLI exits with status code `1`, alerting GitHub Actions to the failure.
+5. Ingestion cycles with 0 new articles are treated cleanly as valid operational states without reporting an error.
 
 ---
 

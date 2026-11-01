@@ -395,12 +395,14 @@ class TestBackendPipeline(unittest.TestCase):
           preserved = json.load(f)
         self.assertEqual(preserved["top_stories"][0]["title"], "Old Story", "Original dataset must be preserved when feeds are empty")
 
-      # 2. When source feeds encounter unexpected errors/exceptions, run_pipeline must preserve the existing dataset
+      # 2. When source feeds encounter unexpected errors/exceptions, run_pipeline must preserve the existing dataset and raise PipelineExecutionError
       with patch("tracker.collect_fresh_news", side_effect=RuntimeError("Simulated upstream network failure")):
-        result = tracker.run_pipeline(dry_run=False, max_age_hours=0, output_file=test_file)
+        with self.assertRaises(tracker.PipelineExecutionError):
+          tracker.run_pipeline(dry_run=False, max_age_hours=0, output_file=test_file)
         with open(test_file, "r", encoding="utf-8") as f:
           preserved_err = json.load(f)
         self.assertEqual(preserved_err["top_stories"][0]["title"], "Old Story", "Original dataset must be preserved on upstream failure")
+        self.assertFalse(os.path.exists(f"{test_file}.tmp"), "Temporary files must be cleaned up on failure")
     finally:
       if os.path.exists(test_file):
         os.remove(test_file)
@@ -601,6 +603,273 @@ class TestBackendPipeline(unittest.TestCase):
     for w in whys:
       self.assertTrue(len(w) > 20)
       self.assertNotIn("Expands practical AI tooling options and ecosystem integration across production workflows.", w)
+
+  def test_source_registry_publisher_grouping(self):
+    registry = tracker.load_source_registry("sources.json")
+    for s in registry:
+      self.assertIn("publisher_id", s, f"Source {s['source_id']} missing publisher_id")
+      self.assertIn("publisher_group_id", s, f"Source {s['source_id']} missing publisher_group_id")
+      self.assertIn("source_type", s, f"Source {s['source_id']} missing source_type")
+      self.assertIn("is_primary_source", s, f"Source {s['source_id']} missing is_primary_source")
+      self.assertIn("publisher_owns_feed", s, f"Source {s['source_id']} missing publisher_owns_feed")
+
+    # Corporate relationship mapping verification
+    deepmind = next(s for s in registry if s["source_id"] == "deepmind_blog")
+    google_ai = next(s for s in registry if s["source_id"] == "google_ai_blog")
+    self.assertEqual(deepmind["publisher_group_id"], "google")
+    self.assertEqual(google_ai["publisher_group_id"], "google")
+
+    ms_ai = next(s for s in registry if s["source_id"] == "microsoft_ai_news")
+    gh_ai = next(s for s in registry if s["source_id"] == "github_blog_ai")
+    self.assertEqual(ms_ai["publisher_group_id"], "microsoft")
+    self.assertEqual(gh_ai["publisher_group_id"], "microsoft")
+
+    aws = next(s for s in registry if s["source_id"] == "aws_ml_blog")
+    amazon_sci = next(s for s in registry if s["source_id"] == "amazon_science")
+    self.assertEqual(aws["publisher_group_id"], "amazon")
+    self.assertEqual(amazon_sci["publisher_group_id"], "amazon")
+
+    arxiv_ai = next(s for s in registry if s["source_id"] == "arxiv_cs_ai")
+    arxiv_lg = next(s for s in registry if s["source_id"] == "arxiv_cs_lg")
+    self.assertEqual(arxiv_ai["publisher_group_id"], "cornell_arxiv")
+    self.assertEqual(arxiv_lg["publisher_group_id"], "cornell_arxiv")
+
+    hn_discovery = next(s for s in registry if s["source_id"] == "anthropic_hn_discovery")
+    self.assertFalse(hn_discovery["is_primary_source"])
+    self.assertFalse(hn_discovery["publisher_owns_feed"])
+    self.assertEqual(hn_discovery["source_type"], "unofficial_discovery")
+
+  def test_exact_url_provenance_and_id_validation(self):
+    collected = [
+        {
+            "article_id": "art_openai_12345",
+            "source": "OpenAI News",
+            "source_id": "openai_news",
+            "publisher_id": "openai",
+            "publisher_group_id": "openai",
+            "link": "https://openai.com/index/o3-preview",
+            "trust_tier": 1,
+            "is_official": True,
+            "publisher_owns_feed": True,
+            "source_type": "official",
+        },
+        {
+            "article_id": "art_techcrunch_67890",
+            "source": "TechCrunch AI",
+            "source_id": "techcrunch_ai",
+            "publisher_id": "techcrunch",
+            "publisher_group_id": "techcrunch",
+            "link": "https://techcrunch.com/2026/01/01/openai-o3-preview",
+            "trust_tier": 2,
+            "is_official": False,
+            "publisher_owns_feed": True,
+            "source_type": "publication",
+        }
+    ]
+
+    # Case 1: Valid trend citing exact article ID and exact URL
+    trend_valid = [{
+        "title": "OpenAI Unveils o3 Reasoning Model",
+        "evidence_article_ids": ["art_openai_12345"],
+        "evidence_urls": ["https://openai.com/index/o3-preview"],
+        "source": "OpenAI News",
+    }]
+    validated = tracker.validate_evidence_provenance(trend_valid, collected)
+    self.assertEqual(len(validated), 1)
+    self.assertEqual(validated[0]["evidence_urls"], ["https://openai.com/index/o3-preview"])
+    self.assertEqual(validated[0]["evidence_article_ids"], ["art_openai_12345"])
+    self.assertEqual(validated[0]["independent_source_count"], 1)
+    self.assertEqual(validated[0]["evidence_status"], "official_announcement")
+
+    # Case 2: Fabricated / unknown article ID and URL must be rejected and omitted
+    trend_fabricated = [{
+        "title": "Fabricated Hallucinated Trend",
+        "evidence_article_ids": ["art_fake_unknown_id"],
+        "evidence_urls": ["https://fake-ai-news.org/hallucinated-story"],
+        "source": "OpenAI News",
+    }]
+    validated_fab = tracker.validate_evidence_provenance(trend_fabricated, collected)
+    self.assertEqual(len(validated_fab), 0)
+
+    # Case 3: URL prefix matching MUST NOT be accepted (exact match only)
+    trend_prefix = [{
+        "title": "Prefix Tampered URL",
+        "evidence_urls": ["https://openai.com/index/o3-preview/subpath-does-not-exist"],
+        "source": "OpenAI News",
+    }]
+    validated_prefix = tracker.validate_evidence_provenance(trend_prefix, collected)
+    self.assertEqual(len(validated_prefix), 0)
+
+    # Case 4: No silent fallback to unrelated articles from same publisher
+    trend_no_evidence = [{
+        "title": "Trend with No Matching Evidence",
+        "evidence_urls": ["https://techcrunch.com/unrelated-gadget-story"],
+        "source": "OpenAI News",
+    }]
+    validated_no_ev = tracker.validate_evidence_provenance(trend_no_evidence, collected)
+    self.assertEqual(len(validated_no_ev), 0)
+
+  def test_independent_publisher_counting_rules(self):
+    # Rule 1: Multiple articles from TechCrunch count as 1 publisher
+    lead_tc = {
+        "source": "TechCrunch AI",
+        "source_id": "techcrunch_ai",
+        "publisher_id": "techcrunch",
+        "publisher_group_id": "techcrunch",
+        "trust_tier": 2,
+        "is_official": False,
+    }
+    related_tc = [
+        {"source_name": "TechCrunch AI", "source_id": "techcrunch_ai", "publisher_group_id": "techcrunch"},
+        {"source_name": "TechCrunch AI", "source_id": "techcrunch_ai", "publisher_group_id": "techcrunch"}
+    ]
+    meta_tc = tracker.determine_evidence_metadata(lead_tc, related_tc)
+    self.assertEqual(meta_tc["independent_source_count"], 1)
+    self.assertEqual(meta_tc["evidence_status"], "single_source")
+
+    # Rule 2: Google DeepMind + Google AI Blog share publisher group -> 1 publisher
+    lead_dm = {
+        "source": "Google DeepMind",
+        "source_id": "deepmind_blog",
+        "publisher_id": "google_deepmind",
+        "publisher_group_id": "google",
+        "trust_tier": 1,
+        "is_official": True,
+    }
+    related_gai = [
+        {"source_name": "Google AI Blog", "source_id": "google_ai_blog", "publisher_group_id": "google"}
+    ]
+    meta_google = tracker.determine_evidence_metadata(lead_dm, related_gai)
+    self.assertEqual(meta_google["independent_source_count"], 1)
+    self.assertEqual(meta_google["evidence_status"], "official_announcement")
+
+    # Rule 3: Google DeepMind + TechCrunch -> 2 independent publishers
+    related_diff = [
+        {"source_name": "TechCrunch AI", "source_id": "techcrunch_ai", "publisher_group_id": "techcrunch"}
+    ]
+    meta_diff = tracker.determine_evidence_metadata(lead_dm, related_diff)
+    self.assertEqual(meta_diff["independent_source_count"], 2)
+    self.assertEqual(meta_diff["evidence_status"], "independently_corroborated")
+
+    # Rule 4: Hacker News discovery feeds do NOT count as independent corroborating publishers
+    lead_anthropic = {
+        "source": "Anthropic Official News",
+        "source_id": "anthropic_news",
+        "publisher_id": "anthropic",
+        "publisher_group_id": "anthropic",
+        "trust_tier": 1,
+        "is_official": True,
+    }
+    related_hn = [
+        {
+            "source_name": "Anthropic Community Discovery (HNRSS)",
+            "source_id": "anthropic_hn_discovery",
+            "publisher_group_id": "ycombinator",
+            "source_type": "unofficial_discovery",
+            "publisher_owns_feed": False,
+        }
+    ]
+    meta_hn = tracker.determine_evidence_metadata(lead_anthropic, related_hn)
+    self.assertEqual(meta_hn["independent_source_count"], 1)
+    self.assertEqual(meta_hn["evidence_status"], "official_announcement")
+
+  def test_scoring_and_confidence_semantics(self):
+    # Official single-source with complete text: high confidence, but independent_source_count = 1
+    art_official = {
+        "title": "OpenAI releases o3 reasoning model with frontier math benchmarks",
+        "summary": "Detailed technical report explaining test-time compute scaling and benchmark results across competitive programming.",
+        "trust_tier": 1,
+        "is_official": True,
+        "source_type": "official",
+        "published_datetime": datetime.now(timezone.utc),
+    }
+    scores_official = tracker.calculate_story_scores(art_official, corroboration_count=1)
+    self.assertEqual(scores_official["confidence_label"], "high")
+    self.assertGreaterEqual(scores_official["source_quality_score"], 95)
+    self.assertEqual(scores_official["coverage_score"], 50)  # Neutral baseline for single source
+    self.assertTrue(0 <= scores_official["pulse_score"] <= 100)
+
+    # Multi-source cluster with >= 2 independent publisher groups: high coverage score
+    art_press = {
+        "title": "OpenAI releases o3 model",
+        "summary": "Independent coverage verifying the release of o3.",
+        "trust_tier": 2,
+        "is_official": False,
+        "source_type": "publication",
+        "published_datetime": datetime.now(timezone.utc),
+    }
+    scores_multi = tracker.calculate_story_scores(art_press, corroboration_count=2)
+    self.assertGreaterEqual(scores_multi["coverage_score"], 75)
+    self.assertEqual(scores_multi["confidence_label"], "high")
+
+    # Sparse reporting with limited text gets low confidence
+    art_sparse = {
+        "title": "Brief note",
+        "summary": "Too short.",
+        "trust_tier": 4,
+        "is_official": False,
+        "source_type": "community",
+    }
+    scores_sparse = tracker.calculate_story_scores(art_sparse, corroboration_count=1)
+    self.assertEqual(scores_sparse["confidence_label"], "low")
+
+  def test_tier_4_source_classification(self):
+    registry = tracker.load_source_registry("sources.json")
+    simon = next(s for s in registry if s["source_id"] == "simon_willison")
+    import_ai = next(s for s in registry if s["source_id"] == "import_ai")
+    self.assertEqual(simon["trust_tier"], 4)
+    self.assertEqual(import_ai["trust_tier"], 4)
+
+    dummy_tier4 = [{
+        "title": "Practical exploration of local prompt injection guardrails",
+        "summary": "A deep dive into prompt injection vectors and testing methodology across local language models.",
+        "source": "Simon Willison Weblog",
+        "source_id": "simon_willison",
+        "publisher_id": "simon_willison",
+        "publisher_group_id": "simon_willison",
+        "trust_tier": 4,
+        "is_official": False,
+        "link": "https://simonwillison.net/2026/test-guardrails",
+        "published": "Oct 31, 12:00 UTC",
+        "published_datetime": None,
+    }]
+    clustered = tracker.cluster_and_deduplicate_articles(dummy_tier4)
+    payload = tracker.build_complete_payload(clustered)
+    top_story = payload["top_stories"][0]
+
+    self.assertEqual(top_story["trust_tier"], 4)
+    self.assertEqual(top_story["tier"], "Practitioner & Community")
+    self.assertNotEqual(top_story["tier"], "Independent Journalism")
+
+  def test_zero_fresh_articles_pipeline_handling(self):
+    test_file = "test_zero_articles.json"
+    initial_data = {
+        "schema_version": 2,
+        "data_status": "fresh",
+        "generated_at": "2026-10-31T12:00:00Z",
+        "last_attempt_at": "2026-10-31T12:00:00Z",
+        "takeaway": "Test initial takeaway",
+        "trends": [],
+        "top_stories": [{"title": "Existing Story", "link": "https://example.com/exist", "source": "Old Source", "trust_tier": 1, "overall_score": 80}],
+        "ai_tools": [],
+        "dev_radar": [],
+        "research_safety": [],
+        "pulse_items": []
+    }
+    with open(test_file, "w", encoding="utf-8") as f:
+      json.dump(initial_data, f)
+
+    try:
+      with patch("tracker.collect_fresh_news", return_value=[]):
+        # 0 fresh articles must NOT raise PipelineExecutionError
+        res = tracker.run_pipeline(dry_run=False, output_file=test_file)
+        self.assertIsNotNone(res)
+        with open(test_file, "r", encoding="utf-8") as f:
+          data = json.load(f)
+        self.assertEqual(data["top_stories"][0]["title"], "Existing Story")
+    finally:
+      if os.path.exists(test_file):
+        os.remove(test_file)
 
 
 if __name__ == "__main__":

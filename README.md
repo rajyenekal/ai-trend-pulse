@@ -41,17 +41,16 @@ The product and curation mechanics of AI Trend Pulse are aligned with empirical 
 
 ## ⚡ Algorithmic Pulse Scoring Formula
 
-Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, freshness, and multi-source corroboration:
+Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, freshness, and verified multi-publisher corroboration:
 
-$$\text{Score} = 0.30 \times \text{Importance} + 0.25 \times \text{Audience Relevance} + 0.20 \times \text{Freshness} + 0.15 \times \text{Popularity Signal} + 0.10 \times \text{Source Confidence}$$
+$$\text{Pulse Score} = 0.30 \times \text{Importance} + 0.20 \times \text{Audience Relevance} + 0.20 \times \text{Freshness} + 0.15 \times \text{Coverage Corroboration} + 0.15 \times \text{Source Quality}$$
 
 ### Component Breakdown
-- **Importance ($0.30$)**: Measures architectural significance, benchmark capability jumps, reasoning leaps, safety framework updates, and API releases.
-- **Audience Relevance ($0.25$)**: Assesses practical utility for developers, ML engineers, security researchers, and enterprise architects.
-- **Freshness ($0.20$)**: Exponential half-life decay function anchored to verified publication timestamps:
-  $$\text{Freshness} = \exp\left(-\frac{\Delta t}{48\text{ hours}}\right)$$
-- **Popularity Signal ($0.15$)**: Multi-source corroboration count derived from cross-publisher story clustering.
-- **Source Confidence ($0.10$)**: Verification weight assigned to the primary publishing tier ($1.00$ to $0.85$).
+- **Importance ($0.30$)**: Measures architectural significance, benchmark capability jumps, reasoning leaps, safety framework updates, and API releases. Safety, security, alignment, and policy stories receive a guaranteed minimum protected score of 75.
+- **Audience Relevance ($0.20$)**: Assesses practical utility for developers, ML engineers, security researchers, and enterprise architects.
+- **Freshness ($0.20$)**: Time-decay function anchored to verified publication timestamps; stories with missing dates receive a neutral baseline (50) without artificial freshness boosting.
+- **Coverage & Corroboration ($0.15$)**: Grounded strictly in distinct corporate publisher groups. Multiple stories or feeds from the same parent organization (e.g. Google DeepMind + Google AI) count as one publisher group; community discovery channels do not count as independent press.
+- **Source Quality & Authority ($0.15$)**: Verification weight determined by the tier classification of the primary publishing entity (Tier 1 = 100, Tier 2 = 85, Tier 3 = 80, Tier 4 = 65).
 
 ---
 
@@ -75,10 +74,13 @@ $$\text{Score} = 0.30 \times \text{Importance} + 0.25 \times \text{Audience Rele
    - Accessible via keyboard shortcuts (`Escape` to close).
 
 4. **Provenance & Anti-Hallucination Safeguards**:
-   - **Zero Fabricated Timestamps**: Missing or ambiguous publication dates remain "Recent" or null; the system never fabricates the current time.
-   - **Parameter-Clean URLs**: Strips tracking parameters (`utm_*`, `ref`, `fbclid`, etc.) to guarantee clean provenance and privacy.
+   - **Deterministic Article IDs**: Every article receives a unique, content-grounded identifier (`art_{source_id}_{hash12}`). AI briefings must cite exact matching article IDs.
+   - **Exact Normalized URL Matching**: Prefix matching is eliminated. Exact URL equality is required, and hallucinated or unverified citations are rejected rather than substituted with unrelated stories.
+   - **Independent Publisher Group Counting**: Distinguishes between feed IDs and corporate publisher groups. Multiple outlets owned by Alphabet/Google, Microsoft, Amazon, or Yahoo/TechCrunch each count as a single publishing entity. Hacker News and social discovery feeds do not add to independent press counts.
+   - **Strict Temporal Truth**: Missing or ambiguous publication dates are explicitly displayed as "Date unavailable" and never assigned the current time.
+   - **Parameter-Clean URLs**: Strips tracking parameters (`utm_*`, `ref`, `fbclid`, etc.) to guarantee clean provenance and user privacy.
    - **Cross-Publisher Story Clustering**: Suffix-stemmed Jaccard token overlap clusters syndicated reporting, presenting the primary lab as the authoritative source while preserving journalism links.
-   - **Atomic File Writes**: Payload is validated and written to a temporary file before atomic rename, preventing data corruption.
+   - **Atomic File Writes & Failure Handling**: Payload is validated and written to a temporary file before atomic rename. If an ingestion or synthesis failure occurs, the previous dataset is preserved intact, temporary files are removed, and the pipeline fails with a non-zero exit status to alert CI. Zero new articles is treated cleanly as a valid operational cycle.
 
 ---
 

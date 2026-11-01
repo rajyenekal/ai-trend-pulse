@@ -98,6 +98,12 @@
       --tier-3-dot: #10b981;
       --tier-3-glow: rgba(16, 185, 129, 0.22);
 
+      --tier-4-bg: #fffbeb;
+      --tier-4-border: #fde68a;
+      --tier-4-text: #b45309;
+      --tier-4-dot: #f59e0b;
+      --tier-4-glow: rgba(245, 158, 11, 0.22);
+
       --card-featured-bg: #ffffff;
       --card-featured-border: #cbd5e1;
       --card-why-bg: #f8fafc;
@@ -172,6 +178,12 @@
       --tier-3-text: #6ee7b7;
       --tier-3-dot: #34d399;
       --tier-3-glow: rgba(52, 211, 153, 0.32);
+
+      --tier-4-bg: rgba(245, 158, 11, 0.16);
+      --tier-4-border: rgba(251, 191, 36, 0.38);
+      --tier-4-text: #fcd34d;
+      --tier-4-dot: #fbbf24;
+      --tier-4-glow: rgba(251, 191, 36, 0.32);
 
       --card-featured-bg: #141a24;
       --card-featured-border: #28374d;
@@ -1540,6 +1552,18 @@
     .badge-tier.tier-3 .badge-tier-dot {
       background: var(--tier-3-dot);
       box-shadow: 0 0 8px var(--tier-3-dot);
+    }
+
+    /* Tier 4: Practitioner & Community */
+    .badge-tier.tier-4 {
+      background: var(--tier-4-bg);
+      color: var(--tier-4-text);
+      border: 1px solid var(--tier-4-border);
+      box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.08), 0 2px 8px var(--tier-4-glow);
+    }
+    .badge-tier.tier-4 .badge-tier-dot {
+      background: var(--tier-4-dot);
+      box-shadow: 0 0 8px var(--tier-4-dot);
     }
 
     .badge-status-pill {
@@ -3217,33 +3241,33 @@
                   <th>Tier Level</th>
                   <th>Source Classification</th>
                   <th>Monitored Outlets &amp; Research Desks</th>
-                  <th>Weight</th>
+                  <th>Authority</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><span class="badge-tier tier-official"><span class="badge-tier-dot"></span>Tier 1</span></td>
-                  <td><strong>Primary Labs &amp; Frontier Developers</strong></td>
-                  <td>OpenAI, Anthropic, Google DeepMind, Google AI, Microsoft AI, Meta AI, xAI, Mistral AI</td>
-                  <td>1.00</td>
+                  <td><span class="badge-tier tier-1"><span class="badge-tier-dot"></span>Tier 1</span></td>
+                  <td><strong>Primary Labs &amp; Official Announcements</strong></td>
+                  <td>OpenAI, Anthropic, Google DeepMind, Google AI, Microsoft AI, NVIDIA, AWS, Mistral, Hugging Face</td>
+                  <td>100</td>
                 </tr>
                 <tr>
-                  <td><span class="badge-tier tier-journalism"><span class="badge-tier-dot"></span>Tier 2</span></td>
+                  <td><span class="badge-tier tier-2"><span class="badge-tier-dot"></span>Tier 2</span></td>
                   <td><strong>Independent Technology Journalism</strong></td>
                   <td>MIT Technology Review, The Verge AI, TechCrunch AI, Ars Technica, The Decoder</td>
-                  <td>0.95</td>
+                  <td>85</td>
                 </tr>
                 <tr>
-                  <td><span class="badge-tier tier-research"><span class="badge-tier-dot"></span>Tier 3</span></td>
-                  <td><strong>Open Research &amp; Cloud Infrastructure</strong></td>
-                  <td>Hugging Face Blog, NVIDIA Developer, AWS ML Blog, Amazon Science</td>
-                  <td>0.90</td>
+                  <td><span class="badge-tier tier-3"><span class="badge-tier-dot"></span>Tier 3</span></td>
+                  <td><strong>Open Research &amp; Academic Preprints</strong></td>
+                  <td>arXiv (cs.AI, cs.LG), Berkeley AI Research (BAIR)</td>
+                  <td>80</td>
                 </tr>
                 <tr>
-                  <td><span class="badge-tier tier-community"><span class="badge-tier-dot"></span>Tier 4</span></td>
-                  <td><strong>Community, Academic Preprints &amp; Analysis</strong></td>
-                  <td>arXiv (cs.AI, cs.LG, cs.CL), Simon Willison Weblog, Berkeley AI Research (BAIR), Import AI</td>
-                  <td>0.85</td>
+                  <td><span class="badge-tier tier-4"><span class="badge-tier-dot"></span>Tier 4</span></td>
+                  <td><strong>Practitioner Commentary &amp; Community Discovery</strong></td>
+                  <td>Simon Willison Weblog, Import AI (Jack Clark), Anthropic Community Discovery (HNRSS)</td>
+                  <td>65</td>
                 </tr>
               </tbody>
             </table>
@@ -3251,26 +3275,27 @@
 
           <div class="methodology-card">
             <h3>2. Algorithmic Pulse Scoring Formula</h3>
-            <p>Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, and multi-source corroboration:</p>
+            <p>Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, and verified multi-publisher corroboration:</p>
             <div style="background:var(--bg-elevated); padding:12px 16px; border-radius:8px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent); margin:10px 0; border:1px solid var(--border-subtle);">
-              Score = 0.30 × Importance + 0.25 × Relevance + 0.20 × Freshness + 0.15 × Coverage + 0.10 × Confidence
+              Pulse Score = 0.30 × Importance + 0.20 × Relevance + 0.20 × Freshness + 0.15 × Coverage + 0.15 × Source Quality
             </div>
             <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
               <li><strong>Importance (30%):</strong> Architectural milestones, frontier benchmark breakthroughs, safety framework updates, and API releases. Safety, security, alignment, and policy stories receive a guaranteed minimum protected importance score of 75.</li>
-              <li><strong>Audience Relevance (25%):</strong> Direct utility for software developers, ML researchers, enterprise architects, and product builders.</li>
+              <li><strong>Audience Relevance (20%):</strong> Direct utility for software developers, ML researchers, enterprise architects, and product builders.</li>
               <li><strong>Freshness (20%):</strong> Time-decay function anchored to verified publication timestamps; stories with missing dates receive a neutral baseline (50) without artificial freshness boosting.</li>
-              <li><strong>Coverage &amp; Corroboration (15%):</strong> Grounded strictly in verified multi-outlet corroboration and cross-publisher clustering. Independent single-source stories receive a neutral baseline (50) to ensure specialized technical research is never penalized.</li>
-              <li><strong>Source Confidence (10%):</strong> Verification weight determined by the tier classification of the primary publishing entity (Tier 1 = 100, Tier 2 = 85, Tier 3 = 80, Tier 4 = 65).</li>
+              <li><strong>Coverage &amp; Corroboration (15%):</strong> Grounded strictly in distinct corporate publisher groups. Multiple stories or feeds from the same parent organization (e.g. Google DeepMind + Google AI) count as one publisher group; community discovery channels do not count as independent press.</li>
+              <li><strong>Source Quality &amp; Authority (15%):</strong> Verification weight determined by the tier classification of the primary publishing entity (Tier 1 = 100, Tier 2 = 85, Tier 3 = 80, Tier 4 = 65).</li>
             </ul>
           </div>
 
           <div class="methodology-card">
-            <h3>3. Evidence Provenance &amp; Anti-Hallucination Policy</h3>
+            <h3>3. Evidence Provenance &amp; Anti-Hallucination Architecture</h3>
             <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
+              <li><strong>Strict Deterministic Article IDs:</strong> Every collected story receives a stable, content-grounded article ID (<code>art_{source_id}_{hash}</code>). Executive briefing trends must cite exact IDs and canonical URLs verified against ingested records.</li>
+              <li><strong>Anti-Hallucination URL Matching:</strong> URL prefix matching is eliminated. Exact normalized URL equality is enforced, and trends with invalid citations are rejected rather than substituted with unrelated stories.</li>
+              <li><strong>Independent Publisher Grouping:</strong> Corroboration counts require distinct parent publishing entities (e.g. Alphabet/Google, Microsoft, Amazon, Yahoo/TechCrunch). Social discovery feeds provide discovery signals but are never counted as corroborating journalism.</li>
               <li><strong>Strict Temporal Truth:</strong> Missing or ambiguous publication dates are explicitly displayed as "Date unavailable" and never assigned the current time. AI Trend Pulse never fabricates timestamps.</li>
-              <li><strong>Story Deduplication &amp; Canonical Clustering:</strong> When independent journalists syndicate a lab announcement, Jaccard token clustering identifies the relationship, presenting the primary lab as the authoritative source while linking secondary journalism for context.</li>
-              <li><strong>Parameter-Clean URLs:</strong> All outgoing reference URLs are sanitized to strip ad-tracking parameters (<code>utm_*</code>, <code>ref</code>, <code>fbclid</code>, etc.), guaranteeing clean provenance and privacy.</li>
-              <li><strong>Zero Vanity Metrics:</strong> Engagement signals are grounded in objective multi-source corroboration counts rather than simulated or unverified clicks.</li>
+              <li><strong>Parameter-Clean Canonical Links:</strong> All outgoing reference URLs are sanitized to strip ad-tracking parameters (<code>utm_*</code>, <code>ref</code>, <code>fbclid</code>, etc.), guaranteeing clean provenance and user privacy.</li>
             </ul>
           </div>
 
@@ -3772,10 +3797,11 @@
     }
 
     /* -------------------------------------------------------------
-       2B. 3-TIER SOURCE ARCHITECTURE & PROVENANCE ENGINE
-       Tier 1 (Official Labs): OpenAI News, Google DeepMind
+       2B. 4-TIER SOURCE ARCHITECTURE & PROVENANCE ENGINE
+       Tier 1 (Official Labs): OpenAI News, Google DeepMind, Anthropic
        Tier 2 (Independent Journalism): MIT Tech Review, The Verge, TechCrunch, Ars Technica
-       Tier 3 (Open Research): Hugging Face
+       Tier 3 (Open Research): arXiv, BAIR
+       Tier 4 (Practitioner & Community): Simon Willison, Import AI, Community Discovery
        ------------------------------------------------------------- */
     function getTierMeta(source, tier) {
       const s = (source || '').toLowerCase();
@@ -3786,6 +3812,8 @@
         s.includes('openai') ||
         s.includes('deepmind') ||
         s.includes('anthropic') ||
+        s.includes('mistral') ||
+        s.includes('meta ai') ||
         t.includes('official') ||
         t.includes('tier 1')
       ) {
@@ -3801,9 +3829,9 @@
 
       // Tier 3: Open Ecosystem & Research Repositories
       if (
-        s.includes('hugging face') ||
-        s.includes('huggingface') ||
         s.includes('arxiv') ||
+        s.includes('bair') ||
+        s.includes('berkeley') ||
         t.includes('open research') ||
         t.includes('tier 3')
       ) {
@@ -3813,7 +3841,29 @@
           badgeLabel: 'Tier 3 • Open Research',
           badgeShort: 'Tier 3: Open Research',
           icon: '🔬',
-          sourceName: source || 'Hugging Face'
+          sourceName: source || 'Open Research'
+        };
+      }
+
+      // Tier 4: Practitioner Commentary & Community Discovery
+      if (
+        s.includes('simon') ||
+        s.includes('import ai') ||
+        s.includes('jack clark') ||
+        s.includes('hacker news') ||
+        s.includes('community') ||
+        s.includes('hnrss') ||
+        t.includes('tier 4') ||
+        t.includes('practitioner') ||
+        t.includes('community')
+      ) {
+        return {
+          tierNum: 4,
+          tierClass: 'tier-4',
+          badgeLabel: 'Tier 4 • Practitioner & Community',
+          badgeShort: 'Tier 4: Practitioner',
+          icon: '💡',
+          sourceName: source || 'Practitioner'
         };
       }
 
