@@ -7,6 +7,7 @@ computes deterministic scores using configurable weights, and produces evidence-
 
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
+import gzip
 import html
 import json
 import os
@@ -251,13 +252,21 @@ def parse_published_datetime(date_str, struct_time=None):
   except Exception:
     pass
 
-  # Try ISO-8601
+  # Try ISO-8601 and common date string formats
   iso_formats = [
       "%Y-%m-%dT%H:%M:%S%z",
       "%Y-%m-%dT%H:%M:%SZ",
       "%Y-%m-%d %H:%M:%S%z",
       "%Y-%m-%d %H:%M:%S",
       "%Y-%m-%d",
+      "%b %d, %Y",
+      "%B %d, %Y",
+      "%b %d %Y",
+      "%B %d %Y",
+      "%d %b %Y",
+      "%d %B %Y",
+      "%Y/%m/%d",
+      "%m/%d/%Y",
   ]
   cleaned_str = date_str.replace("Z", "+0000")
   for fmt in iso_formats:
@@ -290,6 +299,11 @@ def parse_feed_with_fallback(feed_url, timeout=6.0):
     req = urllib.request.Request(feed_url, headers=headers)
     with urllib.request.urlopen(req, timeout=timeout) as resp:
       raw_bytes = resp.read()
+      if resp.headers.get("Content-Encoding") == "gzip" or raw_bytes.startswith(b"\x1f\x8b"):
+        try:
+          raw_bytes = gzip.decompress(raw_bytes)
+        except Exception:
+          pass
   except Exception as e:
     # If feedparser is available, give it a direct shot in case it handles redirects differently
     if feedparser:
@@ -361,7 +375,7 @@ def parse_feed_with_fallback(feed_url, timeout=6.0):
 # -------------------------------------------------------------
 def fetch_anthropic_official_news(timeout=6.0):
   """Specialized page adapter for Anthropic News (https://www.anthropic.com/news).
-  Extracts canonical article URLs, titles, and teasers directly from the official page.
+  Extracts canonical article URLs, titles, published dates, and teasers directly from the official page.
   """
   articles = []
   url = "https://www.anthropic.com/news"
@@ -378,36 +392,65 @@ def fetch_anthropic_official_news(timeout=6.0):
     with urllib.request.urlopen(req, timeout=timeout) as resp:
       html_content = resp.read().decode("utf-8", errors="replace")
 
-    # Match news article links e.g. href="/news/claude-3-7-sonnet"
-    # and extract headline text
-    pattern = r'<a[^>]+href=["\'](/news/[a-zA-Z0-9\-]+)["\'][^>]*>([\s\S]*?)</a>'
-    matches = re.findall(pattern, html_content)
-    seen_hrefs = set()
+    seen_links = set()
+    link_matches = re.finditer(r'href=["\'](/(?:news|research)/[a-zA-Z0-9\-]+)["\']', html_content)
 
-    for href, inner in matches:
-      if href in ("/news", "/news/announcements", "/news/research"):
+    for lm in link_matches:
+      href = lm.group(1)
+      if href in ("/news", "/news/announcements", "/news/features", "/news/security", "/news/policy", "/news/partnerships", "/news/safeguards", "/research/team"):
         continue
-      if href in seen_hrefs:
-        continue
-      seen_hrefs.add(href)
-
-      clean_title = re.sub(r"<[^>]+>", " ", inner)
-      clean_title = html.unescape(clean_title)
-      clean_title = re.sub(r"\s+", " ", clean_title).strip()
-
-      if len(clean_title) < 10:
+      if href in seen_links:
         continue
 
+      start = max(0, lm.start() - 400)
+      end = min(len(html_content), lm.end() + 1500)
+      window = html_content[start:end]
+
+      # Extract title
+      title = None
+      h3_m = re.search(r'<h3\b[^>]*>(.*?)</h3>', window)
+      if h3_m:
+        title = html.unescape(re.sub(r'<[^>]+>', ' ', h3_m.group(1))).strip()
+      if not title:
+        img_m = re.search(r'<img\b[^>]*alt=["\']([^"\']+)["\']', window)
+        if img_m:
+          title = html.unescape(img_m.group(1)).strip()
+
+      if not title or len(title) < 8 or title.lower() in ("announcements", "news", "research"):
+        slug = href.split("/")[-1].replace("-", " ").title()
+        title = slug
+
+      # Extract published date from <time> tag
+      time_m = re.search(r'<time\b[^>]*>(.*?)</time>', window)
+      pub_date_str = time_m.group(1).strip() if time_m else None
+
+      # Extract summary teaser
+      summary = ""
+      p_m = re.search(r'<p\b[^>]*class=["\'][^"\']*summary[^"\']*["\'][^>]*>(.*?)</p>', window)
+      if p_m:
+        summary = html.unescape(re.sub(r'<[^>]+>', ' ', p_m.group(1))).strip()
+      elif not summary:
+        p_any = re.findall(r'<p\b[^>]*>(.*?)</p>', window)
+        for p in p_any:
+          p_clean = html.unescape(re.sub(r'<[^>]+>', ' ', p)).strip()
+          if len(p_clean) > 35 and p_clean != title:
+            summary = p_clean
+            break
+
+      if not summary:
+        summary = f"Official research and engineering announcement from Anthropic on {title}."
+
+      seen_links.add(href)
       canonical_url = f"https://www.anthropic.com{href}"
       articles.append({
-          "title": clean_title,
+          "title": title,
           "link": canonical_url,
-          "summary": f"Official announcement from Anthropic: {clean_title}",
-          "published": None,
+          "summary": summary,
+          "published": pub_date_str,
       })
 
     if articles:
-      print(f"   ✓ Anthropic News (HTML page adapter): Extracted {len(articles)} official stories")
+      print(f"   ✓ Anthropic News (HTML page adapter): Extracted {len(articles)} official stories with metadata")
   except Exception as e:
     print(f"   ⚠️ Anthropic HTML page adapter error: {e}")
 
@@ -568,6 +611,15 @@ def calculate_story_scores(article, corroboration_count=1):
     importance += 15
   if article.get("is_official"):
     importance += 10
+
+  # Ensure Safety, Security, Policy, Alignment are never suppressed
+  is_safety_or_policy = any(w in full_content for w in [
+      "safety", "alignment", "policy", "governance", "regulation", "law",
+      "executive order", "nist", "eval", "red team", "security", "treaty",
+      "pre-deployment", "frontier safety"
+  ])
+  if is_safety_or_policy:
+    importance = max(importance + 15, 75)
   importance = min(100, importance)
 
   # 2. Audience Relevance (Developer, Practical Tools, Enterprise)
@@ -595,15 +647,16 @@ def calculate_story_scores(article, corroboration_count=1):
   else:
     freshness = 50
 
-  # 4. Popularity Signal (Grounded only in repeated independent coverage; never fabricated)
+  # 4. Popularity Signal (Grounded only in repeated independent coverage; neutral if single-source)
   if corroboration_count >= 4:
     popularity_signal = 95
   elif corroboration_count == 3:
-    popularity_signal = 80
+    popularity_signal = 85
   elif corroboration_count == 2:
-    popularity_signal = 65
+    popularity_signal = 75
   else:
-    popularity_signal = 40
+    # Single-source items receive a neutral baseline (50) so niche technical research is not penalized
+    popularity_signal = 50
 
   # 5. Source Confidence
   source_confidence = CONFIDENCE_TIER_SCORES.get(trust_tier, 80)
@@ -636,7 +689,7 @@ def calculate_story_scores(article, corroboration_count=1):
 # -------------------------------------------------------------
 def stem_word(w):
   """Lightweight suffix stripping for robust headline clustering without heavy NLP dependencies."""
-  return re.sub(r'(ing|ed|ly|es|s|tion|al|ize|ized)$', '', w)
+  return re.sub(r'(izing|ized|ize|ation|ition|ing|ed|ly|es|s|al)$', '', w)
 
 
 def tokenize_title(title):
@@ -645,9 +698,29 @@ def tokenize_title(title):
   words = clean.split()
   stopwords = {
       "the", "a", "an", "in", "on", "at", "for", "to", "and", "of", "with",
-      "by", "is", "are", "ai", "how", "what", "why", "its", "from", "into"
+      "by", "is", "are", "ai", "how", "what", "why", "its", "from", "into", "via"
   }
   return {stem_word(w) for w in words if w not in stopwords and len(stem_word(w)) > 2}
+
+
+KNOWN_MODEL_KEYWORDS = {
+    "claude": {"claude", "sonnet", "haiku", "opus"},
+    "gemini": {"gemini"},
+    "gpt": {"gpt", "chatgpt", "o1", "o3"},
+    "llama": {"llama"},
+    "mistral": {"mistral", "mixtral", "codestral", "pixtral"},
+    "deepseek": {"deepseek", "r1", "v3"},
+    "grok": {"grok"},
+    "copilot": {"copilot"},
+}
+
+def detect_model_family(title):
+  t = title.lower()
+  detected = set()
+  for family, kw_set in KNOWN_MODEL_KEYWORDS.items():
+    if any(k in t for k in kw_set):
+      detected.add(family)
+  return detected
 
 
 def compute_title_similarity(tokens1, tokens2):
@@ -659,7 +732,7 @@ def compute_title_similarity(tokens1, tokens2):
   return inter / union if union > 0 else 0.0
 
 
-def cluster_and_deduplicate_articles(raw_articles, similarity_threshold=0.45):
+def cluster_and_deduplicate_articles(raw_articles, similarity_threshold=0.40):
   """Clusters articles covering the same underlying announcement across publishers.
   Selects the primary / official source as lead where available.
   """
@@ -667,11 +740,18 @@ def cluster_and_deduplicate_articles(raw_articles, similarity_threshold=0.45):
 
   for article in raw_articles:
     tokens = tokenize_title(article["title"])
+    article_models = detect_model_family(article["title"])
     matched_cluster = None
 
     for cluster in clusters:
-      # Compare against cluster lead
-      lead_tokens = tokenize_title(cluster[0]["title"])
+      lead_article = cluster[0]
+      lead_tokens = tokenize_title(lead_article["title"])
+      lead_models = detect_model_family(lead_article["title"])
+
+      # Guard against merging different model announcements
+      if article_models and lead_models and not (article_models & lead_models):
+        continue
+
       sim = compute_title_similarity(tokens, lead_tokens)
       if sim >= similarity_threshold:
         matched_cluster = cluster
@@ -764,8 +844,17 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
       struct_time = entry.get("published_parsed") or entry.get("updated_parsed")
       pub_dt = parse_published_datetime(raw_date, struct_time=struct_time)
 
-      # Discard if older than freshness cutoff
-      if pub_dt and pub_dt < cutoff_time:
+      # For unofficial discovery feeds, only keep items with canonical URLs resolving to the target official site
+      if source.get("source_type") == "unofficial_discovery":
+        parsed_target = urllib.parse.urlparse(clean_url)
+        if "anthropic.com" not in parsed_target.netloc.lower():
+          continue
+
+      # Discard if older than freshness cutoff (allow up to 14 days for Tier 1 official labs to maintain active ground truth)
+      max_age_cutoff = cutoff_time
+      if is_official and trust_tier == 1:
+        max_age_cutoff = now - timedelta(days=14)
+      if pub_dt and pub_dt < max_age_cutoff:
         continue
 
       summary = entry.get("summary") or entry.get("description") or ""
@@ -787,6 +876,7 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
         if m:
           img_url = m.group(1)
 
+      pub_str = pub_dt.strftime("%b %d, %H:%M UTC") if pub_dt else "Date unavailable"
       seen_urls.add(clean_url)
       source_articles.append({
           "source": name,
@@ -800,7 +890,8 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15):
           "image": img_url,
           "published_datetime": pub_dt,
           "published_at": pub_dt.isoformat() if pub_dt else None,
-          "published": pub_dt.strftime("%b %d, %H:%M UTC") if pub_dt else "Recent",
+          "published": pub_str,
+          "last_fetched_at": now.isoformat(),
       })
 
     print(f"   ✓ {name}: {len(source_articles)} articles collected")
@@ -951,8 +1042,9 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "tier": tier_label,
         "trust_tier": s.get("trust_tier", 2),
         "is_official": s.get("is_official", False),
-        "published": s.get("published", "Recent"),
+        "published": s.get("published", "Date unavailable"),
         "published_at": s.get("published_at"),
+        "last_fetched_at": s.get("last_fetched_at", now_iso),
         "link": s.get("link"),
         "image": s.get("image", ""),
         "topic": topic,
@@ -974,7 +1066,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "importance_score": s.get("importance_score", 70),
         "relevance_score": s.get("relevance_score", 70),
         "freshness_score": s.get("freshness_score", 50),
-        "popularity_score": s.get("popularity_score", 40),
+        "popularity_score": s.get("popularity_score", 50),
         "confidence_score": s.get("confidence_score", 85),
         "overall_score": s.get("overall_score", 70.0),
         "confidence_label": s.get("confidence_label", "medium"),
@@ -1037,9 +1129,9 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
       })
 
   # 3. Categorized Sections (AI Tools, Developer Radar, Research/Safety)
-  ai_tools = [s for s in top_stories if s["topic"] in ("AI Tools & Ecosystem", "AI Coding")][:4]
-  dev_radar = [s for s in top_stories if s["topic"] in ("AI Coding", "AI Agents", "Model Releases")][:4]
-  research_safety = [s for s in top_stories if s["topic"] in ("Research & Safety", "Policy & Governance") or s["trust_tier"] == 3][:4]
+  ai_tools = [s for s in top_stories if s["topic"] in ("AI Tools & Ecosystem", "AI Coding") or any(k in s["title"].lower() for k in ["tool", "app", "release", "feature", "assist", "workflow"])][:4]
+  dev_radar = [s for s in top_stories if s["topic"] in ("AI Coding", "AI Agents", "AI Infrastructure") or any(k in s["title"].lower() for k in ["sdk", "api", "code", "agent", "open-source", "weight", "benchmark", "mcp", "library"])][:4]
+  research_safety = [s for s in top_stories if s["topic"] in ("Research & Safety", "Policy & Governance") or s["trust_tier"] in (3, 4) or any(k in s["title"].lower() for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark"])][:4]
   trending = [s for s in top_stories if s["covered_by_sources_count"] > 1 or s["overall_score"] >= 80][:4]
 
   takeaway = (
@@ -1065,7 +1157,11 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
               "title": s["title"],
               "topic": s["topic"],
               "company": s["company"],
-              "published": s["published"],
+              "published": s.get("published", "Date unavailable"),
+              "what_happened": s.get("what_happened") or s.get("one_liner") or s.get("summary", ""),
+              "one_liner": s.get("one_liner") or s.get("summary", ""),
+              "summary": s.get("summary", ""),
+              "why_it_matters": s.get("why_it_matters", ""),
               "link": s["link"],
               "source": s["source"],
               "tier": s["tier"],

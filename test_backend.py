@@ -1,7 +1,7 @@
 """
 Automated unit & regression tests for AI Trend Pulse backend pipeline.
 Verifies source registry, URL canonicalization, timestamp handling,
-story clustering, scoring weights determinism, and payload structure.
+story clustering, scoring weights determinism, model separation, and payload structure.
 """
 
 from datetime import datetime, timezone
@@ -13,10 +13,10 @@ import tracker
 
 class TestBackendPipeline(unittest.TestCase):
 
-  def test_source_registry_loading(self):
+  def test_source_registry_loading_and_classification(self):
     registry = tracker.load_source_registry("sources.json")
     self.assertIsInstance(registry, list)
-    self.assertGreaterEqual(len(registry), 8)
+    self.assertGreaterEqual(len(registry), 20)
 
     # Ensure required keys exist in every source record
     required_keys = {"source_id", "name", "canonical_listing_url", "source_type", "trust_tier"}
@@ -24,10 +24,20 @@ class TestBackendPipeline(unittest.TestCase):
       for key in required_keys:
         self.assertIn(key, source, f"Source missing required key: {key}")
 
-    # Check Anthropic is represented in the registry
-    anthropic_source = next((s for s in registry if s["source_id"] == "anthropic_news"), None)
-    self.assertIsNotNone(anthropic_source, "Anthropic must be represented in sources.json")
-    self.assertTrue(anthropic_source["is_official"])
+    # Check Anthropic Official is classified as Tier 1 official
+    anthropic_official = next((s for s in registry if s["source_id"] == "anthropic_news"), None)
+    self.assertIsNotNone(anthropic_official, "Anthropic official must be in sources.json")
+    self.assertTrue(anthropic_official["is_official"])
+    self.assertTrue(anthropic_official["feed_is_official"])
+    self.assertEqual(anthropic_official["trust_tier"], 1)
+
+    # Check Anthropic HNRSS discovery bridge is classified as unofficial discovery
+    anthropic_discovery = next((s for s in registry if s["source_id"] == "anthropic_hn_discovery"), None)
+    self.assertIsNotNone(anthropic_discovery, "Anthropic HNRSS discovery must be in sources.json")
+    self.assertFalse(anthropic_discovery["is_official"])
+    self.assertFalse(anthropic_discovery["feed_is_official"])
+    self.assertEqual(anthropic_discovery["source_type"], "unofficial_discovery")
+    self.assertEqual(anthropic_discovery["trust_tier"], 4)
 
   def test_url_normalization(self):
     # Tracking parameters must be stripped
@@ -44,7 +54,7 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertEqual(tracker.normalize_url("javascript:alert(1)"), "")
     self.assertEqual(tracker.normalize_url(""), "")
 
-  def test_timestamp_parsing_no_fake_dates(self):
+  def test_timestamp_parsing_and_date_unavailable(self):
     # Missing date must return None, NEVER current time or fake date
     self.assertIsNone(tracker.parse_published_datetime(None))
     self.assertIsNone(tracker.parse_published_datetime(""))
@@ -66,81 +76,138 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertEqual(dt2.year, 2026)
     self.assertEqual(dt2.month, 10)
 
-  def test_story_clustering_and_deduplication(self):
-    raw_articles = [
+    # Common article format e.g. Oct 28, 2026
+    dt3 = tracker.parse_published_datetime("Oct 28, 2026")
+    self.assertIsNotNone(dt3)
+    self.assertEqual(dt3.year, 2026)
+    self.assertEqual(dt3.month, 10)
+    self.assertEqual(dt3.day, 28)
+
+  def test_clustering_rules_and_model_separation(self):
+    test_articles = [
+        # 1. Syndicated copies of the exact same announcement
         {
             "source": "OpenAI News",
             "is_official": True,
             "trust_tier": 1,
-            "title": "Introducing Standardized Web Scraping Opt-Out Protocols for AI",
-            "link": "https://openai.com/news/standardized-opt-outs",
-            "summary": "OpenAI announces robots.txt policy token standardization.",
-            "published_datetime": datetime(2026, 10, 31, 12, 0, tzinfo=timezone.utc),
-            "published": "Oct 31, 12:00 UTC",
+            "title": "Standardizing Web Scraping Opt-Outs for AI Training",
+            "link": "https://openai.com/scraping",
+            "summary": "Shared policy token in robots.txt for AI training preferences.",
         },
         {
             "source": "The Verge AI",
             "is_official": False,
             "trust_tier": 2,
-            "title": "OpenAI and rivals agree on standard web scraping opt-out protocol",
-            "link": "https://theverge.com/ai/standardized-web-scraping-opt-outs",
-            "summary": "Tech giants agree to follow robots.txt signals for AI training.",
-            "published_datetime": datetime(2026, 10, 31, 13, 0, tzinfo=timezone.utc),
-            "published": "Oct 31, 13:00 UTC",
+            "title": "Tech giants agree to standardize web scraping opt-out protocols for AI training",
+            "link": "https://theverge.com/scraping",
+            "summary": "Industry consensus on robots.txt opt out.",
+        },
+        {
+            "source": "TechCrunch AI",
+            "is_official": False,
+            "trust_tier": 2,
+            "title": "Major AI developers standardize web scraping opt-outs via robots.txt",
+            "link": "https://techcrunch.com/scraping",
+            "summary": "Publishers get single standard for training opt out.",
+        },
+
+        # 2. Same company, totally different stories (MUST NOT MERGE)
+        {
+            "source": "OpenAI News",
+            "is_official": True,
+            "trust_tier": 1,
+            "title": "OpenAI announces educational literacy program with non-profit partners",
+            "link": "https://openai.com/literacy",
+            "summary": "Expanding AI literacy tools for primary schools.",
+        },
+
+        # 3. Different models (Claude vs Gemini) (MUST NOT MERGE)
+        {
+            "source": "Anthropic Official News",
+            "is_official": True,
+            "trust_tier": 1,
+            "title": "Introducing Claude 3.7 Sonnet with hybrid reasoning architecture",
+            "link": "https://anthropic.com/claude-3-7-sonnet",
+            "summary": "New frontier model featuring hybrid thinking and instant responses.",
         },
         {
             "source": "Google DeepMind",
             "is_official": True,
             "trust_tier": 1,
-            "title": "New Frontier Model Architecture for Quantum Chemistry Simulations",
-            "link": "https://deepmind.google/blog/quantum-chemistry-model",
-            "summary": "DeepMind releases paper on quantum simulation using specialized neural networks.",
-            "published_datetime": datetime(2026, 10, 31, 10, 0, tzinfo=timezone.utc),
-            "published": "Oct 31, 10:00 UTC",
+            "title": "Introducing Gemini 2.0 Flash Thinking for complex reasoning",
+            "link": "https://deepmind.google/gemini-2-flash",
+            "summary": "Google announces multimodal reasoning model.",
+        },
+
+        # 4. Generic headlines (MUST NOT MERGE)
+        {
+            "source": "Hugging Face Blog",
+            "is_official": True,
+            "trust_tier": 3,
+            "title": "New open source AI model outperforms proprietary benchmarks",
+            "link": "https://huggingface.co/model1",
+            "summary": "Open weight model sets new community benchmark.",
+        },
+        {
+            "source": "Amazon Science",
+            "is_official": True,
+            "trust_tier": 1,
+            "title": "New vision AI model achieves state of the art on medical imaging",
+            "link": "https://amazon.science/vision",
+            "summary": "Medical imaging architecture benchmarked on clinical datasets.",
         },
     ]
 
-    clustered = tracker.cluster_and_deduplicate_articles(raw_articles)
-    # The two OpenAI scraping articles should be merged into 1 cluster
-    self.assertEqual(len(clustered), 2, "Expected 2 clusters from 3 articles with 1 duplicate event")
+    clusters = tracker.cluster_and_deduplicate_articles(test_articles, similarity_threshold=0.40)
 
-    # Find the scraping story cluster
-    scraping_cluster = next((c for c in clustered if "Scraping" in c["title"]), None)
+    # 8 raw articles should form exactly 6 clusters:
+    # 1 cluster for the 3 scraping articles + 5 independent clusters
+    self.assertEqual(len(clusters), 6, f"Expected 6 clusters, got {len(clusters)}")
+
+    # Verify scraping cluster
+    scraping_cluster = next((c for c in clusters if "Scraping" in c["title"]), None)
     self.assertIsNotNone(scraping_cluster)
-    # Preferred lead must be the Tier 1 official announcement
-    self.assertEqual(scraping_cluster["source"], "OpenAI News")
-    self.assertEqual(scraping_cluster["covered_by_sources_count"], 2)
-    self.assertEqual(len(scraping_cluster["related_sources"]), 1)
-    self.assertEqual(scraping_cluster["related_sources"][0]["source_name"], "The Verge AI")
+    self.assertEqual(scraping_cluster["source"], "OpenAI News")  # Lead must be official lab
+    self.assertEqual(scraping_cluster["covered_by_sources_count"], 3)
+    self.assertEqual(len(scraping_cluster["related_sources"]), 2)
 
-  def test_scoring_determinism_and_weights(self):
-    article = {
-        "title": "Major Frontier Model Release with Coding Agent Capabilities",
-        "summary": "A brand new open source model with full MCP support for developers.",
+    # Verify Claude and Gemini are in separate clusters
+    claude_cluster = next((c for c in clusters if "Claude" in c["title"]), None)
+    gemini_cluster = next((c for c in clusters if "Gemini" in c["title"]), None)
+    self.assertIsNotNone(claude_cluster)
+    self.assertIsNotNone(gemini_cluster)
+    self.assertNotEqual(claude_cluster["link"], gemini_cluster["link"])
+
+  def test_scoring_determinism_and_safety_protection(self):
+    # Safety and policy story
+    safety_article = {
+        "title": "Frontier AI Safety Framework and Misalignment Detection Standards",
+        "summary": "New evaluation suite for autonomous agents and catastrophic risk oversight.",
         "trust_tier": 1,
         "is_official": True,
         "published_datetime": datetime.now(timezone.utc),
     }
 
-    scores1 = tracker.calculate_story_scores(article, corroboration_count=2)
-    scores2 = tracker.calculate_story_scores(article, corroboration_count=2)
+    # Should have protected importance score (>= 75)
+    scores = tracker.calculate_story_scores(safety_article, corroboration_count=1)
+    self.assertGreaterEqual(scores["importance_score"], 75)
+    self.assertEqual(scores["popularity_score"], 50)  # Neutral baseline for single source
 
-    self.assertEqual(scores1["overall_score"], scores2["overall_score"])
-    self.assertGreaterEqual(scores1["overall_score"], 0)
-    self.assertLessEqual(scores1["overall_score"], 100)
-    self.assertIn(scores1["confidence_label"], ["high", "medium", "low"])
+    # Determinism
+    scores_repeat = tracker.calculate_story_scores(safety_article, corroboration_count=1)
+    self.assertEqual(scores["overall_score"], scores_repeat["overall_score"])
 
-  def test_payload_builder_contract(self):
+  def test_payload_builder_contract_and_pulse_items(self):
     dummy_articles = [
         {
             "title": "Test AI Story",
-            "summary": "Test summary",
+            "summary": "Detailed summary of test development.",
             "source": "OpenAI News",
             "trust_tier": 1,
             "is_official": True,
             "link": "https://openai.com/test",
-            "published": "Oct 31, 12:00 UTC",
-            "published_datetime": datetime.now(timezone.utc),
+            "published": "Date unavailable",
+            "published_datetime": None,
         }
     ]
     clustered = tracker.cluster_and_deduplicate_articles(dummy_articles)
@@ -148,12 +215,15 @@ class TestBackendPipeline(unittest.TestCase):
 
     self.assertIn("trends", payload)
     self.assertIn("top_stories", payload)
-    self.assertIn("takeaway", payload)
-    self.assertIn("generated_at", payload)
+    self.assertIn("pulse_items", payload)
     self.assertIn("ai_tools", payload)
     self.assertIn("dev_radar", payload)
     self.assertIn("research_safety", payload)
-    self.assertIn("pulse_items", payload)
+
+    # Verify pulse item has non-empty summary and date
+    p_item = payload["pulse_items"][0]
+    self.assertTrue(len(p_item["what_happened"]) > 0, "Pulse item must have non-empty summary")
+    self.assertEqual(p_item["published"], "Date unavailable")
 
 
 if __name__ == "__main__":

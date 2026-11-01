@@ -17,19 +17,35 @@
   },
   {
     "source_id": "anthropic_news",
-    "name": "Anthropic News",
+    "name": "Anthropic Official News",
     "canonical_listing_url": "https://www.anthropic.com/news",
-    "feed_url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml",
+    "feed_url": "https://www.anthropic.com/news",
     "source_type": "official",
     "topic_tags": ["models", "research", "safety", "agents"],
     "trust_tier": 1,
     "confidence_score": 100,
     "is_official": true,
-    "feed_is_official": false,
+    "feed_is_official": true,
     "fetch_method": "html_page_adapter",
     "enabled": true,
     "poll_interval_minutes": 60,
-    "notes": "Official announcements from Anthropic. Integrated via direct HTML page adapter with community discovery bridge as backup. Story links resolve to official anthropic.com domain."
+    "notes": "Official primary announcements extracted directly from https://www.anthropic.com/news via dedicated HTML page adapter."
+  },
+  {
+    "source_id": "anthropic_hn_discovery",
+    "name": "Anthropic Community Discovery (HNRSS)",
+    "canonical_listing_url": "https://news.ycombinator.com",
+    "feed_url": "https://hnrss.org/newest?q=anthropic.com",
+    "source_type": "unofficial_discovery",
+    "topic_tags": ["community", "discovery", "mentions"],
+    "trust_tier": 4,
+    "confidence_score": 60,
+    "is_official": false,
+    "feed_is_official": false,
+    "fetch_method": "rss",
+    "enabled": true,
+    "poll_interval_minutes": 60,
+    "notes": "Unofficial community discovery feed for Anthropic mentions on Hacker News. Filtered to only keep items with canonical URLs resolving to https://www.anthropic.com/news/."
   },
   {
     "source_id": "deepmind_blog",
@@ -285,7 +301,7 @@
     "fetch_method": "rss",
     "enabled": true,
     "poll_interval_minutes": 120,
-    "notes": "Machine learning research preprints. Caution: Not yet peer-reviewed."
+    "notes": "Machine learning research preprints from arXiv cs.LG. Note: arXiv skips feed publications on Saturday and Sunday (skipDays)."
   },
   {
     "source_id": "bair_blog",
@@ -336,3 +352,4 @@
     "notes": "Curated analysis by Jack Clark on frontier safety, capability scaling, and international AI governance."
   }
 ]
+

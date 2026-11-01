@@ -2755,7 +2755,7 @@
           <div class="methodology-card">
             <h3>3. Evidence Provenance &amp; Anti-Hallucination Policy</h3>
             <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
-              <li><strong>Strict Temporal Truth:</strong> Missing or ambiguous publication dates are displayed as "Recent" and scored conservatively. AI Trend Pulse never fabricates timestamps.</li>
+              <li><strong>Strict Temporal Truth:</strong> Missing or ambiguous publication dates are explicitly displayed as "Date unavailable" and never assigned the current time. AI Trend Pulse never fabricates timestamps.</li>
               <li><strong>Story Deduplication &amp; Canonical Clustering:</strong> When independent journalists syndicate a lab announcement, Jaccard token clustering identifies the relationship, presenting the primary lab as the authoritative source while linking secondary journalism for context.</li>
               <li><strong>Parameter-Clean URLs:</strong> All outgoing reference URLs are sanitized to strip ad-tracking parameters (<code>utm_*</code>, <code>ref</code>, <code>fbclid</code>, etc.), guaranteeing clean provenance and privacy.</li>
               <li><strong>Zero Vanity Metrics:</strong> Engagement signals are grounded in objective multi-source corroboration counts rather than simulated or unverified clicks.</li>
@@ -3262,7 +3262,7 @@
                   <div class="card-source-meta">
                     <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
                     <span>•</span>
-                    <span>Recent</span>
+                    <span>${escapeHTML(item.published || 'Date unavailable')}</span>
                   </div>
                   <div class="card-actions">
                     <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
@@ -3365,7 +3365,7 @@
                 <div class="card-source-meta">
                   <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
                   <span>•</span>
-                  <span>Recent</span>
+                  <span>${escapeHTML(item.published || 'Date unavailable')}</span>
                 </div>
                 <div class="card-actions">
                   <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
@@ -3438,7 +3438,7 @@
           </div>
 
           <div class="dispatch-footer">
-            <span class="dispatch-meta-time">⏱ ${readTime} • ${escapeHTML(story.published || 'Recent')}</span>
+            <span class="dispatch-meta-time">⏱ ${readTime} • ${escapeHTML(story.published || 'Date unavailable')}</span>
             <div class="dispatch-actions">
               <button class="btn-read-deep-dive" onclick="openReaderForTopStory(${idx}, event)" aria-label="Read full story details">
                 <span>Deep Dive</span>
@@ -3504,7 +3504,7 @@
         </div>
 
         <div class="dispatch-footer">
-          <span class="dispatch-meta-time">⏱ ${readTime} • ${escapeHTML(item.published || 'Recent')}</span>
+          <span class="dispatch-meta-time">⏱ ${readTime} • ${escapeHTML(item.published || 'Date unavailable')}</span>
           <div class="dispatch-actions">
             <button class="btn-read-deep-dive" onclick="openReaderForCuratedItem('${category}', ${idx}, event)" aria-label="Deep dive into story">
               <span>Deep Dive</span>
@@ -3917,7 +3917,7 @@
           </div>
           <div class="saved-item-details">
             <h4 class="saved-item-title">${escapeHTML(item.title)}</h4>
-            <span class="saved-item-meta">${escapeHTML(item.source || 'Lab Report')} • Recent</span>
+            <span class="saved-item-meta">${escapeHTML(item.source || 'Lab Report')} • ${escapeHTML(item.published || 'Date unavailable')}</span>
           </div>
         `;
         container.appendChild(div);
@@ -3984,7 +3984,7 @@
       const srcName = document.getElementById('reader-source-name');
       if (srcName) srcName.textContent = item.source || 'Verified Source';
       const pubTime = document.getElementById('reader-pub-time');
-      if (pubTime) pubTime.textContent = item.published || 'Recent';
+      if (pubTime) pubTime.textContent = item.published || 'Date unavailable';
       const logoEl = document.getElementById('reader-source-logo');
       if (logoEl) logoEl.innerHTML = getCompanyLogoSVG(company);
 
