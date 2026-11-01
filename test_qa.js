@@ -322,8 +322,8 @@ if (mockElements['methodology-backdrop'].classList.contains('open')) {
 }
 console.log('✅ Methodology Modal (open/close, transparency tables, scoring formula) verified.');
 
-// 5. Test 3-Tier Image System
-console.log('\n▶ [4/5] Testing 3-tier image system and SVG fallbacks...');
+// 5. Test 3-Tier Image System & Indian Standard Time formatting
+console.log('\n▶ [4/5] Testing 3-tier image system, signature lab visuals, and IST formatting...');
 const agentImg = sandbox.getTopicImageUrl('AI Agents');
 const fallbackSVG = sandbox.getTopicFallbackSVG('AI Agents');
 
@@ -331,7 +331,33 @@ if (!agentImg.startsWith('http') || !fallbackSVG.startsWith('data:image/svg+xml'
   console.error('❌ Image system fallback failed.');
   process.exit(1);
 }
-console.log('✅ Curated topic imagery & data URI SVG fallbacks verified.');
+
+// Test Signature Lab Visuals for OpenAI, Anthropic, Google, NVIDIA
+const openaiImg = sandbox.getTopicImageUrl('AI Models & Research', null, 'OpenAI');
+const anthropicImg = sandbox.getTopicImageUrl('AI Models & Research', null, 'Anthropic');
+const nvidiaImg = sandbox.getTopicImageUrl('AI Infrastructure', null, 'NVIDIA');
+
+if (!openaiImg.startsWith('data:image/svg+xml') || !openaiImg.includes('OpenAI')) {
+  console.error('❌ OpenAI signature lab visual failed.');
+  process.exit(1);
+}
+if (!anthropicImg.startsWith('data:image/svg+xml') || !anthropicImg.includes('Claude')) {
+  console.error('❌ Anthropic signature lab visual failed.');
+  process.exit(1);
+}
+if (!nvidiaImg.startsWith('data:image/svg+xml') || !nvidiaImg.includes('NVIDIA')) {
+  console.error('❌ NVIDIA signature lab visual failed.');
+  process.exit(1);
+}
+
+// Test IST Formatting
+const testDate = new Date('2026-11-01T12:00:00Z');
+const istFormatted = sandbox.formatIST(testDate);
+if (!istFormatted || !istFormatted.includes('IST')) {
+  console.error('❌ formatIST failed to produce IST timestamp.');
+  process.exit(1);
+}
+console.log('✅ Curated topic imagery, signature lab visuals (OpenAI, Claude, NVIDIA), & IST time verified.');
 
 // 6. Test Responsive CSS & Viewport Coverage
 console.log('\n▶ [5/5] Testing mobile-first CSS rules and target viewports...');

@@ -494,20 +494,31 @@
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 768px) {
       #btn-methodology {
         display: none;
       }
     }
 
-    @media (max-width: 480px) {
-      .btn-header {
-        height: 44px;
-        min-height: 44px;
-        min-width: 44px;
+    @media (max-width: 520px) {
+      #btn-saved-filter {
+        height: 38px;
+        min-height: 38px;
+        min-width: 38px;
+        padding: 0 8px;
+      }
+      #btn-saved-filter span {
+        font-size: 0.74rem;
+      }
+    }
+
+    @media (max-width: 440px) {
+      #btn-saved-filter {
+        width: 38px;
+        min-width: 38px;
         padding: 0;
       }
-      .btn-header span {
+      #btn-saved-filter span {
         display: none;
       }
     }
@@ -521,9 +532,9 @@
       }
     }
 
-    /* 3-Way Theme Switcher */
+    /* 3-Way Theme Switcher (Auto / Light / Dark) */
     .theme-switcher {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       background: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
@@ -532,23 +543,28 @@
       height: 38px;
       min-height: 38px;
       flex-shrink: 0;
+      gap: 2px;
+      box-sizing: border-box;
     }
 
     .theme-opt-btn {
       height: 32px;
       min-height: 32px;
-      padding: 0 clamp(6px, 0.8vw, 10px);
+      padding: 0 clamp(6px, 0.7vw, 10px);
       border-radius: 6px;
       border: none;
       background: transparent;
       color: var(--text-muted);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      gap: 5px;
       justify-content: center;
-      transition: background-color 0.15s, color 0.15s;
+      transition: background-color 0.15s, color 0.15s, transform 0.1s;
+      white-space: nowrap;
+      box-sizing: border-box;
     }
     .theme-opt-btn:hover {
       color: var(--text-primary);
@@ -556,13 +572,27 @@
     .theme-opt-btn.active {
       background: var(--bg-surface);
       color: var(--text-primary);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+    .theme-opt-btn svg {
+      flex-shrink: 0;
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 900px) {
+      .theme-opt-btn .theme-label {
+        display: none;
+      }
       .theme-opt-btn {
-        padding: 0 5px;
-        font-size: 0.70rem;
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        min-height: 30px;
+        padding: 0;
+      }
+      .theme-switcher {
+        height: 36px;
+        min-height: 36px;
+        padding: 2px;
       }
     }
 
@@ -573,10 +603,11 @@
         padding: 1px;
       }
       .theme-opt-btn {
+        width: 27px;
+        min-width: 27px;
         height: 28px;
         min-height: 28px;
-        padding: 0 4px;
-        font-size: 0.67rem;
+        padding: 0;
       }
     }
 
@@ -1739,29 +1770,75 @@
     .btn-read-deep-dive {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: 7px;
       min-height: 44px;
-      padding: 0 16px;
+      padding: 0 18px;
       border-radius: 9999px;
-      background: var(--accent);
-      color: var(--accent-solid-text);
-      font-size: 0.82rem;
+      border: 1px solid rgba(13, 148, 136, 0.45);
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.16), rgba(13, 148, 136, 0.30));
+      color: var(--accent);
+      font-size: 0.83rem;
       font-weight: 600;
-      border: none;
+      letter-spacing: 0.2px;
       cursor: pointer;
-      transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 2px 6px rgba(13, 148, 136, 0.2);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.14);
       white-space: nowrap;
+      text-decoration: none;
     }
     .btn-read-deep-dive:hover {
-      background: var(--accent-hover);
-      transform: translateX(1px);
-      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+      background: linear-gradient(135deg, var(--accent), #0f766e);
+      color: #ffffff;
+      border-color: transparent;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+    }
+    .btn-read-deep-dive:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 3px rgba(13, 148, 136, 0.2);
     }
     .btn-read-deep-dive svg {
-      transition: transform 0.15s ease;
+      width: 14px;
+      height: 14px;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
     }
     .btn-read-deep-dive:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Attractive Catch-Me-Up Quick Action Button */
+    .btn-catch-me {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      min-height: 34px;
+      border-radius: 9999px;
+      border: 1px solid rgba(13, 148, 136, 0.35);
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(13, 148, 136, 0.22));
+      color: var(--accent);
+      font-size: 0.77rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn-catch-me:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: transparent;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(13, 148, 136, 0.3);
+    }
+    .btn-catch-me svg {
+      width: 13px;
+      height: 13px;
+      transition: transform 0.18s ease;
+    }
+    .btn-catch-me:hover svg {
       transform: translateX(2px);
     }
 
@@ -2739,10 +2816,6 @@
           <nav class="header-nav" aria-label="Main Navigation">
             <a href="#daily-overview-section" class="nav-link active">Overview</a>
             <a href="#feed-section" class="nav-link">Developments</a>
-            <a href="#topics-section" class="nav-link">Topics</a>
-            <a href="#ai-tools-section" class="nav-link">AI Tools</a>
-            <a href="#dev-radar-section" class="nav-link">Dev Radar</a>
-            <a href="#research-safety-section" class="nav-link">Safety &amp; Policy</a>
             <a href="#dispatches-section" class="nav-link">Dispatches</a>
           </nav>
         </div>
@@ -2756,7 +2829,7 @@
           </div>
 
           <!-- Mobile Search Button -->
-          <button class="btn-mobile-icon search-mobile-btn" onclick="openSearchModal()" aria-label="Search AI news">
+          <button class="btn-mobile-icon search-mobile-btn" onclick="openSearchModal()" aria-label="Search AI news" title="Search AI news">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </button>
 
@@ -2767,21 +2840,24 @@
           </button>
 
           <!-- Saved Stories Button -->
-          <button id="btn-saved-filter" class="btn-header" onclick="openSavedDrawer()" aria-label="View saved bookmarks">
+          <button id="btn-saved-filter" class="btn-header" onclick="openSavedDrawer()" aria-label="View saved bookmarks" title="Saved Bookmarks">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
             <span id="saved-count-label">Saved (0)</span>
           </button>
 
           <!-- 3-Way Theme Switcher: Auto | Light | Dark -->
           <div class="theme-switcher" role="radiogroup" aria-label="Theme mode selection">
-            <button class="theme-opt-btn" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="false" title="System Theme">
-              Auto
+            <button class="theme-opt-btn" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="false" title="System Auto Theme" aria-label="System Theme">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span class="theme-label">Auto</span>
             </button>
-            <button class="theme-opt-btn" id="theme-btn-light" onclick="setThemePreference('light')" role="radio" aria-checked="false" title="Light Theme">
-              Light
+            <button class="theme-opt-btn" id="theme-btn-light" onclick="setThemePreference('light')" role="radio" aria-checked="false" title="Light Theme" aria-label="Light Theme">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <span class="theme-label">Light</span>
             </button>
-            <button class="theme-opt-btn" id="theme-btn-dark" onclick="setThemePreference('dark')" role="radio" aria-checked="false" title="Dark Theme">
-              Dark
+            <button class="theme-opt-btn" id="theme-btn-dark" onclick="setThemePreference('dark')" role="radio" aria-checked="false" title="Dark Theme" aria-label="Dark Theme">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <span class="theme-label">Dark</span>
             </button>
           </div>
         </div>
@@ -3238,7 +3314,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>AI Trend Pulse • Static edge deployment with automated GitHub Actions updates</p>
+        <p>© 2026 AI Trend Pulse • Independent AI Intelligence &amp; Research Index</p>
       </div>
     </footer>
   </div>
@@ -3252,9 +3328,13 @@
       openai: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6669zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>`,
       google: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.88 11.5h-3.88v-3h6.63a6.8 6.8 0 0 1 .12 1.34 6.74 6.74 0 0 1-6.75 6.66A6.66 6.66 0 1 1 18.66 12h-2.78z"/></svg>`,
       anthropic: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.42 20.35l-5.42-14.7-5.42 14.7h2.7l1.08-3.05h3.28l1.08 3.05h2.7zm-6.02-5.42l1.64-4.63 1.64 4.63h-3.28z"/></svg>`,
+      nvidia: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.94 6.58c-.14.07-.27.14-.39.22-1.81 1.21-2.63 3.65-1.8 6.07.75 2.19 2.5 3.73 4.8 4.25v-2.02c-1.39-.37-2.45-1.39-2.92-2.77-.52-1.54 0-3.13 1.15-4.04.59-.47 1.18-.71 1.77-.71v-1c-.87 0-1.78.29-2.61.99zm-4.32 1.94c-.21.19-.4.39-.58.6-2.54 2.94-2.2 7.37.76 9.9 2.76 2.35 6.8 2.3 9.49.03v-1.63c-1.92 1.34-4.5 1.4-6.49-.07-2.12-1.56-2.6-4.51-1.07-6.64.71-.99 1.76-1.66 2.92-1.94v-1.1c-1.76.2-3.48.9-5.03 2.15zM22.02 12c0-4.42-3.58-8-8-8H14v2.01h.02c3.31 0 6 2.69 6 6s-2.69 6-6 6H14v2.01h.02c4.42 0 8-3.59 8-8.02z"/></svg>`,
       apple: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.62 1.35-.57.65-1.06 1.7-0.93 2.71 1 .08 2.02-.46 2.63-1.21z"/></svg>`,
       meta: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.33c-3.12 0-5.83 2.1-7.05 5.09-1.37 3.39-.77 7.37 1.58 9.93.99 1.08 2.37 1.65 3.79 1.65 1.71 0 3.31-.83 4.32-2.19.46.62 1.05 1.13 1.73 1.49 1.09.58 2.35.79 3.57.57 2.15-.38 4.01-1.87 4.96-3.96 1.14-2.5.86-5.46-.72-7.69C22.65 6.81 17.61 4.33 12 4.33zm-4.78 12.2c-1.63 0-2.92-1.38-2.92-3.14 0-1.87 1.42-3.26 3.12-3.26 1.61 0 2.87 1.35 2.87 3.16 0 1.83-1.38 3.24-3.07 3.24zm9.49 0c-1.69 0-3.07-1.41-3.07-3.24 0-1.81 1.26-3.16 2.87-3.16 1.7 0 3.12 1.39 3.12 3.26 0 1.76-1.29 3.14-2.92 3.14z"/></svg>`,
       microsoft: `<svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="1" width="10" height="10"/><rect x="13" y="1" width="10" height="10"/><rect x="1" y="13" width="10" height="10"/><rect x="13" y="13" width="10" height="10"/></svg>`,
+      xai: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24H16.17l-5.21-6.82-4.66 6.82H2.99l7.73-8.84L2.25 2.25h8.08l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>`,
+      mistral: `<svg viewBox="0 0 24 24" fill="currentColor"><g fill="currentColor"><rect x="3" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="10" y="7" width="4" height="4"/><rect x="3" y="11" width="4" height="4"/><rect x="10" y="11" width="4" height="4"/><rect x="17" y="11" width="4" height="4"/><rect x="3" y="17" width="18" height="4"/></g></svg>`,
+      huggingface: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 2.25.75 4.33 2.01 6-.1.6-.33 1.83-1.01 3 0 0 1.95-.12 3.52-.98A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-3.5 8c.83 0 1.5.9 1.5 2s-.67 2-1.5 2S7 13.1 7 12s.67-2 1.5-2zm7 0c.83 0 1.5.9 1.5 2s-.67 2-1.5 2-1.5-.9-1.5-2 .67-2 1.5-2zm-3.5 7.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z"/></svg>`,
       default: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`
     };
 
@@ -3343,14 +3423,184 @@
       return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
     }
 
-    function getTopicImageUrl(topic, explicitImage) {
-      if (explicitImage && explicitImage.startsWith('http')) return explicitImage;
+    /* -------------------------------------------------------------
+       2B. SIGNATURE LAB EDITORIAL VISUALS
+       Produces high-fidelity, signature branded cards for frontier AI
+       laboratories (OpenAI, Anthropic Claude, Google DeepMind, NVIDIA, etc.)
+       ------------------------------------------------------------- */
+    function getLabKey(companyKey) {
+      if (!companyKey) return null;
+      const c = String(companyKey).toLowerCase();
+      if (c.includes('openai')) return 'openai';
+      if (c.includes('anthropic') || c.includes('claude')) return 'anthropic';
+      if (c.includes('deepmind') || c.includes('google')) return 'google';
+      if (c.includes('nvidia')) return 'nvidia';
+      if (c.includes('meta') || c.includes('llama')) return 'meta';
+      if (c.includes('microsoft')) return 'microsoft';
+      if (c.includes('xai') || c.includes('grok')) return 'xai';
+      if (c.includes('mistral')) return 'mistral';
+      if (c.includes('hugging')) return 'huggingface';
+      if (c.includes('apple')) return 'apple';
+      return null;
+    }
+
+    function isKnownLab(companyKey) {
+      return Boolean(getLabKey(companyKey));
+    }
+
+    function getLabSignatureVisual(companyKey, topic) {
+      const lab = getLabKey(companyKey) || 'openai';
+      const t = topic || 'AI Intelligence';
+
+      const LAB_CONFIGS = {
+        openai: {
+          name: 'OpenAI',
+          badge: 'FRONTIER LAB',
+          bg1: '#071813',
+          bg2: '#0d3829',
+          accent: '#10a37f',
+          accentGlow: 'rgba(16, 163, 127, 0.28)',
+          svgPath: `<path fill="#10a37f" d="M22.28 9.82a5.98 5.98 0 0 0-.52-4.91 6.05 6.05 0 0 0-6.51-2.9 6.07 6.07 0 0 0-4.27 2.17 5.98 5.98 0 0 0-4 2.9 6.05 6.05 0 0 0 .74 7.1 5.98 5.98 0 0 0 .51 4.91 6.05 6.05 0 0 0 6.51 2.9 5.98 5.98 0 0 0 4.28 2.01 6.06 6.06 0 0 0 5.77-4.2 5.99 5.99 0 0 0 4-2.9 6.06 6.06 0 0 0-.75-7.08zm-9.02 12.61a4.48 4.48 0 0 1-2.88-1.04l.14-.08 4.78-2.76a.79.79 0 0 0 .39-.68v-6.74l2.02 1.17a.07.07 0 0 1 .04.05v5.58a4.5 4.5 0 0 1-4.49 4.5zm-9.66-4.13a4.47 4.47 0 0 1-.53-3.01l.14.08 4.78 2.76a.77.77 0 0 0 .78 0l5.84-3.37v2.33a.08.08 0 0 1-.03.06L9.74 19.95a4.5 4.5 0 0 1-6.14-1.65zM2.34 7.9a4.48 4.48 0 0 1 2.37-1.98V11.6a.77.77 0 0 0 .38.68l5.82 3.35-2.02 1.17a.08.08 0 0 1-.07 0l-4.83-2.79A4.5 4.5 0 0 1 2.34 7.87zm16.6 3.86L13.1 8.36 15.12 7.2a.08.08 0 0 1 .07 0l4.83 2.79a4.49 4.49 0 0 1-.68 8.1v-5.67a.79.79 0 0 0-.4-.67zm2.01-3.02l-.14-.09-4.77-2.78a.78.78 0 0 0-.79 0L9.41 9.23V6.9a.07.07 0 0 1 .03-.06l4.83-2.79a4.5 4.5 0 0 1 6.68 4.66zM8.31 12.86l-2.02-1.16a.08.08 0 0 1-.04-.06V6.07a4.5 4.5 0 0 1 7.38-3.45l-.14.08L8.7 5.46a.79.79 0 0 0-.39.68zm1.1-2.36l2.6-1.5 2.6 1.5v3l-2.6 1.5-2.6-1.5Z"/>`
+        },
+        anthropic: {
+          name: 'Anthropic • Claude',
+          badge: 'FRONTIER LAB',
+          bg1: '#1b120c',
+          bg2: '#3d2214',
+          accent: '#d97706',
+          accentGlow: 'rgba(217, 119, 6, 0.28)',
+          svgPath: `<path fill="#f59e0b" d="M17.42 20.35l-5.42-14.7-5.42 14.7h2.7l1.08-3.05h3.28l1.08 3.05h2.7zm-6.02-5.42l1.64-4.63 1.64 4.63h-3.28z"/>`
+        },
+        google: {
+          name: 'Google DeepMind',
+          badge: 'RESEARCH & FOUNDATION',
+          bg1: '#0a192f',
+          bg2: '#173158',
+          accent: '#38bdf8',
+          accentGlow: 'rgba(56, 189, 248, 0.25)',
+          svgPath: `<path fill="#38bdf8" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.88 11.5h-3.88v-3h6.63a6.8 6.8 0 0 1 .12 1.34 6.74 6.74 0 0 1-6.75 6.66A6.66 6.66 0 1 1 18.66 12h-2.78z"/>`
+        },
+        nvidia: {
+          name: 'NVIDIA AI',
+          badge: 'COMPUTE & ACCELERATION',
+          bg1: '#091a0c',
+          bg2: '#133519',
+          accent: '#76b900',
+          accentGlow: 'rgba(118, 185, 0, 0.28)',
+          svgPath: `<path fill="#76b900" d="M8.94 6.58c-.14.07-.27.14-.39.22-1.81 1.21-2.63 3.65-1.8 6.07.75 2.19 2.5 3.73 4.8 4.25v-2.02c-1.39-.37-2.45-1.39-2.92-2.77-.52-1.54 0-3.13 1.15-4.04.59-.47 1.18-.71 1.77-.71v-1c-.87 0-1.78.29-2.61.99zm-4.32 1.94c-.21.19-.4.39-.58.6-2.54 2.94-2.2 7.37.76 9.9 2.76 2.35 6.8 2.3 9.49.03v-1.63c-1.92 1.34-4.5 1.4-6.49-.07-2.12-1.56-2.6-4.51-1.07-6.64.71-.99 1.76-1.66 2.92-1.94v-1.1c-1.76.2-3.48.9-5.03 2.15zM22.02 12c0-4.42-3.58-8-8-8H14v2.01h.02c3.31 0 6 2.69 6 6s-2.69 6-6 6H14v2.01h.02c4.42 0 8-3.59 8-8.02z"/>`
+        },
+        meta: {
+          name: 'Meta AI • LLaMA',
+          badge: 'OPEN WEIGHTS',
+          bg1: '#081426',
+          bg2: '#122b52',
+          accent: '#0668e1',
+          accentGlow: 'rgba(6, 104, 225, 0.3)',
+          svgPath: `<path fill="#38bdf8" d="M12 4.33c-3.12 0-5.83 2.1-7.05 5.09-1.37 3.39-.77 7.37 1.58 9.93.99 1.08 2.37 1.65 3.79 1.65 1.71 0 3.31-.83 4.32-2.19.46.62 1.05 1.13 1.73 1.49 1.09.58 2.35.79 3.57.57 2.15-.38 4.01-1.87 4.96-3.96 1.14-2.5.86-5.46-.72-7.69C22.65 6.81 17.61 4.33 12 4.33zm-4.78 12.2c-1.63 0-2.92-1.38-2.92-3.14 0-1.87 1.42-3.26 3.12-3.26 1.61 0 2.87 1.35 2.87 3.16 0 1.83-1.38 3.24-3.07 3.24zm9.49 0c-1.69 0-3.07-1.41-3.07-3.24 0-1.81 1.26-3.16 2.87-3.16 1.7 0 3.12 1.39 3.12 3.26 0 1.76-1.29 3.14-2.92 3.14z"/>`
+        },
+        microsoft: {
+          name: 'Microsoft Copilot',
+          badge: 'ENTERPRISE AI',
+          bg1: '#0f172a',
+          bg2: '#1e293b',
+          accent: '#00a4ef',
+          accentGlow: 'rgba(0, 164, 239, 0.25)',
+          svgPath: `<g><rect x="2" y="2" width="9" height="9" fill="#f25022"/><rect x="13" y="2" width="9" height="9" fill="#7fba00"/><rect x="2" y="13" width="9" height="9" fill="#00a4ef"/><rect x="13" y="13" width="9" height="9" fill="#ffb900"/></g>`
+        },
+        xai: {
+          name: 'xAI • Grok',
+          badge: 'FRONTIER LAB',
+          bg1: '#09090b',
+          bg2: '#18181b',
+          accent: '#f4f4f5',
+          accentGlow: 'rgba(255, 255, 255, 0.2)',
+          svgPath: `<path fill="#ffffff" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24H16.17l-5.21-6.82-4.66 6.82H2.99l7.73-8.84L2.25 2.25h8.08l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/>`
+        },
+        mistral: {
+          name: 'Mistral AI',
+          badge: 'OPEN FOUNDATION',
+          bg1: '#1c120c',
+          bg2: '#382012',
+          accent: '#ff7000',
+          accentGlow: 'rgba(255, 112, 0, 0.3)',
+          svgPath: `<g fill="#ff7000"><rect x="3" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="10" y="7" width="4" height="4"/><rect x="3" y="11" width="4" height="4"/><rect x="10" y="11" width="4" height="4"/><rect x="17" y="11" width="4" height="4"/><rect x="3" y="17" width="18" height="4"/></g>`
+        },
+        huggingface: {
+          name: 'Hugging Face',
+          badge: 'OPEN ECOSYSTEM',
+          bg1: '#1a180e',
+          bg2: '#362f1a',
+          accent: '#ffbd2e',
+          accentGlow: 'rgba(255, 189, 46, 0.25)',
+          svgPath: `<path fill="#ffbd2e" d="M12 2C6.48 2 2 6.48 2 12c0 2.25.75 4.33 2.01 6-.1.6-.33 1.83-1.01 3 0 0 1.95-.12 3.52-.98A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm-3.5 8c.83 0 1.5.9 1.5 2s-.67 2-1.5 2S7 13.1 7 12s.67-2 1.5-2zm7 0c.83 0 1.5.9 1.5 2s-.67 2-1.5 2-1.5-.9-1.5-2 .67-2 1.5-2zm-3.5 7.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z"/>`
+        },
+        apple: {
+          name: 'Apple Intelligence',
+          badge: 'ON-DEVICE AI',
+          bg1: '#111317',
+          bg2: '#23272f',
+          accent: '#e2e8f0',
+          accentGlow: 'rgba(226, 232, 240, 0.25)',
+          svgPath: `<path fill="#f8fafc" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.62 1.35-.57.65-1.06 1.7-0.93 2.71 1 .08 2.02-.46 2.63-1.21z"/>`
+        }
+      };
+
+      const b = LAB_CONFIGS[lab] || LAB_CONFIGS.openai;
+      const gradId = 'bg_' + lab;
+      const glowId = 'glow_' + lab;
+      const gridId = 'grid_' + lab;
+
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%">
+        <defs>
+          <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="${b.bg1}"/>
+            <stop offset="100%" stop-color="${b.bg2}"/>
+          </linearGradient>
+          <radialGradient id="${glowId}" cx="50%" cy="38%" r="45%">
+            <stop offset="0%" stop-color="${b.accentGlow}"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+          </radialGradient>
+          <pattern id="${gridId}" width="32" height="32" patternUnits="userSpaceOnUse">
+            <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="640" height="360" fill="url(#${gradId})"/>
+        <rect width="640" height="360" fill="url(#${gridId})"/>
+        <circle cx="320" cy="132" r="140" fill="url(#${glowId})"/>
+        <circle cx="320" cy="130" r="54" fill="rgba(0,0,0,0.45)" stroke="${b.accent}" stroke-width="1.5" stroke-opacity="0.35"/>
+        <g transform="translate(288, 98) scale(2.67)">
+          ${b.svgPath}
+        </g>
+        <text x="320" y="235" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="700" letter-spacing="1.2" fill="#ffffff">${escapeHTML(b.name)}</text>
+        <g transform="translate(320, 272)">
+          <rect x="-140" y="-14" width="280" height="28" rx="14" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <text y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="1" fill="${b.accent}">${escapeHTML(t.toUpperCase())}</text>
+        </g>
+        <text x="320" y="328" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="500" letter-spacing="1" fill="rgba(255,255,255,0.45)">AI TREND PULSE • VERIFIED LAB DISPATCH</text>
+      </svg>`;
+
+      return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    }
+
+    function getTopicImageUrl(topic, explicitImage, company) {
+      const lab = getLabKey(company);
+      if (lab) {
+        return getLabSignatureVisual(lab, topic);
+      }
+      if (explicitImage && explicitImage.startsWith('http') && !explicitImage.includes('1618005182384')) {
+        return explicitImage;
+      }
       return TOPIC_IMAGES[topic] || TOPIC_IMAGES[normalizeTopic(topic)] || TOPIC_IMAGES.default;
     }
 
-    function handleImageFallback(img, topic) {
+    function handleImageFallback(img, topic, company) {
       img.onerror = null;
-      img.src = getTopicFallbackSVG(topic);
+      const lab = getLabKey(company);
+      if (lab) {
+        img.src = getLabSignatureVisual(lab, topic);
+      } else {
+        img.src = getTopicFallbackSVG(topic);
+      }
     }
 
     function simplifyJargon(text) {
@@ -3489,9 +3739,14 @@
       if (t.includes('openai')) return 'openai';
       if (t.includes('deepmind') || t.includes('google')) return 'google';
       if (t.includes('anthropic') || t.includes('claude')) return 'anthropic';
+      if (t.includes('nvidia')) return 'nvidia';
       if (t.includes('apple')) return 'apple';
       if (t.includes('meta') || t.includes('llama')) return 'meta';
       if (t.includes('microsoft')) return 'microsoft';
+      if (t.includes('xai') || t.includes('grok')) return 'xai';
+      if (t.includes('mistral')) return 'mistral';
+      if (t.includes('hugging')) return 'huggingface';
+      if (t.includes('amazon') || t.includes('bedrock')) return 'amazon';
       return 'default';
     }
 
@@ -3629,6 +3884,31 @@
     }
 
     /* -------------------------------------------------------------
+       6B. TIMEZONE & DATE FORMATTING HELPERS (IST - Indian Standard Time)
+       ------------------------------------------------------------- */
+    function formatIST(date) {
+      if (!date || isNaN(date.getTime())) return '';
+      return date.toLocaleTimeString('en-IN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'Asia/Kolkata'
+      }) + ' IST';
+    }
+
+    function formatISTDateTime(date) {
+      if (!date || isNaN(date.getTime())) return '';
+      return date.toLocaleString('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'Asia/Kolkata'
+      }) + ' IST';
+    }
+
+    /* -------------------------------------------------------------
        7. STATUS BAR RENDERING
        ------------------------------------------------------------- */
     function renderStatusBar(data) {
@@ -3643,7 +3923,8 @@
 
       const now = new Date();
       const ageHours = (now.getTime() - genTime.getTime()) / (1000 * 60 * 60);
-      const timeStr = genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
+      const istTimeStr = formatIST(genTime);
+      const utcTimeStr = genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
       const isoStr = genTime.toISOString();
 
       let statusCategory = 'Fresh';
@@ -3658,17 +3939,17 @@
       } else if (ageHours < 1.0) {
         statusCategory = 'Fresh';
         const minsLeft = Math.max(1, Math.round((1.0 - ageHours) * 60));
-        statusDesc = `Updated ${timeStr} • Next sync in ~${minsLeft}m`;
+        statusDesc = `Updated ${istTimeStr} • Next sync in ~${minsLeft}m`;
       } else if (ageHours < 2.5) {
         statusCategory = 'Delayed';
-        statusDesc = `Updated ${timeStr} (${Math.round(ageHours)}h ago) • Sync delayed; retrying soon`;
+        statusDesc = `Updated ${istTimeStr} (${Math.round(ageHours)}h ago) • Sync delayed; retrying soon`;
       } else {
         statusCategory = 'Stale';
-        statusDesc = `Updated ${timeStr} (${Math.round(ageHours)}h ago) • Next scheduled run pending`;
+        statusDesc = `Updated ${istTimeStr} (${Math.round(ageHours)}h ago) • Next scheduled run pending`;
       }
 
       statusText.innerHTML = `<strong>● ${statusCategory}</strong>: ${escapeHTML(statusDesc)}`;
-      statusText.setAttribute('title', `Last successful build: ${isoStr} (${timeStr})`);
+      statusText.setAttribute('title', `Last build: ${formatISTDateTime(genTime)} / ${utcTimeStr} (${isoStr})`);
     }
 
     /* -------------------------------------------------------------
@@ -3699,7 +3980,8 @@
         const genTime = data.last_successful_update
           ? new Date(data.last_successful_update)
           : (data.generated_at ? new Date(data.generated_at) : (data.last_attempt_at ? new Date(data.last_attempt_at) : new Date()));
-        lastUpdatedEl.textContent = `Updated ${genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })} UTC`;
+        lastUpdatedEl.textContent = `Updated ${formatIST(genTime)}`;
+        lastUpdatedEl.setAttribute('title', `${formatISTDateTime(genTime)} (Indian Standard Time) / ${genTime.toUTCString()}`);
       }
 
       if (itemsContainer) {
@@ -3730,9 +4012,10 @@
               </h4>
               <p class="catch-me-why">${escapeHTML(why)}</p>
             </div>
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:4px;">
-              <button class="btn-read-deep-dive" style="padding:4px 8px; font-size:0.75rem;" onclick="openReaderForDailyItem(${idx}, event)">
-                <span>Read Details ↗</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px;">
+              <button class="btn-catch-me" onclick="openReaderForDailyItem(${idx}, event)" aria-label="Read full intelligence details">
+                <span>Read Details</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
             </div>
           `;
@@ -3852,7 +4135,7 @@
         const readTime = item.reading_time || calculateReadingTime(`${item.what_happened} ${item.why_it_matters}`);
         const primaryUrl = (item.evidence_urls && item.evidence_urls[0]) || item.link || '#';
         const isSaved = isItemSaved(item.title);
-        const imgUrl = getTopicImageUrl(topic, item.image || item.image_url);
+        const imgUrl = getTopicImageUrl(topic, item.image || item.image_url, company);
 
         // Evidence and importance scoring
         const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier);
@@ -3914,7 +4197,7 @@
           card.innerHTML = `
             <div class="card-featured-inner">
               <div class="card-featured-media">
-                <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+                <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}', '${escapeAttr(company)}')" />
                 <div class="hero-image-badge">
                   <span>${escapeHTML(topic)}</span>
                 </div>
@@ -4022,7 +4305,7 @@
           card.className = `card-base card-standard ${isOfficial ? 'card-breaking' : ''}`;
           card.innerHTML = `
             <div class="card-standard-media">
-              <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+              <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}', '${escapeAttr(company)}')" />
               <div class="hero-image-badge" style="top:8px; left:8px;">
                 <span>${escapeHTML(topic)}</span>
               </div>
@@ -4230,7 +4513,7 @@
       const isSaved = isItemSaved(item.title);
       const readTime = item.reading_time || calculateReadingTime(item.one_liner || item.title);
       const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier);
-      const imgUrl = getTopicImageUrl(topic, item.image || item.image_url);
+      const imgUrl = getTopicImageUrl(topic, item.image || item.image_url, company);
 
       const scoreVal = item.overall_score ? Math.round(item.overall_score) : (item.score ? Math.round(item.score * 100) : null);
       const corroborationCount = (item.evidence_urls && item.evidence_urls.length) || item.covered_by_sources_count || item.corroborating_count || 1;
@@ -4252,7 +4535,7 @@
 
       div.innerHTML = `
         <div class="card-standard-media" style="aspect-ratio:16/9; max-height:160px; border-radius:8px; overflow:hidden; margin-bottom:10px;">
-          <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+          <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}', '${escapeAttr(company)}')" />
         </div>
         <div class="dispatch-header-row">
           <div class="dispatch-source-brand">
@@ -4775,10 +5058,11 @@
       const imgWrap = document.getElementById('reader-image-wrap');
       const imgEl = document.getElementById('reader-image');
       if (imgWrap && imgEl) {
-        const imgUrl = getTopicImageUrl(topic, item.image);
+        const comp = item.company || detectCompany(item.title, item.source);
+        const imgUrl = getTopicImageUrl(topic, item.image, comp);
         imgEl.src = imgUrl;
         imgEl.alt = item.title;
-        imgEl.onerror = () => handleImageFallback(imgEl, topic);
+        imgEl.onerror = () => handleImageFallback(imgEl, topic, comp);
       }
 
       // Key Takeaways list
@@ -5246,6 +5530,8 @@
       }
 
       loadData();
+      // Periodically refresh data every 5 minutes in background
+      setInterval(loadData, 5 * 60 * 1000);
     });
   </script>
 </body>
