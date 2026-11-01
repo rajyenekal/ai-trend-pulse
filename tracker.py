@@ -1864,6 +1864,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
 
       trends.append({
           "title": t.get("title"),
+          "link": ev_urls[0] if ev_urls else "",
           "what_happened": simplify_jargon(t.get("what_happened", "")),
           "why_it_matters": t.get("why_it_matters"),
           "who_affected": who_affected,
@@ -1896,6 +1897,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
       assigned_urls.add(normalize_url(s["link"]))
       trends.append({
           "title": s["title"],
+          "link": s["link"],
           "what_happened": s["summary"],
           "why_it_matters": s["why_it_matters"],
           "who_affected": "Developers, AI Practitioners, and Decision Makers",
