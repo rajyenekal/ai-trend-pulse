@@ -523,18 +523,43 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertNotEqual(tracker.detect_company(submit_title, "Ars Technica"), "mit")
 
   def test_classify_topic_accuracy(self):
-    # Model Spec is AI Safety, not AI Coding
+    # 8 Canonical Categories classification
+    # 1. Model Spec is AI Security & Safety
     t1 = tracker.classify_topic("An updated Model Spec for more capable and beneficial AI", "Rules for model behavior")
-    self.assertEqual(t1, "AI Safety")
+    self.assertEqual(t1, "AI Security & Safety")
 
-    # Legal agent operating system is AI Agents, not AI Safety
+    # 2. xAI data-center pollution lawsuit MUST be AI Policy & Regulation (never AI Products & Tools)
+    t_lawsuit, conf, rat = tracker.classify_topic_detailed(
+        "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
+        "Environmental groups and Memphis residents challenge gas turbine air pollution permits."
+    )
+    self.assertEqual(t_lawsuit, "AI Policy & Regulation")
+    self.assertGreaterEqual(conf, 0.90)
+    self.assertTrue(len(rat) > 10)
+
+    # 3. Legal agent operating system is AI Applications
     t2 = tracker.classify_topic("Legora is building the agentic operating system for legal work", "Legal workflow automation")
-    self.assertEqual(t2, "AI Agents")
+    self.assertEqual(t2, "AI Applications")
 
-    # Freight exception automation is AI Products, not AI Coding
+    # 4. Freight exception automation is AI Applications
     t3 = tracker.classify_topic("How Worldwide Express automated freight exceptions with Amazon Bedrock", "Logistics automation case study with Amazon Bedrock")
-    self.assertEqual(t3, "AI Products")
-    self.assertNotEqual(t3, "AI Coding")
+    self.assertEqual(t3, "AI Applications")
+
+    # 5. Hardware / GPU cluster is AI Infrastructure
+    t_infra = tracker.classify_topic("NVIDIA introduces Blackwell B200 GPU supercomputer cluster for enterprise data centers")
+    self.assertEqual(t_infra, "AI Infrastructure")
+
+    # 6. Venture funding is AI Business & Funding
+    t_biz = tracker.classify_topic("AI Startup raises $50M Series B funding round at $1B valuation")
+    self.assertEqual(t_biz, "AI Business & Funding")
+
+    # 7. IDE extension / developer tool is AI Products & Tools
+    t_tools = tracker.classify_topic("New VS Code extension brings agentic code review and automated bug fixing to IDE")
+    self.assertEqual(t_tools, "AI Products & Tools")
+
+    # 8. Frontier reasoning model is AI Models & Research
+    t_models = tracker.classify_topic("OpenAI unveils o3 reasoning model benchmark results on competitive math")
+    self.assertEqual(t_models, "AI Models & Research")
 
   def test_evidence_metadata_determination(self):
     # Single official announcement

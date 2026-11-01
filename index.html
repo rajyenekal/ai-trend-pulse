@@ -3187,6 +3187,21 @@
               <li><strong>Zero Vanity Metrics:</strong> Engagement signals are grounded in objective multi-source corroboration counts rather than simulated or unverified clicks.</li>
             </ul>
           </div>
+
+          <div class="methodology-card">
+            <h3>4. Canonical Editorial Categories</h3>
+            <p>Every story is deterministically classified into one of eight distinct editorial domains with internal confidence scoring:</p>
+            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
+              <li><strong>AI Policy &amp; Regulation:</strong> Legal proceedings, environmental/emissions lawsuits, copyright disputes, and government policy.</li>
+              <li><strong>AI Security &amp; Safety:</strong> Model safety evaluations, alignment frameworks, guardrails, exploit reports, and cybersecurity vulnerabilities.</li>
+              <li><strong>AI Infrastructure:</strong> Compute systems, GPUs, custom silicon accelerators, supercomputer clusters, and data center energy grids.</li>
+              <li><strong>AI Business &amp; Funding:</strong> Venture capital rounds, startup valuations, quarterly earnings, and merger/acquisition activity.</li>
+              <li><strong>AI Models &amp; Research:</strong> Frontier foundation architectures, reasoning models, benchmark breakthroughs, and academic preprints.</li>
+              <li><strong>AI Products &amp; Tools:</strong> Developer IDE extensions, coding agents, SDKs, programmatic APIs, and software releases.</li>
+              <li><strong>AI Applications:</strong> Production enterprise implementations across healthcare, robotics, logistics, and domain workflow automation.</li>
+              <li><strong>AI News:</strong> General AI ecosystem updates, corporate partnerships, and industry leadership statements.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -3252,6 +3267,16 @@
        2. 3-TIER EDITORIAL IMAGE SYSTEM
        ------------------------------------------------------------- */
     const TOPIC_IMAGES = {
+      // 8 Canonical Categories
+      'AI Policy & Regulation': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
+      'AI Security & Safety': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+      'AI Infrastructure': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
+      'AI Business & Funding': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
+      'AI Models & Research': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+      'AI Products & Tools': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+      'AI Applications': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
+      'AI News': 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
+      // Legacy aliases for backwards compatibility
       'AI Models': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
       'AI Agents': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
       'AI Coding': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
@@ -3260,7 +3285,6 @@
       'Business & Funding': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
       'Open Source': 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
       'AI Safety': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
-      // Legacy aliases
       'Model Releases': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
       'Research & Safety': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
       'AI Business': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
@@ -3271,22 +3295,31 @@
     function getTopicFallbackSVG(topic) {
       const t = topic || 'AI Intelligence';
       const colors = {
-        'AI Models': ['#4338ca', '#6366f1', '#3730a3'],
-        'AI Agents': ['#0f766e', '#0d9488', '#115e59'],
-        'AI Coding': ['#065f46', '#10b981', '#047857'],
-        'AI Products': ['#334155', '#64748b', '#1e293b'],
-        'Research': ['#0284c7', '#38bdf8', '#0369a1'],
-        'Business & Funding': ['#1e40af', '#3b82f6', '#1d4ed8'],
-        'Open Source': ['#475569', '#64748b', '#334155'],
-        'AI Safety': ['#9a3412', '#ea580c', '#7c2d12'],
+        // 8 Canonical Categories
+        'AI Policy & Regulation': ['#831843', '#be185d', '#9d174d'],
+        'AI Security & Safety': ['#9a3412', '#ea580c', '#7c2d12'],
+        'AI Infrastructure': ['#0f766e', '#14b8a6', '#115e59'],
+        'AI Business & Funding': ['#1e40af', '#3b82f6', '#1d4ed8'],
+        'AI Models & Research': ['#4338ca', '#6366f1', '#3730a3'],
+        'AI Products & Tools': ['#065f46', '#10b981', '#047857'],
+        'AI Applications': ['#0369a1', '#0ea5e9', '#0284c7'],
+        'AI News': ['#334155', '#64748b', '#1e293b'],
         // Legacy aliases
+        'AI Models': ['#4338ca', '#6366f1', '#3730a3'],
+        'AI Agents': ['#0369a1', '#0ea5e9', '#0284c7'],
+        'AI Coding': ['#065f46', '#10b981', '#047857'],
+        'AI Products': ['#065f46', '#10b981', '#047857'],
+        'Research': ['#4338ca', '#6366f1', '#3730a3'],
+        'Business & Funding': ['#1e40af', '#3b82f6', '#1d4ed8'],
+        'Open Source': ['#4338ca', '#6366f1', '#3730a3'],
+        'AI Safety': ['#9a3412', '#ea580c', '#7c2d12'],
         'Model Releases': ['#4338ca', '#6366f1', '#3730a3'],
         'Research & Safety': ['#9a3412', '#ea580c', '#7c2d12'],
         'AI Business': ['#1e40af', '#3b82f6', '#1d4ed8'],
-        'AI Tools & Ecosystem': ['#334155', '#64748b', '#1e293b'],
+        'AI Tools & Ecosystem': ['#065f46', '#10b981', '#047857'],
         'default': ['#0f172a', '#1e293b', '#0f172a']
       };
-      const [c1, c2, c3] = colors[t] || colors.default;
+      const [c1, c2, c3] = colors[t] || colors[normalizeTopic(t)] || colors.default;
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
         <defs>
           <linearGradient id="g_${encodeURIComponent(t)}" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -3312,7 +3345,7 @@
 
     function getTopicImageUrl(topic, explicitImage) {
       if (explicitImage && explicitImage.startsWith('http')) return explicitImage;
-      return TOPIC_IMAGES[topic] || TOPIC_IMAGES.default;
+      return TOPIC_IMAGES[topic] || TOPIC_IMAGES[normalizeTopic(topic)] || TOPIC_IMAGES.default;
     }
 
     function handleImageFallback(img, topic) {
@@ -3335,12 +3368,17 @@
     }
 
     function normalizeTopic(topic) {
-      if (!topic) return 'AI Products';
-      if (topic === 'Model Releases') return 'AI Models';
-      if (topic === 'AI Business') return 'Business & Funding';
-      if (topic === 'AI Tools & Ecosystem') return 'AI Products';
-      if (topic === 'Research & Safety') return 'AI Safety';
-      return topic;
+      if (!topic) return 'AI News';
+      const t = String(topic).trim();
+      if (TOPIC_CATEGORIES.includes(t)) return t;
+      if (t === 'Model Releases' || t === 'AI Models' || t === 'Research' || t === 'Open Source') return 'AI Models & Research';
+      if (t === 'AI Coding' || t === 'AI Products' || t === 'AI Tools & Ecosystem') return 'AI Products & Tools';
+      if (t === 'AI Business' || t === 'Business & Funding') return 'AI Business & Funding';
+      if (t === 'AI Safety' || t === 'Research & Safety') return 'AI Security & Safety';
+      if (t === 'AI Agents' || t === 'Applications') return 'AI Applications';
+      if (t === 'Infrastructure' || t === 'Hardware') return 'AI Infrastructure';
+      if (t === 'Policy' || t === 'Regulation' || t === 'AI Policy') return 'AI Policy & Regulation';
+      return 'AI News';
     }
 
     /* -------------------------------------------------------------
@@ -3359,14 +3397,14 @@
 
     const TOPIC_CATEGORIES = [
       'All',
-      'AI Models',
-      'AI Agents',
-      'AI Coding',
-      'AI Products',
-      'Research',
-      'Business & Funding',
-      'Open Source',
-      'AI Safety'
+      'AI News',
+      'AI Models & Research',
+      'AI Products & Tools',
+      'AI Business & Funding',
+      'AI Policy & Regulation',
+      'AI Infrastructure',
+      'AI Applications',
+      'AI Security & Safety'
     ];
 
     /* -------------------------------------------------------------
@@ -3414,14 +3452,36 @@
        ------------------------------------------------------------- */
     function classifyTopic(title, summary = '') {
       const content = `${title} ${summary}`.toLowerCase();
-      if (/safety|alignment|misalignment|safeguard|risk|disarmament|evaluations|framework|governance|policy|regulation|law|nist|copyright|eu ai/.test(content)) return 'AI Safety';
-      if (/mcp|protocol|coding agent|code|copilot|developer|ide|api|sdk|cursor|windsurf|repository|github/.test(content)) return 'AI Coding';
-      if (/agent|agentic|autonomous|runtime|supervision|tool use|breakout|workflow|orchestration|multi-agent/.test(content)) return 'AI Agents';
-      if (/open source|open-source|open weight|open-weight|hugging face|huggingface|weights|llama\.cpp|ollama/.test(content)) return 'Open Source';
-      if (/model|gemini|gpt|claude|llama|multimodal|frontier model|carbon|o1|o3|deepseek|mistral|reasoning model|release|benchmark/.test(content)) return 'AI Models';
-      if (/paper|arxiv|bair|science|benchmark|dataset|ablation|study|researchers|experiment/.test(content)) return 'Research';
-      if (/enterprise|business|commercial|funding|startup|revenue|invest|venture|acquisition|partner|valuation|billion|ipo/.test(content)) return 'Business & Funding';
-      return 'AI Products';
+      // 1. AI Policy & Regulation (lawsuits, court orders, EPA emissions, copyright, antitrust)
+      if (/\b(lawsuit|lawsuits|naacp|sues|sued|suing|court|judge|legal dispute|litigation|plaintiff|defendant|subpoena|pollution|emission|emissions|clean air act|epa|environmental|smog|copyright|infringement|opt-out of scrap|scraping opt-out|fair use|licensing dispute|ai act|eu ai act|executive order|regulation|regulatory|antitrust|monopoly|ftc|doj|sec|legislation|disarmament|religious exemption)\b/.test(content)) {
+        return 'AI Policy & Regulation';
+      }
+      // 2. AI Security & Safety (exploits, vulnerabilities, account takeover, model spec, safeguards)
+      if (/\b(cybersecurity|account takeover|took over|takeover|exploit|exploits|vulnerability|vulnerabilities|cve|zero-day|auth bypass|daybreak blue|misalignment|sabotage|sabot|model spec|watermark|watermarking|biosecurity|catastrophic risk|safeguard|safeguards|adversarial|safety report|teen safety|protections for teens|jailbreak|prompt injection)\b/.test(content)) {
+        return 'AI Security & Safety';
+      }
+      // 3. AI Infrastructure (hardware, GPUs, TPUs, Blackwell, RTX, server clusters, supercomputers, power grid)
+      if (/\b(hardware|data center|datacenter|gpu|gpus|tpu|blackwell|h100|h200|b200|rtx|spark windows laptop|silicon|custom silicon|semiconductor|server cluster|supercomputer|power grid|megawatt|gigawatt|cooling system)\b/.test(content)) {
+        return 'AI Infrastructure';
+      }
+      // 4. AI Business & Funding (fundraising, venture capital, valuations, IPO, revenue, earnings)
+      if (/\b(raises|raised|raising|funding round|funding target|venture capital|valuation|investors|billion target|series [a-z]|seed round|acquisition|acquisitions|acquired|merger|mergers|quarterly revenue|earnings|ipo|market cap|theranos whistleblower.*ai boom)\b/.test(content)) {
+        return 'AI Business & Funding';
+      }
+      // 5. AI Applications (domain enterprise deployments, healthcare, robotics, delivery, legal tech)
+      if (/\b(drug development|gene therapy|satellite data|forests|earth-2|robotics|autonomous vehicle|self-driving|restaurant|reservations|delivery|doordash|worldwide express|freight exceptions|transactional diligence|legal work|operating system for legal|monthly calls|retell|multiplayer game world|fable-class|clinical|diagnostics)\b/.test(content)) {
+        return 'AI Applications';
+      }
+      // 6. AI Products & Tools (IDE extensions, coding agents, SDKs, APIs, developer tools, datasette)
+      if (/\b(datasette|copilot|coding agent|sdk|sdks|api endpoint|api credits|vs code|extension|agent skills|agentic ai foundation|testing with amazon nova|tamagotchi|desktop app|windows app|greptile|code review|preview web apps|ide|developer tools)\b/.test(content)) {
+        return 'AI Products & Tools';
+      }
+      // 7. AI Models & Research (frontier models, reasoning models, preprints, benchmarks, arXiv)
+      if (/\b(frontier model|reasoning model|foundation model|claude|gemini|gpt|llama|deepseek|mistral|nemotron|qwen|voxtral|cosmos|open weights|arxiv|preprint|bair|paper|ablation|benchmark|dataset|interpretability|mechanistic|multimodal reasoning|parameter scaling)\b/.test(content)) {
+        return 'AI Models & Research';
+      }
+      // 8. AI News (general ecosystem updates)
+      return 'AI News';
     }
 
     function detectCompany(text, source = '') {
@@ -3577,16 +3637,38 @@
       const statusText = document.getElementById('status-text');
       if (!statusText) return;
 
-      const genTime = data.generated_at ? new Date(data.generated_at) : (data.last_attempt_at ? new Date(data.last_attempt_at) : new Date());
+      const genTime = data.last_successful_update
+        ? new Date(data.last_successful_update)
+        : (data.generated_at ? new Date(data.generated_at) : (data.last_attempt_at ? new Date(data.last_attempt_at) : new Date()));
+
+      const now = new Date();
+      const ageHours = (now.getTime() - genTime.getTime()) / (1000 * 60 * 60);
       const timeStr = genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
+      const isoStr = genTime.toISOString();
 
-      const diffMins = 60 - genTime.getMinutes();
-      const nextMin = diffMins > 0 && diffMins <= 60 ? diffMins : 45;
+      let statusCategory = 'Fresh';
+      let statusDesc = '';
 
-      const isCached = data.data_status === 'cached_fallback';
-      statusText.textContent = isCached
-        ? `● Monitored Feeds Synced ${timeStr} • Verified Synthesis Active`
-        : `● Live Intelligence Updated ${timeStr} • Next update in ~${nextMin} min`;
+      if (data.update_status === 'updating' || data.update_status === 'in_progress') {
+        statusCategory = 'Updating';
+        statusDesc = 'Pipeline currently processing fresh source feeds';
+      } else if (data.update_status === 'failed' || data.data_status === 'failed_preserve_fallback') {
+        statusCategory = 'Update failed';
+        statusDesc = 'Upstream ingest error; preserving verified dataset';
+      } else if (ageHours < 1.0) {
+        statusCategory = 'Fresh';
+        const minsLeft = Math.max(1, Math.round((1.0 - ageHours) * 60));
+        statusDesc = `Updated ${timeStr} • Next sync in ~${minsLeft}m`;
+      } else if (ageHours < 2.5) {
+        statusCategory = 'Delayed';
+        statusDesc = `Updated ${timeStr} (${Math.round(ageHours)}h ago) • Sync delayed; retrying soon`;
+      } else {
+        statusCategory = 'Stale';
+        statusDesc = `Updated ${timeStr} (${Math.round(ageHours)}h ago) • Next scheduled run pending`;
+      }
+
+      statusText.innerHTML = `<strong>● ${statusCategory}</strong>: ${escapeHTML(statusDesc)}`;
+      statusText.setAttribute('title', `Last successful build: ${isoStr} (${timeStr})`);
     }
 
     /* -------------------------------------------------------------
@@ -3614,7 +3696,9 @@
       }
 
       if (lastUpdatedEl) {
-        const genTime = data.generated_at ? new Date(data.generated_at) : (data.last_attempt_at ? new Date(data.last_attempt_at) : new Date());
+        const genTime = data.last_successful_update
+          ? new Date(data.last_successful_update)
+          : (data.generated_at ? new Date(data.generated_at) : (data.last_attempt_at ? new Date(data.last_attempt_at) : new Date()));
         lastUpdatedEl.textContent = `Updated ${genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })} UTC`;
       }
 
@@ -3625,7 +3709,7 @@
           : (data.top_stories ? data.top_stories.slice(0, 3) : []);
 
         topDevs.forEach((dev, idx) => {
-          const rawTopic = dev.topic || classifyTopic(dev.title, dev.why_it_matters || dev.summary || '');
+          const rawTopic = dev.category || dev.topic || classifyTopic(dev.title, dev.why_it_matters || dev.summary || '');
           const topic = normalizeTopic(rawTopic);
           const headline = simplifyJargon(dev.title || '');
           const why = simplifyJargon(dev.why_it_matters || dev.summary || dev.what_happened || '');
@@ -3672,17 +3756,21 @@
       TOPIC_CATEGORIES.forEach(cat => { if (cat !== 'All') counts[cat] = 0; });
 
       allItems.forEach(item => {
-        const rawTopic = item.topic || classifyTopic(item.title, item.what_happened || item.one_liner || '');
+        const rawTopic = item.category || item.topic || classifyTopic(item.title, item.what_changed || item.what_happened || item.one_liner || '');
         const topic = normalizeTopic(rawTopic);
-        if (counts[topic] !== undefined) counts[topic]++;
-        else counts['AI Products'] = (counts['AI Products'] || 0) + 1;
+        if (counts[topic] !== undefined) {
+          counts[topic]++;
+        } else {
+          counts['AI News'] = (counts['AI News'] || 0) + 1;
+        }
       });
 
       TOPIC_CATEGORIES.forEach(cat => {
         const btn = document.createElement('button');
-        btn.className = `topic-pill ${normalizeTopic(activeTopicFilter) === normalizeTopic(cat) ? 'active' : ''}`;
+        const isSelected = (normalizeTopic(activeTopicFilter) === normalizeTopic(cat)) || (activeTopicFilter === 'All' && cat === 'All');
+        btn.className = `topic-pill ${isSelected ? 'active' : ''}`;
         btn.setAttribute('role', 'radio');
-        btn.setAttribute('aria-checked', normalizeTopic(activeTopicFilter) === normalizeTopic(cat) ? 'true' : 'false');
+        btn.setAttribute('aria-checked', isSelected ? 'true' : 'false');
         btn.onclick = () => selectTopicFilter(cat);
 
         btn.innerHTML = `
@@ -3716,9 +3804,16 @@
       // Topic filter with normalization
       if (activeTopicFilter !== 'All') {
         items = items.filter(item => {
-          const t = item.topic || classifyTopic(item.title, item.what_happened || '');
+          const t = item.category || item.topic || classifyTopic(item.title, item.what_changed || item.what_happened || '');
           return normalizeTopic(t) === normalizeTopic(activeTopicFilter);
         });
+        // If lead trends didn't include this topic, populate from top stories in this category
+        if (items.length === 0 && data.top_stories && data.top_stories.length) {
+          items = data.top_stories.filter(item => {
+            const t = item.category || item.topic || classifyTopic(item.title, item.what_changed || item.summary || '');
+            return normalizeTopic(t) === normalizeTopic(activeTopicFilter);
+          });
+        }
       }
 
       // Search query filter
@@ -4029,7 +4124,7 @@
         const li = document.createElement('li');
         li.className = 'card-base dispatch-card dispatch-item';
 
-        const rawTopic = story.topic || classifyTopic(story.title, story.summary || story.one_liner || '');
+        const rawTopic = story.category || story.topic || classifyTopic(story.title, story.what_changed || story.summary || story.one_liner || '');
         const topic = normalizeTopic(rawTopic);
         const company = story.company || detectCompany(story.title, story.source);
         const url = story.link && story.link.startsWith('http') ? story.link : '#';
@@ -4045,6 +4140,7 @@
         // Plain English text
         const headline = simplifyJargon(story.title || '');
         const summary = simplifyJargon(story.one_liner || story.summary || '');
+        const whyItMatters = simplifyJargon(story.why_it_matters || '');
 
         // Highlight first key point if available
         const topBullet = (story.key_points && story.key_points[0]) ? story.key_points[0] : '';
@@ -4068,7 +4164,8 @@
               ${getCompanyLogoSVG(company)}
               <span>${escapeHTML(story.source)}</span>
             </div>
-            <div style="display:flex; align-items:center; gap:6px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+              <span class="badge-card-topic">${escapeHTML(topic)}</span>
               ${evidenceBadgeHTML}
               ${scorePillHTML}
               ${tierBadgeHTML}
@@ -4080,8 +4177,17 @@
               <a href="${escapeHTML(url)}" onclick="openReaderForTopStory(${idx}, event)">${escapeHTML(headline)} ↗</a>
             </h3>
             <p class="dispatch-summary">${escapeHTML(summary)}</p>
+            ${whyItMatters ? `
+              <div class="card-why-callout" style="margin: 8px 0;">
+                <div class="card-why-callout-title" style="font-size: 0.72rem;">
+                  <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                  <span>Why It Matters</span>
+                </div>
+                <div class="card-why-callout-body" style="font-size: 0.82rem; line-height: 1.45;">${escapeHTML(whyItMatters)}</div>
+              </div>
+            ` : ''}
             ${audienceCalloutHTML}
-            ${topBullet && topBullet !== story.one_liner ? `
+            ${topBullet && topBullet !== story.one_liner && topBullet !== story.summary ? `
               <div class="dispatch-bullet">
                 <strong>Key Takeaway:</strong> ${escapeHTML(simplifyJargon(topBullet))}
               </div>
@@ -4628,9 +4734,10 @@
       const backdrop = document.getElementById('reader-backdrop');
       if (!drawer || !backdrop) return;
 
-      const topic = item.topic || classifyTopic(item.title, item.what_happened || item.one_liner || '');
+      const rawTopic = item.category || item.topic || classifyTopic(item.title, item.what_changed || item.what_happened || item.one_liner || '');
+      const topic = normalizeTopic(rawTopic);
       const company = item.company || detectCompany(item.title, item.source);
-      const readTime = item.reading_time || calculateReadingTime(`${item.what_happened || item.one_liner || ''} ${item.why_it_matters || ''}`);
+      const readTime = item.reading_time || calculateReadingTime(`${item.what_changed || item.what_happened || item.one_liner || ''} ${item.why_it_matters || ''}`);
       const isOfficial = item.status === 'official_claim' || item.tier === 'Official Lab';
       const primaryUrl = item.link || (item.evidence_urls && item.evidence_urls[0]) || '#';
       const isSaved = isItemSaved(item.title);
@@ -4694,8 +4801,20 @@
       const detailedEl = document.getElementById('reader-detailed-analysis');
       if (detailedEl) {
         detailedEl.innerHTML = '';
-        const rawAnalysis = item.detailed_analysis || `${item.what_happened || item.one_liner || ''}\n\n${item.why_it_matters || ''}`;
-        const paragraphs = rawAnalysis.split(/\n\s*\n/).filter(p => p.trim());
+        const sections = [];
+        if (item.what_changed) {
+          sections.push(`What actually changed: ${item.what_changed}`);
+        }
+        if (item.detailed_analysis) {
+          sections.push(item.detailed_analysis);
+        } else if (item.what_happened || item.one_liner || item.summary) {
+          sections.push(item.what_happened || item.one_liner || item.summary);
+        }
+        if (item.potential_impact) {
+          sections.push(`Potential impact: ${item.potential_impact}`);
+        }
+        const fullAnalysis = sections.join('\n\n') || `${item.what_happened || item.one_liner || ''}\n\n${item.why_it_matters || ''}`;
+        const paragraphs = fullAnalysis.split(/\n\s*\n/).filter(p => p.trim());
         if (paragraphs.length) {
           paragraphs.forEach(pText => {
             const p = document.createElement('p');
@@ -4704,7 +4823,7 @@
           });
         } else {
           const p = document.createElement('p');
-          p.textContent = rawAnalysis;
+          p.textContent = fullAnalysis;
           detailedEl.appendChild(p);
         }
       }
@@ -4726,7 +4845,7 @@
       const audiencePills = document.getElementById('reader-audience-pills');
       const impactStmtEl = document.getElementById('reader-audience-impact-statement');
       if (affectedBox) {
-        let pills = item.audience_pills || extractAudiencePills(item.who_affected || '');
+        let pills = item.affected_stakeholders || item.audience_pills || extractAudiencePills(item.who_affected || '');
         const targetAud = item.target_audience || (item.audience_impact && item.audience_impact.target);
         if ((!pills || pills.length === 0) && targetAud) {
           pills = [targetAud];
