@@ -147,6 +147,7 @@ class MockElement {
     this._innerHTML = val;
     this.children = [];
   }
+  get firstElementChild() { return this.children[0] || null; }
   setAttribute(k, v) { this.attributes[k] = v; }
   getAttribute(k) { return this.attributes[k]; }
   appendChild(child) { this.children.push(child); }
@@ -306,7 +307,62 @@ if (dataContent.trends && dataContent.trends[0]) {
     console.error('❌ reader-drawer failed to close.');
     process.exit(1);
   }
-  console.log('✅ In-App Reader View (open/close, takeaways, detailed analysis, reference link) verified.');
+
+  // Deep Read deduplication verification across all stories
+  const allStories = [...(dataContent.trends || []), ...(dataContent.top_stories || [])];
+  allStories.forEach((story, idx) => {
+    mockElements['reader-key-points'].innerHTML = '';
+    mockElements['reader-detailed-analysis'].innerHTML = '';
+    mockElements['reader-why-text'].textContent = '';
+
+    sandbox.openReaderView(story);
+
+    const title = mockElements['reader-title'].textContent.trim().toLowerCase();
+    const kpTexts = mockElements['reader-key-points'].children.map(c => c.textContent.trim().toLowerCase());
+    const daTexts = mockElements['reader-detailed-analysis'].children.map(c => c.textContent.trim().toLowerCase());
+    const whyText = mockElements['reader-why-text'].textContent.trim().toLowerCase();
+
+    // 1. Check that no takeaway bullet duplicates the headline
+    kpTexts.forEach((kp, i) => {
+      if (kp === title) {
+        console.error(`❌ Story ${idx+1} ("${story.title}"): Takeaway bullet ${i+1} duplicates headline!`);
+        process.exit(1);
+      }
+    });
+
+    // 2. Check that no takeaway bullets duplicate each other
+    if (new Set(kpTexts).size !== kpTexts.length) {
+      console.error(`❌ Story ${idx+1} ("${story.title}"): Duplicate takeaway bullets found!`, kpTexts);
+      process.exit(1);
+    }
+
+    // 3. Check that no detailed paragraph duplicates the headline
+    daTexts.forEach((da, i) => {
+      if (da === title) {
+        console.error(`❌ Story ${idx+1} ("${story.title}"): Detailed paragraph ${i+1} duplicates headline!`);
+        process.exit(1);
+      }
+    });
+
+    // 4. Check that no detailed paragraphs duplicate each other
+    if (new Set(daTexts).size !== daTexts.length) {
+      console.error(`❌ Story ${idx+1} ("${story.title}"): Duplicate detailed paragraphs found!`, daTexts);
+      process.exit(1);
+    }
+
+    // 5. Check that why_it_matters does not duplicate title or detailed paragraph verbatim
+    if (whyText && whyText === title) {
+      console.error(`❌ Story ${idx+1} ("${story.title}"): Why It Matters duplicates headline!`);
+      process.exit(1);
+    }
+    if (whyText && daTexts.length > 0 && daTexts.includes(whyText)) {
+      console.error(`❌ Story ${idx+1} ("${story.title}"): Why It Matters duplicates detailed paragraph!`);
+      process.exit(1);
+    }
+  });
+
+  sandbox.closeReaderView();
+  console.log(`✅ In-App Reader View: ${allStories.length} stories verified with ZERO duplicated texts!`);
 }
 
 // Test Methodology Modal

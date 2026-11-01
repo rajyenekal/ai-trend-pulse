@@ -2495,6 +2495,16 @@
     .reader-prose p {
       margin: 0;
     }
+    .reader-prose p.reader-impact-para {
+      margin-top: 6px;
+      padding: 12px 16px;
+      background: var(--bg-surface);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+    }
 
     .reader-why-callout {
       margin: 0;
@@ -5014,6 +5024,48 @@
        ------------------------------------------------------------- */
     let currentReaderItem = null;
 
+    function getCategoryStrategicImpact(category) {
+      const impacts = {
+        'AI Policy & Regulation': 'Defines legal compliance obligations, municipal environmental disclosure rules, and risk boundaries for frontier deployments.',
+        'AI Security & Safety': 'Exposes alignment gaps and critical security vectors, reinforcing the requirement for defense-in-depth verification.',
+        'AI Infrastructure': 'Expands compute capacity and lowers inference latency, directly reducing enterprise hardware hosting overhead.',
+        'AI Business & Funding': 'Signals venture capital allocation trends and commercial viability benchmarks across foundation model ecosystems.',
+        'AI Models & Research': 'Advances architectural benchmarks and foundational reasoning efficiency, lowering cost-per-token thresholds.',
+        'AI Products & Tools': 'Equips developers with streamlined APIs and toolchains, compressing deployment cycles for production AI workflows.',
+        'AI Applications': 'Translates multimodal intelligence into measurable workflow automation across specialized enterprise domains.',
+        'AI News': 'Influences ecosystem alignment and strategic partnerships across frontier research institutions and industry leaders.'
+      };
+      return impacts[category] || 'Provides actionable operational intelligence for engineers and technical decision makers.';
+    }
+
+    function cleanCompareText(str) {
+      if (!str) return '';
+      return String(str).toLowerCase()
+        .replace(/^(what (actually )?changed|potential impact|why it matters|executive takeaways|takeaways?|operational impact|industry impact|key takeaways?):?\s*/i, '')
+        .replace(/[^\w\s]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function areSimilar(textA, textB) {
+      const a = cleanCompareText(textA);
+      const b = cleanCompareText(textB);
+      if (!a || !b) return false;
+      if (a === b) return true;
+      if (a.length > 25 && b.length > 25) {
+        if (a.includes(b) || b.includes(a)) return true;
+        const wordsA = new Set(a.split(' ').filter(w => w.length > 3));
+        const wordsB = new Set(b.split(' ').filter(w => w.length > 3));
+        if (wordsA.size >= 3 && wordsB.size >= 3) {
+          let intersect = 0;
+          wordsA.forEach(w => { if (wordsB.has(w)) intersect++; });
+          const similarity = intersect / Math.min(wordsA.size, wordsB.size);
+          if (similarity >= 0.78) return true;
+        }
+      }
+      return false;
+    }
+
     function openReaderView(item) {
       if (!item) return;
       currentReaderItem = item;
@@ -5070,66 +5122,159 @@
         imgEl.onerror = () => handleImageFallback(imgEl, topic, comp);
       }
 
-      // Key Takeaways list
+      // 1. Key Takeaways list (strictly deduplicated, never repeats headline)
       const keyPointsList = document.getElementById('reader-key-points');
       if (keyPointsList) {
         keyPointsList.innerHTML = '';
-        const points = (item.key_points && item.key_points.length) ? item.key_points : [
-          item.what_happened || item.one_liner || item.title,
-          item.why_it_matters || 'Important operational and industry implications.',
-          `Reported directly by ${item.source || 'editorial sources'}.`
-        ];
-        points.forEach(pt => {
+        const rawPoints = Array.isArray(item.key_points) ? item.key_points : [];
+        const distinctPoints = [];
+
+        function tryAddTakeaway(text) {
+          if (!text) return false;
+          let clean = String(text).trim().replace(/^[\s•\-\*\d\.\)]+/, '').trim();
+          if (clean.length < 15) return false;
+          if (areSimilar(clean, item.title)) return false;
+          for (const existing of distinctPoints) {
+            if (areSimilar(clean, existing)) return false;
+          }
+          distinctPoints.push(clean);
+          return true;
+        }
+
+        // Try raw points first
+        rawPoints.forEach(p => tryAddTakeaway(p));
+
+        // If fewer than 2, add what changed or summary
+        if (distinctPoints.length < 2) {
+          tryAddTakeaway(item.what_changed || item.what_happened || item.one_liner || item.summary);
+        }
+
+        // If still fewer than 2, add why it matters if distinct
+        if (distinctPoints.length < 2 && item.why_it_matters) {
+          tryAddTakeaway(item.why_it_matters);
+        }
+
+        // If still fewer than 2, add provenance
+        if (distinctPoints.length < 2 && item.source) {
+          tryAddTakeaway(`Reported directly by ${item.source} with independent coverage.`);
+        }
+
+        // Guarantee at least 1 point
+        if (distinctPoints.length === 0) {
+          distinctPoints.push(item.what_happened || item.one_liner || item.summary || 'Key technical development in AI.');
+        }
+
+        distinctPoints.slice(0, 3).forEach(pt => {
           const li = document.createElement('li');
           li.textContent = pt;
           keyPointsList.appendChild(li);
         });
       }
 
-      // Detailed in-depth analysis
+      // 2. Detailed in-depth analysis (narrative prose without repetitive label prefixes or duplicate paragraphs)
       const detailedEl = document.getElementById('reader-detailed-analysis');
       if (detailedEl) {
         detailedEl.innerHTML = '';
-        const sections = [];
-        if (item.what_changed) {
-          sections.push(`What actually changed: ${item.what_changed}`);
+        const candidateParagraphs = [];
+
+        if (item.detailed_analysis && typeof item.detailed_analysis === 'string') {
+          const splitParas = item.detailed_analysis.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+          candidateParagraphs.push(...splitParas);
+        } else if (item.summary || item.what_happened || item.one_liner) {
+          candidateParagraphs.push(item.summary || item.what_happened || item.one_liner);
         }
-        if (item.detailed_analysis) {
-          sections.push(item.detailed_analysis);
-        } else if (item.what_happened || item.one_liner || item.summary) {
-          sections.push(item.what_happened || item.one_liner || item.summary);
+
+        if (item.what_changed && typeof item.what_changed === 'string') {
+          const wcClean = item.what_changed.trim();
+          const alreadyIncluded = candidateParagraphs.some(cp => areSimilar(cp, wcClean));
+          if (!alreadyIncluded) {
+            candidateParagraphs.unshift(wcClean);
+          }
         }
-        if (item.potential_impact) {
-          sections.push(`Potential impact: ${item.potential_impact}`);
+
+        const whyItMattersText = (item.why_it_matters || '').trim();
+        const finalParagraphs = [];
+
+        candidateParagraphs.forEach(rawPara => {
+          let pText = rawPara
+            .replace(/^what (actually )?changed:?\s*/i, '')
+            .replace(/^detailed analysis:?\s*/i, '')
+            .trim();
+          if (!pText || pText.length < 15) return;
+
+          // Never repeat headline as paragraph
+          if (areSimilar(pText, item.title)) return;
+
+          // If identical to why_it_matters, skip since why_it_matters has its own dedicated callout right below
+          if (whyItMattersText && areSimilar(pText, whyItMattersText)) return;
+
+          // Check against already added paragraphs
+          for (const existing of finalParagraphs) {
+            if (areSimilar(pText, existing)) return;
+          }
+
+          // Deduplicate internal repetitive sentences within pText itself
+          const sentences = pText.split(/(?<=[.!?])\s+/);
+          if (sentences.length > 1) {
+            const uniqueSentences = [];
+            for (const s of sentences) {
+              const sTrim = s.trim();
+              if (!sTrim) continue;
+              const isDup = uniqueSentences.some(u => areSimilar(u, sTrim)) || areSimilar(sTrim, item.title);
+              if (!isDup) uniqueSentences.push(sTrim);
+            }
+            pText = uniqueSentences.join(' ');
+          }
+
+          if (pText.length > 15) {
+            finalParagraphs.push(pText);
+          }
+        });
+
+        // Ensure at least one clean narrative paragraph
+        if (finalParagraphs.length === 0) {
+          finalParagraphs.push(item.what_changed || item.summary || item.one_liner || item.title);
         }
-        const fullAnalysis = sections.join('\n\n') || `${item.what_happened || item.one_liner || ''}\n\n${item.why_it_matters || ''}`;
-        const paragraphs = fullAnalysis.split(/\n\s*\n/).filter(p => p.trim());
-        if (paragraphs.length) {
-          paragraphs.forEach(pText => {
-            const p = document.createElement('p');
-            p.textContent = pText.trim();
-            detailedEl.appendChild(p);
-          });
-        } else {
+
+        finalParagraphs.forEach(pText => {
           const p = document.createElement('p');
-          p.textContent = fullAnalysis;
+          p.textContent = pText;
           detailedEl.appendChild(p);
+        });
+
+        // Conclude with distinct potential impact paragraph if not already covered
+        if (item.potential_impact && typeof item.potential_impact === 'string') {
+          const cleanImpact = item.potential_impact.replace(/^potential impact:?\s*/i, '').trim();
+          const isCovered = finalParagraphs.some(p => areSimilar(p, cleanImpact)) ||
+                            (whyItMattersText && areSimilar(cleanImpact, whyItMattersText)) ||
+                            areSimilar(cleanImpact, item.title);
+          if (!isCovered && cleanImpact.length > 20) {
+            const ip = document.createElement('p');
+            ip.className = 'reader-impact-para';
+            ip.innerHTML = `<strong>Strategic Impact:</strong> ${escapeHTML(cleanImpact)}`;
+            detailedEl.appendChild(ip);
+          }
         }
       }
 
-      // Why It Matters callout
+      // 3. Why It Matters callout (strategic significance, never duplicates preceding text or title)
       const whyBox = document.getElementById('reader-why-box');
       const whyText = document.getElementById('reader-why-text');
       if (whyBox && whyText) {
-        if (item.why_it_matters) {
-          whyText.textContent = item.why_it_matters;
+        let whyContent = (item.why_it_matters || '').trim();
+        const firstPara = detailedEl && detailedEl.firstElementChild ? detailedEl.firstElementChild.textContent : '';
+        if (!whyContent || areSimilar(whyContent, item.title) || areSimilar(whyContent, item.what_changed || '') || (firstPara && areSimilar(whyContent, firstPara))) {
+          whyContent = getCategoryStrategicImpact(topic);
+        }
+        if (whyContent) {
+          whyText.textContent = whyContent;
           whyBox.style.display = 'block';
         } else {
           whyBox.style.display = 'none';
         }
       }
 
-      // Affected stakeholders / audience
+      // 4. Affected stakeholders / audience
       const affectedBox = document.getElementById('reader-affected-box');
       const audiencePills = document.getElementById('reader-audience-pills');
       const impactStmtEl = document.getElementById('reader-audience-impact-statement');
@@ -5152,8 +5297,9 @@
         }
 
         const impactText = item.audience_impact_statement || (item.audience_impact && item.audience_impact.impact) || '';
+        const currentWhy = whyText ? whyText.textContent : '';
         if (impactStmtEl) {
-          if (impactText) {
+          if (impactText && !areSimilar(impactText, currentWhy)) {
             const displayTarget = targetAud || 'Target Audience';
             impactStmtEl.innerHTML = `<strong>💡 Practical Impact (${escapeHTML(displayTarget)}):</strong> ${escapeHTML(simplifyJargon(impactText))}`;
             impactStmtEl.style.display = 'block';
@@ -5162,7 +5308,7 @@
           }
         }
 
-        if ((pills && pills.length) || impactText) {
+        if ((pills && pills.length) || (impactStmtEl && impactStmtEl.style.display !== 'none')) {
           affectedBox.style.display = 'block';
         } else {
           affectedBox.style.display = 'none';
@@ -5329,7 +5475,13 @@
     function copyReaderStory() {
       if (!currentReaderItem) return;
       const primaryUrl = currentReaderItem.link || (currentReaderItem.evidence_urls && currentReaderItem.evidence_urls[0]) || '';
-      const text = `${currentReaderItem.title}\n\n${currentReaderItem.what_happened || currentReaderItem.one_liner}\n\nOriginal Source: ${primaryUrl}\n\nvia AI Trend Pulse`;
+      let summary = currentReaderItem.what_changed || currentReaderItem.what_happened || currentReaderItem.one_liner || currentReaderItem.summary || '';
+      const why = currentReaderItem.why_it_matters || '';
+      let whyBlock = '';
+      if (why && !areSimilar(summary, why)) {
+        whyBlock = `\n\nWhy It Matters: ${why}`;
+      }
+      const text = `${currentReaderItem.title}\n\n${summary}${whyBlock}\n\nOriginal Source: ${primaryUrl}\n\nvia AI Trend Pulse`;
       copyTextToClipboard(text).then(() => {
         const copyLabel = document.getElementById('reader-copy-label');
         if (copyLabel) {
@@ -5405,9 +5557,12 @@
 
       const item = currentReaderItem || (cachedData && cachedData.trends && cachedData.trends[0]);
       if (!item) return;
-      const summary = item.what_happened || item.one_liner || '';
+      let summary = item.what_changed || item.what_happened || item.one_liner || item.summary || '';
       const why = item.why_it_matters || '';
-      const textToSpeak = `AI Trend Pulse Briefing. ${item.title}. ${summary}. Why it matters: ${why}`;
+      let textToSpeak = `AI Trend Pulse Briefing. ${item.title}. ${summary}.`;
+      if (why && !areSimilar(summary, why)) {
+        textToSpeak += ` Why it matters: ${why}`;
+      }
 
       window.speechSynthesis.cancel();
       currentUtterance = new SpeechSynthesisUtterance(textToSpeak);

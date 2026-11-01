@@ -1755,9 +1755,16 @@ Return JSON with this exact schema:
 # -------------------------------------------------------------
 # 14. PAYLOAD CONSTRUCTION & EDITORIAL SECTIONS
 # -------------------------------------------------------------
-def extract_key_points(summary, title, source_name=""):
-  """Extracts factual bullet points from the actual summary and title without generic boilerplate."""
+def extract_key_points(summary, title, source_name="", why_it_matters="", category="", company=""):
+  """Extracts factual bullet points from the actual summary and title without generic boilerplate or title duplicates."""
   clean_summary = (summary or "").strip()
+  clean_title = (title or "").strip()
+
+  def norm(s):
+    return re.sub(r"[^\w\s]", "", (s or "").lower()).strip()
+
+  norm_title = norm(clean_title)
+
   sentences = [
       re.sub(r"\s+", " ", sent).strip()
       for sent in re.split(r"(?<=[.!?])\s+", clean_summary)
@@ -1769,19 +1776,27 @@ def extract_key_points(summary, title, source_name=""):
   ]
   valid_sentences = [
       s for s in sentences
-      if not any(b in s.lower() for b in boilerplate_phrases)
+      if not any(b in s.lower() for b in boilerplate_phrases) and norm(s) != norm_title
   ]
   points = []
   for s in valid_sentences:
-    if s not in points:
+    if not any(norm(s) == norm(p) or norm(s) in norm(p) or norm(p) in norm(s) for p in points):
       points.append(s)
     if len(points) >= 3:
       break
 
+  # If why_it_matters is available and distinct, use it as a takeaway bullet
+  if len(points) < 3 and why_it_matters:
+    clean_why = why_it_matters.strip()
+    if norm(clean_why) != norm_title and not any(norm(clean_why) in norm(p) for p in points):
+      points.append(clean_why)
+
+  # Fallback: NEVER insert the verbatim title into bullet points!
   if not points:
-    points.append(title.strip())
-  elif len(points) == 1 and title.strip() not in points:
-    points.insert(0, title.strip())
+    if clean_summary and norm(clean_summary) != norm_title:
+      points.append(clean_summary)
+    else:
+      points.append(f"Strategic development announced in {category or 'AI'}.")
 
   return points[:3]
 
@@ -1816,13 +1831,23 @@ def generate_editorial_trio(title, clean_summary, category, company=""):
 
   if len(valid) >= 2:
     what_changed = valid[0]
-    remaining = [s for s in valid[1:] if s.lower() != what_changed.lower() and s.lower() != clean_title.lower()]
-    if remaining:
-      why_it_matters = remaining[0]
+    action_words = [
+        "enables", "allows", "designed to", "aims to", "improves", "reduces", "provides",
+        "features", "helps", "powers", "automates", "integrates", "replaces", "accelerates"
+    ]
+    candidate_why = valid[1]
+    candidate_low = candidate_why.lower()
+    if any(w in candidate_low for w in action_words) and candidate_low != what_changed.lower() and candidate_low != clean_title.lower():
+      why_it_matters = candidate_why
+      summary = what_changed
+    else:
+      summary = f"{valid[0]} {valid[1]}"
   elif len(valid) == 1:
     what_changed = valid[0]
+    summary = valid[0]
   else:
     what_changed = f"{clean_title.rstrip('.')}."
+    summary = what_changed
 
   # Action words to search for in summary if why_it_matters not yet set
   action_words = [
@@ -1912,12 +1937,29 @@ def generate_factual_why_it_matters(title, summary, topic, company=""):
   return why
 
 
-def generate_detailed_analysis(summary, title):
-  """Formats factual analysis from the source text without boilerplate placeholders."""
+def generate_detailed_analysis(summary, title, what_changed="", why_it_matters="", category="", potential_impact=""):
+  """Formats factual analysis from the source text without boilerplate placeholders or redundant repetition."""
   clean_summary = (summary or "").strip()
-  if clean_summary and clean_summary != title:
-    return clean_summary
-  return f"{title}."
+  clean_title = (title or "").strip()
+
+  def norm(t):
+    return re.sub(r"[^\w\s]", "", (t or "").lower()).strip()
+
+  paragraphs = []
+  if clean_summary and norm(clean_summary) != norm(clean_title):
+    paragraphs.append(clean_summary)
+  elif what_changed and norm(what_changed) != norm(clean_title):
+    paragraphs.append(what_changed)
+  else:
+    paragraphs.append(f"{clean_title}.")
+
+  # Add second paragraph if distinct technical context or impact is available
+  if potential_impact:
+    clean_pi = potential_impact.strip()
+    if norm(clean_pi) != norm(clean_title) and not any(norm(clean_pi) in norm(p) or norm(p) in norm(clean_pi) for p in paragraphs):
+      paragraphs.append(clean_pi)
+
+  return "\n\n".join(paragraphs)
 
 
 def generate_daily_overview(clustered_stories, now_iso):
@@ -2011,8 +2053,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
     plain_summary = simplify_jargon(summary_text)
     stakeholders = extract_affected_stakeholders(s.get("title", ""), clean_summary, category)
     audience_info = generate_audience_impact(s.get("title", ""), clean_summary, category, company)
-    key_points = extract_key_points(plain_summary, s.get("title", ""), s.get("source", ""))
-    detailed_analysis = generate_detailed_analysis(plain_summary, s.get("title", ""))
+    key_points = extract_key_points(plain_summary, s.get("title", ""), s.get("source", ""), why_it_matters, category, company)
+    detailed_analysis = generate_detailed_analysis(plain_summary, s.get("title", ""), what_changed, why_it_matters, category, potential_impact)
     reading_time = estimate_reading_time(plain_summary)
 
     tier_label = "Official Lab" if s.get("trust_tier") == 1 else (
@@ -2116,8 +2158,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
           "evidence_status": t.get("evidence_status", "independently_corroborated" if len(ev_urls) > 1 else "single_source"),
           "evidence_label": t.get("evidence_label", f"Covered by {len(ev_urls)} sources" if len(ev_urls) > 1 else "Single-Source Report"),
           "independent_source_count": len(ev_urls) if ev_urls else 1,
-          "key_points": clean_kp if clean_kp else [t.get("title")],
-          "detailed_analysis": f"{t.get('what_happened')}\n\n{t.get('why_it_matters')}",
+          "key_points": clean_kp if clean_kp else extract_key_points(t.get("what_happened", ""), t.get("title", ""), t.get("source", ""), t.get("why_it_matters", ""), cat, company),
+          "detailed_analysis": t.get("detailed_analysis") or (t.get("what_happened") or t.get("title")),
           "image": img_meta["image_url"],
           "image_url": img_meta["image_url"],
           "image_alt": img_meta["image_alt"],
@@ -2247,6 +2289,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None):
         "summary": s.get("summary", ""),
         "why_it_matters": s.get("why_it_matters", ""),
         "potential_impact": s.get("potential_impact", ""),
+        "detailed_analysis": s.get("detailed_analysis", ""),
+        "key_points": s.get("key_points", []),
         "link": s["link"],
         "source": s["source"],
         "tier": s["tier"],
