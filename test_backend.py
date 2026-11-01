@@ -398,6 +398,75 @@ class TestBackendPipeline(unittest.TestCase):
       if os.path.exists(f"{test_file}.tmp"):
         os.remove(f"{test_file}.tmp")
 
+  def test_jargon_simplification(self):
+    complex_text = "The new multimodal model improves inference compute and powers agentic workflows with a larger context window."
+    simplified = tracker.simplify_jargon(complex_text)
+    self.assertIn("multimodal (text, image, audio)", simplified)
+    self.assertIn("AI reasoning compute", simplified)
+    self.assertIn("action-oriented workflows", simplified)
+    self.assertIn("memory capacity (context window)", simplified)
+
+  def test_audience_impact_generation(self):
+    # Developer target
+    dev_impact = tracker.generate_audience_impact(
+        "OpenAI introduces new Responses API for custom tool calling",
+        "Endpoints support client side tools",
+        "AI Coding"
+    )
+    self.assertEqual(dev_impact["target"], "For developers")
+    self.assertTrue(len(dev_impact["impact"]) > 10)
+
+    # Publisher / creator target
+    creator_impact = tracker.generate_audience_impact(
+        "Standardizing web scraping opt-outs via robots.txt token",
+        "Unified protocol for AI model training opt-outs",
+        "AI Safety"
+    )
+    self.assertEqual(creator_impact["target"], "For creators & publishers")
+
+    # Everyday users target
+    user_impact = tracker.generate_audience_impact(
+        "ChatGPT Search rolled out for all free tier mobile users",
+        "Real-time web search assistant inside conversational UI",
+        "AI Products"
+    )
+    self.assertEqual(user_impact["target"], "For everyday users")
+
+  def test_image_metadata_resolution(self):
+    # Explicit source image
+    meta1 = tracker.resolve_article_image_metadata(
+        "https://techcrunch.com/photo.jpg",
+        "Test Headline", "AI Models", "openai", "https://techcrunch.com"
+    )
+    self.assertEqual(meta1["image_url"], "https://techcrunch.com/photo.jpg")
+    self.assertEqual(meta1["image_type"], "source_media")
+
+    # Lab asset fallback
+    meta2 = tracker.resolve_article_image_metadata(
+        "", "OpenAI release", "AI Models", "openai"
+    )
+    self.assertEqual(meta2["image_type"], "official_asset")
+    self.assertIn("unsplash", meta2["image_url"])
+
+    # Topic fallback
+    meta3 = tracker.resolve_article_image_metadata(
+        "", "Unknown research", "Research", "unknown"
+    )
+    self.assertEqual(meta3["image_type"], "category_fallback")
+
+  def test_daily_overview_generation(self):
+    dummy_stories = [
+        {"title": "OpenAI announces coding agent", "summary": "Coding assistant for developers", "source": "OpenAI News", "overall_score": 90, "link": "https://openai.com/1"},
+        {"title": "Google DeepMind unveils Gemini 2", "summary": "Next gen multimodal model", "source": "Google DeepMind", "overall_score": 88, "link": "https://deepmind.google/2"},
+        {"title": "Anthropic details safety evals", "summary": "Benchmarking autonomous safety risks", "source": "Anthropic Official News", "overall_score": 85, "link": "https://anthropic.com/3"},
+    ]
+    overview = tracker.generate_daily_overview(dummy_stories, "2026-11-01T12:00:00Z")
+    self.assertEqual(overview["total_developments_today"], 3)
+    self.assertTrue(len(overview["briefing_text"]) > 20)
+    self.assertEqual(len(overview["top_developments"]), 3)
+    self.assertIn("why_it_matters", overview["top_developments"][0])
+    self.assertIn("target_audience", overview["top_developments"][0])
+
 
 if __name__ == "__main__":
   unittest.main()

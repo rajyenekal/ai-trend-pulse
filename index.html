@@ -903,6 +903,169 @@
     }
 
     /* -------------------------------------------------------------
+       5B. DAILY INTELLIGENCE OVERVIEW & CATCH ME UP
+       ------------------------------------------------------------- */
+    .daily-overview-section {
+      padding: clamp(14px, 2.5vw, 24px) 0 8px 0;
+    }
+    .overview-hero {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: clamp(18px, 3.2vw, 32px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    .overview-header-tag {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .overview-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+    .overview-last-updated {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .overview-title {
+      font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin: 0 0 10px 0;
+    }
+    .overview-title .highlight-text {
+      color: var(--text-muted);
+      font-weight: 400;
+      display: inline-block;
+    }
+    .overview-briefing-text {
+      font-size: clamp(0.94rem, 1.8vw, 1.06rem);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 860px;
+      margin: 0 0 20px 0;
+    }
+    .catch-me-up-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: clamp(14px, 2.5vw, 20px);
+    }
+    .catch-me-up-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 14px;
+    }
+    .catch-me-up-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+    .catch-me-up-stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .catch-me-up-stat .stat-num {
+      font-weight: 800;
+      color: #10b981;
+      font-size: 0.95rem;
+    }
+    .catch-me-up-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .catch-me-item {
+      padding: 14px;
+      border-radius: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .catch-me-item:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+    .catch-me-item-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .catch-me-topic-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--badge-topic-bg);
+      border: 1px solid var(--badge-topic-border);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .catch-me-target {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6366f1;
+      margin-bottom: 3px;
+    }
+    .catch-me-headline {
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin: 2px 0 6px 0;
+    }
+    .catch-me-headline a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .catch-me-headline a:hover {
+      color: var(--accent);
+    }
+    .catch-me-why {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* -------------------------------------------------------------
        6. TRENDING IN AI — TOPIC NAVIGATION
        ------------------------------------------------------------- */
     .topics-section {
@@ -1392,6 +1555,40 @@
     .card-why-callout-body {
       font-size: 0.85rem;
       line-height: 1.48;
+      color: var(--text-secondary);
+    }
+
+    /* Audience Impact Callout: 'Why Should I Care?' */
+    .card-audience-callout {
+      background: rgba(99, 102, 241, 0.05);
+      border-left: 3px solid #6366f1;
+      border-radius: 0 8px 8px 0;
+      padding: 9px 13px;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    [data-theme="light"] .card-audience-callout {
+      background: #f0f4ff;
+      border-left-color: #4f46e5;
+    }
+    .audience-target-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6366f1;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    [data-theme="light"] .audience-target-tag {
+      color: #4338ca;
+    }
+    .audience-impact-desc {
+      font-size: 0.84rem;
+      line-height: 1.45;
       color: var(--text-secondary);
     }
 
@@ -2465,7 +2662,8 @@
 
           <!-- Desktop Navigation -->
           <nav class="header-nav" aria-label="Main Navigation">
-            <a href="#feed-section" class="nav-link active">Developments</a>
+            <a href="#daily-overview-section" class="nav-link active">Overview</a>
+            <a href="#feed-section" class="nav-link">Developments</a>
             <a href="#topics-section" class="nav-link">Topics</a>
             <a href="#ai-tools-section" class="nav-link">AI Tools</a>
             <a href="#dev-radar-section" class="nav-link">Dev Radar</a>
@@ -2532,7 +2730,8 @@
 
       <!-- Mobile Quick Section Navigation Pill Bar -->
       <nav class="mobile-section-nav" aria-label="Quick section navigation">
-        <a href="#feed-section" class="mobile-nav-pill active">Developments</a>
+        <a href="#daily-overview-section" class="mobile-nav-pill active">Overview</a>
+        <a href="#feed-section" class="mobile-nav-pill">Developments</a>
         <a href="#topics-section" class="mobile-nav-pill">Topics</a>
         <a href="#ai-tools-section" class="mobile-nav-pill">AI Tools</a>
         <a href="#dev-radar-section" class="mobile-nav-pill">Dev Radar</a>
@@ -2544,6 +2743,39 @@
 
   <div class="site-wrap">
     <main id="main-content">
+      <!-- 0. DAILY INTELLIGENCE OVERVIEW & CATCH ME UP -->
+      <section id="daily-overview-section" class="daily-overview-section" aria-labelledby="overview-heading">
+        <div class="overview-hero">
+          <div class="overview-header-tag">
+            <span class="overview-badge">DAILY INTELLIGENCE BRIEFING</span>
+            <span class="overview-last-updated" id="overview-last-updated">Updated recently</span>
+          </div>
+          <h1 id="overview-heading" class="overview-title font-serif">
+            AI Trend Pulse <span class="overview-tagline-separator">—</span> <span class="highlight-text">Understand what matters in AI. Without the noise.</span>
+          </h1>
+          <p class="overview-briefing-text" id="overview-briefing-text">
+            <!-- Dynamically populated from actual collected stories -->
+          </p>
+
+          <!-- Catch Me Up Block: Today's Key Developments -->
+          <div class="catch-me-up-card">
+            <div class="catch-me-up-header">
+              <div class="catch-me-up-title-wrap">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <span class="catch-me-up-title">Today's Key Changes at a Glance</span>
+              </div>
+              <div class="catch-me-up-stat" id="overview-stat-count">
+                <span class="stat-num" id="overview-count-val">0</span>
+                <span class="stat-label">developments verified today</span>
+              </div>
+            </div>
+            <div class="catch-me-up-grid" id="catch-me-up-items">
+              <!-- Dynamically rendered top developments with 1-sentence explanations and direct links -->
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- 1. TRENDING IN AI (TOPIC DISCOVERY) -->
       <section id="topics-section" class="topics-section" aria-label="Filter developments by topic">
         <div class="section-header">
@@ -2944,26 +3176,38 @@
        2. 3-TIER EDITORIAL IMAGE SYSTEM
        ------------------------------------------------------------- */
     const TOPIC_IMAGES = {
-      'AI Agents': 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
-      'Model Releases': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+      'AI Models': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+      'AI Agents': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
       'AI Coding': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
+      'AI Products': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+      'Research': 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80',
+      'Business & Funding': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
+      'Open Source': 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+      'AI Safety': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+      // Legacy aliases
+      'Model Releases': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
       'Research & Safety': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
       'AI Business': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
       'AI Tools & Ecosystem': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-      'AI Infrastructure': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
       'default': 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80'
     };
 
     function getTopicFallbackSVG(topic) {
       const t = topic || 'AI Intelligence';
       const colors = {
+        'AI Models': ['#4338ca', '#6366f1', '#3730a3'],
         'AI Agents': ['#0f766e', '#0d9488', '#115e59'],
-        'Model Releases': ['#4338ca', '#6366f1', '#3730a3'],
         'AI Coding': ['#065f46', '#10b981', '#047857'],
+        'AI Products': ['#334155', '#64748b', '#1e293b'],
+        'Research': ['#0284c7', '#38bdf8', '#0369a1'],
+        'Business & Funding': ['#1e40af', '#3b82f6', '#1d4ed8'],
+        'Open Source': ['#475569', '#64748b', '#334155'],
+        'AI Safety': ['#9a3412', '#ea580c', '#7c2d12'],
+        // Legacy aliases
+        'Model Releases': ['#4338ca', '#6366f1', '#3730a3'],
         'Research & Safety': ['#9a3412', '#ea580c', '#7c2d12'],
         'AI Business': ['#1e40af', '#3b82f6', '#1d4ed8'],
         'AI Tools & Ecosystem': ['#334155', '#64748b', '#1e293b'],
-        'AI Infrastructure': ['#3730a3', '#4f46e5', '#312e81'],
         'default': ['#0f172a', '#1e293b', '#0f172a']
       };
       const [c1, c2, c3] = colors[t] || colors.default;
@@ -3000,6 +3244,29 @@
       img.src = getTopicFallbackSVG(topic);
     }
 
+    function simplifyJargon(text) {
+      if (!text) return '';
+      return text
+        .replace(/\bmultimodal\b/gi, 'multimodal (text, image, audio)')
+        .replace(/\binference compute\b/gi, 'AI reasoning compute')
+        .replace(/\binference\b/gi, 'model reasoning')
+        .replace(/\bagentic workflows\b/gi, 'action-oriented workflows')
+        .replace(/\bagentic\b/gi, 'action-taking')
+        .replace(/\bcontext window\b/gi, 'memory capacity (context window)')
+        .replace(/\bparameter scaling\b/gi, 'increasing model size and compute')
+        .replace(/\bbenchmark saturation\b/gi, 'reaching performance ceilings on benchmarks')
+        .replace(/\btest-time compute\b/gi, 'thinking time before responding');
+    }
+
+    function normalizeTopic(topic) {
+      if (!topic) return 'AI Products';
+      if (topic === 'Model Releases') return 'AI Models';
+      if (topic === 'AI Business') return 'Business & Funding';
+      if (topic === 'AI Tools & Ecosystem') return 'AI Products';
+      if (topic === 'Research & Safety') return 'AI Safety';
+      return topic;
+    }
+
     /* -------------------------------------------------------------
        3. STATE & DATA VARIABLES
        ------------------------------------------------------------- */
@@ -3016,12 +3283,14 @@
 
     const TOPIC_CATEGORIES = [
       'All',
+      'AI Models',
       'AI Agents',
-      'Model Releases',
-      'Research & Safety',
-      'AI Business',
-      'AI Tools & Ecosystem',
-      'AI Coding'
+      'AI Coding',
+      'AI Products',
+      'Research',
+      'Business & Funding',
+      'Open Source',
+      'AI Safety'
     ];
 
     /* -------------------------------------------------------------
@@ -3069,12 +3338,14 @@
        ------------------------------------------------------------- */
     function classifyTopic(title, summary = '') {
       const content = `${title} ${summary}`.toLowerCase();
-      if (/agent|autonomous|runtime|supervision|tool use|breakout|workflow/.test(content)) return 'AI Agents';
-      if (/model|gemini|gpt|claude|llama|multimodal|frontier model|carbon|o1|o3|release|benchmark/.test(content)) return 'Model Releases';
-      if (/safety|alignment|misalignment|safeguard|risk|disarmament|evaluations|framework|governance/.test(content)) return 'Research & Safety';
-      if (/enterprise|business|commercial|partner|adoption|apple|china|finance|legal|servicenow|credit saison/.test(content)) return 'AI Business';
-      if (/code|coding|developer|programming|copilot|software|ide/.test(content)) return 'AI Coding';
-      return 'AI Tools & Ecosystem';
+      if (/safety|alignment|misalignment|safeguard|risk|disarmament|evaluations|framework|governance|policy|regulation|law|nist|copyright|eu ai/.test(content)) return 'AI Safety';
+      if (/mcp|protocol|coding agent|code|copilot|developer|ide|api|sdk|cursor|windsurf|repository|github/.test(content)) return 'AI Coding';
+      if (/agent|agentic|autonomous|runtime|supervision|tool use|breakout|workflow|orchestration|multi-agent/.test(content)) return 'AI Agents';
+      if (/open source|open-source|open weight|open-weight|hugging face|huggingface|weights|llama\.cpp|ollama/.test(content)) return 'Open Source';
+      if (/model|gemini|gpt|claude|llama|multimodal|frontier model|carbon|o1|o3|deepseek|mistral|reasoning model|release|benchmark/.test(content)) return 'AI Models';
+      if (/paper|arxiv|bair|science|benchmark|dataset|ablation|study|researchers|experiment/.test(content)) return 'Research';
+      if (/enterprise|business|commercial|funding|startup|revenue|invest|venture|acquisition|partner|valuation|billion|ipo/.test(content)) return 'Business & Funding';
+      return 'AI Products';
     }
 
     function detectCompany(text, source = '') {
@@ -3187,6 +3458,7 @@
       if (data) cachedData = data;
       if (!cachedData) return;
       renderStatusBar(cachedData);
+      renderDailyOverview(cachedData);
       renderTopicPills(cachedData);
       renderDevelopmentsFeed(cachedData);
       renderAITools(cachedData);
@@ -3218,6 +3490,74 @@
     }
 
     /* -------------------------------------------------------------
+       7B. DAILY INTELLIGENCE OVERVIEW & CATCH ME UP
+       ------------------------------------------------------------- */
+    function renderDailyOverview(data) {
+      if (!data) data = cachedData;
+      if (!data) return;
+
+      const briefingEl = document.getElementById('overview-briefing-text');
+      const lastUpdatedEl = document.getElementById('overview-last-updated');
+      const countValEl = document.getElementById('overview-count-val');
+      const itemsContainer = document.getElementById('catch-me-up-items');
+
+      const overview = data.daily_overview || {};
+      const totalCount = overview.total_developments_today || (data.top_stories ? data.top_stories.length : 0);
+      const briefingText = overview.briefing_text || data.takeaway || "Frontier AI developments continue accelerating across practical coding assistants, model architectures, and evaluation standards.";
+
+      if (briefingEl) {
+        briefingEl.textContent = simplifyJargon(briefingText);
+      }
+
+      if (countValEl) {
+        countValEl.textContent = totalCount;
+      }
+
+      if (lastUpdatedEl) {
+        const genTime = data.generated_at ? new Date(data.generated_at) : (data.last_attempt_at ? new Date(data.last_attempt_at) : new Date());
+        lastUpdatedEl.textContent = `Updated ${genTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })} UTC`;
+      }
+
+      if (itemsContainer) {
+        itemsContainer.innerHTML = '';
+        const topDevs = (overview.top_developments && overview.top_developments.length)
+          ? overview.top_developments
+          : (data.top_stories ? data.top_stories.slice(0, 3) : []);
+
+        topDevs.forEach((dev, idx) => {
+          const rawTopic = dev.topic || classifyTopic(dev.title, dev.why_it_matters || dev.summary || '');
+          const topic = normalizeTopic(rawTopic);
+          const headline = simplifyJargon(dev.title || '');
+          const why = simplifyJargon(dev.why_it_matters || dev.summary || dev.what_happened || '');
+          const targetAudience = dev.target_audience || (dev.audience_impact ? dev.audience_impact.target : 'For developers');
+          const link = dev.link || '#';
+
+          const itemCard = document.createElement('div');
+          itemCard.className = 'catch-me-item';
+          itemCard.innerHTML = `
+            <div class="catch-me-item-top">
+              <span class="catch-me-topic-tag">${escapeHTML(topic)}</span>
+              <span style="font-size:0.72rem; color:var(--text-muted); font-weight:600;">${escapeHTML(dev.source || '')}</span>
+            </div>
+            <div>
+              <div class="catch-me-target">${escapeHTML(targetAudience)}</div>
+              <h4 class="catch-me-headline">
+                <a href="${escapeHTML(link)}" onclick="openReaderForTopStory(${idx}, event)">${escapeHTML(headline)}</a>
+              </h4>
+              <p class="catch-me-why">${escapeHTML(why)}</p>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:4px;">
+              <button class="btn-read-deep-dive" style="padding:4px 8px; font-size:0.75rem;" onclick="openReaderForTopStory(${idx}, event)">
+                <span>Read Details ↗</span>
+              </button>
+            </div>
+          `;
+          itemsContainer.appendChild(itemCard);
+        });
+      }
+    }
+
+    /* -------------------------------------------------------------
        8. TRENDING TOPIC PILLS RENDERING
        ------------------------------------------------------------- */
     function renderTopicPills(data) {
@@ -3232,16 +3572,17 @@
       TOPIC_CATEGORIES.forEach(cat => { if (cat !== 'All') counts[cat] = 0; });
 
       allItems.forEach(item => {
-        const topic = item.topic || classifyTopic(item.title, item.what_happened || item.one_liner || '');
+        const rawTopic = item.topic || classifyTopic(item.title, item.what_happened || item.one_liner || '');
+        const topic = normalizeTopic(rawTopic);
         if (counts[topic] !== undefined) counts[topic]++;
-        else counts['AI Tools & Ecosystem'] = (counts['AI Tools & Ecosystem'] || 0) + 1;
+        else counts['AI Products'] = (counts['AI Products'] || 0) + 1;
       });
 
       TOPIC_CATEGORIES.forEach(cat => {
         const btn = document.createElement('button');
-        btn.className = `topic-pill ${activeTopicFilter === cat ? 'active' : ''}`;
+        btn.className = `topic-pill ${normalizeTopic(activeTopicFilter) === normalizeTopic(cat) ? 'active' : ''}`;
         btn.setAttribute('role', 'radio');
-        btn.setAttribute('aria-checked', activeTopicFilter === cat ? 'true' : 'false');
+        btn.setAttribute('aria-checked', normalizeTopic(activeTopicFilter) === normalizeTopic(cat) ? 'true' : 'false');
         btn.onclick = () => selectTopicFilter(cat);
 
         btn.innerHTML = `
@@ -3271,11 +3612,11 @@
 
       let items = [...(data.trends || [])];
 
-      // Topic filter
+      // Topic filter with normalization
       if (activeTopicFilter !== 'All') {
         items = items.filter(item => {
           const t = item.topic || classifyTopic(item.title, item.what_happened || '');
-          return t === activeTopicFilter;
+          return normalizeTopic(t) === normalizeTopic(activeTopicFilter);
         });
       }
 
@@ -3309,17 +3650,43 @@
 
       // Render cards with editorial hierarchy (Featured -> Standard -> Grouped -> Breaking)
       items.forEach((item, idx) => {
-        const topic = item.topic || classifyTopic(item.title, item.what_happened || '');
+        const rawTopic = item.topic || classifyTopic(item.title, item.what_happened || '');
+        const topic = normalizeTopic(rawTopic);
         const company = item.company || detectCompany(item.title, item.source);
         const readTime = item.reading_time || calculateReadingTime(`${item.what_happened} ${item.why_it_matters}`);
-        const primaryUrl = (item.evidence_urls && item.evidence_urls[0]) || '#';
+        const primaryUrl = (item.evidence_urls && item.evidence_urls[0]) || item.link || '#';
         const isSaved = isItemSaved(item.title);
-        const imgUrl = getTopicImageUrl(topic, item.image);
+        const imgUrl = getTopicImageUrl(topic, item.image || item.image_url);
 
-        // Check if item has multiple corroborated sources
-        const hasMultipleSources = item.evidence_urls && item.evidence_urls.length > 1;
-        const isOfficial = item.status === 'official_claim' || item.tier === 'Official Lab';
+        // Corroboration and importance scoring
+        const corroborationCount = (item.evidence_urls && item.evidence_urls.length) || item.covered_by_sources_count || 1;
+        const hasMultipleSources = corroborationCount > 1;
+        const isOfficial = item.status === 'official_claim' || item.tier === 'Official Lab' || item.is_official;
         const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier);
+
+        const scoreVal = item.overall_score ? Math.round(item.overall_score) : (item.importance_score ? Math.round(item.importance_score) : null);
+        const scorePillHTML = scoreVal ? `<span class="score-pill" title="Algorithmic Importance Score (0-100)">⚡ ${scoreVal}</span>` : '';
+        const corroborationBadgeHTML = hasMultipleSources
+          ? `<span class="badge-corroborated" title="${corroborationCount} independent sources confirming">✓ ${corroborationCount} Sources</span>`
+          : `<span class="badge-corroborated" style="opacity:0.85;">✓ 1 Source</span>`;
+
+        // Plain English text
+        const headline = simplifyJargon(item.title || '');
+        const summary = simplifyJargon(item.what_happened || item.summary || item.one_liner || '');
+        const whyItMatters = simplifyJargon(item.why_it_matters || '');
+
+        // Audience Impact ('Why Should I Care?')
+        const audienceTarget = item.target_audience || (item.audience_impact ? item.audience_impact.target : 'For developers');
+        const audienceImpact = item.audience_impact_statement || (item.audience_impact ? item.audience_impact.impact : 'Affects technical workflows and operational choices.');
+        const audienceCalloutHTML = `
+          <div class="card-audience-callout">
+            <div class="audience-target-tag">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>${escapeHTML(audienceTarget)}</span>
+            </div>
+            <div class="audience-impact-desc">${escapeHTML(simplifyJargon(audienceImpact))}</div>
+          </div>
+        `;
 
         // Extract key takeaways bullets (up to 3)
         const keyPoints = (item.key_points && item.key_points.length) ? item.key_points.slice(0, 3) : [];
@@ -3330,18 +3697,18 @@
               <span>Key Takeaways</span>
             </div>
             <ul class="takeaways-list">
-              ${keyPoints.map(kp => `<li>${escapeHTML(kp)}</li>`).join('')}
+              ${keyPoints.map(kp => `<li>${escapeHTML(simplifyJargon(kp))}</li>`).join('')}
             </ul>
           </div>
         ` : '';
 
-        const whyItMattersHTML = item.why_it_matters ? `
+        const whyItMattersHTML = whyItMatters ? `
           <div class="card-why-callout">
             <div class="card-why-callout-title">
               <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
               <span>Why It Matters</span>
             </div>
-            <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
+            <div class="card-why-callout-body">${escapeHTML(whyItMatters)}</div>
           </div>
         ` : '';
 
@@ -3354,7 +3721,7 @@
           card.innerHTML = `
             <div class="card-featured-inner">
               <div class="card-featured-media">
-                <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(item.title)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+                <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
                 <div class="hero-image-badge">
                   <span>${escapeHTML(topic)}</span>
                 </div>
@@ -3365,15 +3732,18 @@
                     <div class="card-kicker-left">
                       ${tierBadgeHTML}
                       <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                      ${scorePillHTML}
+                      ${corroborationBadgeHTML}
                     </div>
                     <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${readTime}</span>
                   </div>
                   <h3 class="card-headline font-serif" style="margin-top:8px;">
-                    <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
+                    <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
                   </h3>
-                  <p class="card-summary" style="margin-top:8px;">${escapeHTML(item.what_happened)}</p>
+                  <p class="card-summary" style="margin-top:8px;">${escapeHTML(summary)}</p>
                   ${takeawaysHTML}
                   ${whyItMattersHTML}
+                  ${audienceCalloutHTML}
                 </div>
 
                 <div class="card-footer">
@@ -3414,15 +3784,17 @@
               <div class="card-kicker-left">
                 ${tierBadgeHTML}
                 <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                ${scorePillHTML}
               </div>
               <span class="badge-status-pill official">Corroborated by ${item.evidence_urls.length} sources</span>
             </div>
             <h3 class="card-headline" style="margin-top:8px;">
-              <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
+              <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
             </h3>
-            <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
+            <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
             ${takeawaysHTML}
             ${whyItMattersHTML}
+            ${audienceCalloutHTML}
 
             <details class="evidence-block">
               <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
@@ -3457,7 +3829,7 @@
           card.className = `card-base card-standard ${isOfficial ? 'card-breaking' : ''}`;
           card.innerHTML = `
             <div class="card-standard-media">
-              <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(item.title)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+              <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
               <div class="hero-image-badge" style="top:8px; left:8px;">
                 <span>${escapeHTML(topic)}</span>
               </div>
@@ -3468,15 +3840,18 @@
                   <div class="card-kicker-left">
                     ${tierBadgeHTML}
                     <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                    ${scorePillHTML}
+                    ${corroborationBadgeHTML}
                   </div>
                   <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${readTime}</span>
                 </div>
                 <h3 class="card-headline" style="margin-top:8px;">
-                  <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(item.title)}</a>
+                  <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
                 </h3>
-                <p class="card-summary" style="margin-top:6px;">${escapeHTML(item.what_happened)}</p>
+                <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
                 ${takeawaysHTML}
                 ${whyItMattersHTML}
+                ${audienceCalloutHTML}
               </div>
 
               <div class="card-footer">
@@ -3525,14 +3900,42 @@
         const li = document.createElement('li');
         li.className = 'card-base dispatch-card dispatch-item';
 
+        const rawTopic = story.topic || classifyTopic(story.title, story.summary || story.one_liner || '');
+        const topic = normalizeTopic(rawTopic);
         const company = story.company || detectCompany(story.title, story.source);
         const url = story.link && story.link.startsWith('http') ? story.link : '#';
         const isSaved = isItemSaved(story.title);
         const readTime = story.reading_time || calculateReadingTime(story.one_liner || story.title);
         const tierBadgeHTML = getTierBadgeHTML(story.source, story.tier);
+        const imgUrl = getTopicImageUrl(topic, story.image || story.image_url);
+
+        const corroborationCount = story.covered_by_sources_count || 1;
+        const corroborationBadgeHTML = corroborationCount > 1
+          ? `<span class="badge-corroborated" title="${corroborationCount} independent sources confirming">✓ ${corroborationCount} Sources</span>`
+          : '';
+
+        const scoreVal = story.overall_score ? Math.round(story.overall_score) : null;
+        const scorePillHTML = scoreVal ? `<span class="score-pill" title="Importance Score">⚡ ${scoreVal}</span>` : '';
+
+        // Plain English text
+        const headline = simplifyJargon(story.title || '');
+        const summary = simplifyJargon(story.one_liner || story.summary || '');
 
         // Highlight first key point if available
         const topBullet = (story.key_points && story.key_points[0]) ? story.key_points[0] : '';
+
+        // Audience impact
+        const audienceTarget = story.target_audience || (story.audience_impact ? story.audience_impact.target : 'For developers');
+        const audienceImpact = story.audience_impact_statement || (story.audience_impact ? story.audience_impact.impact : 'Affects daily development workflows.');
+        const audienceCalloutHTML = `
+          <div class="card-audience-callout" style="margin: 8px 0;">
+            <div class="audience-target-tag">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>${escapeHTML(audienceTarget)}</span>
+            </div>
+            <div class="audience-impact-desc">${escapeHTML(simplifyJargon(audienceImpact))}</div>
+          </div>
+        `;
 
         li.innerHTML = `
           <div class="dispatch-header-row">
@@ -3540,17 +3943,22 @@
               ${getCompanyLogoSVG(company)}
               <span>${escapeHTML(story.source)}</span>
             </div>
-            ${tierBadgeHTML}
+            <div style="display:flex; align-items:center; gap:6px;">
+              ${corroborationBadgeHTML}
+              ${scorePillHTML}
+              ${tierBadgeHTML}
+            </div>
           </div>
 
           <div class="dispatch-body">
             <h3 class="dispatch-title">
-              <a href="${escapeHTML(url)}" onclick="openReaderForTopStory(${idx}, event)">${escapeHTML(story.title)} ↗</a>
+              <a href="${escapeHTML(url)}" onclick="openReaderForTopStory(${idx}, event)">${escapeHTML(headline)} ↗</a>
             </h3>
-            <p class="dispatch-summary">${escapeHTML(story.one_liner || '')}</p>
+            <p class="dispatch-summary">${escapeHTML(summary)}</p>
+            ${audienceCalloutHTML}
             ${topBullet && topBullet !== story.one_liner ? `
               <div class="dispatch-bullet">
-                <strong>Key Takeaway:</strong> ${escapeHTML(topBullet)}
+                <strong>Key Takeaway:</strong> ${escapeHTML(simplifyJargon(topBullet))}
               </div>
             ` : ''}
           </div>
@@ -3584,15 +3992,37 @@
     function renderCuratedCard(item, idx, category) {
       const div = document.createElement('div');
       div.className = 'card-base dispatch-card curated-item';
+      const rawTopic = item.topic || classifyTopic(item.title, item.what_happened || item.one_liner || '');
+      const topic = normalizeTopic(rawTopic);
       const company = item.company || detectCompany(item.title, item.source);
       const url = item.link && item.link.startsWith('http') ? item.link : '#';
       const isSaved = isItemSaved(item.title);
       const readTime = item.reading_time || calculateReadingTime(item.one_liner || item.title);
       const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier);
-      const scoreVal = item.score ? Math.round(item.score * 100) : null;
-      const corroborationCount = (item.evidence_urls && item.evidence_urls.length) || item.corroborating_count || 1;
+      const imgUrl = getTopicImageUrl(topic, item.image || item.image_url);
+
+      const scoreVal = item.overall_score ? Math.round(item.overall_score) : (item.score ? Math.round(item.score * 100) : null);
+      const corroborationCount = (item.evidence_urls && item.evidence_urls.length) || item.covered_by_sources_count || item.corroborating_count || 1;
+      const headline = simplifyJargon(item.title || '');
+      const summary = simplifyJargon(item.what_happened || item.one_liner || item.summary || '');
+      const whyItMatters = simplifyJargon(item.why_it_matters || '');
+
+      const audienceTarget = item.target_audience || (item.audience_impact ? item.audience_impact.target : 'For developers');
+      const audienceImpact = item.audience_impact_statement || (item.audience_impact ? item.audience_impact.impact : 'Affects practical tool workflows.');
+      const audienceCalloutHTML = `
+        <div class="card-audience-callout" style="margin: 8px 0;">
+          <div class="audience-target-tag">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>${escapeHTML(audienceTarget)}</span>
+          </div>
+          <div class="audience-impact-desc">${escapeHTML(simplifyJargon(audienceImpact))}</div>
+        </div>
+      `;
 
       div.innerHTML = `
+        <div class="card-standard-media" style="aspect-ratio:16/9; max-height:160px; border-radius:8px; overflow:hidden; margin-bottom:10px;">
+          <img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(headline)}" loading="lazy" onerror="handleImageFallback(this, '${escapeAttr(topic)}')" />
+        </div>
         <div class="dispatch-header-row">
           <div class="dispatch-source-brand">
             ${getCompanyLogoSVG(company)}
@@ -3607,16 +4037,17 @@
 
         <div class="dispatch-body">
           <h3 class="dispatch-title">
-            <a href="${escapeHTML(url)}" onclick="openReaderForCuratedItem('${category}', ${idx}, event)">${escapeHTML(item.title)} ↗</a>
+            <a href="${escapeHTML(url)}" onclick="openReaderForCuratedItem('${category}', ${idx}, event)">${escapeHTML(headline)} ↗</a>
           </h3>
-          <p class="dispatch-summary">${escapeHTML(item.what_happened || item.one_liner || '')}</p>
-          ${item.why_it_matters ? `
+          <p class="dispatch-summary">${escapeHTML(summary)}</p>
+          ${audienceCalloutHTML}
+          ${whyItMatters ? `
             <div class="card-why-callout" style="margin-top:10px;">
               <div class="card-why-callout-title">
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 <span>Why It Matters</span>
               </div>
-              <div class="card-why-callout-body">${escapeHTML(item.why_it_matters)}</div>
+              <div class="card-why-callout-body">${escapeHTML(whyItMatters)}</div>
             </div>
           ` : ''}
         </div>
