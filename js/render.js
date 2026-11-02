@@ -1,6 +1,6 @@
 /**
  * AI Trend Pulse — Pure Rendering Engine & Vector Visuals (js/render.js)
- * v2.1 High-Signal Editorial Architecture
+ * v2.1 High-Signal Editorial Architecture with Premium Visual Layouts
  */
 
 import { state, isItemSaved, toggleSaveItem } from './state.js';
@@ -49,18 +49,6 @@ export const TOPIC_IMAGES = {
   'AI Products & Tools': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
   'AI Applications': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
   'AI News': 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
-  'AI Models': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
-  'AI Agents': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
-  'AI Coding': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
-  'AI Products': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-  'Research': 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80',
-  'Business & Funding': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
-  'Open Source': 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
-  'AI Safety': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
-  'Model Releases': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
-  'Research & Safety': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80',
-  'AI Business': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-  'AI Tools & Ecosystem': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
   'default': 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80'
 };
 
@@ -97,132 +85,221 @@ export function getLabSignatureVisual(companyKey, topic) {
     microsoft: { name: 'Microsoft AI', subtitle: 'Enterprise Copilots & Infrastructure', c1: '#00a4ef', c2: '#0078d4', c3: '#002050' },
     mistral: { name: 'Mistral AI', subtitle: 'Open Models & Efficient Inference', c1: '#f97316', c2: '#c2410c', c3: '#431407' },
     xai: { name: 'xAI', subtitle: 'Maximum Truth-Seeking Grok Models', c1: '#e11d48', c2: '#9f1239', c3: '#4c0519' },
-    huggingface: { name: 'Hugging Face', subtitle: 'Open-Source Ecosystem & Hub', c1: '#ffd21e', c2: '#d97706', c3: '#451a03' },
-    apple: { name: 'Apple Intelligence', subtitle: 'Private On-Device Foundation Models', c1: '#64748b', c2: '#334155', c3: '#0f172a' }
+    huggingface: { name: 'Hugging Face', subtitle: 'Open-Source Ecosystem & Hub', c1: '#ffd21e', c2: '#d97706', c3: '#451a03' }
   };
 
   const cfg = LAB_CONFIGS[lab] || LAB_CONFIGS.openai;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
     <defs>
-      <linearGradient id="g_${lab}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="${cfg.c1}"/>
         <stop offset="60%" stop-color="${cfg.c2}"/>
         <stop offset="100%" stop-color="${cfg.c3}"/>
       </linearGradient>
     </defs>
-    <rect width="600" height="340" fill="url(#g_${lab})"/>
-    <circle cx="500" cy="90" r="160" fill="rgba(255,255,255,0.06)"/>
-    <g fill="#ffffff" opacity="0.95" transform="translate(48, 220)">
-      <text font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="28" font-weight="800" fill="#ffffff">${escapeHTML(cfg.name)}</text>
-      <text y="28" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="500" fill="rgba(255,255,255,0.85)">${escapeHTML(cfg.subtitle)}</text>
-      <text y="48" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,0.65)" letter-spacing="1.2" text-transform="uppercase">${escapeHTML(t)}</text>
-    </g>
+    <rect width="1200" height="630" fill="url(#bg)"/>
+    <text x="80" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#ffffff">${cfg.name}</text>
+    <text x="80" y="390" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="500" fill="#ffffff" opacity="0.9">${cfg.subtitle}</text>
+    <text x="80" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity="0.75">DISPATCH • ${t.toUpperCase()}</text>
   </svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
 export function getTopicFallbackSVG(topic) {
-  const t = topic || 'AI Intelligence';
-  const colors = {
-    'AI Policy & Regulation': ['#831843', '#be185d', '#9d174d'],
-    'AI Security & Safety': ['#9a3412', '#ea580c', '#7c2d12'],
-    'AI Infrastructure': ['#0f766e', '#14b8a6', '#115e59'],
-    'AI Business & Funding': ['#1e40af', '#3b82f6', '#1d4ed8'],
-    'AI Models & Research': ['#4338ca', '#6366f1', '#3730a3'],
-    'AI Products & Tools': ['#065f46', '#10b981', '#047857'],
-    'AI Applications': ['#0369a1', '#0ea5e9', '#0284c7'],
-    'AI News': ['#334155', '#64748b', '#1e293b'],
-    'AI Agents': ['#0369a1', '#0ea5e9', '#0284c7'],
-    'default': ['#0f172a', '#1e293b', '#0f172a']
-  };
-  const [c1, c2, c3] = colors[t] || colors.default;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
-    <defs>
-      <linearGradient id="g_${encodeURIComponent(t)}" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="${c1}"/>
-        <stop offset="50%" stop-color="${c2}"/>
-        <stop offset="100%" stop-color="${c3}"/>
-      </linearGradient>
-    </defs>
-    <rect width="600" height="340" fill="url(#g_${encodeURIComponent(t)})"/>
-    <g fill="#ffffff" opacity="0.9" transform="translate(40, 240)">
-      <text font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="20" font-weight="700" text-transform="uppercase" fill="#ffffff">${escapeHTML(t)}</text>
-      <text y="25" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" fill="rgba(255,255,255,0.75)">AI TREND PULSE • EDITORIAL PROVENANCE</text>
-    </g>
+  const t = topic || 'AI News';
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+    <rect width="1200" height="630" fill="#0f172a"/>
+    <text x="80" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" fill="#38bdf8">${t}</text>
+    <text x="80" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="500" fill="#94a3b8">AI Trend Pulse • Verified Intelligence</text>
   </svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
-export function getTopicImageUrl(topic, imageUrl = null, companyKey = null) {
+export function getTopicImageUrl(topic, rawImage, companyKey) {
   if (companyKey && isKnownLab(companyKey)) {
     return getLabSignatureVisual(companyKey, topic);
   }
-  if (imageUrl && typeof imageUrl === 'string' && imageUrl.startsWith('http')) {
-    return imageUrl;
+  if (rawImage && String(rawImage).startsWith('http')) {
+    return rawImage;
   }
-  if (TOPIC_IMAGES[topic]) {
-    return TOPIC_IMAGES[topic];
-  }
-  return TOPIC_IMAGES.default;
+  return TOPIC_IMAGES[topic] || TOPIC_IMAGES.default || getTopicFallbackSVG(topic);
 }
 
 // -------------------------------------------------------------
-// 3. INDIAN STANDARD TIME (IST) & RELATIVE TIME FORMATTING
+// 3. BADGES & SOURCE METADATA HELPERS
+// -------------------------------------------------------------
+export function getTierMeta(source, tier) {
+  const s = (source || '').toLowerCase();
+  const t = (tier || '').toLowerCase();
+
+  // Tier 1: Primary Lab Announcements & Official Research
+  if (
+    s.includes('openai') ||
+    s.includes('deepmind') ||
+    s.includes('anthropic') ||
+    s.includes('mistral') ||
+    s.includes('meta ai') ||
+    t.includes('official') ||
+    t.includes('tier 1')
+  ) {
+    return {
+      tierNum: 1,
+      tierClass: 'tier-1',
+      badgeLabel: 'Tier 1 • Official Lab',
+      badgeShort: 'Tier 1: Official Lab',
+      icon: '🏢',
+      sourceName: source || 'Official Lab'
+    };
+  }
+
+  // Tier 3: Open Ecosystem & Research Repositories
+  if (
+    s.includes('arxiv') ||
+    s.includes('bair') ||
+    s.includes('berkeley') ||
+    t.includes('open research') ||
+    t.includes('tier 3')
+  ) {
+    return {
+      tierNum: 3,
+      tierClass: 'tier-3',
+      badgeLabel: 'Tier 3 • Open Research',
+      badgeShort: 'Tier 3: Research',
+      icon: '📄',
+      sourceName: source || 'Research Preprint'
+    };
+  }
+
+  // Tier 4: Practitioner & Community Discovery
+  if (
+    s.includes('hacker news') ||
+    s.includes('hn') ||
+    s.includes('simon willison') ||
+    s.includes('import ai') ||
+    t.includes('community') ||
+    t.includes('practitioner') ||
+    t.includes('tier 4')
+  ) {
+    return {
+      tierNum: 4,
+      tierClass: 'tier-4',
+      badgeLabel: 'Tier 4 • Community Signal',
+      badgeShort: 'Tier 4: Community',
+      icon: '💬',
+      sourceName: source || 'Community Discovery'
+    };
+  }
+
+  // Tier 2: Default to Independent Tech Journalism
+  return {
+    tierNum: 2,
+    tierClass: 'tier-2',
+    badgeLabel: 'Tier 2 • Independent Press',
+    badgeShort: 'Tier 2: Tech Press',
+    icon: '📰',
+    sourceName: source || 'Independent Tech Press'
+  };
+}
+
+export function getTierBadgeHTML(source, tier) {
+  const meta = getTierMeta(source, tier);
+  return `<span class="badge-tier ${meta.tierClass}" title="${escapeHTML(meta.badgeLabel)}">
+    <span class="badge-tier-dot"></span>
+    <span class="badge-tier-label">${escapeHTML(meta.badgeShort)}</span>
+  </span>`;
+}
+
+export function getEvidenceBadgeHTML(item) {
+  if (!item) return '';
+  const status = item.evidence_status;
+  const trendType = item.trend_type || (status === 'emerging_theme' ? 'emerging_theme' : 'single_development');
+  const signalDiversity = item.trend_signal_diversity || (item.evidence_urls ? item.evidence_urls.length : 1);
+  const claimCorrob = item.claim_corroboration || item.independent_source_count || (item.evidence_urls ? item.evidence_urls.length : (item.covered_by_sources_count || 1));
+  const isOfficial = item.is_official || item.tier === 'Official Lab' || status === 'official_announcement' || item.status === 'official_claim';
+
+  if (trendType === 'emerging_theme' || status === 'emerging_theme') {
+    return `<span class="badge-evidence badge-evidence-theme" title="Emerging multi-development theme synthesizing ${signalDiversity} distinct industry signals">🌐 Emerging Theme (${signalDiversity} Signals)</span>`;
+  }
+
+  if (isOfficial) {
+    if (claimCorrob >= 2) {
+      return `<span class="badge-evidence badge-evidence-corroborated" title="Official lab release confirmed across ${claimCorrob} independent publisher groups">🏛️ Official + ${claimCorrob - 1} Sources</span>`;
+    }
+    return `<span class="badge-evidence badge-evidence-official" title="Direct announcement from official lab or developer">🏛️ Official Source</span>`;
+  }
+  if (status === 'research_preprint' || item.topic === 'Research' || item.source_type === 'research' || (item.source && item.source.toLowerCase().includes('arxiv'))) {
+    return `<span class="badge-evidence badge-evidence-research" title="Research paper preprint / academic evaluation">📄 Research Preprint</span>`;
+  }
+  if (status === 'practitioner_report' || item.trust_tier === 4) {
+    return `<span class="badge-evidence badge-evidence-practitioner" title="Practitioner observation or community discovery signal">🔬 Practitioner Report</span>`;
+  }
+  if (claimCorrob >= 2) {
+    return `<span class="badge-evidence badge-evidence-corroborated" title="Reported and corroborated across ${claimCorrob} independent publisher groups">✓ ${claimCorrob} Independent Sources</span>`;
+  }
+  return `<span class="badge-evidence badge-evidence-single" title="Reported by a single tech news outlet">📰 Single Source</span>`;
+}
+
+// -------------------------------------------------------------
+// 4. DATE AND TIME FORMATTING HELPERS (IST Support)
 // -------------------------------------------------------------
 export function formatIST(dateInput) {
-  if (!dateInput) return 'IST';
-  try {
-    const d = new Date(dateInput);
-    if (isNaN(d.getTime())) return 'IST';
+  if (!dateInput) return '';
+  const d = new Date(dateInput);
+  if (isNaN(d.getTime())) return String(dateInput);
+  return d.toLocaleTimeString('en-IN', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'Asia/Kolkata'
+  }) + ' IST';
+}
 
-    // Format directly using Intl.DateTimeFormat with Asia/Kolkata timezone
-    return new Intl.DateTimeFormat('en-IN', {
-      timeZone: 'Asia/Kolkata',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-      timeZoneName: 'short'
-    }).format(d);
-  } catch (e) {
-    return 'IST';
-  }
+export function formatISTDateTime(dateInput) {
+  if (!dateInput) return '';
+  const d = new Date(dateInput);
+  if (isNaN(d.getTime())) return String(dateInput);
+  return d.toLocaleString('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'Asia/Kolkata'
+  }) + ' IST';
 }
 
 export function formatRelativeTime(dateInput) {
-  if (!dateInput) return 'Recent';
-  try {
-    const d = new Date(dateInput);
-    const now = new Date();
-    const diffSec = Math.floor((now.getTime() - d.getTime()) / 1000);
-    if (diffSec < 60) return 'Just now';
-    const diffMin = Math.floor(diffSec / 60);
-    if (diffMin < 60) return `${diffMin}m ago`;
-    const diffHr = Math.floor(diffMin / 60);
-    if (diffHr < 24) return `${diffHr}h ago`;
-    const diffDay = Math.floor(diffHr / 24);
-    if (diffDay < 7) return `${diffDay}d ago`;
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  } catch (e) {
-    return 'Recent';
+  if (!dateInput) return 'Recently';
+  const d = new Date(dateInput);
+  if (isNaN(d.getTime())) return String(dateInput);
+  const now = new Date();
+  const diffHours = (now.getTime() - d.getTime()) / (1000 * 60 * 60);
+
+  if (diffHours < 1) {
+    const mins = Math.max(1, Math.round(diffHours * 60));
+    return `${mins}m ago`;
   }
+  if (diffHours < 24) {
+    return `${Math.round(diffHours)}h ago`;
+  }
+  const days = Math.round(diffHours / 24);
+  return `${days}d ago`;
 }
 
 // -------------------------------------------------------------
-// 4. RENDERING TIER A: TOP 5 EXECUTIVE BENTO GRID
+// 5. RENDERING TIER A: TOP 5 EXECUTIVE BENTO GRID
 // -------------------------------------------------------------
-export function renderTop5Bento(items) {
+export function renderTop5Bento(stories) {
   const container = document.getElementById('bento-container');
   if (!container) return;
 
-  if (!items || items.length === 0) {
+  const top5 = (stories || []).slice(0, 5);
+  if (top5.length === 0) {
     container.innerHTML = '';
     return;
   }
 
-  const top5 = items.slice(0, 5);
   const hero = top5[0];
   const subcards = top5.slice(1, 5);
 
@@ -230,21 +307,24 @@ export function renderTop5Bento(items) {
     <div class="bento-section">
       <div class="bento-header">
         <div class="bento-title-wrap">
-          <span class="bento-badge-tag">Top 5 Executive Digest</span>
-          <span style="font-size:0.82rem; color:var(--text-muted);">Highest-signal developments across frontier labs</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span style="font-weight:700; font-size:1.05rem; color:var(--text-primary);">Top 5 Executive Pulse</span>
+          <span class="bento-badge-tag">High Signal</span>
         </div>
+        <span style="font-size:0.75rem; color:var(--text-muted);">Updated Hourly</span>
       </div>
+
       <div class="bento-grid">
-        <!-- Hero Card -->
-        <article class="bento-card bento-hero" data-story-idx="0">
+        <!-- Lead Hero Bento Card -->
+        <article class="bento-card bento-hero" onclick="openReaderForTrend(0, event)">
           <div>
             <div class="bento-card-meta">
               <span class="badge-signal">${escapeHTML(hero.signal_badge || '🚀 Frontier Launch')}</span>
-              <span class="badge-tier tier-${hero.trust_tier || 1}"><span class="badge-tier-dot"></span>${escapeHTML(hero.tier || 'Official Lab')}</span>
-              <span style="font-size:0.76rem; color:var(--text-muted);">${formatRelativeTime(hero.published_at || hero.published)}</span>
+              <span class="badge-tier tier-${hero.trust_tier || 1}">${escapeHTML(hero.source)}</span>
+              <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">${formatRelativeTime(hero.published_at || hero.published)}</span>
             </div>
-            <h2 class="bento-headline font-serif">${escapeHTML(hero.title)}</h2>
-            <p class="bento-summary">${escapeHTML(hero.what_changed || hero.summary)}</p>
+            <h2 class="bento-headline font-serif" style="font-size: clamp(1.2rem, 2vw, 1.45rem); margin: 10px 0 8px 0;">${escapeHTML(hero.title)}</h2>
+            <p class="bento-summary" style="font-size:0.9rem; line-height:1.5;">${escapeHTML(hero.what_changed || hero.summary || '')}</p>
           </div>
           <div class="bento-footer">
             <span class="bento-source-pill">${getCompanyLogoSVG(hero.company)} ${escapeHTML(hero.source)}</span>
@@ -252,13 +332,13 @@ export function renderTop5Bento(items) {
           </div>
         </article>
         
-        <!-- 4 Subcards -->
+        <!-- 4 Subcards Grid -->
         <div style="display:grid; grid-template-columns:1fr; gap:12px;">
   `;
 
   subcards.forEach((item, idx) => {
     html += `
-      <article class="bento-card bento-subcard" data-story-idx="${idx + 1}">
+      <article class="bento-card bento-subcard" onclick="openReaderForTrend(${idx + 1}, event)">
         <div>
           <div class="bento-card-meta">
             <span class="badge-signal">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
@@ -284,7 +364,7 @@ export function renderTop5Bento(items) {
 }
 
 // -------------------------------------------------------------
-// 5. RENDERING TIER B: COMPACT LIVE WIRE TABLE
+// 6. RENDERING TIER B: COMPACT LIVE WIRE TABLE
 // -------------------------------------------------------------
 export function renderCompactWire(items) {
   const container = document.getElementById('developments-container');
@@ -310,7 +390,7 @@ export function renderCompactWire(items) {
       : '';
 
     html += `
-      <div class="wire-row" data-wire-idx="${idx}">
+      <div class="wire-row" data-wire-idx="${idx}" onclick="openReaderForTrend(${idx}, event)">
         <div class="wire-col-time">${escapeHTML(relTime)}</div>
         <div class="wire-col-badge">
           <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
@@ -334,7 +414,7 @@ export function renderCompactWire(items) {
 }
 
 // -------------------------------------------------------------
-// 6. RENDERING DECLUTTERED EDITORIAL CARDS
+// 7. RENDERING RICH EDITORIAL DEVELOPMENTS CARDS
 // -------------------------------------------------------------
 export function renderEditorialCards(items) {
   const container = document.getElementById('developments-container');
@@ -352,49 +432,244 @@ export function renderEditorialCards(items) {
 
   let html = '';
   items.forEach((item, idx) => {
-    const relTime = formatRelativeTime(item.published_at || item.published);
-    const corrobCount = item.claim_corroboration || item.independent_source_count || 1;
-    const corrobLabel = corrobCount >= 2 ? `Covered by ${corrobCount} sources` : 'Single-Source';
+    const topic = item.category || item.topic || 'AI News';
+    const company = item.company || 'default';
+    const readTime = item.reading_time || '2 min read';
+    const primaryUrl = (item.evidence_urls && item.evidence_urls[0]) || item.link || '#';
+    const isSaved = isItemSaved(item.title);
+    const imgUrl = getTopicImageUrl(topic, item.image || item.image_url, company);
 
-    html += `
-      <article class="card-standard" data-card-idx="${idx}">
-        <div>
-          <div class="card-top-bar">
-            <span class="badge-signal">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
-            <span class="badge-tier tier-${item.trust_tier || 2}">
-              <span class="badge-tier-dot"></span>
-              <span class="badge-tier-label">${escapeHTML(item.source)}</span>
-            </span>
-            <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">${escapeHTML(relTime)}</span>
-          </div>
+    const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier || item.trust_tier);
+    const evidenceBadgeHTML = getEvidenceBadgeHTML(item);
+    const scoreVal = item.pulse_score ? Math.round(item.pulse_score) : (item.overall_score ? Math.round(item.overall_score) : null);
+    const scorePillHTML = scoreVal ? `<span class="score-pill" title="Algorithmic Pulse Score (0-100)">⚡ ${scoreVal}</span>` : '';
+    const signalBadgeHTML = `<span class="badge-signal">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>`;
+    const corroborationCount = item.claim_corroboration || item.independent_source_count || (item.evidence_urls ? item.evidence_urls.length : 1);
+    const hasMultipleSources = corroborationCount > 1 && item.evidence_urls && item.evidence_urls.length > 1;
+    const isOfficial = item.is_official || item.trust_tier === 1;
 
-          <h2 class="card-headline font-serif">${escapeHTML(item.title)}</h2>
+    const headline = item.title || '';
+    const summary = item.what_changed || item.what_happened || item.summary || '';
+    const whyItMatters = item.why_it_matters || '';
 
-          <div class="card-editorial-trio">
-            <p class="card-what-changed">${escapeHTML(item.what_changed || item.summary)}</p>
-            ${item.why_it_matters ? `
-              <div class="card-why-callout">
-                <strong>Why it matters:</strong> ${escapeHTML(item.why_it_matters)}
-              </div>
-            ` : ''}
-          </div>
+    // Takeaways
+    const keyPoints = (item.key_points && item.key_points.length) ? item.key_points.slice(0, 3) : [];
+    const takeawaysHTML = keyPoints.length ? `
+      <div class="card-takeaways">
+        <div class="takeaways-header">
+          <svg class="takeaways-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          <span>Key Takeaways</span>
         </div>
+        <ul class="takeaways-list">
+          ${keyPoints.map(kp => `<li>${escapeHTML(kp)}</li>`).join('')}
+        </ul>
+      </div>
+    ` : '';
 
-        <div class="card-bottom-bar">
-          <span style="font-size:0.74rem; color:var(--text-muted);">${escapeHTML(corrobLabel)}</span>
-          <button class="btn-action-icon" style="min-height:32px; font-size:0.78rem; font-weight:600; color:var(--accent-text);">
-            Deep Read →
-          </button>
+    // Why it matters callout
+    const whyItMattersHTML = whyItMatters ? `
+      <div class="card-why-callout">
+        <div class="card-why-callout-title">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <span>Why It Matters</span>
         </div>
-      </article>
+        <div class="card-why-callout-body">${escapeHTML(whyItMatters)}</div>
+      </div>
+    ` : '';
+
+    // Affected Audience Callout
+    const audienceTarget = item.target_audience || (item.audience_impact ? item.audience_impact.target : 'For developers & builders');
+    const audienceImpact = item.audience_impact_statement || (item.audience_impact ? item.audience_impact.impact : 'Affects engineering decisions and practical workflows.');
+    const audienceCalloutHTML = `
+      <div class="card-audience-callout">
+        <div class="audience-target-tag">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>${escapeHTML(audienceTarget)}</span>
+        </div>
+        <div class="audience-impact-desc">${escapeHTML(audienceImpact)}</div>
+      </div>
     `;
+
+    const publishedStr = item.published_at ? formatRelativeTime(item.published_at) : (item.published || 'Recently');
+
+    if (idx === 0) {
+      // CARD TYPE 1: FEATURED STORY CARD (Lead Hero Layout)
+      html += `
+        <article class="card-base card-featured" data-card-idx="${idx}">
+          <div class="card-featured-inner">
+            <div class="card-featured-media">
+              <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(headline)}" loading="lazy" />
+              <div class="hero-image-badge">
+                <span>${escapeHTML(topic)}</span>
+              </div>
+            </div>
+            <div class="card-featured-body">
+              <div>
+                <div class="card-kicker-row">
+                  <div class="card-kicker-left">
+                    ${signalBadgeHTML}
+                    ${tierBadgeHTML}
+                    <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                    ${scorePillHTML}
+                    ${evidenceBadgeHTML}
+                  </div>
+                  <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${escapeHTML(readTime)}</span>
+                </div>
+                <h3 class="card-headline font-serif" style="margin-top:8px;">
+                  <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
+                </h3>
+                <p class="card-summary" style="margin-top:8px;">${escapeHTML(summary)}</p>
+                ${takeawaysHTML}
+                ${whyItMattersHTML}
+                ${audienceCalloutHTML}
+              </div>
+
+              <div class="card-footer">
+                <div class="card-source-meta">
+                  <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                  <span>•</span>
+                  <span>${escapeHTML(publishedStr)}</span>
+                </div>
+                <div class="card-actions">
+                  <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                    <span>Read Deep Dive</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                  <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                  </button>
+                  <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                  <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    } else if (hasMultipleSources) {
+      // CARD TYPE 5: RELATED STORY GROUP (Multi-source corroborated)
+      const linksHTML = item.evidence_urls.map((u, i) => {
+        let domain = '';
+        try { domain = new URL(u).hostname.replace('www.', ''); } catch (e) { domain = u; }
+        return `<li>${i + 1}. <a class="evidence-link" href="${escapeHTML(u)}" target="_blank" rel="noopener noreferrer">${escapeHTML(domain)} ↗</a></li>`;
+      }).join('');
+
+      html += `
+        <article class="card-base card-grouped" data-card-idx="${idx}">
+          <div class="card-kicker-row">
+            <div class="card-kicker-left">
+              ${signalBadgeHTML}
+              ${tierBadgeHTML}
+              <span class="badge-card-topic">${escapeHTML(topic)}</span>
+              ${scorePillHTML}
+            </div>
+            <span class="badge-status-pill official">Corroborated by ${corroborationCount} sources</span>
+          </div>
+          <h3 class="card-headline font-serif" style="margin-top:8px;">
+            <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
+          </h3>
+          <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
+          ${takeawaysHTML}
+          ${whyItMattersHTML}
+          ${audienceCalloutHTML}
+
+          <details class="evidence-block">
+            <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
+            <ul class="evidence-list">${linksHTML}</ul>
+          </details>
+
+          <div class="card-footer">
+            <div class="card-source-meta">
+              <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+              <span>•</span>
+              <span>⏱ ${escapeHTML(readTime)}</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                <span>Read Deep Dive</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              </button>
+              <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+              <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    } else {
+      // CARD TYPE 2: STANDARD NEWS CARD
+      html += `
+        <article class="card-base card-standard ${isOfficial ? 'card-breaking' : ''}" data-card-idx="${idx}">
+          <div class="card-standard-media">
+            <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(headline)}" loading="lazy" />
+            <div class="hero-image-badge" style="top:8px; left:8px;">
+              <span>${escapeHTML(topic)}</span>
+            </div>
+          </div>
+          <div class="card-standard-body">
+            <div>
+              <div class="card-kicker-row">
+                <div class="card-kicker-left">
+                  ${signalBadgeHTML}
+                  ${tierBadgeHTML}
+                  <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                  ${scorePillHTML}
+                  ${evidenceBadgeHTML}
+                </div>
+                <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${escapeHTML(readTime)}</span>
+              </div>
+              <h3 class="card-headline font-serif" style="margin-top:8px;">
+                <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
+              </h3>
+              <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
+              ${takeawaysHTML}
+              ${whyItMattersHTML}
+              ${audienceCalloutHTML}
+            </div>
+
+            <div class="card-footer">
+              <div class="card-source-meta">
+                <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                <span>•</span>
+                <span>${escapeHTML(publishedStr)}</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                  <span>Read Deep Dive</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
   });
 
   container.innerHTML = html;
 }
 
 // -------------------------------------------------------------
-// 7. RENDERING MONITORED DISPATCHES FEED
+// 8. RENDERING MONITORED DISPATCHES FEED
 // -------------------------------------------------------------
 export function renderDispatches(items) {
   const container = document.getElementById('stories-container');
@@ -408,25 +683,39 @@ export function renderDispatches(items) {
   let html = '';
   items.slice(0, 45).forEach((item, idx) => {
     const relTime = formatRelativeTime(item.published_at || item.published);
+    const topic = item.category || item.topic || 'AI News';
+    const isSaved = isItemSaved(item.title);
+    const primaryUrl = item.link || '#';
+    const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier || item.trust_tier);
+
     html += `
-      <li class="card-standard" data-dispatch-idx="${idx}">
-        <div>
-          <div class="card-top-bar">
+      <li class="story-item" data-dispatch-idx="${idx}">
+        <div class="story-item-main">
+          <div class="story-item-header">
             <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
-            <span class="badge-tier tier-${item.trust_tier || 2}">
-              <span class="badge-tier-dot"></span>
-              <span class="badge-tier-label">${escapeHTML(item.source)}</span>
-            </span>
+            ${tierBadgeHTML}
+            <span class="badge-card-topic" style="font-size:0.7rem;">${escapeHTML(topic)}</span>
             <span style="font-size:0.74rem; color:var(--text-muted); margin-left:auto;">${escapeHTML(relTime)}</span>
           </div>
-          <h3 class="card-headline font-serif" style="font-size:1.05rem;">${escapeHTML(item.title)}</h3>
-          <p class="card-what-changed" style="font-size:0.84rem;">${escapeHTML(item.what_changed || item.summary)}</p>
-        </div>
-        <div class="card-bottom-bar" style="padding-top:8px;">
-          <span style="font-size:0.74rem; color:var(--text-muted);">${escapeHTML(item.category || item.topic || 'AI News')}</span>
-          <button class="btn-action-icon" style="min-height:30px; font-size:0.76rem; color:var(--accent-text); font-weight:600;">
-            Read →
-          </button>
+          <h4 class="story-title font-serif">
+            <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForDispatch(${idx}, event)">${escapeHTML(item.title)}</a>
+          </h4>
+          <p class="story-summary">${escapeHTML(item.what_changed || item.summary || '')}</p>
+          <div class="story-footer">
+            <span class="story-source">${escapeHTML(item.source)}</span>
+            <div class="story-actions">
+              <button class="btn-read-deep-dive" style="padding:4px 10px; font-size:0.75rem;" onclick="openReaderForDispatch(${idx}, event)">
+                <span>Read</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" style="width:28px; height:28px;" onclick="handleSaveDispatch(${idx}, this)" aria-label="Save story" title="Save">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              </button>
+              <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" style="width:28px; height:28px;" title="Original Article">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </li>
     `;
@@ -436,7 +725,7 @@ export function renderDispatches(items) {
 }
 
 // -------------------------------------------------------------
-// 8. RENDERING TOPIC PILLS & COUNTS
+// 9. RENDERING TOPIC PILLS & COUNTS
 // -------------------------------------------------------------
 export function renderTopicPills(categories, counts) {
   const container = document.getElementById('topic-pills-bar');
@@ -450,10 +739,10 @@ export function renderTopicPills(categories, counts) {
   `;
 
   categories.forEach(cat => {
-    const cnt = counts[cat] || 0;
+    const c = counts[cat] || 0;
     html += `
       <button class="topic-pill ${state.activeTopic === cat ? 'active' : ''}" data-topic="${escapeHTML(cat)}">
-        ${escapeHTML(cat)} <span class="pill-count">${cnt}</span>
+        ${escapeHTML(cat)} <span class="pill-count">${c}</span>
       </button>
     `;
   });
@@ -462,103 +751,138 @@ export function renderTopicPills(categories, counts) {
 }
 
 // -------------------------------------------------------------
-// 9. RENDERING CURATED DOMAIN SECTIONS
+// 10. RENDERING CURATED SECTIONS (AI Tools, Dev Radar, Safety)
 // -------------------------------------------------------------
+export function renderCuratedCard(item, idx, sectionType) {
+  const company = item.company || 'default';
+  const topic = item.category || item.topic || 'AI Intelligence';
+  const logoSVG = getCompanyLogoSVG(company);
+  const primaryUrl = item.link || '#';
+  const isSaved = isItemSaved(item.title);
+
+  return `
+    <article class="curated-card" data-curated-section="${sectionType}" data-curated-idx="${idx}">
+      <div class="curated-card-top">
+        <span class="curated-logo" aria-hidden="true">${logoSVG}</span>
+        <span class="curated-topic-badge">${escapeHTML(topic)}</span>
+      </div>
+      <h3 class="curated-title font-serif">
+        <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">${escapeHTML(item.title)}</a>
+      </h3>
+      <p class="curated-summary">${escapeHTML(item.what_happened || item.one_liner || item.summary || '')}</p>
+      <div class="curated-footer">
+        <span class="curated-source">${escapeHTML(item.source)}</span>
+        <div class="curated-actions">
+          <button class="btn-read-deep-dive" style="padding:4px 10px; font-size:0.75rem;" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">
+            <span>Read</span>
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-action-icon ${isSaved ? 'saved' : ''}" style="width:28px; height:28px;" onclick="handleSaveCurated('${sectionType}', ${idx}, this)" aria-label="Save" title="Save">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
 export function renderCuratedSections(data) {
-  const sections = [
-    { containerId: 'ai-tools-container', items: data.ai_tools || [] },
-    { containerId: 'dev-radar-container', items: data.dev_radar || [] },
-    { containerId: 'research-safety-container', items: data.research_safety || [] }
-  ];
+  const toolsEl = document.getElementById('ai-tools-container');
+  if (toolsEl && data.ai_tools) {
+    toolsEl.innerHTML = data.ai_tools.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'ai_tools')).join('');
+  }
 
-  sections.forEach(({ containerId, items }) => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+  const radarEl = document.getElementById('dev-radar-container');
+  if (radarEl && data.dev_radar) {
+    radarEl.innerHTML = data.dev_radar.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'dev_radar')).join('');
+  }
 
-    if (!items || items.length === 0) {
-      container.innerHTML = '<div style="padding:16px; color:var(--text-muted);">No verified developments in this section.</div>';
-      return;
-    }
-
-    let html = '';
-    items.slice(0, 4).forEach((item, idx) => {
-      html += `
-        <article class="card-standard" data-curated-section="${containerId}" data-curated-idx="${idx}">
-          <div>
-            <div class="card-top-bar">
-              <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
-              <span style="font-size:0.75rem; color:var(--text-muted);">${escapeHTML(item.source)}</span>
-            </div>
-            <h3 class="card-headline font-serif" style="font-size:1.02rem;">${escapeHTML(item.title)}</h3>
-            <p class="card-what-changed" style="font-size:0.83rem;">${escapeHTML(item.what_changed || item.summary)}</p>
-          </div>
-          <div class="card-bottom-bar" style="padding-top:8px;">
-            <span style="font-size:0.74rem; color:var(--text-muted);">${escapeHTML(item.target_audience || 'For Developers')}</span>
-            <button class="btn-action-icon" style="min-height:30px; font-size:0.76rem; color:var(--accent-text); font-weight:600;">
-              Read →
-            </button>
-          </div>
-        </article>
-      `;
-    });
-
-    container.innerHTML = html;
-  });
+  const safetyEl = document.getElementById('research-safety-container');
+  if (safetyEl && data.research_safety) {
+    safetyEl.innerHTML = data.research_safety.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'research_safety')).join('');
+  }
 }
 
 // -------------------------------------------------------------
-// 10. RENDERING DAILY BRIEFING & STATUS BAR
+// 11. RENDERING DAILY INTELLIGENCE OVERVIEW
 // -------------------------------------------------------------
 export function renderDailyOverview(overview, data) {
-  if (!overview) return;
+  const briefingEl = document.getElementById('overview-briefing-text');
+  const countEl = document.getElementById('overview-count-val');
+  const lastUpdatedEl = document.getElementById('overview-last-updated');
+  const catchMeUpContainer = document.getElementById('catch-me-up-items');
 
-  const briefingText = document.getElementById('overview-briefing-text');
-  if (briefingText) {
-    briefingText.textContent = overview.briefing_text || '';
+  const ov = overview || {};
+  const totalCount = ov.total_developments_today || (data?.top_stories?.length || 0);
+
+  if (countEl) countEl.textContent = totalCount;
+  if (briefingEl) {
+    briefingEl.textContent = ov.briefing_text || data?.takeaway || 'Frontier AI developments continue accelerating across practical coding assistants, model architectures, and evaluation standards.';
   }
 
-  const countVal = document.getElementById('overview-count-val');
-  if (countVal) {
-    countVal.textContent = String(overview.total_developments_today || (data.top_stories ? data.top_stories.length : 0));
+  const updateTime = data?.last_successful_update || data?.generated_at;
+  if (lastUpdatedEl && updateTime) {
+    lastUpdatedEl.textContent = `Updated ${formatIST(updateTime)}`;
   }
 
-  const lastUpdated = document.getElementById('overview-last-updated');
-  if (lastUpdated && overview.last_updated) {
-    lastUpdated.textContent = `Updated ${formatIST(overview.last_updated)}`;
-  }
-
-  const catchMeUp = document.getElementById('catch-me-up-items');
-  if (catchMeUp && overview.top_developments) {
-    let html = '';
-    overview.top_developments.slice(0, 4).forEach((dev, idx) => {
-      html += `
-        <div class="catch-me-up-item" data-dev-idx="${idx}">
-          <span class="badge-signal" style="font-size:0.7rem; margin-bottom:4px;">${escapeHTML(dev.signal_badge || '🚀 Frontier Launch')}</span>
-          <h4 style="font-size:0.92rem; font-weight:600; margin-bottom:4px;">${escapeHTML(dev.title)}</h4>
-          <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:6px;">${escapeHTML(dev.why_it_matters)}</p>
-          <span style="font-size:0.74rem; color:var(--accent-text); font-weight:600;">${escapeHTML(dev.target_audience || '')}</span>
+  if (catchMeUpContainer) {
+    const topDevs = ov.top_developments || (data?.top_stories || []).slice(0, 3);
+    catchMeUpContainer.innerHTML = topDevs.map((dev, idx) => `
+      <div class="catch-me-up-item" onclick="openReaderForDailyItem(${idx}, event)">
+        <div class="catch-item-header">
+          <span class="catch-item-index font-mono">0${idx + 1}</span>
+          <span class="catch-item-source font-mono">${escapeHTML(dev.source || 'Verified Source')}</span>
         </div>
-      `;
-    });
-    catchMeUp.innerHTML = html;
+        <h4 class="catch-item-title font-serif">
+          <a href="${escapeHTML(dev.link || '#')}" onclick="openReaderForDailyItem(${idx}, event)">${escapeHTML(dev.title || '')}</a>
+        </h4>
+        <p class="catch-item-expl">${escapeHTML(dev.one_line_explanation || dev.what_changed || dev.summary || '')}</p>
+      </div>
+    `).join('');
   }
 }
 
+// -------------------------------------------------------------
+// 12. RENDERING STATUS BAR & TELEMETRY
+// -------------------------------------------------------------
 export function renderStatusBar(data) {
-  const statusText = document.getElementById('status-text');
-  if (statusText) {
-    const istTime = data.last_successful_update ? formatIST(data.last_successful_update) : 'Recently';
-    statusText.textContent = `● Live Pipeline Active • Hourly updates (Last: ${istTime})`;
+  const statusEl = document.getElementById('status-text');
+  if (!statusEl) return;
+
+  const genTime = data?.last_successful_update || data?.generated_at;
+  if (!genTime) {
+    statusEl.innerHTML = '● Live Pipeline Active • Hourly updates';
+    return;
   }
 
-  const telemetry = document.getElementById('status-source-telemetry');
-  if (telemetry) {
-    const configuredCount = data.source_health_summary?.configured_sources_count || 25;
-    telemetry.innerHTML = `
-      <span>${configuredCount} monitored research sources</span>
+  const istStr = formatIST(genTime);
+  const now = new Date();
+  const d = new Date(genTime);
+  const ageHours = (now.getTime() - d.getTime()) / (1000 * 60 * 60);
+
+  let statusCategory = 'Fresh';
+  let statusDesc = '';
+
+  if (ageHours < 1.5) {
+    statusCategory = 'Fresh';
+    const minsLeft = Math.max(1, Math.round((1.0 - (ageHours % 1)) * 60));
+    statusDesc = `Updated ${istStr} • Next sync in ~${minsLeft}m`;
+  } else if (ageHours < 3.0) {
+    statusCategory = 'Delayed';
+    statusDesc = `Updated ${istStr} (${Math.round(ageHours)}h ago) • Sync delayed; retrying soon`;
+  } else {
+    statusCategory = 'Stale';
+    statusDesc = `Updated ${istStr} (${Math.round(ageHours)}h ago) • Scheduled run pending`;
+  }
+
+  statusEl.innerHTML = `<strong>● ${statusCategory}</strong>: ${escapeHTML(statusDesc)}`;
+
+  const telemetryEl = document.getElementById('status-source-telemetry');
+  if (telemetryEl) {
+    telemetryEl.innerHTML = `
+      <span>25 monitored research sources</span>
       <span>•</span>
       <span>Strict provenance tracking</span>
     `;
   }
 }
-

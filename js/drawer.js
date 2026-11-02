@@ -383,13 +383,22 @@ export function closeMethodologyModal() {
   document.body.style.overflow = '';
 }
 
+export function handleMethodologyBackdropClick(e) {
+  if (e && e.target && (e.target.id === 'methodology-backdrop' || e.target.classList.contains('methodology-modal-backdrop'))) {
+    closeMethodologyModal();
+  }
+}
+
 // -------------------------------------------------------------
 // 4. SEARCH MODAL
 // -------------------------------------------------------------
+let searchModalScope = 'all';
+
 export function openSearchModal() {
   const modal = document.getElementById('search-modal');
   if (modal) {
     modal.classList.add('open');
+    updateModalSearchResults();
     const input = document.getElementById('modal-search-input');
     if (input) {
       setTimeout(() => input.focus(), 50);
@@ -400,5 +409,114 @@ export function openSearchModal() {
 export function closeSearchModal() {
   const modal = document.getElementById('search-modal');
   if (modal) modal.classList.remove('open');
+}
+
+export function handleSearchBackdropClick(e) {
+  if (e && e.target && (e.target.id === 'search-modal' || e.target.classList.contains('search-modal-backdrop'))) {
+    closeSearchModal();
+  }
+}
+
+export function clearModalSearch() {
+  const input = document.getElementById('modal-search-input');
+  if (input) input.value = '';
+  const legacy = document.getElementById('search-input');
+  if (legacy) legacy.value = '';
+  if (typeof window !== 'undefined' && window.handleSearchInput) {
+    window.handleSearchInput('');
+  }
+}
+
+export function setSearchFilter(scope) {
+  searchModalScope = scope || 'all';
+  ['all', 'articles', 'companies', 'topics'].forEach(s => {
+    const btn = document.getElementById(`chip-${s}`);
+    if (btn) btn.classList.toggle('active', s === searchModalScope);
+  });
+  updateModalSearchResults();
+}
+
+export function updateModalSearchResults() {
+  const container = document.getElementById('search-results-modal');
+  if (!container || !state.data) return;
+  container.innerHTML = '';
+
+  const q = (state.searchQuery || '').toLowerCase().trim();
+  const allArticles = [...(state.data.trends || []), ...(state.data.top_stories || [])];
+
+  let filtered = allArticles;
+  if (q) {
+    filtered = allArticles.filter(a => {
+      const t = (a.title || '').toLowerCase();
+      const s = (a.source || '').toLowerCase();
+      const w = (a.what_happened || a.what_changed || a.summary || '').toLowerCase();
+      const top = (a.topic || a.category || '').toLowerCase();
+      return t.includes(q) || s.includes(q) || w.includes(q) || top.includes(q);
+    });
+  }
+
+  // Scope filtering
+  if (searchModalScope === 'companies') {
+    filtered = filtered.filter(a => {
+      const comp = (a.company || '').toLowerCase();
+      return !q || comp.includes(q);
+    });
+  } else if (searchModalScope === 'topics') {
+    filtered = filtered.filter(a => {
+      const top = (a.topic || a.category || '').toLowerCase();
+      return !q || top.includes(q);
+    });
+  } else if (searchModalScope === 'articles') {
+    if (q) {
+      filtered = filtered.filter(a => {
+        const t = (a.title || '').toLowerCase();
+        const w = (a.what_happened || a.what_changed || a.summary || '').toLowerCase();
+        return t.includes(q) || w.includes(q);
+      });
+    }
+  }
+
+  // Update counters
+  const countAll = document.getElementById('count-all');
+  const countArticles = document.getElementById('count-articles');
+  const countCompanies = document.getElementById('count-companies');
+  const countTopics = document.getElementById('count-topics');
+
+  if (countAll) countAll.textContent = filtered.length;
+  if (countArticles) countArticles.textContent = filtered.length;
+  if (countCompanies) countCompanies.textContent = new Set(filtered.map(f => f.company)).size;
+  if (countTopics) countTopics.textContent = new Set(filtered.map(f => f.category || f.topic)).size;
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem;">
+        No matching developments found for "${escapeHTML(q)}"
+      </div>
+    `;
+    return;
+  }
+
+  filtered.slice(0, 8).forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'saved-item-card';
+    div.style.cursor = 'pointer';
+    div.onclick = () => {
+      closeSearchModal();
+      openReaderView(item);
+    };
+
+    const comp = item.company || 'default';
+
+    div.innerHTML = `
+      <div class="saved-item-logo" aria-hidden="true">
+        ${getCompanyLogoSVG(comp)}
+      </div>
+      <div class="saved-item-details">
+        <h4 class="saved-item-title">${escapeHTML(item.title)}</h4>
+        <span class="saved-item-meta">${escapeHTML(item.source || 'Lab Report')} • ${escapeHTML(item.published || 'Recently')}</span>
+      </div>
+    `;
+    container.appendChild(div);
+  });
 }
 

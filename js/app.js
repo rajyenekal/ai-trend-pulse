@@ -34,8 +34,14 @@ import {
   closeSavedDrawer,
   openMethodologyModal,
   closeMethodologyModal,
+  handleMethodologyBackdropClick,
   openSearchModal,
   closeSearchModal,
+  handleSearchBackdropClick,
+  clearModalSearch,
+  setSearchFilter,
+  updateModalSearchResults,
+  renderSavedItemsList,
   toggleAudioBriefing,
   copyReaderStory,
   toggleSaveCurrentReaderItem,
@@ -111,6 +117,7 @@ export function handleSearchInput(query) {
   if (searchInput && searchInput.value !== state.searchQuery) {
     searchInput.value = state.searchQuery;
   }
+  updateModalSearchResults();
   reRenderDevelopments();
 }
 
@@ -142,6 +149,7 @@ export function resetAllFilters() {
     });
   }
 
+  updateModalSearchResults();
   reRenderDevelopments();
 }
 
@@ -164,6 +172,94 @@ export function toggleHideCaseStudies() {
 export function handleSortChange(sortValue) {
   state.currentSort = sortValue || 'latest';
   reRenderDevelopments();
+}
+
+// -------------------------------------------------------------
+// 2B. STORY ACTION HANDLERS & IN-APP READER DISPATCHES
+// -------------------------------------------------------------
+export function openReaderForTrend(idx, e) {
+  if (e) e.preventDefault();
+  const filtered = getFilteredStories(state.data?.top_stories || []);
+  const item = filtered[idx] || state.data?.top_stories?.[idx] || state.data?.trends?.[idx];
+  if (item) openReaderView(item);
+}
+
+export function openReaderForDispatch(idx, e) {
+  if (e) e.preventDefault();
+  const item = state.data?.top_stories?.[idx] || state.data?.trends?.[idx];
+  if (item) openReaderView(item);
+}
+
+export function openReaderForCurated(sectionType, idx, e) {
+  if (e) e.preventDefault();
+  const list = state.data?.[sectionType] || [];
+  if (list[idx]) openReaderView(list[idx]);
+}
+
+export function openReaderForDailyItem(idx, e) {
+  if (e) e.preventDefault();
+  const overview = state.data?.daily_overview;
+  const topDevs = (overview && overview.top_developments) ? overview.top_developments : [];
+  const dev = topDevs[idx];
+  if (!dev) return;
+
+  const allStories = [...(state.data?.top_stories || []), ...(state.data?.trends || [])];
+  const matched = allStories.find(s => s.title === dev.title || s.link === dev.link);
+  if (matched) {
+    openReaderView(matched);
+  } else {
+    openReaderView({
+      title: dev.title,
+      source: dev.source || 'Verified Source',
+      link: dev.link || '#',
+      category: 'AI Models & Research',
+      what_changed: dev.one_line_explanation || dev.what_changed || dev.summary,
+      summary: dev.one_line_explanation || dev.summary,
+      why_it_matters: dev.why_it_matters,
+      published: 'Today'
+    });
+  }
+}
+
+export function handleSaveTrend(idx, btn) {
+  const filtered = getFilteredStories(state.data?.top_stories || []);
+  const item = filtered[idx] || state.data?.top_stories?.[idx];
+  if (!item) return;
+  const url = (item.evidence_urls && item.evidence_urls[0]) || item.link || '#';
+  const isSaved = toggleSaveItem(item.title, item.source, url, item.company, item);
+  if (btn) btn.classList.toggle('saved', isSaved);
+}
+
+export function handleSaveDispatch(idx, btn) {
+  const item = state.data?.top_stories?.[idx];
+  if (!item) return;
+  const url = item.link || '#';
+  const isSaved = toggleSaveItem(item.title, item.source, url, item.company, item);
+  if (btn) btn.classList.toggle('saved', isSaved);
+}
+
+export function handleSaveCurated(sectionType, idx, btn) {
+  const list = state.data?.[sectionType] || [];
+  const item = list[idx];
+  if (!item) return;
+  const url = item.link || '#';
+  const isSaved = toggleSaveItem(item.title, item.source, url, item.company, item);
+  if (btn) btn.classList.toggle('saved', isSaved);
+}
+
+export function handleCopyTrend(idx, btn) {
+  const filtered = getFilteredStories(state.data?.top_stories || []);
+  const item = filtered[idx] || state.data?.top_stories?.[idx];
+  if (!item) return;
+  const text = `${item.title}\n\n${item.what_changed || item.summary || ''}\n\nWhy it matters: ${item.why_it_matters || ''}\nSource: ${item.source}`;
+  if (navigator?.clipboard?.writeText) {
+    navigator.clipboard.writeText(text);
+    if (btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '✓';
+      setTimeout(() => { btn.innerHTML = orig; }, 1500);
+    }
+  }
 }
 
 // -------------------------------------------------------------
@@ -248,6 +344,21 @@ export function setupEventListeners() {
     }
   });
 
+  // Saved drawer item removal delegation
+  const savedContainer = document.getElementById('saved-drawer-items');
+  if (savedContainer) {
+    savedContainer.addEventListener('click', e => {
+      const btn = e.target.closest('.btn-remove-saved');
+      if (btn) {
+        const idx = parseInt(btn.getAttribute('data-saved-idx'), 10);
+        if (!isNaN(idx) && state.savedStories[idx]) {
+          toggleSaveItem(state.savedStories[idx].title);
+          renderSavedItemsList();
+        }
+      }
+    });
+  }
+
   // Global Keyboard Shortcuts
   window.addEventListener('keydown', e => {
     // 'Escape' closes any open modal or drawer
@@ -283,16 +394,31 @@ if (typeof window !== 'undefined') {
   window.closeReaderView = closeReaderView;
   window.openMethodologyModal = openMethodologyModal;
   window.closeMethodologyModal = closeMethodologyModal;
+  window.handleMethodologyBackdropClick = handleMethodologyBackdropClick;
   window.openSavedDrawer = openSavedDrawer;
   window.closeSavedDrawer = closeSavedDrawer;
   window.openSearchModal = openSearchModal;
   window.closeSearchModal = closeSearchModal;
+  window.handleSearchBackdropClick = handleSearchBackdropClick;
+  window.clearModalSearch = clearModalSearch;
+  window.setSearchFilter = setSearchFilter;
+  window.updateModalSearchResults = updateModalSearchResults;
   window.toggleAudioBriefing = toggleAudioBriefing;
   window.copyReaderStory = copyReaderStory;
   window.toggleSaveCurrentReaderItem = toggleSaveCurrentReaderItem;
   window.getTopicImageUrl = getTopicImageUrl;
   window.getTopicFallbackSVG = getTopicFallbackSVG;
   window.formatIST = formatIST;
+
+  // Story action handlers & reader dispatches
+  window.openReaderForTrend = openReaderForTrend;
+  window.openReaderForDispatch = openReaderForDispatch;
+  window.openReaderForCurated = openReaderForCurated;
+  window.openReaderForDailyItem = openReaderForDailyItem;
+  window.handleSaveTrend = handleSaveTrend;
+  window.handleSaveDispatch = handleSaveDispatch;
+  window.handleSaveCurated = handleSaveCurated;
+  window.handleCopyTrend = handleCopyTrend;
 
   // Initialize on DOM ready
   if (typeof document !== 'undefined') {
