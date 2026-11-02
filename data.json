@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "data_status": "fresh",
-  "generated_at": "2026-11-02T15:06:59.643038+00:00",
-  "last_successful_update": "2026-11-02T15:06:59.643038+00:00",
-  "last_attempt_at": "2026-11-02T15:06:59.643038+00:00",
+  "data_status": "source_linked",
+  "generated_at": "2026-11-02T15:14:14.192892+00:00",
+  "last_successful_update": "2026-11-02T15:14:14.192892+00:00",
+  "last_attempt_at": "2026-11-02T15:14:14.192892+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
     "total_developments_today": 143,
-    "last_updated": "2026-11-02T15:06:59.643038+00:00",
+    "last_updated": "2026-11-02T15:14:14.192892+00:00",
     "briefing_text": "Today's AI developments span AI Models & Research, AI News, and AI Security & Safety. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
     "top_developments": [
       {
@@ -127,113 +127,217 @@
       "score": 82.6
     }
   ],
-  "takeaway": "Leading AI organizations are advancing agent governance, infrastructure standards, and evaluation frameworks alongside expanding enterprise deployment tooling. Concurrently, academic research and industry initiatives are tackling critical challenges in agent self-evolution, world modeling, and independent safety monitoring.",
+  "takeaway": "Frontier research labs and independent publications report accelerating momentum across reasoning architectures, developer agents, and regulatory compliance standards.",
   "trends": [
     {
-      "title": "Anthropic Donates Agent Skills Standard to the Agentic AI Foundation",
-      "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "title": "More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum",
+      "link": "https://arxiv.org/abs/2610.40758",
       "trend_type": "single_development",
-      "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
-      "theme_relationship": null,
+      "article_type": "research_paper",
+      "signal_badge": "\ud83d\udcc4 Research Paper",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 1,
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Anthropic donated the Agent Skills standard to the Agentic AI Foundation after adoption across more than 70 agent platforms.",
+          "text": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
           "evidence": [
             {
-              "article_id": "art_anthropic_news_2c938382ade8",
-              "canonical_url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
-              "publisher_id": "anthropic",
-              "publisher_group_id": "anthropic",
-              "source_name": "Anthropic Official News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Today, we\u2019re donating Agent Skills, the open standard that gives AI agents specialized knowledge and workflows, to the Agentic AI Foundation (AAIF). More than 70 agent platforms, including ChatGPT, Cursor, GitHub Copilot, and VS Code, have integrated Agent Skills since we published the standard in December 2025.",
-              "text_verified": false
+              "article_id": "art_arxiv_cs_ai_e6afd0a65c91",
+              "canonical_url": "https://arxiv.org/abs/2610.40758",
+              "publisher_id": "arxiv",
+              "publisher_group_id": "cornell_arxiv",
+              "source_name": "arXiv cs.AI",
+              "trust_tier": 3,
+              "is_official": false,
+              "supporting_excerpt": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
+              "text_verified": true
             }
           ],
           "claim_corroboration": 1,
-          "verification_status": "official_announcement"
+          "verification_status": "research_preprint"
         }
       ],
       "evidence_objects": [
         {
-          "article_id": "art_anthropic_news_2c938382ade8",
-          "canonical_url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
-          "publisher_id": "anthropic",
-          "publisher_group_id": "anthropic",
-          "source_name": "Anthropic Official News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Today, we\u2019re donating Agent Skills, the open standard that gives AI agents specialized knowledge and workflows, to the Agentic AI Foundation (AAIF). More than 70 agent platforms, including ChatGPT, Cursor, GitHub Copilot, and VS Code, have integrated Agent Skills since we published the standard in December 2025.",
-          "text_verified": false
+          "article_id": "art_arxiv_cs_ai_e6afd0a65c91",
+          "canonical_url": "https://arxiv.org/abs/2610.40758",
+          "publisher_id": "arxiv",
+          "publisher_group_id": "cornell_arxiv",
+          "source_name": "arXiv cs.AI",
+          "trust_tier": 3,
+          "is_official": false,
+          "supporting_excerpt": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
+          "text_verified": true
         }
       ],
-      "what_happened": "Anthropic donated its Agent Skills open standard to the action-taking AI Foundation to foster cross-platform interoperability across agent tools.",
-      "what_changed": "Anthropic donated its Agent Skills open standard to the action-taking AI Foundation to foster cross-platform interoperability across agent tools.",
-      "why_it_matters": "A unified open standard prevents developer lock-in and streamlines how autonomous agents share specialized knowledge across diverse software environments.",
-      "who_affected": "Developers",
-      "affected_stakeholders": [
-        "Software Engineers",
-        "Product Managers",
-        "API Consumers"
+      "what_happened": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
+      "what_changed": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
+      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
+      "reported_facts": [
+        "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
+        "An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule."
       ],
-      "potential_impact": "Impacts roadmap decisions across AI Products & Tools.",
-      "category": "AI Products & Tools",
-      "category_confidence": 0.88,
-      "category_rationale": "Matched developer tooling, software product release, IDE extension, or API capability",
-      "source": "Anthropic Official News",
-      "tier": "Official Lab",
-      "status": "official_announcement",
+      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "analysis_limitations": "Epistemic Limitation: Based on an academic preprint / open research paper; claims have not completed formal peer review or broad independent reproduction.",
+      "affected_stakeholders": [
+        "ML Researchers",
+        "Model Developers",
+        "Academic Practitioners"
+      ],
+      "category": "AI Models & Research",
+      "category_confidence": 0.85,
+      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
+      "who_affected": "ML Researchers, Model Developers, Academic Practitioners",
+      "source": "arXiv cs.AI",
+      "tier": "Open Research",
+      "status": "source_linked",
       "evidence_article_ids": [
-        "art_anthropic_news_2c938382ade8"
+        "art_arxiv_cs_ai_e6afd0a65c91"
       ],
       "evidence_urls": [
-        "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+        "https://arxiv.org/abs/2610.40758"
       ],
-      "topic": "AI Products & Tools",
-      "company": "anthropic",
+      "topic": "AI Models & Research",
+      "company": "default",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Developers"
+        "ML Researchers",
+        "Model Developers",
+        "Academic Practitioners"
       ],
       "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
+        "target": "For AI researchers",
+        "impact": "Advances research methodologies and empirical evaluations for frontier AI architectures."
       },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
+      "target_audience": "For AI researchers",
+      "audience_impact_statement": "Advances research methodologies and empirical evaluations for frontier AI architectures.",
+      "evidence_status": "research_preprint",
+      "evidence_label": "Research Preprint",
       "independent_source_count": 1,
       "key_points": [
-        "Anthropic donated its Agent Skills open standard to the Agentic AI Foundation to foster cross-platform interoperability across agent tools.",
-        "A unified open standard prevents developer lock-in and streamlines how autonomous agents share specialized knowledge across diverse software environments."
+        "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
+        "An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
+        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
       ],
-      "detailed_analysis": "Anthropic donated its Agent Skills open standard to the Agentic AI Foundation to foster cross-platform interoperability across agent tools.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Donates Agent Skills Standard to the Agentic AI Foundation",
-      "image_type": "official_asset",
-      "image_credit": "Anthropic announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+      "detailed_analysis": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum",
+      "image_type": "category_fallback",
+      "image_credit": "AI Models & Research curation",
+      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "OpenAI Launches Grid Protectors Program for Compute Campus Reliability",
-      "link": "https://openai.com/index/grid-protectors-program",
+      "title": "Benchmarking Forecasting Agents on Yesterday's Tomorrows",
+      "link": "https://arxiv.org/abs/2610.40940",
       "trend_type": "single_development",
-      "article_type": "policy_regulation",
-      "signal_badge": "\ud83d\udee1\ufe0f Security / Policy",
-      "theme_relationship": null,
+      "article_type": "research_paper",
+      "signal_badge": "\ud83d\udcc4 Research Paper",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 1,
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "The Grid Protectors Program collaborates with utilities to ensure future compute facilities bolster power reliability and stabilize consumer costs.",
+          "text": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
+          "evidence": [
+            {
+              "article_id": "art_arxiv_cs_ai_5c45b47d4b48",
+              "canonical_url": "https://arxiv.org/abs/2610.40940",
+              "publisher_id": "arxiv",
+              "publisher_group_id": "cornell_arxiv",
+              "source_name": "arXiv cs.AI",
+              "trust_tier": 3,
+              "is_official": false,
+              "supporting_excerpt": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "research_preprint"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "art_arxiv_cs_ai_5c45b47d4b48",
+          "canonical_url": "https://arxiv.org/abs/2610.40940",
+          "publisher_id": "arxiv",
+          "publisher_group_id": "cornell_arxiv",
+          "source_name": "arXiv cs.AI",
+          "trust_tier": 3,
+          "is_official": false,
+          "supporting_excerpt": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
+          "text_verified": true
+        }
+      ],
+      "what_happened": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
+      "what_changed": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
+      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
+      "reported_facts": [
+        "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
+        "arXiv cs.AI reported that Benchmarking Forecasting Agents on Yesterday's Tomorrows."
+      ],
+      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "analysis_limitations": "Epistemic Limitation: Based on an academic preprint / open research paper; claims have not completed formal peer review or broad independent reproduction.",
+      "affected_stakeholders": [
+        "ML Researchers",
+        "Model Developers",
+        "Academic Practitioners"
+      ],
+      "category": "AI Models & Research",
+      "category_confidence": 0.85,
+      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
+      "who_affected": "ML Researchers, Model Developers, Academic Practitioners",
+      "source": "arXiv cs.AI",
+      "tier": "Open Research",
+      "status": "source_linked",
+      "evidence_article_ids": [
+        "art_arxiv_cs_ai_5c45b47d4b48"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2610.40940"
+      ],
+      "topic": "AI Models & Research",
+      "company": "default",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "ML Researchers",
+        "Model Developers",
+        "Academic Practitioners"
+      ],
+      "audience_impact": {
+        "target": "For AI researchers",
+        "impact": "Advances research methodologies and empirical evaluations for frontier AI architectures."
+      },
+      "target_audience": "For AI researchers",
+      "audience_impact_statement": "Advances research methodologies and empirical evaluations for frontier AI architectures.",
+      "evidence_status": "research_preprint",
+      "evidence_label": "Research Preprint",
+      "independent_source_count": 1,
+      "key_points": [
+        "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
+        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
+      ],
+      "detailed_analysis": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Benchmarking Forecasting Agents on Yesterday's Tomorrows",
+      "image_type": "category_fallback",
+      "image_credit": "AI Models & Research curation",
+      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Introducing the Grid Protectors Program",
+      "link": "https://openai.com/index/grid-protectors-program",
+      "trend_type": "single_development",
+      "article_type": "frontier_launch",
+      "signal_badge": "\ud83d\ude80 Frontier Launch",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 1,
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
           "evidence": [
             {
               "article_id": "art_openai_news_2b7f28f4e25e",
@@ -243,7 +347,6 @@
               "source_name": "OpenAI News",
               "trust_tier": 1,
               "is_official": true,
-              "source_type": "official",
               "supporting_excerpt": "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
               "text_verified": true
             }
@@ -261,27 +364,31 @@
           "source_name": "OpenAI News",
           "trust_tier": 1,
           "is_official": true,
-          "source_type": "official",
           "supporting_excerpt": "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
           "text_verified": true
         }
       ],
-      "what_happened": "OpenAI launched the Grid Protectors Program to coordinate with utility providers on electricity reliability and consumer pricing impacts.",
-      "what_changed": "OpenAI launched the Grid Protectors Program to coordinate with utility providers on electricity reliability and consumer pricing impacts.",
-      "why_it_matters": "Collaborative energy planning helps mitigate local grid instability and capacity strains driven by large-scale AI compute facilities.",
-      "who_affected": "Enterprises",
+      "what_happened": "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+      "what_changed": "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+      "why_it_matters": "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts.",
+      "reported_facts": [
+        "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+        "OpenAI News reported that Introducing the Grid Protectors Program."
+      ],
+      "potential_impact": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
       "affected_stakeholders": [
         "Industry Analysts",
         "Tech Executives",
         "AI Practitioners"
       ],
-      "potential_impact": "Impacts roadmap decisions across AI News.",
       "category": "AI News",
       "category_confidence": 0.7,
       "category_rationale": "General AI ecosystem update, strategic partnership, or executive announcement",
+      "who_affected": "Industry Analysts, Tech Executives, AI Practitioners",
       "source": "OpenAI News",
       "tier": "Official Lab",
-      "status": "official_announcement",
+      "status": "official_claim",
       "evidence_article_ids": [
         "art_openai_news_2b7f28f4e25e"
       ],
@@ -292,7 +399,9 @@
       "company": "openai",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Enterprises"
+        "Industry Analysts",
+        "Tech Executives",
+        "AI Practitioners"
       ],
       "audience_impact": {
         "target": "For everyday users",
@@ -300,338 +409,20 @@
       },
       "target_audience": "For everyday users",
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
       "evidence_status": "official_announcement",
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI launched the Grid Protectors Program to coordinate with utility providers on electricity reliability and consumer pricing impacts.",
-        "Collaborative energy planning helps mitigate local grid instability and capacity strains driven by large-scale AI compute facilities."
+        "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+        "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
       ],
-      "detailed_analysis": "OpenAI launched the Grid Protectors Program to coordinate with utility providers on electricity reliability and consumer pricing impacts.",
+      "detailed_analysis": "OpenAI\u2019s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for OpenAI Launches Grid Protectors Program for Compute Campus Reliability",
+      "image_alt": "Visual representation for Introducing the Grid Protectors Program",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Frontier Labs Institutionalize Independent Evaluation and Runtime Safety Monitoring",
-      "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-      "trend_type": "emerging_theme",
-      "article_type": "opinion_commentary",
-      "signal_badge": "\ud83d\udcad Analysis / Opinion",
-      "theme_relationship": "Both developments showcase frontier labs establishing structured oversight mechanisms to detect model misalignment and support external safety evaluations.",
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "Anthropic granted employee-like access to nonprofit evaluator METR in accordance with external safety auditing commitments.",
-          "evidence": [
-            {
-              "article_id": "art_anthropic_news_aacf8df45ea0",
-              "canonical_url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-              "publisher_id": "anthropic",
-              "publisher_group_id": "anthropic",
-              "source_name": "Anthropic Official News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Today, we\u2019re announcing that we\u2019ve started to give employee-like access to a team from METR, a nonprofit that evaluates frontier AI models.",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
-        {
-          "claim_id": "claim_2",
-          "text": "OpenAI implements layered monitoring frameworks to identify frontier model misalignment and unauthorized agent behavior.",
-          "evidence": [
-            {
-              "article_id": "art_openai_news_5b4ec4975b0e",
-              "canonical_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-              "publisher_id": "openai",
-              "publisher_group_id": "openai",
-              "source_name": "OpenAI News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
-              "text_verified": true
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_anthropic_news_aacf8df45ea0",
-          "canonical_url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-          "publisher_id": "anthropic",
-          "publisher_group_id": "anthropic",
-          "source_name": "Anthropic Official News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Today, we\u2019re announcing that we\u2019ve started to give employee-like access to a team from METR, a nonprofit that evaluates frontier AI models.",
-          "text_verified": false
-        },
-        {
-          "article_id": "art_openai_news_5b4ec4975b0e",
-          "canonical_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-          "publisher_id": "openai",
-          "publisher_group_id": "openai",
-          "source_name": "OpenAI News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
-          "text_verified": true
-        }
-      ],
-      "what_happened": "Anthropic granted external auditors employee-level testing access while OpenAI detailed layered monitoring pipelines to catch runtime agent misalignment.",
-      "what_changed": "Anthropic granted external auditors employee-level testing access while OpenAI detailed layered monitoring pipelines to catch runtime agent misalignment.",
-      "why_it_matters": "Third-party auditing and real-time behavioral surveillance establish crucial guardrails against unintended autonomous agent actions prior to deployment escalation.",
-      "who_affected": "AI Practitioners",
-      "affected_stakeholders": [
-        "Security Engineers",
-        "AI Safety Researchers",
-        "System Administrators"
-      ],
-      "potential_impact": "Impacts roadmap decisions across AI Security & Safety.",
-      "category": "AI Security & Safety",
-      "category_confidence": 0.95,
-      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
-      "source": "Anthropic Official News, OpenAI News",
-      "tier": "Official Lab",
-      "status": "emerging_theme",
-      "evidence_article_ids": [
-        "art_anthropic_news_aacf8df45ea0",
-        "art_openai_news_5b4ec4975b0e"
-      ],
-      "evidence_urls": [
-        "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-        "https://openai.com/index/how-we-detect-frontier-model-misalignment"
-      ],
-      "topic": "AI Security & Safety",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Ai Practitioners"
-      ],
-      "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
-      },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 2,
-      "evidence_status": "emerging_theme",
-      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
-      "independent_source_count": 1,
-      "key_points": [
-        "Anthropic granted external auditors employee-level testing access while OpenAI detailed layered monitoring pipelines to catch runtime agent misalignment.",
-        "Third-party auditing and real-time behavioral surveillance establish crucial guardrails against unintended autonomous agent actions prior to deployment escalation."
-      ],
-      "detailed_analysis": "Anthropic granted external auditors employee-level testing access while OpenAI detailed layered monitoring pipelines to catch runtime agent misalignment.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Frontier Labs Institutionalize Independent Evaluation and Runtime Safety Monitoring",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "AWS Integrates Live Web Previews into Amazon Bedrock AgentCore Runtime",
-      "link": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime",
-      "trend_type": "single_development",
-      "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
-      "theme_relationship": null,
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "The Bedrock AgentCore runtime enables developers to preview and interact with web applications built by coding agents in real time.",
-          "evidence": [
-            {
-              "article_id": "art_aws_ml_blog_24d0aad80baf",
-              "canonical_url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime",
-              "publisher_id": "aws",
-              "publisher_group_id": "amazon",
-              "source_name": "AWS Machine Learning",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
-              "text_verified": true
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_aws_ml_blog_24d0aad80baf",
-          "canonical_url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_name": "AWS Machine Learning",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
-          "text_verified": true
-        }
-      ],
-      "what_happened": "Amazon Web Services introduced live web application preview capabilities within the Amazon Bedrock AgentCore runtime.",
-      "what_changed": "Amazon Web Services introduced live web application preview capabilities within the Amazon Bedrock AgentCore runtime.",
-      "why_it_matters": "Providing persistent live feedback loops enables developers to immediately test and iterate on agent-generated code prototypes.",
-      "who_affected": "Developers",
-      "affected_stakeholders": [
-        "Industry Analysts",
-        "Tech Executives",
-        "AI Practitioners"
-      ],
-      "potential_impact": "Impacts roadmap decisions across AI News.",
-      "category": "AI News",
-      "category_confidence": 0.7,
-      "category_rationale": "General AI ecosystem update, strategic partnership, or executive announcement",
-      "source": "AWS Machine Learning",
-      "tier": "Independent Journalism",
-      "status": "official_announcement",
-      "evidence_article_ids": [
-        "art_aws_ml_blog_24d0aad80baf"
-      ],
-      "evidence_urls": [
-        "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime"
-      ],
-      "topic": "AI News",
-      "company": "amazon",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Developers"
-      ],
-      "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
-      },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "key_points": [
-        "Amazon Web Services introduced live web application preview capabilities within the Amazon Bedrock AgentCore runtime.",
-        "Providing persistent live feedback loops enables developers to immediately test and iterate on agent-generated code prototypes."
-      ],
-      "detailed_analysis": "Amazon Web Services introduced live web application preview capabilities within the Amazon Bedrock AgentCore runtime.",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for AWS Integrates Live Web Previews into Amazon Bedrock AgentCore Runtime",
-      "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "NVIDIA Expands Cosmos Platform with New World Model Training and Deployment Tools",
-      "link": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models",
-      "trend_type": "single_development",
-      "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
-      "theme_relationship": null,
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "NVIDIA added training tools, simulation checkpoints, and Data Factory blueprints to assist developers building world models.",
-          "evidence": [
-            {
-              "article_id": "art_nvidia_blog_f9cc091018ef",
-              "canonical_url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models",
-              "publisher_id": "nvidia",
-              "publisher_group_id": "nvidia",
-              "source_name": "NVIDIA Blog",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.",
-              "text_verified": true
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_nvidia_blog_f9cc091018ef",
-          "canonical_url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models",
-          "publisher_id": "nvidia",
-          "publisher_group_id": "nvidia",
-          "source_name": "NVIDIA Blog",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.",
-          "text_verified": true
-        }
-      ],
-      "what_happened": "NVIDIA expanded its Cosmos platform by releasing new training utilities, simulation checkpoints, and Cosmos Data Factory blueprints.",
-      "what_changed": "NVIDIA expanded its Cosmos platform by releasing new training utilities, simulation checkpoints, and Cosmos Data Factory blueprints.",
-      "why_it_matters": "Accessible simulation frameworks and training blueprints lower the engineering overhead needed to develop physical AI systems.",
-      "who_affected": "AI Practitioners",
-      "affected_stakeholders": [
-        "ML Researchers",
-        "Model Developers",
-        "Academic Practitioners"
-      ],
-      "potential_impact": "Impacts roadmap decisions across AI Models & Research.",
-      "category": "AI Models & Research",
-      "category_confidence": 0.85,
-      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
-      "source": "NVIDIA Blog",
-      "tier": "Independent Journalism",
-      "status": "official_announcement",
-      "evidence_article_ids": [
-        "art_nvidia_blog_f9cc091018ef"
-      ],
-      "evidence_urls": [
-        "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models"
-      ],
-      "topic": "AI Models & Research",
-      "company": "nvidia",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Ai Practitioners"
-      ],
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Nvidia workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Nvidia workflows.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "key_points": [
-        "NVIDIA expanded its Cosmos platform by releasing new training utilities, simulation checkpoints, and Cosmos Data Factory blueprints.",
-        "Accessible simulation frameworks and training blueprints lower the engineering overhead needed to develop physical AI systems."
-      ],
-      "detailed_analysis": "NVIDIA expanded its Cosmos platform by releasing new training utilities, simulation checkpoints, and Cosmos Data Factory blueprints.",
-      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for NVIDIA Expands Cosmos Platform with New World Model Training and Deployment Tools",
-      "image_type": "official_asset",
-      "image_credit": "Nvidia announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "top_stories": [
@@ -670,7 +461,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40758",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -743,7 +534,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40940",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -815,7 +606,7 @@
       "is_official": true,
       "published": "Nov 02, 15:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/grid-protectors-program",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -887,7 +678,7 @@
       "is_official": true,
       "published": "Oct 29, 09:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -959,7 +750,7 @@
       "is_official": true,
       "published": "Oct 30, 17:32 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1032,7 +823,7 @@
       "is_official": true,
       "published": "Oct 27, 15:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/retell-ai",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1104,7 +895,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40798",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1176,7 +967,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40959",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1249,7 +1040,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40901",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1322,7 +1113,7 @@
       "is_official": true,
       "published": "Oct 28, 15:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -1395,7 +1186,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1467,7 +1258,7 @@
       "is_official": true,
       "published": "Oct 30, 21:40 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1539,7 +1330,7 @@
       "is_official": true,
       "published": "Oct 26, 22:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/greptile-code-review-codex-astra",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1611,7 +1402,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1683,7 +1474,7 @@
       "is_official": true,
       "published": "Oct 30, 15:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -1755,7 +1546,7 @@
       "is_official": true,
       "published": "Oct 22, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -1827,7 +1618,7 @@
       "is_official": true,
       "published": "Oct 29, 07:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/ropes-gray-ai-diligence",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1900,7 +1691,7 @@
       "is_official": true,
       "published": "Oct 30, 17:27 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1983,7 +1774,7 @@
       "is_official": true,
       "published": "Oct 29, 16:11 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -2055,7 +1846,7 @@
       "is_official": true,
       "published": "Oct 27, 17:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/announcing-soci-indexed-images-for-faster-sagemaker-ai-jobs",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2128,7 +1919,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40906",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2200,7 +1991,7 @@
       "is_official": true,
       "published": "Oct 29, 16:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -2272,7 +2063,7 @@
       "is_official": true,
       "published": "Oct 22, 19:36 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.amazon.science/blog/the-science-behind-torchneuron-amazons-new-pytorch-backend-for-aws-trainium-chips",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2344,7 +2135,7 @@
       "is_official": true,
       "published": "Oct 28, 13:15 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2416,7 +2207,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2488,7 +2279,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2560,7 +2351,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.anthropic.com/news/features",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2632,7 +2423,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2704,7 +2495,7 @@
       "is_official": true,
       "published": "Oct 21, 10:50 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -2776,7 +2567,7 @@
       "is_official": true,
       "published": "Oct 29, 12:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://mistral.ai/news/mistral-large-4-oss",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2849,7 +2640,7 @@
       "is_official": true,
       "published": "Oct 21, 12:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2921,7 +2712,7 @@
       "is_official": true,
       "published": "Oct 20, 12:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://mistral.ai/news/voxtral-3",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2992,7 +2783,7 @@
       "is_official": true,
       "published": "Oct 28, 17:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3063,7 +2854,7 @@
       "is_official": false,
       "published": "Oct 31, 22:10 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://simonwillison.net/2026/Oct/31/datasette-llm",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -3135,7 +2926,7 @@
       "is_official": false,
       "published": "Oct 31, 21:17 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
@@ -3207,7 +2998,7 @@
       "is_official": false,
       "published": "Oct 30, 20:26 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
       "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
@@ -3278,7 +3069,7 @@
       "is_official": true,
       "published": "Oct 30, 17:57 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://huggingface.co/blog/nvidia/nemotron-halloween",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3349,7 +3140,7 @@
       "is_official": true,
       "published": "Oct 30, 14:18 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3421,7 +3212,7 @@
       "is_official": true,
       "published": "Oct 27, 16:01 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3493,7 +3284,7 @@
       "is_official": true,
       "published": "Oct 22, 14:30 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3565,7 +3356,7 @@
       "is_official": true,
       "published": "Oct 26, 16:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3638,7 +3429,7 @@
       "is_official": true,
       "published": "Oct 21, 04:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3709,7 +3500,7 @@
       "is_official": true,
       "published": "Oct 21, 16:24 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://news.microsoft.com/source/emea/features/before-the-ambulance-arrives-how-ai-is-helping-the-nhs-rethink-patient-care",
       "image": "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?auto=format&fit=crop&w=1200&q=80",
@@ -3779,7 +3570,7 @@
       "is_official": true,
       "published": "Oct 20, 12:28 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://news.microsoft.com/source/emea/features/a-concrete-vision-saint-gobain-and-microsoft-discovery-build-for-the-future",
       "image": "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?auto=format&fit=crop&w=1200&q=80",
@@ -3850,7 +3641,7 @@
       "is_official": true,
       "published": "Oct 29, 13:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -3891,6 +3682,150 @@
   ],
   "ai_tools": [
     {
+      "id": "cluster_22",
+      "article_id": "art_anthropic_news_2c938382ade8",
+      "publisher_id": "anthropic",
+      "publisher_group_id": "anthropic",
+      "article_type": "frontier_launch",
+      "signal_badge": "\ud83d\ude80 Frontier Launch",
+      "title": "Donating Agent Skills To The Agentic Ai Foundation",
+      "one_liner": "Official news announcement from Anthropic: Donating Agent Skills To The action-taking Ai Foundation.",
+      "summary": "Official news announcement from Anthropic: Donating Agent Skills To The action-taking Ai Foundation.",
+      "reported_facts": [
+        "Official news announcement from Anthropic: Donating Agent Skills To The Agentic Ai Foundation.",
+        "Anthropic Official News reported that Donating Agent Skills To The Agentic Ai Foundation."
+      ],
+      "what_changed": "Official news announcement from Anthropic: Donating Agent Skills To The Agentic Ai Foundation.",
+      "why_it_matters": "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications.",
+      "affected_stakeholders": [
+        "Software Engineers",
+        "Product Managers",
+        "API Consumers"
+      ],
+      "potential_impact": "Analytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Products & Tools",
+      "category_confidence": 0.88,
+      "category_rationale": "Matched developer tooling, software product release, IDE extension, or API capability",
+      "topic": "AI Products & Tools",
+      "source": "Anthropic Official News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Recent",
+      "published_at": null,
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
+      "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Donating Agent Skills To The Agentic Ai Foundation",
+      "image_type": "official_asset",
+      "image_credit": "Anthropic announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "anthropic",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Official news announcement from Anthropic: Donating Agent Skills To The action-taking Ai Foundation.",
+        "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications."
+      ],
+      "detailed_analysis": "Official news announcement from Anthropic: Donating Agent Skills To The action-taking Ai Foundation.\n\nAnalytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
+      "importance_score": 70,
+      "relevance_score": 85,
+      "freshness_score": 50,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 78.1,
+      "overall_score": 78.1,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_55",
+      "article_id": "art_aws_ml_blog_24d0aad80baf",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "frontier_launch",
+      "signal_badge": "\ud83d\ude80 Frontier Launch",
+      "title": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+      "one_liner": "Amazon Bedrock AgentCore Session endpoints give each runtime session an authenticated URL that forwards any HTTP method, path, and WebSocket connection to the ports you allow.",
+      "summary": "Amazon Bedrock AgentCore Session endpoints give each runtime session an authenticated URL that forwards any HTTP method, path, and WebSocket connection to the ports you allow.",
+      "reported_facts": [
+        "Amazon Bedrock AgentCore Session endpoints give each runtime session an authenticated URL that forwards any HTTP method, path, and WebSocket connection to the ports you allow.",
+        "AWS Machine Learning reported that Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime."
+      ],
+      "what_changed": "Amazon Bedrock AgentCore Session endpoints give each runtime session an authenticated URL that forwards any HTTP method, path, and WebSocket connection to the ports you allow.",
+      "why_it_matters": "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications.",
+      "affected_stakeholders": [
+        "Software Engineers",
+        "Product Managers",
+        "API Consumers"
+      ],
+      "potential_impact": "Analytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Products & Tools",
+      "category_confidence": 0.88,
+      "category_rationale": "Matched developer tooling, software product release, IDE extension, or API capability",
+      "topic": "AI Products & Tools",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Oct 30, 21:40 UTC",
+      "published_at": null,
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+      "image_type": "official_asset",
+      "image_credit": "Amazon announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "amazon",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Amazon Bedrock AgentCore Session endpoints give each runtime session an authenticated URL that forwards any HTTP method, path, and WebSocket connection to the ports you allow.",
+        "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications."
+      ],
+      "detailed_analysis": "Amazon Bedrock AgentCore Session endpoints give each runtime session an authenticated URL that forwards any HTTP method, path, and WebSocket connection to the ports you allow.\n\nAnalytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon.",
+      "importance_score": 70,
+      "relevance_score": 85,
+      "freshness_score": 50,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 78.1,
+      "overall_score": 78.1,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
       "id": "cluster_15",
       "article_id": "art_openai_news_886153848773",
       "publisher_id": "openai",
@@ -3925,7 +3860,7 @@
       "is_official": true,
       "published": "Oct 26, 22:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/greptile-code-review-codex-astra",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3997,7 +3932,7 @@
       "is_official": true,
       "published": "Oct 30, 17:27 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -4044,298 +3979,9 @@
         }
       ],
       "covered_by_sources_count": 2
-    },
-    {
-      "id": "cluster_77",
-      "article_id": "art_mistral_news_b5db19010475",
-      "publisher_id": "mistral",
-      "publisher_group_id": "mistral",
-      "article_type": "frontier_launch",
-      "signal_badge": "\ud83d\ude80 Frontier Launch",
-      "title": "Voxtral 3",
-      "one_liner": "Voxtral 3: Mistral's voice agent SDK for real-time speech in 50+ languages, accurate transcription, emotional TTS, deep tool use.",
-      "summary": "Voxtral 3: Mistral's voice agent SDK for real-time speech in 50+ languages, accurate transcription, emotional TTS, deep tool use.",
-      "reported_facts": [
-        "Voxtral 3: Mistral's voice agent SDK for real-time speech in 50+ languages, accurate transcription, emotional TTS, deep tool use.",
-        "Mistral AI News reported that Voxtral 3."
-      ],
-      "what_changed": "Voxtral 3: Mistral's voice agent SDK for real-time speech in 50+ languages, accurate transcription, emotional TTS, deep tool use.",
-      "why_it_matters": "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications.",
-      "affected_stakeholders": [
-        "Software Engineers",
-        "Product Managers",
-        "API Consumers"
-      ],
-      "potential_impact": "Analytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Products & Tools",
-      "category_confidence": 0.88,
-      "category_rationale": "Matched developer tooling, software product release, IDE extension, or API capability",
-      "topic": "AI Products & Tools",
-      "source": "Mistral AI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Oct 20, 12:00 UTC",
-      "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
-      "link": "https://mistral.ai/news/voxtral-3",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Voxtral 3",
-      "image_type": "official_asset",
-      "image_credit": "Mistral announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "mistral",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Voxtral 3: Mistral's voice agent SDK for real-time speech in 50+ languages, accurate transcription, emotional TTS, deep tool use.",
-        "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications."
-      ],
-      "detailed_analysis": "Voxtral 3: Mistral's voice agent SDK for real-time speech in 50+ languages, accurate transcription, emotional TTS, deep tool use.\n\nAnalytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Expands programmatic API endpoints and tooling integrations available for Mistral."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Expands programmatic API endpoints and tooling integrations available for Mistral.",
-      "importance_score": 70,
-      "relevance_score": 85,
-      "freshness_score": 25,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 72.5,
-      "overall_score": 72.5,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_141",
-      "article_id": "art_simon_willison_1d5820ad2d13",
-      "publisher_id": "simon_willison",
-      "publisher_group_id": "simon_willison",
-      "article_type": "research_paper",
-      "signal_badge": "\ud83d\udcc4 Research Paper",
-      "title": "datasette-llm 0.1a9",
-      "one_liner": "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin.",
-      "summary": "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin.",
-      "reported_facts": [
-        "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin.",
-        "Simon Willison Weblog reported that datasette-llm 0.1a9."
-      ],
-      "what_changed": "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin.",
-      "why_it_matters": "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications.",
-      "affected_stakeholders": [
-        "Software Engineers",
-        "Product Managers",
-        "API Consumers"
-      ],
-      "potential_impact": "Analytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
-      "analysis_limitations": "Epistemic Limitation: Independent practitioner report; observations reflect specific test setups, local system configurations, and personal developer evaluation.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Products & Tools",
-      "category_confidence": 0.88,
-      "category_rationale": "Matched developer tooling, software product release, IDE extension, or API capability",
-      "topic": "AI Products & Tools",
-      "source": "Simon Willison Weblog",
-      "tier": "Practitioner & Community",
-      "trust_tier": 4,
-      "is_official": false,
-      "published": "Oct 31, 22:10 UTC",
-      "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
-      "link": "https://simonwillison.net/2026/Oct/31/datasette-llm",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for datasette-llm 0.1a9",
-      "image_type": "category_fallback",
-      "image_credit": "AI Products & Tools curation",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "default",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin.",
-        "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications."
-      ],
-      "detailed_analysis": "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin.\n\nAnalytical Projection: Streamlined developer APIs may shorten delivery cycles for intelligent workflows and native agentic integrations.",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Expands programmatic API endpoints and tooling integrations available for frontier AI."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Expands programmatic API endpoints and tooling integrations available for frontier AI.",
-      "importance_score": 75,
-      "relevance_score": 85,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 65,
-      "confidence_score": 65,
-      "pulse_score": 71.1,
-      "overall_score": 71.1,
-      "confidence_label": "low",
-      "evidence_status": "practitioner_report",
-      "evidence_label": "Practitioner Report",
-      "independent_source_count": 1,
-      "related_sources": [],
-      "covered_by_sources_count": 1
     }
   ],
   "dev_radar": [
-    {
-      "id": "cluster_109",
-      "article_id": "art_arxiv_cs_ai_e6afd0a65c91",
-      "publisher_id": "arxiv",
-      "publisher_group_id": "cornell_arxiv",
-      "article_type": "research_paper",
-      "signal_badge": "\ud83d\udcc4 Research Paper",
-      "title": "More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum",
-      "one_liner": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
-      "summary": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
-      "reported_facts": [
-        "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
-        "An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule."
-      ],
-      "what_changed": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
-      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
-      "affected_stakeholders": [
-        "ML Researchers",
-        "Model Developers",
-        "Academic Practitioners"
-      ],
-      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "analysis_limitations": "Epistemic Limitation: Based on an academic preprint / open research paper; claims have not completed formal peer review or broad independent reproduction.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Models & Research",
-      "category_confidence": 0.85,
-      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
-      "topic": "AI Models & Research",
-      "source": "arXiv cs.AI",
-      "tier": "Open Research",
-      "trust_tier": 3,
-      "is_official": false,
-      "published": "Nov 02, 05:00 UTC",
-      "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
-      "link": "https://arxiv.org/abs/2610.40758",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum",
-      "image_type": "category_fallback",
-      "image_credit": "AI Models & Research curation",
-      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "company": "default",
-      "reading_time": "1 min read",
-      "key_points": [
-        "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
-        "An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
-        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
-      ],
-      "detailed_analysis": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "audience_impact": {
-        "target": "For AI researchers",
-        "impact": "Advances research methodologies and empirical evaluations for frontier AI architectures."
-      },
-      "target_audience": "For AI researchers",
-      "audience_impact_statement": "Advances research methodologies and empirical evaluations for frontier AI architectures.",
-      "importance_score": 75,
-      "relevance_score": 100,
-      "freshness_score": 85,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 80,
-      "confidence_score": 80,
-      "pulse_score": 84.0,
-      "overall_score": 84.0,
-      "confidence_label": "medium",
-      "evidence_status": "research_preprint",
-      "evidence_label": "Research Preprint",
-      "independent_source_count": 1,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_119",
-      "article_id": "art_arxiv_cs_ai_5c45b47d4b48",
-      "publisher_id": "arxiv",
-      "publisher_group_id": "cornell_arxiv",
-      "article_type": "research_paper",
-      "signal_badge": "\ud83d\udcc4 Research Paper",
-      "title": "Benchmarking Forecasting Agents on Yesterday's Tomorrows",
-      "one_liner": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
-      "summary": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
-      "reported_facts": [
-        "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
-        "arXiv cs.AI reported that Benchmarking Forecasting Agents on Yesterday's Tomorrows."
-      ],
-      "what_changed": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
-      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
-      "affected_stakeholders": [
-        "ML Researchers",
-        "Model Developers",
-        "Academic Practitioners"
-      ],
-      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "analysis_limitations": "Epistemic Limitation: Based on an academic preprint / open research paper; claims have not completed formal peer review or broad independent reproduction.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Models & Research",
-      "category_confidence": 0.85,
-      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
-      "topic": "AI Models & Research",
-      "source": "arXiv cs.AI",
-      "tier": "Open Research",
-      "trust_tier": 3,
-      "is_official": false,
-      "published": "Nov 02, 05:00 UTC",
-      "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
-      "link": "https://arxiv.org/abs/2610.40940",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Benchmarking Forecasting Agents on Yesterday's Tomorrows",
-      "image_type": "category_fallback",
-      "image_credit": "AI Models & Research curation",
-      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "company": "default",
-      "reading_time": "1 min read",
-      "key_points": [
-        "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.",
-        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
-      ],
-      "detailed_analysis": "arXiv:2610.40940v1 Announce Type: new Abstract: Digital agents can now gather and organize information, reason over it, and use tools to complete complex tasks.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "audience_impact": {
-        "target": "For AI researchers",
-        "impact": "Advances research methodologies and empirical evaluations for frontier AI architectures."
-      },
-      "target_audience": "For AI researchers",
-      "audience_impact_statement": "Advances research methodologies and empirical evaluations for frontier AI architectures.",
-      "importance_score": 75,
-      "relevance_score": 100,
-      "freshness_score": 85,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 80,
-      "confidence_score": 80,
-      "pulse_score": 84.0,
-      "overall_score": 84.0,
-      "confidence_label": "medium",
-      "evidence_status": "research_preprint",
-      "evidence_label": "Research Preprint",
-      "independent_source_count": 1,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
     {
       "id": "cluster_121",
       "article_id": "art_arxiv_cs_ai_67c317499d3d",
@@ -4371,7 +4017,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40959",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -4444,7 +4090,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40901",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -4466,80 +4112,6 @@
       },
       "target_audience": "For developers",
       "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-      "importance_score": 75,
-      "relevance_score": 85,
-      "freshness_score": 85,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 80,
-      "confidence_score": 80,
-      "pulse_score": 80.1,
-      "overall_score": 80.1,
-      "confidence_label": "medium",
-      "evidence_status": "research_preprint",
-      "evidence_label": "Research Preprint",
-      "independent_source_count": 1,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    }
-  ],
-  "research_safety": [
-    {
-      "id": "cluster_110",
-      "article_id": "art_arxiv_cs_ai_83d9845eb03a",
-      "publisher_id": "arxiv",
-      "publisher_group_id": "cornell_arxiv",
-      "article_type": "research_paper",
-      "signal_badge": "\ud83d\udcc4 Research Paper",
-      "title": "Beyond Plausible Prediction: Safety Sufficiency in Web World Models",
-      "one_liner": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
-      "summary": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
-      "reported_facts": [
-        "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
-        "arXiv cs.AI reported that Beyond Plausible Prediction: Safety Sufficiency in Web World Models."
-      ],
-      "what_changed": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
-      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
-      "affected_stakeholders": [
-        "ML Researchers",
-        "Model Developers",
-        "Academic Practitioners"
-      ],
-      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "analysis_limitations": "Epistemic Limitation: Based on an academic preprint / open research paper; claims have not completed formal peer review or broad independent reproduction.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Models & Research",
-      "category_confidence": 0.85,
-      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
-      "topic": "AI Models & Research",
-      "source": "arXiv cs.AI",
-      "tier": "Open Research",
-      "trust_tier": 3,
-      "is_official": false,
-      "published": "Nov 02, 05:00 UTC",
-      "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
-      "link": "https://arxiv.org/abs/2610.40798",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Beyond Plausible Prediction: Safety Sufficiency in Web World Models",
-      "image_type": "category_fallback",
-      "image_credit": "AI Models & Research curation",
-      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "company": "default",
-      "reading_time": "1 min read",
-      "key_points": [
-        "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
-        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
-      ],
-      "detailed_analysis": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI."
-      },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI.",
       "importance_score": 75,
       "relevance_score": 85,
       "freshness_score": 85,
@@ -4591,7 +4163,7 @@
       "is_official": true,
       "published": "Oct 29, 16:11 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -4663,7 +4235,7 @@
       "is_official": false,
       "published": "Nov 02, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://arxiv.org/abs/2610.40906",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -4699,22 +4271,168 @@
       "independent_source_count": 1,
       "related_sources": [],
       "covered_by_sources_count": 1
+    }
+  ],
+  "research_safety": [
+    {
+      "id": "cluster_6",
+      "article_id": "art_openai_news_5b4ec4975b0e",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "\ud83d\ude80 Frontier Launch",
+      "title": "How we detect frontier model misalignment",
+      "one_liner": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+      "summary": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+      "reported_facts": [
+        "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+        "OpenAI News reported that How we detect frontier model misalignment."
+      ],
+      "what_changed": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+      "why_it_matters": "Exposes model alignment vulnerabilities or defenses, prompting stronger automated safeguards before deployment.",
+      "affected_stakeholders": [
+        "Security Engineers",
+        "AI Safety Researchers",
+        "System Administrators"
+      ],
+      "potential_impact": "Analytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Security & Safety",
+      "category_confidence": 0.95,
+      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
+      "topic": "AI Security & Safety",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Oct 29, 09:00 UTC",
+      "published_at": null,
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
+      "link": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for How we detect frontier model misalignment",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+        "Exposes model alignment vulnerabilities or defenses, prompting stronger automated safeguards before deployment."
+      ],
+      "detailed_analysis": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "audience_impact": {
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
+      },
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai.",
+      "importance_score": 100,
+      "relevance_score": 85,
+      "freshness_score": 25,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 82.6,
+      "overall_score": 82.6,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "related_sources": [],
+      "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_40",
-      "article_id": "art_nvidia_blog_d32b75491c69",
-      "publisher_id": "nvidia",
-      "publisher_group_id": "nvidia",
-      "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
-      "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
-      "one_liner": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended.",
-      "summary": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended.",
+      "id": "cluster_110",
+      "article_id": "art_arxiv_cs_ai_83d9845eb03a",
+      "publisher_id": "arxiv",
+      "publisher_group_id": "cornell_arxiv",
+      "article_type": "research_paper",
+      "signal_badge": "\ud83d\udcc4 Research Paper",
+      "title": "Beyond Plausible Prediction: Safety Sufficiency in Web World Models",
+      "one_liner": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
+      "summary": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
       "reported_facts": [
-        "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended.",
-        "NVIDIA Blog reported that Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents."
+        "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
+        "arXiv cs.AI reported that Beyond Plausible Prediction: Safety Sufficiency in Web World Models."
       ],
-      "what_changed": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended.",
+      "what_changed": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
+      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
+      "affected_stakeholders": [
+        "ML Researchers",
+        "Model Developers",
+        "Academic Practitioners"
+      ],
+      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "analysis_limitations": "Epistemic Limitation: Based on an academic preprint / open research paper; claims have not completed formal peer review or broad independent reproduction.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Models & Research",
+      "category_confidence": 0.85,
+      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
+      "topic": "AI Models & Research",
+      "source": "arXiv cs.AI",
+      "tier": "Open Research",
+      "trust_tier": 3,
+      "is_official": false,
+      "published": "Nov 02, 05:00 UTC",
+      "published_at": null,
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
+      "link": "https://arxiv.org/abs/2610.40798",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Beyond Plausible Prediction: Safety Sufficiency in Web World Models",
+      "image_type": "category_fallback",
+      "image_credit": "AI Models & Research curation",
+      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "company": "default",
+      "reading_time": "1 min read",
+      "key_points": [
+        "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.",
+        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
+      ],
+      "detailed_analysis": "arXiv:2610.40798v1 Announce Type: new Abstract: Web world models increasingly predict the consequences of candidate actions before agents act, yet a plausible predicted future does not necessarily support the correct safety decision.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "audience_impact": {
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI."
+      },
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI.",
+      "importance_score": 75,
+      "relevance_score": 85,
+      "freshness_score": 85,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 80,
+      "confidence_score": 80,
+      "pulse_score": 80.1,
+      "overall_score": 80.1,
+      "confidence_label": "medium",
+      "evidence_status": "research_preprint",
+      "evidence_label": "Research Preprint",
+      "independent_source_count": 1,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_25",
+      "article_id": "art_anthropic_news_aacf8df45ea0",
+      "publisher_id": "anthropic",
+      "publisher_group_id": "anthropic",
+      "article_type": "frontier_launch",
+      "signal_badge": "\ud83d\ude80 Frontier Launch",
+      "title": "An Update On Independent Evaluators",
+      "one_liner": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
+      "summary": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
+      "reported_facts": [
+        "Official news announcement from Anthropic: An Update On Independent Evaluators.",
+        "Anthropic Official News reported that An Update On Independent Evaluators."
+      ],
+      "what_changed": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
       "why_it_matters": "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts.",
       "affected_stakeholders": [
         "Industry Analysts",
@@ -4729,27 +4447,99 @@
       "category_confidence": 0.7,
       "category_rationale": "General AI ecosystem update, strategic partnership, or executive announcement",
       "topic": "AI News",
+      "source": "Anthropic Official News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Recent",
+      "published_at": null,
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
+      "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for An Update On Independent Evaluators",
+      "image_type": "official_asset",
+      "image_credit": "Anthropic announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
+      "company": "anthropic",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Official news announcement from Anthropic: An Update On Independent Evaluators.",
+        "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
+      ],
+      "detailed_analysis": "Official news announcement from Anthropic: An Update On Independent Evaluators.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
+      "importance_score": 85,
+      "relevance_score": 65,
+      "freshness_score": 50,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 77.6,
+      "overall_score": 77.6,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_48",
+      "article_id": "art_nvidia_blog_f9cc091018ef",
+      "publisher_id": "nvidia",
+      "publisher_group_id": "nvidia",
+      "article_type": "open_source_release",
+      "signal_badge": "\ud83d\udd13 Open Weights",
+      "title": "NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models",
+      "one_liner": "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.",
+      "summary": "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.",
+      "reported_facts": [
+        "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.",
+        "NVIDIA Blog reported that NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models."
+      ],
+      "what_changed": "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.",
+      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
+      "affected_stakeholders": [
+        "ML Researchers",
+        "Model Developers",
+        "Academic Practitioners"
+      ],
+      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Models & Research",
+      "category_confidence": 0.85,
+      "category_rationale": "Matched frontier foundation model release, research preprint, or architecture benchmark",
+      "topic": "AI Models & Research",
       "source": "NVIDIA Blog",
       "tier": "Official Lab",
       "trust_tier": 1,
       "is_official": true,
-      "published": "Oct 29, 16:00 UTC",
+      "published": "Oct 22, 05:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
-      "link": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
+      "link": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+      "image_alt": "Visual representation for NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models",
       "image_type": "official_asset",
       "image_credit": "Nvidia announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
+      "image_fallback": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "company": "nvidia",
       "reading_time": "1 min read",
       "key_points": [
-        "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended.",
-        "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
+        "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.",
+        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
       ],
-      "detailed_analysis": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "To help developers rapidly build world models, which help physical AI systems understand and simulate the real world, NVIDIA has expanded the Cosmos platform with new training tools, simulation checkpoints and Cosmos Data Factory blueprints.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
       "audience_impact": {
         "target": "For developers",
         "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Nvidia."
@@ -4763,8 +4553,8 @@
       "popularity_score": 50,
       "source_quality_score": 100,
       "confidence_score": 100,
-      "pulse_score": 72.7,
-      "overall_score": 72.7,
+      "pulse_score": 77.6,
+      "overall_score": 77.6,
       "confidence_label": "high",
       "evidence_status": "official_announcement",
       "evidence_label": "Official Announcement",
@@ -4809,7 +4599,7 @@
       "is_official": true,
       "published": "Oct 30, 17:32 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -4882,7 +4672,7 @@
       "is_official": true,
       "published": "Oct 27, 15:00 UTC",
       "published_at": null,
-      "last_fetched_at": "2026-11-02T15:06:59.643038+00:00",
+      "last_fetched_at": "2026-11-02T15:14:14.192892+00:00",
       "link": "https://openai.com/index/retell-ai",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -4921,38 +4711,6 @@
     }
   ],
   "pulse_items": [
-    {
-      "title": "More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum",
-      "topic": "AI Models & Research",
-      "category": "AI Models & Research",
-      "article_type": "research_paper",
-      "signal_badge": "\ud83d\udcc4 Research Paper",
-      "company": "default",
-      "published": "Nov 02, 05:00 UTC",
-      "what_happened": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
-      "what_changed": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
-      "one_liner": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
-      "summary": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
-      "why_it_matters": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
-      "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "detailed_analysis": "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "key_points": [
-        "arXiv:2610.40758v1 Announce Type: new Abstract: Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them.",
-        "An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule.",
-        "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications."
-      ],
-      "link": "https://arxiv.org/abs/2610.40758",
-      "source": "arXiv cs.AI",
-      "tier": "Open Research",
-      "audience_impact": {
-        "target": "For AI researchers",
-        "impact": "Advances research methodologies and empirical evaluations for frontier AI architectures."
-      },
-      "target_audience": "For AI researchers",
-      "audience_impact_statement": "Advances research methodologies and empirical evaluations for frontier AI architectures.",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80"
-    },
     {
       "title": "Benchmarking Forecasting Agents on Yesterday's Tomorrows",
       "topic": "AI Models & Research",
@@ -5045,6 +4803,38 @@
       "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "How Worldwide Express automated freight exceptions with Amazon Bedrock",
+      "topic": "AI Applications",
+      "category": "AI Applications",
+      "article_type": "frontier_launch",
+      "signal_badge": "\ud83d\ude80 Frontier Launch",
+      "company": "amazon",
+      "published": "Oct 30, 17:32 UTC",
+      "what_happened": "Worldwide Express automated its less-than-truckload freight billing-exception process with a multi-agent solution built on Amazon Bedrock.",
+      "what_changed": "Worldwide Express automated its less-than-truckload freight billing-exception process with a multi-agent solution built on Amazon Bedrock.",
+      "one_liner": "Worldwide Express automated its less-than-truckload freight billing-exception process with a multi-agent solution built on Amazon Bedrock. Six months after launch, the company cut active exceptions by 75%, improved time-to-cash by four weeks, and unlocked $10 million in free cash flow.",
+      "summary": "Worldwide Express automated its less-than-truckload freight billing-exception process with a multi-agent solution built on Amazon Bedrock. Six months after launch, the company cut active exceptions by 75%, improved time-to-cash by four weeks, and unlocked $10 million in free cash flow.",
+      "why_it_matters": "Translates AI capabilities into practical production workflows with measurable business or scientific outcomes.",
+      "potential_impact": "Analytical Projection: Domain-specific production deployments may automate transactional workflows and improve operational throughput across enterprise verticals.",
+      "detailed_analysis": "Worldwide Express automated its less-than-truckload freight billing-exception process with a multi-agent solution built on Amazon Bedrock. Six months after launch, the company cut active exceptions by 75%, improved time-to-cash by four weeks, and unlocked $10 million in free cash flow.\n\nAnalytical Projection: Domain-specific production deployments may automate transactional workflows and improve operational throughput across enterprise verticals.",
+      "key_points": [
+        "Worldwide Express automated its less-than-truckload freight billing-exception process with a multi-agent solution built on Amazon Bedrock.",
+        "Six months after launch, the company cut active exceptions by 75%, improved time-to-cash by four weeks, and unlocked $10 million in free cash flow.",
+        "Translates AI capabilities into practical production workflows with measurable business or scientific outcomes."
+      ],
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "audience_impact": {
+        "target": "For enterprise operators",
+        "impact": "Demonstrates practical operational automation and procurement pathways using Amazon."
+      },
+      "target_audience": "For enterprise operators",
+      "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Amazon.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "developer_trends": [
@@ -5055,7 +4845,7 @@
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "stars": 259710,
-      "forks": 57168,
+      "forks": 57171,
       "language": "Python",
       "topics": [
         "ai",
@@ -5071,8 +4861,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-02T15:02:08Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "updated_at": "2026-11-02T15:13:43Z",
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -5080,7 +4870,7 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 79469,
+      "stars": 79471,
       "forks": 14658,
       "language": "JavaScript",
       "topics": [
@@ -5098,7 +4888,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
       "updated_at": "2026-11-02T10:33:09Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -5107,7 +4897,7 @@
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
       "stars": 67448,
-      "forks": 55850,
+      "forks": 55851,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -5123,8 +4913,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
-      "updated_at": "2026-11-02T15:05:02Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "updated_at": "2026-11-02T15:08:46Z",
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "HKUDS/nanobot",
@@ -5132,7 +4922,7 @@
       "owner": "HKUDS",
       "url": "https://github.com/HKUDS/nanobot",
       "description": "Your lightweight open-source personal agent.",
-      "stars": 49764,
+      "stars": 49763,
       "forks": 8710,
       "language": "Python",
       "topics": [
@@ -5150,7 +4940,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-02-01T07:16:15Z",
       "updated_at": "2026-11-02T09:55:24Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "zhayujie/CowAgent",
@@ -5176,7 +4966,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2022-08-07T08:33:41Z",
       "updated_at": "2026-11-02T07:45:14Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "open-webui/open-webui",
@@ -5184,8 +4974,8 @@
       "owner": "open-webui",
       "url": "https://github.com/open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 157542,
-      "forks": 22911,
+      "stars": 157543,
+      "forks": 22912,
       "language": "Python",
       "topics": [
         "ai",
@@ -5202,7 +4992,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2023-10-06T22:08:27Z",
       "updated_at": "2026-11-02T11:42:01Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "langchain-ai/langchain",
@@ -5227,8 +5017,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2022-10-17T02:58:36Z",
-      "updated_at": "2026-11-02T14:56:28Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "updated_at": "2026-11-02T15:13:59Z",
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "infiniflow/ragflow",
@@ -5254,7 +5044,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2023-12-12T06:13:13Z",
       "updated_at": "2026-11-02T14:30:35Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -5262,8 +5052,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 421531,
-      "forks": 105170,
+      "stars": 421552,
+      "forks": 105175,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -5280,7 +5070,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
       "updated_at": "2026-11-02T13:20:48Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "affaan-m/ECC",
@@ -5288,8 +5078,8 @@
       "owner": "affaan-m",
       "url": "https://github.com/affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 295289,
-      "forks": 43703,
+      "stars": 295293,
+      "forks": 43704,
       "language": "JavaScript",
       "topics": [
         "ai-agents",
@@ -5306,7 +5096,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-01-18T00:51:51Z",
       "updated_at": "2026-11-02T04:56:08Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "n8n-io/n8n",
@@ -5314,7 +5104,7 @@
       "owner": "n8n-io",
       "url": "https://github.com/n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 209353,
+      "stars": 209354,
       "forks": 61357,
       "language": "TypeScript",
       "topics": [
@@ -5331,8 +5121,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2019-06-22T09:24:21Z",
-      "updated_at": "2026-11-02T15:06:11Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "updated_at": "2026-11-02T15:13:33Z",
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "langgenius/dify",
@@ -5358,7 +5148,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2023-04-12T07:40:24Z",
       "updated_at": "2026-11-02T15:00:12Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -5366,7 +5156,7 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 110180,
+      "stars": 110183,
       "forks": 18256,
       "language": "TypeScript",
       "topics": [
@@ -5383,8 +5173,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-02T15:04:28Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "updated_at": "2026-11-02T15:13:37Z",
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "Significant-Gravitas/AutoGPT",
@@ -5410,7 +5200,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2023-03-16T09:21:07Z",
       "updated_at": "2026-11-02T15:01:35Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     },
     {
       "repository": "f/prompts.chat",
@@ -5419,7 +5209,7 @@
       "url": "https://github.com/f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
       "stars": 175606,
-      "forks": 22407,
+      "forks": 22408,
       "language": "MDX",
       "topics": [
         "ai",
@@ -5436,7 +5226,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2022-12-05T13:54:13Z",
       "updated_at": "2026-11-02T07:21:46Z",
-      "collected_at": "2026-11-02T15:06:55.748543+00:00"
+      "collected_at": "2026-11-02T15:14:09.840855+00:00"
     }
   ],
   "source_health_summary": {
@@ -5456,8 +5246,8 @@
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-02T15:06:28.027683+00:00",
-      "last_success_at": "2026-11-02T15:06:28.027683+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.917144+00:00",
+      "last_success_at": "2026-11-02T15:13:54.917144+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1342,
@@ -5468,8 +5258,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-02T15:06:28.028543+00:00",
-      "last_success_at": "2026-11-02T15:06:28.028543+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.918163+00:00",
+      "last_success_at": "2026-11-02T15:13:54.918163+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -5480,8 +5270,8 @@
     {
       "source_id": "anthropic_hn_discovery",
       "name": "Anthropic Community Discovery (HNRSS)",
-      "last_attempt_at": "2026-11-02T15:06:28.028770+00:00",
-      "last_success_at": "2026-11-02T15:06:28.028770+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.918413+00:00",
+      "last_success_at": "2026-11-02T15:13:54.918413+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 5,
@@ -5492,10 +5282,10 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-02T15:06:28.028961+00:00",
-      "last_success_at": "2026-11-02T15:06:28.028961+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.918662+00:00",
+      "last_success_at": "2026-11-02T15:13:54.918662+00:00",
       "fetch_status": "success",
-      "http_status": 304,
+      "http_status": 200,
       "articles_received": 100,
       "articles_accepted": 4,
       "error_type": null,
@@ -5504,8 +5294,8 @@
     {
       "source_id": "google_ai_blog",
       "name": "Google AI Blog",
-      "last_attempt_at": "2026-11-02T15:06:28.029247+00:00",
-      "last_success_at": "2026-11-02T15:06:28.029247+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.919004+00:00",
+      "last_success_at": "2026-11-02T15:13:54.919004+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5516,8 +5306,8 @@
     {
       "source_id": "microsoft_ai_news",
       "name": "Microsoft AI News",
-      "last_attempt_at": "2026-11-02T15:06:28.029580+00:00",
-      "last_success_at": "2026-11-02T15:06:28.029580+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.919463+00:00",
+      "last_success_at": "2026-11-02T15:13:54.919463+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5528,8 +5318,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Blog",
-      "last_attempt_at": "2026-11-02T15:06:28.029813+00:00",
-      "last_success_at": "2026-11-02T15:06:28.029813+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.920076+00:00",
+      "last_success_at": "2026-11-02T15:13:54.920076+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 18,
@@ -5540,8 +5330,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-02T15:06:28.030144+00:00",
-      "last_success_at": "2026-11-02T15:06:28.030144+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.925720+00:00",
+      "last_success_at": "2026-11-02T15:13:54.925720+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 20,
@@ -5552,8 +5342,8 @@
     {
       "source_id": "amazon_science",
       "name": "Amazon Science",
-      "last_attempt_at": "2026-11-02T15:06:28.030607+00:00",
-      "last_success_at": "2026-11-02T15:06:28.030607+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.932769+00:00",
+      "last_success_at": "2026-11-02T15:13:54.932769+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 25,
@@ -5564,8 +5354,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-02T15:06:28.030886+00:00",
-      "last_success_at": "2026-11-02T15:06:28.030886+00:00",
+      "last_attempt_at": "2026-11-02T15:13:54.934799+00:00",
+      "last_success_at": "2026-11-02T15:13:54.934799+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 894,
@@ -5576,8 +5366,8 @@
     {
       "source_id": "github_blog_ai",
       "name": "GitHub Blog AI",
-      "last_attempt_at": "2026-11-02T15:06:28.196910+00:00",
-      "last_success_at": "2026-11-02T15:06:28.196910+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.128928+00:00",
+      "last_success_at": "2026-11-02T15:13:55.128928+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5588,8 +5378,8 @@
     {
       "source_id": "mistral_news",
       "name": "Mistral AI News",
-      "last_attempt_at": "2026-11-02T15:06:28.223001+00:00",
-      "last_success_at": "2026-11-02T15:06:28.223001+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.195689+00:00",
+      "last_success_at": "2026-11-02T15:13:55.195689+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 93,
@@ -5600,8 +5390,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-02T15:06:28.273156+00:00",
-      "last_success_at": "2026-11-02T15:06:28.273156+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.204596+00:00",
+      "last_success_at": "2026-11-02T15:13:55.204596+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5612,8 +5402,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-02T15:06:28.315603+00:00",
-      "last_success_at": "2026-11-02T15:06:28.315603+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.254876+00:00",
+      "last_success_at": "2026-11-02T15:13:55.254876+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -5624,8 +5414,8 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-02T15:06:28.361871+00:00",
-      "last_success_at": "2026-11-02T15:06:28.361871+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.272302+00:00",
+      "last_success_at": "2026-11-02T15:13:55.272302+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 20,
@@ -5636,8 +5426,8 @@
     {
       "source_id": "ars_technica",
       "name": "Ars Technica",
-      "last_attempt_at": "2026-11-02T15:06:28.378303+00:00",
-      "last_success_at": "2026-11-02T15:06:28.378303+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.396090+00:00",
+      "last_success_at": "2026-11-02T15:13:55.396090+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5648,8 +5438,8 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-02T15:06:28.379253+00:00",
-      "last_success_at": "2026-11-02T15:06:28.379253+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.454514+00:00",
+      "last_success_at": "2026-11-02T15:13:55.454514+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5660,8 +5450,8 @@
     {
       "source_id": "arxiv_cs_ai",
       "name": "arXiv cs.AI",
-      "last_attempt_at": "2026-11-02T15:06:28.396601+00:00",
-      "last_success_at": "2026-11-02T15:06:28.396601+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.460816+00:00",
+      "last_success_at": "2026-11-02T15:13:55.460816+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 297,
@@ -5672,8 +5462,8 @@
     {
       "source_id": "arxiv_cs_lg",
       "name": "arXiv cs.LG",
-      "last_attempt_at": "2026-11-02T15:06:28.462582+00:00",
-      "last_success_at": "2026-11-02T15:06:28.462582+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.518821+00:00",
+      "last_success_at": "2026-11-02T15:13:55.518821+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 337,
@@ -5684,8 +5474,8 @@
     {
       "source_id": "bair_blog",
       "name": "BAIR Blog",
-      "last_attempt_at": "2026-11-02T15:06:28.521023+00:00",
-      "last_success_at": "2026-11-02T15:06:28.521023+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.579932+00:00",
+      "last_success_at": "2026-11-02T15:13:55.579932+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5696,8 +5486,8 @@
     {
       "source_id": "simon_willison",
       "name": "Simon Willison Weblog",
-      "last_attempt_at": "2026-11-02T15:06:28.531901+00:00",
-      "last_success_at": "2026-11-02T15:06:28.531901+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.685083+00:00",
+      "last_success_at": "2026-11-02T15:13:55.685083+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 30,
@@ -5708,7 +5498,7 @@
     {
       "source_id": "import_ai",
       "name": "Import AI",
-      "last_attempt_at": "2026-11-02T15:06:28.545648+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.764767+00:00",
       "last_success_at": null,
       "fetch_status": "failed",
       "http_status": 403,
@@ -5720,7 +5510,7 @@
     {
       "source_id": "lmsys_org",
       "name": "LMSYS Org",
-      "last_attempt_at": "2026-11-02T15:06:28.554555+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.765532+00:00",
       "last_success_at": null,
       "fetch_status": "failed",
       "http_status": 404,
@@ -5732,8 +5522,8 @@
     {
       "source_id": "latent_space",
       "name": "Latent Space",
-      "last_attempt_at": "2026-11-02T15:06:28.570566+00:00",
-      "last_success_at": "2026-11-02T15:06:28.570566+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.768654+00:00",
+      "last_success_at": "2026-11-02T15:13:55.768654+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5744,7 +5534,7 @@
     {
       "source_id": "hf_daily_papers",
       "name": "Hugging Face Daily Papers",
-      "last_attempt_at": "2026-11-02T15:06:28.591662+00:00",
+      "last_attempt_at": "2026-11-02T15:13:55.781717+00:00",
       "last_success_at": null,
       "fetch_status": "failed",
       "http_status": 401,
