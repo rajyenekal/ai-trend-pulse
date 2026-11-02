@@ -20,11 +20,11 @@
 
 ## 🏛️ Architecture Overview
 
-The pipeline executes autonomously on an hourly schedule via GitHub Actions, driven by [`tracker.py`](tracker.py) and configured by [`sources.json`](sources.json). It ingests dispatches from 21 primary AI research laboratories, technology journalism desks, cloud providers, and preprint archives. Articles are normalized, clustered to eliminate cross-publisher duplication, scored according to algorithmic pulse weights, and written atomically to [`data.json`](data.json) for static client delivery.
+The pipeline executes autonomously on an hourly schedule via GitHub Actions, driven by [`tracker.py`](tracker.py) and configured by [`sources.json`](sources.json). It ingests dispatches from 22 primary AI research laboratories, technology journalism desks, cloud providers, and preprint archives. Articles are normalized, monitored with end-to-end telemetry, clustered to eliminate cross-publisher duplication, verified through paired claim-level evidence references, scored according to algorithmic pulse weights, and written atomically to [`data.json`](data.json) for static client delivery.
 
 ```mermaid
 flowchart TD
-    subgraph Sources["21 Monitored Sources (sources.json)"]
+    subgraph Sources["22 Monitored Sources (sources.json)"]
         T1["Tier 1: Frontier AI Labs\n(OpenAI, Anthropic, DeepMind, Google AI, Microsoft, Meta, xAI, Mistral)"]
         T2["Tier 2: Independent Tech Journalism\n(MIT Tech Review, The Verge, TechCrunch, Ars Technica, The Decoder)"]
         T3["Tier 3: Open Ecosystem & Cloud\n(Hugging Face, NVIDIA Developer, AWS ML, Amazon Science)"]
@@ -34,14 +34,17 @@ flowchart TD
     subgraph Ingestion["Ingestion Engine (tracker.py)"]
         DP["Dual-Parser Engine\n(feedparser + xml.etree.ElementTree Fallback)"]
         AA["Anthropic HTML Page Adapter\n(Canonical Extraction from /news)"]
+        TEL["Source Health Telemetry\n(HTTP Status, Latency, Article Yield)"]
         NORM["URL Normalization & Stripping\n(utm_*, ref, fbclid removed)"]
         TIME["Strict Timestamp Parsing\n(No Fabricated Current Dates)"]
     end
 
-    subgraph Clustering["Clustering & Scoring Engine"]
+    subgraph Verification["Claim-Level Evidence & Synthesis"]
         STEM["Suffix-Stemmed Tokenizer\n(Regex Normalization + Stemming)"]
         JAC["Jaccard Similarity Clustering\n(Threshold = 0.38 Cross-Publisher Merge)"]
-        SCORE["Deterministic Pulse Scoring\n(Importance 30%, Relevance 25%, Freshness 20%, Popularity 15%, Confidence 10%)"]
+        PAIR["Paired Evidence Validator\n(article_id + exact URL + excerpt verification)"]
+        DECOUPLE["Decoupled Corroboration Engine\n(Claim Corroboration vs Trend Diversity)"]
+        SCORE["Deterministic Pulse Scoring\n(Importance 30%, Relevance 20%, Freshness 20%, Coverage 15%, Quality 15%)"]
     end
 
     subgraph Delivery["Persistence & Static Distribution"]
@@ -52,7 +55,7 @@ flowchart TD
 
     T1 & T2 & T3 & T4 --> DP
     T1 --> AA
-    DP & AA --> NORM --> TIME --> STEM --> JAC --> SCORE --> ATOMIC --> JSON --> FRONTEND
+    DP & AA --> TEL --> NORM --> TIME --> STEM --> JAC --> PAIR --> DECOUPLE --> SCORE --> ATOMIC --> JSON --> FRONTEND
 ```
 
 ---
@@ -145,6 +148,41 @@ To eliminate temporal hallucinations:
 
 ---
 
+## 🔍 Claim-Level Evidence Architecture & Provenance Verification
+
+AI Trend Pulse implements strict claim-level evidence verification to prevent confounding articles covering distinct developments with independent evidence supporting the same factual claim:
+
+### Paired Evidence Object Contract
+Every supporting evidence reference is structured as an atomic object:
+```json
+{
+  "article_id": "art_openai_123456789abc",
+  "canonical_url": "https://openai.com/example",
+  "publisher_group_id": "openai",
+  "supporting_excerpt": "Direct quotation or verbatim summary sentence",
+  "text_verified": true
+}
+```
+
+### Provenance Validation Rules (`validate_evidence_provenance`)
+1. **Article ID Existence**: The `article_id` must strictly exist within the collected raw article dataset.
+2. **Exact Canonical URL Equality**: The normalized URL of the evidence reference must exactly match the normalized canonical URL of that specific `article_id`. URL prefix matching is eliminated.
+3. **Mismatched Pair Rejection**: If an AI model outputs an `article_id` belonging to story A and a `canonical_url` belonging to story B, the validator flags the mismatch and rejects the reference.
+4. **Synthesis Input Guard**: Citations referencing articles not present in the Gemini prompt synthesis input are rejected.
+5. **Trusted Publisher Group Resolution**: Publisher grouping (`publisher_group_id`) is resolved strictly from trusted source metadata in `sources.json`, never from model generation.
+6. **Excerpt Verification (`verify_supporting_excerpt`)**: The supporting text excerpt is validated against the article's title and summary using token-overlap containment; ungrounded quotes are flagged (`text_verified = false`).
+
+### Decoupled Claim Corroboration vs Trend Signal Diversity
+- **Trend Types**:
+  - `single_development`: A coherent real-world event or product release. Corroboration requires multiple independent non-discovery publisher groups reporting the exact same event.
+  - `emerging_theme`: Connects multiple distinct developments into a broader industry pattern. Supported by an explicit `theme_relationship` explanation.
+- **Corroboration Metrics**:
+  - `claim_corroboration`: The number of distinct corporate publisher groups confirming a specific factual claim.
+  - `trend_signal_diversity`: The total number of distinct constituent developments/articles contributing to an emerging theme.
+  - Distinct developments (e.g. AWS logistics and Legora legal diligence) contribute to signal diversity, but do **NOT** artificially inflate claim corroboration counts.
+
+---
+
 ## 🔗 Story Deduplication & Jaccard Clustering
 
 When a major AI lab announces a breakthrough (e.g., a new model release), tech journalism outlets (The Verge, TechCrunch, Ars Technica) typically syndicate or report on the exact same event. Rather than showing 5 duplicate cards, `tracker.py` groups them into a cohesive story cluster:
@@ -181,49 +219,91 @@ $$\text{Pulse Score} = 0.30 \times \text{Importance} + 0.20 \times \text{Audienc
 
 ---
 
-## 📂 Categorized Slicing & Section Allocation
+## ✍️ Editorial Grounding & Epistemic Boundaries
 
-After scoring, clusters are partitioned into specialized sections in `data.json`:
-- **`top_stories`**: Top scored clusters formatted for chronological dispatches with publisher diversity capping.
-- **`trends`**: Curated developments with Why It Matters, Key Takeaways, and verified evidence article IDs.
-- **`pulse_items`**: High-velocity developments for the top pulse strip.
-- **`ai_tools`**: Practical consumer tools, user workflows, and app releases (with strict rejection of lawsuits and controversies).
-- **`dev_radar`**: Coding agents, APIs, open weights, benchmarks, and developer infrastructure.
-- **`research_safety`**: Frontier alignment, preprints, evals, and governance policies.
+Every story is generated with rich, grounded editorial fields to eliminate generic boilerplate summaries:
+- **`reported_facts`**: Bulleted list of confirmed, source-grounded factual developments extracted from raw text.
+- **`what_changed`**: Clear plain-English explanation of technical shifts, model releases, or policy changes.
+- **`why_it_matters`**: Real-world strategic significance grounded in domain impact.
+- **`potential_impact`**: Explicitly labeled analytical projection regarding developer workflows or market dynamics.
+- **`analysis_limitations`**: Epistemic verification boundaries (e.g. single-source developer claims, missing independent benchmarks, or preprint status).
 
 ---
 
-## 🛡️ Atomic File Persistence & Resilient Fallbacks
+## 📊 End-to-End Ingestion Health Telemetry & 5 Operating Cases
 
-### Atomic Disk Replacement
-To eliminate the risk of serving corrupted or partial JSON files to client browsers:
-1. The serialized payload is written to a temporary file (`data.json.tmp`).
-2. An integrity check reloads `data.json.tmp` and confirms it adheres strictly to schema validation (`validate_dataset_payload`).
-3. An atomic rename (`os.replace()`) overwrites `data.json`. On POSIX systems, `os.replace` is guaranteed atomic.
+`tracker.py` monitors health across all 22 configured feeds, recording per-source metrics (`fetch_status`, `http_status`, `articles_received`, `articles_accepted`, `last_attempt_at`, `last_success_at`, `error_type`).
 
-### Failure Handling & Last-Known-Good Preservation
-If an unhandled technical exception occurs during feed ingestion, Gemini synthesis, or payload validation:
-1. `run_pipeline` catches the exception and logs the complete traceback.
-2. Temporary files (`data.json.tmp`) are safely removed.
-3. The previous `data.json` is preserved untouched.
-4. The pipeline raises `PipelineExecutionError` and the CLI exits with status code `1`, alerting GitHub Actions to the failure.
-5. Ingestion cycles with 0 new articles are treated cleanly as valid operational states without reporting an error.
+### Five Operating Cases
+1. **Case A (Normal Cycle)**: Monitored sources respond successfully, fresh articles are ingested, scored, and published. Status: `healthy`.
+2. **Case B (Valid Zero Articles)**: Upstream sources respond successfully with HTTP 200, but no new articles were published within the ingestion window. Pipeline updates `last_attempt_at` and telemetry, preserves verified stories, and exits cleanly with code `0`.
+3. **Case C (Partial Degradation)**: Transient upstream errors (e.g. 5xx responses or timeouts) affect a subset of feeds. Pipeline logs diagnostics, marks status `degraded`, processes available feeds, and succeeds.
+4. **Case D (Total Upstream Failure)**: All enabled sources fail (e.g. network disconnect or upstream blockage). Pipeline preserves the last-known-good dataset, cleans up `.tmp` files, logs traceback, and raises `PipelineExecutionError`, causing GitHub Actions to fail and alert maintainers.
+5. **Case E (All Content Filtered)**: Sources return articles, but all are filtered by freshness or relevance thresholds. Pipeline preserves existing stories, updates telemetry with `all_content_filtered`, and exits cleanly.
 
 ---
 
 ## 📋 Data Contract & Schema (`data.json`)
 
-The final payload written to `data.json` matches the following contract:
+The final payload written to `data.json` adheres to the comprehensive production schema:
 
 ```json
 {
-  "generated_at": "2026-11-01T03:15:00.000000+00:00",
+  "schema_version": 2,
+  "generated_at": "2026-11-01T12:00:00.000000+00:00",
   "data_status": "fresh_intelligence",
-  "sources_monitored": 21,
-  "articles_ingested": 95,
-  "clusters_formed": 95,
-  "top_stories": [...],
-  "trends": [...],
+  "sources_monitored": 22,
+  "source_health_summary": {
+    "status": "healthy",
+    "configured_sources_count": 22,
+    "enabled_sources_count": 22,
+    "successful_fetches_count": 22,
+    "failed_fetches_count": 0,
+    "fresh_articles_accepted_count": 45
+  },
+  "source_health_details": [...],
+  "top_stories": [
+    {
+      "article_id": "art_openai_123456789abc",
+      "title": "Headline",
+      "summary": "Plain English summary",
+      "reported_facts": ["Fact 1", "Fact 2"],
+      "what_changed": "Technical shift",
+      "why_it_matters": "Domain significance",
+      "potential_impact": "Analytical projection",
+      "analysis_limitations": "Epistemic bounds",
+      "publisher_group_id": "openai",
+      "trust_tier": 1,
+      "is_official": true,
+      "overall_score": 88
+    }
+  ],
+  "trends": [
+    {
+      "title": "Lead Development or Emerging Theme",
+      "trend_type": "emerging_theme",
+      "theme_relationship": "Cross-cutting synthesis",
+      "claims": [
+        {
+          "claim_id": "cl_1",
+          "text": "Specific factual claim",
+          "evidence": [
+            {
+              "article_id": "art_openai_123456789abc",
+              "canonical_url": "https://openai.com/example",
+              "publisher_group_id": "openai",
+              "supporting_excerpt": "Quotation",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        }
+      ],
+      "trend_signal_diversity": 2,
+      "claim_corroboration": 1
+    }
+  ],
   "pulse_items": [...],
   "ai_tools": [...],
   "dev_radar": [...],

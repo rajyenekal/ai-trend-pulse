@@ -1,0 +1,17 @@
+# Feed cache and state
+.feed_cache.json
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Scratch & temporary development scripts
+scratch/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
