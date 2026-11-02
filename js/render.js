@@ -775,22 +775,38 @@ export function renderTopicPills(categories, counts) {
 export function renderCuratedCard(item, idx, sectionType) {
   const company = item.company || 'default';
   const topic = item.category || item.topic || 'AI Intelligence';
+  const badgeText = item.signal_badge || topic;
   const logoSVG = getCompanyLogoSVG(company);
   const primaryUrl = item.link || '#';
   const isSaved = isItemSaved(item.title);
+  const score = item.pulse_score ? Number(item.pulse_score).toFixed(1) : (item.importance_score ? Number(item.importance_score).toFixed(1) : null);
+  const audience = item.target_audience || '';
+
+  // Clean raw arXiv metadata prefix if present
+  let cleanSummary = (item.what_changed || item.why_it_matters || item.summary || item.one_liner || '').trim();
+  cleanSummary = cleanSummary.replace(/^arXiv:\S+\s+(?:Announce Type:\s*\S+\s*)?Abstract:\s*/i, '');
+  if (cleanSummary.length > 175) {
+    cleanSummary = cleanSummary.slice(0, 172) + '...';
+  }
+
+  const readingTime = item.reading_time ? ` · ${escapeHTML(item.reading_time)}` : '';
 
   return `
     <article class="curated-card" data-curated-section="${sectionType}" data-curated-idx="${idx}">
       <div class="curated-card-top">
-        <span class="curated-logo" aria-hidden="true">${logoSVG}</span>
-        <span class="curated-topic-badge">${escapeHTML(topic)}</span>
+        <div class="curated-top-left">
+          <span class="curated-logo" aria-hidden="true">${logoSVG}</span>
+          <span class="curated-topic-badge">${escapeHTML(badgeText)}</span>
+        </div>
+        ${score ? `<span class="curated-score-badge" title="Pulse Score: ${score}">⚡ ${score}</span>` : ''}
       </div>
       <h3 class="curated-title font-serif">
         <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">${escapeHTML(item.title)}</a>
       </h3>
-      <p class="curated-summary">${escapeHTML(item.what_happened || item.one_liner || item.summary || '')}</p>
+      <p class="curated-summary">${escapeHTML(cleanSummary)}</p>
+      ${audience ? `<span class="curated-audience-tag">${escapeHTML(audience)}</span>` : ''}
       <div class="curated-footer">
-        <span class="curated-source">${escapeHTML(item.source)}</span>
+        <span class="curated-source">${escapeHTML(item.source || 'Verified Source')}${readingTime}</span>
         <div class="curated-actions">
           <button class="btn-read-deep-dive" style="padding:4px 10px; font-size:0.75rem;" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">
             <span>Read</span>

@@ -224,6 +224,44 @@ class TestGitHubCollector(unittest.TestCase):
       if os.path.exists(tmp_snap):
         os.remove(tmp_snap)
 
+  def test_github_ssl_context_uses_standard_verification(self):
+    import ssl
+    from pipeline.github_collector import fetch_github_api
+    with patch("urllib.request.urlopen") as mock_urlopen:
+      mock_urlopen.side_effect = Exception("Simulated network stop")
+      fetch_github_api("https://api.github.com/test", timeout=1.0)
+      self.assertTrue(mock_urlopen.called)
+      context = mock_urlopen.call_args[1].get("context")
+      self.assertIsNotNone(context)
+      self.assertEqual(context.verify_mode, ssl.CERT_REQUIRED)
+      self.assertTrue(context.check_hostname)
+
+  def test_cold_start_snapshot_seeding_from_data_json(self):
+    fake_data = {
+        "developer_trends": [
+            {
+                "repository": "facebookresearch/sam2",
+                "stars": 49000,
+                "forks": 3900,
+                "collected_at": "2026-11-01T10:00:00Z"
+            }
+        ]
+    }
+    with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tmp_fallback:
+      tmp_fallback_name = tmp_fallback.name
+      with open(tmp_fallback_name, "w", encoding="utf-8") as f:
+        json.dump(fake_data, f)
+
+    non_existent_snapshot_file = "/tmp/non_existent_snapshots_test_12345.json"
+    try:
+      loaded = load_github_snapshots(snapshot_file=non_existent_snapshot_file, fallback_data_file=tmp_fallback_name)
+      self.assertIn("facebookresearch/sam2", loaded["snapshots"])
+      self.assertEqual(len(loaded["snapshots"]["facebookresearch/sam2"]), 1)
+      self.assertEqual(loaded["snapshots"]["facebookresearch/sam2"][0]["stars"], 49000)
+    finally:
+      if os.path.exists(tmp_fallback_name):
+        os.remove(tmp_fallback_name)
+
   def test_rate_limit_fallback_graceful(self):
     fallback_payload = {
         "developer_trends": [

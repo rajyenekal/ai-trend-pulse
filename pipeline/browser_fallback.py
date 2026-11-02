@@ -71,3 +71,4 @@ def extract_with_crawl4ai(url: str, timeout: float = DEFAULT_BROWSER_TIMEOUT) ->
   except Exception as e:
     logger.warning("Failed running Crawl4AI loop for %s: %s", url, e)
     return None, "crawl4ai_failed"
+

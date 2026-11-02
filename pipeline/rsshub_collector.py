@@ -129,9 +129,13 @@ def fetch_rsshub_feed(source: dict, timeout: float = 10.0, cache: dict = None) -
     if cached_entry.get("last_modified"):
       req.add_header("If-Modified-Since", cached_entry["last_modified"])
 
+  # Standard SSL context with certificate and hostname verification
   ctx = ssl.create_default_context()
-  ctx.check_hostname = False
-  ctx.verify_mode = ssl.CERT_NONE
+  try:
+    import certifi
+    ctx.load_verify_locations(cafile=certifi.where())
+  except Exception:
+    pass
 
   try:
     with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
@@ -183,3 +187,4 @@ def fetch_rsshub_feed(source: dict, timeout: float = 10.0, cache: dict = None) -
   except Exception as e:
     logger.warning("RSSHub fetch failed for %s (%s): %s", source.get("source_id"), feed_url, e)
     return [], None
+

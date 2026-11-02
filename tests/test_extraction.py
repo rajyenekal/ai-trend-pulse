@@ -153,6 +153,17 @@ class TestTrafilaturaExtraction(unittest.TestCase):
         self.assertIn("Claude 3.5 Sonnet", art["full_text"])
       mock_save.assert_called_once()
 
+  def test_ssl_context_uses_standard_verification(self):
+    import ssl
+    with patch("urllib.request.urlopen") as mock_urlopen:
+      mock_urlopen.side_effect = Exception("Simulated network stop")
+      fetch_raw_html("https://example.com/test", timeout=1.0)
+      self.assertTrue(mock_urlopen.called)
+      context = mock_urlopen.call_args[1].get("context")
+      self.assertIsNotNone(context)
+      self.assertEqual(context.verify_mode, ssl.CERT_REQUIRED)
+      self.assertTrue(context.check_hostname)
+
   def test_cache_disk_persistence(self):
     with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tmp:
       tmp_path = tmp.name

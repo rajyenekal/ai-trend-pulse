@@ -48,17 +48,41 @@ AI_SEARCH_QUERIES = [
 ]
 
 
-def load_github_snapshots(snapshot_file=GITHUB_SNAPSHOTS_FILE) -> dict:
-  """Loads historical repository snapshots from disk."""
+def load_github_snapshots(snapshot_file=GITHUB_SNAPSHOTS_FILE, fallback_data_file=None) -> dict:
+  """Loads historical repository snapshots from disk, seeding from data.json if cold."""
   if os.path.exists(snapshot_file):
     try:
       with open(snapshot_file, "r", encoding="utf-8") as f:
         data = json.load(f)
-        if isinstance(data, dict) and "snapshots" in data:
+        if isinstance(data, dict) and data.get("snapshots"):
           return data
     except Exception as e:
       logger.warning("Failed to load GitHub snapshots from %s: %s", snapshot_file, e)
-  return {"last_updated": None, "snapshots": {}}
+
+  # Cold start recovery: seed from committed data.json if available
+  seeded = {"last_updated": None, "snapshots": {}}
+  if fallback_data_file and os.path.exists(fallback_data_file):
+    try:
+      with open(fallback_data_file, "r", encoding="utf-8") as f:
+        p = json.load(f)
+        if isinstance(p, dict) and p.get("developer_trends"):
+          for item in p["developer_trends"]:
+            repo = item.get("repository")
+            stars = item.get("stars")
+            forks = item.get("forks")
+            ts = item.get("collected_at") or item.get("updated_at")
+            if repo and stars is not None and ts:
+              seeded["snapshots"].setdefault(repo, []).append({
+                  "timestamp": ts,
+                  "stars": stars,
+                  "forks": forks or 0,
+              })
+          if seeded["snapshots"]:
+            seeded["last_updated"] = p.get("generated_at")
+    except Exception as e:
+      logger.warning("Failed seeding snapshots from fallback %s: %s", fallback_data_file, e)
+
+  return seeded
 
 
 def save_github_snapshots(snapshot_data: dict, snapshot_file=GITHUB_SNAPSHOTS_FILE):
@@ -183,9 +207,13 @@ def fetch_github_api(endpoint_url: str, token: str = None, timeout: float = DEFA
   if token:
     req.add_header("Authorization", f"Bearer {token}")
 
+  # Standard SSL context with certificate and hostname verification
   ctx = ssl.create_default_context()
-  ctx.check_hostname = False
-  ctx.verify_mode = ssl.CERT_NONE
+  try:
+    import certifi
+    ctx.load_verify_locations(cafile=certifi.where())
+  except Exception:
+    pass
 
   try:
     with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
@@ -227,7 +255,7 @@ def collect_github_developer_trends(
 
   queries_to_run = queries or AI_SEARCH_QUERIES
 
-  snapshot_data = load_github_snapshots(snapshot_file)
+  snapshot_data = load_github_snapshots(snapshot_file, fallback_data_file=fallback_data_file)
   snapshots_dict = snapshot_data.setdefault("snapshots", {})
 
   collected_repos = {}

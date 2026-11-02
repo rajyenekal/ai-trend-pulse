@@ -99,10 +99,13 @@ def fetch_raw_html(url, timeout=DEFAULT_EXTRACTION_TIMEOUT):
       },
   )
 
-  # SSL context with certificate verification fallback
+  # Standard SSL context with certificate and hostname verification
   ctx = ssl.create_default_context()
-  ctx.check_hostname = False
-  ctx.verify_mode = ssl.CERT_NONE
+  try:
+    import certifi
+    ctx.load_verify_locations(cafile=certifi.where())
+  except Exception:
+    pass
 
   try:
     with urllib.request.urlopen(req, timeout=timeout, context=ctx) as response:
