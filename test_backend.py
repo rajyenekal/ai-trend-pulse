@@ -1196,6 +1196,142 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertNotIn("could impact developers and businesses without specifics", story["why_it_matters"])
     self.assertNotIn("Lorem ipsum", story["what_changed"])
 
+  def test_classify_article_type_taxonomy(self):
+    """Phase 5: Unit test that classify_article_type classifies benchmark/press release/research correctly."""
+    self.assertEqual(
+        tracker.classify_article_type("DeepSeek-R1 Paper", link="https://arxiv.org/abs/2501.12948"),
+        "research_paper"
+    )
+    self.assertEqual(
+        tracker.classify_article_type("Scaling Laws for Neural Language Models", link="https://arxiv.org/abs/2001.08361"),
+        "research_paper"
+    )
+    self.assertEqual(
+        tracker.classify_article_type("How Legora uses GPT-4o to build legal workflows", link="https://openai.com/index/customer-stories/legora/"),
+        "case_study_pr"
+    )
+    self.assertEqual(
+        tracker.classify_article_type("Meta Releases Llama 3.3 70B with Open Weights", link="https://ai.meta.com/blog/llama-3-3/"),
+        "open_source_release"
+    )
+    self.assertEqual(
+        tracker.classify_article_type("Introducing Claude 3.7 Sonnet and hybrid reasoning", link="https://www.anthropic.com/news/claude-3-7-sonnet"),
+        "frontier_launch"
+    )
+    self.assertEqual(
+        tracker.classify_article_type("Anthropic releases Model Context Protocol TypeScript SDK v1.2", link="https://github.com/modelcontextprotocol/sdk"),
+        "sdk_api_update"
+    )
+    self.assertEqual(
+        tracker.classify_article_type("Prompt Injection Vulnerability Discovered in Multi-Agent Frameworks", link="https://theverge.com/security"),
+        "security_vulnerability"
+    )
+    self.assertEqual(
+        tracker.classify_article_type("EU AI Act Enforcement Guidelines Finalized", link="https://reuters.com/ai-act"),
+        "policy_regulation"
+    )
+
+  def test_case_study_pr_scoring_calibration_and_cap(self):
+    """Phase 5: Unit test that single-source case studies are capped at <= 64.0 and have 0.60x multiplier applied."""
+    art_cs = {
+        "title": "Customer Case Study: How Company X Deployed Enterprise Agents",
+        "summary": "Enterprise adoption details and partner spotlight on workflow acceleration",
+        "link": "https://openai.com/customer-stories/company-x",
+        "article_type": "case_study_pr",
+        "claim_corroboration": 1,
+        "trust_tier": 1,
+        "is_official": True,
+    }
+    scores_cs = tracker.calculate_story_scores(art_cs)
+    ps = scores_cs["pulse_score"]
+    self.assertLessEqual(ps, 64.0, f"Case study score {ps} must be capped at 64.0")
+    self.assertEqual(scores_cs["signal_badge"], "🏢 Case Study")
+
+    # Verify multiplier: without case_study_pr, baseline score is noticeably higher
+    art_regular = dict(art_cs)
+    art_regular["article_type"] = "frontier_launch"
+    scores_regular = tracker.calculate_story_scores(art_regular)
+    self.assertGreater(scores_regular["pulse_score"], ps)
+
+  def test_hybrid_clustering_anchor_entity_tokens(self):
+    """Phase 5: Unit test that hybrid clustering merges anchor entity tokens despite phrase variance."""
+    art1 = {
+        "title": "Anthropic launches Claude 3.7 Sonnet with hybrid reasoning capabilities",
+        "source": "Anthropic News",
+        "published_datetime": None,
+    }
+    art2 = {
+        "title": "TechCrunch: Benchmarking Claude 3.7 performance across coding evaluations",
+        "source": "TechCrunch AI",
+        "published_datetime": None,
+    }
+    # Despite vocabulary variance, shared anchor model token "claude 3.7" ensures merge
+    self.assertTrue(tracker.compute_hybrid_similarity(art1, art2))
+
+  def test_conditional_http_304_caching(self):
+    """Phase 5: Unit test that conditional HTTP 304 caching avoids redundant downloads."""
+    import urllib.error
+    feed_url = "https://example.com/feed.xml"
+    cache = {
+        feed_url: {
+            "etag": "\"test-etag-456\"",
+            "last_modified": "Mon, 01 Nov 2026 12:00:00 GMT",
+            "cached_items": [{"title": "Cached headline from earlier run", "link": "https://example.com/item1"}]
+        }
+    }
+    class Mock304Error(urllib.error.HTTPError):
+      def __init__(self):
+        super().__init__(feed_url, 304, "Not Modified", {}, None)
+
+    with patch("urllib.request.urlopen", side_effect=Mock304Error()):
+      items, status = tracker.parse_feed_with_fallback_status(feed_url, cache=cache)
+      self.assertEqual(status, 304)
+      self.assertEqual(len(items), 1)
+      self.assertEqual(items[0]["title"], "Cached headline from earlier run")
+
+  def test_build_complete_payload_v21_fields(self):
+    """Phase 5: Integration test that build_complete_payload includes article_type and signal_badge for every item."""
+    dummy_articles = [
+        {
+            "title": "OpenAI announces GPT-4.5 with multimodal reasoning",
+            "summary": "Official announcement of frontier reasoning model GPT-4.5",
+            "link": "https://openai.com/index/gpt-4-5",
+            "source": "OpenAI News",
+            "source_id": "openai_news",
+            "source_type": "official",
+            "trust_tier": 1,
+            "is_official": True,
+            "publisher_id": "openai",
+            "publisher_group_id": "openai",
+            "published_datetime": None,
+        },
+        {
+            "title": "BAIR benchmark analysis on multi-turn agent tool use",
+            "summary": "Academic research paper evaluating benchmark datasets for agents",
+            "link": "https://bair.berkeley.edu/blog/agent-evals",
+            "source": "BAIR Blog",
+            "source_id": "bair_blog",
+            "source_type": "research",
+            "trust_tier": 3,
+            "is_official": True,
+            "publisher_id": "bair",
+            "publisher_group_id": "uc_berkeley",
+            "published_datetime": None,
+        }
+    ]
+    clustered = tracker.cluster_and_deduplicate_articles(dummy_articles)
+    payload = tracker.build_complete_payload(clustered)
+
+    # Check top-level required sections
+    for sec in ["top_stories", "trends", "ai_tools", "dev_radar", "research_safety"]:
+      items = payload.get(sec, [])
+      self.assertIsInstance(items, list)
+      for item in items:
+        self.assertIn("article_type", item, f"Missing article_type in {sec}")
+        self.assertIn(item["article_type"], tracker.VALID_ARTICLE_TYPES)
+        self.assertIn("signal_badge", item, f"Missing signal_badge in {sec}")
+        self.assertEqual(item["signal_badge"], tracker.SIGNAL_BADGE_MAP[item["article_type"]])
+
 
 if __name__ == "__main__":
   unittest.main()

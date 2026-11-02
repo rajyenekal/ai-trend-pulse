@@ -1,0 +1,205 @@
+/* ==========================================================================
+   AI Trend Pulse — Design Tokens & System Variables (css/tokens.css)
+   v2.1 High-Signal Editorial Architecture
+   ========================================================================== */
+
+:root, [data-theme="light"] {
+  /* Surface & Background Colors */
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-hover: #e2e8f0;
+  --bg-drawer: #ffffff;
+  --bg-modal-backdrop: rgba(15, 23, 42, 0.6);
+  
+  /* Borders */
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #0d9488;
+  
+  /* Typography Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  
+  /* Brand Accent */
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-subtle: #f0fdfa;
+  --accent-border: #99f6e4;
+  --accent-text: #0f766e;
+  --accent-solid-text: #ffffff;
+  
+  /* Hyperlinks */
+  --link: #0284c7;
+  --link-hover: #0369a1;
+  
+  /* Operational Status */
+  --status-fresh-bg: #ecfdf5;
+  --status-fresh-border: #a7f3d0;
+  --status-fresh-text: #065f46;
+  --status-fresh-dot: #10b981;
+  
+  --status-cached-bg: #fffbeb;
+  --status-cached-border: #fde68a;
+  --status-cached-text: #92400e;
+  --status-cached-dot: #f59e0b;
+  
+  /* Badges & Pills */
+  --badge-topic-bg: #f1f5f9;
+  --badge-topic-text: #1e293b;
+  --badge-topic-border: #cbd5e1;
+
+  /* 4-Tier Source Trust Registry Colorways */
+  --tier-1-bg: #f5f3ff;
+  --tier-1-border: #ddd6fe;
+  --tier-1-text: #6d28d9;
+  --tier-1-dot: #8b5cf6;
+  --tier-1-glow: rgba(139, 92, 246, 0.22);
+
+  --tier-2-bg: #eff6ff;
+  --tier-2-border: #bfdbfe;
+  --tier-2-text: #1d4ed8;
+  --tier-2-dot: #3b82f6;
+  --tier-2-glow: rgba(59, 130, 246, 0.22);
+
+  --tier-3-bg: #ecfdf5;
+  --tier-3-border: #a7f3d0;
+  --tier-3-text: #047857;
+  --tier-3-dot: #10b981;
+  --tier-3-glow: rgba(16, 185, 129, 0.22);
+
+  --tier-4-bg: #fffbeb;
+  --tier-4-border: #fde68a;
+  --tier-4-text: #b45309;
+  --tier-4-dot: #f59e0b;
+  --tier-4-glow: rgba(245, 158, 11, 0.22);
+
+  /* Card Surfaces & Callouts */
+  --card-featured-bg: #ffffff;
+  --card-featured-border: #cbd5e1;
+  --card-why-bg: #f8fafc;
+  --card-why-border: #0d9488;
+  
+  /* Shadows & Elevation */
+  --card-shadow: 0 2px 8px -1px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 16px 32px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  --hero-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  --focus-ring: rgba(13, 148, 136, 0.4);
+  
+  /* Brand Logos */
+  --logo-box-bg: #f8fafc;
+  --logo-box-border: #e2e8f0;
+  --logo-color: #0f172a;
+}
+
+[data-theme="dark"] {
+  /* Surface & Background Colors */
+  --bg-page: #0a0d12;
+  --bg-surface: #121720;
+  --bg-subtle: #18202c;
+  --bg-elevated: #1d2634;
+  --bg-hover: #242f40;
+  --bg-drawer: #121720;
+  --bg-modal-backdrop: rgba(0, 0, 0, 0.8);
+  
+  /* Borders */
+  --border-subtle: #222d3d;
+  --border-strong: #334155;
+  --border-focus: #2dd4bf;
+  
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8899aa;
+  
+  /* Brand Accent */
+  --accent: #2dd4bf;
+  --accent-hover: #14b8a6;
+  --accent-subtle: rgba(45, 212, 191, 0.12);
+  --accent-border: rgba(45, 212, 191, 0.28);
+  --accent-text: #5eead4;
+  --accent-solid-text: #042f2e;
+  
+  /* Hyperlinks */
+  --link: #38bdf8;
+  --link-hover: #7dd3fc;
+  
+  /* Operational Status */
+  --status-fresh-bg: rgba(16, 185, 129, 0.12);
+  --status-fresh-border: rgba(16, 185, 129, 0.28);
+  --status-fresh-text: #34d399;
+  --status-fresh-dot: #10b981;
+  
+  --status-cached-bg: rgba(245, 158, 11, 0.12);
+  --status-cached-border: rgba(245, 158, 11, 0.28);
+  --status-cached-text: #fbbf24;
+  --status-cached-dot: #f59e0b;
+  
+  /* Badges & Pills */
+  --badge-topic-bg: #1c2635;
+  --badge-topic-text: #e2e8f0;
+  --badge-topic-border: #2c3a4f;
+
+  /* 4-Tier Source Trust Registry Colorways */
+  --tier-1-bg: rgba(139, 92, 246, 0.14);
+  --tier-1-border: rgba(139, 92, 246, 0.35);
+  --tier-1-text: #c4b5fd;
+  --tier-1-dot: #a78bfa;
+  --tier-1-glow: rgba(139, 92, 246, 0.35);
+
+  --tier-2-bg: rgba(59, 130, 246, 0.14);
+  --tier-2-border: rgba(59, 130, 246, 0.35);
+  --tier-2-text: #93c5fd;
+  --tier-2-dot: #60a5fa;
+  --tier-2-glow: rgba(59, 130, 246, 0.35);
+
+  --tier-3-bg: rgba(16, 185, 129, 0.14);
+  --tier-3-border: rgba(16, 185, 129, 0.35);
+  --tier-3-text: #6ee7b7;
+  --tier-3-dot: #34d399;
+  --tier-3-glow: rgba(16, 185, 129, 0.35);
+
+  --tier-4-bg: rgba(245, 158, 11, 0.14);
+  --tier-4-border: rgba(245, 158, 11, 0.35);
+  --tier-4-text: #fcd34d;
+  --tier-4-dot: #fbbf24;
+  --tier-4-glow: rgba(245, 158, 11, 0.35);
+
+  /* Card Surfaces & Callouts */
+  --card-featured-bg: #121720;
+  --card-featured-border: #242f40;
+  --card-why-bg: rgba(18, 23, 32, 0.85);
+  --card-why-border: #2dd4bf;
+  
+  /* Shadows & Elevation */
+  --card-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.35), 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+  --card-shadow-hover: 0 20px 36px -4px rgba(0, 0, 0, 0.65), 0 6px 16px -2px rgba(0, 0, 0, 0.4);
+  --hero-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.5);
+  --focus-ring: rgba(45, 212, 191, 0.4);
+  
+  /* Brand Logos */
+  --logo-box-bg: #161d28;
+  --logo-box-border: #242f40;
+  --logo-color: #f8fafc;
+}
+
+/* Typography, Sizing & Layout Constants */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --site-max-width: 1360px;
+  --header-height: 64px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+  
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}

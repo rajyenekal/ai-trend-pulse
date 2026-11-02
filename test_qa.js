@@ -7,9 +7,12 @@ console.log('🧪 Starting AI Trend Pulse QA & Test Suite...\n');
 // 1. Read files
 const htmlContent = fs.readFileSync('index.html', 'utf8');
 const dataContent = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+const tokensCss = fs.readFileSync('css/tokens.css', 'utf8');
+const stylesCss = fs.readFileSync('css/styles.css', 'utf8');
+const fullCssContent = htmlContent + '\n' + tokensCss + '\n' + stylesCss;
 
 // 2. Validate HTML Structure
-console.log('▶ [1/5] Checking HTML structure and semantics...');
+console.log('▶ [1/6] Checking HTML structure and semantics...');
 const requiredIDs = [
   'status-text',
   'btn-audio',
@@ -85,7 +88,9 @@ const requiredIDs = [
   'reader-potential-impact',
   'reader-limitations-box',
   'reader-limitations-text',
-  'status-source-telemetry'
+  'status-source-telemetry',
+  'bento-container',
+  'btn-hide-case-studies'
 ];
 
 let missingIDs = [];
@@ -99,7 +104,7 @@ if (missingIDs.length > 0) {
   console.error('❌ Missing expected element IDs:', missingIDs);
   process.exit(1);
 } else {
-  console.log(`✅ All ${requiredIDs.length} required element IDs present.`);
+  console.log(`✅ All ${requiredIDs.length} required element IDs present in modular HTML shell.`);
 }
 
 // Check semantic elements
@@ -113,14 +118,14 @@ semanticTags.forEach(tag => {
 console.log('✅ Semantic tags verified (<header>, <main>, <section>, <article>, <aside>, <footer>, etc.).');
 
 // 3. Extract and Validate JavaScript Execution
-console.log('\n▶ [2/5] Validating JavaScript execution and data binding...');
-const scriptRegex = /<script>([\s\S]*?)<\/script>/gi;
-let match;
-let scriptBlocks = [];
-while ((match = scriptRegex.exec(htmlContent)) !== null) {
-  scriptBlocks.push(match[1]);
-}
-const mainScript = scriptBlocks[scriptBlocks.length - 1];
+console.log('\n▶ [2/6] Validating JavaScript execution and data binding...');
+const jsFiles = ['js/state.js', 'js/render.js', 'js/drawer.js', 'js/app.js'];
+let mainScript = jsFiles.map(f => fs.readFileSync(f, 'utf8')).join('\n');
+// Strip ES import/export statements for Node VM execution
+mainScript = mainScript
+  .replace(/^\s*import\s+[^;]+;\s*$/gm, '')
+  .replace(/^\s*export\s+(async\s+function|function|const|let|var|class)\s+/gm, '$1 ')
+  .replace(/^\s*export\s+default\s+/gm, '');
 
 // Create Mock Browser Environment
 class MockClassList {
@@ -153,6 +158,25 @@ class MockElement {
   set innerHTML(val) {
     this._innerHTML = val;
     this.children = [];
+    if (!val) return;
+    const regex = /<(article|li|button|div|tr|p|span)([^>]*)>([\s\S]*?)<\/\1>/gi;
+    let m;
+    while ((m = regex.exec(val)) !== null) {
+      const el = new MockElement(m[1]);
+      el.textContent = m[3].replace(/<[^>]+>/g, '').trim();
+      el.innerHTML = m[3];
+      this.children.push(el);
+    }
+    if (this.children.length === 0) {
+      const openMatches = val.match(/<(article|li|button|div|tr|p|span)[^>]*>/gi);
+      if (openMatches) {
+        openMatches.forEach(tag => {
+          const tMatch = tag.match(/<([a-zA-Z0-9]+)/);
+          const tName = tMatch ? tMatch[1] : 'div';
+          this.children.push(new MockElement(tName));
+        });
+      }
+    }
   }
   get firstElementChild() { return this.children[0] || null; }
   setAttribute(k, v) { this.attributes[k] = v; }
@@ -188,8 +212,10 @@ const mockWindow = {
   localStorage: mockLocalStorage,
   speechSynthesis: { cancel: () => {}, speak: () => {} },
   SpeechSynthesisUtterance: function(text) { this.text = text; },
-  open: () => {}
+  open: () => {},
+  document: mockDocument
 };
+mockWindow.window = mockWindow;
 
 const sandbox = {
   window: mockWindow,
@@ -237,6 +263,14 @@ if (devCardCount < 1) {
   process.exit(1);
 }
 
+// Verify Top 5 Bento Container
+const bentoCount = mockElements['bento-container'].children.length;
+console.log(`✅ Top 5 Bento Grid populated with ${bentoCount} elements.`);
+if (bentoCount < 1) {
+  console.error(`❌ Expected bento items, got ${bentoCount}`);
+  process.exit(1);
+}
+
 // Verify Curated Domain Sections
 const aiToolsCount = mockElements['ai-tools-container'].children.length;
 const devRadarCount = mockElements['dev-radar-container'].children.length;
@@ -250,7 +284,7 @@ if (aiToolsCount < 1 || devRadarCount < 1 || researchSafetyCount < 1) {
 }
 
 // 4. Test Interactive Functions (Save, Search, Theme, Filter, Sort)
-console.log('\n▶ [3/5] Testing state, storage, search and filtering...');
+console.log('\n▶ [3/6] Testing state, storage, search and filtering...');
 
 // Test Theme Switcher
 sandbox.setThemePreference('light');
@@ -285,9 +319,12 @@ console.log(`✅ Search filter query "OpenAI" returned ${filteredBySearch} resul
 sandbox.handleSearchInput('');
 
 // Test Topic filtering
-sandbox.selectTopicFilter('Model Releases');
+const sampleTopic = (dataContent.top_stories && dataContent.top_stories[0])
+  ? (dataContent.top_stories[0].category || dataContent.top_stories[0].topic)
+  : 'AI Models & Research';
+sandbox.selectTopicFilter(sampleTopic);
 const filteredByTopic = mockElements['developments-container'].children.length;
-console.log(`✅ Topic filter "Model Releases" returned ${filteredByTopic} results.`);
+console.log(`✅ Topic filter "${sampleTopic}" returned ${filteredByTopic} results.`);
 sandbox.resetAllFilters();
 
 // Test In-App Reader View & Deep Dive
@@ -405,7 +442,7 @@ if (mockElements['methodology-backdrop'].classList.contains('open')) {
 console.log('✅ Methodology Modal (open/close, transparency tables, scoring formula) verified.');
 
 // 5. Test 3-Tier Image System & Indian Standard Time formatting
-console.log('\n▶ [4/5] Testing 3-tier image system, signature lab visuals, and IST formatting...');
+console.log('\n▶ [4/6] Testing 3-tier image system, signature lab visuals, and IST formatting...');
 const agentImg = sandbox.getTopicImageUrl('AI Agents');
 const fallbackSVG = sandbox.getTopicFallbackSVG('AI Agents');
 
@@ -442,33 +479,99 @@ if (!istFormatted || !istFormatted.includes('IST')) {
 console.log('✅ Curated topic imagery, signature lab visuals (OpenAI, Claude, NVIDIA), & IST time verified.');
 
 // 6. Test Responsive CSS & Viewport Coverage
-console.log('\n▶ [5/5] Testing mobile-first CSS rules and target viewports...');
+console.log('\n▶ [5/6] Testing mobile-first CSS rules and target viewports...');
 const viewports = [320, 360, 375, 390, 414, 430, 768, 1024, 1280, 1440];
 
-// Verify responsive features in CSS
+// Verify responsive features across full modular CSS
 const cssChecks = [
   { name: 'overflow-x prevention', pattern: /overflow-x:\s*(clip|hidden)/i },
   { name: 'min 44px touch targets', pattern: /min-height:\s*44px/i },
   { name: 'clamp typography', pattern: /clamp\(/i },
   { name: 'aspect-ratio 16/9', pattern: /aspect-ratio:\s*16\s*\/\s*9/i },
-  { name: 'mobile horizontal scroll for pulse', pattern: /scroll-snap-type:\s*x/i },
   { name: 'safe-area-inset support', pattern: /safe-area-inset/i },
-  { name: 'card featured styling', pattern: /\.card-featured/i },
-  { name: 'card grouped styling', pattern: /\.card-grouped/i },
   { name: 'card standard styling', pattern: /\.card-standard/i },
+  { name: 'bento grid styling', pattern: /\.bento-container/i },
+  { name: 'wire table styling', pattern: /\.wire-table/i },
   { name: 'drawer bottom-sheet on mobile', pattern: /@media\s*\(max-width:\s*640px\)/i },
   { name: 'tablet/desktop media queries', pattern: /@media\s*\(min-width:\s*768px\)/i },
   { name: 'wide desktop media queries', pattern: /@media\s*\(min-width:\s*900px\)/i }
 ];
 
 cssChecks.forEach(check => {
-  if (!check.pattern.test(htmlContent)) {
+  if (!check.pattern.test(fullCssContent)) {
     console.error(`❌ CSS missing required rule: ${check.name}`);
     process.exit(1);
   }
 });
-console.log(`✅ All ${cssChecks.length} mobile-first CSS architecture patterns verified.`);
+console.log(`✅ All ${cssChecks.length} mobile-first CSS architecture patterns verified across css/tokens.css & css/styles.css.`);
 console.log(`✅ All ${viewports.length} target viewports (${viewports.join('px, ')}px) supported via fluid clamp() and media queries.`);
 
-console.log('\n🎉 ALL QA CHECKS PASSED SUCCESSFULLY!\n');
+// 7. Phase 5 New Verification Checklist: article_type taxonomy, Compact Wire, Hide Case Studies
+console.log('\n▶ [6/6] Phase 5: Testing v2.1 taxonomy, Compact Wire, and Case Studies filter...');
 
+const VALID_ARTICLE_TYPES = new Set([
+  'frontier_launch',
+  'open_source_release',
+  'research_paper',
+  'sdk_api_update',
+  'security_vulnerability',
+  'policy_regulation',
+  'case_study_pr',
+  'opinion_commentary'
+]);
+
+const sectionsToValidate = [
+  { name: 'top_stories', items: dataContent.top_stories || [] },
+  { name: 'trends', items: dataContent.trends || [] },
+  { name: 'ai_tools', items: dataContent.ai_tools || [] },
+  { name: 'dev_radar', items: dataContent.dev_radar || [] },
+  { name: 'research_safety', items: dataContent.research_safety || [] }
+];
+
+let totalValidatedItems = 0;
+sectionsToValidate.forEach(sec => {
+  sec.items.forEach((item, idx) => {
+    totalValidatedItems++;
+    if (!item.article_type || !VALID_ARTICLE_TYPES.has(item.article_type)) {
+      console.error(`❌ ${sec.name}[${idx}] ("${item.title}") has invalid article_type: "${item.article_type}"`);
+      process.exit(1);
+    }
+    if (!item.signal_badge || typeof item.signal_badge !== 'string' || item.signal_badge.trim() === '') {
+      console.error(`❌ ${sec.name}[${idx}] ("${item.title}") has empty signal_badge!`);
+      process.exit(1);
+    }
+  });
+});
+console.log(`✅ Verified ${totalValidatedItems} items across all sections in data.json carry valid article_type and signal_badge.`);
+
+// Test Compact Wire Layout View
+sandbox.setLayoutView('wire');
+const wireHTML = mockElements['developments-container'].innerHTML;
+if (!wireHTML.includes('wire-table') && !wireHTML.includes('wire-row')) {
+  console.error('❌ Compact Wire view failed to render tabular wire structure.');
+  process.exit(1);
+}
+console.log('✅ Compact Wire tabular view successfully rendered without layout failure.');
+sandbox.setLayoutView('cards'); // restore card layout
+
+// Test Hide Case Studies Filter
+sandbox.resetAllFilters();
+const totalCardsBefore = mockElements['developments-container'].children.length;
+sandbox.toggleHideCaseStudies();
+const totalCardsAfter = mockElements['developments-container'].children.length;
+const containerHTML = mockElements['developments-container'].innerHTML;
+
+const caseStudyTitles = (dataContent.top_stories || [])
+  .filter(s => s.article_type === 'case_study_pr')
+  .map(s => s.title);
+
+caseStudyTitles.forEach(t => {
+  if (containerHTML.includes(t)) {
+    console.error(`❌ Case study story "${t}" was NOT hidden when hideCaseStudies is active!`);
+    process.exit(1);
+  }
+});
+console.log(`✅ Hide Case Studies filter verified: ${caseStudyTitles.length} case study items excluded (cards: ${totalCardsBefore} -> ${totalCardsAfter}).`);
+sandbox.toggleHideCaseStudies(); // restore
+
+console.log('\n🎉 ALL QA CHECKS PASSED SUCCESSFULLY!\n');

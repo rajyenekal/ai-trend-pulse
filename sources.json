@@ -533,5 +533,77 @@
     "publisher_group_id": "import_ai",
     "is_primary_source": false,
     "publisher_owns_feed": true
+  },
+  {
+    "source_id": "lmsys_org",
+    "name": "LMSYS Org",
+    "canonical_listing_url": "https://lmsys.org/blog/",
+    "feed_url": "https://lmsys.org/feed.xml",
+    "source_type": "research",
+    "topic_tags": [
+      "benchmarks",
+      "evaluations",
+      "leaderboard"
+    ],
+    "trust_tier": 3,
+    "confidence_score": 85,
+    "is_official": false,
+    "feed_is_official": true,
+    "fetch_method": "rss",
+    "enabled": true,
+    "poll_interval_minutes": 60,
+    "notes": "LMSYS Chatbot Arena benchmarks, leaderboards, and LLM evaluation methodology updates.",
+    "publisher_id": "lmsys",
+    "publisher_group_id": "lmsys",
+    "is_primary_source": true,
+    "publisher_owns_feed": true
+  },
+  {
+    "source_id": "latent_space",
+    "name": "Latent Space",
+    "canonical_listing_url": "https://www.latent.space",
+    "feed_url": "https://www.latent.space/feed",
+    "source_type": "practitioner",
+    "topic_tags": [
+      "engineering",
+      "podcasts",
+      "analysis"
+    ],
+    "trust_tier": 4,
+    "confidence_score": 75,
+    "is_official": false,
+    "feed_is_official": true,
+    "fetch_method": "rss",
+    "enabled": true,
+    "poll_interval_minutes": 60,
+    "notes": "High-signal AI engineer publication covering infrastructure, models, and industry analysis.",
+    "publisher_id": "latent_space",
+    "publisher_group_id": "latent_space",
+    "is_primary_source": false,
+    "publisher_owns_feed": true
+  },
+  {
+    "source_id": "hf_daily_papers",
+    "name": "Hugging Face Daily Papers",
+    "canonical_listing_url": "https://huggingface.co/papers",
+    "feed_url": "https://huggingface.co/papers/feed.xml",
+    "source_type": "research",
+    "topic_tags": [
+      "papers",
+      "research",
+      "preprints"
+    ],
+    "trust_tier": 3,
+    "confidence_score": 85,
+    "is_official": false,
+    "feed_is_official": true,
+    "fetch_method": "rss",
+    "enabled": true,
+    "poll_interval_minutes": 60,
+    "notes": "Daily curated top research papers and arXiv highlights from the Hugging Face AI community.",
+    "publisher_id": "huggingface",
+    "publisher_group_id": "huggingface",
+    "is_primary_source": true,
+    "publisher_owns_feed": true
   }
 ]

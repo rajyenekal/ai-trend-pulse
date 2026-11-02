@@ -37,6 +37,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Cache Feed ETag & Conditional State
+        uses: actions/cache@v4
+        with:
+          path: .feed_cache.json
+          key: feed-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            feed-cache-${{ runner.os }}-
+
       - name: Install Dependencies
         run: pip install feedparser google-genai
 
@@ -53,17 +61,52 @@ jobs:
       - name: Run Test Suite
         run: npm test
 
-      - name: Safely Commit and Push data.json
+      - name: Check Editorial Delta and Commit
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -f data.json ]; then
+          
+          if [ ! -f data.json ]; then
+            echo "data.json not found, skipping commit."
+            exit 0
+          fi
+
+          # Check if data.json contains meaningful editorial delta vs HEAD
+          SHOULD_COMMIT=$(python3 -c '
+          import json, subprocess, sys
+
+          try:
+              with open("data.json") as f:
+                  new_data = json.load(f)
+          except Exception:
+              sys.exit(0)
+
+          try:
+              old_raw = subprocess.check_output(["git", "show", "HEAD:data.json"], stderr=subprocess.DEVNULL).decode("utf-8")
+              old_data = json.loads(old_raw)
+          except Exception:
+              print("YES")
+              sys.exit(0)
+
+          def get_sig(d):
+              stories = d.get("top_stories", [])
+              return [(s.get("id") or s.get("title"), s.get("pulse_score"), s.get("article_type")) for s in stories]
+
+          if get_sig(new_data) != get_sig(old_data):
+              print("YES")
+          else:
+              print("NO")
+          ')
+
+          if [ "$SHOULD_COMMIT" = "YES" ]; then
             git add data.json
             if ! git diff --staged --quiet; then
-              git commit -m "Auto-update AI Trends"
+              git commit -m "Auto-update AI Trends [editorial delta]"
               git pull --rebase origin main
               git push
             else
-              echo "No new news changes detected in data.json"
+              echo "No staged git changes."
             fi
+          else
+            echo "Skipping commit: data.json only contained timestamp updates with no editorial delta."
           fi
