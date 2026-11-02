@@ -11,6 +11,10 @@ import {
   toggleSaveItem,
   updateSavedCountLabel,
   getFilteredStories,
+  setUserFilter,
+  toggleUserFilter,
+  setSectionFilter,
+  persistUserFilters,
 } from './state.js';
 
 import {
@@ -101,6 +105,7 @@ export function renderCompleteUI(data) {
   // 2. Render sections
   renderDailyOverview(data.daily_overview, data);
   renderTop5Bento(data.top_stories || []);
+  syncFilterControlsUI();
   reRenderDevelopments();
   renderDispatches(data.top_stories || []);
   renderTopicPills(CANONICAL_CATEGORIES, counts);
@@ -134,10 +139,69 @@ export function selectTopicFilter(topic) {
   reRenderDevelopments();
 }
 
+export function handleSectionFilterChange(section, btnEl) {
+  setSectionFilter(section);
+  const bar = document.getElementById('editorial-filter-bar');
+  if (bar) {
+    bar.querySelectorAll('.editorial-filter-pill').forEach(btn => {
+      const isAct = btn.getAttribute('data-section') === section;
+      btn.classList.toggle('active', isAct);
+      btn.setAttribute('aria-selected', isAct ? 'true' : 'false');
+    });
+  }
+  reRenderDevelopments();
+}
+
+export function toggleFilter(filterKey) {
+  toggleUserFilter(filterKey);
+  syncFilterControlsUI();
+  reRenderDevelopments();
+}
+
+export function syncFilterControlsUI() {
+  const csBtn = document.getElementById('btn-hide-case-studies');
+  if (csBtn) {
+    csBtn.classList.toggle('active', Boolean(state.hideCaseStudies || state.userFilters?.hideCaseStudies));
+  }
+  const preprintsBtn = document.getElementById('btn-hide-preprints');
+  if (preprintsBtn) {
+    preprintsBtn.classList.toggle('active', Boolean(state.userFilters?.hidePreprints));
+  }
+  const minorBtn = document.getElementById('btn-hide-minor');
+  if (minorBtn) {
+    minorBtn.classList.toggle('active', Boolean(state.userFilters?.hideMinorUpdates));
+  }
+  const fundingBtn = document.getElementById('btn-hide-funding');
+  if (fundingBtn) {
+    fundingBtn.classList.toggle('active', Boolean(state.userFilters?.hideFunding));
+  }
+  const opinionBtn = document.getElementById('btn-hide-opinion');
+  if (opinionBtn) {
+    opinionBtn.classList.toggle('active', Boolean(state.userFilters?.hideOpinion));
+  }
+  const bar = document.getElementById('editorial-filter-bar');
+  if (bar) {
+    bar.querySelectorAll('.editorial-filter-pill').forEach(btn => {
+      const isAct = btn.getAttribute('data-section') === state.activeSectionFilter;
+      btn.classList.toggle('active', isAct);
+      btn.setAttribute('aria-selected', isAct ? 'true' : 'false');
+    });
+  }
+}
+
 export function resetAllFilters() {
   state.activeTopic = 'All';
   state.searchQuery = '';
   state.hideCaseStudies = false;
+  state.activeSectionFilter = 'all';
+  if (state.userFilters) {
+    state.userFilters.hideCaseStudies = false;
+    state.userFilters.hidePreprints = false;
+    state.userFilters.hideMinorUpdates = false;
+    state.userFilters.hideFunding = false;
+    state.userFilters.hideOpinion = false;
+  }
+  persistUserFilters();
   state.advancedFilters.tiers = new Set([1, 2, 3, 4]);
   state.advancedFilters.minScore = 0;
   
@@ -151,6 +215,7 @@ export function resetAllFilters() {
     });
   }
 
+  syncFilterControlsUI();
   updateModalSearchResults();
   reRenderDevelopments();
 }
@@ -164,10 +229,8 @@ export function setLayoutView(viewMode) {
 }
 
 export function toggleHideCaseStudies() {
-  state.hideCaseStudies = !state.hideCaseStudies;
-  try {
-    localStorage.setItem('ai_trend_hide_case_studies', String(state.hideCaseStudies));
-  } catch (e) {}
+  toggleUserFilter('hideCaseStudies');
+  syncFilterControlsUI();
   reRenderDevelopments();
 }
 
@@ -391,6 +454,9 @@ if (typeof window !== 'undefined') {
   window.resetAllFilters = resetAllFilters;
   window.setLayoutView = setLayoutView;
   window.toggleHideCaseStudies = toggleHideCaseStudies;
+  window.toggleFilter = toggleFilter;
+  window.handleSectionFilterChange = handleSectionFilterChange;
+  window.syncFilterControlsUI = syncFilterControlsUI;
   window.handleSortChange = handleSortChange;
   window.openReaderView = openReaderView;
   window.closeReaderView = closeReaderView;

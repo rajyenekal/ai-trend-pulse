@@ -4,7 +4,7 @@ pipeline.clustering - Hybrid Lexical + Entity Semantic Clustering and Deduplicat
 
 from datetime import datetime, timezone
 import re
-from .scorer import calculate_story_scores
+from .scorer import calculate_story_scores, classify_article_type
 from .fetcher import PUBLISHER_ORGANIZATION_MAP
 
 # -------------------------------------------------------------
@@ -13,11 +13,12 @@ from .fetcher import PUBLISHER_ORGANIZATION_MAP
 ANCHOR_ENTITY_TOKENS = {
     "gpt", "gpt-4", "gpt-4o", "gpt-5", "chatgpt", "o1", "o3", "o3-mini", "o4",
     "claude", "claude 3.7", "claude 3.5", "sonnet", "haiku", "opus",
-    "gemini", "gemini 2.0", "gemini 1.5", "gemini-flash", "gemini-pro",
+    "gemini", "gemini 2.0", "gemini 1.5", "gemini 4", "gemini-flash", "gemini-pro",
+    "genie", "genie 4", "world simulation",
     "llama", "llama-3", "llama-3.3", "llama 3.3", "llama-4",
     "deepseek", "deepseek-r1", "deepseek r1", "deepseek-v3", "r1", "v3",
-    "mistral", "mixtral", "codestral", "pixtral",
-    "qwen", "qwen-2.5", "qwen 2.5",
+    "mistral", "mixtral", "codestral", "pixtral", "voxtral", "voxtral 3",
+    "qwen", "qwen-2.5", "qwen 2.5", "qwen 3",
     "grok", "grok-2", "grok-3",
     "copilot", "sora", "midjourney", "stable diffusion",
     "codex", "streamvibe", "mcp", "model context protocol",
@@ -26,9 +27,10 @@ ANCHOR_ENTITY_TOKENS = {
 KNOWN_MODEL_KEYWORDS = {
     "claude": {"claude", "sonnet", "haiku", "opus"},
     "gemini": {"gemini"},
+    "genie": {"genie"},
     "gpt": {"gpt", "chatgpt", "o1", "o3", "o4"},
     "llama": {"llama"},
-    "mistral": {"mistral", "mixtral", "codestral", "pixtral"},
+    "mistral": {"mistral", "mixtral", "codestral", "pixtral", "voxtral"},
     "deepseek": {"deepseek", "r1", "v3"},
     "grok": {"grok"},
     "copilot": {"copilot"},
@@ -105,6 +107,11 @@ def compute_hybrid_similarity(art1, art2, similarity_threshold=0.38):
   """Evaluates hybrid lexical + entity/semantic similarity between two articles.
   Returns True if the stories should be merged into the same cluster.
   """
+  u1 = (art1.get("link") or "").strip().rstrip("/")
+  u2 = (art2.get("link") or "").strip().rstrip("/")
+  if u1 and u2 and u1.lower() == u2.lower():
+    return True
+
   title1 = art1.get("title", "")
   title2 = art2.get("title", "")
 
@@ -284,6 +291,17 @@ def cluster_and_deduplicate_articles(raw_articles, similarity_threshold=0.38):
     # Truthful evidence provenance and independent source counting
     evidence_meta = determine_evidence_metadata(lead, related_sources)
     lead.update(evidence_meta)
+    lead["independent_publisher_count"] = evidence_meta.get("independent_source_count", 1)
+
+    # First publication & latest update tracking across cluster
+    pub_times = [it.get("published_at") or it.get("published") for it in group if it.get("published_at") or it.get("published")]
+    lead["first_published_at"] = pub_times[0] if pub_times else lead.get("published")
+    lead["latest_updated_at"] = pub_times[-1] if pub_times else lead.get("published")
+
+    # Deterministically classify article intent type based on lead metadata
+    lead["article_type"] = classify_article_type(
+        lead.get("title", ""), lead.get("summary", ""), lead.get("link", ""), lead.get("source_type", "publication"), lead.get("is_official", False)
+    )
 
     # Calculate scores with grounded corroboration signal and intent multipliers
     scores = calculate_story_scores(lead, corroboration_count=lead["independent_source_count"])

@@ -209,10 +209,6 @@
               <option value="title">Headline (A-Z)</option>
             </select>
 
-            <button id="btn-hide-case-studies" class="btn-toggle-filter" onclick="toggleHideCaseStudies()" title="Hide marketing case studies & press releases">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-              <span>Hide Case Studies</span>
-            </button>
             <div class="view-toggle-btns" role="group" aria-label="Layout view">
               <button id="view-grid-btn" class="view-toggle-btn active" onclick="setLayoutView('grid')" title="Grid view" aria-label="Grid view">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
@@ -222,6 +218,37 @@
               </button>
             </div>
           </div>
+        </div>
+
+        <!-- Practical Editorial Section Filters -->
+        <div id="editorial-filter-bar" class="editorial-filter-bar" role="tablist" aria-label="Editorial Section Filters">
+          <button class="editorial-filter-pill active" data-section="all" onclick="handleSectionFilterChange('all', this)" role="tab" aria-selected="true">All Intelligence</button>
+          <button class="editorial-filter-pill" data-section="briefing" onclick="handleSectionFilterChange('briefing', this)" role="tab" aria-selected="false">⚡ Briefing</button>
+          <button class="editorial-filter-pill" data-section="research" onclick="handleSectionFilterChange('research', this)" role="tab" aria-selected="false">🔬 Research</button>
+          <button class="editorial-filter-pill" data-section="developer" onclick="handleSectionFilterChange('developer', this)" role="tab" aria-selected="false">💻 Developer</button>
+          <button class="editorial-filter-pill" data-section="industry" onclick="handleSectionFilterChange('industry', this)" role="tab" aria-selected="false">🏢 Industry</button>
+          <button class="editorial-filter-pill" data-section="safety" onclick="handleSectionFilterChange('safety', this)" role="tab" aria-selected="false">🛡️ Safety &amp; Policy</button>
+        </div>
+
+        <!-- Editorial Noise Reduction Toggles -->
+        <div class="editorial-toggles-bar" aria-label="Content type noise reduction">
+          <span class="editorial-toggles-label font-mono">NOISE REDUCTION:</span>
+          <button id="btn-hide-case-studies" class="btn-toggle-filter" onclick="toggleHideCaseStudies()" title="Hide marketing case studies & press releases">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            <span>Hide Case Studies</span>
+          </button>
+          <button id="btn-hide-preprints" class="btn-toggle-filter" onclick="toggleFilter('hidePreprints')" title="Hide uncorroborated arXiv preprints">
+            <span>Hide Preprints</span>
+          </button>
+          <button id="btn-hide-minor" class="btn-toggle-filter" onclick="toggleFilter('hideMinorUpdates')" title="Hide routine minor version updates">
+            <span>Hide Minor Updates</span>
+          </button>
+          <button id="btn-hide-funding" class="btn-toggle-filter" onclick="toggleFilter('hideFunding')" title="Hide venture capital funding rounds">
+            <span>Hide Funding</span>
+          </button>
+          <button id="btn-hide-opinion" class="btn-toggle-filter" onclick="toggleFilter('hideOpinion')" title="Hide commentary and opinion columns">
+            <span>Hide Opinion</span>
+          </button>
         </div>
 
         <!-- Hidden input and clear button for test script compatibility -->

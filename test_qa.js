@@ -517,7 +517,8 @@ const VALID_ARTICLE_TYPES = new Set([
   'security_vulnerability',
   'policy_regulation',
   'case_study_pr',
-  'opinion_commentary'
+  'opinion_commentary',
+  'routine_minor_update'
 ]);
 
 const sectionsToValidate = [

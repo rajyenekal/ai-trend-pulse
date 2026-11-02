@@ -8,6 +8,8 @@ const STORAGE_KEYS = {
   BOOKMARKS: 'ai_trend_saved_stories_v2',
   VIEW_MODE: 'ai_trend_view_mode',
   HIDE_CASE_STUDIES: 'ai_trend_hide_case_studies',
+  USER_FILTERS: 'ai_trend_editorial_user_filters',
+  ACTIVE_SECTION: 'ai_trend_active_section_filter',
 };
 
 export const state = {
@@ -15,6 +17,14 @@ export const state = {
   activeView: 'cards', // 'cards' (editorial grid) or 'wire' (compact scannable rows)
   hideCaseStudies: false,
   activeTopic: 'All',
+  activeSectionFilter: 'all', // 'all', 'briefing', 'research', 'developer', 'industry', 'safety'
+  userFilters: {
+    hideCaseStudies: false,
+    hidePreprints: false,
+    hideMinorUpdates: false,
+    hideFunding: false,
+    hideOpinion: false,
+  },
   activeDevLanguage: 'All',
   searchQuery: '',
   currentSort: 'latest',
@@ -32,8 +42,20 @@ export function initState() {
   try {
     state.themePreference = localStorage.getItem(STORAGE_KEYS.THEME) || 'system';
     state.activeView = localStorage.getItem(STORAGE_KEYS.VIEW_MODE) || 'cards';
-    state.hideCaseStudies = localStorage.getItem(STORAGE_KEYS.HIDE_CASE_STUDIES) === 'true';
-    
+    state.activeSectionFilter = localStorage.getItem(STORAGE_KEYS.ACTIVE_SECTION) || 'all';
+
+    const savedLegacyHide = localStorage.getItem(STORAGE_KEYS.HIDE_CASE_STUDIES) === 'true';
+    const savedUserFilters = localStorage.getItem(STORAGE_KEYS.USER_FILTERS);
+    if (savedUserFilters) {
+      try {
+        const parsed = JSON.parse(savedUserFilters);
+        state.userFilters = Object.assign({}, state.userFilters, parsed);
+      } catch (e) {}
+    } else if (savedLegacyHide) {
+      state.userFilters.hideCaseStudies = true;
+    }
+    state.hideCaseStudies = Boolean(state.userFilters.hideCaseStudies);
+
     const saved = localStorage.getItem(STORAGE_KEYS.BOOKMARKS);
     if (saved) {
       state.savedStories = JSON.parse(saved);
@@ -41,6 +63,41 @@ export function initState() {
   } catch (e) {
     console.warn('LocalStorage unavailable or corrupted:', e);
   }
+}
+
+export function persistUserFilters() {
+  try {
+    localStorage.setItem(STORAGE_KEYS.USER_FILTERS, JSON.stringify(state.userFilters));
+    localStorage.setItem(STORAGE_KEYS.HIDE_CASE_STUDIES, String(state.userFilters.hideCaseStudies));
+    localStorage.setItem(STORAGE_KEYS.ACTIVE_SECTION, state.activeSectionFilter);
+  } catch (e) {}
+}
+
+export function setUserFilter(key, value) {
+  if (key in state.userFilters) {
+    state.userFilters[key] = Boolean(value);
+    if (key === 'hideCaseStudies') {
+      state.hideCaseStudies = state.userFilters.hideCaseStudies;
+    }
+    persistUserFilters();
+  }
+}
+
+export function toggleUserFilter(key) {
+  if (key in state.userFilters) {
+    state.userFilters[key] = !state.userFilters[key];
+    if (key === 'hideCaseStudies') {
+      state.hideCaseStudies = state.userFilters.hideCaseStudies;
+    }
+    persistUserFilters();
+    return state.userFilters[key];
+  }
+  return false;
+}
+
+export function setSectionFilter(section) {
+  state.activeSectionFilter = section || 'all';
+  persistUserFilters();
 }
 
 // -------------------------------------------------------------
@@ -120,12 +177,50 @@ export function getFilteredStories(stories) {
   if (!stories || !Array.isArray(stories)) return [];
 
   return stories.filter(story => {
-    // 1. Hide vendor PR / single-source case studies toggle
-    if (state.hideCaseStudies && story.article_type === 'case_study_pr') {
+    const artType = story.article_type || '';
+    const titleLower = (story.title || '').toLowerCase();
+    const summaryLower = (story.summary || '').toLowerCase();
+
+    // 1. User Filter Toggles: Case Studies, Preprints, Minor Updates, Funding, Opinion
+    if ((state.hideCaseStudies || state.userFilters?.hideCaseStudies) && (artType === 'case_study_pr' || titleLower.includes('case study') || (titleLower.includes('how ') && titleLower.includes(' uses ')))) {
+      return false;
+    }
+    if (state.userFilters?.hidePreprints && (artType === 'research_paper' || story.evidence_status === 'research_preprint' || (story.source && story.source.toLowerCase().includes('arxiv')))) {
+      return false;
+    }
+    if (state.userFilters?.hideMinorUpdates && artType === 'routine_minor_update') {
+      return false;
+    }
+    if (state.userFilters?.hideFunding && (titleLower.includes('raises $') || titleLower.includes('secures $') || titleLower.includes('series a') || titleLower.includes('series b') || titleLower.includes('series c') || titleLower.includes('funding round') || titleLower.includes('valuation'))) {
+      return false;
+    }
+    if (state.userFilters?.hideOpinion && (artType === 'opinion_commentary' || titleLower.startsWith('opinion:') || titleLower.startsWith('analysis:') || story.trust_tier === 4)) {
       return false;
     }
 
-    // 2. Topic category filter
+    // 2. Section Filter: Briefing, Research, Developer, Industry, Safety
+    if (state.activeSectionFilter && state.activeSectionFilter !== 'all') {
+      const cat = story.category || story.topic || '';
+      const sec = state.activeSectionFilter.toLowerCase();
+      if (sec === 'briefing') {
+        const isEligible = story.eligible_for_briefing !== false && (Number(story.pulse_score || story.overall_score || 0) >= 78 || (story.claim_corroboration && story.claim_corroboration > 1));
+        if (!isEligible) return false;
+      } else if (sec === 'research') {
+        const isResearch = artType === 'research_paper' || cat === 'AI Models & Research' || story.trust_tier === 3 || (story.source && story.source.toLowerCase().includes('arxiv'));
+        if (!isResearch) return false;
+      } else if (sec === 'developer') {
+        const isDev = artType === 'sdk_api_update' || cat === 'AI Products & Tools' || ['api', 'sdk', 'code', 'agent', 'github', 'repo', 'framework', 'library', 'model spec'].some(k => titleLower.includes(k));
+        if (!isDev) return false;
+      } else if (sec === 'industry') {
+        const isIndustry = cat === 'AI Enterprise & Industry' || cat === 'AI Applications' || cat === 'AI Infrastructure';
+        if (!isIndustry) return false;
+      } else if (sec === 'safety') {
+        const isSafety = artType === 'security_vulnerability' || artType === 'policy_regulation' || cat === 'AI Security & Safety' || cat === 'AI Policy & Regulation';
+        if (!isSafety) return false;
+      }
+    }
+
+    // 3. Topic category filter
     if (state.activeTopic && state.activeTopic !== 'All') {
       const cat = story.category || story.topic || '';
       if (cat.toLowerCase() !== state.activeTopic.toLowerCase()) {
@@ -133,22 +228,22 @@ export function getFilteredStories(stories) {
       }
     }
 
-    // 3. Search query filter
+    // 4. Search query filter
     if (state.searchQuery && state.searchQuery.trim()) {
       const q = state.searchQuery.trim().toLowerCase();
-      const content = `${story.title || ''} ${story.summary || ''} ${story.what_changed || ''} ${story.source || ''} ${story.company || ''}`.toLowerCase();
+      const content = `${story.title || ''} ${story.summary || ''} ${story.what_changed || ''} ${story.why_it_matters || ''} ${story.source || ''} ${story.company || ''}`.toLowerCase();
       if (!content.includes(q)) {
         return false;
       }
     }
 
-    // 4. Trust Tier filter
+    // 5. Trust Tier filter
     const tier = Number(story.trust_tier || 2);
     if (!state.advancedFilters.tiers.has(tier)) {
       return false;
     }
 
-    // 5. Minimum Pulse Score filter
+    // 6. Minimum Pulse Score filter
     const score = Number(story.pulse_score || story.overall_score || 0);
     if (score < state.advancedFilters.minScore) {
       return false;

@@ -574,8 +574,14 @@ def generate_editorial_trio(title, clean_summary, category, company=""):
   """Produces non-redundant, distinct editorial intelligence fields:
   (summary, what_changed, why_it_matters, potential_impact).
   Ensures summary != why_it_matters and summary != title.
+  Eliminates repetitive category boilerplate templates.
   """
   clean_title = (title or "").strip()
+  # 1. Clean arXiv abstract boilerplate, download text, or image captions
+  clean_summary = re.sub(r"^arXiv:\S+\s+(?:Announce Type:\s*\S+\s*)?Abstract:\s*", "", clean_summary or "", flags=re.IGNORECASE)
+  clean_summary = re.sub(r"^(?:Cover image for|An illustration of|Download PDF|View on arXiv)\s*.*?(?:\.|\n)", "", clean_summary, flags=re.IGNORECASE)
+  clean_summary = clean_summary.strip()
+
   sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", clean_summary) if s.strip()]
   valid = [s for s in sentences if s.endswith((".", "!", "?", '"', "'")) and len(s) > 20]
 
@@ -587,7 +593,7 @@ def generate_editorial_trio(title, clean_summary, category, company=""):
     what_changed = valid[0]
     action_words = [
         "enables", "allows", "designed to", "aims to", "improves", "reduces", "provides",
-        "features", "helps", "powers", "automates", "integrates", "replaces", "accelerates"
+        "features", "helps", "powers", "automates", "integrates", "replaces", "accelerates", "proposes", "introduces"
     ]
     candidate_why = valid[1]
     candidate_low = candidate_why.lower()
@@ -617,22 +623,31 @@ def generate_editorial_trio(title, clean_summary, category, company=""):
         why_it_matters = s
         break
 
-  # If still empty or identical, synthesize category-grounded explanation
+  # If still empty or identical, synthesize dynamic story-grounded explanation
   if not why_it_matters or why_it_matters == what_changed or why_it_matters == summary or why_it_matters.lower() == clean_title.lower():
-    category_explanations = {
-        "AI Policy & Regulation": "Sets regulatory boundaries, legal liability precedents, and compliance requirements for AI operators.",
-        "AI Security & Safety": "Exposes model alignment vulnerabilities or defenses, prompting stronger automated safeguards before deployment.",
-        "AI Infrastructure": "Expands compute capacity or improves inference efficiency, directly lowering hardware latency and hosting costs.",
-        "AI Business & Funding": "Reflects shifting market valuations and institutional investor sentiment toward foundation model commercialization.",
-        "AI Models & Research": "Advances foundational reasoning capabilities or architectural efficiency, offering improved benchmarks for downstream applications.",
-        "AI Products & Tools": "Equips developers with streamlined APIs and toolsets, accelerating deployment timelines for intelligent applications.",
-        "AI Applications": "Translates AI capabilities into practical production workflows with measurable business or scientific outcomes.",
-        "AI News": "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
-    }
-    why_it_matters = category_explanations.get(
-        category,
-        "Provides actionable market signals for AI practitioners tracking competitive moves and ecosystem shifts."
-    )
+    subj = company.title() if company and company != "default" else ""
+    if not subj:
+      for m in ["OpenAI", "Anthropic", "Google", "DeepMind", "Microsoft", "Meta", "Mistral", "AWS", "NVIDIA", "Hugging Face"]:
+        if m.lower() in clean_title.lower():
+          subj = m
+          break
+
+    if category == "AI Policy & Regulation":
+      why_it_matters = f"Sets legal liability boundaries and compliance standards for organizations deploying {subj or 'AI systems'}."
+    elif category == "AI Security & Safety":
+      why_it_matters = f"Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+    elif category == "AI Models & Research":
+      why_it_matters = f"Establishes a new empirical benchmark and architectural baseline for {subj or 'frontier'} foundation models."
+    elif category == "AI Products & Tools":
+      why_it_matters = f"Enables developers to integrate {subj or 'intelligent agent'} capabilities directly into production workflows."
+    elif category == "AI Applications":
+      why_it_matters = f"Demonstrates operational automation and measurable business efficiency using {subj or 'modern AI'}."
+    elif category == "AI Infrastructure":
+      why_it_matters = f"Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs."
+    elif category == "AI Business & Funding":
+      why_it_matters = f"Reflects shifting market valuations and institutional investor sentiment toward foundation model commercialization."
+    else:
+      why_it_matters = f"Signals actionable market shifts and infrastructure priorities across the {subj or 'AI'} ecosystem."
 
   # Ensure summary is not identical to why_it_matters
   if summary == why_it_matters:
@@ -678,12 +693,12 @@ def generate_detailed_analysis(summary, title, what_changed="", why_it_matters="
 
 def generate_daily_overview(clustered_stories, now_iso):
   """Synthesizes a calm, grounded daily intelligence overview from actual collected stories.
-  Provides total developments, dynamic briefing, and top 3-4 takeaways with 1-sentence 'why it matters'.
+  Provides total developments, dynamic briefing, and top 10-15 high-signal developments with publisher diversity.
   """
   total_count = len(clustered_stories)
-  top_items = clustered_stories[:5]
 
   # Detect primary themes across top items
+  top_items = clustered_stories[:5]
   topics_present = [classify_topic(s.get("title", ""), s.get("summary", "")) for s in top_items]
   unique_topics = []
   for t in topics_present:
@@ -710,8 +725,29 @@ def generate_daily_overview(clustered_stories, now_iso):
         "Frontier AI developments continue accelerating across practical coding assistants, model architectures, and evaluation standards."
     )
 
+  # Select top 10-15 high-signal developments with publisher diversity (max 2 per publisher)
   top_developments = []
-  for s in top_items[:4]:
+  publisher_counts = {}
+  MAX_TOP_PER_PUB = 2
+
+  for s in clustered_stories:
+    if len(top_developments) >= 15:
+      break
+
+    art_type = classify_article_type(
+        s.get("title", ""), s.get("summary", ""), s.get("link", ""), s.get("source_type", "publication"), s.get("is_official", False)
+    )
+    # Strictly exclude single-source vendor case studies and routine minor updates from top developments
+    if art_type in ("case_study_pr", "routine_minor_update") and s.get("independent_source_count", 1) < 3:
+      continue
+
+    src = s.get("source", "")
+    pub = PUBLISHER_ORGANIZATION_MAP.get(src, src)
+    if publisher_counts.get(pub, 0) >= MAX_TOP_PER_PUB:
+      continue
+
+    publisher_counts[pub] = publisher_counts.get(pub, 0) + 1
+
     category, _, _ = classify_topic_detailed(s.get("title", ""), s.get("summary", ""))
     clean_s = sanitize_and_format_summary(s.get("summary", ""), s.get("title", ""))
     _, what_changed, why_sentence, _ = generate_editorial_trio(s.get("title", ""), clean_s, category)
@@ -719,9 +755,6 @@ def generate_daily_overview(clustered_stories, now_iso):
     if "." in why_sentence:
       why_sentence = why_sentence.split(".")[0].strip() + "."
 
-    art_type = s.get("article_type") or classify_article_type(
-        s.get("title", ""), clean_s, s.get("link", ""), s.get("source_type", "publication"), s.get("is_official", False)
-    )
     sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "📰 AI Update")
 
     top_developments.append({
@@ -736,8 +769,38 @@ def generate_daily_overview(clustered_stories, now_iso):
         "why_it_matters": why_sentence,
         "target_audience": audience_info["target"],
         "impact": audience_info["impact"],
-        "score": s.get("pulse_score", s.get("overall_score", 80.0))
+        "score": s.get("pulse_score", s.get("overall_score", 80.0)),
+        "score_reasons": s.get("score_reasons", []),
     })
+
+  # Backfill to at least 4 if collection is tiny
+  if len(top_developments) < 4:
+    for s in clustered_stories:
+      if any(d["link"] == s.get("link") for d in top_developments):
+        continue
+      category, _, _ = classify_topic_detailed(s.get("title", ""), s.get("summary", ""))
+      clean_s = sanitize_and_format_summary(s.get("summary", ""), s.get("title", ""))
+      _, what_changed, why_sentence, _ = generate_editorial_trio(s.get("title", ""), clean_s, category)
+      audience_info = generate_audience_impact(s.get("title", ""), clean_s, category)
+      art_type = s.get("article_type", "frontier_launch")
+      sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "📰 AI Update")
+      top_developments.append({
+          "title": s.get("title", ""),
+          "topic": category,
+          "category": category,
+          "source": s.get("source", ""),
+          "link": s.get("link", ""),
+          "article_type": art_type,
+          "signal_badge": sig_badge,
+          "what_changed": what_changed,
+          "why_it_matters": why_sentence,
+          "target_audience": audience_info["target"],
+          "impact": audience_info["impact"],
+          "score": s.get("pulse_score", s.get("overall_score", 80.0)),
+          "score_reasons": s.get("score_reasons", []),
+      })
+      if len(top_developments) >= 4:
+        break
 
   return {
       "total_developments_today": total_count,
@@ -787,7 +850,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
         else "Practitioner & Community"
     )
 
-    art_type = s.get("article_type") or classify_article_type(
+    art_type = classify_article_type(
         s.get("title", ""), clean_summary, s.get("link", ""), s.get("source_type", "publication"), s.get("is_official", False)
     )
     sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "📰 AI Update")
@@ -859,6 +922,12 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
         "evidence_status": s.get("evidence_status", "single_source"),
         "evidence_label": s.get("evidence_label", "Single-Source Report"),
         "independent_source_count": s.get("independent_source_count", 1),
+        "independent_publisher_count": s.get("independent_publisher_count", s.get("independent_source_count", 1)),
+        "score_reasons": s.get("score_reasons", []),
+        "first_published_at": s.get("first_published_at", s.get("published_at")),
+        "latest_updated_at": s.get("latest_updated_at", s.get("published_at")),
+        "eligible_for_top_developments": s.get("eligible_for_top_developments", True),
+        "eligible_for_briefing": s.get("eligible_for_briefing", True),
         "related_sources": s.get("related_sources", []),
         "covered_by_sources_count": s.get("covered_by_sources_count", 1),
     }
@@ -934,8 +1003,17 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
           "image_fallback": img_meta["image_fallback"],
       })
   else:
-    # Deterministic Non-LLM Briefing Trends from top 3 scored stories
-    for s in top_stories[:3]:
+    # Deterministic Non-LLM Briefing Trends: top 3-5 high-signal stories with publisher diversity
+    briefing_pubs = set()
+    for s in top_stories:
+      if len(trends) >= 5:
+        break
+      if not s.get("eligible_for_briefing", True):
+        continue
+      pub = s.get("publisher_group_id") or PUBLISHER_ORGANIZATION_MAP.get(s.get("source", ""), s.get("source", ""))
+      if pub in briefing_pubs and len(top_stories) > 10:
+        continue
+      briefing_pubs.add(pub)
       assigned_urls.add(normalize_url(s["link"]))
       claims = [
           {
@@ -966,6 +1044,10 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
           "signal_badge": s.get("signal_badge", "🚀 Frontier Launch"),
           "trend_signal_diversity": 1,
           "claim_corroboration": s.get("independent_source_count", 1),
+          "independent_publisher_count": s.get("independent_publisher_count", s.get("independent_source_count", 1)),
+          "first_published_at": s.get("first_published_at", s.get("published_at")),
+          "latest_updated_at": s.get("latest_updated_at", s.get("published_at")),
+          "score_reasons": s.get("score_reasons", []),
           "claims": claims,
           "evidence_objects": claims[0]["evidence"],
           "what_happened": s.get("what_changed") or s["summary"],
@@ -1003,6 +1085,85 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
           "image_credit": s.get("image_credit", ""),
           "image_fallback": s.get("image_fallback", ""),
       })
+
+    # Backfill to at least 3 if strict filters left trends < 3
+    if len(trends) < 3:
+      for s in top_stories:
+        if len(trends) >= 3:
+          break
+        if any(t["link"] == s["link"] for t in trends):
+          continue
+        assigned_urls.add(normalize_url(s["link"]))
+        claims = [
+            {
+                "claim_id": "claim_1",
+                "text": s.get("what_changed") or s["summary"],
+                "evidence": [
+                    {
+                        "article_id": s.get("article_id", ""),
+                        "canonical_url": s["link"],
+                        "publisher_id": s.get("publisher_id", ""),
+                        "publisher_group_id": s.get("publisher_group_id", s.get("publisher_id", "")),
+                        "source_name": s["source"],
+                        "trust_tier": s.get("trust_tier", 2),
+                        "is_official": s.get("is_official", False),
+                        "supporting_excerpt": s.get("summary", ""),
+                        "text_verified": True,
+                    }
+                ],
+                "claim_corroboration": s.get("independent_source_count", 1),
+                "verification_status": s.get("evidence_status", "single_source")
+            }
+        ]
+        trends.append({
+            "title": s["title"],
+            "link": s["link"],
+            "trend_type": "single_development",
+            "article_type": s.get("article_type", "frontier_launch"),
+            "signal_badge": s.get("signal_badge", "🚀 Frontier Launch"),
+            "trend_signal_diversity": 1,
+            "claim_corroboration": s.get("independent_source_count", 1),
+            "independent_publisher_count": s.get("independent_publisher_count", s.get("independent_source_count", 1)),
+            "first_published_at": s.get("first_published_at", s.get("published_at")),
+            "latest_updated_at": s.get("latest_updated_at", s.get("published_at")),
+            "score_reasons": s.get("score_reasons", []),
+            "claims": claims,
+            "evidence_objects": claims[0]["evidence"],
+            "what_happened": s.get("what_changed") or s["summary"],
+            "what_changed": s.get("what_changed") or s["summary"],
+            "why_it_matters": s["why_it_matters"],
+            "reported_facts": s.get("reported_facts", []),
+            "potential_impact": s.get("potential_impact", ""),
+            "analysis_limitations": s.get("analysis_limitations", ""),
+            "affected_stakeholders": s.get("affected_stakeholders", ["Developers", "Enterprises"]),
+            "category": s.get("category", s["topic"]),
+            "category_confidence": s.get("category_confidence", 0.85),
+            "category_rationale": s.get("category_rationale", "Classified into canonical category"),
+            "who_affected": ", ".join(s.get("affected_stakeholders", ["Developers", "Enterprises"])),
+            "source": s["source"],
+            "tier": s["tier"],
+            "status": "official_claim" if s["is_official"] else "source_linked",
+            "evidence_article_ids": [s.get("article_id")] if s.get("article_id") else [],
+            "evidence_urls": [s["link"]],
+            "topic": s["topic"],
+            "company": s["company"],
+            "reading_time": s["reading_time"],
+            "audience_pills": s.get("affected_stakeholders", ["Developers", "Enterprises"]),
+            "audience_impact": s.get("audience_impact"),
+            "target_audience": s.get("target_audience"),
+            "audience_impact_statement": s.get("audience_impact_statement"),
+            "evidence_status": s.get("evidence_status", "single_source"),
+            "evidence_label": s.get("evidence_label", "Single-Source Report"),
+            "independent_source_count": s.get("independent_source_count", 1),
+            "key_points": s["key_points"],
+            "detailed_analysis": s["detailed_analysis"],
+            "image": s.get("image", ""),
+            "image_url": s.get("image_url", s.get("image", "")),
+            "image_alt": s.get("image_alt", ""),
+            "image_type": s.get("image_type", "category_fallback"),
+            "image_credit": s.get("image_credit", ""),
+            "image_fallback": s.get("image_fallback", ""),
+        })
 
   # 3. Purpose-driven curated domain sections with cross-section exclusivity
   # AI Tools: actual products, tools, assistants, platform features
@@ -1121,6 +1282,8 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
       "takeaway": takeaway,
       "trends": trends,
       "top_stories": top_stories,
+      "all_updates": top_stories,
+      "research_worth_reading": research_safety,
       "ai_tools": ai_tools,
       "dev_radar": dev_radar,
       "research_safety": research_safety,

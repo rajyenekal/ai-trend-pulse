@@ -19,17 +19,19 @@ VALID_ARTICLE_TYPES = [
     "policy_regulation",
     "case_study_pr",
     "opinion_commentary",
+    "routine_minor_update",
 ]
 
 ARTICLE_TYPE_MULTIPLIERS = {
     "frontier_launch": 1.12,
     "open_source_release": 1.12,
-    "research_paper": 1.05,
+    "research_paper": 1.02,
     "sdk_api_update": 1.05,
     "security_vulnerability": 1.05,
     "policy_regulation": 1.00,
     "opinion_commentary": 0.80,
     "case_study_pr": 0.60,
+    "routine_minor_update": 0.50,
 }
 
 SIGNAL_BADGE_MAP = {
@@ -41,105 +43,142 @@ SIGNAL_BADGE_MAP = {
     "policy_regulation": "🛡️ Security / Policy",
     "case_study_pr": "🏢 Case Study",
     "opinion_commentary": "💭 Analysis / Opinion",
+    "routine_minor_update": "📰 Minor Update",
 }
 
 
-def classify_article_type(title, summary="", link="", source_type="", is_official=False):
-  """Deterministically classifies an article into one of the 8 canonical intent types.
-  Inspects URL slugs, headline, content, and publisher metadata.
+def classify_article_type(title, summary="", link="", source_type="", is_official=False, **kwargs):
+  """Deterministically classifies an article into one of the canonical intent types.
+  Inspects URL slugs, headline patterns, content keywords, and publisher metadata.
+  Never defaults an official source blindly to frontier_launch.
   """
+  link = link or kwargs.get("url", "")
   t_low = (title or "").lower()
   s_low = (summary or "").lower()
   u_low = (link or "").lower()
   combined = f"{t_low} {s_low}"
 
-  # 1. Vendor PR / Customer Case Study Check (Must be checked first to catch enterprise customer blogs)
-  case_study_url_patterns = [
-      "/customer-stories/", "/customer-story/", "/customers/", "/customer/",
-      "/case-studies/", "/case-study/", "/stories/", "partners-with",
-      "/index/customer", "/index/stories"
+  # 1. Routine Non-AI Noise, Peripheral Gaming, or Pure Macroeconomics Check
+  noise_gaming_keywords = [
+      "geforce now", "gfn thursday", "phantom blade", "game ready driver",
+      "gaming treats", "slice into gfn", "gaming laptops gain new", "rtx spark windows laptops gain"
   ]
+  if any(k in t_low for k in noise_gaming_keywords):
+    return "routine_minor_update"
+  if any(k in t_low for k in ["digital economy to hit", "southeast asia’s digital economy to hit"]):
+    return "opinion_commentary"
+
+  # 2. Vendor PR / Customer Case Study Check (Must precede model checks to catch enterprise customer blogs)
+  case_study_url_patterns = [
+      r"/customer", r"/customers", r"/case-stud", r"/stories/", r"partners-with",
+      r"/index/customer", r"/index/stories", r"/index/retell", r"/index/greptile",
+      r"/index/harvey", r"/index/legora", r"how-.*-(automated|built|uses|scaled|reduced)"
+  ]
+  if any(re.search(p, u_low) for p in case_study_url_patterns):
+    return "case_study_pr"
+
   case_study_keywords = [
       "case study", "customer story", "customer spotlight", "partner spotlight",
-      "partners with", "partnering with", "powers ", "enterprise adoption",
-      "customer success", "how ", "is building the agentic", "is building the",
-      "powers legal work", "customer testimonial"
+      "partners with", "partnering with", "customer success", "customer testimonial",
+      "enterprise customer", "how worldwide express", "freight exceptions",
+      "powers 100m monthly calls", "powers legal work", "takes bug detection beyond code review",
+      "a concrete vision: saint-gobain", "saint-gobain and microsoft discovery",
+      "before the ambulance arrives: how ai is helping the nhs",
+      "greptile transforms", "transforms code review", "streamlines freight",
+      "customer story:"
   ]
-  if any(p in u_low for p in case_study_url_patterns):
+  if any(k in t_low for k in case_study_keywords):
     return "case_study_pr"
-  if any(k in t_low for k in ["case study", "customer story", "customer spotlight", "partner spotlight", "partners with"]):
+
+  if re.search(r"\b(how\s+.+\s+)?(transforms|streamlines|automates|accelerates|powers|deploys|scales|uses)\b.*(code review|freight|logistics|workflows|operations|triage|billing)", t_low):
     return "case_study_pr"
-  if re.search(r"how\s+[a-z0-9_\-]+\s+(uses|deploys|builds|scales)\b", t_low):
+
+  if re.search(r"how\s+.+\s+(automated|automates|streamlined|streamlines|transforms|transformed|uses|deploys|builds|scales|powers|accelerated|improved|reduced|cuts|rethink)\b", t_low):
     return "case_study_pr"
+
+  if re.search(r"^[a-z0-9_\-\s]+\s+(uses|partners with|teams with|adopts|powers|deploys)\s+(openai|aws|google|microsoft|anthropic|bedrock|azure)\b", t_low):
+    return "case_study_pr"
+
   if "building the" in t_low and ("operating system for" in t_low or "platform for" in t_low):
     return "case_study_pr"
 
-  # 2. Security Vulnerability / Exploit / CVE
+  # 3. Security Vulnerability / Exploit / Red-Teaming / Alignment Failures
   sec_keywords = [
       "cve-", "vulnerability", "vulnerabilities", "jailbreak", "prompt injection",
       "exploit", "backdoor", "red team", "red-team", "attack vector",
-      "adversarial attack", "sandbox escape", "data leak", "malicious payload"
+      "adversarial attack", "sandbox escape", "data leak", "malicious payload",
+      "detect frontier model misalignment", "frontier model misalignment", "misalignment"
   ]
   if any(k in combined for k in sec_keywords):
     return "security_vulnerability"
 
-  # 3. Policy & Regulation / Legal / Standards
+  # 4. Policy & Regulation / Legal / Standards / Data Governance
   policy_keywords = [
       "regulation", "legislation", "lawsuit", "sues", "sued", "court", "copyright",
       "antitrust", "eu ai act", "executive order", "ftc", "doj", "senate", "congress",
-      "ban", "compliance", "standards body", "treaty", "legal challenge", "regulators"
+      "ban", "compliance", "standards body", "treaty", "legal challenge", "regulators",
+      "clean air act", "opt out of scraping", "opt-out of scraping", "scraping standard"
   ]
   if any(k in combined for k in policy_keywords):
     return "policy_regulation"
 
-  # 4. Open-Source & Open-Weight Releases
+  # 5. Research Papers & Preprints (arXiv, BAIR, academic source_type, or explicitly marked papers)
+  if "arxiv.org" in u_low or "bair.berkeley.edu" in u_low or source_type == "research":
+    return "research_paper"
+  if any(k in t_low for k in ["paper", "preprint", "empirical study"]):
+    return "research_paper"
+
+  # 6. Open-Source & Open-Weight Releases
   os_keywords = [
       "open weight", "open-weight", "open source", "open-source", "weights released",
       "weights available", "apache 2.0", "mit license", "github repo", "hugging face",
       "huggingface.co", "model weights", "checkpoint", "ollama", "vllm", "gguf",
-      "finetuning", "fine-tuned", "open release"
+      "finetuning", "fine-tuned", "open release", "open computer use"
   ]
   if any(k in combined for k in os_keywords):
     return "open_source_release"
 
-  # 5. Developer SDK / API Updates
+  # 7. Frontier Foundation Model Launches & World Simulation Milestones
+  frontier_models = [
+      "gpt-5", "gpt-4.5", "gpt-4", "o1", "o3", "o4", "claude 3.7", "claude 4", "gemini 2",
+      "gemini 3", "gemini 4", "deepseek-v3", "deepseek-r1", "llama 4", "qwen 2.5", "qwen 3",
+      "mistral large", "grok 3", "frontier model", "foundation model", "flagship model",
+      "reasoning model", "genie 4", "world simulation", "gemini 4 carbon", "voxtral"
+  ]
+  if any(k in t_low for k in frontier_models) and not any(k in t_low for k in ["api pricing", "api rate limit", "sdk update", "python library"]):
+    return "frontier_launch"
+  if any(k in t_low for k in ["unveils new model", "releases new model", "next-generation model", "next frontier model"]):
+    return "frontier_launch"
+
+  # 8. Developer SDK / API Updates / Runtimes / Protocols
   sdk_keywords = [
       "api", "sdk", "endpoint", "pricing", "rate limit", "developer platform",
       "token pricing", "cli", "function calling", "tool use", "mcp server",
       "model context protocol", "dev kit", "playground", "developer tools",
-      "python library", "node library", "rest api"
+      "python library", "node library", "rest api", "session endpoints",
+      "agentcore runtime", "voice agent sdk", "agent skills"
   ]
-  if any(k in t_low for k in ["api", "sdk", "pricing", "developer", "mcp", "endpoint", "tool use"]):
+  if any(k in t_low for k in ["api", "sdk", "pricing", "developer", "mcp", "endpoint", "tool use", "agent skills"]):
     return "sdk_api_update"
-  if any(k in combined for k in ["pricing drop", "price cut", "api release", "sdk update", "mcp protocol"]):
+  if any(k in combined for k in ["pricing drop", "price cut", "api release", "sdk update", "mcp protocol", "session endpoints", "runtime session"]):
     return "sdk_api_update"
 
-  # 6. Research Papers & Preprints (arXiv, BAIR, academic source_type)
-  if "arxiv.org" in u_low or "bair.berkeley.edu" in u_low or source_type == "research":
-    return "research_paper"
-  if any(k in t_low for k in ["paper", "preprint", "benchmark", "dataset", "empirical study", "architecture"]):
-    return "research_paper"
-
-  # 7. Frontier Foundation Model Launches
-  frontier_models = [
-      "gpt-5", "gpt-4", "o1", "o3", "o4", "claude 3.7", "claude 4", "gemini 2",
-      "gemini 3", "deepseek-v3", "deepseek-r1", "llama 4", "qwen 2.5", "mistral large",
-      "grok 3", "frontier model", "foundation model", "flagship model", "reasoning model"
-  ]
-  if any(k in t_low for k in frontier_models):
-    return "frontier_launch"
-  if any(k in t_low for k in ["unveils new model", "releases new model", "next-generation model"]):
-    return "frontier_launch"
-
-  # 8. Opinion & Commentary
+  # 9. Opinion, Commentary, Routine Minor Patches
+  if re.search(r"\bv?\d+\.\d+\.[1-9][a-z0-9]*\b", t_low):
+    return "routine_minor_update"
   if source_type in ("community", "practitioner") or "simonwillison.net" in u_low or "importai" in u_low:
     return "opinion_commentary"
   if any(k in t_low for k in ["opinion", "why i think", "essay", "speculation", "editorial"]):
     return "opinion_commentary"
 
-  # Default fallback based on publisher tier
+  # Contextual Fallback for Official Blogs: Never blind frontier_launch
   if is_official:
-    return "frontier_launch"
+    if any(k in combined for k in ["agent", "runtime", "tool", "sdk", "api", "endpoint"]):
+      return "sdk_api_update"
+    if any(k in combined for k in ["collaborat", "partner", "program", "initiative", "support"]):
+      return "opinion_commentary"
+    return "sdk_api_update"
+
   return "opinion_commentary"
 
 
@@ -147,8 +186,8 @@ def classify_article_type(title, summary="", link="", source_type="", is_officia
 # 2. CALIBRATED PULSE SCORING FORMULA
 # -------------------------------------------------------------
 def calculate_story_scores(article, corroboration_count=1):
-  """Calculates deterministic 0-100 sub-scores, calibrated overall pulse score,
-  article intent classification, and signal badge.
+  """Calculates explainable, deterministic 0-100 sub-scores, calibrated overall pulse score,
+  human-readable score reason codes, article intent classification, and publication eligibility.
   """
   title = article.get("title", "")
   summary = article.get("summary", "")
@@ -165,42 +204,94 @@ def calculate_story_scores(article, corroboration_count=1):
     article_type = classify_article_type(title, summary, link, source_type, is_official)
 
   signal_badge = SIGNAL_BADGE_MAP.get(article_type, "⚡ AI Intelligence")
+  score_reasons = []
 
-  # 1. Importance (Impact, novelty, scale)
-  importance = 60
-  if any(w in full_content for w in ["frontier", "breakthrough", "major", "first time", "release", "benchmark"]):
-    importance += 15
-  if any(w in full_content for w in ["gpt-5", "claude 3.7", "claude 4", "gemini 3", "llama 4", "o3", "new model"]):
-    importance += 20
-  if any(w in full_content for w in ["safety treaty", "disarmament", "regulation", "law", "executive order", "nist"]):
-    importance += 15
-  if is_official:
-    importance += 10
+  # 1. Real-World Impact (0-100)
+  impact = 50
+  if article_type == "frontier_launch":
+    impact += 40
+    score_reasons.append("+ Frontier foundation model milestone (+40 impact)")
+  elif article_type == "open_source_release":
+    impact += 35
+    score_reasons.append("+ Open-weights / open-source capability release (+35 impact)")
+  elif article_type in ("security_vulnerability", "policy_regulation"):
+    impact += 30
+    score_reasons.append(f"+ Material {article_type.replace('_', ' ')} development (+30 impact)")
+  elif article_type == "sdk_api_update":
+    impact += 25
+    score_reasons.append("+ Actionable developer SDK / runtime tooling (+25 impact)")
+  elif article_type == "research_paper":
+    impact += 15
+    score_reasons.append("+ Empirical research preprint / benchmark evaluation (+15 impact)")
+  elif article_type == "case_study_pr":
+    impact -= 25
+    score_reasons.append("- Vendor promotional customer case study (-25 impact)")
+  elif article_type == "routine_minor_update":
+    impact -= 30
+    score_reasons.append("- Routine minor patch / peripheral non-AI topic (-30 impact)")
 
-  # Refined Safety & Policy Protected Baseline:
-  # Apply protected importance floor (72) strictly when article_type is security_vulnerability or policy_regulation,
-  # or when corroborated by 2+ independent sources.
-  is_safety_or_policy = any(w in full_content for w in [
-      "safety", "alignment", "policy", "governance", "regulation", "law",
-      "executive order", "nist", "eval", "red team", "security", "treaty",
-      "pre-deployment", "frontier safety"
-  ])
-  if is_safety_or_policy:
-    importance += 15
-    if article_type in ("security_vulnerability", "policy_regulation") or corroboration_count >= 2:
-      importance = max(importance, 72)
+  if any(w in full_content for w in ["gpt-5", "claude 3.7", "claude 4", "gemini 4", "llama 4", "o3", "deepseek-r1"]):
+    impact = min(100, impact + 10)
+  impact = min(100, max(0, impact))
 
-  importance = min(100, max(0, importance))
+  # 2. Novelty & Significance (0-100)
+  novelty = 55
+  if any(w in full_content for w in ["breakthrough", "frontier model", "world simulation", "next frontier", "novel architecture", "new generation"]):
+    novelty += 30
+    score_reasons.append("+ Novel capability / major architectural milestone (+30 novelty)")
+  elif article_type == "case_study_pr":
+    novelty -= 25
+    score_reasons.append("- Repackaged customer implementation (-25 novelty)")
+  elif article_type == "routine_minor_update":
+    novelty -= 25
+  novelty = min(100, max(0, novelty))
 
-  # 2. Audience Relevance (Developer, Practical Tools, Enterprise)
-  audience_relevance = 65
-  if any(w in full_content for w in ["developer", "coding", "api", "agent", "tool", "workflow", "mcp", "open source"]):
-    audience_relevance += 20
-  if any(w in full_content for w in ["free", "available now", "how to", "benchmark"]):
-    audience_relevance += 15
-  audience_relevance = min(100, max(0, audience_relevance))
+  # 3. Evidence Quality & Authority (0-100)
+  if is_official or trust_tier == 1:
+    evidence = 100
+    score_reasons.append("+ Official primary lab source (100 authority)")
+  elif trust_tier == 2:
+    evidence = 85
+    score_reasons.append("+ Independent technology journalism desk (85 authority)")
+  elif trust_tier == 3:
+    evidence = 75
+    score_reasons.append("+ Academic research repository (75 authority)")
+  else:
+    evidence = 65
 
-  # 3. Freshness (Exponential decay from published date, neutral 50 if missing)
+  if corroboration_count >= 3:
+    evidence = min(100, evidence + 15)
+    score_reasons.append(f"+ Corroborated by {corroboration_count} independent publishers (+15 evidence)")
+  elif corroboration_count == 2:
+    evidence = min(100, evidence + 10)
+    score_reasons.append("+ Corroborated by 2 independent publishers (+10 evidence)")
+  elif not is_official and article_type == "research_paper":
+    evidence = max(40, evidence - 5)
+    score_reasons.append("- Single-source unreviewed preprint (-5 evidence)")
+
+  # 4. Actionability for Builders & Teams (0-100)
+  if article_type in ("sdk_api_update", "open_source_release"):
+    actionability = 90
+    score_reasons.append("+ Direct developer actionability / runnable tooling (90 actionability)")
+  elif article_type in ("frontier_launch", "policy_regulation"):
+    actionability = 75
+  elif article_type == "case_study_pr":
+    actionability = 45
+  else:
+    actionability = 60
+
+  # 5. Core AI Relevance (0-100)
+  if article_type in ("frontier_launch", "open_source_release", "sdk_api_update", "research_paper", "security_vulnerability"):
+    ai_relevance = 95
+  elif article_type == "case_study_pr":
+    ai_relevance = 65
+  elif article_type == "routine_minor_update":
+    ai_relevance = 30
+    score_reasons.append("- Peripheral non-core topic (-40 AI relevance)")
+  else:
+    ai_relevance = 70
+
+  # 6. Freshness (0-100)
   if pub_dt:
     now = datetime.now(timezone.utc)
     age_hours = max(0, (now - pub_dt).total_seconds() / 3600.0)
@@ -217,7 +308,7 @@ def calculate_story_scores(article, corroboration_count=1):
   else:
     freshness = 50
 
-  # 4. Coverage & Corroboration Signal (Grounded in verified multi-publisher coverage)
+  # 7. Coverage Signal
   if corroboration_count >= 4:
     coverage_signal = 95
   elif corroboration_count == 3:
@@ -227,41 +318,47 @@ def calculate_story_scores(article, corroboration_count=1):
   else:
     coverage_signal = 50
 
-  # 5. Source Quality & Authority Score
-  if is_official or trust_tier == 1:
-    source_quality = 100
-  elif trust_tier == 2:
-    source_quality = 85
-  elif trust_tier == 3:
-    source_quality = 80
-  else:
-    source_quality = 65
+  source_quality = evidence
 
-  # Base composite score formula:
-  # 0.30 * Importance + 0.25 * Audience_Relevance + 0.20 * Freshness + 0.15 * Coverage_Corroboration + 0.10 * Source_Tier_Quality
+  # Base Composite Score Formula:
+  # 0.30 * Impact + 0.20 * Novelty + 0.20 * Evidence + 0.15 * Actionability + 0.15 * AI_Relevance
   base_score = (
-      0.30 * importance +
-      0.25 * audience_relevance +
-      0.20 * freshness +
-      0.15 * coverage_signal +
-      0.10 * source_quality
+      0.30 * impact +
+      0.20 * novelty +
+      0.20 * evidence +
+      0.15 * actionability +
+      0.15 * ai_relevance
   )
 
   # Apply Intent Multiplier
   multiplier = ARTICLE_TYPE_MULTIPLIERS.get(article_type, 1.0)
   raw_score = base_score * multiplier
 
-  # Special Intent Cap:
-  # Cap maximum final score of any single-source "case_study_pr" item at 64.0
-  # so it never enters top_developments unless corroborated by 3+ independent Tier-1/Tier-2 publications.
+  # Editorial Floor & Ceiling Safeguards:
+  # 1. Single-source case study PR is strictly capped at 62.0 so it never crowds out top developments.
   if article_type == "case_study_pr" and corroboration_count < 3:
-    final_score = min(raw_score, 64.0)
+    final_score = min(raw_score, 62.0)
+    score_reasons.append("- [case_study_penalty] Single-source vendor PR capped at 62.0 ceiling")
+  # 2. Routine minor updates / peripheral gaming capped at 52.0.
+  elif article_type == "routine_minor_update":
+    final_score = min(raw_score, 52.0)
+    score_reasons.append("- [routine_minor_penalty] Routine minor update capped at 52.0 ceiling")
+  # 3. Single-source uncorroborated arXiv preprints capped at 73.0 to protect frontier announcements.
+  elif article_type == "research_paper" and corroboration_count < 2:
+    final_score = min(raw_score, 73.0)
+    score_reasons.append("- [uncorroborated_arxiv_cap] Single-source research preprint capped at 73.0 ceiling")
+  # 4. Official frontier foundation model announcements guaranteed floor of 82.0.
+  elif article_type == "frontier_launch" and (is_official or trust_tier == 1):
+    final_score = min(100.0, max(raw_score, 82.0))
+    score_reasons.append("+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0")
   else:
     final_score = min(100.0, max(0.0, raw_score))
 
+  final_score = min(100.0, max(0.0, final_score))
+
   pulse_score = round(final_score, 1)
 
-  # Calibrate confidence_label based on evidence provenance and source reliability
+  # Confidence Label
   summary_len = len(summary.strip())
   if (is_official and summary_len >= 50) or (trust_tier in (1, 2) and corroboration_count >= 2):
     confidence_label = "high"
@@ -270,19 +367,34 @@ def calculate_story_scores(article, corroboration_count=1):
   else:
     confidence_label = "low"
 
+  # Publication Eligibility Flags
+  eligible_for_top = (
+      pulse_score >= 68.0 and
+      article_type not in ("case_study_pr", "routine_minor_update")
+  )
+  eligible_for_briefing = (
+      pulse_score >= 78.0 and
+      article_type in ("frontier_launch", "open_source_release", "sdk_api_update", "security_vulnerability")
+  )
+
   return {
       "pulse_score": pulse_score,
       "overall_score": pulse_score,  # Backward compatibility alias
-      "importance_score": importance,
-      "relevance_score": audience_relevance,
-      "freshness_score": freshness,
-      "coverage_score": coverage_signal,
-      "source_quality_score": source_quality,
-      "confidence_score": source_quality,  # Backward compatibility alias
-      "popularity_score": coverage_signal,  # Backward compatibility alias
+      "importance_score": round(impact, 1),
+      "relevance_score": round(ai_relevance, 1),
+      "freshness_score": round(freshness, 1),
+      "coverage_score": round(coverage_signal, 1),
+      "source_quality_score": round(source_quality, 1),
+      "confidence_score": round(source_quality, 1),  # Backward compatibility alias
+      "popularity_score": round(coverage_signal, 1),  # Backward compatibility alias
+      "novelty_score": round(novelty, 1),
+      "actionability_score": round(actionability, 1),
       "confidence_label": confidence_label,
       "article_type": article_type,
       "signal_badge": signal_badge,
+      "score_reasons": score_reasons,
+      "eligible_for_top_developments": eligible_for_top,
+      "eligible_for_briefing": eligible_for_briefing,
   }
 
 
@@ -325,6 +437,10 @@ def sanitize_and_format_summary(raw_summary, title=""):
 
   text = html.unescape(raw_summary)
   text = re.sub(r"<[^>]+>", " ", text)
+  # Strip arXiv announcement prefixes and abstract headers
+  text = re.sub(r"arXiv:\S+\s+(?:Announce Type:\s*\S+\s*)?Abstract:\s*", "", text, flags=re.I)
+  text = re.sub(r"Announce Type:\s*\S+\s*Abstract:\s*", "", text, flags=re.I)
+  text = re.sub(r"^Abstract:\s*", "", text, flags=re.I)
   text = re.sub(r"The post .* appeared first on .*", "", text, flags=re.I)
   text = re.sub(r"Read more on .*", "", text, flags=re.I)
   text = re.sub(r"\[\s*(?:\.\.\.|…|&#8230;)\s*\]", "", text)
