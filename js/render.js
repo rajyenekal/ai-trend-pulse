@@ -561,3 +561,4 @@ export function renderStatusBar(data) {
     `;
   }
 }
+

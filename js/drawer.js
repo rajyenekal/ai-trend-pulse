@@ -401,3 +401,4 @@ export function closeSearchModal() {
   const modal = document.getElementById('search-modal');
   if (modal) modal.classList.remove('open');
 }
+
