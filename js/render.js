@@ -271,11 +271,20 @@ export function formatISTDateTime(dateInput) {
 
 export function formatRelativeTime(dateInput) {
   if (!dateInput) return 'Recently';
-  const d = new Date(dateInput);
-  if (isNaN(d.getTime())) return String(dateInput);
+  let str = String(dateInput).trim();
+  let d = new Date(str);
+  if (isNaN(d.getTime()) || d.getFullYear() < 2020) {
+    const currentYear = new Date().getFullYear();
+    d = new Date(str.replace(/ UTC/i, ` ${currentYear} UTC`));
+    if (isNaN(d.getTime()) || d.getFullYear() < 2020) {
+      d = new Date(`${str} ${currentYear}`);
+    }
+  }
+  if (isNaN(d.getTime())) return str;
   const now = new Date();
   const diffHours = (now.getTime() - d.getTime()) / (1000 * 60 * 60);
 
+  if (diffHours < 0) return 'Just now';
   if (diffHours < 1) {
     const mins = Math.max(1, Math.round(diffHours * 60));
     return `${mins}m ago`;
@@ -303,6 +312,14 @@ export function renderTop5Bento(stories) {
   const hero = top5[0];
   const subcards = top5.slice(1, 5);
 
+  const heroTopic = hero.category || hero.topic || 'Frontier AI';
+  const heroCompany = hero.company || 'default';
+  const heroImgUrl = getTopicImageUrl(heroTopic, hero.image || hero.image_url, heroCompany);
+  const heroWhy = hero.why_it_matters || '';
+  const heroReadTime = hero.reading_time || '2 min read';
+  const heroRelTime = formatRelativeTime(hero.published_at || hero.published);
+  const heroTierBadgeHTML = getTierBadgeHTML(hero.source, hero.tier || hero.trust_tier);
+
   let html = `
     <div class="bento-section">
       <div class="bento-header">
@@ -317,38 +334,73 @@ export function renderTop5Bento(stories) {
       <div class="bento-grid">
         <!-- Lead Hero Bento Card -->
         <article class="bento-card bento-hero" onclick="openReaderForTrend(0, event)">
-          <div>
-            <div class="bento-card-meta">
-              <span class="badge-signal">${escapeHTML(hero.signal_badge || '🚀 Frontier Launch')}</span>
-              <span class="badge-tier tier-${hero.trust_tier || 1}">${escapeHTML(hero.source)}</span>
-              <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">${formatRelativeTime(hero.published_at || hero.published)}</span>
+          <div class="bento-hero-media">
+            <img src="${escapeHTML(heroImgUrl)}" alt="${escapeHTML(hero.title)}" loading="lazy" />
+            <div class="hero-image-badge">
+              <span>${escapeHTML(heroTopic)}</span>
             </div>
-            <h2 class="bento-headline font-serif" style="font-size: clamp(1.2rem, 2vw, 1.45rem); margin: 10px 0 8px 0;">${escapeHTML(hero.title)}</h2>
-            <p class="bento-summary" style="font-size:0.9rem; line-height:1.5;">${escapeHTML(hero.what_changed || hero.summary || '')}</p>
           </div>
-          <div class="bento-footer">
-            <span class="bento-source-pill">${getCompanyLogoSVG(hero.company)} ${escapeHTML(hero.source)}</span>
-            <span style="color:var(--accent-text); font-weight:600;">Deep Read →</span>
+          <div class="bento-hero-body">
+            <div>
+              <div class="card-kicker-row">
+                <div class="card-kicker-left">
+                  <span class="badge-signal">${escapeHTML(hero.signal_badge || '🚀 Frontier Launch')}</span>
+                  ${heroTierBadgeHTML}
+                </div>
+                <span style="font-size:0.75rem; color:var(--text-muted);">${escapeHTML(heroRelTime)}</span>
+              </div>
+              <h2 class="bento-headline font-serif" style="font-size: clamp(1.15rem, 1.8vw, 1.38rem); margin: 10px 0 8px 0; line-height: 1.32;">
+                ${escapeHTML(hero.title)}
+              </h2>
+              <p class="card-summary" style="font-size:0.88rem; line-height:1.5; margin:0;">${escapeHTML(hero.what_changed || hero.summary || '')}</p>
+              ${heroWhy ? `
+                <div class="card-why-callout" style="margin-top:10px;">
+                  <div class="card-why-callout-title">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span>Why It Matters</span>
+                  </div>
+                  <div class="card-why-callout-body">${escapeHTML(heroWhy)}</div>
+                </div>
+              ` : ''}
+            </div>
+            <div class="card-footer" style="margin-top:8px; padding-top:10px; border-top:1px solid var(--border-subtle);">
+              <div class="card-source-meta">
+                <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(hero.source)}</span>
+                <span>•</span>
+                <span>⏱ ${escapeHTML(heroReadTime)}</span>
+              </div>
+              <button class="btn-read-deep-dive" onclick="openReaderForTrend(0, event)">
+                <span>Read Deep Dive</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
           </div>
         </article>
         
         <!-- 4 Subcards Grid -->
-        <div style="display:grid; grid-template-columns:1fr; gap:12px;">
+        <div class="bento-subcards-grid">
   `;
 
   subcards.forEach((item, idx) => {
+    const subTopic = item.category || item.topic || 'AI News';
+    const subCompany = item.company || 'default';
+    const subRelTime = formatRelativeTime(item.published_at || item.published);
+
     html += `
       <article class="bento-card bento-subcard" onclick="openReaderForTrend(${idx + 1}, event)">
         <div>
-          <div class="bento-card-meta">
-            <span class="badge-signal">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
-            <span style="font-size:0.74rem; color:var(--text-muted);">${formatRelativeTime(item.published_at || item.published)}</span>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; margin-bottom:6px;">
+            <span class="badge-signal" style="font-size:0.68rem; padding:2px 6px;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
+            <span style="font-size:0.72rem; color:var(--text-muted);">${escapeHTML(subRelTime)}</span>
           </div>
-          <h3 class="bento-headline font-serif" style="font-size:0.95rem;">${escapeHTML(item.title)}</h3>
+          <h3 class="bento-headline font-serif" style="font-size:0.92rem; line-height:1.35; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${escapeHTML(item.title)}</h3>
         </div>
-        <div class="bento-footer" style="padding-top:6px;">
-          <span style="font-size:0.75rem; color:var(--text-muted);">${escapeHTML(item.source)}</span>
-          <span style="color:var(--accent-text); font-size:0.75rem; font-weight:600;">Details →</span>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px; padding-top:8px; border-top:1px solid var(--border-subtle);">
+          <span style="font-size:0.74rem; font-weight:600; color:var(--text-secondary); display:flex; align-items:center; gap:5px;">
+            <span style="width:14px; height:14px; display:inline-flex;">${getCompanyLogoSVG(subCompany)}</span>
+            ${escapeHTML(item.source)}
+          </span>
+          <span style="color:var(--accent-text); font-size:0.74rem; font-weight:600;">Details →</span>
         </div>
       </article>
     `;
@@ -452,21 +504,7 @@ export function renderEditorialCards(items) {
     const summary = item.what_changed || item.what_happened || item.summary || '';
     const whyItMatters = item.why_it_matters || '';
 
-    // Takeaways
-    const keyPoints = (item.key_points && item.key_points.length) ? item.key_points.slice(0, 3) : [];
-    const takeawaysHTML = keyPoints.length ? `
-      <div class="card-takeaways">
-        <div class="takeaways-header">
-          <svg class="takeaways-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-          <span>Key Takeaways</span>
-        </div>
-        <ul class="takeaways-list">
-          ${keyPoints.map(kp => `<li>${escapeHTML(kp)}</li>`).join('')}
-        </ul>
-      </div>
-    ` : '';
-
-    // Why it matters callout
+    // Why it matters callout (clean and compact)
     const whyItMattersHTML = whyItMatters ? `
       <div class="card-why-callout">
         <div class="card-why-callout-title">
@@ -477,20 +515,7 @@ export function renderEditorialCards(items) {
       </div>
     ` : '';
 
-    // Affected Audience Callout
-    const audienceTarget = item.target_audience || (item.audience_impact ? item.audience_impact.target : 'For developers & builders');
-    const audienceImpact = item.audience_impact_statement || (item.audience_impact ? item.audience_impact.impact : 'Affects engineering decisions and practical workflows.');
-    const audienceCalloutHTML = `
-      <div class="card-audience-callout">
-        <div class="audience-target-tag">
-          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span>${escapeHTML(audienceTarget)}</span>
-        </div>
-        <div class="audience-impact-desc">${escapeHTML(audienceImpact)}</div>
-      </div>
-    `;
-
-    const publishedStr = item.published_at ? formatRelativeTime(item.published_at) : (item.published || 'Recently');
+    const publishedStr = item.published_at ? formatRelativeTime(item.published_at) : (item.published ? formatRelativeTime(item.published) : 'Recently');
 
     if (idx === 0) {
       // CARD TYPE 1: FEATURED STORY CARD (Lead Hero Layout)
@@ -519,9 +544,7 @@ export function renderEditorialCards(items) {
                   <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
                 </h3>
                 <p class="card-summary" style="margin-top:8px;">${escapeHTML(summary)}</p>
-                ${takeawaysHTML}
                 ${whyItMattersHTML}
-                ${audienceCalloutHTML}
               </div>
 
               <div class="card-footer">
@@ -573,9 +596,7 @@ export function renderEditorialCards(items) {
             <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
           </h3>
           <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
-          ${takeawaysHTML}
           ${whyItMattersHTML}
-          ${audienceCalloutHTML}
 
           <details class="evidence-block">
             <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
@@ -632,9 +653,7 @@ export function renderEditorialCards(items) {
                 <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
               </h3>
               <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
-              ${takeawaysHTML}
               ${whyItMattersHTML}
-              ${audienceCalloutHTML}
             </div>
 
             <div class="card-footer">
