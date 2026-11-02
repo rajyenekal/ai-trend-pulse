@@ -37,20 +37,24 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Cache Feed ETag & Conditional State
+      - name: Cache Pipeline State and Snapshots
         uses: actions/cache@v4
         with:
-          path: .feed_cache.json
-          key: feed-cache-${{ runner.os }}-${{ github.run_id }}
+          path: |
+            .feed_cache.json
+            .article_cache.json
+            .github_snapshots.json
+          key: ai-pulse-cache-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
-            feed-cache-${{ runner.os }}-
+            ai-pulse-cache-${{ runner.os }}-
 
       - name: Install Dependencies
-        run: pip install feedparser google-genai
+        run: pip install -r requirements.txt
 
       - name: Run Backend Tracker
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: python tracker.py
 
       - name: Set up Node.js

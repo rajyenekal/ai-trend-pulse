@@ -85,6 +85,27 @@ from pipeline.enricher import (
     run_pipeline,
 )
 
+from pipeline.extractor import (
+    ARTICLE_CACHE_FILE,
+    load_article_cache,
+    save_article_cache,
+    fetch_raw_html,
+    extract_article_content,
+    extract_articles_batch,
+)
+
+from pipeline.developer_scorer import (
+    calculate_developer_trend_score,
+)
+
+from pipeline.github_collector import (
+    GITHUB_SNAPSHOTS_FILE,
+    load_github_snapshots,
+    save_github_snapshots,
+    calculate_historical_growth,
+    collect_github_developer_trends,
+)
+
 if __name__ == "__main__":
   is_dry_run = "--dry-run" in sys.argv
   try:

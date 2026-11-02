@@ -63,17 +63,18 @@ def verify_supporting_excerpt(excerpt, article):
   norm_exc = norm(clean_exc)
   title_norm = norm(article.get("title", ""))
   summary_norm = norm(article.get("summary", ""))
+  full_text_norm = norm(article.get("full_text", ""))
 
   if not norm_exc:
     return False
 
-  if norm_exc in title_norm or norm_exc in summary_norm:
+  if norm_exc in title_norm or norm_exc in summary_norm or (full_text_norm and norm_exc in full_text_norm):
     return True
 
-  # Check if 75% of significant words in excerpt appear in summary or title
+  # Check if 75% of significant words in excerpt appear in summary, title, or extracted text
   exc_words = [w for w in norm_exc.split() if len(w) > 3]
   if len(exc_words) >= 4:
-    target_words = set((title_norm + " " + summary_norm).split())
+    target_words = set((title_norm + " " + summary_norm + " " + full_text_norm).split())
     match_count = sum(1 for w in exc_words if w in target_words)
     if match_count / len(exc_words) >= 0.75:
       return True
@@ -338,11 +339,12 @@ def synthesize_with_gemini(clustered_stories):
   for idx, a in enumerate(clustered_stories[:16], 1):
     pub_str = a.get("published", "Recent")
     art_id = a.get("article_id", f"art_{idx}")
+    summary_text = (a.get("full_text") or a.get("summary") or "")[:400]
     prompt_articles += (
         f"{idx}. [ID: {art_id}] [{a.get('source')} | Tier {a.get('trust_tier')}] {a.get('title')}\n"
         f"   Date: {pub_str} | Canonical URL: {a.get('link')}\n"
         f"   Publisher Group: {a.get('publisher_group_id', 'unknown')}\n"
-        f"   Summary: {a.get('summary')[:300]}\n\n"
+        f"   Summary: {summary_text}\n\n"
     )
 
   prompt = f"""
@@ -745,7 +747,7 @@ def generate_daily_overview(clustered_stories, now_iso):
   }
 
 
-def build_complete_payload(clustered_stories, ai_briefing=None, source_health_summary=None, source_health_details=None):
+def build_complete_payload(clustered_stories, ai_briefing=None, source_health_summary=None, source_health_details=None, developer_trends=None):
   """Builds the comprehensive schema contract consumed by index.html and test_qa.js.
   Enforces cross-section mutual exclusivity so articles are not duplicated across sections.
   Populates article_type and signal_badge for v2.1 high-signal intelligence.
@@ -1124,6 +1126,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
       "research_safety": research_safety,
       "trending": trending,
       "pulse_items": pulse_items,
+      "developer_trends": developer_trends if developer_trends is not None else [],
       "source_health_summary": source_health_summary,
       "source_health_details": source_health_details or [],
   }
@@ -1184,6 +1187,19 @@ def validate_dataset_payload(payload):
       raise ValueError(f"Trend #{idx} has invalid trend_type: {t['trend_type']}")
     if "trend_signal_diversity" in t and (not isinstance(t["trend_signal_diversity"], int) or t["trend_signal_diversity"] < 1):
       raise ValueError(f"Trend #{idx} has invalid trend_signal_diversity")
+
+  # Validate developer_trends if present
+  if "developer_trends" in payload and payload["developer_trends"] is not None:
+    if not isinstance(payload["developer_trends"], list):
+      raise ValueError("developer_trends must be a list")
+    for idx, repo in enumerate(payload["developer_trends"][:10]):
+      for field in ["repository", "url", "stars", "forks", "developer_trend_score"]:
+        if field not in repo:
+          raise ValueError(f"Developer trend #{idx} missing required field '{field}'")
+      if not (0.0 <= repo["developer_trend_score"] <= 100.0):
+        raise ValueError(f"Developer trend #{idx} score out of bounds: {repo['developer_trend_score']}")
+      if repo.get("stars_gained_24h") is not None and not isinstance(repo["stars_gained_24h"], int):
+        raise ValueError(f"Developer trend #{idx} stars_gained_24h must be int or None")
 
   return True
 
@@ -1252,6 +1268,13 @@ def run_pipeline(dry_run=False, max_age_hours=72, output_file="data.json"):
     clustered = cluster_and_deduplicate_articles(articles)
     print(f"📊 Story clustering complete: {len(clustered)} deduplicated story clusters.")
 
+    # Phase 2: Trafilatura clean article extraction for lead clusters
+    try:
+      from .extractor import extract_articles_batch
+      extract_articles_batch(clustered[:16], max_workers=5, timeout=5.0)
+    except Exception as exc:
+      print(f"   ⚠️ Article extraction notice: {exc} (falling back to feed summaries)")
+
     # Synthesis input IDs for verification
     synthesis_input_ids = [a["article_id"] for a in clustered[:16] if a.get("article_id")]
     ai_briefing = synthesize_with_gemini(clustered)
@@ -1260,11 +1283,21 @@ def run_pipeline(dry_run=False, max_age_hours=72, output_file="data.json"):
           ai_briefing["trends"], articles, synthesis_input_ids=synthesis_input_ids
       )
 
+    # Phase 3: AI Developer Trends collection with snapshot tracking
+    developer_trends = []
+    try:
+      from .github_collector import collect_github_developer_trends
+      developer_trends = collect_github_developer_trends(fallback_data_file=output_file)
+      print(f"🐙 GitHub Developer Trends complete: {len(developer_trends)} AI repositories scored.")
+    except Exception as exc:
+      print(f"   ⚠️ GitHub Developer Trends notice: {exc} (preserving previous if present)")
+
     payload = build_complete_payload(
         clustered,
         ai_briefing=ai_briefing,
         source_health_summary=health_summary,
-        source_health_details=health_details
+        source_health_details=health_details,
+        developer_trends=developer_trends,
     )
 
     # Validate payload strictly before file write

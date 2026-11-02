@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Autonomous, hourly AI market intelligence with traceable evidence provenance and 3-tier source verification.",
   "scripts": {
-    "test": "python3 test_backend.py && node test_qa.js && node test_viewports.js"
+    "test": "python3 test_backend.py && python3 -m unittest discover -s tests -p 'test_*.py' && node test_qa.js && node test_viewports.js"
   },
   "keywords": [
     "ai",

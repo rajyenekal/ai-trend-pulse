@@ -1,5 +1,17 @@
 # Feed cache and state
 .feed_cache.json
+.article_cache.json
+.github_snapshots.json
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+env/
 
 # Python bytecode
 __pycache__/

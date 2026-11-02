@@ -63,3 +63,24 @@ from .enricher import (
     PipelineExecutionError,
     run_pipeline,
 )
+
+from .extractor import (
+    ARTICLE_CACHE_FILE,
+    load_article_cache,
+    save_article_cache,
+    fetch_raw_html,
+    extract_article_content,
+    extract_articles_batch,
+)
+
+from .developer_scorer import (
+    calculate_developer_trend_score,
+)
+
+from .github_collector import (
+    GITHUB_SNAPSHOTS_FILE,
+    load_github_snapshots,
+    save_github_snapshots,
+    calculate_historical_growth,
+    collect_github_developer_trends,
+)

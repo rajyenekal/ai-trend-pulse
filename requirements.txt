@@ -1,0 +1,5 @@
+# AI Trend Pulse - Core Dependencies
+feedparser>=6.0.10
+google-genai>=1.0.0
+trafilatura>=2.0.0
+
