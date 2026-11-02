@@ -253,17 +253,38 @@ def extract_article_content(
           "content_length": len(clean_extracted),
       }
     else:
-      # Extracted text too short or empty -> fallback to summary
-      record = {
-          "url": url,
-          "text": fallback_text,
-          "title": extracted_title,
-          "author": extracted_author,
-          "published_date": str(extracted_date) if extracted_date else None,
-          "extraction_status": "fallback_summary",
-          "extracted_at": now_iso,
-          "content_length": len(fallback_text),
-      }
+      # Attempt selective Crawl4AI browser fallback if enabled
+      crawl_text, crawl_status = None, "disabled"
+      try:
+        from .browser_fallback import is_crawl4ai_available, extract_with_crawl4ai
+        if is_crawl4ai_available():
+          crawl_text, crawl_status = extract_with_crawl4ai(url, timeout=timeout)
+      except Exception:
+        pass
+
+      if crawl_text and len(crawl_text) >= 50:
+        record = {
+            "url": url,
+            "text": crawl_text,
+            "title": extracted_title,
+            "author": extracted_author,
+            "published_date": str(extracted_date) if extracted_date else None,
+            "extraction_status": "crawl4ai_extracted",
+            "extracted_at": now_iso,
+            "content_length": len(crawl_text),
+        }
+      else:
+        # Extracted text too short or empty -> fallback to summary
+        record = {
+            "url": url,
+            "text": fallback_text,
+            "title": extracted_title,
+            "author": extracted_author,
+            "published_date": str(extracted_date) if extracted_date else None,
+            "extraction_status": "fallback_summary",
+            "extracted_at": now_iso,
+            "content_length": len(fallback_text),
+        }
 
     if cache is not None:
       with _cache_lock:

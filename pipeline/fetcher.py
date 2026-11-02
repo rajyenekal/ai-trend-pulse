@@ -926,6 +926,10 @@ def fetch_source_feed(source, timeout=12.0, cache=None, max_retries=2):
       if fetch_method == "html_page_adapter" and source_id == "anthropic_news":
         entries, status = fetch_anthropic_official_news_with_status(timeout=timeout)
         health["http_status"] = status
+      elif fetch_method == "rsshub":
+        from .rsshub_collector import fetch_rsshub_feed
+        entries, status = fetch_rsshub_feed(source, timeout=timeout, cache=cache)
+        health["http_status"] = status
       elif feed_url:
         entries, status = parse_feed_with_fallback_status(feed_url, timeout=timeout, cache=cache)
         health["http_status"] = status

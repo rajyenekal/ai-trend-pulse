@@ -823,6 +823,117 @@ export function renderCuratedSections(data) {
 }
 
 // -------------------------------------------------------------
+// 10.5 RENDERING AI DEVELOPER TRENDS
+// -------------------------------------------------------------
+export function formatCompactNumber(num) {
+  const n = Number(num) || 0;
+  if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+  return String(n);
+}
+
+export function renderDeveloperTrends(data) {
+  const container = document.getElementById('developer-trends-container');
+  if (!container) return;
+
+  const rawTrends = data?.developer_trends || [];
+  if (rawTrends.length === 0) {
+    container.innerHTML = `
+      <div class="empty-dev-trends">
+        <p>No repository trends recorded yet. Snapshots will appear after the next scheduled update.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const activeLang = state.activeDevLanguage || 'All';
+  const filtered = activeLang === 'All'
+    ? rawTrends
+    : rawTrends.filter(r => (r.language || '').toLowerCase() === activeLang.toLowerCase());
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="empty-dev-trends">
+        <p>No ${escapeHTML(activeLang)} repositories found in current trend window.</p>
+        <button class="btn-empty-clear" onclick="setDevLanguageFilter('All', event)">Show All Languages</button>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = filtered.slice(0, 12).map((repo, idx) => {
+    const starsFmt = formatCompactNumber(repo.stars || 0);
+    const forksFmt = formatCompactNumber(repo.forks || 0);
+    const scoreVal = Number(repo.developer_trend_score || 0).toFixed(1);
+    const hasGrowth24 = repo.stars_gained_24h !== null && repo.stars_gained_24h !== undefined;
+
+    return `
+      <article class="developer-trend-card" data-repo="${escapeHTML(repo.repository || '')}" data-language="${escapeHTML(repo.language || 'Other')}">
+        <div class="dev-card-header">
+          <div class="dev-repo-identity">
+            <span class="dev-rank font-mono">#${idx + 1}</span>
+            <span class="dev-owner font-mono">${escapeHTML(repo.owner || '')}</span>
+          </div>
+          <span class="dev-score-badge font-mono" title="${escapeHTML(repo.score_explanation || 'Developer Trend Score')}">
+            Score ${scoreVal}
+          </span>
+        </div>
+
+        <h3 class="dev-repo-name">
+          <a href="${escapeHTML(repo.url || '#')}" target="_blank" rel="noopener noreferrer">${escapeHTML(repo.name || repo.repository || 'Repository')}</a>
+        </h3>
+
+        <p class="dev-repo-desc">${escapeHTML(repo.description || 'Open-source AI tool or framework.')}</p>
+
+        <div class="dev-meta-row">
+          <span class="dev-stat font-mono" title="GitHub Stars">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            ${starsFmt}
+          </span>
+          <span class="dev-stat font-mono" title="GitHub Forks">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9"/><path d="M12 12v3"/></svg>
+            ${forksFmt}
+          </span>
+          ${hasGrowth24 ? `
+            <span class="dev-growth-pill font-mono positive" title="Verified 24h Star Growth">
+              +${repo.stars_gained_24h} 24h
+            </span>
+          ` : `
+            <span class="dev-growth-pill font-mono pending" title="Historical 24h baseline accumulating">
+              24h baseline pending
+            </span>
+          `}
+        </div>
+
+        <div class="dev-card-footer">
+          <span class="dev-lang-pill font-mono">${escapeHTML(repo.language || 'Python')}</span>
+          <a href="${escapeHTML(repo.url || '#')}" class="dev-github-link font-mono" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+export function setDevLanguageFilter(lang, event) {
+  if (event && event.preventDefault) event.preventDefault();
+  state.activeDevLanguage = lang || 'All';
+  const pills = document.querySelectorAll('.dev-lang-pill');
+  pills.forEach(p => {
+    p.classList.toggle('active', p.getAttribute('data-lang') === state.activeDevLanguage);
+    p.setAttribute('aria-selected', p.getAttribute('data-lang') === state.activeDevLanguage ? 'true' : 'false');
+  });
+  renderDeveloperTrends(state.data);
+}
+
+if (typeof window !== 'undefined') {
+  window.renderDeveloperTrends = renderDeveloperTrends;
+  window.setDevLanguageFilter = setDevLanguageFilter;
+}
+
+// -------------------------------------------------------------
 // 11. RENDERING DAILY INTELLIGENCE OVERVIEW
 // -------------------------------------------------------------
 export function renderDailyOverview(overview, data) {

@@ -58,7 +58,8 @@
           <!-- Desktop Navigation -->
           <nav class="header-nav" aria-label="Main Navigation">
             <a href="#daily-overview-section" class="nav-link active">Overview</a>
-            <a href="#feed-section" class="nav-link">Developments</a>
+            <a href="#feed-section" class="nav-link">AI News</a>
+            <a href="#developer-trends-section" class="nav-link">Developer Trends</a>
             <a href="#dispatches-section" class="nav-link">Dispatches</a>
           </nav>
         </div>
@@ -167,6 +168,15 @@
               <!-- Dynamically rendered top developments with 1-sentence explanations and direct links -->
             </div>
           </div>
+
+          <!-- Developer Trends Preview Strip -->
+          <div class="dev-trends-preview-banner">
+            <div class="dev-preview-left">
+              <span class="dev-preview-icon">⚡</span>
+              <span class="dev-preview-text"><strong>AI Developer Trends:</strong> Tracking breakout GitHub repositories across AI agents, RAG, and MCP.</span>
+            </div>
+            <a href="#developer-trends-section" class="dev-preview-link">View Developer Trends →</a>
+          </div>
         </div>
       </section>
 
@@ -240,6 +250,31 @@
           <p class="empty-state-desc">Try clearing your search query or selecting another topic category above.</p>
           <button class="btn-empty-clear" onclick="resetAllFilters()">Reset All Filters</button>
         </article>
+      </section>
+
+      <!-- 2.5 AI DEVELOPER TRENDS (GITHUB SIGNAL VELOCITY) -->
+      <section id="developer-trends-section" class="curated-section developer-trends-section" aria-labelledby="developer-trends-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-tag-row">
+              <span class="section-kicker font-mono">GITHUB SIGNALS</span>
+              <span class="live-dot-badge">15 Repos Tracked</span>
+            </div>
+            <h2 id="developer-trends-heading" class="section-heading">AI Developer Trends</h2>
+            <span class="section-subtext">Open-source developer adoption, repository velocity, and real-time star growth.</span>
+          </div>
+          <!-- Language Filters -->
+          <div class="dev-lang-pills-bar" role="tablist" aria-label="Filter developer trends by language">
+            <button class="dev-lang-pill active" onclick="setDevLanguageFilter('All', event)" role="tab" aria-selected="true" data-lang="All">All</button>
+            <button class="dev-lang-pill" onclick="setDevLanguageFilter('Python', event)" role="tab" aria-selected="false" data-lang="Python">Python</button>
+            <button class="dev-lang-pill" onclick="setDevLanguageFilter('TypeScript', event)" role="tab" aria-selected="false" data-lang="TypeScript">TypeScript</button>
+            <button class="dev-lang-pill" onclick="setDevLanguageFilter('Rust', event)" role="tab" aria-selected="false" data-lang="Rust">Rust</button>
+            <button class="dev-lang-pill" onclick="setDevLanguageFilter('Go', event)" role="tab" aria-selected="false" data-lang="Go">Go</button>
+          </div>
+        </div>
+        <div id="developer-trends-container" class="developer-trends-grid">
+          <!-- Dynamically populated developer repository cards -->
+        </div>
       </section>
 
       <!-- 3. AI TOOLS YOU CAN USE (PRACTICAL WORKFLOWS) -->

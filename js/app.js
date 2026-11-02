@@ -20,6 +20,7 @@ import {
   renderDispatches,
   renderTopicPills,
   renderCuratedSections,
+  renderDeveloperTrends,
   renderDailyOverview,
   renderStatusBar,
   getTopicImageUrl,
@@ -104,6 +105,7 @@ export function renderCompleteUI(data) {
   renderDispatches(data.top_stories || []);
   renderTopicPills(CANONICAL_CATEGORIES, counts);
   renderCuratedSections(data);
+  renderDeveloperTrends(data);
   renderStatusBar(data);
   updateSavedCountLabel();
 }

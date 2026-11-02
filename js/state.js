@@ -15,6 +15,7 @@ export const state = {
   activeView: 'cards', // 'cards' (editorial grid) or 'wire' (compact scannable rows)
   hideCaseStudies: false,
   activeTopic: 'All',
+  activeDevLanguage: 'All',
   searchQuery: '',
   currentSort: 'latest',
   advancedFilters: {
