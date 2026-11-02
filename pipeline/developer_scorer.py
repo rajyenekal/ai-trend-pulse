@@ -121,7 +121,22 @@ def calculate_developer_trend_score(
   else:
     maturity_points = 0.0
 
-  total_score = round(min(100.0, max(0.0, velocity_points + recency_points + engagement_points + maturity_points)), 1)
-  explanation = f"{velocity_note}; {recency_note}."
+  # Emerging repository bonus (0 - 4 pts) for projects launched in past 90 days
+  emerging_note = ""
+  emerging_points = 0.0
+  if created_at:
+    try:
+      c_dt = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+      if c_dt.tzinfo is None:
+        c_dt = c_dt.replace(tzinfo=timezone.utc)
+      days_old = max(0.0, (datetime.now(timezone.utc) - c_dt).total_seconds() / 86400.0)
+      if days_old <= 90.0:
+        emerging_points = min(4.0, round((90.0 - days_old) * 0.04, 1))
+        emerging_note = f"Emerging project created {int(days_old)}d ago"
+    except Exception:
+      pass
+
+  total_score = round(min(100.0, max(0.0, velocity_points + recency_points + engagement_points + maturity_points + emerging_points)), 1)
+  explanation = f"{velocity_note}; {recency_note}." + (f" {emerging_note}." if emerging_note else "")
 
   return total_score, explanation

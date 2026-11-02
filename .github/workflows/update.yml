@@ -54,7 +54,8 @@ jobs:
       - name: Run Backend Tracker
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python tracker.py
 
       - name: Set up Node.js
@@ -94,7 +95,11 @@ jobs:
 
           def get_sig(d):
               stories = d.get("top_stories", [])
-              return [(s.get("id") or s.get("title"), s.get("pulse_score"), s.get("article_type")) for s in stories]
+              devs = d.get("developer_trends", [])
+              return (
+                  [(s.get("id") or s.get("title"), s.get("pulse_score"), s.get("article_type")) for s in stories],
+                  [(r.get("repository"), r.get("developer_trend_score"), r.get("stars")) for r in devs]
+              )
 
           if get_sig(new_data) != get_sig(old_data):
               print("YES")

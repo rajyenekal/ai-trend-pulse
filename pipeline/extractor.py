@@ -140,6 +140,10 @@ def fetch_raw_html(url, timeout=DEFAULT_EXTRACTION_TIMEOUT):
     return None, None, f"{type(e).__name__}: {str(e)}"
 
 
+import threading
+
+_cache_lock = threading.Lock()
+
 def extract_article_content(
     url,
     fallback_summary="",
@@ -169,8 +173,15 @@ def extract_article_content(
     }
 
   # 1. Check in-memory / disk cache
-  if cache is not None and not force_refresh:
-    cached_record = cache.get(url)
+  own_cache = False
+  active_cache = cache
+  if active_cache is None:
+    active_cache = load_article_cache()
+    own_cache = True
+
+  if active_cache is not None and not force_refresh:
+    with _cache_lock:
+      cached_record = active_cache.get(url)
     if cached_record and isinstance(cached_record, dict) and cached_record.get("text"):
       cached_copy = dict(cached_record)
       cached_copy["extraction_status"] = "cached"
@@ -188,8 +199,11 @@ def extract_article_content(
         "extracted_at": now_iso,
         "content_length": len(fallback_text),
     }
-    if cache is not None:
-      cache[url] = record
+    if active_cache is not None:
+      with _cache_lock:
+        active_cache[url] = record
+      if own_cache:
+        save_article_cache(active_cache)
     return record
 
   # 3. Fetch raw HTML with strict timeout
@@ -206,8 +220,11 @@ def extract_article_content(
         "content_length": len(fallback_text),
         "error": err_msg,
     }
-    if cache is not None:
-      cache[url] = record
+    if active_cache is not None:
+      with _cache_lock:
+        active_cache[url] = record
+      if own_cache:
+        save_article_cache(active_cache)
     return record
 
   # 4. Extract clean article text with Trafilatura
@@ -258,8 +275,11 @@ def extract_article_content(
           "content_length": len(fallback_text),
       }
 
-    if cache is not None:
-      cache[url] = record
+    if active_cache is not None:
+      with _cache_lock:
+        active_cache[url] = record
+      if own_cache:
+        save_article_cache(active_cache)
     return record
 
   except Exception as e:
@@ -275,8 +295,11 @@ def extract_article_content(
         "content_length": len(fallback_text),
         "error": str(e),
     }
-    if cache is not None:
-      cache[url] = record
+    if active_cache is not None:
+      with _cache_lock:
+        active_cache[url] = record
+      if own_cache:
+        save_article_cache(active_cache)
     return record
 
 

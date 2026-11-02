@@ -40,11 +40,11 @@ MAX_OBSERVATIONS_PER_REPO = 100
 USER_AGENT = "AI-Trend-Pulse-Developer-Trends/2.1 (+https://github.com/rajyenekal/ai-trend-pulse)"
 
 AI_SEARCH_QUERIES = [
-    "topic:ai-agent sort:stars-desc",
-    "topic:rag sort:stars-desc",
-    "topic:mcp sort:stars-desc",
-    "topic:llm sort:stars-desc",
-    "topic:coding-assistant sort:stars-desc",
+    "topic:ai-agent stars:>50",
+    "topic:rag stars:>50",
+    "topic:mcp stars:>50",
+    "topic:llm stars:>100",
+    "topic:coding-assistant stars:>50",
 ]
 
 
@@ -218,7 +218,13 @@ def collect_github_developer_trends(
   Gracefully falls back to existing snapshot data or data.json on rate limit or network failure.
   """
   now_iso = datetime.now(timezone.utc).isoformat()
-  gh_token = token or os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+  raw_token = token or os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+  gh_token = None
+  if raw_token and isinstance(raw_token, str):
+    clean = raw_token.strip()
+    if clean and clean not in ("true", "false", "None"):
+      gh_token = clean
+
   queries_to_run = queries or AI_SEARCH_QUERIES
 
   snapshot_data = load_github_snapshots(snapshot_file)
@@ -230,8 +236,8 @@ def collect_github_developer_trends(
   for q in queries_to_run:
     if rate_limit_encountered:
       break
-    encoded_q = urllib.parse.quote(q)
-    url = f"https://api.github.com/search/repositories?q={encoded_q}&sort=stars&order=desc&per_page=10"
+    params = urllib.parse.urlencode({"q": q, "sort": "stars", "order": "desc", "per_page": 10})
+    url = f"https://api.github.com/search/repositories?{params}"
 
     data, status, err = fetch_github_api(url, token=gh_token)
     if not data or status != 200:
