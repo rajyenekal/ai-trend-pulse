@@ -691,14 +691,57 @@ def generate_detailed_analysis(summary, title, what_changed="", why_it_matters="
   return "\n\n".join(paragraphs)
 
 
+def compute_recency_score(story, now_dt=None):
+  """Computes a recency-weighted ranking priority score (preserving original pulse_score for display).
+  Applies boost for recent 24-72h developments and decay for week-old stories.
+  """
+  base = float(story.get("pulse_score") or story.get("overall_score") or 70.0)
+  pub_iso = story.get("published_at") or story.get("published_datetime")
+  if not pub_iso:
+    return base
+  if not now_dt:
+    now_dt = datetime.now(timezone.utc)
+  try:
+    if isinstance(pub_iso, str):
+      clean_iso = pub_iso.replace("Z", "+00:00")
+      if clean_iso in ("Recent", "Date unavailable"):
+        return base
+      dt = datetime.fromisoformat(clean_iso)
+    elif hasattr(pub_iso, "tzinfo"):
+      dt = pub_iso if pub_iso.tzinfo else pub_iso.replace(tzinfo=timezone.utc)
+    else:
+      return base
+    age_hours = (now_dt - dt).total_seconds() / 3600.0
+    if age_hours <= 24:
+      return base + 15.0
+    elif age_hours <= 48:
+      return base + 10.0
+    elif age_hours <= 72:
+      return base + 5.0
+    elif age_hours <= 120:
+      return base - 5.0
+    elif age_hours <= 168:
+      return base - 15.0
+    else:
+      return base - 35.0
+  except Exception:
+    return base
+
+
 def generate_daily_overview(clustered_stories, now_iso):
   """Synthesizes a calm, grounded daily intelligence overview from actual collected stories.
   Provides total developments, dynamic briefing, and top 10-15 high-signal developments with publisher diversity.
   """
   total_count = len(clustered_stories)
+  try:
+    now_dt = datetime.fromisoformat(now_iso.replace("Z", "+00:00")) if now_iso else datetime.now(timezone.utc)
+  except Exception:
+    now_dt = datetime.now(timezone.utc)
+
+  ranked_stories = sorted(clustered_stories, key=lambda s: compute_recency_score(s, now_dt), reverse=True)
 
   # Detect primary themes across top items
-  top_items = clustered_stories[:5]
+  top_items = ranked_stories[:5]
   topics_present = [classify_topic(s.get("title", ""), s.get("summary", "")) for s in top_items]
   unique_topics = []
   for t in topics_present:
@@ -730,7 +773,7 @@ def generate_daily_overview(clustered_stories, now_iso):
   publisher_counts = {}
   MAX_TOP_PER_PUB = 2
 
-  for s in clustered_stories:
+  for s in ranked_stories:
     if len(top_developments) >= 15:
       break
 
@@ -818,12 +861,19 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
   now_iso = datetime.now(timezone.utc).isoformat()
   daily_overview = generate_daily_overview(clustered_stories, now_iso)
 
-  # 1. Format Top Stories (Dispatches) - capped to top 45 scored stories with publisher diversity
+  # 1. Format Top Stories (Dispatches) - capped to top 45 scored stories with publisher diversity and recency
   top_stories = []
   publisher_counts = {}
   MAX_PER_PUBLISHER = 6
 
-  for s in clustered_stories:
+  try:
+    now_dt = datetime.fromisoformat(now_iso.replace("Z", "+00:00")) if now_iso else datetime.now(timezone.utc)
+  except Exception:
+    now_dt = datetime.now(timezone.utc)
+
+  ranked_stories = sorted(clustered_stories, key=lambda s: compute_recency_score(s, now_dt), reverse=True)
+
+  for s in ranked_stories:
     if len(top_stories) >= 45:
       break
     src = s.get("source", "")

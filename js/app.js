@@ -107,7 +107,14 @@ export function renderCompleteUI(data) {
   renderTop5Bento(data.top_stories || []);
   syncFilterControlsUI();
   reRenderDevelopments();
-  renderDispatches(data.top_stories || []);
+
+  // Dispatches wire feed sorted chronologically so fresh breaking dispatches lead
+  const latestDispatches = [...(data.top_stories || [])].sort((a, b) => {
+    const tA = parseStoryTimestamp(a);
+    const tB = parseStoryTimestamp(b);
+    return tB !== tA ? tB - tA : (Number(b.pulse_score || 0) - Number(a.pulse_score || 0));
+  });
+  renderDispatches(latestDispatches);
   renderTopicPills(CANONICAL_CATEGORIES, counts);
   renderCuratedSections(data);
   renderDeveloperTrends(data);
