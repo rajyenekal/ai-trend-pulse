@@ -89,29 +89,32 @@ The sources are centralized in [`sources.json`](sources.json). Each entry adhere
 1. **Tier 1 (Official Labs & Frontier Developers)**:
    - OpenAI News (`openai.com/news/rss.xml`)
    - Anthropic Official News (`anthropic.com/news` via HTML adapter)
-   - Anthropic Research Bridge (`hnrss.org/newest?q=anthropic.com` community discovery)
    - Google DeepMind Blog (`deepmind.google/blog/rss.xml`)
    - Google AI Blog (`blog.google/technology/ai/rss/`)
    - Microsoft AI Blog (`blogs.microsoft.com/ai/feed/`)
+   - NVIDIA Blog (`blogs.nvidia.com` / `developer.nvidia.com/blog/feed`)
+   - AWS Machine Learning Blog (`aws.amazon.com/blogs/machine-learning/feed/`)
+   - Amazon Science (`amazon.science/index.rss`)
+   - GitHub Blog AI (`github.blog/category/ai-ml/feed/`)
    - Mistral AI News (`mistral.ai/news/index.xml`)
 2. **Tier 2 (Independent Tech Journalism)**:
    - MIT Technology Review (`technologyreview.com/topic/artificial-intelligence/feed/`)
    - The Verge AI (`theverge.com/rss/ai-artificial-intelligence/index.xml`)
    - TechCrunch AI (`techcrunch.com/category/artificial-intelligence/feed/`)
-   - Ars Technica Lab (`feeds.arstechnica.com/arstechnica/technology-lab`)
+   - Ars Technica (`feeds.arstechnica.com/arstechnica/technology-lab`)
    - The Decoder (`the-decoder.com/feed/`)
-3. **Tier 3 (Open Research & Cloud Infrastructure)**:
+3. **Tier 3 (Open Research & Academic Preprints)**:
    - Hugging Face Blog (`huggingface.co/blog/feed.xml`)
-   - NVIDIA Developer Blog (`developer.nvidia.com/blog/feed`)
-   - AWS Machine Learning Blog (`aws.amazon.com/blogs/machine-learning/feed/`)
-   - Amazon Science (`amazon.science/index.rss`)
-4. **Tier 4 (Community, Academic Preprints & Analysis)**:
    - arXiv Computer Science AI (`export.arxiv.org/rss/cs.AI`)
    - arXiv Machine Learning (`export.arxiv.org/rss/cs.LG`)
-   - arXiv Computation and Language (`export.arxiv.org/rss/cs.CL`)
-   - Simon Willison Weblog (`simonwillison.net/atom/entries/`)
    - Berkeley AI Research / BAIR (`bair.berkeley.edu/blog/feed.xml`)
+   - LMSYS Org (`lmsys.org/blog/feed.xml`)
+   - Hugging Face Daily Papers (`huggingface.co/papers`)
+4. **Tier 4 (Community, Practitioner Commentary & Discovery)**:
+   - Anthropic Community Discovery (`hnrss.org/newest?q=anthropic.com`)
+   - Simon Willison Weblog (`simonwillison.net/atom/entries/`)
    - Import AI by Jack Clark (`importai.substack.com/feed`)
+   - Latent Space (`latent.space/feed`)
 
 ---
 

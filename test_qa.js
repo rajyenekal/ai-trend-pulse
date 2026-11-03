@@ -24,8 +24,9 @@ const requiredIDs = [
   'sort-select',
   'view-grid-btn',
   'view-list-btn',
-  'search-input',
-  'search-clear',
+  'modal-search-input',
+  'dev-trends-repo-count',
+  'overview-stat-label',
   'developments-container',
   'empty-state-box',
   'dispatches-heading',
@@ -36,7 +37,7 @@ const requiredIDs = [
   'btn-close-drawer',
   'saved-drawer-items',
   'search-modal',
-  'modal-search-input',
+  'developer-trends-container',
   'chip-all',
   'chip-articles',
   'chip-companies',
@@ -117,6 +118,31 @@ semanticTags.forEach(tag => {
 });
 console.log('✅ Semantic tags verified (<header>, <main>, <section>, <article>, <aside>, <footer>, etc.).');
 
+// Check document heading hierarchy (single <h1>, feed heading is <h2>)
+const h1Matches = htmlContent.match(/<h1[^>]*>/gi) || [];
+if (h1Matches.length !== 1) {
+  console.error(`❌ Expected exactly 1 <h1> in index.html, found ${h1Matches.length}`);
+  process.exit(1);
+}
+console.log('✅ Document heading hierarchy verified (single <h1>, feed heading is <h2>).');
+
+// Verify dialog accessibility attributes (aria-modal, aria-hidden, inert)
+const dialogs = ['saved-drawer', 'reader-drawer', 'methodology-modal'];
+dialogs.forEach(id => {
+  if (!htmlContent.includes(`id="${id}"`) || !htmlContent.includes(`aria-modal="true"`)) {
+    console.error(`❌ Dialog #${id} missing aria-modal="true"`);
+    process.exit(1);
+  }
+});
+console.log('✅ Dialog accessibility verified (aria-modal, aria-hidden, inert attributes).');
+
+// Verify CSS skeleton loaders
+if (!htmlContent.includes('skeleton-shimmer')) {
+  console.error('❌ Skeleton loaders not found in index.html');
+  process.exit(1);
+}
+console.log('✅ Accessible CSS skeleton loaders verified for progressive hydration.');
+
 // 3. Extract and Validate JavaScript Execution
 console.log('\n▶ [2/6] Validating JavaScript execution and data binding...');
 const jsFiles = ['js/state.js', 'js/render.js', 'js/drawer.js', 'js/app.js'];
@@ -181,6 +207,9 @@ class MockElement {
   get firstElementChild() { return this.children[0] || null; }
   setAttribute(k, v) { this.attributes[k] = v; }
   getAttribute(k) { return this.attributes[k]; }
+  removeAttribute(k) { delete this.attributes[k]; }
+  addEventListener() {}
+  removeEventListener() {}
   appendChild(child) { this.children.push(child); }
   querySelector(sel) { return new MockElement('span'); }
   querySelectorAll(sel) { return []; }

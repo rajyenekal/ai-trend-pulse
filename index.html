@@ -58,8 +58,10 @@
           <!-- Desktop Navigation -->
           <nav class="header-nav" aria-label="Main Navigation">
             <a href="#daily-overview-section" class="nav-link active">Overview</a>
-            <a href="#feed-section" class="nav-link">AI News</a>
-            <a href="#developer-trends-section" class="nav-link">Developer Trends</a>
+            <a href="#feed-section" class="nav-link">Developments</a>
+            <a href="#developer-trends-section" class="nav-link">Dev Trends</a>
+            <a href="#ai-tools-section" class="nav-link">AI Tools</a>
+            <a href="#research-safety-section" class="nav-link">Safety &amp; Policy</a>
             <a href="#dispatches-section" class="nav-link">Dispatches</a>
           </nav>
         </div>
@@ -91,7 +93,7 @@
 
           <!-- 3-Way Theme Switcher: Auto | Light | Dark -->
           <div class="theme-switcher" role="radiogroup" aria-label="Theme mode selection">
-            <button class="theme-opt-btn" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="false" title="System Auto Theme" aria-label="System Theme">
+            <button class="theme-opt-btn" id="theme-btn-system" onclick="setThemePreference('system')" role="radio" aria-checked="true" title="System Auto Theme" aria-label="System Theme">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               <span class="theme-label">Auto</span>
             </button>
@@ -127,10 +129,9 @@
       <nav class="mobile-section-nav" aria-label="Quick section navigation">
         <a href="#daily-overview-section" class="mobile-nav-pill active">Overview</a>
         <a href="#feed-section" class="mobile-nav-pill">Developments</a>
-        <a href="#topics-section" class="mobile-nav-pill">Topics</a>
+        <a href="#developer-trends-section" class="mobile-nav-pill">Dev Trends</a>
         <a href="#ai-tools-section" class="mobile-nav-pill">AI Tools</a>
-        <a href="#dev-radar-section" class="mobile-nav-pill">Dev Radar</a>
-        <a href="#research-safety-section" class="mobile-nav-pill">Safety/Policy</a>
+        <a href="#research-safety-section" class="mobile-nav-pill">Safety &amp; Policy</a>
         <a href="#dispatches-section" class="mobile-nav-pill">Dispatches</a>
       </nav>
     </div>
@@ -138,6 +139,12 @@
 
   <div class="site-wrap">
     <main id="main-content">
+      <noscript>
+        <div class="noscript-banner" role="alert">
+          <strong>JavaScript Required:</strong> AI Trend Pulse requires JavaScript to render real-time interactive intelligence feeds, search, and reading drawers. Please enable JavaScript in your browser to view the latest developments.
+        </div>
+      </noscript>
+
       <!-- 0. DAILY INTELLIGENCE OVERVIEW & CATCH ME UP -->
       <section id="daily-overview-section" class="daily-overview-section" aria-labelledby="overview-heading">
         <div class="overview-hero">
@@ -161,11 +168,13 @@
               </div>
               <div class="catch-me-up-stat" id="overview-stat-count">
                 <span class="stat-num" id="overview-count-val">0</span>
-                <span class="stat-label">developments indexed today</span>
+                <span class="stat-label" id="overview-stat-label">developments indexed past 24h</span>
               </div>
             </div>
             <div class="catch-me-up-grid" id="catch-me-up-items">
-              <!-- Dynamically rendered top developments with 1-sentence explanations and direct links -->
+              <div class="skeleton-card skeleton-shimmer" style="height: 100px;"></div>
+              <div class="skeleton-card skeleton-shimmer" style="height: 100px;"></div>
+              <div class="skeleton-card skeleton-shimmer" style="height: 100px;"></div>
             </div>
           </div>
 
@@ -198,7 +207,7 @@
       <section id="feed-section" class="feed-section" aria-labelledby="feed-heading">
         <div class="section-header">
           <div class="section-title-wrap">
-            <h1 id="feed-heading" class="section-heading">Latest AI Developments</h1>
+            <h2 id="feed-heading" class="section-heading">Latest AI Developments</h2>
             <span class="section-subtext">Clear factual context, practical impact, and verified source provenance.</span>
           </div>
 
@@ -222,47 +231,48 @@
         </div>
 
         <!-- Practical Editorial Section Filters -->
-        <div id="editorial-filter-bar" class="editorial-filter-bar" role="tablist" aria-label="Editorial Section Filters">
-          <button class="editorial-filter-pill active" data-section="all" onclick="handleSectionFilterChange('all', this)" role="tab" aria-selected="true">All Intelligence</button>
-          <button class="editorial-filter-pill" data-section="briefing" onclick="handleSectionFilterChange('briefing', this)" role="tab" aria-selected="false">⚡ Briefing</button>
-          <button class="editorial-filter-pill" data-section="research" onclick="handleSectionFilterChange('research', this)" role="tab" aria-selected="false">🔬 Research</button>
-          <button class="editorial-filter-pill" data-section="developer" onclick="handleSectionFilterChange('developer', this)" role="tab" aria-selected="false">💻 Developer</button>
-          <button class="editorial-filter-pill" data-section="industry" onclick="handleSectionFilterChange('industry', this)" role="tab" aria-selected="false">🏢 Industry</button>
-          <button class="editorial-filter-pill" data-section="safety" onclick="handleSectionFilterChange('safety', this)" role="tab" aria-selected="false">🛡️ Safety &amp; Policy</button>
+        <div id="editorial-filter-bar" class="editorial-filter-bar" role="group" aria-label="Editorial Section Filters">
+          <button class="editorial-filter-pill active" data-section="all" onclick="handleSectionFilterChange('all', this)" aria-pressed="true">All Intelligence</button>
+          <button class="editorial-filter-pill" data-section="briefing" onclick="handleSectionFilterChange('briefing', this)" aria-pressed="false">⚡ Briefing</button>
+          <button class="editorial-filter-pill" data-section="research" onclick="handleSectionFilterChange('research', this)" aria-pressed="false">🔬 Research</button>
+          <button class="editorial-filter-pill" data-section="developer" onclick="handleSectionFilterChange('developer', this)" aria-pressed="false">💻 Developer</button>
+          <button class="editorial-filter-pill" data-section="industry" onclick="handleSectionFilterChange('industry', this)" aria-pressed="false">🏢 Industry</button>
+          <button class="editorial-filter-pill" data-section="safety" onclick="handleSectionFilterChange('safety', this)" aria-pressed="false">🛡️ Safety &amp; Policy</button>
         </div>
 
         <!-- Editorial Noise Reduction Toggles -->
         <div class="editorial-toggles-bar" aria-label="Content type noise reduction">
           <span class="editorial-toggles-label font-mono">NOISE REDUCTION:</span>
-          <button id="btn-hide-case-studies" class="btn-toggle-filter" onclick="toggleHideCaseStudies()" title="Hide marketing case studies & press releases">
+          <button id="btn-hide-case-studies" class="btn-toggle-filter" onclick="toggleHideCaseStudies()" aria-pressed="false" title="Hide marketing case studies & press releases">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
             <span>Hide Case Studies</span>
           </button>
-          <button id="btn-hide-preprints" class="btn-toggle-filter" onclick="toggleFilter('hidePreprints')" title="Hide uncorroborated arXiv preprints">
+          <button id="btn-hide-preprints" class="btn-toggle-filter" onclick="toggleFilter('hidePreprints')" aria-pressed="false" title="Hide uncorroborated arXiv preprints">
             <span>Hide Preprints</span>
           </button>
-          <button id="btn-hide-minor" class="btn-toggle-filter" onclick="toggleFilter('hideMinorUpdates')" title="Hide routine minor version updates">
+          <button id="btn-hide-minor" class="btn-toggle-filter" onclick="toggleFilter('hideMinorUpdates')" aria-pressed="false" title="Hide routine minor version updates">
             <span>Hide Minor Updates</span>
           </button>
-          <button id="btn-hide-funding" class="btn-toggle-filter" onclick="toggleFilter('hideFunding')" title="Hide venture capital funding rounds">
+          <button id="btn-hide-funding" class="btn-toggle-filter" onclick="toggleFilter('hideFunding')" aria-pressed="false" title="Hide venture capital funding rounds">
             <span>Hide Funding</span>
           </button>
-          <button id="btn-hide-opinion" class="btn-toggle-filter" onclick="toggleFilter('hideOpinion')" title="Hide commentary and opinion columns">
+          <button id="btn-hide-opinion" class="btn-toggle-filter" onclick="toggleFilter('hideOpinion')" aria-pressed="false" title="Hide commentary and opinion columns">
             <span>Hide Opinion</span>
           </button>
         </div>
 
-        <!-- Hidden input and clear button for test script compatibility -->
-        <input type="text" id="search-input" style="display:none;" />
-        <button id="search-clear" style="display:none;"></button>
-
         <!-- Top 5 Bento Grid Container -->
         <div id="bento-container" class="bento-container">
-          <!-- Dynamically populated top 5 stories with visual weight -->
+          <div class="skeleton-card skeleton-shimmer" style="height: 320px; width: 100%;"></div>
         </div>
 
         <!-- Developments Multi-Tier Grid Container -->
         <div id="developments-container" class="developments-grid">
+          <div class="skeleton-card skeleton-shimmer" style="height: 275px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 275px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 275px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 275px;"></div>
+        </div>
           <!-- Dynamically populated multi-tier cards -->
         </div>
 
@@ -286,7 +296,7 @@
           <div class="section-title-wrap">
             <div class="section-tag-row">
               <span class="section-kicker font-mono">GITHUB SIGNALS</span>
-              <span class="live-dot-badge">15 Repos Tracked</span>
+              <span class="live-dot-badge" id="dev-trends-repo-count">15 Repos Tracked</span>
             </div>
             <h2 id="developer-trends-heading" class="section-heading">AI Developer Trends</h2>
             <span class="section-subtext">Open-source developer adoption, repository velocity, and real-time star growth.</span>
@@ -301,7 +311,9 @@
           </div>
         </div>
         <div id="developer-trends-container" class="developer-trends-grid">
-          <!-- Dynamically populated developer repository cards -->
+          <div class="skeleton-card skeleton-shimmer" style="height: 180px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 180px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 180px;"></div>
         </div>
       </section>
 
@@ -317,7 +329,9 @@
           </div>
         </div>
         <div id="ai-tools-container" class="curated-grid">
-          <!-- Dynamically populated AI tools -->
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
         </div>
       </section>
 
@@ -333,7 +347,9 @@
           </div>
         </div>
         <div id="dev-radar-container" class="curated-grid">
-          <!-- Dynamically populated developer radar -->
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
         </div>
       </section>
 
@@ -349,7 +365,9 @@
           </div>
         </div>
         <div id="research-safety-container" class="curated-grid">
-          <!-- Dynamically populated research, safety and policy -->
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
+          <div class="skeleton-card skeleton-shimmer" style="height: 160px;"></div>
         </div>
       </section>
 
@@ -363,14 +381,16 @@
         </div>
 
         <ul id="stories-container" class="dispatches-grid dispatches-list">
-          <!-- Dynamically populated source stories -->
+          <li class="skeleton-card skeleton-shimmer" style="height: 120px; list-style: none;"></li>
+          <li class="skeleton-card skeleton-shimmer" style="height: 120px; list-style: none;"></li>
+          <li class="skeleton-card skeleton-shimmer" style="height: 120px; list-style: none;"></li>
         </ul>
       </section>
     </main>
 
     <!-- SAVED STORIES DRAWER / BOTTOM SHEET -->
     <div id="drawer-backdrop" class="drawer-overlay" onclick="closeSavedDrawer()"></div>
-    <aside id="saved-drawer" class="saved-drawer" aria-labelledby="drawer-title" role="dialog" aria-modal="true">
+    <aside id="saved-drawer" class="saved-drawer" aria-labelledby="drawer-title" role="dialog" aria-modal="true" aria-hidden="true" inert>
       <div class="drawer-header">
         <div>
           <h2 id="drawer-title" class="drawer-title">Saved Stories</h2>
@@ -388,7 +408,7 @@
 
     <!-- IN-APP READER VIEW / STORY DEEP DIVE DRAWER -->
     <div id="reader-backdrop" class="drawer-overlay" onclick="closeReaderView()"></div>
-    <aside id="reader-drawer" class="reader-drawer" aria-labelledby="reader-title" role="dialog" aria-modal="true">
+    <aside id="reader-drawer" class="reader-drawer" aria-labelledby="reader-title" role="dialog" aria-modal="true" aria-hidden="true" inert>
       <div class="reader-header">
         <div class="reader-header-meta">
           <span id="reader-topic-badge" class="badge-card-topic">AI Agents</span>
@@ -428,7 +448,7 @@
         </div>
 
         <div id="reader-image-wrap" class="reader-image-wrap">
-          <img id="reader-image" src="" alt="Story visual" loading="lazy" />
+          <img id="reader-image" alt="" loading="lazy" />
         </div>
 
         <!-- KEY TAKEAWAYS BULLET POINTS -->
@@ -490,7 +510,7 @@
         <div id="reader-affected-box" class="reader-affected-box">
           <span class="hero-audience-label">Affected Industry / Stakeholders</span>
           <div id="reader-audience-pills" class="hero-audience-pills"></div>
-          <div id="reader-audience-impact-statement" class="reader-impact-statement" style="display:none; margin-top:10px; padding:10px 14px; border-radius:8px; background:var(--bg-surface); border-left:3px solid #6366f1; font-size:0.84rem; line-height:1.45; color:var(--text-secondary);"></div>
+          <div id="reader-audience-impact-statement" class="reader-impact-statement" style="display:none;"></div>
         </div>
 
         <!-- CORROBORATED SOURCES / PROVENANCE -->
@@ -516,7 +536,7 @@
 
     <!-- SEARCH EXPERIENCE COMMAND PALETTE MODAL -->
     <div id="search-modal" class="search-modal-backdrop" onclick="handleSearchBackdropClick(event)">
-      <div class="search-modal-box" role="dialog" aria-label="Search AI News">
+      <div class="search-modal-box" role="dialog" aria-modal="true" aria-label="Search AI News" aria-hidden="true" inert>
         <div class="search-modal-input-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <input type="text" id="modal-search-input" class="search-modal-input" placeholder="Search AI news, companies, models..." oninput="handleSearchInput(this.value)" autocomplete="off" />
@@ -540,9 +560,9 @@
 
     <!-- EDITORIAL & SCORING METHODOLOGY MODAL -->
     <div id="methodology-backdrop" class="methodology-modal-backdrop" onclick="handleMethodologyBackdropClick(event)">
-      <div id="methodology-modal" class="methodology-modal-box" role="dialog" aria-labelledby="methodology-modal-title" aria-modal="true">
+      <div id="methodology-modal" class="methodology-modal-box" role="dialog" aria-labelledby="methodology-modal-title" aria-modal="true" aria-hidden="true" inert>
         <div class="methodology-header">
-          <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="methodology-title-wrap" style="display: flex; align-items: center; gap: 10px;">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
             <h2 id="methodology-modal-title" style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin: 0;">Editorial Methodology &amp; Scoring Framework</h2>
           </div>
@@ -568,7 +588,7 @@
                 <tr>
                   <td><span class="badge-tier tier-1"><span class="badge-tier-dot"></span>Tier 1</span></td>
                   <td><strong>Primary Labs &amp; Official Announcements</strong></td>
-                  <td>OpenAI, Anthropic, Google DeepMind, Google AI, Microsoft AI, NVIDIA, AWS, Mistral, Hugging Face</td>
+                  <td>OpenAI News, Anthropic Official News, Google DeepMind, Google AI Blog, Microsoft AI News, NVIDIA Blog, AWS Machine Learning, Amazon Science, GitHub Blog AI, Mistral AI News</td>
                   <td>100</td>
                 </tr>
                 <tr>
@@ -580,13 +600,13 @@
                 <tr>
                   <td><span class="badge-tier tier-3"><span class="badge-tier-dot"></span>Tier 3</span></td>
                   <td><strong>Open Research &amp; Academic Preprints</strong></td>
-                  <td>arXiv (cs.AI, cs.LG), Berkeley AI Research (BAIR)</td>
+                  <td>Hugging Face Blog, arXiv cs.AI, arXiv cs.LG, BAIR Blog, LMSYS Org, Hugging Face Daily Papers</td>
                   <td>80</td>
                 </tr>
                 <tr>
                   <td><span class="badge-tier tier-4"><span class="badge-tier-dot"></span>Tier 4</span></td>
                   <td><strong>Practitioner Commentary &amp; Community Discovery</strong></td>
-                  <td>Simon Willison Weblog, Import AI (Jack Clark), Anthropic Community Discovery (HNRSS)</td>
+                  <td>Anthropic Community Discovery (HNRSS), Simon Willison Weblog, Import AI (Jack Clark), Latent Space</td>
                   <td>65</td>
                 </tr>
               </tbody>
@@ -596,10 +616,10 @@
           <div class="methodology-card">
             <h3>2. Algorithmic Pulse Scoring Formula</h3>
             <p>Every ingested dispatch is evaluated through a deterministic scoring function that balances historical significance, developer utility, and verified multi-publisher corroboration:</p>
-            <div style="background:var(--bg-elevated); padding:12px 16px; border-radius:8px; font-family:var(--font-mono); font-size:0.85rem; color:var(--accent); margin:10px 0; border:1px solid var(--border-subtle);">
+            <div class="methodology-formula-box">
               Pulse Score = 0.30 × Importance + 0.20 × Relevance + 0.20 × Freshness + 0.15 × Coverage + 0.15 × Source Quality
             </div>
-            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
+            <ul class="methodology-list">
               <li><strong>Importance (30%):</strong> Architectural milestones, frontier benchmark breakthroughs, safety framework updates, and API releases. Safety, security, alignment, and policy stories receive a guaranteed minimum protected importance score of 75.</li>
               <li><strong>Audience Relevance (20%):</strong> Direct utility for software developers, ML researchers, enterprise architects, and product builders.</li>
               <li><strong>Freshness (20%):</strong> Time-decay function anchored to verified publication timestamps; stories with missing dates receive a neutral baseline (50) without artificial freshness boosting.</li>
@@ -610,7 +630,7 @@
 
           <div class="methodology-card">
             <h3>3. Evidence Provenance &amp; Anti-Hallucination Architecture</h3>
-            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
+            <ul class="methodology-list" style="gap: 8px;">
               <li><strong>Strict Deterministic Article IDs:</strong> Every collected story receives a stable, content-grounded article ID (<code>art_{source_id}_{hash}</code>). Executive briefing trends must cite exact IDs and canonical URLs verified against ingested records.</li>
               <li><strong>Anti-Hallucination URL Matching:</strong> URL prefix matching is eliminated. Exact normalized URL equality is enforced, and trends with invalid citations are rejected rather than substituted with unrelated stories.</li>
               <li><strong>Independent Publisher Grouping:</strong> Corroboration counts require distinct parent publishing entities (e.g. Alphabet/Google, Microsoft, Amazon, Yahoo/TechCrunch). Social discovery feeds provide discovery signals but are never counted as corroborating journalism.</li>
@@ -622,7 +642,7 @@
           <div class="methodology-card">
             <h3>4. Canonical Editorial Categories</h3>
             <p>Every story is deterministically classified into one of eight distinct editorial domains with internal confidence scoring:</p>
-            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
+            <ul class="methodology-list">
               <li><strong>AI Policy &amp; Regulation:</strong> Legal proceedings, environmental/emissions lawsuits, copyright disputes, and government policy.</li>
               <li><strong>AI Security &amp; Safety:</strong> Model safety evaluations, alignment frameworks, guardrails, exploit reports, and cybersecurity vulnerabilities.</li>
               <li><strong>AI Infrastructure:</strong> Compute systems, GPUs, custom silicon accelerators, supercomputer clusters, and data center energy grids.</li>
@@ -637,7 +657,7 @@
           <div class="methodology-card">
             <h3>5. Ingestion Health &amp; Source Telemetry</h3>
             <p>To eliminate silent pipeline failures and provide absolute transparency into upstream data feeds, AI Trend Pulse continuously records end-to-end ingestion telemetry across all 25 monitored sources:</p>
-            <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
+            <ul class="methodology-list">
               <li><strong>Live Health Tracking:</strong> Every source records <code>fetch_status</code> (success, failed, empty), HTTP status codes, timestamp of last success, and exact counts of articles received vs accepted.</li>
               <li><strong>Zero Silent Failures:</strong> In the event of a total network outage or upstream block, the ingestion pipeline halts with a non-zero exit code, triggering GitHub Actions alerts while preserving the verified dataset without destructive replacement.</li>
               <li><strong>Graceful Degradation:</strong> When individual feeds experience upstream latency or transient 5xx errors, the pipeline flags the system as degraded, logs the diagnostic error, and safely processes available fresh dispatches.</li>
@@ -663,19 +683,53 @@
 
         <div class="footer-col-feeds">
           <h3 class="footer-heading">Monitored Feeds (25 Verified Sources)</h3>
-          <ul class="footer-feeds-list">
-            <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research &amp; News ↗</a></li>
-            <li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News &amp; Research ↗</a></li>
-            <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind Blog ↗</a></li>
-            <li><a href="https://blogs.microsoft.com/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI Blog ↗</a></li>
-            <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Technology Review ↗</a></li>
-            <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
-            <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI ↗</a></li>
-            <li><a href="https://arstechnica.com/information-technology/" target="_blank" rel="noopener noreferrer">Ars Technica ↗</a></li>
-            <li><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a></li>
-            <li><a href="https://developer.nvidia.com/blog" target="_blank" rel="noopener noreferrer">NVIDIA Developer Blog ↗</a></li>
-            <li><a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer">arXiv Computer Science AI ↗</a></li>
-          </ul>
+          <div class="footer-feeds-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+            <div>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 1: Primary Labs</h4>
+              <ul class="footer-feeds-list">
+                <li><a href="https://openai.com/news" target="_blank" rel="noopener noreferrer">OpenAI News ↗</a></li>
+                <li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News ↗</a></li>
+                <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind ↗</a></li>
+                <li><a href="https://blog.google/technology/ai/" target="_blank" rel="noopener noreferrer">Google AI Blog ↗</a></li>
+                <li><a href="https://blogs.microsoft.com/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI ↗</a></li>
+                <li><a href="https://blogs.nvidia.com" target="_blank" rel="noopener noreferrer">NVIDIA Blog ↗</a></li>
+                <li><a href="https://aws.amazon.com/blogs/machine-learning/" target="_blank" rel="noopener noreferrer">AWS ML ↗</a></li>
+                <li><a href="https://www.amazon.science" target="_blank" rel="noopener noreferrer">Amazon Science ↗</a></li>
+                <li><a href="https://github.blog/category/ai-ml/" target="_blank" rel="noopener noreferrer">GitHub Blog AI ↗</a></li>
+                <li><a href="https://mistral.ai/news/" target="_blank" rel="noopener noreferrer">Mistral AI ↗</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 2: Tech Press</h4>
+              <ul class="footer-feeds-list">
+                <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Tech Review ↗</a></li>
+                <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
+                <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI ↗</a></li>
+                <li><a href="https://arstechnica.com" target="_blank" rel="noopener noreferrer">Ars Technica ↗</a></li>
+                <li><a href="https://the-decoder.com" target="_blank" rel="noopener noreferrer">The Decoder ↗</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 3: Open Research</h4>
+              <ul class="footer-feeds-list">
+                <li><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a></li>
+                <li><a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer">arXiv cs.AI ↗</a></li>
+                <li><a href="https://arxiv.org/list/cs.LG/recent" target="_blank" rel="noopener noreferrer">arXiv cs.LG ↗</a></li>
+                <li><a href="https://bair.berkeley.edu/blog/" target="_blank" rel="noopener noreferrer">BAIR Blog ↗</a></li>
+                <li><a href="https://lmsys.org/blog/" target="_blank" rel="noopener noreferrer">LMSYS Org ↗</a></li>
+                <li><a href="https://huggingface.co/papers" target="_blank" rel="noopener noreferrer">HF Papers ↗</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 4: Community</h4>
+              <ul class="footer-feeds-list">
+                <li><a href="https://news.ycombinator.com" target="_blank" rel="noopener noreferrer">HN Discovery ↗</a></li>
+                <li><a href="https://simonwillison.net" target="_blank" rel="noopener noreferrer">Simon Willison ↗</a></li>
+                <li><a href="https://importai.substack.com" target="_blank" rel="noopener noreferrer">Import AI ↗</a></li>
+                <li><a href="https://www.latent.space" target="_blank" rel="noopener noreferrer">Latent Space ↗</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 

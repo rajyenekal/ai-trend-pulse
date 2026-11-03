@@ -127,7 +127,7 @@ export function renderCompleteUI(data) {
 // -------------------------------------------------------------
 export function handleSearchInput(query) {
   state.searchQuery = query || '';
-  const searchInput = document.getElementById('search-input');
+  const searchInput = document.getElementById('modal-search-input');
   if (searchInput && searchInput.value !== state.searchQuery) {
     searchInput.value = state.searchQuery;
   }
@@ -153,7 +153,7 @@ export function handleSectionFilterChange(section, btnEl) {
     bar.querySelectorAll('.editorial-filter-pill').forEach(btn => {
       const isAct = btn.getAttribute('data-section') === section;
       btn.classList.toggle('active', isAct);
-      btn.setAttribute('aria-selected', isAct ? 'true' : 'false');
+      btn.setAttribute('aria-pressed', isAct ? 'true' : 'false');
     });
   }
   reRenderDevelopments();
@@ -168,30 +168,40 @@ export function toggleFilter(filterKey) {
 export function syncFilterControlsUI() {
   const csBtn = document.getElementById('btn-hide-case-studies');
   if (csBtn) {
-    csBtn.classList.toggle('active', Boolean(state.hideCaseStudies || state.userFilters?.hideCaseStudies));
+    const active = Boolean(state.hideCaseStudies || state.userFilters?.hideCaseStudies);
+    csBtn.classList.toggle('active', active);
+    csBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
   }
   const preprintsBtn = document.getElementById('btn-hide-preprints');
   if (preprintsBtn) {
-    preprintsBtn.classList.toggle('active', Boolean(state.userFilters?.hidePreprints));
+    const active = Boolean(state.userFilters?.hidePreprints);
+    preprintsBtn.classList.toggle('active', active);
+    preprintsBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
   }
   const minorBtn = document.getElementById('btn-hide-minor');
   if (minorBtn) {
-    minorBtn.classList.toggle('active', Boolean(state.userFilters?.hideMinorUpdates));
+    const active = Boolean(state.userFilters?.hideMinorUpdates);
+    minorBtn.classList.toggle('active', active);
+    minorBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
   }
   const fundingBtn = document.getElementById('btn-hide-funding');
   if (fundingBtn) {
-    fundingBtn.classList.toggle('active', Boolean(state.userFilters?.hideFunding));
+    const active = Boolean(state.userFilters?.hideFunding);
+    fundingBtn.classList.toggle('active', active);
+    fundingBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
   }
   const opinionBtn = document.getElementById('btn-hide-opinion');
   if (opinionBtn) {
-    opinionBtn.classList.toggle('active', Boolean(state.userFilters?.hideOpinion));
+    const active = Boolean(state.userFilters?.hideOpinion);
+    opinionBtn.classList.toggle('active', active);
+    opinionBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
   }
   const bar = document.getElementById('editorial-filter-bar');
   if (bar) {
     bar.querySelectorAll('.editorial-filter-pill').forEach(btn => {
       const isAct = btn.getAttribute('data-section') === state.activeSectionFilter;
       btn.classList.toggle('active', isAct);
-      btn.setAttribute('aria-selected', isAct ? 'true' : 'false');
+      btn.setAttribute('aria-pressed', isAct ? 'true' : 'false');
     });
   }
 }
@@ -211,8 +221,8 @@ export function resetAllFilters() {
   persistUserFilters();
   state.advancedFilters.tiers = new Set([1, 2, 3, 4]);
   state.advancedFilters.minScore = 0;
-  
-  const searchInput = document.getElementById('search-input');
+
+  const searchInput = document.getElementById('modal-search-input');
   if (searchInput) searchInput.value = '';
 
   const pillBar = document.getElementById('topic-pills-bar');
@@ -337,6 +347,76 @@ export function handleCopyTrend(idx, btn) {
 // -------------------------------------------------------------
 // 3. APPLICATION BOOTSTRAPPING & EVENT BINDINGS
 // -------------------------------------------------------------
+export function renderPipelineErrorUI(errorMsg) {
+  const statusText = document.getElementById('status-text');
+  if (statusText) {
+    statusText.innerHTML = '<span style="color:#ef4444; font-weight:700;">● Ingestion Error</span>: Feed sync unreachable';
+  }
+  const developmentsContainer = document.getElementById('developments-container');
+  if (developmentsContainer) {
+    developmentsContainer.innerHTML = `
+      <div class="pipeline-error-box" role="alert">
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" class="error-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <h3 class="pipeline-error-title">Unable to Load AI Intelligence Feed</h3>
+        <p class="pipeline-error-desc">We encountered an issue fetching the latest intelligence dataset (${escapeHTML(errorMsg || 'Network error')}). The pipeline preserves verified snapshots rather than publishing corrupted state.</p>
+        <button class="btn-retry-load" onclick="window.loadData && window.loadData()">Retry Ingestion Sync</button>
+      </div>
+    `;
+  }
+}
+
+export function initPlatformKbdShortcut() {
+  const isMac = typeof navigator !== 'undefined' && (/Mac|iPod|iPhone|iPad/.test(navigator.platform) || /Macintosh|Mac OS X/.test(navigator.userAgent));
+  const kbdEls = document.querySelectorAll('.search-kbd');
+  kbdEls.forEach(el => {
+    el.textContent = isMac ? '⌘K' : 'Ctrl+K';
+  });
+}
+
+export function initScrollSpy() {
+  if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') return;
+
+  const sectionIds = [
+    'daily-overview-section',
+    'feed-section',
+    'developer-trends-section',
+    'ai-tools-section',
+    'research-safety-section',
+    'dispatches-section'
+  ];
+
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  if (sections.length === 0) return;
+
+  const desktopLinks = document.querySelectorAll('.header-nav .nav-link');
+  const mobilePills = document.querySelectorAll('.mobile-section-nav .mobile-nav-pill');
+
+  function updateActiveNav(activeId) {
+    desktopLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === `#${activeId}`);
+    });
+    mobilePills.forEach(pill => {
+      const href = pill.getAttribute('href');
+      pill.classList.toggle('active', href === `#${activeId}`);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        updateActiveNav(entry.target.id);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '-15% 0px -65% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(s => observer.observe(s));
+}
+
 export async function loadData() {
   try {
     const cacheBuster = `t=${Date.now()}`;
@@ -348,21 +428,130 @@ export async function loadData() {
     renderCompleteUI(data);
   } catch (e) {
     console.error('Failed to load data.json:', e);
-    const statusText = document.getElementById('status-text');
-    if (statusText) {
-      statusText.textContent = '⚠️ Could not load latest intelligence payload.';
-    }
+    renderPipelineErrorUI(e.message);
   }
 }
 
 export function setupEventListeners() {
-  // Desktop search trigger keyboard accessibility (Enter/Space on div[role="button"])
+  // Desktop search trigger click & keyboard accessibility
   const searchBarTrigger = document.querySelector('.search-bar-trigger');
   if (searchBarTrigger) {
+    searchBarTrigger.addEventListener('click', openSearchModal);
     searchBarTrigger.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openSearchModal();
+      }
+    });
+  }
+
+  // Mobile search button
+  const searchMobileBtn = document.querySelector('.search-mobile-btn');
+  if (searchMobileBtn) {
+    searchMobileBtn.addEventListener('click', openSearchModal);
+  }
+
+  // Methodology Modal triggers
+  const btnMethodology = document.getElementById('btn-methodology');
+  if (btnMethodology) {
+    btnMethodology.addEventListener('click', openMethodologyModal);
+  }
+  const btnCloseMethodology = document.getElementById('btn-close-methodology');
+  if (btnCloseMethodology) {
+    btnCloseMethodology.addEventListener('click', closeMethodologyModal);
+  }
+
+  // Saved Stories Drawer triggers
+  const btnSavedFilter = document.getElementById('btn-saved-filter');
+  if (btnSavedFilter) {
+    btnSavedFilter.addEventListener('click', openSavedDrawer);
+  }
+  const btnCloseDrawer = document.getElementById('btn-close-drawer');
+  if (btnCloseDrawer) {
+    btnCloseDrawer.addEventListener('click', closeSavedDrawer);
+  }
+
+  // Reader View Close trigger
+  const btnCloseReader = document.getElementById('btn-close-reader');
+  if (btnCloseReader) {
+    btnCloseReader.addEventListener('click', closeReaderView);
+  }
+
+  // Audio briefing trigger
+  const btnAudio = document.getElementById('btn-audio');
+  if (btnAudio) {
+    btnAudio.addEventListener('click', toggleAudioBriefing);
+  }
+
+  // Reader Save & Copy triggers
+  const readerBtnSave = document.getElementById('reader-btn-save');
+  if (readerBtnSave) {
+    readerBtnSave.addEventListener('click', toggleSaveCurrentReaderItem);
+  }
+  const readerBtnCopy = document.getElementById('reader-btn-copy');
+  if (readerBtnCopy) {
+    readerBtnCopy.addEventListener('click', copyReaderStory);
+  }
+
+  // Sort select handler
+  const sortSelect = document.getElementById('sort-select');
+  if (sortSelect) {
+    sortSelect.addEventListener('change', e => handleSortChange(e.target.value));
+  }
+
+  // View toggle buttons
+  const viewGridBtn = document.getElementById('view-grid-btn');
+  if (viewGridBtn) {
+    viewGridBtn.addEventListener('click', () => setLayoutView('grid'));
+  }
+  const viewListBtn = document.getElementById('view-list-btn');
+  if (viewListBtn) {
+    viewListBtn.addEventListener('click', () => setLayoutView('list'));
+  }
+
+  // 3-Way Theme switcher
+  const themeBtnSystem = document.getElementById('theme-btn-system');
+  if (themeBtnSystem) {
+    themeBtnSystem.addEventListener('click', () => setThemePreference('system'));
+  }
+  const themeBtnLight = document.getElementById('theme-btn-light');
+  if (themeBtnLight) {
+    themeBtnLight.addEventListener('click', () => setThemePreference('light'));
+  }
+  const themeBtnDark = document.getElementById('theme-btn-dark');
+  if (themeBtnDark) {
+    themeBtnDark.addEventListener('click', () => setThemePreference('dark'));
+  }
+
+  // Noise Reduction Toggles
+  const btnHideCaseStudies = document.getElementById('btn-hide-case-studies');
+  if (btnHideCaseStudies) {
+    btnHideCaseStudies.addEventListener('click', toggleHideCaseStudies);
+  }
+  const btnHidePreprints = document.getElementById('btn-hide-preprints');
+  if (btnHidePreprints) {
+    btnHidePreprints.addEventListener('click', () => toggleFilter('hidePreprints'));
+  }
+  const btnHideMinor = document.getElementById('btn-hide-minor');
+  if (btnHideMinor) {
+    btnHideMinor.addEventListener('click', () => toggleFilter('hideMinorUpdates'));
+  }
+  const btnHideFunding = document.getElementById('btn-hide-funding');
+  if (btnHideFunding) {
+    btnHideFunding.addEventListener('click', () => toggleFilter('hideFunding'));
+  }
+  const btnHideOpinion = document.getElementById('btn-hide-opinion');
+  if (btnHideOpinion) {
+    btnHideOpinion.addEventListener('click', () => toggleFilter('hideOpinion'));
+  }
+
+  // Editorial section filters delegation
+  const editorialFilterBar = document.getElementById('editorial-filter-bar');
+  if (editorialFilterBar) {
+    editorialFilterBar.addEventListener('click', e => {
+      const pill = e.target.closest('.editorial-filter-pill');
+      if (pill) {
+        handleSectionFilterChange(pill.getAttribute('data-section'), pill);
       }
     });
   }
@@ -377,87 +566,6 @@ export function setupEventListeners() {
       }
     });
   }
-
-  // Card clicks delegation (Open Reader Drawer)
-  document.addEventListener('click', e => {
-    // Bento card click
-    const bentoCard = e.target.closest('.bento-card');
-    if (bentoCard && state.data && state.data.top_stories) {
-      const idx = parseInt(bentoCard.getAttribute('data-story-idx'), 10);
-      if (!isNaN(idx) && state.data.top_stories[idx]) {
-        openReaderView(state.data.top_stories[idx]);
-        return;
-      }
-    }
-
-    // Developments card click
-    const devCard = e.target.closest('.card-standard');
-    if (devCard) {
-      const idx = parseInt(devCard.getAttribute('data-card-idx'), 10);
-      const filtered = getFilteredStories(state.data?.top_stories || []);
-      if (!isNaN(idx) && filtered[idx]) {
-        openReaderView(filtered[idx]);
-        return;
-      }
-    }
-
-    // Wire row click
-    const wireRow = e.target.closest('.wire-row');
-    if (wireRow) {
-      const idx = parseInt(wireRow.getAttribute('data-wire-idx'), 10);
-      const filtered = getFilteredStories(state.data?.top_stories || []);
-      if (!isNaN(idx) && filtered[idx]) {
-        openReaderView(filtered[idx]);
-        return;
-      }
-    }
-
-    // Curated card click
-    const curatedCard = e.target.closest('[data-curated-section]');
-    if (curatedCard && state.data) {
-      const section = curatedCard.getAttribute('data-curated-section');
-      const idx = parseInt(curatedCard.getAttribute('data-curated-idx'), 10);
-      let items = [];
-      if (section === 'ai-tools-container') items = state.data.ai_tools;
-      else if (section === 'dev-radar-container') items = state.data.dev_radar;
-      else if (section === 'research-safety-container') items = state.data.research_safety;
-      if (items && items[idx]) {
-        openReaderView(items[idx]);
-        return;
-      }
-    }
-  });
-
-  // Saved drawer item removal delegation
-  const savedContainer = document.getElementById('saved-drawer-items');
-  if (savedContainer) {
-    savedContainer.addEventListener('click', e => {
-      const btn = e.target.closest('.btn-remove-saved');
-      if (btn) {
-        const idx = parseInt(btn.getAttribute('data-saved-idx'), 10);
-        if (!isNaN(idx) && state.savedStories[idx]) {
-          toggleSaveItem(state.savedStories[idx].title);
-          renderSavedItemsList();
-        }
-      }
-    });
-  }
-
-  // Global Keyboard Shortcuts
-  window.addEventListener('keydown', e => {
-    // 'Escape' closes any open modal or drawer
-    if (e.key === 'Escape') {
-      closeReaderView();
-      closeSavedDrawer();
-      closeMethodologyModal();
-      closeSearchModal();
-    }
-    // '⌘K' or '/' opens search modal
-    if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && document.activeElement?.tagName !== 'INPUT')) {
-      e.preventDefault();
-      openSearchModal();
-    }
-  });
 }
 
 // -------------------------------------------------------------

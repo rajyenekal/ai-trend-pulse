@@ -8,12 +8,78 @@ import { escapeHTML, getCompanyLogoSVG, getTopicImageUrl, formatIST } from './re
 
 let currentReaderStory = null;
 let isAudioSpeaking = false;
+let activeTriggerElement = null;
+let activeFocusTrapCleanup = null;
+
+function activateFocusTrap(modalEl, closeFn) {
+  if (activeFocusTrapCleanup) {
+    activeFocusTrapCleanup();
+    activeFocusTrapCleanup = null;
+  }
+  if (!modalEl) return;
+
+  if (modalEl.setAttribute) modalEl.setAttribute('aria-hidden', 'false');
+  if (modalEl.removeAttribute) modalEl.removeAttribute('inert');
+
+  const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  const focusables = Array.from(modalEl.querySelectorAll(focusableSelector)).filter(el => !el.disabled && el.offsetParent !== null);
+
+  if (focusables.length > 0) {
+    const firstFocusable = focusables[0];
+    const lastFocusable = focusables[focusables.length - 1];
+    setTimeout(() => firstFocusable.focus(), 60);
+
+    const keyHandler = (e) => {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable.focus();
+          }
+        } else {
+          if (document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable.focus();
+          }
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        if (closeFn) closeFn();
+      }
+    };
+
+    modalEl.addEventListener('keydown', keyHandler);
+    activeFocusTrapCleanup = () => {
+      modalEl.removeEventListener('keydown', keyHandler);
+    };
+  }
+}
+
+function deactivateFocusTrap(modalEl) {
+  if (activeFocusTrapCleanup) {
+    activeFocusTrapCleanup();
+    activeFocusTrapCleanup = null;
+  }
+  if (modalEl) {
+    if (modalEl.setAttribute) {
+      modalEl.setAttribute('aria-hidden', 'true');
+      modalEl.setAttribute('inert', '');
+    }
+  }
+  if (activeTriggerElement && typeof activeTriggerElement.focus === 'function') {
+    try {
+      activeTriggerElement.focus();
+    } catch (e) {}
+    activeTriggerElement = null;
+  }
+}
 
 // -------------------------------------------------------------
 // 1. STORY DETAIL READER VIEW (DRAWER)
 // -------------------------------------------------------------
 export function openReaderView(story) {
   if (!story) return;
+  activeTriggerElement = document.activeElement;
   currentReaderStory = story;
 
   const drawer = document.getElementById('reader-drawer');
@@ -62,11 +128,17 @@ export function openReaderView(story) {
   const srcLogo = document.getElementById('reader-source-logo');
   if (srcLogo) srcLogo.innerHTML = getCompanyLogoSVG(story.company);
 
+  // Audio briefing feature detection
+  const audioBtn = document.getElementById('btn-audio');
+  if (audioBtn) {
+    audioBtn.style.display = (typeof window !== 'undefined' && 'speechSynthesis' in window) ? 'inline-flex' : 'none';
+  }
+
   // Visual Image
   const imgEl = document.getElementById('reader-image');
   if (imgEl) {
     imgEl.src = getTopicImageUrl(story.category || story.topic, story.image || story.image_url, story.company);
-    imgEl.alt = story.title || 'Story visual';
+    imgEl.alt = story.title ? `${story.title} illustration` : 'Story illustration';
   }
 
   // Key Takeaways (deduplicated against headline)
@@ -225,6 +297,7 @@ export function openReaderView(story) {
   drawer.classList.add('open');
   if (backdrop) backdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
+  activateFocusTrap(drawer, closeReaderView);
 }
 
 export function closeReaderView() {
@@ -233,14 +306,22 @@ export function closeReaderView() {
   if (drawer) drawer.classList.remove('open');
   if (backdrop) backdrop.classList.remove('open');
   document.body.style.overflow = '';
-  currentReaderStory = null;
 
-  if (isAudioSpeaking && typeof window !== 'undefined' && window.speechSynthesis) {
+  const imgEl = document.getElementById('reader-image');
+  if (imgEl) {
+    imgEl.removeAttribute('src');
+    imgEl.alt = '';
+  }
+
+  if (typeof window !== 'undefined' && window.speechSynthesis) {
     window.speechSynthesis.cancel();
     isAudioSpeaking = false;
     const caption = document.getElementById('audio-caption');
     if (caption) caption.textContent = 'Listen';
   }
+
+  deactivateFocusTrap(drawer);
+  currentReaderStory = null;
 }
 
 export function updateReaderSaveButton(story) {
@@ -315,12 +396,14 @@ export function toggleAudioBriefing() {
 // 2. SAVED BOOKMARKS DRAWER
 // -------------------------------------------------------------
 export function openSavedDrawer() {
+  activeTriggerElement = document.activeElement;
   const drawer = document.getElementById('saved-drawer');
   const backdrop = document.getElementById('drawer-backdrop');
   renderSavedItemsList();
   if (drawer) drawer.classList.add('open');
   if (backdrop) backdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
+  activateFocusTrap(drawer, closeSavedDrawer);
 }
 
 export function closeSavedDrawer() {
@@ -329,6 +412,7 @@ export function closeSavedDrawer() {
   if (drawer) drawer.classList.remove('open');
   if (backdrop) backdrop.classList.remove('open');
   document.body.style.overflow = '';
+  deactivateFocusTrap(drawer);
 }
 
 export function renderSavedItemsList() {
@@ -367,12 +451,14 @@ export function renderSavedItemsList() {
 // 3. METHODOLOGY MODAL
 // -------------------------------------------------------------
 export function openMethodologyModal(e) {
-  if (e) e.preventDefault();
+  if (e && e.preventDefault) e.preventDefault();
+  activeTriggerElement = document.activeElement;
   const modal = document.getElementById('methodology-modal');
   const backdrop = document.getElementById('methodology-backdrop');
   if (modal) modal.classList.add('open');
   if (backdrop) backdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
+  activateFocusTrap(modal, closeMethodologyModal);
 }
 
 export function closeMethodologyModal() {
@@ -381,6 +467,7 @@ export function closeMethodologyModal() {
   if (modal) modal.classList.remove('open');
   if (backdrop) backdrop.classList.remove('open');
   document.body.style.overflow = '';
+  deactivateFocusTrap(modal);
 }
 
 export function handleMethodologyBackdropClick(e) {
@@ -395,20 +482,25 @@ export function handleMethodologyBackdropClick(e) {
 let searchModalScope = 'all';
 
 export function openSearchModal() {
+  activeTriggerElement = document.activeElement;
   const modal = document.getElementById('search-modal');
+  const box = modal?.querySelector('.search-modal-box');
   if (modal) {
     modal.classList.add('open');
     updateModalSearchResults();
+    activateFocusTrap(box, closeSearchModal);
     const input = document.getElementById('modal-search-input');
     if (input) {
-      setTimeout(() => input.focus(), 50);
+      setTimeout(() => input.focus(), 60);
     }
   }
 }
 
 export function closeSearchModal() {
   const modal = document.getElementById('search-modal');
+  const box = modal?.querySelector('.search-modal-box');
   if (modal) modal.classList.remove('open');
+  deactivateFocusTrap(box);
 }
 
 export function handleSearchBackdropClick(e) {
@@ -420,8 +512,6 @@ export function handleSearchBackdropClick(e) {
 export function clearModalSearch() {
   const input = document.getElementById('modal-search-input');
   if (input) input.value = '';
-  const legacy = document.getElementById('search-input');
-  if (legacy) legacy.value = '';
   if (typeof window !== 'undefined' && window.handleSearchInput) {
     window.handleSearchInput('');
   }
