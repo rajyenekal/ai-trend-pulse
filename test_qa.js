@@ -441,6 +441,61 @@ if (mockElements['methodology-backdrop'].classList.contains('open')) {
 }
 console.log('✅ Methodology Modal (open/close, transparency tables, scoring formula) verified.');
 
+// Test Search Trigger Accessibility (div role="button" handles Enter/Space)
+if (!htmlContent.includes('class="search-bar-trigger"') ||
+    !htmlContent.includes('role="button"') ||
+    !htmlContent.includes('tabindex="0"') ||
+    !htmlContent.includes('onkeydown="if(event.key===\'Enter\'||event.key===\' \')')) {
+  console.error('❌ search-bar-trigger missing role="button", tabindex="0", or Enter/Space onkeydown handler.');
+  process.exit(1);
+}
+console.log('✅ Search bar trigger accessible button semantics & Enter/Space keydown verified.');
+
+// Test Timestamp Parsing & Sorting
+const isoTime = sandbox.parseStoryTimestamp({ published_at: '2026-11-02T16:00:00Z' });
+const utcTime = sandbox.parseStoryTimestamp({ published: 'Oct 28, 17:00 UTC' });
+const emptyTime = sandbox.parseStoryTimestamp({ published: 'Recent' });
+
+if (isoTime !== 1793635200000) {
+  console.error(`❌ parseStoryTimestamp failed on ISO date: expected 1793635200000, got ${isoTime}`);
+  process.exit(1);
+}
+if (utcTime <= 0) {
+  console.error(`❌ parseStoryTimestamp failed on 'Oct 28, 17:00 UTC': got ${utcTime}`);
+  process.exit(1);
+}
+if (emptyTime !== 0) {
+  console.error(`❌ parseStoryTimestamp failed on 'Recent': expected 0, got ${emptyTime}`);
+  process.exit(1);
+}
+console.log('✅ parseStoryTimestamp verified for ISO-8601, "Mon DD, HH:MM UTC", and fallback.');
+
+// Test Chronological Sorting: Sort: Latest vs Pulse Score
+sandbox.handleSortChange('latest');
+const latestSorted = sandbox.getFilteredStories(dataContent.top_stories || []);
+for (let i = 0; i < latestSorted.length - 1; i++) {
+  const tA = sandbox.parseStoryTimestamp(latestSorted[i]);
+  const tB = sandbox.parseStoryTimestamp(latestSorted[i + 1]);
+  if (tA < tB) {
+    console.error(`❌ Sort: Latest violated chronological ordering at index ${i}: ${tA} < ${tB}`);
+    process.exit(1);
+  }
+}
+console.log(`✅ Sort: Latest verified across ${latestSorted.length} stories (chronological newest first).`);
+
+sandbox.handleSortChange('pulse-score');
+const pulseSorted = sandbox.getFilteredStories(dataContent.top_stories || []);
+for (let i = 0; i < pulseSorted.length - 1; i++) {
+  const sA = Number(pulseSorted[i].pulse_score || pulseSorted[i].overall_score || 0);
+  const sB = Number(pulseSorted[i + 1].pulse_score || pulseSorted[i + 1].overall_score || 0);
+  if (sA < sB) {
+    console.error(`❌ Sort: Pulse Score violated score ordering at index ${i}: ${sA} < ${sB}`);
+    process.exit(1);
+  }
+}
+console.log(`✅ Sort: Pulse Score verified across ${pulseSorted.length} stories (highest score first).`);
+sandbox.handleSortChange('latest'); // Restore default
+
 // 5. Test 3-Tier Image System & Indian Standard Time formatting
 console.log('\n▶ [4/6] Testing 3-tier image system, signature lab visuals, and IST formatting...');
 const agentImg = sandbox.getTopicImageUrl('AI Agents');

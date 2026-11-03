@@ -129,13 +129,18 @@ npm test
 This automatically runs:
 1. **`python3 test_backend.py` (37 tests)**:
    - Validates `sources.json` schema and 4-tier coverage (25 sources).
-   - Validates 8-type intent taxonomy and multipliers.
-   - Verifies case study 0.60x multiplier and 64.0 score cap.
+   - Validates 9-type intent taxonomy and multipliers.
+   - Verifies case study 0.55x multiplier and 62.0 score cap.
    - Verifies hybrid clustering with anchor entity tokens.
    - Verifies conditional HTTP 304 caching and ETag handling.
    - Verifies URL normalization, parameter removal, and RFC-2822 timestamp parsing.
    - Validates payload structure and atomic write guarantees.
-2. **`node test_qa.js` (6 phases)**:
+2. **`python3 -m unittest discover -s tests -p 'test_*.py'` (39 tests)**:
+   - Verifies deterministic editorial curation, explainable score reason codes, and diversity quotas (`test_editorial_curation.py`).
+   - Tests clean Trafilatura article extraction with timeouts and fallback (`test_extraction.py`).
+   - Tests GitHub Developer Trends collection, star velocity, and snapshot persistence (`test_github_collector.py`).
+   - Tests source expansion and feed health telemetry (`test_source_expansion.py`).
+3. **`node test_qa.js` (6 phases)**:
    - Validates HTML semantic tags and all required DOM element IDs.
    - Tests full JavaScript runtime execution in a headless sandbox.
    - Verifies rendering of Dispatches, Topic Pills, Developments Feed, Top 5 Bento Grid, AI Tools, Developer Radar, and Research/Safety sections.
@@ -143,24 +148,11 @@ This automatically runs:
    - Tests 3-tier image system, signature vector visuals, and IST timestamp formatting.
    - Verifies 11 mobile-first CSS architecture patterns.
    - Verifies article_type taxonomy, Compact Wire view, and Hide Case Studies toggle.
-3. **`node test_viewports.js`**:
+4. **`node test_viewports.js`**:
    - Performs responsive QA across all 10 device viewports from `320px` to `1440px`.
    - Verifies Top 5 Bento Grid responsive rules across mobile, tablet, and desktop.
    - Asserts standard card height reduction >= 25% (measured 34.5% reduction).
-   - Verifies URL normalization and tracking parameter removal.
-   - Tests publication timestamp parsing without fabrication.
-   - Tests suffix-stemmed Jaccard story clustering across syndications.
-   - Verifies scoring function determinism.
-   - Validates payload structure and atomic write guarantees.
-2. **`node test_qa.js`**:
-   - Validates HTML semantic tags and all required DOM element IDs.
-   - Tests full JavaScript runtime execution in a headless sandbox.
-   - Verifies rendering of Dispatches, Topic Pills, Developments Feed, AI Tools, Developer Radar, and Research/Safety sections.
-   - Tests theme switching, bookmarking/saving, search filtering, topic filtering, Reader View open/close, and Methodology modal open/close.
-   - Tests 3-tier image system and SVG fallbacks.
-   - Verifies 12 mobile-first CSS architecture patterns.
-3. **`node test_viewports.js`**:
-   - Performs responsive QA across all 10 device viewports from `320px` to `1440px`.
+   - Confirms zero horizontal overflow across narrow mobile to 4K displays.
 
 ---
 

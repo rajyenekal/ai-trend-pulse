@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="AI Trend Pulse — Autonomous hourly AI intelligence with traceable evidence provenance and 3-tier source verification." />
+  <meta name="description" content="AI Trend Pulse — Autonomous hourly AI intelligence with traceable evidence provenance and 4-tier source verification." />
   <meta name="theme-color" content="#0a0d12" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
   <title>AI Trend Pulse — Hourly AI Intelligence & Market Signals</title>
@@ -66,7 +66,7 @@
 
         <div class="header-actions" role="toolbar" aria-label="Quick tools">
           <!-- Desktop Search Trigger -->
-          <div class="search-bar-trigger" onclick="openSearchModal()" role="button" tabindex="0" aria-label="Search AI news, companies, models">
+          <div class="search-bar-trigger" onclick="openSearchModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSearchModal();}" role="button" tabindex="0" aria-label="Search AI news, companies, models">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             <span>Search news, models...</span>
             <kbd class="search-kbd">⌘K</kbd>
@@ -117,7 +117,7 @@
           <span id="status-text">● Live Pipeline Active • Hourly updates</span>
         </div>
         <div class="status-right" id="status-source-telemetry">
-          <span>22 monitored research sources</span>
+          <span>25 monitored research sources</span>
           <span>•</span>
           <span>Strict provenance tracking</span>
         </div>
@@ -205,6 +205,7 @@
           <div class="feed-controls-group">
             <select id="sort-select" class="sort-select" onchange="handleSortChange(this.value)" aria-label="Sort developments">
               <option value="latest">Sort: Latest</option>
+              <option value="pulse-score">Pulse Score</option>
               <option value="reading-time">Reading Time</option>
               <option value="title">Headline (A-Z)</option>
             </select>
@@ -553,7 +554,7 @@
         <div class="methodology-body">
           <div class="methodology-card">
             <h3>1. Multi-Tier Source Verification Architecture</h3>
-            <p>AI Trend Pulse continuously indexes 21 primary sources structured across four distinct verification tiers to eliminate sensationalism and ensure zero sponsored bias:</p>
+            <p>AI Trend Pulse continuously indexes 25 primary sources structured across four distinct verification tiers to eliminate sensationalism and ensure zero sponsored bias:</p>
             <table class="methodology-table">
               <thead>
                 <tr>
@@ -635,7 +636,7 @@
 
           <div class="methodology-card">
             <h3>5. Ingestion Health &amp; Source Telemetry</h3>
-            <p>To eliminate silent pipeline failures and provide absolute transparency into upstream data feeds, AI Trend Pulse continuously records end-to-end ingestion telemetry across all 22 monitored sources:</p>
+            <p>To eliminate silent pipeline failures and provide absolute transparency into upstream data feeds, AI Trend Pulse continuously records end-to-end ingestion telemetry across all 25 monitored sources:</p>
             <ul style="margin-left: 20px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 6px;">
               <li><strong>Live Health Tracking:</strong> Every source records <code>fetch_status</code> (success, failed, empty), HTTP status codes, timestamp of last success, and exact counts of articles received vs accepted.</li>
               <li><strong>Zero Silent Failures:</strong> In the event of a total network outage or upstream block, the ingestion pipeline halts with a non-zero exit code, triggering GitHub Actions alerts while preserving the verified dataset without destructive replacement.</li>
@@ -661,7 +662,7 @@
         </div>
 
         <div class="footer-col-feeds">
-          <h3 class="footer-heading">Monitored Feeds (22 Verified Sources)</h3>
+          <h3 class="footer-heading">Monitored Feeds (25 Verified Sources)</h3>
           <ul class="footer-feeds-list">
             <li><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI Research &amp; News ↗</a></li>
             <li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News &amp; Research ↗</a></li>

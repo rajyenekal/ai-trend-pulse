@@ -1110,6 +1110,7 @@ def collect_fresh_news(max_age_hours=72, max_per_source=15, return_health=False)
           "trust_tier": trust_tier,
           "is_official": is_official,
           "published": pub_display,
+          "published_at": pub_dt.isoformat() if pub_dt else None,
           "published_datetime": pub_dt,
           "relevance_score": rel_score,
       }

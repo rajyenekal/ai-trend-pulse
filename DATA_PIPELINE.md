@@ -20,11 +20,11 @@
 
 ## 🏛️ Architecture Overview
 
-The pipeline executes autonomously on an hourly schedule via GitHub Actions, driven by [`tracker.py`](tracker.py) and configured by [`sources.json`](sources.json). It ingests dispatches from 22 primary AI research laboratories, technology journalism desks, cloud providers, and preprint archives. Articles are normalized, monitored with end-to-end telemetry, clustered to eliminate cross-publisher duplication, verified through paired claim-level evidence references, scored according to algorithmic pulse weights, and written atomically to [`data.json`](data.json) for static client delivery.
+The pipeline executes autonomously on an hourly schedule via GitHub Actions, driven by [`tracker.py`](tracker.py) and configured by [`sources.json`](sources.json). It ingests dispatches from 25 primary AI research laboratories, technology journalism desks, cloud providers, and preprint archives. Articles are normalized, monitored with end-to-end telemetry, clustered to eliminate cross-publisher duplication, verified through paired claim-level evidence references, scored according to algorithmic pulse weights, and written atomically to [`data.json`](data.json) for static client delivery.
 
 ```mermaid
 flowchart TD
-    subgraph Sources["22 Monitored Sources (sources.json)"]
+    subgraph Sources["25 Monitored Sources (sources.json)"]
         T1["Tier 1: Frontier AI Labs\n(OpenAI, Anthropic, DeepMind, Google AI, Microsoft, Meta, xAI, Mistral)"]
         T2["Tier 2: Independent Tech Journalism\n(MIT Tech Review, The Verge, TechCrunch, Ars Technica, The Decoder)"]
         T3["Tier 3: Open Ecosystem & Cloud\n(Hugging Face, NVIDIA Developer, AWS ML, Amazon Science)"]
@@ -85,7 +85,7 @@ The sources are centralized in [`sources.json`](sources.json). Each entry adhere
 }
 ```
 
-### Verified Sources Coverage (22 Monitored Feeds)
+### Verified Sources Coverage (25 Monitored Feeds)
 1. **Tier 1 (Official Labs & Frontier Developers)**:
    - OpenAI News (`openai.com/news/rss.xml`)
    - Anthropic Official News (`anthropic.com/news` via HTML adapter)
@@ -232,7 +232,7 @@ Every story is generated with rich, grounded editorial fields to eliminate gener
 
 ## 📊 End-to-End Ingestion Health Telemetry & 5 Operating Cases
 
-`tracker.py` monitors health across all 22 configured feeds, recording per-source metrics (`fetch_status`, `http_status`, `articles_received`, `articles_accepted`, `last_attempt_at`, `last_success_at`, `error_type`).
+`tracker.py` monitors health across all 25 configured feeds, recording per-source metrics (`fetch_status`, `http_status`, `articles_received`, `articles_accepted`, `last_attempt_at`, `last_success_at`, `error_type`).
 
 ### Five Operating Cases
 1. **Case A (Normal Cycle)**: Monitored sources respond successfully, fresh articles are ingested, scored, and published. Status: `healthy`.
@@ -252,12 +252,12 @@ The final payload written to `data.json` adheres to the comprehensive production
   "schema_version": 2,
   "generated_at": "2026-11-01T12:00:00.000000+00:00",
   "data_status": "fresh_intelligence",
-  "sources_monitored": 22,
+  "sources_monitored": 25,
   "source_health_summary": {
     "status": "healthy",
-    "configured_sources_count": 22,
-    "enabled_sources_count": 22,
-    "successful_fetches_count": 22,
+    "configured_sources_count": 25,
+    "enabled_sources_count": 25,
+    "successful_fetches_count": 25,
     "failed_fetches_count": 0,
     "fresh_articles_accepted_count": 45
   },

@@ -332,7 +332,8 @@ export function handleCopyTrend(idx, btn) {
 // -------------------------------------------------------------
 export async function loadData() {
   try {
-    const resp = await fetch('data.json');
+    const cacheBuster = `t=${Date.now()}`;
+    const resp = await fetch(`data.json?${cacheBuster}`, { cache: 'no-cache' });
     if (!resp.ok) {
       throw new Error(`HTTP error ${resp.status}`);
     }
@@ -348,6 +349,17 @@ export async function loadData() {
 }
 
 export function setupEventListeners() {
+  // Desktop search trigger keyboard accessibility (Enter/Space on div[role="button"])
+  const searchBarTrigger = document.querySelector('.search-bar-trigger');
+  if (searchBarTrigger) {
+    searchBarTrigger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openSearchModal();
+      }
+    });
+  }
+
   // Topic Pill delegation
   const topicPillsBar = document.getElementById('topic-pills-bar');
   if (topicPillsBar) {

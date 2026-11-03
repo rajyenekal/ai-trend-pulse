@@ -173,6 +173,30 @@ export function updateSavedCountLabel() {
 // -------------------------------------------------------------
 // FILTERING & SORTING LOGIC
 // -------------------------------------------------------------
+/**
+ * Safely parse a story publication timestamp into milliseconds since epoch.
+ * Handles ISO-8601, RFC-2822, and "Mon DD, HH:MM UTC" formats.
+ */
+export function parseStoryTimestamp(story) {
+  if (!story) return 0;
+  const candidates = [story.published_at, story.first_published_at, story.latest_updated_at, story.published];
+  for (const raw of candidates) {
+    if (!raw || typeof raw !== 'string') continue;
+    const clean = raw.trim();
+    if (!clean || clean === 'Recent' || clean === 'Date unavailable') continue;
+    let t = Date.parse(clean);
+    if (!isNaN(t) && t > 0) return t;
+    // Handle "Oct 28, 17:00 UTC" or "Oct 28 17:00" without year
+    const m = clean.match(/^([A-Za-z]{3})\s+(\d{1,2}),?\s+(\d{1,2}:\d{2}(?::\d{2})?)\s*(?:UTC)?$/i);
+    if (m) {
+      const year = new Date().getUTCFullYear();
+      t = Date.parse(`${m[1]} ${m[2]} ${year} ${m[3]} UTC`);
+      if (!isNaN(t) && t > 0) return t;
+    }
+  }
+  return 0;
+}
+
 export function getFilteredStories(stories) {
   if (!stories || !Array.isArray(stories)) return [];
 
@@ -259,7 +283,18 @@ export function getFilteredStories(stories) {
     if (state.currentSort === 'title') {
       return (a.title || '').localeCompare(b.title || '');
     }
-    // Default: pulse score descending
+    if (state.currentSort === 'pulse-score') {
+      const sA = Number(a.pulse_score || a.overall_score || 0);
+      const sB = Number(b.pulse_score || b.overall_score || 0);
+      return sB - sA;
+    }
+    // Default ('latest'): Sort chronologically by publication time (newest first).
+    // Break ties using pulse score descending.
+    const timeA = parseStoryTimestamp(a);
+    const timeB = parseStoryTimestamp(b);
+    if (timeB !== timeA) {
+      return timeB - timeA;
+    }
     const sA = Number(a.pulse_score || a.overall_score || 0);
     const sB = Number(b.pulse_score || b.overall_score || 0);
     return sB - sA;
