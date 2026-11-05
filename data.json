@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "data_status": "source_linked",
-  "generated_at": "2026-11-05T03:50:43.095646+00:00",
-  "last_successful_update": "2026-11-05T03:50:43.095646+00:00",
-  "last_attempt_at": "2026-11-05T03:50:43.095646+00:00",
+  "generated_at": "2026-11-05T04:42:35.418379+00:00",
+  "last_successful_update": "2026-11-05T04:42:35.418379+00:00",
+  "last_attempt_at": "2026-11-05T04:42:35.418379+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
-    "total_developments_today": 159,
-    "last_updated": "2026-11-05T03:50:43.095646+00:00",
+    "total_developments_today": 161,
+    "last_updated": "2026-11-05T04:42:35.418379+00:00",
     "briefing_text": "Today's AI developments span AI News, AI Models & Research, and AI Security & Safety. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
     "top_developments": [
       {
@@ -56,7 +56,7 @@
         "source": "OpenAI News",
         "link": "https://openai.com/index/daybreak-red-aws-govcloud",
         "article_type": "sdk_api_update",
-        "signal_badge": "\ufe0f Dev / SDK",
+        "signal_badge": "Developer SDK",
         "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
         "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
         "target_audience": "For businesses & compliance teams",
@@ -75,7 +75,7 @@
         "source": "AWS Machine Learning",
         "link": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai",
         "article_type": "sdk_api_update",
-        "signal_badge": "\ufe0f Dev / SDK",
+        "signal_badge": "Developer SDK",
         "what_changed": "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
         "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the AI ecosystem.",
         "target_audience": "For everyday users",
@@ -96,7 +96,7 @@
         "source": "arXiv cs.AI",
         "link": "https://arxiv.org/abs/2611.03765",
         "article_type": "security_vulnerability",
-        "signal_badge": "\ufe0f Security / Policy",
+        "signal_badge": "Security & Policy",
         "what_changed": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
         "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
         "target_audience": "For AI researchers & safety teams",
@@ -133,7 +133,7 @@
         "source": "Google DeepMind",
         "link": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
         "article_type": "sdk_api_update",
-        "signal_badge": "\ufe0f Dev / SDK",
+        "signal_badge": "Developer SDK",
         "what_changed": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
         "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
         "target_audience": "For everyday users",
@@ -155,7 +155,7 @@
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "what_changed": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Hugging Face ecosystem.",
       "target_audience": "For enterprise operators",
@@ -174,7 +174,7 @@
       "source": "The Decoder",
       "link": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
       "target_audience": "For open-source builders",
@@ -193,7 +193,7 @@
       "source": "OpenAI News",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
       "target_audience": "For businesses & compliance teams",
@@ -212,7 +212,7 @@
       "source": "AWS Machine Learning",
       "link": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "what_changed": "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the AI ecosystem.",
       "target_audience": "For everyday users",
@@ -233,7 +233,7 @@
       "source": "arXiv cs.AI",
       "link": "https://arxiv.org/abs/2611.03765",
       "article_type": "security_vulnerability",
-      "signal_badge": "\ud83d\udee1\ufe0f Security / Policy",
+      "signal_badge": "Security & Policy",
       "what_changed": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
       "target_audience": "For AI researchers & safety teams",
@@ -252,7 +252,7 @@
       "source": "Simon Willison Weblog",
       "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "what_changed": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
       "target_audience": "For open-source builders",
@@ -270,7 +270,7 @@
       "source": "Google DeepMind",
       "link": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "what_changed": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
       "target_audience": "For everyday users",
@@ -290,7 +290,7 @@
       "link": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
       "trend_type": "single_development",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "trend_signal_diversity": 1,
       "claim_corroboration": 1,
       "independent_publisher_count": 1,
@@ -340,7 +340,8 @@
       "what_changed": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem.",
       "reported_facts": [
-        "Primary reporting documented by TechCrunch AI."
+        "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
       "potential_impact": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
       "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
@@ -383,7 +384,7 @@
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
         "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for Open source AI is booming. Hugging Face explains who profits.",
@@ -396,7 +397,7 @@
       "link": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations",
       "trend_type": "single_development",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "trend_signal_diversity": 1,
       "claim_corroboration": 1,
       "independent_publisher_count": 1,
@@ -446,7 +447,8 @@
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
       "reported_facts": [
-        "New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
+        "Official development released and documented by The Decoder."
       ],
       "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
       "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
@@ -501,7 +503,7 @@
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "trend_type": "single_development",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "trend_signal_diversity": 1,
       "claim_corroboration": 1,
       "independent_publisher_count": 1,
@@ -551,7 +553,8 @@
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
       "reported_facts": [
-        "Daybreak Red is now available in AWS GovCloud (US-East)."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
+        "Official development released and documented by OpenAI News."
       ],
       "potential_impact": "Analytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
@@ -606,7 +609,7 @@
       "link": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai",
       "trend_type": "single_development",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "trend_signal_diversity": 1,
       "claim_corroboration": 1,
       "independent_publisher_count": 1,
@@ -659,7 +662,7 @@
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
       "reported_facts": [
         "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "Build efficient agents with knowledge distillation on Amazon SageMaker AI."
+        "Official development released and documented by AWS Machine Learning."
       ],
       "potential_impact": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
@@ -714,7 +717,7 @@
       "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights",
       "trend_type": "single_development",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "trend_signal_diversity": 1,
       "claim_corroboration": 1,
       "independent_publisher_count": 1,
@@ -763,7 +766,8 @@
       "what_changed": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
       "reported_facts": [
-        "Qwen 3.8 27B on my laptop can interpret model weights, too."
+        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
+        "Official development released and documented by Simon Willison Weblog."
       ],
       "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
       "analysis_limitations": "Epistemic Limitation: Independent practitioner report; observations reflect specific test setups, local system configurations, and personal developer evaluation.",
@@ -816,7 +820,7 @@
   ],
   "top_stories": [
     {
-      "id": "cluster_90",
+      "id": "cluster_92",
       "article_id": "art_techcrunch_ai_032661e084e6",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
@@ -825,7 +829,10 @@
       "title": "Open source AI is booming. Hugging Face explains who profits.",
       "one_liner": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
-      "reported_facts": [],
+      "reported_facts": [
+        "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
+        "But as increasingly capable models become more freely available, how do companies capture value?"
+      ],
       "what_changed": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem.",
       "affected_stakeholders": [
@@ -847,7 +854,7 @@
       "is_official": false,
       "published": "Nov 04, 19:30 UTC",
       "published_at": "2026-11-04T19:30:04+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -861,7 +868,7 @@
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
         "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For enterprise operators",
         "impact": "Demonstrates practical operational automation and procurement pathways using Huggingface."
@@ -895,7 +902,7 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_92",
+      "id": "cluster_94",
       "article_id": "art_techcrunch_ai_0b6917455505",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
@@ -904,7 +911,10 @@
       "title": "Building on open source AI? Hugging Face\u2019s policy chief on the costs, risks, and trade-offs",
       "one_liner": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
-      "reported_facts": [],
+      "reported_facts": [
+        "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
+        "But as increasingly capable models become more freely available, how do companies capture value?"
+      ],
       "what_changed": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem.",
       "affected_stakeholders": [
@@ -926,7 +936,7 @@
       "is_official": false,
       "published": "Nov 04, 18:44 UTC",
       "published_at": "2026-11-04T18:44:57+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -940,7 +950,7 @@
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
         "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Huggingface."
@@ -974,7 +984,7 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_101",
+      "id": "cluster_103",
       "article_id": "art_the_decoder_8f6015e03ac4",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
@@ -984,7 +994,8 @@
       "one_liner": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "summary": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "reported_facts": [
-        "New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
+        "Official development released and documented by The Decoder."
       ],
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -1007,7 +1018,7 @@
       "is_official": false,
       "published": "Nov 04, 16:42 UTC",
       "published_at": "2026-11-04T16:42:52+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1059,12 +1070,13 @@
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
       "one_liner": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "reported_facts": [
-        "Daybreak Red is now available in AWS GovCloud (US-East)."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
+        "Official development released and documented by OpenAI News."
       ],
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -1087,7 +1099,7 @@
       "is_official": true,
       "published": "Nov 04, 07:00 UTC",
       "published_at": "2026-11-04T07:00:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1139,13 +1151,13 @@
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Build efficient agents with knowledge distillation on Amazon SageMaker AI",
       "one_liner": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "summary": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "reported_facts": [
         "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "Build efficient agents with knowledge distillation on Amazon SageMaker AI."
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -1168,7 +1180,7 @@
       "is_official": true,
       "published": "Nov 02, 17:01 UTC",
       "published_at": "2026-11-02T17:01:31+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1222,12 +1234,13 @@
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "OpenAI to acquire Pierre Computer Company, Inc.",
       "one_liner": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "reported_facts": [
-        "OpenAI to acquire Pierre Computer Company, Inc."
+        "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
+        "Official development released and documented by OpenAI News."
       ],
       "what_changed": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Openai ecosystem.",
@@ -1250,7 +1263,7 @@
       "is_official": true,
       "published": "Nov 04, 14:30 UTC",
       "published_at": "2026-11-04T14:30:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://openai.com/index/openai-to-acquire-pierre",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1302,12 +1315,13 @@
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
       "one_liner": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "summary": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "reported_facts": [
-        "Use decision models with Amazon Bedrock AgentCore Evaluations."
+        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -1330,7 +1344,7 @@
       "is_official": true,
       "published": "Nov 04, 18:46 UTC",
       "published_at": "2026-11-04T18:46:36+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1438,17 +1452,18 @@
       "covered_by_sources_count": 6
     },
     {
-      "id": "cluster_118",
+      "id": "cluster_120",
       "article_id": "art_arxiv_cs_ai_21b6b3eb3d68",
       "publisher_id": "arxiv",
       "publisher_group_id": "cornell_arxiv",
       "article_type": "security_vulnerability",
-      "signal_badge": "\ufe0f Security / Policy",
+      "signal_badge": "Security & Policy",
       "title": "VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions",
       "one_liner": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "summary": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "reported_facts": [
-        "VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions."
+        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
+        "Official development released and documented by arXiv cs.AI."
       ],
       "what_changed": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -1471,7 +1486,7 @@
       "is_official": false,
       "published": "Nov 04, 05:00 UTC",
       "published_at": "2026-11-04T05:00:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://arxiv.org/abs/2611.03765",
       "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
@@ -1528,7 +1543,8 @@
       "one_liner": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "summary": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "reported_facts": [
-        "Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI."
+        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -1551,7 +1567,7 @@
       "is_official": true,
       "published": "Nov 02, 17:11 UTC",
       "published_at": "2026-11-02T17:11:21+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1623,7 +1639,7 @@
       "covered_by_sources_count": 3
     },
     {
-      "id": "cluster_139",
+      "id": "cluster_141",
       "article_id": "art_simon_willison_50dbd9a213b8",
       "publisher_id": "simon_willison",
       "publisher_group_id": "simon_willison",
@@ -1633,7 +1649,8 @@
       "one_liner": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "reported_facts": [
-        "Qwen 3.8 27B on my laptop can interpret model weights, too."
+        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
+        "Official development released and documented by Simon Willison Weblog."
       ],
       "what_changed": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -1656,7 +1673,7 @@
       "is_official": false,
       "published": "Nov 03, 16:29 UTC",
       "published_at": "2026-11-03T16:29:48+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1678,7 +1695,7 @@
       "audience_impact_statement": "Provides open weights and accessible tools for self-hosted frontier AI implementations.",
       "importance_score": 85,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 65,
@@ -1707,12 +1724,13 @@
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Agentic cheminformatics with Google Antigravity",
       "one_liner": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "reported_facts": [
-        "Agentic cheminformatics with Google Antigravity."
+        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+        "Official development released and documented by Google DeepMind."
       ],
       "what_changed": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
@@ -1735,7 +1753,7 @@
       "is_official": true,
       "published": "Nov 03, 17:01 UTC",
       "published_at": "2026-11-03T17:01:49+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1787,11 +1805,14 @@
       "publisher_id": "nvidia",
       "publisher_group_id": "nvidia",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "AI Is Changing How Semiconductor Fabs Work \u2014 and Engineers Are Moving Faster Because of It",
       "one_liner": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
       "summary": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
-      "reported_facts": [],
+      "reported_facts": [
+        "Demand for advanced chips is rising.",
+        "The processes to build them are getting more complex."
+      ],
       "what_changed": "Demand for advanced chips is rising.",
       "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
       "affected_stakeholders": [
@@ -1813,7 +1834,7 @@
       "is_official": true,
       "published": "Nov 03, 16:00 UTC",
       "published_at": "2026-11-03T16:00:45+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -1827,7 +1848,7 @@
         "Demand for advanced chips is rising.",
         "The processes to build them are getting more complex."
       ],
-      "detailed_analysis": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
+      "detailed_analysis": "Demand for advanced chips is rising.\n\nThe processes to build them are getting more complex.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Nvidia workflows."
@@ -1836,7 +1857,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Nvidia workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1866,12 +1887,13 @@
       "publisher_id": "nvidia",
       "publisher_group_id": "nvidia",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
       "one_liner": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "summary": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "reported_facts": [
-        "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI."
+        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
+        "Official development released and documented by NVIDIA Blog."
       ],
       "what_changed": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Nvidia ecosystem.",
@@ -1894,7 +1916,7 @@
       "is_official": true,
       "published": "Nov 03, 07:00 UTC",
       "published_at": "2026-11-03T07:00:12+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -1941,16 +1963,18 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_106",
+      "id": "cluster_108",
       "article_id": "art_the_decoder_253fb607d3f5",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Rapid LLM development is outrunning the research meant to explain it, study finds",
       "one_liner": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "summary": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "reported_facts": [
+        "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
+        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
         "The average lifespan is just 15.7 months."
       ],
       "what_changed": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
@@ -1974,7 +1998,7 @@
       "is_official": false,
       "published": "Nov 03, 19:41 UTC",
       "published_at": "2026-11-03T19:41:43+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds",
       "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
@@ -1988,7 +2012,7 @@
         "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
         "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly."
       ],
-      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
+      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.\n\n44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by frontier AI."
@@ -2027,11 +2051,14 @@
       "publisher_id": "mit_tech_review",
       "publisher_group_id": "mit",
       "article_type": "policy_regulation",
-      "signal_badge": "\ufe0f Security / Policy",
+      "signal_badge": "Security & Policy",
       "title": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
       "one_liner": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
       "summary": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
-      "reported_facts": [],
+      "reported_facts": [
+        "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.",
+        "But the blue wave that swept the Lone Star State may jeopardize that position."
+      ],
       "what_changed": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.",
       "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
       "affected_stakeholders": [
@@ -2053,7 +2080,7 @@
       "is_official": false,
       "published": "Nov 04, 18:50 UTC",
       "published_at": "2026-11-04T18:50:55+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://www.technologyreview.com/2026/11/04/1148043/texas-was-the-new-epicenter-of-the-ai-data-center-buildout-that-might-be-kaput",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
@@ -2067,7 +2094,7 @@
         "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.",
         "But the blue wave that swept the Lone Star State may jeopardize that position."
       ],
-      "detailed_analysis": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
+      "detailed_analysis": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.\n\nBut the blue wave that swept the Lone Star State may jeopardize that position.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Mit workflows."
@@ -2105,12 +2132,13 @@
       "publisher_id": "google_ai",
       "publisher_group_id": "google",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "The latest AI news we announced in October 2026",
       "one_liner": "Animated carousel of images from AI posts in October.",
       "summary": "Animated carousel of images from AI posts in October.",
       "reported_facts": [
-        "The latest AI news we announced in October 2026."
+        "Animated carousel of images from AI posts in October.",
+        "Official development released and documented by Google AI Blog."
       ],
       "what_changed": "Animated carousel of images from AI posts in October.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
@@ -2133,7 +2161,7 @@
       "is_official": true,
       "published": "Nov 02, 17:45 UTC",
       "published_at": "2026-11-02T17:45:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2185,12 +2213,13 @@
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Distillation Defenses",
       "one_liner": "Official news announcement from Anthropic: Distillation Defenses.",
       "summary": "Official news announcement from Anthropic: Distillation Defenses.",
       "reported_facts": [
-        "Distillation Defenses."
+        "Official news announcement from Anthropic: Distillation Defenses.",
+        "Official development released and documented by Anthropic Official News."
       ],
       "what_changed": "Official news announcement from Anthropic: Distillation Defenses.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem.",
@@ -2213,7 +2242,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2266,12 +2295,13 @@
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Announcements",
       "one_liner": "Official news announcement from Anthropic: Announcements.",
       "summary": "Official news announcement from Anthropic: Announcements.",
       "reported_facts": [
-        "Announcements."
+        "Official news announcement from Anthropic: Announcements.",
+        "Official development released and documented by Anthropic Official News."
       ],
       "what_changed": "Official news announcement from Anthropic: Announcements.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem.",
@@ -2294,7 +2324,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2343,12 +2373,12 @@
   ],
   "all_updates": [
     {
-      "id": "cluster_90",
+      "id": "cluster_92",
       "article_id": "art_techcrunch_ai_032661e084e6",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "title": "Open source AI is booming. Hugging Face explains who profits.",
       "one_liner": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
@@ -2377,7 +2407,7 @@
       "is_official": false,
       "published": "Nov 04, 19:30 UTC",
       "published_at": "2026-11-04T19:30:04+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -2389,10 +2419,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For enterprise operators",
         "impact": "Demonstrates practical operational automation and procurement pathways using Huggingface."
@@ -2426,12 +2455,12 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_92",
+      "id": "cluster_94",
       "article_id": "art_techcrunch_ai_0b6917455505",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "title": "Building on open source AI? Hugging Face\u2019s policy chief on the costs, risks, and trade-offs",
       "one_liner": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
@@ -2460,7 +2489,7 @@
       "is_official": false,
       "published": "Nov 04, 18:44 UTC",
       "published_at": "2026-11-04T18:44:57+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -2472,10 +2501,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Huggingface."
@@ -2509,18 +2537,18 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_101",
+      "id": "cluster_103",
       "article_id": "art_the_decoder_8f6015e03ac4",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "title": "New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations",
       "one_liner": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "summary": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "reported_facts": [
         "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "The Decoder reported that New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
+        "Official development released and documented by The Decoder."
       ],
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -2543,7 +2571,7 @@
       "is_official": false,
       "published": "Nov 04, 16:42 UTC",
       "published_at": "2026-11-04T16:42:52+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2554,10 +2582,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects."
       ],
-      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations."
@@ -2596,13 +2623,13 @@
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
       "one_liner": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "reported_facts": [
         "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "OpenAI News reported that Daybreak Red is now available in AWS GovCloud (US-East)."
+        "Official development released and documented by OpenAI News."
       ],
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -2625,7 +2652,7 @@
       "is_official": true,
       "published": "Nov 04, 07:00 UTC",
       "published_at": "2026-11-04T07:00:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2636,10 +2663,9 @@
       "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
       ],
-      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
@@ -2678,13 +2704,13 @@
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Build efficient agents with knowledge distillation on Amazon SageMaker AI",
       "one_liner": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "summary": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "reported_facts": [
         "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "AWS Machine Learning reported that Build efficient agents with knowledge distillation on Amazon SageMaker AI."
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -2707,7 +2733,7 @@
       "is_official": true,
       "published": "Nov 02, 17:01 UTC",
       "published_at": "2026-11-02T17:01:31+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2718,10 +2744,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale."
       ],
-      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
@@ -2762,13 +2787,13 @@
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "OpenAI to acquire Pierre Computer Company, Inc.",
       "one_liner": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "reported_facts": [
         "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
-        "OpenAI News reported that OpenAI to acquire Pierre Computer Company, Inc."
+        "Official development released and documented by OpenAI News."
       ],
       "what_changed": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Openai ecosystem.",
@@ -2791,7 +2816,7 @@
       "is_official": true,
       "published": "Nov 04, 14:30 UTC",
       "published_at": "2026-11-04T14:30:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://openai.com/index/openai-to-acquire-pierre",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2802,10 +2827,9 @@
       "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
-        "Signals actionable market shifts and infrastructure priorities across the Openai ecosystem."
+        "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code."
       ],
-      "detailed_analysis": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "audience_impact": {
         "target": "For developers",
         "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
@@ -2844,13 +2868,13 @@
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
       "one_liner": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "summary": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "reported_facts": [
         "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
-        "AWS Machine Learning reported that Use decision models with Amazon Bedrock AgentCore Evaluations."
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -2873,7 +2897,7 @@
       "is_official": true,
       "published": "Nov 04, 18:46 UTC",
       "published_at": "2026-11-04T18:46:36+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2884,10 +2908,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question."
       ],
-      "detailed_analysis": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
@@ -2982,18 +3005,18 @@
       "covered_by_sources_count": 6
     },
     {
-      "id": "cluster_118",
+      "id": "cluster_120",
       "article_id": "art_arxiv_cs_ai_21b6b3eb3d68",
       "publisher_id": "arxiv",
       "publisher_group_id": "cornell_arxiv",
       "article_type": "security_vulnerability",
-      "signal_badge": "\ud83d\udee1\ufe0f Security / Policy",
+      "signal_badge": "Security & Policy",
       "title": "VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions",
       "one_liner": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "summary": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "reported_facts": [
         "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
-        "arXiv cs.AI reported that VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions."
+        "Official development released and documented by arXiv cs.AI."
       ],
       "what_changed": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -3016,7 +3039,7 @@
       "is_official": false,
       "published": "Nov 04, 05:00 UTC",
       "published_at": "2026-11-04T05:00:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://arxiv.org/abs/2611.03765",
       "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
@@ -3027,10 +3050,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities."
       ],
-      "detailed_analysis": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "audience_impact": {
         "target": "For AI researchers & safety teams",
         "impact": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in frontier AI models."
@@ -3069,13 +3091,13 @@
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "title": "Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI",
       "one_liner": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "summary": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "reported_facts": [
         "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
-        "AWS Machine Learning reported that Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI."
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -3098,7 +3120,7 @@
       "is_official": true,
       "published": "Nov 02, 17:11 UTC",
       "published_at": "2026-11-02T17:11:21+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3109,10 +3131,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source."
       ],
-      "detailed_analysis": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted Amazon implementations."
@@ -3171,18 +3192,18 @@
       "covered_by_sources_count": 3
     },
     {
-      "id": "cluster_139",
+      "id": "cluster_141",
       "article_id": "art_simon_willison_50dbd9a213b8",
       "publisher_id": "simon_willison",
       "publisher_group_id": "simon_willison",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
       "one_liner": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "reported_facts": [
         "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
-        "Simon Willison Weblog reported that Qwen 3.8 27B on my laptop can interpret model weights, too."
+        "Official development released and documented by Simon Willison Weblog."
       ],
       "what_changed": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -3205,7 +3226,7 @@
       "is_official": false,
       "published": "Nov 03, 16:29 UTC",
       "published_at": "2026-11-03T16:29:48+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3216,10 +3237,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab."
       ],
-      "detailed_analysis": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations."
@@ -3228,7 +3248,7 @@
       "audience_impact_statement": "Provides open weights and accessible tools for self-hosted frontier AI implementations.",
       "importance_score": 85,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 65,
@@ -3257,13 +3277,13 @@
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Agentic cheminformatics with Google Antigravity",
       "one_liner": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "reported_facts": [
         "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
-        "Google DeepMind reported that Agentic cheminformatics with Google Antigravity."
+        "Official development released and documented by Google DeepMind."
       ],
       "what_changed": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
@@ -3286,7 +3306,7 @@
       "is_official": true,
       "published": "Nov 03, 17:01 UTC",
       "published_at": "2026-11-03T17:01:49+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3297,10 +3317,9 @@
       "company": "google",
       "reading_time": "1 min read",
       "key_points": [
-        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
-        "Signals actionable market shifts and infrastructure priorities across the Google ecosystem."
+        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles."
       ],
-      "detailed_analysis": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
@@ -3339,7 +3358,7 @@
       "publisher_id": "nvidia",
       "publisher_group_id": "nvidia",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "AI Is Changing How Semiconductor Fabs Work \u2014 and Engineers Are Moving Faster Because of It",
       "one_liner": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
       "summary": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
@@ -3368,7 +3387,7 @@
       "is_official": true,
       "published": "Nov 03, 16:00 UTC",
       "published_at": "2026-11-03T16:00:45+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -3380,10 +3399,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Demand for advanced chips is rising.",
-        "The processes to build them are getting more complex.",
-        "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs."
+        "The processes to build them are getting more complex."
       ],
-      "detailed_analysis": "Demand for advanced chips is rising. The processes to build them are getting more complex.\n\nAnalytical Projection: Expanded compute capacity may reduce inference latency thresholds and lower token costs across enterprise cloud workloads.",
+      "detailed_analysis": "Demand for advanced chips is rising.\n\nThe processes to build them are getting more complex.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Nvidia workflows."
@@ -3392,7 +3410,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Nvidia workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3422,13 +3440,13 @@
       "publisher_id": "nvidia",
       "publisher_group_id": "nvidia",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
       "one_liner": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "summary": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "reported_facts": [
         "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
-        "NVIDIA Blog reported that Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI."
+        "Official development released and documented by NVIDIA Blog."
       ],
       "what_changed": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Nvidia ecosystem.",
@@ -3451,7 +3469,7 @@
       "is_official": true,
       "published": "Nov 03, 07:00 UTC",
       "published_at": "2026-11-03T07:00:12+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -3462,10 +3480,9 @@
       "company": "nvidia",
       "reading_time": "1 min read",
       "key_points": [
-        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
-        "Signals actionable market shifts and infrastructure priorities across the Nvidia ecosystem."
+        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge."
       ],
-      "detailed_analysis": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Nvidia workflows."
@@ -3499,12 +3516,12 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_106",
+      "id": "cluster_108",
       "article_id": "art_the_decoder_253fb607d3f5",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Rapid LLM development is outrunning the research meant to explain it, study finds",
       "one_liner": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "summary": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
@@ -3534,7 +3551,7 @@
       "is_official": false,
       "published": "Nov 03, 19:41 UTC",
       "published_at": "2026-11-03T19:41:43+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds",
       "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
@@ -3546,10 +3563,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
-        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
-        "Signals actionable market shifts and infrastructure priorities across the AI ecosystem."
+        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly."
       ],
-      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.\n\n44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by frontier AI."
@@ -3588,7 +3604,7 @@
       "publisher_id": "mit_tech_review",
       "publisher_group_id": "mit",
       "article_type": "policy_regulation",
-      "signal_badge": "\ud83d\udee1\ufe0f Security / Policy",
+      "signal_badge": "Security & Policy",
       "title": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
       "one_liner": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
       "summary": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
@@ -3617,7 +3633,7 @@
       "is_official": false,
       "published": "Nov 04, 18:50 UTC",
       "published_at": "2026-11-04T18:50:55+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://www.technologyreview.com/2026/11/04/1148043/texas-was-the-new-epicenter-of-the-ai-data-center-buildout-that-might-be-kaput",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
@@ -3629,10 +3645,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.",
-        "But the blue wave that swept the Lone Star State may jeopardize that position.",
-        "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs."
+        "But the blue wave that swept the Lone Star State may jeopardize that position."
       ],
-      "detailed_analysis": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.\n\nAnalytical Projection: Expanded compute capacity may reduce inference latency thresholds and lower token costs across enterprise cloud workloads.",
+      "detailed_analysis": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.\n\nBut the blue wave that swept the Lone Star State may jeopardize that position.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Mit workflows."
@@ -3670,13 +3685,13 @@
       "publisher_id": "google_ai",
       "publisher_group_id": "google",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "The latest AI news we announced in October 2026",
       "one_liner": "Animated carousel of images from AI posts in October.",
       "summary": "Animated carousel of images from AI posts in October.",
       "reported_facts": [
         "Animated carousel of images from AI posts in October.",
-        "Google AI Blog reported that The latest AI news we announced in October 2026."
+        "Official development released and documented by Google AI Blog."
       ],
       "what_changed": "Animated carousel of images from AI posts in October.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
@@ -3699,7 +3714,7 @@
       "is_official": true,
       "published": "Nov 02, 17:45 UTC",
       "published_at": "2026-11-02T17:45:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3710,10 +3725,9 @@
       "company": "google",
       "reading_time": "1 min read",
       "key_points": [
-        "Animated carousel of images from AI posts in October.",
-        "Signals actionable market shifts and infrastructure priorities across the Google ecosystem."
+        "Animated carousel of images from AI posts in October."
       ],
-      "detailed_analysis": "Animated carousel of images from AI posts in October.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Animated carousel of images from AI posts in October.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Google workflows."
@@ -3752,13 +3766,13 @@
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Distillation Defenses",
       "one_liner": "Official news announcement from Anthropic: Distillation Defenses.",
       "summary": "Official news announcement from Anthropic: Distillation Defenses.",
       "reported_facts": [
         "Official news announcement from Anthropic: Distillation Defenses.",
-        "Anthropic Official News reported that Distillation Defenses."
+        "Official development released and documented by Anthropic Official News."
       ],
       "what_changed": "Official news announcement from Anthropic: Distillation Defenses.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem.",
@@ -3781,7 +3795,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3792,10 +3806,9 @@
       "company": "anthropic",
       "reading_time": "1 min read",
       "key_points": [
-        "Official news announcement from Anthropic: Distillation Defenses.",
-        "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem."
+        "Official news announcement from Anthropic: Distillation Defenses."
       ],
-      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
@@ -3835,13 +3848,13 @@
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Announcements",
       "one_liner": "Official news announcement from Anthropic: Announcements.",
       "summary": "Official news announcement from Anthropic: Announcements.",
       "reported_facts": [
         "Official news announcement from Anthropic: Announcements.",
-        "Anthropic Official News reported that Announcements."
+        "Official development released and documented by Anthropic Official News."
       ],
       "what_changed": "Official news announcement from Anthropic: Announcements.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem.",
@@ -3864,7 +3877,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3875,10 +3888,9 @@
       "company": "anthropic",
       "reading_time": "1 min read",
       "key_points": [
-        "Official news announcement from Anthropic: Announcements.",
-        "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem."
+        "Official news announcement from Anthropic: Announcements."
       ],
-      "detailed_analysis": "Official news announcement from Anthropic: Announcements.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Official news announcement from Anthropic: Announcements.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
@@ -3914,12 +3926,12 @@
   ],
   "research_worth_reading": [
     {
-      "id": "cluster_92",
+      "id": "cluster_94",
       "article_id": "art_techcrunch_ai_0b6917455505",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "title": "Building on open source AI? Hugging Face\u2019s policy chief on the costs, risks, and trade-offs",
       "one_liner": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
@@ -3948,7 +3960,7 @@
       "is_official": false,
       "published": "Nov 04, 18:44 UTC",
       "published_at": "2026-11-04T18:44:57+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3960,10 +3972,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Huggingface."
@@ -3997,18 +4008,18 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_101",
+      "id": "cluster_103",
       "article_id": "art_the_decoder_8f6015e03ac4",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "title": "New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations",
       "one_liner": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "summary": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "reported_facts": [
         "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "The Decoder reported that New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
+        "Official development released and documented by The Decoder."
       ],
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -4031,7 +4042,7 @@
       "is_official": false,
       "published": "Nov 04, 16:42 UTC",
       "published_at": "2026-11-04T16:42:52+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -4042,10 +4053,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects."
       ],
-      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations."
@@ -4084,13 +4094,13 @@
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
       "one_liner": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "reported_facts": [
         "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "OpenAI News reported that Daybreak Red is now available in AWS GovCloud (US-East)."
+        "Official development released and documented by OpenAI News."
       ],
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -4113,7 +4123,7 @@
       "is_official": true,
       "published": "Nov 04, 07:00 UTC",
       "published_at": "2026-11-04T07:00:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -4124,10 +4134,9 @@
       "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
       ],
-      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
@@ -4168,13 +4177,13 @@
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
       "one_liner": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "summary": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "reported_facts": [
         "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
-        "AWS Machine Learning reported that Use decision models with Amazon Bedrock AgentCore Evaluations."
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -4197,7 +4206,7 @@
       "is_official": true,
       "published": "Nov 04, 18:46 UTC",
       "published_at": "2026-11-04T18:46:36+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -4208,10 +4217,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question."
       ],
-      "detailed_analysis": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
@@ -4306,18 +4314,18 @@
       "covered_by_sources_count": 6
     },
     {
-      "id": "cluster_118",
+      "id": "cluster_120",
       "article_id": "art_arxiv_cs_ai_21b6b3eb3d68",
       "publisher_id": "arxiv",
       "publisher_group_id": "cornell_arxiv",
       "article_type": "security_vulnerability",
-      "signal_badge": "\ufe0f Security / Policy",
+      "signal_badge": "Security & Policy",
       "title": "VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions",
       "one_liner": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "summary": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "reported_facts": [
         "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
-        "arXiv cs.AI reported that VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions."
+        "Official development released and documented by arXiv cs.AI."
       ],
       "what_changed": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -4340,7 +4348,7 @@
       "is_official": false,
       "published": "Nov 04, 05:00 UTC",
       "published_at": "2026-11-04T05:00:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://arxiv.org/abs/2611.03765",
       "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
@@ -4351,10 +4359,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities."
       ],
-      "detailed_analysis": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "audience_impact": {
         "target": "For AI researchers & safety teams",
         "impact": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in frontier AI models."
@@ -4399,7 +4406,7 @@
       "summary": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "reported_facts": [
         "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
-        "AWS Machine Learning reported that Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI."
+        "Official development released and documented by AWS Machine Learning."
       ],
       "what_changed": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -4422,7 +4429,7 @@
       "is_official": true,
       "published": "Nov 02, 17:11 UTC",
       "published_at": "2026-11-02T17:11:21+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -4433,10 +4440,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source."
       ],
-      "detailed_analysis": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted Amazon implementations."
@@ -4500,13 +4506,13 @@
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Agentic cheminformatics with Google Antigravity",
       "one_liner": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "reported_facts": [
         "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
-        "Google DeepMind reported that Agentic cheminformatics with Google Antigravity."
+        "Official development released and documented by Google DeepMind."
       ],
       "what_changed": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
@@ -4529,7 +4535,7 @@
       "is_official": true,
       "published": "Nov 03, 17:01 UTC",
       "published_at": "2026-11-03T17:01:49+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -4540,10 +4546,9 @@
       "company": "google",
       "reading_time": "1 min read",
       "key_points": [
-        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
-        "Signals actionable market shifts and infrastructure priorities across the Google ecosystem."
+        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles."
       ],
-      "detailed_analysis": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
@@ -4579,7 +4584,7 @@
   ],
   "dev_radar": [
     {
-      "id": "cluster_92",
+      "id": "cluster_94",
       "article_id": "art_techcrunch_ai_0b6917455505",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
@@ -4613,7 +4618,7 @@
       "is_official": false,
       "published": "Nov 04, 18:44 UTC",
       "published_at": "2026-11-04T18:44:57+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -4625,10 +4630,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Huggingface."
@@ -4667,13 +4671,13 @@
       "publisher_id": "nvidia",
       "publisher_group_id": "nvidia",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
       "one_liner": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "summary": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "reported_facts": [
         "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
-        "NVIDIA Blog reported that Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI."
+        "Official development released and documented by NVIDIA Blog."
       ],
       "what_changed": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Nvidia ecosystem.",
@@ -4696,7 +4700,7 @@
       "is_official": true,
       "published": "Nov 03, 07:00 UTC",
       "published_at": "2026-11-03T07:00:12+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -4707,10 +4711,9 @@
       "company": "nvidia",
       "reading_time": "1 min read",
       "key_points": [
-        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
-        "Signals actionable market shifts and infrastructure priorities across the Nvidia ecosystem."
+        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge."
       ],
-      "detailed_analysis": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Nvidia workflows."
@@ -4744,12 +4747,12 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_106",
+      "id": "cluster_108",
       "article_id": "art_the_decoder_253fb607d3f5",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Rapid LLM development is outrunning the research meant to explain it, study finds",
       "one_liner": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "summary": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
@@ -4779,7 +4782,7 @@
       "is_official": false,
       "published": "Nov 03, 19:41 UTC",
       "published_at": "2026-11-03T19:41:43+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds",
       "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
@@ -4791,10 +4794,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
-        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
-        "Signals actionable market shifts and infrastructure priorities across the AI ecosystem."
+        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly."
       ],
-      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.\n\n44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by frontier AI."
@@ -4833,13 +4835,13 @@
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Distillation Defenses",
       "one_liner": "Official news announcement from Anthropic: Distillation Defenses.",
       "summary": "Official news announcement from Anthropic: Distillation Defenses.",
       "reported_facts": [
         "Official news announcement from Anthropic: Distillation Defenses.",
-        "Anthropic Official News reported that Distillation Defenses."
+        "Official development released and documented by Anthropic Official News."
       ],
       "what_changed": "Official news announcement from Anthropic: Distillation Defenses.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem.",
@@ -4862,7 +4864,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -4873,10 +4875,9 @@
       "company": "anthropic",
       "reading_time": "1 min read",
       "key_points": [
-        "Official news announcement from Anthropic: Distillation Defenses.",
-        "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem."
+        "Official news announcement from Anthropic: Distillation Defenses."
       ],
-      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
@@ -4913,7 +4914,7 @@
   ],
   "research_safety": [
     {
-      "id": "cluster_92",
+      "id": "cluster_94",
       "article_id": "art_techcrunch_ai_0b6917455505",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
@@ -4947,7 +4948,7 @@
       "is_official": false,
       "published": "Nov 04, 18:44 UTC",
       "published_at": "2026-11-04T18:44:57+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -4959,10 +4960,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Huggingface."
@@ -4996,7 +4996,7 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_101",
+      "id": "cluster_103",
       "article_id": "art_the_decoder_8f6015e03ac4",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
@@ -5007,7 +5007,7 @@
       "summary": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "reported_facts": [
         "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "The Decoder reported that New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
+        "Official development released and documented by The Decoder."
       ],
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -5030,7 +5030,7 @@
       "is_official": false,
       "published": "Nov 04, 16:42 UTC",
       "published_at": "2026-11-04T16:42:52+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -5041,10 +5041,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects."
       ],
-      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations."
@@ -5083,13 +5082,13 @@
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
       "one_liner": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "reported_facts": [
         "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "OpenAI News reported that Daybreak Red is now available in AWS GovCloud (US-East)."
+        "Official development released and documented by OpenAI News."
       ],
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -5112,7 +5111,7 @@
       "is_official": true,
       "published": "Nov 04, 07:00 UTC",
       "published_at": "2026-11-04T07:00:00+00:00",
-      "last_fetched_at": "2026-11-05T03:50:43.095646+00:00",
+      "last_fetched_at": "2026-11-05T04:42:35.418379+00:00",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -5123,10 +5122,9 @@
       "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
       ],
-      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
@@ -5167,7 +5165,7 @@
       "topic": "AI News",
       "category": "AI News",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "company": "huggingface",
       "published": "Nov 04, 18:44 UTC",
       "published_at": "2026-11-04T18:44:57+00:00",
@@ -5179,11 +5177,10 @@
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem.",
       "potential_impact": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.\n\nBut as increasingly capable models become more freely available, how do companies capture value?",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
       "link": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs",
       "source": "TechCrunch AI",
@@ -5202,7 +5199,7 @@
       "topic": "AI Models & Research",
       "category": "AI Models & Research",
       "article_type": "open_source_release",
-      "signal_badge": "\ud83d\udd13 Open Weights",
+      "signal_badge": "Open Weights",
       "company": "default",
       "published": "Nov 04, 16:42 UTC",
       "published_at": "2026-11-04T16:42:52+00:00",
@@ -5214,10 +5211,9 @@
       "summary": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
       "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
-      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "key_points": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects."
       ],
       "link": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations",
       "source": "The Decoder",
@@ -5236,7 +5232,7 @@
       "topic": "AI Security & Safety",
       "category": "AI Security & Safety",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "company": "openai",
       "published": "Nov 04, 07:00 UTC",
       "published_at": "2026-11-04T07:00:00+00:00",
@@ -5248,10 +5244,9 @@
       "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
       "potential_impact": "Analytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
-      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "key_points": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
       ],
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "source": "OpenAI News",
@@ -5270,7 +5265,7 @@
       "topic": "AI News",
       "category": "AI News",
       "article_type": "sdk_api_update",
-      "signal_badge": "\ud83d\udee0\ufe0f Dev / SDK",
+      "signal_badge": "Developer SDK",
       "company": "amazon",
       "published": "Nov 02, 17:01 UTC",
       "published_at": "2026-11-02T17:01:31+00:00",
@@ -5282,10 +5277,9 @@
       "summary": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
       "potential_impact": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
-      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "key_points": [
-        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale."
       ],
       "link": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai",
       "source": "AWS Machine Learning",
@@ -5307,8 +5301,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 260614,
-      "forks": 57477,
+      "stars": 260630,
+      "forks": 57486,
       "language": "Python",
       "topics": [
         "ai",
@@ -5319,13 +5313,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 331,
+      "stars_gained_24h": 347,
       "stars_gained_7d": null,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+331); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+347); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-05T03:23:50Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "updated_at": "2026-11-05T04:37:26Z",
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -5333,8 +5327,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 80246,
-      "forks": 14763,
+      "stars": 80254,
+      "forks": 14765,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -5345,13 +5339,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 345,
+      "stars_gained_24h": 353,
       "stars_gained_7d": null,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+345); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+353); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
       "updated_at": "2026-11-05T01:33:41Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     },
     {
       "repository": "open-webui/open-webui",
@@ -5359,7 +5353,7 @@
       "owner": "open-webui",
       "url": "https://github.com/open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 157809,
+      "stars": 157812,
       "forks": 22947,
       "language": "Svelte",
       "topics": [
@@ -5371,13 +5365,13 @@
         "mcp"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 106,
+      "stars_gained_24h": 109,
       "stars_gained_7d": null,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+106); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+109); Active commit activity in the last 24h.",
       "created_at": "2023-10-06T22:08:27Z",
-      "updated_at": "2026-11-05T03:49:30Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "updated_at": "2026-11-05T04:38:42Z",
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -5385,8 +5379,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 431452,
-      "forks": 107236,
+      "stars": 431567,
+      "forks": 107264,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -5397,13 +5391,13 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 3910,
+      "stars_gained_24h": 4025,
       "stars_gained_7d": null,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+3910); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+4025); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
       "updated_at": "2026-11-04T22:50:59Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -5411,8 +5405,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 111158,
-      "forks": 18413,
+      "stars": 111169,
+      "forks": 18414,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -5423,13 +5417,13 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 298,
+      "stars_gained_24h": 309,
       "stars_gained_7d": null,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+298); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+309); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-05T03:48:19Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "updated_at": "2026-11-05T04:40:49Z",
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     },
     {
       "repository": "The-PR-Agent/pr-agent",
@@ -5437,7 +5431,7 @@
       "owner": "The-PR-Agent",
       "url": "https://github.com/The-PR-Agent/pr-agent",
       "description": "\ud83d\ude80 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
-      "stars": 14839,
+      "stars": 14865,
       "forks": 2098,
       "language": "Python",
       "topics": [
@@ -5449,13 +5443,13 @@
         "ollama"
       ],
       "license": "MIT",
-      "stars_gained_24h": 383,
+      "stars_gained_24h": 409,
       "stars_gained_7d": null,
       "developer_trend_score": 99.6,
-      "score_explanation": "Breakout 24h star growth (+383); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+409); Active commit activity in the last 24h.",
       "created_at": "2023-07-05T21:02:15Z",
       "updated_at": "2026-11-05T00:12:31Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     },
     {
       "repository": "f/prompts.chat",
@@ -5463,7 +5457,7 @@
       "owner": "f",
       "url": "https://github.com/f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
-      "stars": 175831,
+      "stars": 175834,
       "forks": 22428,
       "language": "MDX",
       "topics": [
@@ -5475,13 +5469,13 @@
         "claude"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 93,
+      "stars_gained_24h": 96,
       "stars_gained_7d": null,
-      "developer_trend_score": 99.2,
-      "score_explanation": "Rapid 24h adoption (+93 stars); Active commit activity in the last 24h.",
+      "developer_trend_score": 99.5,
+      "score_explanation": "Rapid 24h adoption (+96 stars); Active commit activity in the last 24h.",
       "created_at": "2022-12-05T13:54:13Z",
       "updated_at": "2026-11-05T03:12:44Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     },
     {
       "repository": "n8n-io/n8n",
@@ -5489,8 +5483,8 @@
       "owner": "n8n-io",
       "url": "https://github.com/n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 209580,
-      "forks": 61364,
+      "stars": 209583,
+      "forks": 61365,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -5501,34 +5495,34 @@
         "development"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 88,
+      "stars_gained_24h": 91,
       "stars_gained_7d": null,
-      "developer_trend_score": 98.6,
-      "score_explanation": "Rapid 24h adoption (+88 stars); Active commit activity in the last 24h.",
+      "developer_trend_score": 98.9,
+      "score_explanation": "Rapid 24h adoption (+91 stars); Active commit activity in the last 24h.",
       "created_at": "2019-06-22T09:24:21Z",
-      "updated_at": "2026-11-05T02:44:28Z",
-      "collected_at": "2026-11-05T03:50:39.932939+00:00"
+      "updated_at": "2026-11-05T04:16:55Z",
+      "collected_at": "2026-11-05T04:42:32.828821+00:00"
     }
   ],
   "source_health_summary": {
     "status": "degraded",
     "configured_sources_count": 25,
     "enabled_sources_count": 25,
-    "successful_fetches_count": 23,
-    "failed_fetches_count": 2,
+    "successful_fetches_count": 24,
+    "failed_fetches_count": 1,
     "valid_empty_sources_count": 0,
-    "total_articles_received": 3611,
-    "rejected_by_relevance_count": 17,
-    "rejected_by_freshness_count": 1227,
-    "fresh_articles_accepted_count": 169,
-    "unique_article_count": 169
+    "total_articles_received": 3616,
+    "rejected_by_relevance_count": 15,
+    "rejected_by_freshness_count": 1232,
+    "fresh_articles_accepted_count": 171,
+    "unique_article_count": 171
   },
   "source_health_details": [
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-05T03:50:20.915934+00:00",
-      "last_success_at": "2026-11-05T03:50:20.915934+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.188608+00:00",
+      "last_success_at": "2026-11-05T04:42:23.188608+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1359,
@@ -5539,8 +5533,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-05T03:50:20.916952+00:00",
-      "last_success_at": "2026-11-05T03:50:20.916952+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.189584+00:00",
+      "last_success_at": "2026-11-05T04:42:23.189584+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -5551,20 +5545,20 @@
     {
       "source_id": "anthropic_hn_discovery",
       "name": "Anthropic Community Discovery (HNRSS)",
-      "last_attempt_at": "2026-11-05T03:50:20.917455+00:00",
-      "last_success_at": null,
-      "fetch_status": "failed",
-      "http_status": 502,
-      "articles_received": 0,
+      "last_attempt_at": "2026-11-05T04:42:23.190144+00:00",
+      "last_success_at": "2026-11-05T04:42:23.190144+00:00",
+      "fetch_status": "success",
+      "http_status": 304,
+      "articles_received": 5,
       "articles_accepted": 0,
-      "error_type": "HTTPError",
-      "error_message": "HTTP 502: Bad Gateway"
+      "error_type": null,
+      "error_message": null
     },
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-05T03:50:20.918472+00:00",
-      "last_success_at": "2026-11-05T03:50:20.918472+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.190717+00:00",
+      "last_success_at": "2026-11-05T04:42:23.190717+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -5575,8 +5569,8 @@
     {
       "source_id": "google_ai_blog",
       "name": "Google AI Blog",
-      "last_attempt_at": "2026-11-05T03:50:20.919031+00:00",
-      "last_success_at": "2026-11-05T03:50:20.919031+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.191253+00:00",
+      "last_success_at": "2026-11-05T04:42:23.191253+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5587,8 +5581,8 @@
     {
       "source_id": "microsoft_ai_news",
       "name": "Microsoft AI News",
-      "last_attempt_at": "2026-11-05T03:50:20.921688+00:00",
-      "last_success_at": "2026-11-05T03:50:20.921688+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.192249+00:00",
+      "last_success_at": "2026-11-05T04:42:23.192249+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5599,8 +5593,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Blog",
-      "last_attempt_at": "2026-11-05T03:50:20.923685+00:00",
-      "last_success_at": "2026-11-05T03:50:20.923685+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.198034+00:00",
+      "last_success_at": "2026-11-05T04:42:23.198034+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 18,
@@ -5611,8 +5605,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-05T03:50:20.924685+00:00",
-      "last_success_at": "2026-11-05T03:50:20.924685+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.200976+00:00",
+      "last_success_at": "2026-11-05T04:42:23.200976+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5623,8 +5617,8 @@
     {
       "source_id": "amazon_science",
       "name": "Amazon Science",
-      "last_attempt_at": "2026-11-05T03:50:20.933737+00:00",
-      "last_success_at": "2026-11-05T03:50:20.933737+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.203994+00:00",
+      "last_success_at": "2026-11-05T04:42:23.203994+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 25,
@@ -5635,8 +5629,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-05T03:50:20.936691+00:00",
-      "last_success_at": "2026-11-05T03:50:20.936691+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.207311+00:00",
+      "last_success_at": "2026-11-05T04:42:23.207311+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 897,
@@ -5647,8 +5641,8 @@
     {
       "source_id": "github_blog_ai",
       "name": "GitHub Blog AI",
-      "last_attempt_at": "2026-11-05T03:50:21.096832+00:00",
-      "last_success_at": "2026-11-05T03:50:21.096832+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.352049+00:00",
+      "last_success_at": "2026-11-05T04:42:23.352049+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5659,8 +5653,8 @@
     {
       "source_id": "mistral_news",
       "name": "Mistral AI News",
-      "last_attempt_at": "2026-11-05T03:50:21.164575+00:00",
-      "last_success_at": "2026-11-05T03:50:21.164575+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.366676+00:00",
+      "last_success_at": "2026-11-05T04:42:23.366676+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 93,
@@ -5671,8 +5665,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-05T03:50:21.170330+00:00",
-      "last_success_at": "2026-11-05T03:50:21.170330+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.472197+00:00",
+      "last_success_at": "2026-11-05T04:42:23.472197+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5683,20 +5677,20 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-05T03:50:21.182484+00:00",
-      "last_success_at": "2026-11-05T03:50:21.182484+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.485645+00:00",
+      "last_success_at": "2026-11-05T04:42:23.485645+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
-      "articles_accepted": 7,
+      "articles_accepted": 9,
       "error_type": null,
       "error_message": null
     },
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-05T03:50:21.272020+00:00",
-      "last_success_at": "2026-11-05T03:50:21.272020+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.866598+00:00",
+      "last_success_at": "2026-11-05T04:42:23.866598+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 20,
@@ -5707,8 +5701,8 @@
     {
       "source_id": "ars_technica",
       "name": "Ars Technica",
-      "last_attempt_at": "2026-11-05T03:50:21.375764+00:00",
-      "last_success_at": "2026-11-05T03:50:21.375764+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.901666+00:00",
+      "last_success_at": "2026-11-05T04:42:23.901666+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5719,8 +5713,8 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-05T03:50:21.392470+00:00",
-      "last_success_at": "2026-11-05T03:50:21.392470+00:00",
+      "last_attempt_at": "2026-11-05T04:42:23.999451+00:00",
+      "last_success_at": "2026-11-05T04:42:23.999451+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5731,8 +5725,8 @@
     {
       "source_id": "arxiv_cs_ai",
       "name": "arXiv cs.AI",
-      "last_attempt_at": "2026-11-05T03:50:21.485520+00:00",
-      "last_success_at": "2026-11-05T03:50:21.485520+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.026985+00:00",
+      "last_success_at": "2026-11-05T04:42:24.026985+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 413,
@@ -5743,8 +5737,8 @@
     {
       "source_id": "arxiv_cs_lg",
       "name": "arXiv cs.LG",
-      "last_attempt_at": "2026-11-05T03:50:21.595562+00:00",
-      "last_success_at": "2026-11-05T03:50:21.595562+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.122198+00:00",
+      "last_success_at": "2026-11-05T04:42:24.122198+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 445,
@@ -5755,8 +5749,8 @@
     {
       "source_id": "bair_blog",
       "name": "BAIR Blog",
-      "last_attempt_at": "2026-11-05T03:50:21.605355+00:00",
-      "last_success_at": "2026-11-05T03:50:21.605355+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.138313+00:00",
+      "last_success_at": "2026-11-05T04:42:24.138313+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -5767,8 +5761,8 @@
     {
       "source_id": "simon_willison",
       "name": "Simon Willison Weblog",
-      "last_attempt_at": "2026-11-05T03:50:21.605907+00:00",
-      "last_success_at": "2026-11-05T03:50:21.605907+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.181414+00:00",
+      "last_success_at": "2026-11-05T04:42:24.181414+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 30,
@@ -5779,7 +5773,7 @@
     {
       "source_id": "import_ai",
       "name": "Import AI",
-      "last_attempt_at": "2026-11-05T03:50:21.613709+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.216544+00:00",
       "last_success_at": null,
       "fetch_status": "failed",
       "http_status": 403,
@@ -5791,8 +5785,8 @@
     {
       "source_id": "lmsys_org",
       "name": "LMSYS Org",
-      "last_attempt_at": "2026-11-05T03:50:21.667671+00:00",
-      "last_success_at": "2026-11-05T03:50:21.667671+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.257400+00:00",
+      "last_success_at": "2026-11-05T04:42:24.257400+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5803,8 +5797,8 @@
     {
       "source_id": "latent_space",
       "name": "Latent Space",
-      "last_attempt_at": "2026-11-05T03:50:21.674733+00:00",
-      "last_success_at": "2026-11-05T03:50:21.674733+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.335801+00:00",
+      "last_success_at": "2026-11-05T04:42:24.335801+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -5815,8 +5809,8 @@
     {
       "source_id": "hf_daily_papers",
       "name": "Hugging Face Daily Papers",
-      "last_attempt_at": "2026-11-05T03:50:21.682380+00:00",
-      "last_success_at": "2026-11-05T03:50:21.682380+00:00",
+      "last_attempt_at": "2026-11-05T04:42:24.349692+00:00",
+      "last_success_at": "2026-11-05T04:42:24.349692+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 25,
