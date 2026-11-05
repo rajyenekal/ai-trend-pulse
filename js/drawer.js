@@ -141,36 +141,115 @@ export function openReaderView(story) {
     imgEl.alt = story.title ? `${story.title} illustration` : 'Story illustration';
   }
 
-  // Key Takeaways (deduplicated against headline)
+  // -----------------------------------------------------------
+  // DEDUPLICATION & CROSS-SECTION CONTENT FILTERING ENGINE
+  // Eliminates repetitive sentences across Takeaways, Facts, Analysis, and Callouts
+  // -----------------------------------------------------------
+  const normTitle = (story.title || '').trim().toLowerCase().replace(/[^\w\s]/g, '');
+
+  function normalizeSentence(text) {
+    return (text || '').toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+  }
+
+  function areSimilar(a, b) {
+    const nA = normalizeSentence(a);
+    const nB = normalizeSentence(b);
+    if (!nA || !nB) return false;
+    if (nA === nB) return true;
+    if (nA.includes(nB) && nB.length >= nA.length * 0.7) return true;
+    if (nB.includes(nA) && nA.length >= nB.length * 0.7) return true;
+    return false;
+  }
+
+  // 1. Identify distinct Why It Matters & Potential Impact first so they are reserved for their dedicated cards
+  const whyBox = document.getElementById('reader-why-box');
+  const whyText = document.getElementById('reader-why-text');
+  const rawWhy = (story.why_it_matters || '').trim();
+  const distinctWhy = (rawWhy && normalizeSentence(rawWhy) !== normTitle) ? rawWhy : '';
+
+  const impactBox = document.getElementById('reader-impact-box');
+  const impactText = document.getElementById('reader-potential-impact');
+  const rawImpact = (story.potential_impact || '').trim();
+  const distinctImpact = (rawImpact && normalizeSentence(rawImpact) !== normTitle && (!distinctWhy || !areSimilar(rawImpact, distinctWhy))) ? rawImpact : '';
+
+  // 2. Key Takeaways (filtered so they NEVER duplicate Why It Matters, Potential Impact, or Title)
   const kpContainer = document.getElementById('reader-key-points');
+  const seenTakeaways = new Set();
+  if (normTitle) seenTakeaways.add(normTitle);
+
   if (kpContainer) {
     kpContainer.innerHTML = '';
-    const points = story.key_points || (story.what_changed ? [story.what_changed] : [story.summary]);
-    const normTitle = (story.title || '').trim().toLowerCase();
-    
-    points.forEach(pt => {
+    const rawPoints = story.key_points || (story.what_changed ? [story.what_changed] : [story.summary]);
+    const uniquePoints = [];
+
+    (Array.isArray(rawPoints) ? rawPoints : [rawPoints]).forEach(pt => {
       const cleanPt = (pt || '').trim();
-      if (cleanPt && cleanPt.toLowerCase() !== normTitle) {
-        const li = document.createElement('li');
-        li.textContent = cleanPt;
-        kpContainer.appendChild(li);
+      if (!cleanPt) return;
+
+      // Filter out if identical to Why It Matters or Potential Impact (they have dedicated cards)
+      if (distinctWhy && areSimilar(cleanPt, distinctWhy)) return;
+      if (distinctImpact && areSimilar(cleanPt, distinctImpact)) return;
+
+      const normPt = normalizeSentence(cleanPt);
+      if (normPt && !seenTakeaways.has(normPt)) {
+        seenTakeaways.add(normPt);
+        uniquePoints.push(cleanPt);
       }
     });
 
-    if (!kpContainer.children.length && story.summary) {
-      const li = document.createElement('li');
-      li.textContent = story.summary;
-      kpContainer.appendChild(li);
+    if (uniquePoints.length === 0) {
+      const fallback = (story.what_changed || story.summary || '').trim();
+      if (fallback && (!distinctWhy || !areSimilar(fallback, distinctWhy)) && (!distinctImpact || !areSimilar(fallback, distinctImpact))) {
+        uniquePoints.push(fallback);
+        seenTakeaways.add(normalizeSentence(fallback));
+      } else {
+        const cat = story.category || story.topic || 'AI News';
+        uniquePoints.push(`Strategic update announced in ${cat}.`);
+      }
     }
+
+    uniquePoints.forEach(pt => {
+      const li = document.createElement('li');
+      li.textContent = pt;
+      kpContainer.appendChild(li);
+    });
   }
 
-  // Verified Reported Facts
+  // 3. Verified Reported Facts (clean, distinct source data points — NEVER repeat takeaway bullets)
   const factsBox = document.getElementById('reader-facts-box');
   const factsList = document.getElementById('reader-facts-list');
   if (factsBox && factsList) {
     factsList.innerHTML = '';
-    if (story.reported_facts && Array.isArray(story.reported_facts) && story.reported_facts.length > 0) {
-      story.reported_facts.forEach(fact => {
+    const rawFacts = Array.isArray(story.reported_facts) ? story.reported_facts : [];
+    const uniqueFacts = [];
+    const seenFacts = new Set();
+
+    rawFacts.forEach(fact => {
+      let cleanFact = (fact || '').trim();
+      cleanFact = cleanFact.replace(/^(?:[\w\s.-]+)\s+reported\s+that\s+/i, '');
+      if (!cleanFact) return;
+
+      // Must not duplicate title, Why It Matters, Potential Impact, or any Takeaway
+      if (distinctWhy && areSimilar(cleanFact, distinctWhy)) return;
+      if (distinctImpact && areSimilar(cleanFact, distinctImpact)) return;
+      for (const t of seenTakeaways) {
+        if (areSimilar(cleanFact, t)) return;
+      }
+
+      const normFact = normalizeSentence(cleanFact);
+      if (normFact && !seenFacts.has(normFact)) {
+        seenFacts.add(normFact);
+        uniqueFacts.push(cleanFact);
+      }
+    });
+
+    if (uniqueFacts.length === 0 && rawFacts.length > 0) {
+      const src = story.source || 'official technical documentation';
+      uniqueFacts.push(`Primary reporting documented by ${src}.`);
+    }
+
+    if (uniqueFacts.length > 0) {
+      uniqueFacts.forEach(fact => {
         const li = document.createElement('li');
         li.textContent = fact;
         factsList.appendChild(li);
@@ -181,50 +260,57 @@ export function openReaderView(story) {
     }
   }
 
-  // Detailed Analysis (deduplicated against headline and each other)
+  // 4. In-Depth Story & Context (clean narrative paragraphs without duplicating Potential Impact or Why It Matters)
   const daContainer = document.getElementById('reader-detailed-analysis');
+  const contentSection = document.getElementById('reader-content-section') || (typeof document.querySelector === 'function' ? document.querySelector('.reader-content-section') : null);
   if (daContainer) {
     daContainer.innerHTML = '';
-    const normTitle = (story.title || '').trim().toLowerCase();
     const rawAnalysis = story.detailed_analysis || story.summary || story.what_changed || '';
     const paragraphs = rawAnalysis.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
-    const seen = new Set();
+    const uniqueParagraphs = [];
+    const seenParas = new Set();
 
     paragraphs.forEach(p => {
-      const pNorm = p.toLowerCase();
-      if (pNorm !== normTitle && !seen.has(pNorm)) {
-        seen.add(pNorm);
-        const pEl = document.createElement('p');
-        pEl.textContent = p;
-        daContainer.appendChild(pEl);
+      if (!p) return;
+      // Do NOT repeat Potential Impact or Why It Matters in narrative analysis
+      if (distinctImpact && areSimilar(p, distinctImpact)) return;
+      if (distinctWhy && areSimilar(p, distinctWhy)) return;
+
+      const normP = normalizeSentence(p);
+      if (normP && !seenParas.has(normP)) {
+        seenParas.add(normP);
+        uniqueParagraphs.push(p);
       }
     });
 
-    if (!daContainer.children.length) {
-      const pEl = document.createElement('p');
-      pEl.textContent = story.what_changed || story.summary || 'Verified AI development dispatch.';
-      daContainer.appendChild(pEl);
+    // Guarantee at least 1 clean narrative paragraph
+    if (uniqueParagraphs.length === 0) {
+      const fallback = (story.summary || story.what_changed || story.title || 'Verified AI development dispatch.').trim();
+      uniqueParagraphs.push(fallback);
     }
+
+    uniqueParagraphs.forEach(p => {
+      const pEl = document.createElement('p');
+      pEl.textContent = p;
+      daContainer.appendChild(pEl);
+    });
+    if (contentSection) contentSection.style.display = 'block';
   }
 
-  // Why It Matters Callout
-  const whyBox = document.getElementById('reader-why-box');
-  const whyText = document.getElementById('reader-why-text');
+  // 5. Why It Matters Callout
   if (whyBox && whyText) {
-    if (story.why_it_matters) {
-      whyText.textContent = story.why_it_matters;
+    if (distinctWhy) {
+      whyText.textContent = distinctWhy;
       whyBox.style.display = 'block';
     } else {
       whyBox.style.display = 'none';
     }
   }
 
-  // Potential Impact
-  const impactBox = document.getElementById('reader-impact-box');
-  const impactText = document.getElementById('reader-potential-impact');
+  // 6. Potential Impact Callout
   if (impactBox && impactText) {
-    if (story.potential_impact) {
-      impactText.textContent = story.potential_impact;
+    if (distinctImpact) {
+      impactText.textContent = distinctImpact;
       impactBox.style.display = 'block';
     } else {
       impactBox.style.display = 'none';

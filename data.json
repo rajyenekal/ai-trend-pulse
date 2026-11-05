@@ -340,8 +340,7 @@
       "what_changed": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem.",
       "reported_facts": [
-        "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?"
+        "Primary reporting documented by TechCrunch AI."
       ],
       "potential_impact": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
       "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
@@ -382,10 +381,9 @@
       "independent_source_count": 1,
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for Open source AI is booming. Hugging Face explains who profits.",
@@ -448,8 +446,7 @@
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
       "reported_facts": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "The Decoder reported that New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
+        "New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
       ],
       "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
       "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
@@ -489,10 +486,9 @@
       "evidence_label": "Single-Source Report",
       "independent_source_count": 1,
       "key_points": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects."
       ],
-      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations",
@@ -555,8 +551,7 @@
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
       "reported_facts": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "OpenAI News reported that Daybreak Red is now available in AWS GovCloud (US-East)."
+        "Daybreak Red is now available in AWS GovCloud (US-East)."
       ],
       "potential_impact": "Analytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
@@ -596,10 +591,9 @@
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
       ],
-      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for Daybreak Red is now available in AWS GovCloud (US-East)",
@@ -665,7 +659,7 @@
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
       "reported_facts": [
         "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "AWS Machine Learning reported that Build efficient agents with knowledge distillation on Amazon SageMaker AI."
+        "Build efficient agents with knowledge distillation on Amazon SageMaker AI."
       ],
       "potential_impact": "Analytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
@@ -705,10 +699,9 @@
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale."
       ],
-      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for Build efficient agents with knowledge distillation on Amazon SageMaker AI",
@@ -770,8 +763,7 @@
       "what_changed": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
       "reported_facts": [
-        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
-        "Simon Willison Weblog reported that Qwen 3.8 27B on my laptop can interpret model weights, too."
+        "Qwen 3.8 27B on my laptop can interpret model weights, too."
       ],
       "potential_impact": "Analytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
       "analysis_limitations": "Epistemic Limitation: Independent practitioner report; observations reflect specific test setups, local system configurations, and personal developer evaluation.",
@@ -811,10 +803,9 @@
       "evidence_label": "Practitioner Report",
       "independent_source_count": 1,
       "key_points": [
-        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab."
       ],
-      "detailed_analysis": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for Qwen 3.8 27B on my laptop can interpret model weights, too",
@@ -834,10 +825,7 @@
       "title": "Open source AI is booming. Hugging Face explains who profits.",
       "one_liner": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
-      "reported_facts": [
-        "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?"
-      ],
+      "reported_facts": [],
       "what_changed": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem.",
       "affected_stakeholders": [
@@ -871,10 +859,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For enterprise operators",
         "impact": "Demonstrates practical operational automation and procurement pathways using Huggingface."
@@ -917,10 +904,7 @@
       "title": "Building on open source AI? Hugging Face\u2019s policy chief on the costs, risks, and trade-offs",
       "one_liner": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "summary": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
-      "reported_facts": [
-        "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?"
-      ],
+      "reported_facts": [],
       "what_changed": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem.",
       "affected_stakeholders": [
@@ -954,10 +938,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
-        "But as increasingly capable models become more freely available, how do companies capture value?",
-        "Signals actionable market shifts and infrastructure priorities across the Huggingface ecosystem."
+        "But as increasingly capable models become more freely available, how do companies capture value?"
       ],
-      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Huggingface."
@@ -1001,8 +984,7 @@
       "one_liner": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "summary": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "reported_facts": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "The Decoder reported that New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
+        "New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations."
       ],
       "what_changed": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -1036,10 +1018,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects."
       ],
-      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations."
@@ -1083,8 +1064,7 @@
       "one_liner": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "reported_facts": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "OpenAI News reported that Daybreak Red is now available in AWS GovCloud (US-East)."
+        "Daybreak Red is now available in AWS GovCloud (US-East)."
       ],
       "what_changed": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -1118,10 +1098,9 @@
       "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
       ],
-      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
@@ -1166,7 +1145,7 @@
       "summary": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "reported_facts": [
         "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "AWS Machine Learning reported that Build efficient agents with knowledge distillation on Amazon SageMaker AI."
+        "Build efficient agents with knowledge distillation on Amazon SageMaker AI."
       ],
       "what_changed": "Agentic assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -1200,10 +1179,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale."
       ],
-      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "action-taking assistants built on frontier models run a multi-step tool loop, and paying frontier prices on every step is hard to sustain at production scale.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
@@ -1249,8 +1227,7 @@
       "one_liner": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "reported_facts": [
-        "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
-        "OpenAI News reported that OpenAI to acquire Pierre Computer Company, Inc."
+        "OpenAI to acquire Pierre Computer Company, Inc."
       ],
       "what_changed": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Openai ecosystem.",
@@ -1284,10 +1261,9 @@
       "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
-        "Signals actionable market shifts and infrastructure priorities across the Openai ecosystem."
+        "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code."
       ],
-      "detailed_analysis": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "OpenAI will acquire Pierre Computer Company, expanding Codex\u2019s tools for building, understanding, and reviewing code.",
       "audience_impact": {
         "target": "For developers",
         "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
@@ -1331,8 +1307,7 @@
       "one_liner": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "summary": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "reported_facts": [
-        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
-        "AWS Machine Learning reported that Use decision models with Amazon Bedrock AgentCore Evaluations."
+        "Use decision models with Amazon Bedrock AgentCore Evaluations."
       ],
       "what_changed": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -1366,10 +1341,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question."
       ],
-      "detailed_analysis": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
@@ -1474,8 +1448,7 @@
       "one_liner": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "summary": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "reported_facts": [
-        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
-        "arXiv cs.AI reported that VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions."
+        "VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions."
       ],
       "what_changed": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "why_it_matters": "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming.",
@@ -1509,10 +1482,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
-        "Exposes alignment boundaries and vulnerability surfaces, necessitating automated pre-deployment red teaming."
+        "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities."
       ],
-      "detailed_analysis": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.\n\nAnalytical Projection: Deployment teams may implement stricter defense-in-depth reviews and alignment evaluations prior to granting models autonomous system access.",
+      "detailed_analysis": "Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities.",
       "audience_impact": {
         "target": "For AI researchers & safety teams",
         "impact": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in frontier AI models."
@@ -1556,8 +1528,7 @@
       "one_liner": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "summary": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "reported_facts": [
-        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
-        "AWS Machine Learning reported that Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI."
+        "Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI."
       ],
       "what_changed": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem.",
@@ -1591,10 +1562,9 @@
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
-        "Signals actionable market shifts and infrastructure priorities across the Amazon ecosystem."
+        "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source."
       ],
-      "detailed_analysis": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "This post shows how to use Crawl4AI, an open source web crawler, as a content preparation layer for Amazon Bedrock Knowledge Bases, handling JavaScript rendering, selective extraction, and custom metadata enrichment before web content reaches an Amazon S3 data source.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted Amazon implementations."
@@ -1663,8 +1633,7 @@
       "one_liner": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "reported_facts": [
-        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
-        "Simon Willison Weblog reported that Qwen 3.8 27B on my laptop can interpret model weights, too."
+        "Qwen 3.8 27B on my laptop can interpret model weights, too."
       ],
       "what_changed": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "why_it_matters": "Establishes a new empirical benchmark and architectural baseline for frontier foundation models.",
@@ -1698,10 +1667,9 @@
       "company": "default",
       "reading_time": "1 min read",
       "key_points": [
-        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
-        "Establishes a new empirical benchmark and architectural baseline for frontier foundation models."
+        "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab."
       ],
-      "detailed_analysis": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.\n\nAnalytical Projection: Architectural improvements may establish new performance ceilings on standard reasoning benchmarks while compressing parameter footprints.",
+      "detailed_analysis": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations."
@@ -1744,8 +1712,7 @@
       "one_liner": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "reported_facts": [
-        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
-        "Google DeepMind reported that Agentic cheminformatics with Google Antigravity."
+        "Agentic cheminformatics with Google Antigravity."
       ],
       "what_changed": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
@@ -1779,10 +1746,9 @@
       "company": "google",
       "reading_time": "1 min read",
       "key_points": [
-        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
-        "Signals actionable market shifts and infrastructure priorities across the Google ecosystem."
+        "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles."
       ],
-      "detailed_analysis": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
@@ -1825,10 +1791,7 @@
       "title": "AI Is Changing How Semiconductor Fabs Work \u2014 and Engineers Are Moving Faster Because of It",
       "one_liner": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
       "summary": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
-      "reported_facts": [
-        "Demand for advanced chips is rising.",
-        "The processes to build them are getting more complex."
-      ],
+      "reported_facts": [],
       "what_changed": "Demand for advanced chips is rising.",
       "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
       "affected_stakeholders": [
@@ -1862,10 +1825,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Demand for advanced chips is rising.",
-        "The processes to build them are getting more complex.",
-        "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs."
+        "The processes to build them are getting more complex."
       ],
-      "detailed_analysis": "Demand for advanced chips is rising. The processes to build them are getting more complex.\n\nAnalytical Projection: Expanded compute capacity may reduce inference latency thresholds and lower token costs across enterprise cloud workloads.",
+      "detailed_analysis": "Demand for advanced chips is rising. The processes to build them are getting more complex.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Nvidia workflows."
@@ -1909,8 +1871,7 @@
       "one_liner": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "summary": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "reported_facts": [
-        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
-        "NVIDIA Blog reported that Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI."
+        "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI."
       ],
       "what_changed": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Nvidia ecosystem.",
@@ -1944,10 +1905,9 @@
       "company": "nvidia",
       "reading_time": "1 min read",
       "key_points": [
-        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
-        "Signals actionable market shifts and infrastructure priorities across the Nvidia ecosystem."
+        "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge."
       ],
-      "detailed_analysis": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Nvidia workflows."
@@ -1991,8 +1951,6 @@
       "one_liner": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "summary": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "reported_facts": [
-        "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
-        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
         "The average lifespan is just 15.7 months."
       ],
       "what_changed": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
@@ -2028,10 +1986,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models.",
-        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
-        "Signals actionable market shifts and infrastructure priorities across the AI ecosystem."
+        "44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly."
       ],
-      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Stanford researchers tested 50 widely cited claims about LLMs against 20 current models. 44 percent of the findings are already \"expired,\" and another 34 percent have weakened significantly.",
       "audience_impact": {
         "target": "For everyday users",
         "impact": "Enhances daily workflow speed and conversational assistance powered by frontier AI."
@@ -2074,10 +2031,7 @@
       "title": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
       "one_liner": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
       "summary": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
-      "reported_facts": [
-        "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.",
-        "But the blue wave that swept the Lone Star State may jeopardize that position."
-      ],
+      "reported_facts": [],
       "what_changed": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.",
       "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
       "affected_stakeholders": [
@@ -2111,10 +2065,9 @@
       "reading_time": "1 min read",
       "key_points": [
         "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts.",
-        "But the blue wave that swept the Lone Star State may jeopardize that position.",
-        "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs."
+        "But the blue wave that swept the Lone Star State may jeopardize that position."
       ],
-      "detailed_analysis": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.\n\nAnalytical Projection: Expanded compute capacity may reduce inference latency thresholds and lower token costs across enterprise cloud workloads.",
+      "detailed_analysis": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Mit workflows."
@@ -2157,8 +2110,7 @@
       "one_liner": "Animated carousel of images from AI posts in October.",
       "summary": "Animated carousel of images from AI posts in October.",
       "reported_facts": [
-        "Animated carousel of images from AI posts in October.",
-        "Google AI Blog reported that The latest AI news we announced in October 2026."
+        "The latest AI news we announced in October 2026."
       ],
       "what_changed": "Animated carousel of images from AI posts in October.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Google ecosystem.",
@@ -2192,10 +2144,9 @@
       "company": "google",
       "reading_time": "1 min read",
       "key_points": [
-        "Animated carousel of images from AI posts in October.",
-        "Signals actionable market shifts and infrastructure priorities across the Google ecosystem."
+        "Animated carousel of images from AI posts in October."
       ],
-      "detailed_analysis": "Animated carousel of images from AI posts in October.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Animated carousel of images from AI posts in October.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Google workflows."
@@ -2239,8 +2190,7 @@
       "one_liner": "Official news announcement from Anthropic: Distillation Defenses.",
       "summary": "Official news announcement from Anthropic: Distillation Defenses.",
       "reported_facts": [
-        "Official news announcement from Anthropic: Distillation Defenses.",
-        "Anthropic Official News reported that Distillation Defenses."
+        "Distillation Defenses."
       ],
       "what_changed": "Official news announcement from Anthropic: Distillation Defenses.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem.",
@@ -2274,10 +2224,9 @@
       "company": "anthropic",
       "reading_time": "1 min read",
       "key_points": [
-        "Official news announcement from Anthropic: Distillation Defenses.",
-        "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem."
+        "Official news announcement from Anthropic: Distillation Defenses."
       ],
-      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
@@ -2322,8 +2271,7 @@
       "one_liner": "Official news announcement from Anthropic: Announcements.",
       "summary": "Official news announcement from Anthropic: Announcements.",
       "reported_facts": [
-        "Official news announcement from Anthropic: Announcements.",
-        "Anthropic Official News reported that Announcements."
+        "Announcements."
       ],
       "what_changed": "Official news announcement from Anthropic: Announcements.",
       "why_it_matters": "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem.",
@@ -2357,10 +2305,9 @@
       "company": "anthropic",
       "reading_time": "1 min read",
       "key_points": [
-        "Official news announcement from Anthropic: Announcements.",
-        "Signals actionable market shifts and infrastructure priorities across the Anthropic ecosystem."
+        "Official news announcement from Anthropic: Announcements."
       ],
-      "detailed_analysis": "Official news announcement from Anthropic: Announcements.\n\nAnalytical Projection: Strategic industry alignment may accelerate technical collaboration and standardized evaluation practices across frontier labs.",
+      "detailed_analysis": "Official news announcement from Anthropic: Announcements.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."

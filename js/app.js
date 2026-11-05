@@ -15,6 +15,7 @@ import {
   toggleUserFilter,
   setSectionFilter,
   persistUserFilters,
+  parseStoryTimestamp,
 } from './state.js';
 
 import {
@@ -388,7 +389,7 @@ export function renderPipelineErrorUI(errorMsg) {
   if (bento && bento.querySelector('.skeleton-card')) bento.innerHTML = '';
   const glance = document.getElementById('catch-me-up-items');
   if (glance && glance.querySelector('.skeleton-card')) glance.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Data snapshot unavailable.</p>';
-  ['developer-trends-container', 'ai-tools-container', 'dev-radar-container', 'research-safety-container'].forEach(id => {
+  ['developer-trends-container', 'ai-tools-container', 'dev-radar-container', 'research-safety-container', 'stories-container'].forEach(id => {
     const el = document.getElementById(id);
     if (el && el.querySelector('.skeleton-card')) el.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Intelligence feed temporarily unavailable.</p>';
   });

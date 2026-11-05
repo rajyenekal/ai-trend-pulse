@@ -460,12 +460,6 @@ def extract_key_points(summary, title, source_name="", why_it_matters="", catego
     if len(points) >= 3:
       break
 
-  # If why_it_matters is available and distinct, use it as a takeaway bullet
-  if len(points) < 3 and why_it_matters:
-    clean_why = why_it_matters.strip()
-    if norm(clean_why) != norm_title and not any(norm(clean_why) in norm(p) for p in points):
-      points.append(clean_why)
-
   # Fallback: NEVER insert the verbatim title into bullet points
   if not points:
     if clean_summary and norm(clean_summary) != norm_title:
@@ -529,7 +523,7 @@ def generate_reported_facts(title, clean_summary, source_name=""):
   # If not enough facts extracted from summary sentences, derive factual assertion from title
   if len(facts) < 2:
     if source_name and source_name not in clean_title:
-      facts.append(f"{source_name} reported that {clean_title.rstrip('.')}.")
+      facts.append(f"Official development released and documented by {source_name}.")
     else:
       facts.append(f"Primary documentation confirms: {clean_title.rstrip('.')}.")
 
@@ -676,17 +670,17 @@ def generate_detailed_analysis(summary, title, what_changed="", why_it_matters="
 
   paragraphs = []
   if clean_summary and norm(clean_summary) != norm(clean_title):
-    paragraphs.append(clean_summary)
+    # If summary contains multiple distinct sentences, split them into paragraphs
+    sents = [s.strip() for s in re.split(r"(?<=[.!?])\s+", clean_summary) if len(s.strip()) > 25]
+    if len(sents) >= 2:
+      paragraphs.append(sents[0])
+      paragraphs.append(" ".join(sents[1:]))
+    else:
+      paragraphs.append(clean_summary)
   elif what_changed and norm(what_changed) != norm(clean_title):
     paragraphs.append(what_changed)
   else:
     paragraphs.append(f"{clean_title}.")
-
-  # Add second paragraph if distinct technical context or impact is available
-  if potential_impact:
-    clean_pi = potential_impact.strip()
-    if norm(clean_pi) != norm(clean_title) and not any(norm(clean_pi) in norm(p) or norm(p) in norm(clean_pi) for p in paragraphs):
-      paragraphs.append(clean_pi)
 
   return "\n\n".join(paragraphs)
 

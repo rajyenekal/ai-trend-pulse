@@ -451,6 +451,25 @@ if (dataContent.trends && dataContent.trends[0]) {
       console.error(`❌ Story ${idx+1} ("${story.title}"): Why It Matters duplicates detailed paragraph!`);
       process.exit(1);
     }
+
+    // 6. Cross-section deduplication check (Zero repeated points across sections)
+    const impactText = mockElements['reader-potential-impact'].textContent.trim().toLowerCase();
+    const factTexts = mockElements['reader-facts-list'].children.map(c => c.textContent.trim().toLowerCase());
+
+    if (whyText && kpTexts.includes(whyText)) {
+      console.error(`❌ Story ${idx+1} ("${story.title}"): Executive Takeaways duplicates Why It Matters!`);
+      process.exit(1);
+    }
+    if (impactText && daTexts.includes(impactText)) {
+      console.error(`❌ Story ${idx+1} ("${story.title}"): Detailed analysis duplicates Potential Impact!`);
+      process.exit(1);
+    }
+    factTexts.forEach(f => {
+      if (kpTexts.includes(f)) {
+        console.error(`❌ Story ${idx+1} ("${story.title}"): Verified fact duplicates takeaway bullet!`);
+        process.exit(1);
+      }
+    });
   });
 
   sandbox.closeReaderView();
