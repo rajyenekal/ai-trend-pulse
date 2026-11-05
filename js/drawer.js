@@ -212,6 +212,23 @@ export function renderReaderContent(story) {
     return String(val);
   }
 
+  function cleanWords(text) {
+    if (!text) return new Set();
+    const str = safeString(text)
+      .toLowerCase()
+      .replace(/^analytical projection:\s*/i, '')
+      .replace(/^epistemic limitation:\s*/i, '')
+      .replace(/^[\w\s.-]+ reported that\s+/i, '')
+      .replace(/^official development released and documented by\s+/i, '')
+      .replace(/^primary documentation confirms:?\s*/i, '')
+      .replace(/^signals actionable market shifts\b/i, '')
+      .replace(/[^\w\s]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const words = str.split(' ').filter(w => w.length > 2);
+    return new Set(words);
+  }
+
   function splitIntoSentences(text) {
     const s = safeString(text);
     if (!s) return [];
@@ -219,12 +236,33 @@ export function renderReaderContent(story) {
   }
 
   function areSimilar(a, b) {
-    const nA = normalizeSentence(a);
-    const nB = normalizeSentence(b);
+    const sA = safeString(a).trim();
+    const sB = safeString(b).trim();
+    if (!sA || !sB) return false;
+
+    const nA = normalizeSentence(sA);
+    const nB = normalizeSentence(sB);
     if (!nA || !nB) return false;
     if (nA === nB) return true;
-    if (nA.includes(nB) && nB.length >= nA.length * 0.7) return true;
-    if (nB.includes(nA) && nA.length >= nB.length * 0.7) return true;
+
+    // Check substring containment
+    if (nA.length >= 22 && nB.includes(nA)) return true;
+    if (nB.length >= 22 && nA.includes(nB)) return true;
+
+    // Word token overlap (Jaccard similarity >= 0.55 on significant words)
+    const wordsA = cleanWords(sA);
+    const wordsB = cleanWords(sB);
+    if (wordsA.size === 0 || wordsB.size === 0) return false;
+
+    let overlap = 0;
+    for (const w of wordsA) {
+      if (wordsB.has(w)) overlap++;
+    }
+
+    const minSize = Math.min(wordsA.size, wordsB.size);
+    if (minSize >= 3 && (overlap / minSize) >= 0.55) {
+      return true;
+    }
     return false;
   }
 
@@ -234,7 +272,7 @@ export function renderReaderContent(story) {
     if (!n) return true;
     if (renderedSentences.has(n)) return true;
     for (const s of renderedSentences) {
-      if (areSimilar(n, s)) return true;
+      if (areSimilar(text, s)) return true;
     }
     return false;
   }
@@ -254,12 +292,12 @@ export function renderReaderContent(story) {
   const whyBox = document.getElementById('reader-why-box');
   const whyText = document.getElementById('reader-why-text');
   const rawWhy = safeString(story.ai_why_it_matters || story.why_it_matters).trim();
-  const distinctWhy = (rawWhy && normalizeSentence(rawWhy) !== normTitle) ? rawWhy : '';
+  const distinctWhy = (rawWhy && !areSimilar(rawWhy, story.title || '')) ? rawWhy : '';
 
   const impactBox = document.getElementById('reader-impact-box');
   const impactText = document.getElementById('reader-potential-impact');
   const rawImpact = safeString(story.ai_industry_impact || story.potential_impact || (story.audience_impact ? story.audience_impact.impact : '')).trim();
-  const distinctImpact = (rawImpact && normalizeSentence(rawImpact) !== normTitle && (!distinctWhy || !areSimilar(rawImpact, distinctWhy))) ? rawImpact : '';
+  const distinctImpact = (rawImpact && !areSimilar(rawImpact, story.title || '') && (!distinctWhy || !areSimilar(rawImpact, distinctWhy))) ? rawImpact : '';
 
   // Pre-register Why It Matters and Potential Impact so no other section can steal or duplicate them
   if (distinctWhy) recordTextSentences(distinctWhy);
@@ -270,7 +308,7 @@ export function renderReaderContent(story) {
   const overviewText = document.getElementById('reader-ai-overview-text');
   const rawOverview = safeString(story.ai_overview || story.summary || story.what_changed).trim();
   if (overviewCard && overviewText) {
-    if (rawOverview && !areSimilar(rawOverview, normTitle)) {
+    if (rawOverview && !areSimilar(rawOverview, story.title || '') && (!distinctWhy || !areSimilar(rawOverview, distinctWhy)) && (!distinctImpact || !areSimilar(rawOverview, distinctImpact))) {
       overviewText.textContent = rawOverview;
       overviewCard.style.display = 'block';
       recordTextSentences(rawOverview);
@@ -301,7 +339,7 @@ export function renderReaderContent(story) {
       const normPt = normalizeSentence(cleanPt);
       if (normPt && !seenTakeaways.has(normPt)) {
         seenTakeaways.add(normPt);
-        renderedSentences.add(normPt);
+        recordTextSentences(cleanPt);
         uniquePoints.push(cleanPt);
       }
     });
@@ -311,10 +349,12 @@ export function renderReaderContent(story) {
       if (fallback && (!distinctWhy || !areSimilar(fallback, distinctWhy)) && (!distinctImpact || !areSimilar(fallback, distinctImpact)) && !isAlreadyRendered(fallback)) {
         uniquePoints.push(fallback);
         seenTakeaways.add(normalizeSentence(fallback));
-        renderedSentences.add(normalizeSentence(fallback));
+        recordTextSentences(fallback);
       } else {
         const cat = story.category || story.topic || 'AI News';
-        uniquePoints.push(`Strategic update announced in ${cat}.`);
+        const distinctMsg = `Strategic update announced in ${cat}.`;
+        uniquePoints.push(distinctMsg);
+        recordTextSentences(distinctMsg);
       }
     }
 
@@ -355,7 +395,8 @@ export function renderReaderContent(story) {
       cleanFact = cleanFact.replace(/^(?:[\w\s.-]+)\s+reported\s+that\s+/i, '');
       if (!cleanFact) return;
 
-      // Must not duplicate title, Why It Matters, Potential Impact, or any Takeaway
+      // Must not duplicate title, Why It Matters, Potential Impact, Overview, or any Takeaway
+      if (areSimilar(cleanFact, story.title || '')) return;
       if (distinctWhy && areSimilar(cleanFact, distinctWhy)) return;
       if (distinctImpact && areSimilar(cleanFact, distinctImpact)) return;
       if (isAlreadyRendered(cleanFact)) return;
@@ -366,15 +407,10 @@ export function renderReaderContent(story) {
       const normFact = normalizeSentence(cleanFact);
       if (normFact && !seenFacts.has(normFact)) {
         seenFacts.add(normFact);
-        renderedSentences.add(normFact);
+        recordTextSentences(cleanFact);
         uniqueFacts.push(cleanFact);
       }
     });
-
-    if (uniqueFacts.length === 0 && rawFacts.length > 0) {
-      const src = story.source || 'official technical documentation';
-      uniqueFacts.push(`Primary reporting documented by ${src}.`);
-    }
 
     if (uniqueFacts.length > 0) {
       uniqueFacts.forEach(fact => {
@@ -393,7 +429,7 @@ export function renderReaderContent(story) {
   const techText = document.getElementById('reader-technical-text');
   const rawTech = safeString(story.ai_technical_breakdown).trim();
   if (techCard && techText) {
-    if (rawTech && !isAlreadyRendered(rawTech) && !rawTech.includes("not disclosed in publisher dispatch")) {
+    if (rawTech && !isAlreadyRendered(rawTech) && !rawTech.toLowerCase().includes("not disclosed in publisher dispatch")) {
       techText.textContent = rawTech;
       techCard.style.display = 'block';
       recordTextSentences(rawTech);
@@ -414,16 +450,26 @@ export function renderReaderContent(story) {
 
     paragraphs.forEach(p => {
       if (!p) return;
-      // Do NOT repeat Potential Impact, Why It Matters, or Takeaways in narrative analysis
-      if (distinctImpact && areSimilar(p, distinctImpact)) return;
-      if (distinctWhy && areSimilar(p, distinctWhy)) return;
-      if (isAlreadyRendered(p)) return;
+      // Split paragraph into individual sentences and filter out any sentence already rendered
+      const pSents = splitIntoSentences(p);
+      const keepSents = [];
+      pSents.forEach(s => {
+        if (!s) return;
+        if (areSimilar(s, story.title || '')) return;
+        if (distinctImpact && areSimilar(s, distinctImpact)) return;
+        if (distinctWhy && areSimilar(s, distinctWhy)) return;
+        if (isAlreadyRendered(s)) return;
+        keepSents.push(s);
+      });
 
-      const normP = normalizeSentence(p);
-      if (normP && !seenParas.has(normP)) {
-        seenParas.add(normP);
-        renderedSentences.add(normP);
-        uniqueParagraphs.push(p);
+      if (keepSents.length > 0) {
+        const cleanedPara = keepSents.join(' ');
+        const normP = normalizeSentence(cleanedPara);
+        if (normP && !seenParas.has(normP)) {
+          seenParas.add(normP);
+          keepSents.forEach(s => recordTextSentences(s));
+          uniqueParagraphs.push(cleanedPara);
+        }
       }
     });
 
@@ -433,7 +479,7 @@ export function renderReaderContent(story) {
       const cat = story.category || story.topic || 'frontier AI';
       const fallbackAnalysis = `Comprehensive intelligence dispatch and verified documentation indexed from ${src} regarding developments in ${cat}.`;
       uniqueParagraphs.push(fallbackAnalysis);
-      renderedSentences.add(normalizeSentence(fallbackAnalysis));
+      recordTextSentences(fallbackAnalysis);
     }
 
     uniqueParagraphs.forEach(p => {

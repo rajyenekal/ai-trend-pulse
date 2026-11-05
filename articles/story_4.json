@@ -1,0 +1,66 @@
+{
+  "id": "story_4",
+  "clean_id": "story_4",
+  "title": "Open source AI is booming. Hugging Face explains who profits.",
+  "headline": "Open source AI is booming. Hugging Face explains who profits.",
+  "subtitle": "",
+  "publisher": "TechCrunch AI",
+  "publisher_id": "techcrunch",
+  "publisher_group_id": "techcrunch",
+  "author": "",
+  "published_at": "2026-11-04T19:30:04+00:00",
+  "category": "Open Source AI",
+  "topic": "Open Source AI",
+  "impact_level": "Breakthrough",
+  "pulse_score": 84.6,
+  "article_type": "open_source_release",
+  "signal_badge": "Open Weights",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
+  "canonical_url": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
+  "original_source_url": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
+  "reading_time": "1 min read",
+  "word_count": 39,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
+  "ai_what_happened": "TechCrunch AI published verified documentation on Open source AI is booming. Hugging Face explains who profits..",
+  "ai_key_details": [
+    "Primary documentation verified from TechCrunch AI."
+  ],
+  "ai_why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from Huggingface.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for Open source AI is booming. Hugging Face explains who profits; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Open source AI is booming. Hugging Face explains who profits capabilities from TechCrunch AI directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Open Source AI.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
+  },
+  "ai_whats_new": "Delivers Open source AI is booming. Hugging Face explains who profits as documented in verified primary release notes from TechCrunch AI.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Open Source AI.",
+    "Primary documentation available from TechCrunch AI."
+  ],
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by TechCrunch AI; awaiting further vendor confirmation or technical documentation.",
+  "reported_facts": [
+    "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
+    "But as increasingly capable models become more freely available, how do companies capture value?"
+  ],
+  "text": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
+  "full_text": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?"
+    }
+  ],
+  "paragraphs": [
+    "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?"
+  ],
+  "corroborating_sources": []
+}

@@ -4266,25 +4266,65 @@ select,
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-card.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-surface) 0%,
+    var(--bg-subtle) 50%,
+    var(--bg-surface) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 2s ease-in-out infinite;
+}
+
+.skeleton-card.skeleton-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 2s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .skeleton-line {
   height: 14px;
+  background: var(--bg-hover, rgba(255, 255, 255, 0.08));
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
 }
 
 .skeleton-title {
   height: 22px;
   width: 78%;
+  background: var(--bg-hover, rgba(255, 255, 255, 0.08));
+  border-radius: 4px;
 }
 
 .skeleton-meta {
   height: 12px;
   width: 45%;
+  background: var(--bg-hover, rgba(255, 255, 255, 0.08));
+  border-radius: 4px;
 }
 
 .skeleton-tag {
   height: 20px;
   width: 80px;
+  background: var(--bg-hover, rgba(255, 255, 255, 0.08));
   border-radius: 9999px;
 }
 

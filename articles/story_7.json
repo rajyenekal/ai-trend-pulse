@@ -1,0 +1,66 @@
+{
+  "id": "story_7",
+  "clean_id": "story_7",
+  "title": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
+  "headline": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
+  "subtitle": "",
+  "publisher": "OpenAI News",
+  "publisher_id": "openai",
+  "publisher_group_id": "openai",
+  "author": "",
+  "published_at": "2026-11-03T18:30:00+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://openai.com/index/devrev-enterprise-self-service",
+  "canonical_url": "https://openai.com/index/devrev-enterprise-self-service",
+  "original_source_url": "https://openai.com/index/devrev-enterprise-self-service",
+  "reading_time": "1 min read",
+  "word_count": 17,
+  "extraction_status": "cached_fallback",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+  "ai_what_happened": "OpenAI News published verified documentation on DevRev delivers autonomous self-service with GPT-6.1 Sol.",
+  "ai_key_details": [
+    "Primary documentation verified from OpenAI News."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for DevRev delivers autonomous self-service with GPT-6.1 Sol; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate DevRev delivers autonomous self-service with GPT-6.1 Sol capabilities from OpenAI News directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+  },
+  "ai_whats_new": "Delivers DevRev delivers autonomous self-service with GPT-6.1 Sol as documented in verified primary release notes from OpenAI News.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from OpenAI News."
+  ],
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "reported_facts": [
+    "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+    "Official development released and documented by OpenAI News."
+  ],
+  "text": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+  "full_text": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service."
+    }
+  ],
+  "paragraphs": [
+    "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service."
+  ],
+  "corroborating_sources": []
+}

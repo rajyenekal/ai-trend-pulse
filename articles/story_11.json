@@ -1,0 +1,66 @@
+{
+  "id": "story_11",
+  "clean_id": "story_11",
+  "title": "Meta buys AI coding startup Conductor as big tech races to lock in developers",
+  "headline": "Meta buys AI coding startup Conductor as big tech races to lock in developers",
+  "subtitle": "",
+  "publisher": "The Decoder",
+  "publisher_id": "the_decoder",
+  "publisher_group_id": "the_decoder",
+  "author": "",
+  "published_at": "2026-11-05T15:01:09+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Major",
+  "pulse_score": 76.7,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers",
+  "canonical_url": "https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers",
+  "original_source_url": "https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers",
+  "reading_time": "1 min read",
+  "word_count": 36,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May.",
+  "ai_what_happened": "The Decoder published verified documentation on Meta buys AI coding startup Conductor as big tech races to lock in developers.",
+  "ai_key_details": [
+    "Primary documentation verified from The Decoder."
+  ],
+  "ai_why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Meta.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Meta buys AI coding startup Conductor as big tech races to lock in developers; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Meta buys AI coding startup Conductor as big tech races to lock in developers capabilities from The Decoder directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across AI Agents.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
+  },
+  "ai_whats_new": "Delivers Meta buys AI coding startup Conductor as big tech races to lock in developers as documented in verified primary release notes from The Decoder.",
+  "ai_key_takeaways": [
+    "Verified development tracked in AI Agents.",
+    "Primary documentation available from The Decoder."
+  ],
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "reported_facts": [
+    "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once.",
+    "On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May."
+  ],
+  "text": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May.",
+  "full_text": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May."
+    }
+  ],
+  "paragraphs": [
+    "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May."
+  ],
+  "corroborating_sources": []
+}

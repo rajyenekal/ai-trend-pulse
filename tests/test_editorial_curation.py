@@ -401,8 +401,8 @@ class TestEditorialCuration(unittest.TestCase):
 
     payload = build_complete_payload(clustered)
     self.assertTrue(validate_dataset_payload(payload))
-    self.assertIn("all_updates", payload)
-    self.assertIn("research_worth_reading", payload)
+    self.assertIn("top_stories", payload)
+    self.assertIn("research_safety", payload)
     self.assertIn("top_developments", payload)
     self.assertIn("score_reasons", payload["top_stories"][0])
     self.assertIn("first_published_at", payload["top_stories"][0])

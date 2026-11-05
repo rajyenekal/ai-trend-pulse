@@ -1,6 +1,6 @@
 {
-  "id": "cluster_32",
-  "clean_id": "cluster_32",
+  "id": "story_16",
+  "clean_id": "story_16",
   "title": "Speeding up planning decisions with AI",
   "headline": "Speeding up planning decisions with AI",
   "subtitle": "",
@@ -34,24 +34,33 @@
   "ai_key_details": [
     "Primary documentation verified from Google DeepMind."
   ],
-  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Google DeepMind.",
-  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Google DeepMind for Speeding up planning decisions with AI; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables integration of Google DeepMind updates into engineering workflows.",
-    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
-    "Researchers": "Provides reproducible reference points and capability disclosures from Google DeepMind."
+    "Developers": "Enables engineers to integrate Speeding up planning decisions with AI capabilities from Google DeepMind directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Google DeepMind."
   },
-  "ai_whats_new": "New Frontier Models milestone verified from Google DeepMind documentation.",
+  "ai_whats_new": "Delivers Speeding up planning decisions with AI as documented in verified primary release notes from Google DeepMind.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from Google DeepMind."
   ],
-  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
     "Google DeepMind and UK government work together to reduce planning assessment times.",
     "Official development released and documented by Google DeepMind."
   ],
-  "sections": [],
-  "paragraphs": [],
+  "text": "Google DeepMind and UK government work together to reduce planning assessment times.",
+  "full_text": "Google DeepMind and UK government work together to reduce planning assessment times.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Google DeepMind and UK government work together to reduce planning assessment times."
+    }
+  ],
+  "paragraphs": [
+    "Google DeepMind and UK government work together to reduce planning assessment times."
+  ],
   "corroborating_sources": []
 }

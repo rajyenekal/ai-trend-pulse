@@ -155,19 +155,22 @@ class TestV22AuditCorrections(unittest.TestCase):
         "link": "https://deepmind.google/discover/blog/alphafold-3-open-science/",
         "image": "https://deepmind.google/image.jpg",
     }
-    payload = build_complete_payload([sample_article], ai_briefing=None)
-    self.assertGreater(len(payload["top_stories"]), 0)
-    story = payload["top_stories"][0]
-    self.assertIn("article_url", story)
-    article_path = story["article_url"]
-    self.assertTrue(os.path.exists(article_path), f"File {article_path} must exist on disk")
+    with tempfile.TemporaryDirectory() as temp_dir:
+      payload = build_complete_payload([sample_article], ai_briefing=None, output_articles_dir=temp_dir)
+      self.assertGreater(len(payload["top_stories"]), 0)
+      story = payload["top_stories"][0]
+      self.assertIn("article_url", story)
+      # Check file inside temp_dir
+      filename = os.path.basename(story["article_url"])
+      article_path = os.path.join(temp_dir, filename)
+      self.assertTrue(os.path.exists(article_path), f"File {article_path} must exist in temp_dir")
 
-    with open(article_path, "r", encoding="utf-8") as f:
-      saved_rec = json.load(f)
-    self.assertEqual(saved_rec["title"], story["title"])
-    self.assertIn("ai_overview", saved_rec)
-    self.assertIn("ai_key_details", saved_rec)
-    self.assertIn("original_source_url", saved_rec)
+      with open(article_path, "r", encoding="utf-8") as f:
+        saved_rec = json.load(f)
+      self.assertEqual(saved_rec["title"], story["title"])
+      self.assertIn("ai_overview", saved_rec)
+      self.assertIn("ai_key_details", saved_rec)
+      self.assertIn("original_source_url", saved_rec)
 
   def test_7_homepage_data_remains_lightweight(self):
     """Verifies that top_stories in payload contain article_url pointers rather than excessive nested blobs."""
@@ -181,9 +184,10 @@ class TestV22AuditCorrections(unittest.TestCase):
         "is_official": True,
         "link": "https://aws.amazon.com/blogs/machine-learning/bedrock-eval/",
     }
-    payload = build_complete_payload([sample_article], ai_briefing=None)
-    story = payload["top_stories"][0]
-    self.assertTrue(story["article_url"].startswith("articles/"))
+    with tempfile.TemporaryDirectory() as temp_dir:
+      payload = build_complete_payload([sample_article], ai_briefing=None, output_articles_dir=temp_dir)
+      story = payload["top_stories"][0]
+      self.assertTrue(story["article_url"].startswith("articles/"))
 
   def test_8_no_generic_placeholder_explanations(self):
     """Verifies that forbidden generic templates are completely eliminated."""

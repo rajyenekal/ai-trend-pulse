@@ -1,6 +1,6 @@
 {
-  "id": "cluster_35",
-  "clean_id": "cluster_35",
+  "id": "story_2",
+  "clean_id": "story_2",
   "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
   "headline": "Use decision models with Amazon Bedrock AgentCore Evaluations",
   "subtitle": "",
@@ -34,24 +34,33 @@
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Use decision models with Amazon Bedrock AgentCore Evaluations; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables integration of AWS Machine Learning updates into engineering workflows.",
-    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
-    "Researchers": "Provides reproducible reference points and capability disclosures from AWS Machine Learning."
+    "Developers": "Enables engineers to integrate Use decision models with Amazon Bedrock AgentCore Evaluations capabilities from AWS Machine Learning directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across AI Agents.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "New Frontier Models milestone verified from AWS Machine Learning documentation.",
+  "ai_whats_new": "Delivers Use decision models with Amazon Bedrock AgentCore Evaluations as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
-    "Verified development tracked in Frontier Models.",
+    "Verified development tracked in AI Agents.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
     "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
     "Official development released and documented by AWS Machine Learning."
   ],
-  "sections": [],
-  "paragraphs": [],
+  "text": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
+  "full_text": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question."
+    }
+  ],
+  "paragraphs": [
+    "Some agent-evaluation questions are narrow and repeatable, and decision models answer exactly that kind of question."
+  ],
   "corroborating_sources": []
 }

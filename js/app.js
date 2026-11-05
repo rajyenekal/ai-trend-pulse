@@ -452,7 +452,8 @@ export function initScrollSpy() {
 
 export async function loadData() {
   // 1. Instantaneous 0ms hydration from pre-bundled or cached state
-  if (typeof window !== 'undefined' && window.__INITIAL_DATA__) {
+  const hasInitialData = typeof window !== 'undefined' && Boolean(window.__INITIAL_DATA__);
+  if (hasInitialData) {
     try {
       renderCompleteUI(window.__INITIAL_DATA__);
     } catch (hydrateErr) {
@@ -460,7 +461,12 @@ export async function loadData() {
     }
   }
 
-  // 2. Network synchronization for live background delta updates
+  // Skip redundant immediate download if initial bundle is populated (Audit Item 13)
+  if (hasInitialData && window.__INITIAL_DATA__.top_stories && window.__INITIAL_DATA__.top_stories.length > 0) {
+    return;
+  }
+
+  // 2. Network synchronization when initial state bundle is absent
   try {
     const cacheBuster = `t=${Date.now()}`;
     const resp = await fetch(`data.json?${cacheBuster}`, { cache: 'no-cache' });
