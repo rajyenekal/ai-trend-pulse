@@ -107,24 +107,27 @@ export function renderCompleteUI(data) {
     }
   });
 
-  // 2. Render sections
-  renderDailyOverview(data.daily_overview, data);
-  renderTop5Bento(data.top_stories || []);
-  syncFilterControlsUI();
-  reRenderDevelopments();
+  // 2. Render sections with individual component fault isolation
+  try { renderDailyOverview(data.daily_overview, data); } catch (e) { console.error('DailyOverview error:', e); }
+  try { renderTop5Bento(data.top_stories || []); } catch (e) { console.error('Top5Bento error:', e); }
+  try { syncFilterControlsUI(); } catch (e) { console.error('FilterUI error:', e); }
+  try { reRenderDevelopments(); } catch (e) { console.error('Developments error:', e); }
 
   // Dispatches wire feed sorted chronologically so fresh breaking dispatches lead
-  const latestDispatches = [...(data.top_stories || [])].sort((a, b) => {
-    const tA = parseStoryTimestamp(a);
-    const tB = parseStoryTimestamp(b);
-    return tB !== tA ? tB - tA : (Number(b.pulse_score || 0) - Number(a.pulse_score || 0));
-  });
-  renderDispatches(latestDispatches);
-  renderTopicPills(CANONICAL_CATEGORIES, counts);
-  renderCuratedSections(data);
-  renderDeveloperTrends(data);
-  renderStatusBar(data);
-  updateSavedCountLabel();
+  try {
+    const latestDispatches = [...(data.top_stories || [])].sort((a, b) => {
+      const tA = parseStoryTimestamp(a);
+      const tB = parseStoryTimestamp(b);
+      return tB !== tA ? tB - tA : (Number(b.pulse_score || 0) - Number(a.pulse_score || 0));
+    });
+    renderDispatches(latestDispatches);
+  } catch (e) { console.error('Dispatches error:', e); }
+
+  try { renderTopicPills(CANONICAL_CATEGORIES, counts); } catch (e) { console.error('TopicPills error:', e); }
+  try { renderCuratedSections(data); } catch (e) { console.error('CuratedSections error:', e); }
+  try { renderDeveloperTrends(data); } catch (e) { console.error('DeveloperTrends error:', e); }
+  try { renderStatusBar(data); } catch (e) { console.error('StatusBar error:', e); }
+  try { updateSavedCountLabel(); } catch (e) { console.error('SavedCount error:', e); }
 }
 
 // -------------------------------------------------------------
@@ -385,8 +388,10 @@ export function renderPipelineErrorUI(errorMsg) {
   if (bento && bento.querySelector('.skeleton-card')) bento.innerHTML = '';
   const glance = document.getElementById('catch-me-up-items');
   if (glance && glance.querySelector('.skeleton-card')) glance.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Data snapshot unavailable.</p>';
-  const devTrends = document.getElementById('developer-trends-container');
-  if (devTrends && devTrends.querySelector('.skeleton-card')) devTrends.innerHTML = '';
+  ['developer-trends-container', 'ai-tools-container', 'dev-radar-container', 'research-safety-container'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.querySelector('.skeleton-card')) el.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Intelligence feed temporarily unavailable.</p>';
+  });
 }
 
 export function initPlatformKbdShortcut() {
@@ -442,6 +447,16 @@ export function initScrollSpy() {
 }
 
 export async function loadData() {
+  // 1. Instantaneous 0ms hydration from pre-bundled or cached state
+  if (typeof window !== 'undefined' && window.__INITIAL_DATA__) {
+    try {
+      renderCompleteUI(window.__INITIAL_DATA__);
+    } catch (hydrateErr) {
+      console.error('Initial state hydration failed:', hydrateErr);
+    }
+  }
+
+  // 2. Network synchronization for live background delta updates
   try {
     const cacheBuster = `t=${Date.now()}`;
     const resp = await fetch(`data.json?${cacheBuster}`, { cache: 'no-cache' });
@@ -449,10 +464,16 @@ export async function loadData() {
       throw new Error(`HTTP error ${resp.status}`);
     }
     const data = await resp.json();
+    if (typeof window !== 'undefined') {
+      window.__INITIAL_DATA__ = data;
+    }
     renderCompleteUI(data);
   } catch (e) {
-    console.error('Failed to load data.json:', e);
-    renderPipelineErrorUI(e.message);
+    console.warn('Network sync for data.json failed; maintaining active intelligence state:', e);
+    // Only surface error UI if absolutely no data has hydrated
+    if (!state.data && (typeof window === 'undefined' || !window.__INITIAL_DATA__)) {
+      renderPipelineErrorUI(e.message);
+    }
   }
 }
 

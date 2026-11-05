@@ -15,6 +15,12 @@ export function escapeHTML(str) {
     .replace(/'/g, '&#039;');
 }
 
+export function cleanSignalBadge(badge) {
+  if (!badge) return 'Verified Intelligence';
+  const cleaned = String(badge).replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '').trim();
+  return cleaned || 'Verified Intelligence';
+}
+
 // -------------------------------------------------------------
 // 1. EMBEDDED RETINA VECTOR SVGS FOR AI LABS
 // -------------------------------------------------------------
@@ -149,7 +155,6 @@ export function getTierMeta(source, tier) {
       tierClass: 'tier-1',
       badgeLabel: 'Tier 1 • Official Lab',
       badgeShort: 'Tier 1: Official Lab',
-      icon: '🏢',
       sourceName: source || 'Official Lab'
     };
   }
@@ -167,7 +172,6 @@ export function getTierMeta(source, tier) {
       tierClass: 'tier-3',
       badgeLabel: 'Tier 3 • Open Research',
       badgeShort: 'Tier 3: Research',
-      icon: '📄',
       sourceName: source || 'Research Preprint'
     };
   }
@@ -187,7 +191,6 @@ export function getTierMeta(source, tier) {
       tierClass: 'tier-4',
       badgeLabel: 'Tier 4 • Community Signal',
       badgeShort: 'Tier 4: Community',
-      icon: '💬',
       sourceName: source || 'Community Discovery'
     };
   }
@@ -198,7 +201,6 @@ export function getTierMeta(source, tier) {
     tierClass: 'tier-2',
     badgeLabel: 'Tier 2 • Independent Press',
     badgeShort: 'Tier 2: Tech Press',
-    icon: '📰',
     sourceName: source || 'Independent Tech Press'
   };
 }
@@ -220,25 +222,25 @@ export function getEvidenceBadgeHTML(item) {
   const isOfficial = item.is_official || item.tier === 'Official Lab' || status === 'official_announcement' || item.status === 'official_claim';
 
   if (trendType === 'emerging_theme' || status === 'emerging_theme') {
-    return `<span class="badge-evidence badge-evidence-theme" title="Emerging multi-development theme synthesizing ${signalDiversity} distinct industry signals">🌐 Emerging Theme (${signalDiversity} Signals)</span>`;
+    return `<span class="badge-evidence badge-evidence-theme" title="Emerging multi-development theme synthesizing ${signalDiversity} distinct industry signals">Emerging Theme (${signalDiversity} Signals)</span>`;
   }
 
   if (isOfficial) {
     if (claimCorrob >= 2) {
-      return `<span class="badge-evidence badge-evidence-corroborated" title="Official lab release confirmed across ${claimCorrob} independent publisher groups">🏛️ Official + ${claimCorrob - 1} Sources</span>`;
+      return `<span class="badge-evidence badge-evidence-corroborated" title="Official lab release confirmed across ${claimCorrob} independent publisher groups">Official + ${claimCorrob - 1} Sources</span>`;
     }
-    return `<span class="badge-evidence badge-evidence-official" title="Direct announcement from official lab or developer">🏛️ Official Source</span>`;
+    return `<span class="badge-evidence badge-evidence-official" title="Direct announcement from official lab or developer">Official Source</span>`;
   }
   if (status === 'research_preprint' || item.topic === 'Research' || item.source_type === 'research' || (item.source && item.source.toLowerCase().includes('arxiv'))) {
-    return `<span class="badge-evidence badge-evidence-research" title="Research paper preprint / academic evaluation">📄 Research Preprint</span>`;
+    return `<span class="badge-evidence badge-evidence-research" title="Research paper preprint / academic evaluation">Research Preprint</span>`;
   }
   if (status === 'practitioner_report' || item.trust_tier === 4) {
-    return `<span class="badge-evidence badge-evidence-practitioner" title="Practitioner observation or community discovery signal">🔬 Practitioner Report</span>`;
+    return `<span class="badge-evidence badge-evidence-practitioner" title="Practitioner observation or community discovery signal">Practitioner Report</span>`;
   }
   if (claimCorrob >= 2) {
-    return `<span class="badge-evidence badge-evidence-corroborated" title="Reported and corroborated across ${claimCorrob} independent publisher groups">✓ ${claimCorrob} Independent Sources</span>`;
+    return `<span class="badge-evidence badge-evidence-corroborated" title="Reported and corroborated across ${claimCorrob} independent publisher groups">Verified (${claimCorrob} Sources)</span>`;
   }
-  return `<span class="badge-evidence badge-evidence-single" title="Reported by a single tech news outlet">📰 Single Source</span>`;
+  return `<span class="badge-evidence badge-evidence-single" title="Reported by a single tech news outlet">Single Source</span>`;
 }
 
 // -------------------------------------------------------------
@@ -346,7 +348,7 @@ export function renderTop5Bento(stories) {
             <div>
               <div class="card-kicker-row">
                 <div class="card-kicker-left">
-                  <span class="badge-signal">${escapeHTML(hero.signal_badge || '🚀 Frontier Launch')}</span>
+                  <span class="badge-signal">${escapeHTML(cleanSignalBadge(hero.signal_badge || 'Frontier Launch'))}</span>
                   ${heroTierBadgeHTML}
                 </div>
                 <span style="font-size:0.75rem; color:var(--text-muted);">${escapeHTML(heroRelTime)}</span>
@@ -369,7 +371,7 @@ export function renderTop5Bento(stories) {
               <div class="card-source-meta">
                 <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(hero.source)}</span>
                 <span>•</span>
-                <span>⏱ ${escapeHTML(heroReadTime)}</span>
+                <span>${escapeHTML(heroReadTime)}</span>
               </div>
               <button class="btn-read-deep-dive" onclick="openReaderForBento(0, event)">
                 <span>Read Deep Dive</span>
@@ -397,7 +399,7 @@ export function renderTop5Bento(stories) {
         </div>
         <div class="bento-subcard-content">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; margin-bottom:6px;">
-            <span class="badge-signal" style="font-size:0.68rem; padding:2px 6px;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
+            <span class="badge-signal" style="font-size:0.68rem; padding:2px 6px;">${escapeHTML(cleanSignalBadge(item.signal_badge || 'Verified Intelligence'))}</span>
             <span style="font-size:0.72rem; color:var(--text-muted);">${escapeHTML(subRelTime)}</span>
           </div>
           <h3 class="bento-headline font-serif" style="font-size:0.92rem; line-height:1.35; margin:0; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${escapeHTML(item.title)}</h3>
@@ -452,7 +454,7 @@ export function renderCompactWire(items) {
       <div class="wire-row" data-wire-idx="${idx}" onclick="openReaderForTrend(${idx}, event)">
         <div class="wire-col-time">${escapeHTML(relTime)}</div>
         <div class="wire-col-badge">
-          <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
+          <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(cleanSignalBadge(item.signal_badge || 'Verified Intelligence'))}</span>
         </div>
         <div class="wire-col-headline">
           <span class="wire-title-text">${escapeHTML(item.title)}</span>
@@ -501,8 +503,8 @@ export function renderEditorialCards(items) {
     const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier || item.trust_tier);
     const evidenceBadgeHTML = getEvidenceBadgeHTML(item);
     const scoreVal = item.pulse_score ? Math.round(item.pulse_score) : (item.overall_score ? Math.round(item.overall_score) : null);
-    const scorePillHTML = scoreVal ? `<span class="score-pill" title="Algorithmic Pulse Score (0-100)">⚡ ${scoreVal}</span>` : '';
-    const signalBadgeHTML = `<span class="badge-signal">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>`;
+    const scorePillHTML = scoreVal ? `<span class="score-pill font-mono" title="Algorithmic Pulse Score (0-100)">Pulse ${scoreVal}</span>` : '';
+    const signalBadgeHTML = `<span class="badge-signal">${escapeHTML(cleanSignalBadge(item.signal_badge || 'Verified Intelligence'))}</span>`;
     const corroborationCount = item.claim_corroboration || item.independent_source_count || (item.evidence_urls ? item.evidence_urls.length : 1);
     const hasMultipleSources = corroborationCount > 1 && item.evidence_urls && item.evidence_urls.length > 1;
     const isOfficial = item.is_official || item.trust_tier === 1;
@@ -546,7 +548,7 @@ export function renderEditorialCards(items) {
                     ${scorePillHTML}
                     ${evidenceBadgeHTML}
                   </div>
-                  <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${escapeHTML(readTime)}</span>
+                  <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">${escapeHTML(readTime)}</span>
                 </div>
                 <h3 class="card-headline font-serif" style="margin-top:8px;">
                   <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
@@ -625,7 +627,7 @@ export function renderEditorialCards(items) {
               <div class="card-source-meta">
                 <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
                 <span>•</span>
-                <span>⏱ ${escapeHTML(readTime)}</span>
+                <span>${escapeHTML(readTime)}</span>
               </div>
               <div class="card-actions">
                 <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
@@ -666,7 +668,7 @@ export function renderEditorialCards(items) {
                   ${scorePillHTML}
                   ${evidenceBadgeHTML}
                 </div>
-                <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">⏱ ${escapeHTML(readTime)}</span>
+                <span style="font-size:0.76rem; color:var(--text-muted); font-weight:500;">${escapeHTML(readTime)}</span>
               </div>
               <h3 class="card-headline font-serif" style="margin-top:8px;">
                 <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
@@ -735,7 +737,7 @@ export function renderDispatches(items) {
         </div>
         <div class="story-item-main">
           <div class="story-item-header">
-            <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
+            <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(cleanSignalBadge(item.signal_badge || 'Verified Intelligence'))}</span>
             ${tierBadgeHTML}
             <span class="badge-card-topic" style="font-size:0.7rem;">${escapeHTML(topic)}</span>
             <span style="font-size:0.74rem; color:var(--text-muted); margin-left:auto;">${escapeHTML(relTime)}</span>
@@ -799,7 +801,7 @@ export function renderTopicPills(categories, counts) {
 export function renderCuratedCard(item, idx, sectionType) {
   const company = item.company || 'default';
   const topic = item.category || item.topic || 'AI Intelligence';
-  const badgeText = item.signal_badge || topic;
+  const badgeText = cleanSignalBadge(item.signal_badge || topic);
   const logoSVG = getCompanyLogoSVG(company);
   const primaryUrl = item.link || '#';
   const isSaved = isItemSaved(item.title);
@@ -828,7 +830,7 @@ export function renderCuratedCard(item, idx, sectionType) {
             <span class="curated-logo" aria-hidden="true">${logoSVG}</span>
             <span class="curated-source-tag">${escapeHTML(item.source || 'Verified Source')}</span>
           </div>
-          ${score ? `<span class="curated-score-badge" title="Pulse Score: ${score}">⚡ ${score}</span>` : ''}
+          ${score ? `<span class="curated-score-badge font-mono" title="Pulse Score: ${score}">Pulse ${score}</span>` : ''}
         </div>
         <h3 class="curated-title font-serif">
           <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">${escapeHTML(item.title)}</a>
@@ -1032,7 +1034,7 @@ export function renderDailyOverview(overview, data) {
     catchMeUpContainer.innerHTML = topDevs.map((dev, idx) => {
       const topic = dev.category || dev.topic || 'AI News';
       const score = dev.score ? Math.round(dev.score) : (dev.pulse_score ? Math.round(dev.pulse_score) : null);
-      const signalBadge = dev.signal_badge || '⚡ Breakthrough';
+      const signalBadge = cleanSignalBadge(dev.signal_badge || 'Breakthrough');
       const whatChanged = dev.what_changed || dev.one_line_explanation || dev.summary || '';
       const whyItMatters = dev.why_it_matters || dev.impact || '';
       const targetAudience = dev.target_audience ? dev.target_audience.replace(/^For\s+/i, '') : null;
@@ -1043,7 +1045,7 @@ export function renderDailyOverview(overview, data) {
             <div class="glance-card-badge-group">
               <span class="glance-card-num font-mono">0${idx + 1}</span>
               <span class="badge-signal" style="font-size:0.7rem; padding:2px 7px;">${escapeHTML(signalBadge)}</span>
-              ${score ? `<span class="score-pill" style="font-size:0.7rem; padding:2px 6px;">⚡ ${score}</span>` : ''}
+              ${score ? `<span class="score-pill font-mono" style="font-size:0.7rem; padding:2px 6px;">Pulse ${score}</span>` : ''}
             </div>
             <span class="glance-source font-mono">${escapeHTML(dev.source || 'Verified Source')}</span>
           </div>
@@ -1067,7 +1069,7 @@ export function renderDailyOverview(overview, data) {
           <div class="glance-card-footer">
             ${targetAudience ? `
               <span class="glance-audience-tag">
-                🎯 ${escapeHTML(targetAudience)}
+                For ${escapeHTML(targetAudience)}
               </span>
             ` : `<span></span>`}
             <button class="glance-action-btn" onclick="openReaderForDailyItem(${idx}, event)" aria-label="Read briefing">

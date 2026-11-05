@@ -35,15 +35,18 @@ ARTICLE_TYPE_MULTIPLIERS = {
 }
 
 SIGNAL_BADGE_MAP = {
-    "frontier_launch": "🚀 Frontier Launch",
-    "open_source_release": "🔓 Open Weights",
-    "research_paper": "📄 Research Paper",
-    "sdk_api_update": "🛠️ Dev / SDK",
-    "security_vulnerability": "🛡️ Security / Policy",
-    "policy_regulation": "🛡️ Security / Policy",
-    "case_study_pr": "🏢 Case Study",
-    "opinion_commentary": "💭 Analysis / Opinion",
-    "routine_minor_update": "📰 Minor Update",
+    "frontier_launch": "Frontier Launch",
+    "open_source_release": "Open Weights",
+    "research_paper": "Research Paper",
+    "sdk_api_update": "Developer SDK",
+    "security_vulnerability": "Security & Policy",
+    "policy_regulation": "Security & Policy",
+    "case_study_pr": "Case Study",
+    "opinion_commentary": "Analysis & Opinion",
+    "routine_minor_update": "Minor Update",
+    "model_breakthrough": "Breakthrough",
+    "enterprise_adoption": "Enterprise Adoption",
+    "general_news": "Verified Intelligence",
 }
 
 
@@ -204,7 +207,7 @@ def calculate_story_scores(article, corroboration_count=1):
   if not article_type or article_type not in VALID_ARTICLE_TYPES:
     article_type = classify_article_type(title, summary, link, source_type, is_official)
 
-  signal_badge = SIGNAL_BADGE_MAP.get(article_type, "⚡ AI Intelligence")
+  signal_badge = SIGNAL_BADGE_MAP.get(article_type, "Verified Intelligence")
   score_reasons = []
 
   # 1. Real-World Impact (0-100)

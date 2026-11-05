@@ -1245,7 +1245,7 @@ class TestBackendPipeline(unittest.TestCase):
     scores_cs = tracker.calculate_story_scores(art_cs)
     ps = scores_cs["pulse_score"]
     self.assertLessEqual(ps, 64.0, f"Case study score {ps} must be capped at 64.0")
-    self.assertEqual(scores_cs["signal_badge"], "🏢 Case Study")
+    self.assertEqual(scores_cs["signal_badge"], tracker.SIGNAL_BADGE_MAP["case_study_pr"])
 
     # Verify multiplier: without case_study_pr, baseline score is noticeably higher
     art_regular = dict(art_cs)

@@ -807,7 +807,7 @@ def generate_daily_overview(clustered_stories, now_iso):
     if "." in why_sentence:
       why_sentence = why_sentence.split(".")[0].strip() + "."
 
-    sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "📰 AI Update")
+    sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "Verified Intelligence")
 
     top_developments.append({
         "title": s.get("title", ""),
@@ -893,7 +893,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
     art_type = classify_article_type(
         s.get("title", ""), clean_summary, s.get("link", ""), s.get("source_type", "publication"), s.get("is_official", False)
     )
-    sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "📰 AI Update")
+    sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "Verified Intelligence")
 
     img_meta = resolve_article_image_metadata(s.get("image", ""), s.get("title", ""), category, company, s.get("link", ""))
 
@@ -996,7 +996,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
       trend_art_type = t.get("article_type") or classify_article_type(
           t.get("title", ""), t.get("what_happened", ""), ev_urls[0] if ev_urls else "", "publication", False
       )
-      trend_sig_badge = SIGNAL_BADGE_MAP.get(trend_art_type, "📰 AI Update")
+      trend_sig_badge = SIGNAL_BADGE_MAP.get(trend_art_type, "Verified Intelligence")
 
       trends.append({
           "title": t.get("title"),
@@ -1081,7 +1081,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
           "link": s["link"],
           "trend_type": "single_development",
           "article_type": s.get("article_type", "frontier_launch"),
-          "signal_badge": s.get("signal_badge", "🚀 Frontier Launch"),
+          "signal_badge": s.get("signal_badge", "Frontier Launch"),
           "trend_signal_diversity": 1,
           "claim_corroboration": s.get("independent_source_count", 1),
           "independent_publisher_count": s.get("independent_publisher_count", s.get("independent_source_count", 1)),
@@ -1161,7 +1161,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
             "link": s["link"],
             "trend_type": "single_development",
             "article_type": s.get("article_type", "frontier_launch"),
-            "signal_badge": s.get("signal_badge", "🚀 Frontier Launch"),
+            "signal_badge": s.get("signal_badge", "Frontier Launch"),
             "trend_signal_diversity": 1,
             "claim_corroboration": s.get("independent_source_count", 1),
             "independent_publisher_count": s.get("independent_publisher_count", s.get("independent_source_count", 1)),
@@ -1326,7 +1326,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
         "topic": s["topic"],
         "category": s.get("category", s["topic"]),
         "article_type": s.get("article_type", "frontier_launch"),
-        "signal_badge": s.get("signal_badge", "🚀 Frontier Launch"),
+        "signal_badge": s.get("signal_badge", "Frontier Launch"),
         "company": s["company"],
         "published": s.get("published", "Date unavailable"),
         "published_at": s.get("published_at") or (s.get("published_datetime").isoformat() if hasattr(s.get("published_datetime"), "isoformat") else None),
@@ -1576,6 +1576,20 @@ def run_pipeline(dry_run=False, max_age_hours=72, output_file="data.json"):
     # Atomic file replacement
     os.replace(temp_file, output_file)
     print(f"✅ {output_file} written atomically! Status: {payload['data_status']}, Stories: {len(payload['top_stories'])}")
+
+    # Synchronous data.js write for instant client hydration and offline/file compatibility
+    try:
+      js_dir = os.path.dirname(output_file) or "."
+      js_path = os.path.join(js_dir, "data.js")
+      temp_js = f"{js_path}.tmp"
+      with open(temp_js, "w", encoding="utf-8") as f:
+        f.write("window.__INITIAL_DATA__ = ")
+        json.dump(payload, f)
+        f.write(";\n")
+      os.replace(temp_js, js_path)
+    except Exception as js_err:
+      print(f"   ⚠️ Notice: data.js write skipped: {js_err}")
+
     return payload
 
   except Exception as e:

@@ -181,7 +181,9 @@
           <!-- Developer Trends Preview Strip -->
           <div class="dev-trends-preview-banner">
             <div class="dev-preview-left">
-              <span class="dev-preview-icon">⚡</span>
+              <span class="dev-preview-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </span>
               <span class="dev-preview-text"><strong>AI Developer Trends:</strong> Tracking breakout GitHub repositories across AI agents, RAG, and MCP.</span>
             </div>
             <a href="#developer-trends-section" class="dev-preview-link">View Developer Trends →</a>
@@ -233,11 +235,11 @@
         <!-- Practical Editorial Section Filters -->
         <div id="editorial-filter-bar" class="editorial-filter-bar" role="group" aria-label="Editorial Section Filters">
           <button class="editorial-filter-pill active" data-section="all" onclick="handleSectionFilterChange('all', this)" aria-pressed="true">All Intelligence</button>
-          <button class="editorial-filter-pill" data-section="briefing" onclick="handleSectionFilterChange('briefing', this)" aria-pressed="false">⚡ Briefing</button>
-          <button class="editorial-filter-pill" data-section="research" onclick="handleSectionFilterChange('research', this)" aria-pressed="false">🔬 Research</button>
-          <button class="editorial-filter-pill" data-section="developer" onclick="handleSectionFilterChange('developer', this)" aria-pressed="false">💻 Developer</button>
-          <button class="editorial-filter-pill" data-section="industry" onclick="handleSectionFilterChange('industry', this)" aria-pressed="false">🏢 Industry</button>
-          <button class="editorial-filter-pill" data-section="safety" onclick="handleSectionFilterChange('safety', this)" aria-pressed="false">🛡️ Safety &amp; Policy</button>
+          <button class="editorial-filter-pill" data-section="briefing" onclick="handleSectionFilterChange('briefing', this)" aria-pressed="false">Briefing</button>
+          <button class="editorial-filter-pill" data-section="research" onclick="handleSectionFilterChange('research', this)" aria-pressed="false">Research</button>
+          <button class="editorial-filter-pill" data-section="developer" onclick="handleSectionFilterChange('developer', this)" aria-pressed="false">Developer</button>
+          <button class="editorial-filter-pill" data-section="industry" onclick="handleSectionFilterChange('industry', this)" aria-pressed="false">Industry</button>
+          <button class="editorial-filter-pill" data-section="safety" onclick="handleSectionFilterChange('safety', this)" aria-pressed="false">Safety &amp; Policy</button>
         </div>
 
         <!-- Editorial Noise Reduction Toggles -->
@@ -296,7 +298,7 @@
           <div class="section-title-wrap">
             <div class="section-tag-row">
               <span class="section-kicker font-mono">GITHUB SIGNALS</span>
-              <span class="live-dot-badge" id="dev-trends-repo-count">15 Repos Tracked</span>
+              <span class="live-dot-badge" id="dev-trends-repo-count">8 Repos Tracked</span>
             </div>
             <h2 id="developer-trends-heading" class="section-heading">AI Developer Trends</h2>
             <span class="section-subtext">Open-source developer adoption, repository velocity, and real-time star growth.</span>
@@ -323,7 +325,7 @@
           <div class="section-title-wrap">
             <div class="section-title-badge-row">
               <h2 id="ai-tools-heading" class="section-heading">AI Tools You Can Use</h2>
-              <span class="curated-section-tag curated-tag-tools">🛠️ Practical Workflows</span>
+              <span class="curated-section-tag curated-tag-tools">Practical Workflows</span>
             </div>
             <span class="section-subtext">Practical tools, consumer applications, and developer productivity workflows.</span>
           </div>
@@ -341,7 +343,7 @@
           <div class="section-title-wrap">
             <div class="section-title-badge-row">
               <h2 id="dev-radar-heading" class="section-heading">Developer Radar</h2>
-              <span class="curated-section-tag curated-tag-radar">⚡ Emerging Engineering</span>
+              <span class="curated-section-tag curated-tag-radar">Emerging Engineering</span>
             </div>
             <span class="section-subtext">Coding agents, APIs, open-source weights, and developer infrastructure.</span>
           </div>
@@ -359,7 +361,7 @@
           <div class="section-title-wrap">
             <div class="section-title-badge-row">
               <h2 id="research-safety-heading" class="section-heading">Research, Safety &amp; Policy</h2>
-              <span class="curated-section-tag curated-tag-safety">🛡️ Governance &amp; Preprints</span>
+              <span class="curated-section-tag curated-tag-safety">Governance &amp; Preprints</span>
             </div>
             <span class="section-subtext">Frontier lab alignment, arXiv preprints, governance standards, and policy updates.</span>
           </div>
@@ -740,7 +742,9 @@
   </div>
 
 
+  <!-- Synchronous initial state bundle for 0ms hydration & offline/file:// support -->
+  <script src="./data.js?v=2.2.0"></script>
   <!-- Native ES6+ Module Application Script -->
-  <script type="module" src="./js/app.js?v=2.1.1"></script>
+  <script type="module" src="./js/app.js?v=2.2.0"></script>
 </body>
 </html>

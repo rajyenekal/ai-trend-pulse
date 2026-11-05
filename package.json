@@ -1,6 +1,6 @@
 {
   "name": "ai-trend-pulse",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Autonomous, hourly AI market intelligence with traceable evidence provenance and 4-tier source verification.",
   "scripts": {
     "test": "python3 test_backend.py && python3 -m unittest discover -s tests -p 'test_*.py' && node test_qa.js && node test_viewports.js"
