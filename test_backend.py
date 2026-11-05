@@ -17,17 +17,26 @@ class TestBackendPipeline(unittest.TestCase):
   def test_source_registry_loading_and_classification(self):
     registry = tracker.load_source_registry("sources.json")
     self.assertIsInstance(registry, list)
-    self.assertGreaterEqual(len(registry), 20)
+    self.assertEqual(len(registry), 10, "Exactly 10 sources must be enabled")
+
+    all_sources = tracker.load_all_sources("sources.json")
+    self.assertEqual(len(all_sources), 25, "Exactly 25 sources must be configured")
+    disabled_sources = [s for s in all_sources if not s.get("enabled", True)]
+    self.assertEqual(len(disabled_sources), 15, "Exactly 15 sources must be disabled")
+
+    # Ensure no duplicate source IDs exist
+    source_ids = [s["source_id"] for s in all_sources]
+    self.assertEqual(len(source_ids), len(set(source_ids)), "Source IDs must be strictly unique")
 
     # Ensure all sources in registry pass schema validation
     for source in registry:
       valid, reason = tracker.validate_source_record(source)
       self.assertTrue(valid, f"Source {source.get('source_id')} failed validation: {reason}")
 
-    # Ensure fallback registry also passes schema validation
-    for source in tracker.FALLBACK_SOURCE_REGISTRY:
+    # Ensure all 25 configured sources pass schema validation
+    for source in all_sources:
       valid, reason = tracker.validate_source_record(source)
-      self.assertTrue(valid, f"Fallback source {source.get('source_id')} failed validation: {reason}")
+      self.assertTrue(valid, f"Source {source.get('source_id')} failed validation: {reason}")
 
     # Check Anthropic Official is classified as Tier 1 official using HTML page adapter
     anthropic_official = next((s for s in registry if s["source_id"] == "anthropic_news"), None)
@@ -38,9 +47,16 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertEqual(anthropic_official["fetch_method"], "html_page_adapter")
     self.assertEqual(anthropic_official["feed_url"], "https://www.anthropic.com/news")
 
-    # Check Anthropic HNRSS discovery bridge is classified as unofficial discovery
-    anthropic_discovery = next((s for s in registry if s["source_id"] == "anthropic_hn_discovery"), None)
+    # Check NVIDIA newsroom generative AI feed configuration
+    nvidia_source = next((s for s in registry if s["source_id"] == "nvidia_blog"), None)
+    self.assertIsNotNone(nvidia_source, "NVIDIA source must be enabled")
+    self.assertEqual(nvidia_source["feed_url"], "https://nvidianews.nvidia.com/cats/generative_al.xml")
+    self.assertEqual(nvidia_source["canonical_listing_url"], "https://nvidianews.nvidia.com/cats/generative_al")
+
+    # Check Anthropic HNRSS discovery bridge is in all_sources and disabled
+    anthropic_discovery = next((s for s in all_sources if s["source_id"] == "anthropic_hn_discovery"), None)
     self.assertIsNotNone(anthropic_discovery, "Anthropic HNRSS discovery must be in sources.json")
+    self.assertFalse(anthropic_discovery.get("enabled", True), "Anthropic HNRSS discovery must be disabled")
     self.assertFalse(anthropic_discovery["is_official"])
     self.assertFalse(anthropic_discovery["feed_is_official"])
     self.assertEqual(anthropic_discovery["source_type"], "unofficial_discovery")
@@ -534,43 +550,43 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertNotEqual(tracker.detect_company(submit_title, "Ars Technica"), "mit")
 
   def test_classify_topic_accuracy(self):
-    # 8 Canonical Categories classification
-    # 1. Model Spec is AI Security & Safety
+    # 10 Canonical Categories classification (v2 taxonomy)
+    # 1. Model Spec is AI Safety
     t1 = tracker.classify_topic("An updated Model Spec for more capable and beneficial AI", "Rules for model behavior")
-    self.assertEqual(t1, "AI Security & Safety")
+    self.assertEqual(t1, "AI Safety")
 
-    # 2. xAI data-center pollution lawsuit MUST be AI Policy & Regulation (never AI Products & Tools)
+    # 2. xAI data-center pollution lawsuit MUST be AI Policy (never Developer Tools)
     t_lawsuit, conf, rat = tracker.classify_topic_detailed(
         "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
         "Environmental groups and Memphis residents challenge gas turbine air pollution permits."
     )
-    self.assertEqual(t_lawsuit, "AI Policy & Regulation")
+    self.assertEqual(t_lawsuit, "AI Policy")
     self.assertGreaterEqual(conf, 0.90)
     self.assertTrue(len(rat) > 10)
 
-    # 3. Legal agent operating system is AI Applications
+    # 3. Legal agent operating system is AI Agents or Developer Tools
     t2 = tracker.classify_topic("Legora is building the agentic operating system for legal work", "Legal workflow automation")
-    self.assertEqual(t2, "AI Applications")
+    self.assertIn(t2, ["AI Agents", "Consumer AI", "Developer Tools"])
 
-    # 4. Freight exception automation is AI Applications
+    # 4. Freight exception automation is Consumer AI / Enterprise Application
     t3 = tracker.classify_topic("How Worldwide Express automated freight exceptions with Amazon Bedrock", "Logistics automation case study with Amazon Bedrock")
-    self.assertEqual(t3, "AI Applications")
+    self.assertEqual(t3, "Consumer AI")
 
     # 5. Hardware / GPU cluster is AI Infrastructure
     t_infra = tracker.classify_topic("NVIDIA introduces Blackwell B200 GPU supercomputer cluster for enterprise data centers")
     self.assertEqual(t_infra, "AI Infrastructure")
 
-    # 6. Venture funding is AI Business & Funding
+    # 6. Venture funding is AI Business
     t_biz = tracker.classify_topic("AI Startup raises $50M Series B funding round at $1B valuation")
-    self.assertEqual(t_biz, "AI Business & Funding")
+    self.assertEqual(t_biz, "AI Business")
 
-    # 7. IDE extension / developer tool is AI Products & Tools
+    # 7. IDE extension / developer tool is Developer Tools
     t_tools = tracker.classify_topic("New VS Code extension brings agentic code review and automated bug fixing to IDE")
-    self.assertEqual(t_tools, "AI Products & Tools")
+    self.assertIn(t_tools, ["Developer Tools", "AI Agents"])
 
-    # 8. Frontier reasoning model is AI Models & Research
+    # 8. Frontier reasoning model is Frontier Models
     t_models = tracker.classify_topic("OpenAI unveils o3 reasoning model benchmark results on competitive math")
-    self.assertEqual(t_models, "AI Models & Research")
+    self.assertEqual(t_models, "Frontier Models")
 
   def test_evidence_metadata_determination(self):
     # Single official announcement
@@ -605,7 +621,7 @@ class TestBackendPipeline(unittest.TestCase):
       self.assertNotIn("Expands practical AI tooling options and ecosystem integration across production workflows.", w)
 
   def test_source_registry_publisher_grouping(self):
-    registry = tracker.load_source_registry("sources.json")
+    registry = tracker.load_all_sources("sources.json")
     for s in registry:
       self.assertIn("publisher_id", s, f"Source {s['source_id']} missing publisher_id")
       self.assertIn("publisher_group_id", s, f"Source {s['source_id']} missing publisher_group_id")
@@ -814,11 +830,13 @@ class TestBackendPipeline(unittest.TestCase):
     self.assertEqual(scores_sparse["confidence_label"], "low")
 
   def test_tier_4_source_classification(self):
-    registry = tracker.load_source_registry("sources.json")
+    registry = tracker.load_all_sources("sources.json")
     simon = next(s for s in registry if s["source_id"] == "simon_willison")
     import_ai = next(s for s in registry if s["source_id"] == "import_ai")
     self.assertEqual(simon["trust_tier"], 4)
     self.assertEqual(import_ai["trust_tier"], 4)
+    self.assertFalse(simon.get("enabled", True), "Simon Willison should be disabled in reserve")
+    self.assertFalse(import_ai.get("enabled", True), "Import AI should be disabled in reserve")
 
     dummy_tier4 = [{
         "title": "Practical exploration of local prompt injection guardrails",
@@ -1527,6 +1545,163 @@ class TestBackendPipeline(unittest.TestCase):
       repo_names = [t["repository"] for t in trends]
       self.assertNotIn("spam/crypto-airdrop", repo_names, "Spam crypto repo must be filtered")
       self.assertNotIn("fake/star-buyer", repo_names, "Artificial star spike (near-zero forks) must be filtered")
+
+  def test_exact_10_enabled_15_disabled_sources(self):
+    """Enforces Section 1: Exactly 10 enabled sources and 15 disabled sources in sources.json."""
+    all_sources = tracker.load_all_sources("sources.json")
+    enabled = [s for s in all_sources if s.get("enabled", True)]
+    disabled = [s for s in all_sources if not s.get("enabled", True)]
+
+    self.assertEqual(len(all_sources), 25, "Exactly 25 total configured sources required")
+    self.assertEqual(len(enabled), 10, "Exactly 10 enabled sources required")
+    self.assertEqual(len(disabled), 15, "Exactly 15 disabled sources required")
+
+    expected_enabled_ids = {
+        "openai_news", "anthropic_news", "deepmind_blog", "nvidia_blog",
+        "aws_ml_blog", "huggingface_blog", "mit_tech_review",
+        "techcrunch_ai", "the_verge_ai", "the_decoder"
+    }
+    actual_enabled_ids = {s["source_id"] for s in enabled}
+    self.assertEqual(actual_enabled_ids, expected_enabled_ids, "Enabled sources must strictly match the 10 specified IDs")
+
+    expected_disabled_ids = {
+        "anthropic_hn_discovery", "google_ai_blog", "microsoft_ai_news",
+        "amazon_science", "github_blog_ai", "mistral_news", "ars_technica",
+        "arxiv_cs_ai", "arxiv_cs_lg", "bair_blog", "simon_willison",
+        "import_ai", "lmsys_org", "latent_space", "hf_daily_papers"
+    }
+    actual_disabled_ids = {s["source_id"] for s in disabled}
+    self.assertEqual(actual_disabled_ids, expected_disabled_ids, "Disabled sources must strictly match the 15 specified IDs")
+
+  def test_nvidia_generative_ai_feed_configuration(self):
+    """Enforces Section 2: NVIDIA feed points to dedicated Generative AI newsroom category."""
+    all_sources = tracker.load_all_sources("sources.json")
+    nvidia = next(s for s in all_sources if s["source_id"] == "nvidia_blog")
+    self.assertTrue(nvidia.get("enabled", True))
+    self.assertEqual(nvidia["name"], "NVIDIA Newsroom")
+    self.assertEqual(nvidia["feed_url"], "https://nvidianews.nvidia.com/cats/generative_al.xml")
+    self.assertEqual(nvidia["canonical_listing_url"], "https://nvidianews.nvidia.com/cats/generative_al")
+
+  def test_source_specific_relevance_filtering(self):
+    """Enforces Section 3: Publisher-specific noise filters reject non-AI noise."""
+    from pipeline.scorer import evaluate_article_relevance
+
+    # 1. NVIDIA gaming rejection
+    rel_nv_game, _, r1 = evaluate_article_relevance(
+        "GeForce Game Ready Driver Released for Black Myth: Wukong with DLSS 3 Frame Generation",
+        "New driver provides optimal performance for latest PC gaming title.",
+        source_name="NVIDIA Newsroom"
+    )
+    self.assertFalse(rel_nv_game, "NVIDIA GeForce PC gaming driver announcement must be rejected")
+    self.assertIn("gaming", r1.lower())
+
+    # NVIDIA enterprise AI acceptance
+    rel_nv_ai, _, _ = evaluate_article_relevance(
+        "NVIDIA Announces Blackwell Ultra GPUs and Quantum-X800 InfiniBand Architecture",
+        "Next-generation enterprise AI accelerator clusters for frontier foundation models.",
+        source_name="NVIDIA Newsroom"
+    )
+    self.assertTrue(rel_nv_ai, "NVIDIA enterprise AI hardware announcement must be accepted")
+
+    # 2. AWS routine console tutorial rejection
+    rel_aws_tut, _, r2 = evaluate_article_relevance(
+        "Step-by-step tutorial: Configuring AWS IAM roles for CloudWatch log ingestion",
+        "Routine cloud infrastructure console guide without machine learning models.",
+        source_name="AWS Machine Learning"
+    )
+    self.assertFalse(rel_aws_tut, "AWS routine non-AI console tutorial must be rejected")
+
+    # AWS SageMaker Bedrock AI acceptance
+    rel_aws_ai, _, _ = evaluate_article_relevance(
+        "Build efficient agents with knowledge distillation on Amazon SageMaker AI",
+        "Knowledge distillation framework for production agentic tool loops.",
+        source_name="AWS Machine Learning"
+    )
+    self.assertTrue(rel_aws_ai, "AWS SageMaker AI release must be accepted")
+
+    # 3. Hugging Face toy demo rejection
+    rel_hf_toy, _, r3 = evaluate_article_relevance(
+        "Try this fun Gradio Space: Cat breed classifier demo on Hugging Face Spaces",
+        "Fun weekend pet project demo using basic image classification.",
+        source_name="Hugging Face Blog"
+    )
+    self.assertFalse(rel_hf_toy, "Hugging Face toy demo space must be rejected")
+
+  def test_canonical_10_categories_and_3_impact_levels(self):
+    """Enforces Section 4: Exactly 10 canonical categories and 3 impact levels."""
+    from pipeline.scorer import CANONICAL_CATEGORIES_V2, classify_impact_level
+
+    self.assertEqual(len(CANONICAL_CATEGORIES_V2), 10)
+    expected_categories = [
+        "Frontier Models", "AI Research", "AI Agents", "Open Source AI",
+        "AI Infrastructure", "AI Business", "AI Safety", "AI Policy",
+        "Developer Tools", "Consumer AI"
+    ]
+    self.assertEqual(CANONICAL_CATEGORIES_V2, expected_categories)
+
+    # 3 Impact levels
+    self.assertEqual(classify_impact_level(88.0, "frontier_model_release"), "Breakthrough")
+    self.assertEqual(classify_impact_level(76.0, "sdk_api_update"), "Major")
+    self.assertEqual(classify_impact_level(65.0, "application_deployment"), "Notable")
+
+  def test_ai_enhancement_generator_zero_duplicate_sentences(self):
+    """Enforces Section 7: AI article enhancement generates all 10 fields with zero text repetition."""
+    from pipeline.enricher import generate_article_ai_enhancement
+
+    dummy_story = {
+        "title": "Anthropic Announces Claude 3.7 Sonnet with Hybrid Reasoning",
+        "source": "Anthropic News",
+        "link": "https://www.anthropic.com/news/claude-3-7-sonnet",
+        "what_changed": "Anthropic introduced Claude 3.7 Sonnet, their first frontier model capable of dynamic hybrid reasoning across fast and extended thinking modes.",
+        "why_it_matters": "Enables developers to fine-tune latency and compute cost per inference query.",
+        "potential_impact": "Accelerates production adoption of complex coding and tool-calling agents.",
+        "key_points": [
+            "Introduces dynamic hybrid reasoning switch.",
+            "Demonstrates 70.3% on SWE-bench Verified coding benchmark."
+        ],
+        "category": "Frontier Models",
+        "company": "anthropic",
+        "trust_tier": 1,
+        "is_official": True,
+        "pulse_score": 92.0,
+    }
+
+    dummy_extracted = {
+        "headline": dummy_story["title"],
+        "author": "Anthropic Research Team",
+        "body_text": "Anthropic today announced Claude 3.7 Sonnet. The model achieves state-of-the-art results on SWE-bench Verified. Users can specify a thinking budget in tokens. Dynamic test-time search allows deep reasoning for difficult mathematical proofs.",
+        "paragraphs": [
+            "Anthropic today announced Claude 3.7 Sonnet.",
+            "The model achieves state-of-the-art results on SWE-bench Verified.",
+            "Users can specify a thinking budget in tokens."
+        ],
+        "sections": [{"heading": "Hybrid Reasoning", "content": "Users can specify a thinking budget in tokens."}],
+        "word_count": 450,
+        "reading_time": "3 min read",
+        "content_hash": "a1b2c3d4e5f67890",
+        "status": "extracted"
+    }
+
+    enhancement = generate_article_ai_enhancement(dummy_story, dummy_extracted)
+
+    # 1. Verify all 10 required fields are present and non-empty
+    required_fields = [
+        "ai_overview", "ai_what_happened", "ai_key_details", "ai_why_it_matters",
+        "ai_technical_breakdown", "ai_industry_impact", "ai_whats_new",
+        "ai_key_takeaways", "ai_limitations", "original_source_url"
+    ]
+    for f in required_fields:
+      self.assertIn(f, enhancement, f"Enhancement missing required field: {f}")
+      self.assertTrue(enhancement[f], f"Enhancement field {f} must not be empty")
+
+    # 2. Strict non-duplication verification: Why It Matters must not appear in Takeaways or Overview
+    why_norm = enhancement["ai_why_it_matters"].strip().lower()
+    for pt in enhancement["ai_key_takeaways"]:
+      self.assertNotEqual(pt.strip().lower(), why_norm, "Takeaway point must not duplicate Why It Matters")
+
+    # 3. What Happened must not duplicate the title
+    title_norm = dummy_story["title"].strip().lower()
+    self.assertNotEqual(enhancement["ai_what_happened"].strip().lower(), title_norm)
 
 
 if __name__ == "__main__":

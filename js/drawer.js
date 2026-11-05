@@ -96,6 +96,15 @@ export function openReaderView(story) {
     topicBadge.textContent = story.category || story.topic || 'AI News';
   }
 
+  // Impact Level Badge
+  const impactBadge = document.getElementById('reader-impact-badge');
+  if (impactBadge) {
+    const level = story.impact_level || (Number(story.pulse_score || story.overall_score || 0) >= 84 ? 'Breakthrough' : (Number(story.pulse_score || story.overall_score || 0) >= 74 ? 'Major' : 'Notable'));
+    impactBadge.textContent = level;
+    impactBadge.className = `badge-impact-level badge-impact-${level.toLowerCase()}`;
+    impactBadge.style.display = 'inline-flex';
+  }
+
   // Tier Status Badge
   const statusBadge = document.getElementById('reader-status-badge');
   if (statusBadge) {
@@ -116,9 +125,20 @@ export function openReaderView(story) {
   const readTime = document.getElementById('reader-readtime');
   if (readTime) readTime.textContent = story.reading_time || '2 min read';
 
-  // Publisher & Pub Date
+  // Publisher & Pub Date & Author
   const srcName = document.getElementById('reader-source-name');
   if (srcName) srcName.textContent = story.source || 'Primary Source';
+
+  const authorEl = document.getElementById('reader-author');
+  if (authorEl) {
+    if (story.author && String(story.author).trim()) {
+      authorEl.textContent = ` • by ${story.author.trim()}`;
+      authorEl.style.display = 'inline';
+    } else {
+      authorEl.textContent = '';
+      authorEl.style.display = 'none';
+    }
+  }
 
   const pubTime = document.getElementById('reader-pub-time');
   if (pubTime) {
@@ -142,13 +162,33 @@ export function openReaderView(story) {
   }
 
   // -----------------------------------------------------------
-  // DEDUPLICATION & CROSS-SECTION CONTENT FILTERING ENGINE
-  // Eliminates repetitive sentences across Takeaways, Facts, Analysis, and Callouts
+  // STRICT CROSS-SECTION DEDUPLICATION & CONTENT FILTERING ENGINE
+  // Eliminates repetitive sentences across Overview, Takeaways, Facts, Analysis, and Callouts
   // -----------------------------------------------------------
   const normTitle = (story.title || '').trim().toLowerCase().replace(/[^\w\s]/g, '');
+  const renderedSentences = new Set();
+  if (normTitle) renderedSentences.add(normTitle);
 
   function normalizeSentence(text) {
-    return (text || '').toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+    return safeString(text).toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+  }
+
+  function safeString(val) {
+    if (!val) return '';
+    if (typeof val === 'string') return val;
+    if (Array.isArray(val)) return val.map(safeString).filter(Boolean).join(' ');
+    if (typeof val === 'object') {
+      if (val.impact) return safeString(val.impact);
+      if (val.statement) return safeString(val.statement);
+      return Object.values(val).map(safeString).filter(Boolean).join(' ');
+    }
+    return String(val);
+  }
+
+  function splitIntoSentences(text) {
+    const s = safeString(text);
+    if (!s) return [];
+    return s.split(/(?<=[.!?])\s+/).map(x => x.trim()).filter(Boolean);
   }
 
   function areSimilar(a, b) {
@@ -161,47 +201,86 @@ export function openReaderView(story) {
     return false;
   }
 
+  function isAlreadyRendered(text) {
+    if (!text) return true;
+    const n = normalizeSentence(text);
+    if (!n) return true;
+    if (renderedSentences.has(n)) return true;
+    for (const s of renderedSentences) {
+      if (areSimilar(n, s)) return true;
+    }
+    return false;
+  }
+
+  function recordTextSentences(text) {
+    if (!text) return;
+    const sents = splitIntoSentences(text);
+    sents.forEach(s => {
+      const n = normalizeSentence(s);
+      if (n) renderedSentences.add(n);
+    });
+    const fullNorm = normalizeSentence(text);
+    if (fullNorm) renderedSentences.add(fullNorm);
+  }
+
   // 1. Identify distinct Why It Matters & Potential Impact first so they are reserved for their dedicated cards
   const whyBox = document.getElementById('reader-why-box');
   const whyText = document.getElementById('reader-why-text');
-  const rawWhy = (story.why_it_matters || '').trim();
+  const rawWhy = safeString(story.ai_why_it_matters || story.why_it_matters).trim();
   const distinctWhy = (rawWhy && normalizeSentence(rawWhy) !== normTitle) ? rawWhy : '';
 
   const impactBox = document.getElementById('reader-impact-box');
   const impactText = document.getElementById('reader-potential-impact');
-  const rawImpact = (story.potential_impact || '').trim();
+  const rawImpact = safeString(story.ai_industry_impact || story.potential_impact || (story.audience_impact ? story.audience_impact.impact : '')).trim();
   const distinctImpact = (rawImpact && normalizeSentence(rawImpact) !== normTitle && (!distinctWhy || !areSimilar(rawImpact, distinctWhy))) ? rawImpact : '';
 
-  // 2. Key Takeaways (filtered so they NEVER duplicate Why It Matters, Potential Impact, or Title)
+  // 2. AI OVERVIEW CARD (Concise 2-3 sentence overview)
+  const overviewCard = document.getElementById('reader-ai-overview-card');
+  const overviewText = document.getElementById('reader-ai-overview-text');
+  const rawOverview = safeString(story.ai_overview || story.summary || story.what_changed).trim();
+  if (overviewCard && overviewText) {
+    if (rawOverview && !areSimilar(rawOverview, normTitle)) {
+      overviewText.textContent = rawOverview;
+      overviewCard.style.display = 'block';
+      recordTextSentences(rawOverview);
+    } else {
+      overviewCard.style.display = 'none';
+    }
+  }
+
+  // 3. KEY TAKEAWAYS (filtered so they NEVER duplicate Why It Matters, Potential Impact, Overview, or Title)
   const kpContainer = document.getElementById('reader-key-points');
   const seenTakeaways = new Set();
   if (normTitle) seenTakeaways.add(normTitle);
 
   if (kpContainer) {
     kpContainer.innerHTML = '';
-    const rawPoints = story.key_points || (story.what_changed ? [story.what_changed] : [story.summary]);
+    const rawPoints = story.ai_key_takeaways || story.key_points || (story.what_changed ? [story.what_changed] : [story.summary]);
     const uniquePoints = [];
 
     (Array.isArray(rawPoints) ? rawPoints : [rawPoints]).forEach(pt => {
-      const cleanPt = (pt || '').trim();
+      const cleanPt = safeString(pt).trim();
       if (!cleanPt) return;
 
       // Filter out if identical to Why It Matters or Potential Impact (they have dedicated cards)
       if (distinctWhy && areSimilar(cleanPt, distinctWhy)) return;
       if (distinctImpact && areSimilar(cleanPt, distinctImpact)) return;
+      if (isAlreadyRendered(cleanPt)) return;
 
       const normPt = normalizeSentence(cleanPt);
       if (normPt && !seenTakeaways.has(normPt)) {
         seenTakeaways.add(normPt);
+        renderedSentences.add(normPt);
         uniquePoints.push(cleanPt);
       }
     });
 
     if (uniquePoints.length === 0) {
-      const fallback = (story.what_changed || story.summary || '').trim();
-      if (fallback && (!distinctWhy || !areSimilar(fallback, distinctWhy)) && (!distinctImpact || !areSimilar(fallback, distinctImpact))) {
+      const fallback = safeString(story.what_changed || story.summary).trim();
+      if (fallback && (!distinctWhy || !areSimilar(fallback, distinctWhy)) && (!distinctImpact || !areSimilar(fallback, distinctImpact)) && !isAlreadyRendered(fallback)) {
         uniquePoints.push(fallback);
         seenTakeaways.add(normalizeSentence(fallback));
+        renderedSentences.add(normalizeSentence(fallback));
       } else {
         const cat = story.category || story.topic || 'AI News';
         uniquePoints.push(`Strategic update announced in ${cat}.`);
@@ -215,23 +294,40 @@ export function openReaderView(story) {
     });
   }
 
-  // 3. Verified Reported Facts (clean, distinct source data points — NEVER repeat takeaway bullets)
+  // 4. WHAT HAPPENED NARRATIVE
+  const whCard = document.getElementById('reader-what-happened-card');
+  const whText = document.getElementById('reader-what-happened-text');
+  const rawWhatHappened = safeString(story.ai_what_happened || story.what_changed).trim();
+  if (whCard && whText) {
+    if (rawWhatHappened && !isAlreadyRendered(rawWhatHappened)) {
+      whText.textContent = rawWhatHappened;
+      whCard.style.display = 'block';
+      recordTextSentences(rawWhatHappened);
+    } else {
+      whCard.style.display = 'none';
+    }
+  }
+
+  // 5. KEY DETAILS & VERIFIED FACTS (clean, distinct source data points — NEVER repeat takeaway bullets or overview)
   const factsBox = document.getElementById('reader-facts-box');
   const factsList = document.getElementById('reader-facts-list');
   if (factsBox && factsList) {
     factsList.innerHTML = '';
-    const rawFacts = Array.isArray(story.reported_facts) ? story.reported_facts : [];
+    const rawFacts = Array.isArray(story.ai_key_details) && story.ai_key_details.length > 0
+      ? story.ai_key_details
+      : (Array.isArray(story.reported_facts) ? story.reported_facts : []);
     const uniqueFacts = [];
     const seenFacts = new Set();
 
     rawFacts.forEach(fact => {
-      let cleanFact = (fact || '').trim();
+      let cleanFact = safeString(fact).trim();
       cleanFact = cleanFact.replace(/^(?:[\w\s.-]+)\s+reported\s+that\s+/i, '');
       if (!cleanFact) return;
 
       // Must not duplicate title, Why It Matters, Potential Impact, or any Takeaway
       if (distinctWhy && areSimilar(cleanFact, distinctWhy)) return;
       if (distinctImpact && areSimilar(cleanFact, distinctImpact)) return;
+      if (isAlreadyRendered(cleanFact)) return;
       for (const t of seenTakeaways) {
         if (areSimilar(cleanFact, t)) return;
       }
@@ -239,6 +335,7 @@ export function openReaderView(story) {
       const normFact = normalizeSentence(cleanFact);
       if (normFact && !seenFacts.has(normFact)) {
         seenFacts.add(normFact);
+        renderedSentences.add(normFact);
         uniqueFacts.push(cleanFact);
       }
     });
@@ -260,33 +357,50 @@ export function openReaderView(story) {
     }
   }
 
-  // 4. In-Depth Story & Context (clean narrative paragraphs without duplicating Potential Impact or Why It Matters)
+  // 6. TECHNICAL BREAKDOWN
+  const techCard = document.getElementById('reader-technical-card');
+  const techText = document.getElementById('reader-technical-text');
+  const rawTech = safeString(story.ai_technical_breakdown).trim();
+  if (techCard && techText) {
+    if (rawTech && !isAlreadyRendered(rawTech)) {
+      techText.textContent = rawTech;
+      techCard.style.display = 'block';
+      recordTextSentences(rawTech);
+    } else {
+      techCard.style.display = 'none';
+    }
+  }
+
+  // 7. IN-DEPTH STORY BREAKDOWN (Narrative paragraphs without repeating Impact, Why It Matters, or Takeaways)
   const daContainer = document.getElementById('reader-detailed-analysis');
   const contentSection = document.getElementById('reader-content-section') || (typeof document.querySelector === 'function' ? document.querySelector('.reader-content-section') : null);
   if (daContainer) {
     daContainer.innerHTML = '';
-    const rawAnalysis = story.detailed_analysis || story.summary || story.what_changed || '';
+    const rawAnalysis = safeString(story.detailed_analysis || story.summary || story.what_changed);
     const paragraphs = rawAnalysis.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
     const uniqueParagraphs = [];
     const seenParas = new Set();
 
     paragraphs.forEach(p => {
       if (!p) return;
-      // Do NOT repeat Potential Impact or Why It Matters in narrative analysis
+      // Do NOT repeat Potential Impact, Why It Matters, or Takeaways in narrative analysis
       if (distinctImpact && areSimilar(p, distinctImpact)) return;
       if (distinctWhy && areSimilar(p, distinctWhy)) return;
+      if (isAlreadyRendered(p)) return;
 
       const normP = normalizeSentence(p);
       if (normP && !seenParas.has(normP)) {
         seenParas.add(normP);
+        renderedSentences.add(normP);
         uniqueParagraphs.push(p);
       }
     });
 
     // Guarantee at least 1 clean narrative paragraph
     if (uniqueParagraphs.length === 0) {
-      const fallback = (story.summary || story.what_changed || story.title || 'Verified AI development dispatch.').trim();
+      const fallback = safeString(story.summary || story.what_changed || story.title || 'Verified AI development dispatch.').trim();
       uniqueParagraphs.push(fallback);
+      renderedSentences.add(normalizeSentence(fallback));
     }
 
     uniqueParagraphs.forEach(p => {
@@ -297,9 +411,13 @@ export function openReaderView(story) {
     if (contentSection) contentSection.style.display = 'block';
   }
 
-  // 5. Why It Matters Callout
+  // 8. WHY IT MATTERS CALLOUT
   if (whyBox && whyText) {
-    if (distinctWhy) {
+    if (distinctWhy && !isAlreadyRendered(distinctWhy)) {
+      whyText.textContent = distinctWhy;
+      whyBox.style.display = 'block';
+      recordTextSentences(distinctWhy);
+    } else if (distinctWhy) {
       whyText.textContent = distinctWhy;
       whyBox.style.display = 'block';
     } else {
@@ -307,9 +425,13 @@ export function openReaderView(story) {
     }
   }
 
-  // 6. Potential Impact Callout
+  // 9. INDUSTRY IMPACT CALLOUT
   if (impactBox && impactText) {
-    if (distinctImpact) {
+    if (distinctImpact && !isAlreadyRendered(distinctImpact)) {
+      impactText.textContent = distinctImpact;
+      impactBox.style.display = 'block';
+      recordTextSentences(distinctImpact);
+    } else if (distinctImpact) {
       impactText.textContent = distinctImpact;
       impactBox.style.display = 'block';
     } else {
@@ -317,12 +439,27 @@ export function openReaderView(story) {
     }
   }
 
-  // Epistemic Bounds & Verification Limitations
+  // 10. WHAT'S NEW CALLOUT
+  const whatsNewBox = document.getElementById('reader-whats-new-box');
+  const whatsNewText = document.getElementById('reader-whats-new-text');
+  const rawWhatsNew = safeString(story.ai_whats_new).trim();
+  if (whatsNewBox && whatsNewText) {
+    if (rawWhatsNew && !isAlreadyRendered(rawWhatsNew)) {
+      whatsNewText.textContent = rawWhatsNew;
+      whatsNewBox.style.display = 'block';
+      recordTextSentences(rawWhatsNew);
+    } else {
+      whatsNewBox.style.display = 'none';
+    }
+  }
+
+  // 11. EPISTEMIC BOUNDS & LIMITATIONS
   const limBox = document.getElementById('reader-limitations-box');
   const limText = document.getElementById('reader-limitations-text');
+  const rawLim = safeString(story.ai_limitations || story.analysis_limitations || story.epistemic_limitations).trim();
   if (limBox && limText) {
-    if (story.analysis_limitations) {
-      limText.textContent = story.analysis_limitations;
+    if (rawLim) {
+      limText.textContent = rawLim;
       limBox.style.display = 'block';
     } else {
       limBox.style.display = 'none';

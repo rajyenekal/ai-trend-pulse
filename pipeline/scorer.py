@@ -509,6 +509,7 @@ def sanitize_and_format_summary(raw_summary, title=""):
 
 def evaluate_article_relevance(title, summary="", source_name="", source_type="", is_official=False):
   """Evaluates whether an article represents a genuine, meaningful AI development.
+  Applies source-specific relevance and noise-rejection rules.
   Filters out lifestyle/holiday fluff, generic conference tickets/promotions, and non-AI general news.
   Returns: (is_relevant: bool, relevance_score: float, reason: str)
   """
@@ -518,8 +519,9 @@ def evaluate_article_relevance(title, summary="", source_name="", source_type=""
 
   t_lower = clean_title.lower()
   content_lower = f"{clean_title} {summary}".lower()
+  s_name_lower = (source_name or "").lower()
 
-  # 1. Hard filter: Lifestyle, holiday, deals, costume, consumer shopping fluff in title
+  # 1. Universal Hard filter: Lifestyle, holiday, deals, costume, consumer shopping fluff
   fluff_title_patterns = [
       r"\b(costume|costumes|halloween costume|gift guide|gift ideas|black friday|cyber monday|deals of the day|best tech deals|best gifts|stocking stuffers|unboxing|fashion trend|gadget deal)\b"
   ]
@@ -527,7 +529,7 @@ def evaluate_article_relevance(title, summary="", source_name="", source_type=""
     if re.search(pat, t_lower):
       return False, 10.0, "Lifestyle or promotional consumer fluff"
 
-  # 2. Hard filter: Event registrations, ticket sales, webinar marketing, call for speakers
+  # 2. Universal Hard filter: Event registrations, ticket sales, webinar marketing, call for speakers
   event_patterns = [
       r"\b(call for speakers|register now for|buy tickets|ticket sale|early bird registration|visit our booth|join us live at booth|webinar recording|rsvp now|discount code for)\b"
   ]
@@ -535,11 +537,39 @@ def evaluate_article_relevance(title, summary="", source_name="", source_type=""
     if re.search(pat, t_lower):
       return False, 15.0, "Event registration or marketing announcement"
 
-  # 3. If from a Tier 1 official AI lab, it is inherently relevant unless it matches the hard filters above
+  # 3. Source-Specific Noise Rules
+  # NVIDIA: Focus on AI accelerators, GPU architecture, inference/training, robotics. Exclude pure gaming / consumer PC graphics.
+  if "nvidia" in s_name_lower:
+    gaming_patterns = [
+        r"\b(geforce game ready|geforce rtx 40\d\d gaming|gaming laptop deal|dlss gaming titles|pc gaming update|esports tournament|shield tv update)\b"
+    ]
+    for pat in gaming_patterns:
+      if re.search(pat, t_lower):
+        return False, 20.0, "NVIDIA consumer gaming announcement excluded from AI intelligence"
+
+  # AWS: Focus on Bedrock, foundation model infra, enterprise AI. Exclude routine non-AI console/IAM tutorials.
+  if "aws" in s_name_lower or "amazon" in s_name_lower:
+    routine_aws_patterns = [
+        r"\b(getting started with aws console|basic ec2 configuration|how to configure iam|configuring aws iam|step-by-step tutorial: configuring aws|step-by-step console guide|cloudwatch log ingestion)\b"
+    ]
+    for pat in routine_aws_patterns:
+      if re.search(pat, t_lower):
+        return False, 25.0, "Routine non-AI cloud tutorial excluded"
+
+  # Hugging Face: Focus on significant open models, major hub releases, evaluation benchmarks. Exclude minor repetitive toy demos.
+  if "hugging" in s_name_lower:
+    routine_hf_patterns = [
+        r"\b(gradio demo of the day|community space spotlight|fun gradio space|toy demo|demo on hugging face spaces|cat breed classifier|simple sentiment classifier)\b"
+    ]
+    for pat in routine_hf_patterns:
+      if re.search(pat, t_lower):
+        return False, 25.0, "Routine community toy demo excluded"
+
+  # 4. If from a Tier 1 official AI lab, it is inherently relevant unless it matches the hard filters above
   if is_official or source_type in ("official", "research"):
     return True, 90.0, "Official AI lab announcement or research preprint"
 
-  # 4. For general tech journalism, verify meaningful AI development connection
+  # 5. For general tech journalism, verify meaningful AI development connection
   ai_core_terms = [
       r"\b(ai|artificial intelligence|machine learning|deep learning|llm|llms|vlm|gpt|claude|gemini|deepseek|llama|mistral|frontier model|reasoning model|neural|agent|agents|agentic|prompt|robotics|diffusion|transformer|dataset|fine-tuning|inference|context window|rag|embeddings|safety|alignment|eval|evals|red team|copilot|synthetic data|anthropic|openai|deepmind|cohere|hugging face|huggingface|midjourney|sora|runway|elevenlabs|perplexity|grok|xai|supercomputer|gpu|h100|b200|tpu|open weight|open weights)\b"
   ]
@@ -550,16 +580,58 @@ def evaluate_article_relevance(title, summary="", source_name="", source_type=""
   return True, 80.0, "Verified AI development news"
 
 
+CANONICAL_CATEGORIES_V2 = [
+    "Frontier Models",
+    "AI Research",
+    "AI Agents",
+    "Open Source AI",
+    "AI Infrastructure",
+    "AI Business",
+    "AI Safety",
+    "AI Policy",
+    "Developer Tools",
+    "Consumer AI",
+]
+
+LEGACY_CATEGORY_TO_V2 = {
+    "AI Policy & Regulation": "AI Policy",
+    "AI Security & Safety": "AI Safety",
+    "AI Infrastructure": "AI Infrastructure",
+    "AI Business & Funding": "AI Business",
+    "AI Models & Research": "Frontier Models",
+    "AI Products & Tools": "Developer Tools",
+    "AI Applications": "Consumer AI",
+    "AI News": "Frontier Models",
+}
+
+
+def classify_impact_level(pulse_score, article_type="", is_official=False, is_breakthrough=False):
+  """Classifies an article into one of three clear impact levels:
+  - Breakthrough: Major paradigm shift, landmark foundation model, or historic capability leap (score >= 84)
+  - Major: Significant product release, strategic industry shift, or notable infrastructure launch (score >= 74)
+  - Notable: Meaningful developer tool, domain application, or verified ecosystem update (score < 74)
+  """
+  score = float(pulse_score or 70.0)
+  if is_breakthrough or score >= 84.0 or article_type == "frontier_model_release":
+    return "Breakthrough"
+  elif score >= 74.0 or is_official:
+    return "Major"
+  else:
+    return "Notable"
+
+
 def classify_topic_detailed(title, summary=""):
-  """Classifies an AI news story into one of the 8 canonical editorial categories:
-  - AI Policy & Regulation
-  - AI Security & Safety
-  - AI Infrastructure
-  - AI Business & Funding
-  - AI Models & Research
-  - AI Products & Tools
-  - AI Applications
-  - AI News (default fallback)
+  """Classifies an AI news story into one of the 10 canonical editorial categories:
+  1. Frontier Models
+  2. AI Research
+  3. AI Agents
+  4. Open Source AI
+  5. AI Infrastructure
+  6. AI Business
+  7. AI Safety
+  8. AI Policy
+  9. Developer Tools
+  10. Consumer AI
 
   Returns a tuple of (category, confidence_score, rationale).
   """
@@ -567,67 +639,91 @@ def classify_topic_detailed(title, summary=""):
   clean_summary = (summary or "").strip()
   content = f"{clean_title} {clean_summary}".lower()
 
-  # 1. AI Policy & Regulation (Lawsuits, courts, EPA/pollution, copyright, treaties, government policy)
+  # 1. AI Policy (Lawsuits, courts, EPA/pollution, copyright, treaties, government policy, antitrust)
   if re.search(r"\b(lawsuit|lawsuits|naacp|sues|sued|suing|court|judge|legal dispute|litigation|plaintiff|defendant|subpoena|pollution|emission|emissions|clean air act|epa|environmental|smog|copyright|infringement|opt-out of scrap|scraping opt-out|fair use|licensing dispute|ai act|eu ai act|executive order|regulation|regulatory|antitrust|monopoly|ftc|doj|sec|legislation|disarmament|religious exemption)\b", content):
     return (
-        "AI Policy & Regulation",
+        "AI Policy",
         0.95,
         "Matched legal proceedings, court ruling, regulatory compliance, environmental impact, or copyright policy"
     )
 
-  # 2. AI Security & Safety (Cybersecurity, exploits, vulnerabilities, account takeover, alignment, red-team, sabotage, conversational safety)
+  # 2. AI Safety (Cybersecurity, exploits, vulnerabilities, account takeover, alignment, red-team, sabotage, conversational safety)
   if re.search(r"\b(cybersecurity|account takeover|took over|takeover|exploit|exploits|vulnerability|vulnerabilities|cve|zero-day|auth bypass|daybreak blue|misalignment|sabotage|sabot|model spec|watermark|watermarking|biosecurity|catastrophic risk|safeguard|safeguards|adversarial|safety report|teen safety|protections for teens|jailbreak|prompt injection|traumatized|clinical anxiety|therapist|safety problem|empathetic prompt|sycophancy|conversational safety|prompt safety)\b", content):
     return (
-        "AI Security & Safety",
+        "AI Safety",
         0.95,
         "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol"
     )
 
-  # 3. AI Infrastructure (Data centers without lawsuit, GPUs, TPUs, Blackwell, H100, RTX, laptops, chips, cooling)
-  if re.search(r"\b(hardware|data center|datacenter|gpu|gpus|tpu|blackwell|h100|h200|b200|rtx|spark windows laptop|silicon|custom silicon|semiconductor|server cluster|supercomputer|power grid|megawatt|gigawatt|cooling system)\b", content):
+  # 3. AI Agents (AgentCore, coding agents, computer use, tool loops, MCP, autonomous workflows)
+  if re.search(r"\b(agent|agents|agentic|agentcore|coding agent|computer use|mcp|model context protocol|tool loop|autonomous agent|multi-agent|workflow agent|browser agent)\b", content):
+    return (
+        "AI Agents",
+        0.94,
+        "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration"
+    )
+
+  # 4. Open Source AI (Open weights, Hugging Face models, Ollama, vLLM, self-hosted, quantized weights)
+  if re.search(r"\b(open source|open-source|open weight|open weights|open-weight|hugging face|huggingface|ollama|vllm|sglang|gguf|quantized weights|self-hosted|weights released)\b", content):
+    return (
+        "Open Source AI",
+        0.93,
+        "Matched open weights release, open-source model repository, or self-hosted runtime tooling"
+    )
+
+  # 5. AI Infrastructure (Data centers, GPUs, TPUs, Blackwell, H100, B200, chips, cooling, accelerators)
+  if re.search(r"\b(hardware|data center|datacenter|gpu|gpus|tpu|blackwell|h100|h200|b200|rtx|silicon|custom silicon|semiconductor|server cluster|supercomputer|power grid|megawatt|gigawatt|cooling system|accelerator|accelerators)\b", content):
     return (
         "AI Infrastructure",
         0.92,
         "Matched hardware architecture, silicon accelerators, data center systems, or compute energy grid"
     )
 
-  # 4. AI Business & Funding (Fundraising, venture capital, valuations, IPO, revenue, earnings)
-  if re.search(r"\b(raises|raised|raising|funding round|funding target|venture capital|valuation|investors|billion target|series [a-z]|seed round|acquisition|acquisitions|acquired|merger|mergers|quarterly revenue|earnings|ipo|market cap|theranos whistleblower.*ai boom)\b", content):
+  # 6. AI Business (Fundraising, venture capital, valuations, IPO, revenue, acquisitions, commercial deals)
+  if re.search(r"\b(raises|raised|raising|funding round|funding target|venture capital|valuation|investors|billion target|series [a-z]|seed round|acquisition|acquisitions|acquired|merger|mergers|quarterly revenue|earnings|ipo|market cap|commercial partnership|commercial agreement)\b", content):
     return (
-        "AI Business & Funding",
+        "AI Business",
         0.92,
         "Matched institutional capital raises, startup valuation, earnings report, or M&A transaction"
     )
 
-  # 5. AI Applications (Healthcare, drug development, biotech, satellites, climate/Earth-2, delivery, reservations, legal work, voice agents)
-  if re.search(r"\b(drug development|gene therapy|satellite data|forests|earth-2|robotics|autonomous vehicle|self-driving|restaurant|reservations|delivery|doordash|worldwide express|freight exceptions|transactional diligence|legal work|operating system for legal|monthly calls|retell|multiplayer game world|fable-class|clinical|diagnostics)\b", content):
+  # 7. Developer Tools (SDKs, APIs, VS Code extensions, IDEs, RAG pipelines, vector databases, eval frameworks)
+  if re.search(r"\b(sdk|sdks|api endpoint|api credits|apis|developer platform|vs code|extension|agent skills|ide|developer tools|rag|vector db|embeddings|eval framework|evals|python library|cli tool)\b", content):
     return (
-        "AI Applications",
+        "Developer Tools",
+        0.90,
+        "Matched developer tooling, software SDK release, IDE extension, or API capability"
+    )
+
+  # 8. Consumer AI (Consumer applications, domain automation, assistants, creative generation, mobile/desktop apps)
+  if re.search(r"\b(chatgpt app|consumer app|smart assistant|voice mode|desktop app|windows app|mac app|ios app|android app|midjourney|sora|runway|elevenlabs|tamagotchi|creative tool|photoshop|firefly|logistics|freight|automation case study|enterprise application|workflow automation)\b", content):
+    return (
+        "Consumer AI",
         0.88,
-        "Matched domain-specific production deployment in enterprise, scientific, or consumer applications"
+        "Matched consumer-facing AI applications, enterprise domain workflow automation, or creative assistants"
     )
 
-  # 6. AI Products & Tools (Coding tools, IDE, VS Code, copilot, cursor, SDK, API credits, dev tooling, UI testing, datasette)
-  if re.search(r"\b(datasette|copilot|coding agent|sdk|sdks|api endpoint|api credits|vs code|extension|agent skills|agentic ai foundation|testing with amazon nova|tamagotchi|desktop app|windows app|greptile|code review|preview web apps|ide|developer tools)\b", content):
+  # 9. AI Research (Academic papers, preprints, arXiv, mechanistic interpretability, training ablation)
+  if re.search(r"\b(arxiv|preprint|paper|papers|ablation|interpretability|mechanistic|loss curve|parameter scaling|scaling law|training paradigm|scientific discovery|bair)\b", content):
     return (
-        "AI Products & Tools",
+        "AI Research",
         0.88,
-        "Matched developer tooling, software product release, IDE extension, or API capability"
+        "Matched academic preprint, research paper, interpretability study, or foundational training benchmark"
     )
 
-  # 7. AI Models & Research (Frontier foundation models, reasoning models, preprints, arXiv, weights, benchmarks)
-  if re.search(r"\b(frontier model|reasoning model|foundation model|claude|gemini|gpt|llama|deepseek|mistral|nemotron|qwen|voxtral|cosmos|open weights|arxiv|preprint|bair|paper|ablation|benchmark|dataset|interpretability|mechanistic|multimodal reasoning|parameter scaling)\b", content):
+  # 10. Frontier Models (GPT, Claude, Gemini, Llama, DeepSeek, Mistral, reasoning models)
+  if re.search(r"\b(frontier model|reasoning model|foundation model|claude|gemini|gpt|llama|deepseek|mistral|nemotron|qwen|voxtral|cosmos|o1|o3|r1)\b", content):
     return (
-        "AI Models & Research",
-        0.85,
-        "Matched frontier foundation model release, research preprint, or architecture benchmark"
+        "Frontier Models",
+        0.90,
+        "Matched frontier foundation model release or reasoning benchmark breakthrough"
     )
 
-  # 8. AI News (General industry developments, partnerships, leadership statements)
+  # Default fallback
   return (
-      "AI News",
+      "Frontier Models",
       0.70,
-      "General AI ecosystem update, strategic partnership, or executive announcement"
+      "General frontier AI development or ecosystem milestone"
   )
 
 

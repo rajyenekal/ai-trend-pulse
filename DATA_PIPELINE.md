@@ -20,42 +20,40 @@
 
 ## 🏛️ Architecture Overview
 
-The pipeline executes autonomously on an hourly schedule via GitHub Actions, driven by [`tracker.py`](tracker.py) and configured by [`sources.json`](sources.json). It ingests dispatches from 25 primary AI research laboratories, technology journalism desks, cloud providers, and preprint archives. Articles are normalized, monitored with end-to-end telemetry, clustered to eliminate cross-publisher duplication, verified through paired claim-level evidence references, scored according to algorithmic pulse weights, and written atomically to [`data.json`](data.json) for static client delivery.
+The pipeline executes autonomously on an hourly schedule via GitHub Actions, driven by [`tracker.py`](tracker.py) and configured by [`sources.json`](sources.json). It ingests dispatches from 10 active primary AI research laboratories, technology journalism desks, and open ecosystem hubs (with 15 additional noisy/routine feeds preserved in reserve). Articles are extracted with full structured metadata, monitored with end-to-end telemetry, clustered to eliminate cross-publisher duplication, enriched with 10 structured AI enhancement sections, scored according to algorithmic pulse weights, and written atomically to [`data.json`](data.json) and [`data.js`](data.js) for static client delivery.
 
 ```mermaid
 flowchart TD
-    subgraph Sources["25 Monitored Sources (sources.json)"]
-        T1["Tier 1: Frontier AI Labs\n(OpenAI, Anthropic, DeepMind, Google AI, Microsoft, Meta, xAI, Mistral)"]
-        T2["Tier 2: Independent Tech Journalism\n(MIT Tech Review, The Verge, TechCrunch, Ars Technica, The Decoder)"]
-        T3["Tier 3: Open Ecosystem & Cloud\n(Hugging Face, NVIDIA Developer, AWS ML, Amazon Science)"]
-        T4["Tier 4: Preprints & Community\n(arXiv cs.AI/cs.LG/cs.CL, Simon Willison, BAIR, Import AI)"]
+    subgraph Sources["10 Active Frontier Sources (sources.json)"]
+        T1["Tier 1: Frontier AI Labs\n(OpenAI, Anthropic, DeepMind, NVIDIA Newsroom, AWS Machine Learning)"]
+        T2["Tier 2: Independent Tech Journalism\n(MIT Tech Review, TechCrunch AI, The Verge AI, The Decoder)"]
+        T3["Tier 3: Open Ecosystem\n(Hugging Face Blog)"]
     end
 
-    subgraph Ingestion["Ingestion Engine (tracker.py)"]
-        DP["Dual-Parser Engine\n(feedparser + xml.etree.ElementTree Fallback)"]
+    subgraph Ingestion["Ingestion & Extraction Engine"]
+        DP["Dual-Parser Engine\n(feedparser + ElementTree Fallback)"]
         AA["Anthropic HTML Page Adapter\n(Canonical Extraction from /news)"]
+        NV["NVIDIA Generative AI Newsroom Adapter\n(Generative AI Category Filter)"]
+        EXT["Full Article Content Extractor (extractor.py)\n(Trafilatura + JSON-LD/OpenGraph + SHA-256 Cache)"]
         TEL["Source Health Telemetry\n(HTTP Status, Latency, Article Yield)"]
-        NORM["URL Normalization & Stripping\n(utm_*, ref, fbclid removed)"]
-        TIME["Strict Timestamp Parsing\n(No Fabricated Current Dates)"]
     end
 
-    subgraph Verification["Claim-Level Evidence & Synthesis"]
-        STEM["Suffix-Stemmed Tokenizer\n(Regex Normalization + Stemming)"]
-        JAC["Jaccard Similarity Clustering\n(Threshold = 0.38 Cross-Publisher Merge)"]
-        PAIR["Paired Evidence Validator\n(article_id + exact URL + excerpt verification)"]
-        DECOUPLE["Decoupled Corroboration Engine\n(Claim Corroboration vs Trend Diversity)"]
-        SCORE["Deterministic Pulse Scoring\n(Importance 30%, Relevance 20%, Freshness 20%, Coverage 15%, Quality 15%)"]
+    subgraph Verification["Synthesis & AI Enhancement (enricher.py)"]
+        STEM["Suffix-Stemmed Tokenizer & Hybrid Clustering"]
+        PAIR["Paired Evidence Validator & Deduplication"]
+        ENRICH["10-Section AI Article Enhancement\n(Overview, What Happened, Key Details, Technical Breakdown,\nWhy It Matters, Industry Impact, What's New, Takeaways, Limitations)"]
+        DEDUP["Strict Cross-Section Non-Duplication Engine"]
+        SCORE["Deterministic Pulse Scoring & 3 Impact Levels\n(Breakthrough >= 84, Major >= 74, Notable < 74)"]
     end
 
     subgraph Delivery["Persistence & Static Distribution"]
         ATOMIC["Atomic JSON Writer\n(Write .tmp -> Schema Check -> Rename)"]
-        JSON["data.json (Committed to Git)"]
-        FRONTEND["index.html (Client Frontend / Zero-Cost Static Delivery)"]
+        JSON["data.json & data.js (Committed to Git)"]
+        FRONTEND["index.html (0ms Hydrated Client UI + AI Reader Drawer)"]
     end
 
-    T1 & T2 & T3 & T4 --> DP
-    T1 --> AA
-    DP & AA --> TEL --> NORM --> TIME --> STEM --> JAC --> PAIR --> DECOUPLE --> SCORE --> ATOMIC --> JSON --> FRONTEND
+    T1 & T2 & T3 --> DP & AA & NV
+    DP & AA & NV --> EXT --> TEL --> STEM --> PAIR --> ENRICH --> DEDUP --> SCORE --> ATOMIC --> JSON --> FRONTEND
 ```
 
 ---

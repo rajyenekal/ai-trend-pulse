@@ -230,16 +230,16 @@ export function getFilteredStories(stories) {
         const isEligible = story.eligible_for_briefing !== false && (Number(story.pulse_score || story.overall_score || 0) >= 78 || (story.claim_corroboration && story.claim_corroboration > 1));
         if (!isEligible) return false;
       } else if (sec === 'research') {
-        const isResearch = artType === 'research_paper' || cat === 'AI Models & Research' || story.trust_tier === 3 || (story.source && story.source.toLowerCase().includes('arxiv'));
+        const isResearch = artType === 'research_paper' || cat === 'AI Research' || cat === 'Frontier Models' || cat === 'AI Models & Research' || story.trust_tier === 3 || (story.source && story.source.toLowerCase().includes('arxiv'));
         if (!isResearch) return false;
       } else if (sec === 'developer') {
-        const isDev = artType === 'sdk_api_update' || cat === 'AI Products & Tools' || ['api', 'sdk', 'code', 'agent', 'github', 'repo', 'framework', 'library', 'model spec'].some(k => titleLower.includes(k));
+        const isDev = artType === 'sdk_api_update' || cat === 'Developer Tools' || cat === 'AI Agents' || cat === 'Open Source AI' || cat === 'AI Products & Tools' || ['api', 'sdk', 'code', 'agent', 'github', 'repo', 'framework', 'library', 'model spec'].some(k => titleLower.includes(k));
         if (!isDev) return false;
       } else if (sec === 'industry') {
-        const isIndustry = cat === 'AI Enterprise & Industry' || cat === 'AI Applications' || cat === 'AI Infrastructure';
+        const isIndustry = cat === 'AI Business' || cat === 'AI Infrastructure' || cat === 'Consumer AI' || cat === 'AI Enterprise & Industry' || cat === 'AI Applications';
         if (!isIndustry) return false;
       } else if (sec === 'safety') {
-        const isSafety = artType === 'security_vulnerability' || artType === 'policy_regulation' || cat === 'AI Security & Safety' || cat === 'AI Policy & Regulation';
+        const isSafety = artType === 'security_vulnerability' || artType === 'policy_regulation' || cat === 'AI Safety' || cat === 'AI Policy' || cat === 'AI Security & Safety' || cat === 'AI Policy & Regulation';
         if (!isSafety) return false;
       }
     }

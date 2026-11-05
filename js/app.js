@@ -53,16 +53,18 @@ import {
   toggleSaveCurrentReaderItem,
 } from './drawer.js';
 
-// Canonical categories definition
+// Canonical categories definition (10 canonical domains)
 export const CANONICAL_CATEGORIES = [
-  'AI Policy & Regulation',
-  'AI Security & Safety',
+  'Frontier Models',
+  'AI Research',
+  'AI Agents',
+  'Open Source AI',
   'AI Infrastructure',
-  'AI Business & Funding',
-  'AI Models & Research',
-  'AI Products & Tools',
-  'AI Applications',
-  'AI News',
+  'AI Business',
+  'AI Safety',
+  'AI Policy',
+  'Developer Tools',
+  'Consumer AI',
 ];
 
 // -------------------------------------------------------------

@@ -47,15 +47,24 @@ export function getCompanyLogoSVG(companyKey) {
 // 2. 3-TIER EDITORIAL IMAGE SYSTEM & LAB VISUALS
 // -------------------------------------------------------------
 export const TOPIC_IMAGES = {
+  'Frontier Models': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+  'AI Research': 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80',
+  'AI Agents': 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80',
+  'Open Source AI': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
+  'AI Infrastructure': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
+  'AI Business': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
+  'AI Safety': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+  'AI Policy': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
+  'Developer Tools': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+  'Consumer AI': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+  // Legacy taxonomy mappings
   'AI Policy & Regulation': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
   'AI Security & Safety': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
-  'AI Infrastructure': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
   'AI Business & Funding': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
   'AI Models & Research': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
   'AI Products & Tools': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
   'AI Applications': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
   'AI News': 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
-  'AI Agents': 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80',
   'default': 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80'
 };
 
@@ -856,18 +865,30 @@ export function renderCuratedCard(item, idx, sectionType) {
 
 export function renderCuratedSections(data) {
   const toolsEl = document.getElementById('ai-tools-container');
-  if (toolsEl && data.ai_tools) {
-    toolsEl.innerHTML = data.ai_tools.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'ai_tools')).join('');
+  if (toolsEl) {
+    if (data && data.ai_tools && data.ai_tools.length > 0) {
+      toolsEl.innerHTML = data.ai_tools.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'ai_tools')).join('');
+    } else {
+      toolsEl.innerHTML = '<div class="curated-empty-card"><p>Curated AI tools update continuously with each publishing cycle.</p></div>';
+    }
   }
 
   const radarEl = document.getElementById('dev-radar-container');
-  if (radarEl && data.dev_radar) {
-    radarEl.innerHTML = data.dev_radar.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'dev_radar')).join('');
+  if (radarEl) {
+    if (data && data.dev_radar && data.dev_radar.length > 0) {
+      radarEl.innerHTML = data.dev_radar.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'dev_radar')).join('');
+    } else {
+      radarEl.innerHTML = '<div class="curated-empty-card"><p>Developer radar updates continuously with each publishing cycle.</p></div>';
+    }
   }
 
   const safetyEl = document.getElementById('research-safety-container');
-  if (safetyEl && data.research_safety) {
-    safetyEl.innerHTML = data.research_safety.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'research_safety')).join('');
+  if (safetyEl) {
+    if (data && data.research_safety && data.research_safety.length > 0) {
+      safetyEl.innerHTML = data.research_safety.slice(0, 4).map((it, idx) => renderCuratedCard(it, idx, 'research_safety')).join('');
+    } else {
+      safetyEl.innerHTML = '<div class="curated-empty-card"><p>Research, safety and policy developments update continuously with each publishing cycle.</p></div>';
+    }
   }
 }
 
@@ -887,8 +908,9 @@ export function renderDeveloperTrends(data) {
 
   const rawTrends = data?.developer_trends || [];
   const repoBadge = document.getElementById('dev-trends-repo-count');
-  if (repoBadge && rawTrends.length > 0) {
-    repoBadge.textContent = `${rawTrends.length} Repos Tracked`;
+  const count = Math.min(rawTrends.length, 8);
+  if (repoBadge) {
+    repoBadge.textContent = `${count} Repos Tracked`;
   }
 
   if (rawTrends.length === 0) {

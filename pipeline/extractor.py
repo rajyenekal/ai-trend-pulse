@@ -1,5 +1,6 @@
 """
-pipeline.extractor - Clean Article Extraction with Trafilatura, Local Caching, and Fault-Tolerant Fallbacks.
+pipeline.extractor - Complete Article Extraction with Trafilatura, Structured Metadata, Content Hashing, and Resilient Caching.
+Supports full-content evidence extraction while respecting publisher terms, rate limits, and copyright.
 """
 
 from __future__ import annotations
@@ -7,6 +8,8 @@ from __future__ import annotations
 from datetime import datetime, timezone
 import glob
 import gzip
+import hashlib
+import html
 import io
 import json
 import logging
@@ -15,6 +18,7 @@ import re
 import socket
 import ssl
 import sys
+import threading
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -36,10 +40,12 @@ except ImportError:
 logger = logging.getLogger("pipeline.extractor")
 
 ARTICLE_CACHE_FILE = ".article_cache.json"
-DEFAULT_EXTRACTION_TIMEOUT = 6.0
+DEFAULT_EXTRACTION_TIMEOUT = 8.0
 DEFAULT_MAX_WORKERS = 5
-MAX_CACHE_ENTRIES = 1200
-USER_AGENT = "Mozilla/5.0 (compatible; AITrendPulse/2.1; +https://github.com/rajyenekal/ai-trend-pulse)"
+MAX_CACHE_ENTRIES = 1500
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 (compatible; AITrendPulse/2.2; +https://github.com/rajyenekal/ai-trend-pulse)"
+
+_cache_lock = threading.Lock()
 
 
 def load_article_cache(cache_file=ARTICLE_CACHE_FILE):
@@ -63,7 +69,6 @@ def save_article_cache(cache_data, cache_file=ARTICLE_CACHE_FILE):
 
   # Prune cache if it exceeds MAX_CACHE_ENTRIES
   if len(cache_data) > MAX_CACHE_ENTRIES:
-    # Retain the most recent entries
     sorted_items = sorted(
         cache_data.items(),
         key=lambda item: item[1].get("extracted_at", ""),
@@ -85,6 +90,14 @@ def save_article_cache(cache_data, cache_file=ARTICLE_CACHE_FILE):
         pass
 
 
+def compute_content_hash(text):
+  """Generates a stable 16-character SHA-256 content hash."""
+  if not text:
+    return ""
+  norm_text = re.sub(r"\s+", " ", text.strip().lower())
+  return hashlib.sha256(norm_text.encode("utf-8")).hexdigest()[:16]
+
+
 def fetch_raw_html(url, timeout=DEFAULT_EXTRACTION_TIMEOUT):
   """Fetches raw HTML for a webpage with strict timeouts, standard headers, and gzip decompression.
   Returns: (html_str: str | None, status_code: int | None, error_message: str | None)
@@ -99,7 +112,6 @@ def fetch_raw_html(url, timeout=DEFAULT_EXTRACTION_TIMEOUT):
       },
   )
 
-  # Standard SSL context with certificate and hostname verification
   ctx = ssl.create_default_context()
   try:
     import certifi
@@ -143,9 +155,146 @@ def fetch_raw_html(url, timeout=DEFAULT_EXTRACTION_TIMEOUT):
     return None, None, f"{type(e).__name__}: {str(e)}"
 
 
-import threading
+def extract_metadata_from_html(html_str, url=""):
+  """Extracts structured metadata (JSON-LD, OpenGraph, Twitter Cards, Meta tags) from HTML."""
+  meta = {
+      "headline": None,
+      "subtitle": None,
+      "author": None,
+      "published_date": None,
+      "featured_image": None,
+      "canonical_url": None,
+      "site_name": None,
+  }
+  if not html_str or not isinstance(html_str, str):
+    return meta
 
-_cache_lock = threading.Lock()
+  # 1. JSON-LD Metadata Parsing
+  json_ld_matches = re.findall(r'<script[^>]*type=[\'"]application/ld\+json[\'"][^>]*>([\s\S]*?)</script>', html_str, re.IGNORECASE)
+  for raw_json in json_ld_matches:
+    try:
+      parsed = json.loads(raw_json.strip())
+      candidates = parsed if isinstance(parsed, list) else [parsed]
+      for c in candidates:
+        if not isinstance(c, dict):
+          continue
+        t = c.get("@type", "")
+        if t in ("NewsArticle", "Article", "BlogPosting", "TechArticle", "Report"):
+          if not meta["headline"] and c.get("headline"):
+            meta["headline"] = html.unescape(str(c["headline"]).strip())
+          if not meta["subtitle"] and c.get("description"):
+            meta["subtitle"] = html.unescape(str(c["description"]).strip())
+          if not meta["author"]:
+            auth = c.get("author")
+            if isinstance(auth, dict) and auth.get("name"):
+              meta["author"] = html.unescape(str(auth["name"]).strip())
+            elif isinstance(auth, list) and auth and isinstance(auth[0], dict) and auth[0].get("name"):
+              meta["author"] = html.unescape(str(auth[0]["name"]).strip())
+            elif isinstance(auth, str):
+              meta["author"] = html.unescape(auth.strip())
+          if not meta["published_date"] and c.get("datePublished"):
+            meta["published_date"] = str(c["datePublished"]).strip()
+          if not meta["featured_image"]:
+            img = c.get("image")
+            if isinstance(img, dict) and img.get("url"):
+              meta["featured_image"] = img["url"]
+            elif isinstance(img, list) and img and isinstance(img[0], str):
+              meta["featured_image"] = img[0]
+            elif isinstance(img, str):
+              meta["featured_image"] = img
+    except Exception:
+      pass
+
+  # 2. Open Graph & Twitter Meta Tags
+  og_tags = {
+      "og:title": "headline",
+      "twitter:title": "headline",
+      "og:description": "subtitle",
+      "description": "subtitle",
+      "twitter:description": "subtitle",
+      "og:image": "featured_image",
+      "twitter:image": "featured_image",
+      "og:site_name": "site_name",
+      "author": "author",
+      "article:author": "author",
+      "article:published_time": "published_date",
+  }
+
+  for tag, field in og_tags.items():
+    if meta.get(field):
+      continue
+    # Match both property="og:..." content="..." and name="og:..." content="..."
+    m = re.search(rf'<meta[^>]*(?:property|name)=[\'"]{re.escape(tag)}[\'"][^>]*content=[\'"]([^\'"]+)[\'"]', html_str, re.IGNORECASE)
+    if not m:
+      m = re.search(rf'<meta[^>]*content=[\'"]([^\'"]+)[\'"][^>]*(?:property|name)=[\'"]{re.escape(tag)}[\'"]', html_str, re.IGNORECASE)
+    if m:
+      val = html.unescape(m.group(1).strip())
+      if val:
+        meta[field] = val
+
+  # 3. Fallback <title>
+  if not meta["headline"]:
+    tm = re.search(r'<title[^>]*>([^<]+)</title>', html_str, re.IGNORECASE)
+    if tm:
+      raw_t = html.unescape(tm.group(1).strip())
+      # Strip common publisher suffixes like " | TechCrunch" or " - The Verge"
+      clean_t = re.split(r'\s+[|\-–—]\s+', raw_t)[0].strip()
+      meta["headline"] = clean_t
+
+  # 4. Canonical URL link tag
+  can_match = re.search(r'<link[^>]*rel=[\'"]canonical[\'"][^>]*href=[\'"]([^\'"]+)[\'"]', html_str, re.IGNORECASE)
+  if can_match:
+    meta["canonical_url"] = can_match.group(1).strip()
+
+  return meta
+
+
+def clean_article_sections(full_text):
+  """Breaks full extracted article text into clean paragraphs and section blocks, removing clutter."""
+  if not full_text:
+    return [], []
+
+  raw_paragraphs = [p.strip() for p in re.split(r'\n\n+', full_text) if p.strip()]
+  clean_paragraphs = []
+  sections = []
+  current_heading = "Main Context"
+  current_body = []
+
+  # Clutter and boilerplate patterns
+  clutter_patterns = [
+      r'^(?:advertisement|sponsored|cookie preferences|terms of use|privacy policy|subscribe|sign up for|all rights reserved|copyright|share this story|follow us on)\b',
+      r'^(?:view full article|click here to|listen to this article|share on x|share on linkedin)\b',
+      r'^(?:read more:|related:|also read:)\b',
+  ]
+
+  for p in raw_paragraphs:
+    p_clean = re.sub(r'\s+', ' ', p).strip()
+    if len(p_clean) < 15:
+      continue
+    if any(re.search(pat, p_clean, re.IGNORECASE) for pat in clutter_patterns):
+      continue
+
+    # Detect if paragraph is a section heading (short, title-case, no period at end)
+    if len(p_clean) < 80 and not p_clean.endswith(('.', '?', '!')) and ('\n' not in p_clean):
+      if current_body:
+        sections.append({
+            "heading": current_heading,
+            "content": "\n\n".join(current_body)
+        })
+        current_body = []
+      current_heading = p_clean
+    else:
+      clean_paragraphs.append(p_clean)
+      current_body.append(p_clean)
+
+  if current_body:
+    sections.append({
+        "heading": current_heading,
+        "content": "\n\n".join(current_body)
+    })
+
+  return clean_paragraphs, sections
+
 
 def extract_article_content(
     url,
@@ -154,22 +303,34 @@ def extract_article_content(
     cache=None,
     force_refresh=False,
 ):
-  """Extracts clean article text and metadata using Trafilatura with cache lookup and safe fallback.
+  """Extracts complete publicly accessible article text and structured metadata using Trafilatura,
+  with JSON-LD / OpenGraph enrichment, local caching, content hashing, and safe fallback.
+
   Guarantees:
-  - If URL is invalid, empty, or extraction fails, returns fallback_summary.
-  - If Trafilatura is not installed, returns fallback_summary with 'library_unavailable'.
-  - Never raises an unhandled exception or interrupts the caller.
+  - If URL is invalid, empty, or extraction fails, returns fallback_summary gracefully.
+  - Generates stable content_hash for change tracking.
+  - Never raises an unhandled exception or crashes the calling process.
   """
   now_iso = datetime.now(timezone.utc).isoformat()
   fallback_text = (fallback_summary or "").strip()
 
   if not url or not isinstance(url, str) or not (url.startswith("http://") or url.startswith("https://")):
+    c_hash = compute_content_hash(fallback_text)
     return {
         "url": url or "",
-        "text": fallback_text,
+        "headline": None,
         "title": None,
+        "subtitle": None,
         "author": None,
         "published_date": None,
+        "featured_image": None,
+        "text": fallback_text,
+        "full_text": fallback_text,
+        "paragraphs": [fallback_text] if fallback_text else [],
+        "sections": [{"heading": "Summary", "content": fallback_text}] if fallback_text else [],
+        "word_count": len(fallback_text.split()),
+        "reading_time": f"{max(1, len(fallback_text.split()) // 200)} min read",
+        "content_hash": c_hash,
         "extraction_status": "invalid_url",
         "extracted_at": now_iso,
         "content_length": len(fallback_text),
@@ -184,14 +345,24 @@ def extract_article_content(
       cached_copy["extraction_status"] = "cached"
       return cached_copy
 
-  # 2. Check if trafilatura is available
+  # 2. Check if Trafilatura is available
   if trafilatura is None:
+    c_hash = compute_content_hash(fallback_text)
     record = {
         "url": url,
-        "text": fallback_text,
+        "headline": None,
         "title": None,
+        "subtitle": None,
         "author": None,
         "published_date": None,
+        "featured_image": None,
+        "text": fallback_text,
+        "full_text": fallback_text,
+        "paragraphs": [fallback_text] if fallback_text else [],
+        "sections": [{"heading": "Summary", "content": fallback_text}] if fallback_text else [],
+        "word_count": len(fallback_text.split()),
+        "reading_time": f"{max(1, len(fallback_text.split()) // 200)} min read",
+        "content_hash": c_hash,
         "extraction_status": "library_unavailable",
         "extracted_at": now_iso,
         "content_length": len(fallback_text),
@@ -204,12 +375,22 @@ def extract_article_content(
   # 3. Fetch raw HTML with strict timeout
   html_str, http_status, err_msg = fetch_raw_html(url, timeout=timeout)
   if not html_str:
+    c_hash = compute_content_hash(fallback_text)
     record = {
         "url": url,
-        "text": fallback_text,
+        "headline": None,
         "title": None,
+        "subtitle": None,
         "author": None,
         "published_date": None,
+        "featured_image": None,
+        "text": fallback_text,
+        "full_text": fallback_text,
+        "paragraphs": [fallback_text] if fallback_text else [],
+        "sections": [{"heading": "Summary", "content": fallback_text}] if fallback_text else [],
+        "word_count": len(fallback_text.split()),
+        "reading_time": f"{max(1, len(fallback_text.split()) // 200)} min read",
+        "content_hash": c_hash,
         "extraction_status": "fetch_failed" if not fallback_text else "fallback_summary",
         "extracted_at": now_iso,
         "content_length": len(fallback_text),
@@ -220,74 +401,64 @@ def extract_article_content(
         cache[url] = record
     return record
 
-  # 4. Extract clean article text with Trafilatura
+  # 4. Extract structured metadata from HTML
+  meta = extract_metadata_from_html(html_str, url=url)
+
+  # 5. Extract clean article body using Trafilatura
   try:
     extracted_text = trafilatura.extract(
         html_str,
         include_comments=False,
-        include_tables=False,
+        include_tables=True,
         no_fallback=False,
+        favor_recall=True,
     )
 
-    extracted_title = None
-    extracted_author = None
-    extracted_date = None
-
-    try:
-      metadata = trafilatura.extract_metadata(html_str)
-      if metadata:
-        extracted_title = getattr(metadata, "title", None)
-        extracted_author = getattr(metadata, "author", None)
-        extracted_date = getattr(metadata, "date", None)
-    except Exception:
-      pass
-
-    # Validate extracted text quality
+    clean_text = ""
     if extracted_text and len(extracted_text.strip()) >= 50:
-      clean_extracted = re.sub(r"\n{3,}", "\n\n", extracted_text.strip())
-      record = {
-          "url": url,
-          "text": clean_extracted,
-          "title": extracted_title,
-          "author": extracted_author,
-          "published_date": str(extracted_date) if extracted_date else None,
-          "extraction_status": "extracted",
-          "extracted_at": now_iso,
-          "content_length": len(clean_extracted),
-      }
-    else:
-      # Attempt selective Crawl4AI browser fallback if enabled
-      crawl_text, crawl_status = None, "disabled"
+      clean_text = re.sub(r"\n{3,}", "\n\n", extracted_text.strip())
+
+    crawl_status = None
+    # Fallback to Crawl4AI browser if local extraction too brief
+    if not clean_text or len(clean_text) < 50:
       try:
         from .browser_fallback import is_crawl4ai_available, extract_with_crawl4ai
         if is_crawl4ai_available():
-          crawl_text, crawl_status = extract_with_crawl4ai(url, timeout=timeout)
+          crawl_text, c_stat = extract_with_crawl4ai(url, timeout=timeout)
+          if crawl_text and len(crawl_text) >= 50:
+            clean_text = crawl_text.strip()
+            crawl_status = c_stat or "crawl4ai_extracted"
       except Exception:
         pass
 
-      if crawl_text and len(crawl_text) >= 50:
-        record = {
-            "url": url,
-            "text": crawl_text,
-            "title": extracted_title,
-            "author": extracted_author,
-            "published_date": str(extracted_date) if extracted_date else None,
-            "extraction_status": "crawl4ai_extracted",
-            "extracted_at": now_iso,
-            "content_length": len(crawl_text),
-        }
-      else:
-        # Extracted text too short or empty -> fallback to summary
-        record = {
-            "url": url,
-            "text": fallback_text,
-            "title": extracted_title,
-            "author": extracted_author,
-            "published_date": str(extracted_date) if extracted_date else None,
-            "extraction_status": "fallback_summary",
-            "extracted_at": now_iso,
-            "content_length": len(fallback_text),
-        }
+    # If still empty, use fallback summary
+    final_text = clean_text if clean_text else fallback_text
+    status = crawl_status if crawl_status else ("extracted" if clean_text else "fallback_summary")
+
+    paragraphs, sections = clean_article_sections(final_text)
+    word_count = len(final_text.split())
+    reading_time = f"{max(1, word_count // 200)} min read"
+    c_hash = compute_content_hash(final_text)
+
+    record = {
+        "url": url,
+        "headline": meta.get("headline"),
+        "title": meta.get("headline"),
+        "subtitle": meta.get("subtitle"),
+        "author": meta.get("author"),
+        "published_date": meta.get("published_date"),
+        "featured_image": meta.get("featured_image"),
+        "text": final_text,
+        "full_text": final_text,
+        "paragraphs": paragraphs,
+        "sections": sections,
+        "word_count": word_count,
+        "reading_time": reading_time,
+        "content_hash": c_hash,
+        "extraction_status": status,
+        "extracted_at": now_iso,
+        "content_length": len(final_text),
+    }
 
     if cache is not None:
       with _cache_lock:
@@ -296,12 +467,22 @@ def extract_article_content(
 
   except Exception as e:
     logger.warning("Trafilatura extraction error on %s: %s", url, e)
+    c_hash = compute_content_hash(fallback_text)
     record = {
         "url": url,
+        "headline": meta.get("headline"),
+        "title": meta.get("headline"),
+        "subtitle": meta.get("subtitle"),
+        "author": meta.get("author"),
+        "published_date": meta.get("published_date"),
+        "featured_image": meta.get("featured_image"),
         "text": fallback_text,
-        "title": None,
-        "author": None,
-        "published_date": None,
+        "full_text": fallback_text,
+        "paragraphs": [fallback_text] if fallback_text else [],
+        "sections": [{"heading": "Summary", "content": fallback_text}] if fallback_text else [],
+        "word_count": len(fallback_text.split()),
+        "reading_time": f"{max(1, len(fallback_text.split()) // 200)} min read",
+        "content_hash": c_hash,
         "extraction_status": "fallback_summary",
         "extracted_at": now_iso,
         "content_length": len(fallback_text),
@@ -315,41 +496,53 @@ def extract_article_content(
 
 def extract_articles_batch(
     articles,
+    cache=None,
     max_workers=DEFAULT_MAX_WORKERS,
     timeout=DEFAULT_EXTRACTION_TIMEOUT,
-    cache_file=ARTICLE_CACHE_FILE,
 ):
-  """Concurrently extracts full article text for a list of article dicts using ThreadPoolExecutor.
-  Updates each article dict in place with 'full_text' and 'extraction_status'.
-  Preserves existing 'summary' without disruption.
-  Atomically updates and saves the article cache upon completion.
+  """Concurrently extracts full article content for a list of article dicts using ThreadPoolExecutor.
+  Injects 'extracted_content' and updates 'reading_time' and 'content_hash' on each article dict.
   """
   if not articles:
     return articles
 
-  cache = load_article_cache(cache_file)
-  new_cache_entries = 0
+  if cache is None:
+    cache = load_article_cache()
 
-  def _process_single(article):
-    url = article.get("link") or article.get("url") or ""
-    summary = article.get("summary") or ""
-    result = extract_article_content(url, fallback_summary=summary, timeout=timeout, cache=cache)
-    return article, result
+  def _extract_single(art):
+    url = art.get("link") or art.get("canonical_url", "")
+    summary = art.get("summary") or art.get("what_changed") or art.get("title", "")
+    rec = extract_article_content(url, fallback_summary=summary, timeout=timeout, cache=cache)
+    return art, rec
 
+  results = []
   with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-    futures = [executor.submit(_process_single, a) for a in articles]
-    for future in concurrent.futures.as_completed(futures):
+    future_to_art = {executor.submit(_extract_single, a): a for a in articles}
+    for future in concurrent.futures.as_completed(future_to_art):
       try:
-        art, res = future.result()
-        art["full_text"] = res.get("text", art.get("summary", ""))
-        art["extraction_status"] = res.get("extraction_status", "unknown")
-        if res.get("author"):
-          art["author"] = res.get("author")
-        if res.get("extraction_status") == "extracted":
-          new_cache_entries += 1
+        art, rec = future.result()
+        art["full_text"] = rec.get("text") or rec.get("full_text") or ""
+        art["extraction_status"] = rec.get("extraction_status", "unknown")
+        art["extracted_content"] = {
+            "headline": rec.get("headline") or art.get("title"),
+            "subtitle": rec.get("subtitle"),
+            "author": rec.get("author"),
+            "published_date": rec.get("published_date") or art.get("published_at"),
+            "featured_image": rec.get("featured_image") or art.get("image"),
+            "word_count": rec.get("word_count", 0),
+            "reading_time": rec.get("reading_time", "2 min read"),
+            "content_hash": rec.get("content_hash", ""),
+            "extraction_status": rec.get("extraction_status", "unknown"),
+            "sections_count": len(rec.get("sections", [])),
+        }
+        # Retain top-level image if extractor found high-quality og:image
+        if rec.get("featured_image") and not art.get("image"):
+          art["image"] = rec["featured_image"]
+        if rec.get("reading_time"):
+          art["reading_time"] = rec["reading_time"]
+        results.append((art, rec))
       except Exception as e:
-        logger.warning("Error in batch article extraction: %s", e)
+        logger.warning("Batch extraction task error: %s", e)
 
-  # Atomically save updated cache
-  save_article_cache(cache, cache_file)
+  save_article_cache(cache)
   return articles

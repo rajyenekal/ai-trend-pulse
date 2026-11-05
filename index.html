@@ -119,7 +119,7 @@
           <span id="status-text">● Live Pipeline Active • Hourly updates</span>
         </div>
         <div class="status-right" id="status-source-telemetry">
-          <span>25 monitored research sources</span>
+          <span>10 active frontier research sources</span>
           <span>•</span>
           <span>Strict provenance tracking</span>
         </div>
@@ -414,6 +414,7 @@
       <div class="reader-header">
         <div class="reader-header-meta">
           <span id="reader-topic-badge" class="badge-card-topic">AI Agents</span>
+          <span id="reader-impact-badge" class="badge-impact-level" style="display:none;">Breakthrough</span>
           <span id="reader-status-badge" class="badge-tier tier-2"><span class="badge-tier-dot"></span><span class="badge-tier-label">Tier 2: Independent Press</span></span>
           <span id="reader-readtime" class="reader-readtime">2 min read</span>
         </div>
@@ -429,7 +430,10 @@
           <div class="reader-publisher-info">
             <span class="reader-source-icon" id="reader-source-logo"></span>
             <div>
-              <div id="reader-source-name" class="reader-source-name">The Verge AI</div>
+              <div class="reader-publisher-author-line">
+                <span id="reader-source-name" class="reader-source-name">The Verge AI</span>
+                <span id="reader-author" class="reader-author-name" style="display:none;"></span>
+              </div>
               <div id="reader-pub-time" class="reader-pub-time">Published Oct 31, 2026</div>
             </div>
           </div>
@@ -453,8 +457,17 @@
           <img id="reader-image" alt="" loading="lazy" />
         </div>
 
-        <!-- KEY TAKEAWAYS BULLET POINTS -->
-        <div class="reader-takeaways-card">
+        <!-- 1. AI OVERVIEW CARD -->
+        <div id="reader-ai-overview-card" class="reader-ai-overview-card" style="display:none;">
+          <div class="reader-card-label font-mono">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>AI Overview</span>
+          </div>
+          <p id="reader-ai-overview-text" class="reader-ai-overview-text"></p>
+        </div>
+
+        <!-- 2. KEY TAKEAWAYS BULLET POINTS -->
+        <div id="reader-takeaways-card" class="reader-takeaways-card">
           <div class="reader-takeaways-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
             <span>Executive Takeaways</span>
@@ -464,16 +477,28 @@
           </ul>
         </div>
 
-        <!-- VERIFIED REPORTED FACTS (SOURCE-GROUNDED) -->
+        <!-- 3. WHAT HAPPENED NARRATIVE -->
+        <div id="reader-what-happened-card" class="reader-section-card" style="display:none;">
+          <h3 class="reader-section-title">What Happened</h3>
+          <p id="reader-what-happened-text" class="reader-prose"></p>
+        </div>
+
+        <!-- 4. KEY DETAILS (NUMBERS, SPECIFICS) / VERIFIED FACTS -->
         <div id="reader-facts-box" class="reader-facts-card" style="display:none;">
           <div class="reader-facts-header">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>Verified Reported Facts</span>
+            <span>Key Details &amp; Verified Facts</span>
           </div>
           <ul id="reader-facts-list" class="reader-facts-list"></ul>
         </div>
 
-        <!-- IN-DEPTH STORY BREAKDOWN -->
+        <!-- 5. TECHNICAL BREAKDOWN -->
+        <div id="reader-technical-card" class="reader-section-card reader-tech-card" style="display:none;">
+          <h3 class="reader-section-title">Technical Breakdown</h3>
+          <p id="reader-technical-text" class="reader-prose"></p>
+        </div>
+
+        <!-- 6. IN-DEPTH STORY BREAKDOWN -->
         <div id="reader-content-section" class="reader-content-section">
           <h3 class="reader-section-title">In-Depth Story &amp; Context</h3>
           <div id="reader-detailed-analysis" class="reader-prose">
@@ -481,25 +506,34 @@
           </div>
         </div>
 
-        <!-- ANALYTICAL PROJECTION & POTENTIAL IMPACT -->
-        <div id="reader-impact-box" class="reader-impact-card" style="display:none;">
-          <div class="reader-impact-header">
-            <div style="display:flex; align-items:center; gap:6px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              <span>Potential Impact</span>
-            </div>
-            <span class="projection-disclaimer">Analytical Projection</span>
-          </div>
-          <div id="reader-potential-impact" class="reader-impact-body"></div>
-        </div>
-
-        <!-- WHY IT MATTERS CALLOUT -->
+        <!-- 7. WHY IT MATTERS -->
         <div id="reader-why-box" class="card-why-callout reader-why-callout">
           <div class="card-why-callout-title">Why It Matters</div>
           <div id="reader-why-text" class="card-why-callout-body">Practical impact explanation...</div>
         </div>
 
-        <!-- EPISTEMIC BOUNDS & LIMITATIONS -->
+        <!-- 8. INDUSTRY IMPACT -->
+        <div id="reader-impact-box" class="reader-impact-card" style="display:none;">
+          <div class="reader-impact-header">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              <span>Industry Impact</span>
+            </div>
+            <span class="projection-disclaimer">Strategic Outlook</span>
+          </div>
+          <div id="reader-potential-impact" class="reader-impact-body"></div>
+        </div>
+
+        <!-- 9. WHAT'S NEW -->
+        <div id="reader-whats-new-box" class="reader-whats-new-card" style="display:none;">
+          <div class="reader-whats-new-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>What's New</span>
+          </div>
+          <div id="reader-whats-new-text" class="reader-whats-new-body"></div>
+        </div>
+
+        <!-- 10. LIMITATIONS / EPISTEMIC BOUNDS -->
         <div id="reader-limitations-box" class="reader-limitations-callout" style="display:none;">
           <div class="reader-limitations-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
@@ -529,8 +563,7 @@
             <p class="reference-banner-sub">AI Trend Pulse synthesizes verified reports with direct source attribution.</p>
           </div>
           <a id="reader-external-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-reference-external">
-            <span>Read on <span id="reader-source-btn-name">Source</span></span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            <span>Read on <span id="reader-source-btn-name">Source</span> ↗</span>
           </a>
         </div>
       </div>
@@ -684,52 +717,38 @@
         </div>
 
         <div class="footer-col-feeds">
-          <h3 class="footer-heading">Monitored Feeds (25 Verified Sources)</h3>
+          <h3 class="footer-heading">Monitored Feeds (10 Active Frontier Sources)</h3>
           <div class="footer-feeds-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
             <div>
-              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 1: Primary Labs</h4>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 1: Primary Labs (5)</h4>
               <ul class="footer-feeds-list">
                 <li><a href="https://openai.com/news" target="_blank" rel="noopener noreferrer">OpenAI News ↗</a></li>
                 <li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News ↗</a></li>
                 <li><a href="https://deepmind.google/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind ↗</a></li>
-                <li><a href="https://blog.google/technology/ai/" target="_blank" rel="noopener noreferrer">Google AI Blog ↗</a></li>
-                <li><a href="https://blogs.microsoft.com/ai/" target="_blank" rel="noopener noreferrer">Microsoft AI ↗</a></li>
-                <li><a href="https://blogs.nvidia.com" target="_blank" rel="noopener noreferrer">NVIDIA Blog ↗</a></li>
-                <li><a href="https://aws.amazon.com/blogs/machine-learning/" target="_blank" rel="noopener noreferrer">AWS ML ↗</a></li>
-                <li><a href="https://www.amazon.science" target="_blank" rel="noopener noreferrer">Amazon Science ↗</a></li>
-                <li><a href="https://github.blog/category/ai-ml/" target="_blank" rel="noopener noreferrer">GitHub Blog AI ↗</a></li>
-                <li><a href="https://mistral.ai/news/" target="_blank" rel="noopener noreferrer">Mistral AI ↗</a></li>
+                <li><a href="https://nvidianews.nvidia.com/cats/generative_al" target="_blank" rel="noopener noreferrer">NVIDIA Newsroom ↗</a></li>
+                <li><a href="https://aws.amazon.com/blogs/machine-learning/" target="_blank" rel="noopener noreferrer">AWS Machine Learning ↗</a></li>
               </ul>
             </div>
             <div>
-              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 2: Tech Press</h4>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 2: Tech Press (4)</h4>
               <ul class="footer-feeds-list">
                 <li><a href="https://www.technologyreview.com/topic/artificial-intelligence/" target="_blank" rel="noopener noreferrer">MIT Tech Review ↗</a></li>
-                <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
                 <li><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener noreferrer">TechCrunch AI ↗</a></li>
-                <li><a href="https://arstechnica.com" target="_blank" rel="noopener noreferrer">Ars Technica ↗</a></li>
+                <li><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">The Verge AI ↗</a></li>
                 <li><a href="https://the-decoder.com" target="_blank" rel="noopener noreferrer">The Decoder ↗</a></li>
               </ul>
             </div>
             <div>
-              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 3: Open Research</h4>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 3: Open Ecosystem (1)</h4>
               <ul class="footer-feeds-list">
                 <li><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a></li>
-                <li><a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer">arXiv cs.AI ↗</a></li>
-                <li><a href="https://arxiv.org/list/cs.LG/recent" target="_blank" rel="noopener noreferrer">arXiv cs.LG ↗</a></li>
-                <li><a href="https://bair.berkeley.edu/blog/" target="_blank" rel="noopener noreferrer">BAIR Blog ↗</a></li>
-                <li><a href="https://lmsys.org/blog/" target="_blank" rel="noopener noreferrer">LMSYS Org ↗</a></li>
-                <li><a href="https://huggingface.co/papers" target="_blank" rel="noopener noreferrer">HF Papers ↗</a></li>
               </ul>
             </div>
             <div>
-              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent); margin-bottom:6px;">Tier 4: Community</h4>
-              <ul class="footer-feeds-list">
-                <li><a href="https://news.ycombinator.com" target="_blank" rel="noopener noreferrer">HN Discovery ↗</a></li>
-                <li><a href="https://simonwillison.net" target="_blank" rel="noopener noreferrer">Simon Willison ↗</a></li>
-                <li><a href="https://importai.substack.com" target="_blank" rel="noopener noreferrer">Import AI ↗</a></li>
-                <li><a href="https://www.latent.space" target="_blank" rel="noopener noreferrer">Latent Space ↗</a></li>
-              </ul>
+              <h4 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted); margin-bottom:6px;">Archived In Reserve (15)</h4>
+              <p style="font-size:0.72rem; color:var(--text-muted); line-height:1.45; margin:0;">
+                15 high-volume or noisy feeds (arXiv cs.AI/LG, Google AI, Microsoft AI, Amazon Science, GitHub Blog, Mistral, Ars Technica, BAIR, Simon Willison, Import AI, LMSYS, Latent Space, HF Papers) preserved in configuration and disabled to maintain maximum signal-to-noise ratio.
+              </p>
             </div>
           </div>
         </div>

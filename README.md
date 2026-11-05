@@ -1,41 +1,90 @@
-# ⚡ AI Trend Pulse (v2.1 High-Signal Modular Architecture)
+# ⚡ AI Trend Pulse (v2.2 High-Signal Editorial & AI Reader Architecture)
 
-> **Autonomous, hourly AI market intelligence with traceable evidence provenance, 4-tier source verification, intent-calibrated pulse scoring, hybrid semantic clustering, and a modular zero-dependency architecture.**
+> **Autonomous AI market intelligence with traceable evidence provenance, 10 active frontier sources, full structured article extraction, 10-section AI article enhancement, strict cross-section non-duplication, and an in-app reading experience.**
 
 - **Live Deployment**: [https://rajyenekal.github.io/ai-trend-pulse/](https://rajyenekal.github.io/ai-trend-pulse/)
-- **Mirror Deployment**: [https://aitrend-pulse.netlify.app](https://aitrend-pulse.netlify.app)
 - **Repository**: [https://github.com/rajyenekal/ai-trend-pulse](https://github.com/rajyenekal/ai-trend-pulse)
 
 ---
 
-## 🏛️ Editorial Architecture & 4-Tier Source Registry
+## 🏛️ Source Strategy & Verification Hierarchy
 
-AI Trend Pulse organizes 25 monitored feeds into four transparent verification tiers codified in [`sources.json`](sources.json), distinguishing primary research releases from independent journalism, builder communities, and preprint analysis:
+AI Trend Pulse organizes 25 configured sources in [`sources.json`](sources.json) with exactly **10 active frontier sources** enabled and **15 noisy/routine feeds archived in reserve** to maximize the signal-to-noise ratio:
 
-| Tier | Tier Name | Monitored Sources & Research Desks | Primary Role | Weight |
+### Active Monitored Sources (10 Enabled)
+
+| Source ID | Publisher Name | Classification | Primary Editorial Role | Trust Tier |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tier 1** | **Primary AI Labs & Frontier Developers** | OpenAI Research & News, Anthropic Official News, Google DeepMind Blog, Google AI Blog, Microsoft AI Blog, Meta AI Research, xAI, Mistral AI | Primary model weights, architecture specs, safety evaluations, and official API releases | `1.00` |
-| **Tier 2** | **Independent Technology Journalism** | MIT Technology Review, The Verge AI, TechCrunch AI, Ars Technica, The Decoder | Independent evaluation, investigative reporting, antitrust scrutiny, and societal impact | `0.95` |
-| **Tier 3** | **Open Research & Cloud Infrastructure** | Hugging Face Blog, NVIDIA Developer Blog, AWS Machine Learning Blog, Amazon Science, LMSYS Org, Hugging Face Daily Papers | Open weights, inference optimization, enterprise clusters, and hardware benchmarks | `0.90` |
-| **Tier 4** | **Community, Academic & Practitioner Analysis** | arXiv (cs.AI, cs.LG, cs.CL), Simon Willison Weblog, Berkeley AI Research (BAIR), Import AI (Jack Clark), Latent Space | Preprints, empirical engineering evaluations, MCP standards, and frontier capability tracking | `0.85` |
+| `openai_news` | OpenAI News | Tier 1: Primary Lab | Models, ChatGPT, APIs, reasoning research, safety | Tier 1 |
+| `anthropic_news` | Anthropic News | Tier 1: Primary Lab | Claude, agents, frontier research, constitutional safety | Tier 1 |
+| `deepmind_blog` | Google DeepMind | Tier 1: Primary Lab | Gemini, scientific AI, robotics, multimodal breakthroughs | Tier 1 |
+| `nvidia_blog` | NVIDIA Newsroom | Tier 1: Primary Lab | Accelerated silicon, Blackwell GPUs, generative AI infra | Tier 1 |
+| `aws_ml_blog` | AWS Machine Learning | Tier 1: Primary Lab | Bedrock, SageMaker, cloud AI, enterprise model hosting | Tier 1 |
+| `mit_tech_review` | MIT Technology Review | Tier 2: Tech Press | Independent research evaluation, policy, critical analysis | Tier 2 |
+| `techcrunch_ai` | TechCrunch AI | Tier 2: Tech Press | AI startup ecosystems, venture funding, acquisitions | Tier 2 |
+| `the_verge_ai` | The Verge AI | Tier 2: Tech Press | Consumer AI applications, product launches, antitrust | Tier 2 |
+| `the_decoder` | The Decoder | Tier 2: Tech Press | AI industry, foundation models, agents, technical audits | Tier 2 |
+| `huggingface_blog` | Hugging Face | Tier 3: Open Ecosystem | Open weights, developer tooling, community models | Tier 3 |
 
-### Verification Status Definitions
-- **`official_claim`**: Direct announcement from a primary research lab or frontier developer.
-- **`source_linked`**: Independently verified report grounded with direct URL provenance to a reputable journalism or engineering outlet.
-- **`independently_confirmed`**: Cross-corroborated development confirmed across two or more independent sources via Jaccard clustering.
-- **`cached_fallback`**: Live ingestion preserved healthy previous dataset when upstream networks fail, maintaining valid timestamps.
-- **`raw_headlines`**: Non-LLM deterministic fallback displaying verified headlines directly from source feeds with zero fabricated content.
+### Archived Feeds (15 Preserved in Reserve)
+`anthropic_hn_discovery`, `google_ai_blog`, `microsoft_ai_news`, `amazon_science`, `github_blog_ai`, `mistral_news`, `ars_technica`, `arxiv_cs_ai`, `arxiv_cs_lg`, `bair_blog`, `simon_willison`, `import_ai`, `lmsys_org`, `latent_space`, `hf_daily_papers`.
 
 ---
 
-## 🔬 Grounding in Industry Research
+## 🔍 NVIDIA Generative AI Newsroom Feed
 
-The product and curation mechanics of AI Trend Pulse are aligned with empirical research across AI engineering and information trust:
+The general NVIDIA blog feed has been replaced by the dedicated **Generative AI newsroom category feed**:
+- **Feed URL**: `https://nvidianews.nvidia.com/cats/generative_al.xml`
+- **Canonical Listing**: `https://nvidianews.nvidia.com/cats/generative_al`
+- **Noise Filtering**: Automatically rejects consumer PC gaming drivers, GeForce game updates, and non-AI graphics releases while prioritizing data center GPU architecture and foundation model partnerships.
 
-1. **Stack Overflow 2026 Developer Survey**: Highlights that over 75% of engineers integrate AI tooling into daily workflows, requiring dedicated signals for coding agents, SDK APIs, and open-weights models. AI Trend Pulse delivers this via the **Developer Radar** section.
-2. **Pew Research Center (2026 AI Public Awareness Study)**: Reveals growing public demand for transparent provenance and distinct separation between corporate PR and independent evaluation. Addressed via our **4-Tier verification badges** and clear source attribution.
-3. **Reuters Institute Digital News Report (2026)**: Notes a migration toward concise, evidence-grounded syntheses over unstructured headline feeds. Addressed via **"Why It Matters"** impact callouts, **Key Takeaways**, and canonical source links.
-4. **Epoch AI (Empirical Compute & Frontier Capability Studies)**: Demonstrates the velocity of benchmark and compute transitions. Addressed via our **Algorithmic Pulse Ranking Formula** and **Research, Safety & Policy** coverage.
+---
+
+## 🧠 Full Article Content Extraction & AI Enhancement Engine
+
+When an article is ingested:
+1. **Structured Content Extraction (`pipeline/extractor.py`)**:
+   - Parses the complete article body from original publisher pages using Trafilatura and JSON-LD / OpenGraph schema metadata.
+   - Extracts headline, subtitle, author, publication date, featured image, section hierarchy, clean paragraphs, word count, reading time, and a SHA-256 `content_hash`.
+   - Thread-safe caching in `.article_cache.json` eliminates repeated downloads.
+   - Respects publisher access restrictions, copyright, and rate limits. Paywalls and authentication gates are never bypassed.
+
+2. **10-Section AI Article Enhancement (`pipeline/enricher.py`)**:
+   - **`ai_overview`**: Concise 2-3 sentence overview of the development.
+   - **`ai_what_happened`**: Objective announcement breakdown.
+   - **`ai_key_details`**: Technical specifics, benchmark metrics, and data points.
+   - **`ai_why_it_matters`**: Real-world significance and architectural implications.
+   - **`ai_technical_breakdown`**: Underlying technology explained without corporate PR jargon.
+   - **`ai_industry_impact`**: Strategic implications for developers, businesses, and researchers.
+   - **`ai_whats_new`**: Specific novel contributions compared to prior art.
+   - **`ai_key_takeaways`**: Distinct bulleted takeaways.
+   - **`ai_limitations`**: Verification bounds, epistemic limitations, and caveats.
+   - **`original_source_url`**: Direct clean link to original reporting.
+
+3. **Strict Cross-Section Non-Duplication**:
+   - Both the backend enricher and the frontend reader drawer enforce sentence-level deduplication via normalized comparison.
+   - Sentences rendered in Overview or Takeaways are never repeated in What Happened, Facts, Technical Breakdown, or Why It Matters.
+
+---
+
+## 🏷️ Canonical Taxonomy (10 Categories) & 3 Impact Levels
+
+Every story is deterministically categorized into one of 10 canonical domains:
+1. **Frontier Models**
+2. **AI Research**
+3. **AI Agents**
+4. **Open Source AI**
+5. **AI Infrastructure**
+6. **AI Business**
+7. **AI Safety**
+8. **AI Policy**
+9. **Developer Tools**
+10. **Consumer AI**
+
+Each development is classified into one of 3 impact levels:
+- **`Breakthrough`** (Pulse Score $\ge 84$): Major paradigm shifts, landmark foundation models, or historic benchmark leaps.
+- **`Major`** (Pulse Score $\ge 74$): Significant product releases, official lab announcements, or major infrastructure updates.
+- **`Notable`** (Pulse Score $< 74$): Developer tooling updates, domain workflows, or ecosystem updates.
 
 ---
 
@@ -51,6 +100,14 @@ $$\text{Pulse Score} = 0.30 \times \text{Importance} + 0.20 \times \text{Audienc
 - **Freshness ($0.20$)**: Time-decay function anchored to verified publication timestamps; stories with missing dates receive a neutral baseline (50) without artificial freshness boosting.
 - **Coverage & Corroboration ($0.15$)**: Grounded strictly in distinct corporate publisher groups. Multiple stories or feeds from the same parent organization (e.g. Google DeepMind + Google AI) count as one publisher group; community discovery channels do not count as independent press.
 - **Source Quality & Authority ($0.15$)**: Verification weight determined by the tier classification of the primary publishing entity (Tier 1 = 100, Tier 2 = 85, Tier 3 = 80, Tier 4 = 65).
+
+---
+
+## 📱 In-App Reader View & Story Deep Dive
+
+- Sliding drawer on desktop (720px width), full-screen on mobile (`<= 640px`).
+- 12-item structured layout displaying topic badge, trust tier badge, impact level badge, reading time, headline, author, pub date, featured image, AI Overview card, Key Takeaways, What Happened, Key Details & Facts, Technical Breakdown, Why It Matters, Industry Impact, What's New, Epistemic Limitations, and prominent "Read on [Source] ↗" button.
+- Instantaneous 0ms initial state hydration from `data.js` ensures zero-skeleton initial paint.
 
 ---
 

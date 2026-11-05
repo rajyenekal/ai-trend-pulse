@@ -36,6 +36,7 @@ PUBLISHER_ORGANIZATION_MAP = {
     "Google AI Blog": "Google",
     "Microsoft AI News": "Microsoft",
     "NVIDIA Blog": "NVIDIA",
+    "NVIDIA Newsroom": "NVIDIA",
     "AWS Machine Learning": "Amazon",
     "Amazon Science": "Amazon",
     "Hugging Face Blog": "Hugging Face",
@@ -52,6 +53,7 @@ PUBLISHER_ORGANIZATION_MAP = {
     "Simon Willison Weblog": "Simon Willison",
     "Import AI": "Jack Clark",
     "LMSYS Org Blog": "LMSYS Org",
+    "LMSYS Org": "LMSYS Org",
     "Latent Space": "Latent Space",
     "Hugging Face Daily Papers": "Hugging Face",
 }
@@ -97,6 +99,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': True,
         'is_primary_source': True,
         'name': 'OpenAI News',
+        'notes': 'Primary official announcement feed for OpenAI model releases, safety updates, and platform features.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'openai',
         'publisher_id': 'openai',
@@ -104,7 +107,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'openai_news',
         'source_type': 'official',
         'topic_tags': ['models', 'apis', 'company'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://www.anthropic.com/news',
@@ -116,6 +119,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': True,
         'is_primary_source': True,
         'name': 'Anthropic Official News',
+        'notes': 'Official primary announcements extracted directly from https://www.anthropic.com/news via dedicated HTML page adapter.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'anthropic',
         'publisher_id': 'anthropic',
@@ -123,18 +127,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'anthropic_news',
         'source_type': 'official',
         'topic_tags': ['models', 'research', 'safety', 'agents'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://news.ycombinator.com',
         'confidence_score': 60,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': False,
         'feed_url': 'https://hnrss.org/newest?q=anthropic.com',
         'fetch_method': 'rss',
         'is_official': False,
         'is_primary_source': False,
         'name': 'Anthropic Community Discovery (HNRSS)',
+        'notes': 'Unofficial community discovery feed for Anthropic mentions on Hacker News. Filtered to only keep items with canonical URLs resolving to https://www.anthropic.com/news/.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'ycombinator',
         'publisher_id': 'hackernews',
@@ -142,7 +147,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'anthropic_hn_discovery',
         'source_type': 'unofficial_discovery',
         'topic_tags': ['community', 'discovery', 'mentions'],
-        'trust_tier': 4
+        'trust_tier': 4,
     },
     {
         'canonical_listing_url': 'https://deepmind.google/blog/',
@@ -154,6 +159,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': True,
         'is_primary_source': True,
         'name': 'Google DeepMind',
+        'notes': 'Primary official feed for Google DeepMind frontier research, Gemini releases, and scientific discoveries.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'google',
         'publisher_id': 'google_deepmind',
@@ -161,18 +167,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'deepmind_blog',
         'source_type': 'official',
         'topic_tags': ['research', 'models', 'science'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://blog.google/technology/ai/',
         'confidence_score': 95,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://blog.google/technology/ai/rss/',
         'fetch_method': 'rss',
         'is_official': True,
         'is_primary_source': True,
         'name': 'Google AI Blog',
+        'notes': 'Google product and platform AI announcements across Search, Workspace, and Android.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'google',
         'publisher_id': 'google_ai',
@@ -180,18 +187,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'google_ai_blog',
         'source_type': 'official',
         'topic_tags': ['tools', 'models', 'products'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://news.microsoft.com/source/topics/ai/',
         'confidence_score': 95,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://news.microsoft.com/source/topics/ai/feed/',
         'fetch_method': 'rss',
         'is_official': True,
         'is_primary_source': True,
         'name': 'Microsoft AI News',
+        'notes': 'Official Microsoft reporting on Copilot, Azure AI, and enterprise intelligence.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'microsoft',
         'publisher_id': 'microsoft',
@@ -199,18 +207,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'microsoft_ai_news',
         'source_type': 'official',
         'topic_tags': ['enterprise', 'copilot', 'infrastructure'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
-        'canonical_listing_url': 'https://blogs.nvidia.com/blog/category/ai/',
+        'canonical_listing_url': 'https://nvidianews.nvidia.com/cats/generative_al',
         'confidence_score': 95,
         'enabled': True,
         'feed_is_official': True,
-        'feed_url': 'https://blogs.nvidia.com/feed/',
+        'feed_url': 'https://nvidianews.nvidia.com/cats/generative_al.xml',
         'fetch_method': 'rss',
         'is_official': True,
         'is_primary_source': True,
-        'name': 'NVIDIA Blog',
+        'name': 'NVIDIA Newsroom',
+        'notes': 'Dedicated NVIDIA Generative AI newsroom category feed for AI infrastructure, GPU compute, and foundation model partnerships.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'nvidia',
         'publisher_id': 'nvidia',
@@ -218,7 +227,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'nvidia_blog',
         'source_type': 'official',
         'topic_tags': ['infrastructure', 'hardware', 'models'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://aws.amazon.com/blogs/machine-learning/',
@@ -230,6 +239,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': True,
         'is_primary_source': True,
         'name': 'AWS Machine Learning',
+        'notes': 'Cloud AI engineering, Bedrock updates, and foundation model infrastructure.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'amazon',
         'publisher_id': 'aws',
@@ -237,18 +247,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'aws_ml_blog',
         'source_type': 'official',
         'topic_tags': ['infrastructure', 'cloud', 'developers'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://www.amazon.science/',
         'confidence_score': 90,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://www.amazon.science/index.rss',
         'fetch_method': 'rss',
         'is_official': True,
         'is_primary_source': True,
         'name': 'Amazon Science',
+        'notes': 'Research papers and engineering insights from Amazon AGI and Alexa teams.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'amazon',
         'publisher_id': 'amazon_science',
@@ -256,7 +267,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'amazon_science',
         'source_type': 'research',
         'topic_tags': ['research', 'models', 'robotics'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://huggingface.co/blog',
@@ -268,6 +279,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': True,
         'is_primary_source': True,
         'name': 'Hugging Face Blog',
+        'notes': 'Open-weight models, Transformers library benchmarks, and ecosystem tutorials.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'huggingface',
         'publisher_id': 'huggingface',
@@ -275,18 +287,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'huggingface_blog',
         'source_type': 'research',
         'topic_tags': ['open-source', 'models', 'tools', 'developers'],
-        'trust_tier': 3
+        'trust_tier': 3,
     },
     {
         'canonical_listing_url': 'https://github.blog/category/ai-and-ml/',
         'confidence_score': 90,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://github.blog/category/ai-and-ml/feed/',
         'fetch_method': 'rss',
         'is_official': True,
         'is_primary_source': True,
         'name': 'GitHub Blog AI',
+        'notes': 'GitHub Copilot updates, developer workspace AI, and coding agent innovations.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'microsoft',
         'publisher_id': 'github',
@@ -294,18 +307,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'github_blog_ai',
         'source_type': 'official',
         'topic_tags': ['coding', 'developers', 'tools'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://mistral.ai/news/',
         'confidence_score': 95,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://mistral.ai/news/rss',
         'fetch_method': 'rss',
         'is_official': True,
         'is_primary_source': True,
         'name': 'Mistral AI News',
+        'notes': 'Official releases of frontier European open and commercial models.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'mistral',
         'publisher_id': 'mistral',
@@ -313,7 +327,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'mistral_news',
         'source_type': 'official',
         'topic_tags': ['models', 'open-source', 'apis'],
-        'trust_tier': 1
+        'trust_tier': 1,
     },
     {
         'canonical_listing_url': 'https://www.technologyreview.com/topic/artificial-intelligence/',
@@ -325,6 +339,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': False,
         'is_primary_source': False,
         'name': 'MIT Technology Review',
+        'notes': 'Independent investigative journalism, research context, and societal impact.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'mit',
         'publisher_id': 'mit_tech_review',
@@ -332,7 +347,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'mit_tech_review',
         'source_type': 'publication',
         'topic_tags': ['policy', 'research', 'safety', 'society'],
-        'trust_tier': 2
+        'trust_tier': 2,
     },
     {
         'canonical_listing_url': 'https://www.theverge.com/ai-artificial-intelligence',
@@ -344,6 +359,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': False,
         'is_primary_source': False,
         'name': 'The Verge AI',
+        'notes': 'Consumer AI launches, legal battles, platform policies, and industry trends.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'vox_media',
         'publisher_id': 'the_verge',
@@ -351,7 +367,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'the_verge_ai',
         'source_type': 'publication',
         'topic_tags': ['products', 'industry', 'policy', 'tools'],
-        'trust_tier': 2
+        'trust_tier': 2,
     },
     {
         'canonical_listing_url': 'https://techcrunch.com/category/artificial-intelligence/',
@@ -363,6 +379,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': False,
         'is_primary_source': False,
         'name': 'TechCrunch AI',
+        'notes': 'Venture funding, AI startups, commercial products, and executive moves.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'techcrunch',
         'publisher_id': 'techcrunch',
@@ -370,18 +387,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'techcrunch_ai',
         'source_type': 'publication',
         'topic_tags': ['startups', 'business', 'funding', 'tools'],
-        'trust_tier': 2
+        'trust_tier': 2,
     },
     {
         'canonical_listing_url': 'https://arstechnica.com/ai/',
         'confidence_score': 85,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://feeds.arstechnica.com/arstechnica/technology-lab',
         'fetch_method': 'rss',
         'is_official': False,
         'is_primary_source': False,
         'name': 'Ars Technica',
+        'notes': 'In-depth technical reporting on AI copyright, security vulnerabilities, and chip architecture.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'conde_nast',
         'publisher_id': 'ars_technica',
@@ -389,7 +407,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'ars_technica',
         'source_type': 'publication',
         'topic_tags': ['security', 'policy', 'infrastructure', 'hardware'],
-        'trust_tier': 2
+        'trust_tier': 2,
     },
     {
         'canonical_listing_url': 'https://the-decoder.com/',
@@ -401,6 +419,7 @@ FALLBACK_SOURCE_REGISTRY = [
         'is_official': False,
         'is_primary_source': False,
         'name': 'The Decoder',
+        'notes': 'Dedicated reporting on LLM evaluations, autonomous agents, and AI startups.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'the_decoder',
         'publisher_id': 'the_decoder',
@@ -408,18 +427,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'the_decoder',
         'source_type': 'publication',
         'topic_tags': ['models', 'research', 'industry'],
-        'trust_tier': 2
+        'trust_tier': 2,
     },
     {
         'canonical_listing_url': 'https://arxiv.org/list/cs.AI/recent',
         'confidence_score': 80,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://rss.arxiv.org/rss/cs.AI',
         'fetch_method': 'rss',
         'is_official': False,
         'is_primary_source': False,
         'name': 'arXiv cs.AI',
+        'notes': 'Open artificial intelligence preprints. Caution: Not yet peer-reviewed.',
         'poll_interval_minutes': 120,
         'publisher_group_id': 'cornell_arxiv',
         'publisher_id': 'arxiv',
@@ -427,18 +447,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'arxiv_cs_ai',
         'source_type': 'research',
         'topic_tags': ['research', 'preprints', 'theory'],
-        'trust_tier': 3
+        'trust_tier': 3,
     },
     {
         'canonical_listing_url': 'https://arxiv.org/list/cs.LG/recent',
         'confidence_score': 80,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://rss.arxiv.org/rss/cs.LG',
         'fetch_method': 'rss',
         'is_official': False,
         'is_primary_source': False,
         'name': 'arXiv cs.LG',
+        'notes': 'Machine learning research preprints from arXiv cs.LG. Note: arXiv skips feed publications on Saturday and Sunday (skipDays).',
         'poll_interval_minutes': 120,
         'publisher_group_id': 'cornell_arxiv',
         'publisher_id': 'arxiv',
@@ -446,18 +467,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'arxiv_cs_lg',
         'source_type': 'research',
         'topic_tags': ['research', 'machine-learning', 'preprints'],
-        'trust_tier': 3
+        'trust_tier': 3,
     },
     {
         'canonical_listing_url': 'https://bair.berkeley.edu/blog/',
         'confidence_score': 85,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://bair.berkeley.edu/blog/feed.xml',
         'fetch_method': 'rss',
         'is_official': True,
         'is_primary_source': True,
         'name': 'BAIR Blog',
+        'notes': 'Berkeley AI Research laboratory insights on agent systems and reinforcement learning.',
         'poll_interval_minutes': 120,
         'publisher_group_id': 'uc_berkeley',
         'publisher_id': 'bair',
@@ -465,18 +487,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'bair_blog',
         'source_type': 'research',
         'topic_tags': ['research', 'robotics', 'agents'],
-        'trust_tier': 3
+        'trust_tier': 3,
     },
     {
         'canonical_listing_url': 'https://simonwillison.net/',
         'confidence_score': 75,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://simonwillison.net/atom/everything/',
         'fetch_method': 'atom',
         'is_official': False,
         'is_primary_source': False,
         'name': 'Simon Willison Weblog',
+        'notes': 'Expert developer commentary, hands-on LLM security research, and practical agent tools.',
         'poll_interval_minutes': 60,
         'publisher_group_id': 'simon_willison',
         'publisher_id': 'simon_willison',
@@ -484,18 +507,19 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'simon_willison',
         'source_type': 'practitioner',
         'topic_tags': ['tools', 'prompt-injection', 'developers', 'coding'],
-        'trust_tier': 4
+        'trust_tier': 4,
     },
     {
         'canonical_listing_url': 'https://importai.substack.com/',
         'confidence_score': 75,
-        'enabled': True,
+        'enabled': False,
         'feed_is_official': True,
         'feed_url': 'https://importai.substack.com/feed',
         'fetch_method': 'rss',
         'is_official': False,
         'is_primary_source': False,
         'name': 'Import AI',
+        'notes': 'Curated analysis by Jack Clark on frontier safety, capability scaling, and international AI governance.',
         'poll_interval_minutes': 120,
         'publisher_group_id': 'import_ai',
         'publisher_id': 'import_ai',
@@ -503,8 +527,68 @@ FALLBACK_SOURCE_REGISTRY = [
         'source_id': 'import_ai',
         'source_type': 'practitioner',
         'topic_tags': ['policy', 'safety', 'research'],
-        'trust_tier': 4
-    }
+        'trust_tier': 4,
+    },
+    {
+        'canonical_listing_url': 'https://www.lmsys.org/blog/',
+        'confidence_score': 85,
+        'enabled': False,
+        'feed_is_official': True,
+        'feed_url': 'https://www.lmsys.org/blog',
+        'fetch_method': 'html_page_adapter',
+        'is_official': True,
+        'is_primary_source': True,
+        'name': 'LMSYS Org',
+        'notes': 'LMSYS Chatbot Arena benchmarks, leaderboards, and LLM evaluation methodology updates.',
+        'poll_interval_minutes': 60,
+        'publisher_group_id': 'lmsys',
+        'publisher_id': 'lmsys',
+        'publisher_owns_feed': True,
+        'source_id': 'lmsys_org',
+        'source_type': 'research',
+        'topic_tags': ['benchmarks', 'evaluations', 'leaderboard'],
+        'trust_tier': 3,
+    },
+    {
+        'canonical_listing_url': 'https://www.latent.space',
+        'confidence_score': 75,
+        'enabled': False,
+        'feed_is_official': True,
+        'feed_url': 'https://www.latent.space/feed',
+        'fetch_method': 'rss',
+        'is_official': False,
+        'is_primary_source': False,
+        'name': 'Latent Space',
+        'notes': 'High-signal AI engineer publication covering infrastructure, models, and industry analysis.',
+        'poll_interval_minutes': 60,
+        'publisher_group_id': 'latent_space',
+        'publisher_id': 'latent_space',
+        'publisher_owns_feed': True,
+        'source_id': 'latent_space',
+        'source_type': 'practitioner',
+        'topic_tags': ['engineering', 'podcasts', 'analysis'],
+        'trust_tier': 4,
+    },
+    {
+        'canonical_listing_url': 'https://huggingface.co/papers',
+        'confidence_score': 85,
+        'enabled': False,
+        'feed_is_official': True,
+        'feed_url': 'https://huggingface.co/api/daily_papers',
+        'fetch_method': 'json_api_adapter',
+        'is_official': False,
+        'is_primary_source': True,
+        'name': 'Hugging Face Daily Papers',
+        'notes': 'Daily curated top research papers and arXiv highlights from the Hugging Face AI community.',
+        'poll_interval_minutes': 60,
+        'publisher_group_id': 'huggingface',
+        'publisher_id': 'huggingface',
+        'publisher_owns_feed': True,
+        'source_id': 'hf_daily_papers',
+        'source_type': 'research',
+        'topic_tags': ['papers', 'research', 'preprints'],
+        'trust_tier': 3,
+    },
 ]
 
 
@@ -594,8 +678,11 @@ def generate_article_id(source_id, canonical_url):
   return f"art_{clean_source}_{digest}"
 
 
-def load_source_registry(filepath=SOURCES_REGISTRY_FILE):
-  """Loads and validates the centralized source registry, falling back to verified sources if missing."""
+def load_source_registry(filepath=SOURCES_REGISTRY_FILE, include_disabled=False):
+  """Loads and validates the centralized source registry, falling back to verified sources if missing.
+  By default (include_disabled=False), returns ONLY enabled sources (10 sources).
+  When include_disabled=True, returns all 25 configured sources.
+  """
   candidates = []
   if os.path.exists(filepath):
     try:
@@ -613,12 +700,17 @@ def load_source_registry(filepath=SOURCES_REGISTRY_FILE):
   for s in candidates:
     is_valid, reason = validate_source_record(s)
     if is_valid:
-      if s.get("enabled", True):
+      if include_disabled or s.get("enabled", True):
         valid_sources.append(s)
     else:
       print(f"⚠️ Skipping invalid source record {s.get('source_id')}: {reason}", file=sys.stderr)
 
   return valid_sources
+
+
+def load_all_sources(filepath=SOURCES_REGISTRY_FILE):
+  """Loads all configured sources (both enabled and disabled) for validation and auditing."""
+  return load_source_registry(filepath=filepath, include_disabled=True)
 
 
 def normalize_url(raw_url):

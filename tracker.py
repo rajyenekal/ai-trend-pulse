@@ -52,6 +52,7 @@ from pipeline.fetcher import (
     FALLBACK_SOURCE_REGISTRY,
     PUBLISHER_ORGANIZATION_MAP,
     load_source_registry,
+    load_all_sources,
     validate_source_record,
     normalize_url,
     parse_published_datetime,
