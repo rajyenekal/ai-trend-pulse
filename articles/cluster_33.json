@@ -1,6 +1,6 @@
 {
-  "id": "story_17",
-  "clean_id": "story_17",
+  "id": "cluster_33",
+  "clean_id": "cluster_33",
   "title": "Gemini 4 Carbon: Our next frontier model",
   "headline": "Gemini 4 Carbon: Our next frontier model",
   "subtitle": "",
@@ -8,7 +8,7 @@
   "publisher_id": "google_deepmind",
   "publisher_group_id": "google",
   "author": "",
-  "published_at": "2026-10-28T11:30:58+00:00",
+  "published_at": "2026-10-28T17:00:58+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -22,7 +22,7 @@
   "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
   "canonical_url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
   "original_source_url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
-  "reading_time": "1 min read",
+  "reading_time": "4 min read",
   "word_count": 973,
   "extraction_status": "cached",
   "content_hash": "",
@@ -37,7 +37,7 @@
     "Gemini 4 Carbon will launch at the same introductory price 1 as Argon at $2 per million input tokens and $10 per million output tokens, with cached input tokens priced at 95% off input token price.",
     "Carbon achieves a state-of-the-art 88.2% on SEC-bench Pro, autonomously uncovering complex flaws buried in real-world software."
   ],
-  "ai_why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
+  "ai_why_it_matters": "Improving coding and reasoning for challenging, long-horizon tasks Designed to take on much harder, long-horizon engineering problems, Carbon is built for sustained agentic workflows.",
   "ai_technical_breakdown": "Our researchers and models are working hand in hand to advance capabilities faster, while strengthening our safeguards in tandem.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Gemini 4 Carbon: Our next frontier model capabilities from Google DeepMind directly into technical workflows.",

@@ -1,6 +1,6 @@
 {
-  "id": "story_16",
-  "clean_id": "story_16",
+  "id": "cluster_32",
+  "clean_id": "cluster_32",
   "title": "Speeding up planning decisions with AI",
   "headline": "Speeding up planning decisions with AI",
   "subtitle": "",
@@ -8,7 +8,7 @@
   "publisher_id": "google_deepmind",
   "publisher_group_id": "google",
   "author": "",
-  "published_at": "2026-10-30T08:48:30+00:00",
+  "published_at": "2026-10-30T14:18:30+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -34,7 +34,7 @@
   "ai_key_details": [
     "Primary documentation verified from Google DeepMind."
   ],
-  "ai_why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Speeding up planning decisions with AI from Google DeepMind.",
   "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Google DeepMind for Speeding up planning decisions with AI; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Speeding up planning decisions with AI capabilities from Google DeepMind directly into technical workflows.",

@@ -1,6 +1,6 @@
 {
-  "id": "story_10",
-  "clean_id": "story_10",
+  "id": "cluster_31",
+  "clean_id": "cluster_31",
   "title": "Agentic cheminformatics with Google Antigravity",
   "headline": "Agentic cheminformatics with Google Antigravity",
   "subtitle": "",
@@ -8,7 +8,7 @@
   "publisher_id": "google_deepmind",
   "publisher_group_id": "google",
   "author": "",
-  "published_at": "2026-11-03T11:31:49+00:00",
+  "published_at": "2026-11-03T17:01:49+00:00",
   "category": "AI Agents",
   "topic": "AI Agents",
   "impact_level": "Breakthrough",
@@ -34,16 +34,16 @@
   "ai_key_details": [
     "Primary documentation verified from Google DeepMind."
   ],
-  "ai_why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Google.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Agentic cheminformatics with Google Antigravity from Google DeepMind.",
   "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Google DeepMind for Agentic cheminformatics with Google Antigravity; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Agentic cheminformatics with Google Antigravity capabilities from Google DeepMind directly into technical workflows.",
-    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across AI Agents.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Google DeepMind."
   },
   "ai_whats_new": "Delivers Agentic cheminformatics with Google Antigravity as documented in verified primary release notes from Google DeepMind.",
   "ai_key_takeaways": [
-    "Verified development tracked in AI Agents.",
+    "Verified development tracked in Frontier Models.",
     "Primary documentation available from Google DeepMind."
   ],
   "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",

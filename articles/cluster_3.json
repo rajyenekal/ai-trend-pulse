@@ -1,6 +1,6 @@
 {
-  "id": "story_3",
-  "clean_id": "story_3",
+  "id": "cluster_3",
+  "clean_id": "cluster_3",
   "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
   "headline": "Daybreak Red is now available in AWS GovCloud (US-East)",
   "subtitle": "",
@@ -8,7 +8,7 @@
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-04T01:30:00+00:00",
+  "published_at": "2026-11-04T07:00:00+00:00",
   "category": "AI Safety",
   "topic": "AI Safety",
   "impact_level": "Breakthrough",
@@ -34,16 +34,16 @@
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Openai.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Daybreak Red is now available in AWS GovCloud (US-East) from OpenAI News.",
   "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Daybreak Red is now available in AWS GovCloud (US-East); full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Daybreak Red is now available in AWS GovCloud (US-East) capabilities from OpenAI News directly into technical workflows.",
-    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across AI Safety.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
   "ai_whats_new": "Delivers Daybreak Red is now available in AWS GovCloud (US-East) as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
-    "Verified development tracked in AI Safety.",
+    "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",

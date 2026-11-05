@@ -1,6 +1,6 @@
 {
-  "id": "story_9",
-  "clean_id": "story_9",
+  "id": "cluster_40",
+  "clean_id": "cluster_40",
   "title": "Building ultra-low-latency voice AI applications on AWS",
   "headline": "Building ultra-low-latency voice AI applications on AWS",
   "subtitle": "",
@@ -34,16 +34,16 @@
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Building ultra-low-latency voice AI applications on AWS from AWS Machine Learning.",
   "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Building ultra-low-latency voice AI applications on AWS; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Building ultra-low-latency voice AI applications on AWS capabilities from AWS Machine Learning directly into technical workflows.",
-    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across AI Infrastructure.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
   "ai_whats_new": "Delivers Building ultra-low-latency voice AI applications on AWS as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
-    "Verified development tracked in AI Infrastructure.",
+    "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
   "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",

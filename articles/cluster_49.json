@@ -1,6 +1,6 @@
 {
-  "id": "story_14",
-  "clean_id": "story_14",
+  "id": "cluster_49",
+  "clean_id": "cluster_49",
   "title": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
   "headline": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
   "subtitle": "",
@@ -13,7 +13,7 @@
   "topic": "AI Infrastructure",
   "impact_level": "Notable",
   "pulse_score": 70.2,
-  "article_type": "opinion_commentary",
+  "article_type": "policy_regulation",
   "signal_badge": "Security & Policy",
   "trust_tier": 2,
   "tier": "Independent Journalism",
@@ -30,20 +30,20 @@
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
   "ai_overview": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech\u2019s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position.",
-  "ai_what_happened": "MIT Technology Review published verified documentation on Texas was the new epicenter of the AI data center buildout. That might be kaput..",
+  "ai_what_happened": "Democrat James Talarico won the US Senate seat against Ken Paxton.",
   "ai_key_details": [
     "Primary documentation verified from MIT Technology Review."
   ],
-  "ai_why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Texas was the new epicenter of the AI data center buildout. That might be kaput from MIT Technology Review.",
   "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by MIT Technology Review for Texas was the new epicenter of the AI data center buildout. That might be kaput; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Texas was the new epicenter of the AI data center buildout. That might be kaput capabilities from MIT Technology Review directly into technical workflows.",
-    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across AI Infrastructure.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by MIT Technology Review."
   },
   "ai_whats_new": "Delivers Texas was the new epicenter of the AI data center buildout. That might be kaput as documented in verified primary release notes from MIT Technology Review.",
   "ai_key_takeaways": [
-    "Verified development tracked in AI Infrastructure.",
+    "Verified development tracked in Frontier Models.",
     "Primary documentation available from MIT Technology Review."
   ],
   "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by MIT Technology Review; awaiting further vendor confirmation or technical documentation.",

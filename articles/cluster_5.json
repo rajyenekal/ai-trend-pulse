@@ -1,6 +1,6 @@
 {
-  "id": "story_6",
-  "clean_id": "story_6",
+  "id": "cluster_5",
+  "clean_id": "cluster_5",
   "title": "Introducing Images 2.6",
   "headline": "Introducing Images 2.6",
   "subtitle": "",
@@ -8,7 +8,7 @@
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-03T18:30:00+00:00",
+  "published_at": "2026-11-04T00:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -34,7 +34,7 @@
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Images 2.6 from OpenAI News.",
   "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Images 2.6; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Images 2.6 capabilities from OpenAI News directly into technical workflows.",

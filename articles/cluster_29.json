@@ -1,6 +1,6 @@
 {
-  "id": "story_8",
-  "clean_id": "story_8",
+  "id": "cluster_29",
+  "clean_id": "cluster_29",
   "title": "Distillation Defenses",
   "headline": "Distillation Defenses",
   "subtitle": "",
@@ -22,7 +22,7 @@
   "url": "https://www.anthropic.com/news/distillation-defenses",
   "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
   "original_source_url": "https://www.anthropic.com/news/distillation-defenses",
-  "reading_time": "1 min read",
+  "reading_time": "9 min read",
   "word_count": 1920,
   "extraction_status": "cached",
   "content_hash": "",
@@ -37,14 +37,14 @@
     "Zhipu, for example, distilled the cyber capabilities of leading US models during the development of GLM-5.3.",
     "The US Center for Advancing Innovation and Standards for Super Intelligence (CAISSI) has since assessed GLM-5.3 to be the most cyber-capable open-weights model released to date."
   ],
-  "ai_why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Anthropic.",
+  "ai_why_it_matters": "First, distillation enables companies to build models that approach the capability frontier, but which have, in practice, been released without proportionally robust safeguards.",
   "ai_technical_breakdown": "We\u2019re concerned about illicit distillation for two reasons.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Distillation Defenses capabilities from Anthropic Official News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Anthropic Official News."
   },
-  "ai_whats_new": "First, distillation enables companies to build models that approach the capability frontier, but which have, in practice, been released without proportionally robust safeguards.",
+  "ai_whats_new": "Distillers found ways around the first safeguards we built.",
   "ai_key_takeaways": [
     "As we wrote in September, this method has been used extensively to help overseas AI laboratories keep pace with US companies.",
     "This means that distilled models could be used to cause significant harm in areas like biology and cybersecurity.",

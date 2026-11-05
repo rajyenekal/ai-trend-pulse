@@ -1,6 +1,6 @@
 {
-  "id": "story_13",
-  "clean_id": "story_13",
+  "id": "cluster_17",
+  "clean_id": "cluster_17",
   "title": "Public Benefit Fund",
   "headline": "Public Benefit Fund",
   "subtitle": "",
@@ -22,9 +22,9 @@
   "url": "https://www.anthropic.com/news/public-benefit-fund",
   "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
   "original_source_url": "https://www.anthropic.com/news/public-benefit-fund",
-  "reading_time": "1 min read",
+  "reading_time": "2 min read",
   "word_count": 439,
-  "extraction_status": "cached",
+  "extraction_status": "extracted",
   "content_hash": "aed8c10b175bbd9b",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
@@ -37,7 +37,7 @@
     "Anthropic has already committed $200 million to studying and addressing this issue, but given the pace of AI progress, bolder approaches may be needed.",
     "When Anthropic was founded, our co-founders pledged to donate 80% of their equity holdings, and since founding we have also operated an equity donation match program that allows employees to pledge equity which Anthropic matches."
   ],
-  "ai_why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Anthropic.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Public Benefit Fund from Anthropic Official News.",
   "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Anthropic Official News for Public Benefit Fund; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
     "Developers": "Enables engineers to integrate Public Benefit Fund capabilities from Anthropic Official News directly into technical workflows.",
