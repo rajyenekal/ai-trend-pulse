@@ -49,6 +49,7 @@ export const TOPIC_IMAGES = {
   'AI Products & Tools': 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
   'AI Applications': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
   'AI News': 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80',
+  'AI Agents': 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80',
   'default': 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80'
 };
 
@@ -117,11 +118,11 @@ export function getTopicFallbackSVG(topic) {
 }
 
 export function getTopicImageUrl(topic, rawImage, companyKey) {
-  if (companyKey && isKnownLab(companyKey)) {
-    return getLabSignatureVisual(companyKey, topic);
-  }
   if (rawImage && String(rawImage).startsWith('http')) {
     return rawImage;
+  }
+  if (companyKey && isKnownLab(companyKey)) {
+    return getLabSignatureVisual(companyKey, topic);
   }
   return TOPIC_IMAGES[topic] || TOPIC_IMAGES.default || getTopicFallbackSVG(topic);
 }
@@ -386,22 +387,27 @@ export function renderTop5Bento(stories) {
     const subTopic = item.category || item.topic || 'AI News';
     const subCompany = item.company || 'default';
     const subRelTime = formatRelativeTime(item.published_at || item.published);
+    const subImgUrl = getTopicImageUrl(subTopic, item.image || item.image_url, subCompany);
 
     html += `
       <article class="bento-card bento-subcard" onclick="openReaderForBento(${idx + 1}, event)">
-        <div>
+        <div class="bento-subcard-media">
+          <img src="${escapeHTML(subImgUrl)}" alt="${escapeHTML(item.title)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(subTopic)}') : '';" />
+          <span class="media-illustration-tag" aria-hidden="true">${escapeHTML(subTopic)}</span>
+        </div>
+        <div class="bento-subcard-content">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; margin-bottom:6px;">
             <span class="badge-signal" style="font-size:0.68rem; padding:2px 6px;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
             <span style="font-size:0.72rem; color:var(--text-muted);">${escapeHTML(subRelTime)}</span>
           </div>
-          <h3 class="bento-headline font-serif" style="font-size:0.92rem; line-height:1.35; margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${escapeHTML(item.title)}</h3>
-        </div>
-        <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px; padding-top:8px; border-top:1px solid var(--border-subtle);">
-          <span style="font-size:0.74rem; font-weight:600; color:var(--text-secondary); display:flex; align-items:center; gap:5px;">
-            <span style="width:14px; height:14px; display:inline-flex;">${getCompanyLogoSVG(subCompany)}</span>
-            ${escapeHTML(item.source)}
-          </span>
-          <span style="color:var(--accent-text); font-size:0.74rem; font-weight:600;">Details →</span>
+          <h3 class="bento-headline font-serif" style="font-size:0.92rem; line-height:1.35; margin:0; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${escapeHTML(item.title)}</h3>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px; padding-top:6px; border-top:1px solid var(--border-subtle);">
+            <span style="font-size:0.74rem; font-weight:600; color:var(--text-secondary); display:flex; align-items:center; gap:5px;">
+              <span style="width:14px; height:14px; display:inline-flex;">${getCompanyLogoSVG(subCompany)}</span>
+              ${escapeHTML(item.source)}
+            </span>
+            <span style="color:var(--accent-text); font-size:0.74rem; font-weight:600;">Details →</span>
+          </div>
         </div>
       </article>
     `;
@@ -584,47 +590,58 @@ export function renderEditorialCards(items) {
       }).join('');
 
       html += `
-        <article class="card-base card-grouped" data-card-idx="${idx}">
-          <div class="card-kicker-row">
-            <div class="card-kicker-left">
-              ${signalBadgeHTML}
-              ${tierBadgeHTML}
-              <span class="badge-card-topic">${escapeHTML(topic)}</span>
-              ${scorePillHTML}
+        <article class="card-base card-grouped card-standard" data-card-idx="${idx}">
+          <div class="card-standard-media">
+            <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(headline)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(topic)}') : '';" />
+            <div class="hero-image-badge" style="top:8px; left:8px;">
+              <span>${escapeHTML(topic)}</span>
             </div>
-            <span class="badge-status-pill official">Corroborated by ${corroborationCount} sources</span>
+            <span class="media-illustration-tag" aria-hidden="true">Corroborated</span>
           </div>
-          <h3 class="card-headline font-serif" style="margin-top:8px;">
-            <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
-          </h3>
-          <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
-          ${whyItMattersHTML}
+          <div class="card-standard-body">
+            <div>
+              <div class="card-kicker-row">
+                <div class="card-kicker-left">
+                  ${signalBadgeHTML}
+                  ${tierBadgeHTML}
+                  <span class="badge-card-topic">${escapeHTML(topic)}</span>
+                  ${scorePillHTML}
+                </div>
+                <span class="badge-status-pill official">Corroborated by ${corroborationCount} sources</span>
+              </div>
+              <h3 class="card-headline font-serif" style="margin-top:8px;">
+                <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForTrend(${idx}, event)">${escapeHTML(headline)}</a>
+              </h3>
+              <p class="card-summary" style="margin-top:6px;">${escapeHTML(summary)}</p>
+              ${whyItMattersHTML}
 
-          <details class="evidence-block">
-            <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
-            <ul class="evidence-list">${linksHTML}</ul>
-          </details>
-
-          <div class="card-footer">
-            <div class="card-source-meta">
-              <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
-              <span>•</span>
-              <span>⏱ ${escapeHTML(readTime)}</span>
+              <details class="evidence-block">
+                <summary class="evidence-summary">Verified Supporting Sources (${item.evidence_urls.length}) ↗</summary>
+                <ul class="evidence-list">${linksHTML}</ul>
+              </details>
             </div>
-            <div class="card-actions">
-              <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
-                <span>Read Deep Dive</span>
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-              </button>
-              <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              </button>
-              <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
+
+            <div class="card-footer">
+              <div class="card-source-meta">
+                <span style="font-weight:700; color:var(--text-primary);">${escapeHTML(item.source)}</span>
+                <span>•</span>
+                <span>⏱ ${escapeHTML(readTime)}</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn-read-deep-dive" onclick="openReaderForTrend(${idx}, event)" aria-label="Deep dive into story">
+                  <span>Read Deep Dive</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <button class="btn-action-icon ${isSaved ? 'saved' : ''}" onclick="handleSaveTrend(${idx}, this)" aria-label="Save story" title="Save Story">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                </button>
+                <button class="btn-action-icon" onclick="handleCopyTrend(${idx}, this)" aria-label="Copy summary" title="Copy Summary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" aria-label="Open original source directly" title="Original Article">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
             </div>
           </div>
         </article>
@@ -634,7 +651,7 @@ export function renderEditorialCards(items) {
       html += `
         <article class="card-base card-standard ${isOfficial ? 'card-breaking' : ''}" data-card-idx="${idx}">
           <div class="card-standard-media">
-            <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(headline)}" loading="lazy" />
+            <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(headline)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(topic)}') : '';" />
             <div class="hero-image-badge" style="top:8px; left:8px;">
               <span>${escapeHTML(topic)}</span>
             </div>
@@ -708,9 +725,14 @@ export function renderDispatches(items) {
     const isSaved = isItemSaved(item.title);
     const primaryUrl = item.link || '#';
     const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier || item.trust_tier);
+    const company = item.company || 'default';
+    const imgUrl = getTopicImageUrl(topic, item.image || item.image_url, company);
 
     html += `
       <li class="story-item" data-dispatch-idx="${idx}">
+        <div class="story-item-media">
+          <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(item.title)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(topic)}') : '';" />
+        </div>
         <div class="story-item-main">
           <div class="story-item-header">
             <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
@@ -792,31 +814,38 @@ export function renderCuratedCard(item, idx, sectionType) {
   }
 
   const readingTime = item.reading_time ? ` · ${escapeHTML(item.reading_time)}` : '';
+  const imgUrl = getTopicImageUrl(topic, item.image || item.image_url, company);
 
   return `
     <article class="curated-card" data-curated-section="${sectionType}" data-curated-idx="${idx}">
-      <div class="curated-card-top">
-        <div class="curated-top-left">
-          <span class="curated-logo" aria-hidden="true">${logoSVG}</span>
-          <span class="curated-topic-badge">${escapeHTML(badgeText)}</span>
-        </div>
-        ${score ? `<span class="curated-score-badge" title="Pulse Score: ${score}">⚡ ${score}</span>` : ''}
+      <div class="curated-card-media">
+        <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(item.title)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(topic)}') : '';" />
+        <span class="curated-media-badge">${escapeHTML(badgeText)}</span>
       </div>
-      <h3 class="curated-title font-serif">
-        <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">${escapeHTML(item.title)}</a>
-      </h3>
-      <p class="curated-summary">${escapeHTML(cleanSummary)}</p>
-      ${audience ? `<span class="curated-audience-tag">${escapeHTML(audience)}</span>` : ''}
-      <div class="curated-footer">
-        <span class="curated-source">${escapeHTML(item.source || 'Verified Source')}${readingTime}</span>
-        <div class="curated-actions">
-          <button class="btn-read-deep-dive" style="padding:4px 10px; font-size:0.75rem;" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">
-            <span>Read</span>
-            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <button class="btn-action-icon ${isSaved ? 'saved' : ''}" style="width:28px; height:28px;" onclick="handleSaveCurated('${sectionType}', ${idx}, this)" aria-label="Save" title="Save">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-          </button>
+      <div class="curated-card-content">
+        <div class="curated-card-top">
+          <div class="curated-top-left">
+            <span class="curated-logo" aria-hidden="true">${logoSVG}</span>
+            <span class="curated-source-tag">${escapeHTML(item.source || 'Verified Source')}</span>
+          </div>
+          ${score ? `<span class="curated-score-badge" title="Pulse Score: ${score}">⚡ ${score}</span>` : ''}
+        </div>
+        <h3 class="curated-title font-serif">
+          <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">${escapeHTML(item.title)}</a>
+        </h3>
+        <p class="curated-summary">${escapeHTML(cleanSummary)}</p>
+        ${audience ? `<span class="curated-audience-tag">${escapeHTML(audience)}</span>` : ''}
+        <div class="curated-footer">
+          <span class="curated-source">${escapeHTML(item.source || 'Verified Source')}${readingTime}</span>
+          <div class="curated-actions">
+            <button class="btn-read-deep-dive" style="padding:4px 10px; font-size:0.75rem;" onclick="openReaderForCurated('${sectionType}', ${idx}, event)">
+              <span>Read</span>
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <button class="btn-action-icon ${isSaved ? 'saved' : ''}" style="width:28px; height:28px;" onclick="handleSaveCurated('${sectionType}', ${idx}, this)" aria-label="Save" title="Save">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            </button>
+          </div>
         </div>
       </div>
     </article>
@@ -999,19 +1028,56 @@ export function renderDailyOverview(overview, data) {
   }
 
   if (catchMeUpContainer) {
-    const topDevs = ov.top_developments || (data?.top_stories || []).slice(0, 3);
-    catchMeUpContainer.innerHTML = topDevs.map((dev, idx) => `
-      <div class="catch-me-up-item" onclick="openReaderForDailyItem(${idx}, event)">
-        <div class="catch-item-header">
-          <span class="catch-item-index font-mono">0${idx + 1}</span>
-          <span class="catch-item-source font-mono">${escapeHTML(dev.source || 'Verified Source')}</span>
-        </div>
-        <h4 class="catch-item-title font-serif">
-          <a href="${escapeHTML(dev.link || '#')}" onclick="openReaderForDailyItem(${idx}, event)">${escapeHTML(dev.title || '')}</a>
-        </h4>
-        <p class="catch-item-expl">${escapeHTML(dev.one_line_explanation || dev.what_changed || dev.summary || '')}</p>
-      </div>
-    `).join('');
+    const topDevs = ov.top_developments || (data?.top_stories || []).slice(0, 4);
+    catchMeUpContainer.innerHTML = topDevs.map((dev, idx) => {
+      const topic = dev.category || dev.topic || 'AI News';
+      const score = dev.score ? Math.round(dev.score) : (dev.pulse_score ? Math.round(dev.pulse_score) : null);
+      const signalBadge = dev.signal_badge || '⚡ Breakthrough';
+      const whatChanged = dev.what_changed || dev.one_line_explanation || dev.summary || '';
+      const whyItMatters = dev.why_it_matters || dev.impact || '';
+      const targetAudience = dev.target_audience ? dev.target_audience.replace(/^For\s+/i, '') : null;
+
+      return `
+        <article class="glance-card catch-me-up-item" onclick="openReaderForDailyItem(${idx}, event)">
+          <div class="glance-card-top">
+            <div class="glance-card-badge-group">
+              <span class="glance-card-num font-mono">0${idx + 1}</span>
+              <span class="badge-signal" style="font-size:0.7rem; padding:2px 7px;">${escapeHTML(signalBadge)}</span>
+              ${score ? `<span class="score-pill" style="font-size:0.7rem; padding:2px 6px;">⚡ ${score}</span>` : ''}
+            </div>
+            <span class="glance-source font-mono">${escapeHTML(dev.source || 'Verified Source')}</span>
+          </div>
+
+          <h3 class="glance-headline font-serif">
+            <a href="${escapeHTML(dev.link || '#')}" onclick="openReaderForDailyItem(${idx}, event)">${escapeHTML(dev.title || '')}</a>
+          </h3>
+
+          <p class="glance-summary">${escapeHTML(whatChanged)}</p>
+
+          ${whyItMatters ? `
+            <div class="glance-why-box">
+              <div class="glance-why-label">
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <span>Why It Matters</span>
+              </div>
+              <p class="glance-why-text">${escapeHTML(whyItMatters)}</p>
+            </div>
+          ` : ''}
+
+          <div class="glance-card-footer">
+            ${targetAudience ? `
+              <span class="glance-audience-tag">
+                🎯 ${escapeHTML(targetAudience)}
+              </span>
+            ` : `<span></span>`}
+            <button class="glance-action-btn" onclick="openReaderForDailyItem(${idx}, event)" aria-label="Read briefing">
+              <span>Read Briefing</span>
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+      `;
+    }).join('');
   }
 }
 

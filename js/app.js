@@ -380,6 +380,13 @@ export function renderPipelineErrorUI(errorMsg) {
       </div>
     `;
   }
+  // Clear lingering skeleton loaders so user is not stuck on placeholders
+  const bento = document.getElementById('bento-container');
+  if (bento && bento.querySelector('.skeleton-card')) bento.innerHTML = '';
+  const glance = document.getElementById('catch-me-up-items');
+  if (glance && glance.querySelector('.skeleton-card')) glance.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; padding:12px;">Data snapshot unavailable.</p>';
+  const devTrends = document.getElementById('developer-trends-container');
+  if (devTrends && devTrends.querySelector('.skeleton-card')) devTrends.innerHTML = '';
 }
 
 export function initPlatformKbdShortcut() {
@@ -632,14 +639,21 @@ if (typeof window !== 'undefined') {
   window.handleSaveDispatch = handleSaveDispatch;
   window.handleSaveCurated = handleSaveCurated;
   window.handleCopyTrend = handleCopyTrend;
+  window.loadData = loadData;
 
-  // Initialize on DOM ready
-  if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
+  // Initialize on DOM ready or immediately if document is already interactive
+  if (typeof document !== 'undefined' && typeof document.querySelector === 'function') {
+    const initApp = () => {
       initState();
       setupEventListeners();
       loadData();
-    });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
   }
 }
 
