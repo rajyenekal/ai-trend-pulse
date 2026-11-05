@@ -12,16 +12,19 @@ from .fetcher import PUBLISHER_ORGANIZATION_MAP
 # -------------------------------------------------------------
 ANCHOR_ENTITY_TOKENS = {
     "gpt", "gpt-4", "gpt-4o", "gpt-5", "chatgpt", "o1", "o3", "o3-mini", "o4",
-    "claude", "claude 3.7", "claude 3.5", "sonnet", "haiku", "opus",
+    "claude", "claude 3.7", "claude 3.5", "claude 4", "sonnet", "haiku", "opus",
     "gemini", "gemini 2.0", "gemini 1.5", "gemini 4", "gemini-flash", "gemini-pro",
     "genie", "genie 4", "world simulation",
     "llama", "llama-3", "llama-3.3", "llama 3.3", "llama-4",
     "deepseek", "deepseek-r1", "deepseek r1", "deepseek-v3", "r1", "v3",
     "mistral", "mixtral", "codestral", "pixtral", "voxtral", "voxtral 3",
-    "qwen", "qwen-2.5", "qwen 2.5", "qwen 3",
+    "qwen", "qwen-2.5", "qwen 2.5", "qwen 3", "qwen3",
     "grok", "grok-2", "grok-3",
     "copilot", "sora", "midjourney", "stable diffusion",
     "codex", "streamvibe", "mcp", "model context protocol",
+    "sglang", "vllm", "ollama", "hicache", "miles", "minite", "deepinfer",
+    "hermes", "nous", "phi-4", "kimi", "minimax", "glm", "starcoder",
+    "agentcore", "bedrock", "speculative decoding", "reasoning model",
 }
 
 KNOWN_MODEL_KEYWORDS = {
@@ -34,7 +37,8 @@ KNOWN_MODEL_KEYWORDS = {
     "deepseek": {"deepseek", "r1", "v3"},
     "grok": {"grok"},
     "copilot": {"copilot"},
-    "qwen": {"qwen"},
+    "qwen": {"qwen", "qwen3"},
+    "sglang": {"sglang", "hicache", "deepinfer"},
 }
 
 
@@ -129,7 +133,7 @@ def compute_hybrid_similarity(art1, art2, similarity_threshold=0.38):
   if jaccard_sim >= similarity_threshold:
     return True
 
-  # Check 2: Shared specific anchor entity + lower threshold (0.20) or overlap >= 0.25 within 48h
+  # Check 2: Shared specific anchor entity + lower threshold (0.18) or overlap >= 0.22 within 48h
   entities1 = extract_anchor_entities(title1)
   entities2 = extract_anchor_entities(title2)
   shared_entities = entities1.intersection(entities2)
@@ -141,7 +145,12 @@ def compute_hybrid_similarity(art1, art2, similarity_threshold=0.38):
       within_48h = abs((dt1 - dt2).total_seconds()) / 3600.0 <= 48.0
     if within_48h:
       overlap = compute_overlap_coefficient(tokens1, tokens2)
-      if jaccard_sim >= 0.20 or overlap >= 0.25:
+      if jaccard_sim >= 0.18 or overlap >= 0.22:
+        return True
+      # Merge commentary / reaction to an existing announcement or release
+      type1 = art1.get("article_type") or classify_article_type(title1, art1.get("summary", ""), art1.get("link", ""), art1.get("source_type", ""), art1.get("is_official", False))
+      type2 = art2.get("article_type") or classify_article_type(title2, art2.get("summary", ""), art2.get("link", ""), art2.get("source_type", ""), art2.get("is_official", False))
+      if (type1 in ("opinion_commentary", "case_study_pr") or type2 in ("opinion_commentary", "case_study_pr")) and (overlap >= 0.16 or jaccard_sim >= 0.15):
         return True
 
   # Check 3: Semantic embedding cosine similarity (if precomputed on articles)
@@ -188,12 +197,13 @@ def determine_evidence_metadata(lead_article, related_sources):
     if not group_id:
       group_id = PUBLISHER_ORGANIZATION_MAP.get(src_name, src_name)
 
-    # Exclude discovery feeds from independent corroborating publisher count
+    # Exclude discovery feeds and Tier 4 opinion/community from independent corroborating publisher count
     if (
         item_stype in ("unofficial_discovery", "discovery")
         or item_owns_feed is False
         or str(group_id).lower() in ("ycombinator", "hackernews", "hackernews/community")
         or "discovery" in (src_name or "").lower()
+        or item.get("trust_tier") == 4
     ):
       continue
 
@@ -264,24 +274,38 @@ def cluster_and_deduplicate_articles(raw_articles, similarity_threshold=0.38):
 
   clustered_stories = []
   for cluster_idx, group in enumerate(clusters):
-    # Sort group so Tier 1 (Official Lab) is preferred as lead
-    group.sort(key=lambda a: (0 if a.get("is_official") else 1, a.get("trust_tier", 2)))
+    # Sort group so Tier 1 (Official Lab) is preferred as lead, followed by journalism (Tier 2),
+    # and strictly prevent commentary / marketing PR from leading over factual releases
+    def lead_sort_key(a):
+      is_off = 0 if a.get("is_official") else 1
+      a_type = a.get("article_type") or classify_article_type(
+          a.get("title", ""), a.get("summary", ""), a.get("link", ""), a.get("source_type", ""), a.get("is_official", False)
+      )
+      commentary_penalty = 1 if a_type in ("opinion_commentary", "case_study_pr", "routine_minor_update") else 0
+      tier = a.get("trust_tier", 2)
+      return (is_off, commentary_penalty, tier)
+
+    group.sort(key=lead_sort_key)
     lead = group[0].copy()
 
     related_sources = []
-    seen_related = {lead["source"]}
+    seen_related_urls = {lead.get("link", "").strip().lower()}
     for other in group[1:]:
-      if other["source"] not in seen_related:
-        seen_related.add(other["source"])
+      o_link = other.get("link", "").strip().lower()
+      if o_link and o_link not in seen_related_urls:
+        seen_related_urls.add(o_link)
+        src_name = other.get("source") or other.get("source_name", "")
         related_sources.append({
-            "source_name": other["source"],
-            "source_url": other["link"],
+            "source_name": src_name,
+            "source_url": other.get("link"),
+            "title": other.get("title", ""),
             "article_id": other.get("article_id"),
             "publisher_id": other.get("publisher_id"),
             "publisher_group_id": other.get("publisher_group_id"),
             "source_type": other.get("source_type"),
-            "is_primary_source": other.get("is_primary_source"),
-            "publisher_owns_feed": other.get("publisher_owns_feed"),
+            "trust_tier": other.get("trust_tier", 2),
+            "is_primary_source": other.get("is_primary_source", False),
+            "publisher_owns_feed": other.get("publisher_owns_feed", True),
         })
 
     lead["cluster_id"] = f"cluster_{cluster_idx + 1}"

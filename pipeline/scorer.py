@@ -102,12 +102,13 @@ def classify_article_type(title, summary="", link="", source_type="", is_officia
   if "building the" in t_low and ("operating system for" in t_low or "platform for" in t_low):
     return "case_study_pr"
 
-  # 3. Security Vulnerability / Exploit / Red-Teaming / Alignment Failures
+  # 3. Security Vulnerability / Exploit / Red-Teaming / Alignment Failures / Safety Evals
   sec_keywords = [
       "cve-", "vulnerability", "vulnerabilities", "jailbreak", "prompt injection",
       "exploit", "backdoor", "red team", "red-team", "attack vector",
       "adversarial attack", "sandbox escape", "data leak", "malicious payload",
-      "detect frontier model misalignment", "frontier model misalignment", "misalignment"
+      "detect frontier model misalignment", "frontier model misalignment", "misalignment",
+      "safety eval", "safety evals", "safety risks", "alignment risks"
   ]
   if any(k in combined for k in sec_keywords):
     return "security_vulnerability"
@@ -246,6 +247,37 @@ def calculate_story_scores(article, corroboration_count=1):
     novelty -= 25
   novelty = min(100, max(0, novelty))
 
+  # 2.5 Technical Significance & Breakthrough Depth (0-100)
+  tech_significance = 60
+  breakthrough_kw = [
+      "novel architecture", "state-of-the-art", "sota", "open-weights", "open-source weights",
+      "speculative decoding", "radix cache", "kv cache", "distillation", "benchmark breakthrough",
+      "inference speedup", "reasoning model", "rlvr", "test-time compute", "linear attention",
+      "distributed serving", "quantization", "jailbreak", "adversarial attack", "agentic rl"
+  ]
+  routine_survey_kw = [
+      "a brief survey", "a review of", "systematic review", "incremental", "preliminary study",
+      "workshop", "a note on", "case study:", "customer spotlight"
+  ]
+  matched_breakthroughs = [w for w in breakthrough_kw if w in full_content]
+  if matched_breakthroughs:
+    tech_significance = min(100, 75 + len(matched_breakthroughs) * 8)
+    score_reasons.append(f"+ Demonstrable technical significance: {', '.join(matched_breakthroughs[:2])} (+{min(25, len(matched_breakthroughs)*8)} tech)")
+  elif any(w in full_content for w in routine_survey_kw):
+    tech_significance = max(25, tech_significance - 25)
+    score_reasons.append("- Incremental survey / routine overview without novel implementation (-25 tech)")
+  elif article_type in ("case_study_pr", "routine_minor_update"):
+    tech_significance = 35
+
+  # Research Quality Safeguards for Preprints (arXiv / preprints)
+  if article_type == "research_paper" or "arxiv.org" in (link or "").lower():
+    if not matched_breakthroughs and corroboration_count < 2:
+      # Penalize routine incremental preprints without proven technical breakthroughs
+      impact = max(25, impact - 20)
+      novelty = max(25, novelty - 20)
+      tech_significance = max(30, tech_significance - 20)
+      score_reasons.append("- Routine uncorroborated preprint without verifiable breakthrough signals (-20 research quality)")
+
   # 3. Evidence Quality & Authority (0-100)
   if is_official or trust_tier == 1:
     evidence = 100
@@ -320,14 +352,15 @@ def calculate_story_scores(article, corroboration_count=1):
 
   source_quality = evidence
 
-  # Base Composite Score Formula:
-  # 0.30 * Impact + 0.20 * Novelty + 0.20 * Evidence + 0.15 * Actionability + 0.15 * AI_Relevance
+  # Calibrated Composite Formula:
+  # 0.25 * Impact + 0.20 * Novelty + 0.20 * Tech_Significance + 0.15 * Evidence + 0.10 * Actionability + 0.10 * AI_Relevance
   base_score = (
-      0.30 * impact +
+      0.25 * impact +
       0.20 * novelty +
-      0.20 * evidence +
-      0.15 * actionability +
-      0.15 * ai_relevance
+      0.20 * tech_significance +
+      0.15 * evidence +
+      0.10 * actionability +
+      0.10 * ai_relevance
   )
 
   # Apply Intent Multiplier
@@ -343,7 +376,10 @@ def calculate_story_scores(article, corroboration_count=1):
   elif article_type == "routine_minor_update":
     final_score = min(raw_score, 52.0)
     score_reasons.append("- [routine_minor_penalty] Routine minor update capped at 52.0 ceiling")
-  # 3. Single-source uncorroborated arXiv preprints capped at 73.0 to protect frontier announcements.
+  # 3. Single-source uncorroborated arXiv preprints without breakthroughs capped at 64.0 to protect signal.
+  elif article_type == "research_paper" and corroboration_count < 2 and not matched_breakthroughs:
+    final_score = min(raw_score, 64.0)
+    score_reasons.append("- [uncorroborated_arxiv_cap] Single-source routine research preprint capped at 64.0 ceiling")
   elif article_type == "research_paper" and corroboration_count < 2:
     final_score = min(raw_score, 73.0)
     score_reasons.append("- [uncorroborated_arxiv_cap] Single-source research preprint capped at 73.0 ceiling")
@@ -369,11 +405,11 @@ def calculate_story_scores(article, corroboration_count=1):
 
   # Publication Eligibility Flags
   eligible_for_top = (
-      pulse_score >= 68.0 and
-      article_type not in ("case_study_pr", "routine_minor_update")
+      pulse_score >= 72.0 and
+      article_type not in ("case_study_pr", "routine_minor_update", "opinion_commentary")
   )
   eligible_for_briefing = (
-      pulse_score >= 78.0 and
+      pulse_score >= 80.0 and
       article_type in ("frontier_launch", "open_source_release", "sdk_api_update", "security_vulnerability")
   )
 
@@ -388,6 +424,7 @@ def calculate_story_scores(article, corroboration_count=1):
       "confidence_score": round(source_quality, 1),  # Backward compatibility alias
       "popularity_score": round(coverage_signal, 1),  # Backward compatibility alias
       "novelty_score": round(novelty, 1),
+      "technical_significance_score": round(tech_significance, 1),
       "actionability_score": round(actionability, 1),
       "confidence_label": confidence_label,
       "article_type": article_type,

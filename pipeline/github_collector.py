@@ -235,14 +235,14 @@ def fetch_github_api(endpoint_url: str, token: str = None, timeout: float = DEFA
 
 def collect_github_developer_trends(
     queries: list[str] = None,
-    limit: int = 15,
+    limit: int = 8,
     snapshot_file: str = GITHUB_SNAPSHOTS_FILE,
     token: str = None,
     fallback_data_file: str = "data.json",
 ) -> list[dict]:
   """Collects emerging AI developer repositories from GitHub API.
   Records current star snapshots, calculates verified historical growth,
-  scores each repository, and returns a validated list of developer trend records.
+  scores each repository, and returns a validated list of 5-8 developer trend records.
   Gracefully falls back to existing snapshot data or data.json on rate limit or network failure.
   """
   now_iso = datetime.now(timezone.utc).isoformat()
@@ -285,6 +285,30 @@ def collect_github_developer_trends(
       forks = int(item.get("forks_count", 0))
       updated_at = item.get("pushed_at") or item.get("updated_at")
       created_at = item.get("created_at")
+
+      desc = (item.get("description") or "").lower()
+      name_low = (item.get("name") or "").lower()
+      combined_text = f"{name_low} {desc} {' '.join(item.get('topics', []))}"
+
+      # Filter scam / spam / unrelated crypto spikes
+      spam_kw = ["airdrop", "crypto", "token", "presale", "free-money", "telegram", "faucet", "casino"]
+      if any(k in combined_text for k in spam_kw):
+        continue
+
+      # Filter artificial star spikes (botting signature: thousands of stars with near-zero forks)
+      if stars >= 1000 and (forks / max(stars, 1)) < 0.005:
+        continue
+
+      # Filter inactive / abandoned repos (> 180 days stale)
+      if updated_at:
+        try:
+          up_dt = datetime.fromisoformat(updated_at.replace("Z", "+00:00"))
+          if up_dt.tzinfo is None:
+            up_dt = up_dt.replace(tzinfo=timezone.utc)
+          if (datetime.now(timezone.utc) - up_dt).total_seconds() > 180 * 86400:
+            continue
+        except Exception:
+          pass
 
       # Record observation into snapshot history
       repo_snapshots = snapshots_dict.setdefault(repo_full, [])

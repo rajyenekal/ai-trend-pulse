@@ -1332,6 +1332,202 @@ class TestBackendPipeline(unittest.TestCase):
         self.assertIn("signal_badge", item, f"Missing signal_badge in {sec}")
         self.assertEqual(item["signal_badge"], tracker.SIGNAL_BADGE_MAP[item["article_type"]])
 
+  def test_top_developments_limit_and_no_quota(self):
+    """Verifies that Top Developments is capped at 5-7 stories and does not backfill low-quality quotas."""
+    high_signal_stories = [
+        {
+            "title": f"Major AI Foundation Breakthrough {i}",
+            "summary": "Frontier foundation model benchmark advance",
+            "link": f"https://example.com/breakthrough_{i}",
+            "source": f"Lab {i}",
+            "overall_score": 92.0 - i * 2,
+            "pulse_score": 92.0 - i * 2,
+            "article_type": "frontier_launch",
+            "eligible_for_top_developments": True,
+            "independent_source_count": 2,
+        }
+        for i in range(12)
+    ]
+    overview = tracker.generate_daily_overview(high_signal_stories, "2026-11-05T00:00:00Z")
+    top_devs = overview["top_developments"]
+    self.assertLessEqual(len(top_devs), 7, "Top Developments must be capped at 5-7 stories (max 7)")
+    self.assertGreaterEqual(len(top_devs), 5, "With sufficient qualifying stories, 5-7 should be selected")
+
+    # When only 3 stories qualify, do not enforce a quota of 4 or 7
+    few_stories = high_signal_stories[:3]
+    overview_few = tracker.generate_daily_overview(few_stories, "2026-11-05T00:00:00Z")
+    self.assertEqual(len(overview_few["top_developments"]), 3, "Must not backfill arbitrary quotas when fewer qualify")
+
+  def test_curated_updates_target_12_to_18_and_source_dominance(self):
+    """Verifies that total curated updates target 12-18 and prevents high-volume source dominance."""
+    candidate_articles = []
+    # 10 OpenAI stories
+    for i in range(10):
+      candidate_articles.append({
+          "title": f"OpenAI releases platform feature {i} for developers",
+          "summary": f"OpenAI platform feature {i} documentation",
+          "link": f"https://openai.com/feature_{i}",
+          "source": "OpenAI News",
+          "source_id": "openai_news",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_official": True,
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+      })
+    # 10 arXiv stories
+    for i in range(10):
+      candidate_articles.append({
+          "title": f"arXiv research preprint on benchmark evaluation {i}",
+          "summary": f"Benchmark study on reasoning {i}",
+          "link": f"https://arxiv.org/abs/2611.000{i}",
+          "source": "arXiv cs.AI",
+          "source_id": "arxiv_cs_ai",
+          "source_type": "research",
+          "trust_tier": 3,
+          "is_official": False,
+          "publisher_id": "arxiv",
+          "publisher_group_id": "cornell_arxiv",
+      })
+    # 15 Diverse independent stories across distinct topics
+    topics = [
+        ("Google DeepMind", "Gemini Flash reasoning update"),
+        ("Anthropic Official News", "Claude model evaluation framework"),
+        ("Mistral AI News", "Mistral Large open weights release"),
+        ("Meta AI", "LLaMA architecture scaling report"),
+        ("NVIDIA Blog", "Blackwell GPU inference acceleration"),
+        ("AWS Machine Learning", "Bedrock agent runtime service"),
+        ("TechCrunch AI", "Enterprise AI adoption survey results"),
+        ("The Verge AI", "AI copyright regulation legal challenge"),
+        ("MIT Technology Review", "Autonomous coding agents benchmark"),
+        ("The Decoder", "SGLang inference cache benchmark"),
+        ("LMSYS Org", "Chatbot arena evaluation ranking report"),
+        ("Amazon Science", "Robot learning policy transfer paper"),
+        ("Simon Willison Weblog", "Prompt injection defenses in coding assistants"),
+        ("GitHub Blog AI", "Copilot workspace developer productivity metrics"),
+        ("BAIR Blog", "Reinforcement learning from verifiable rewards"),
+    ]
+    for i, (src, headline) in enumerate(topics):
+      is_off = src in ["Google DeepMind", "Anthropic Official News", "Mistral AI News", "NVIDIA Blog", "AWS Machine Learning"]
+      candidate_articles.append({
+          "title": f"{src} announces {headline}",
+          "summary": f"Detailed technical report on {headline}",
+          "link": f"https://example.org/{src.lower().replace(' ', '_')}_{i}",
+          "source": src,
+          "source_id": src.lower().replace(" ", "_"),
+          "source_type": "official" if is_off else "publication",
+          "trust_tier": 1 if is_off else 2,
+          "is_official": is_off,
+          "publisher_id": src.lower().replace(" ", "_"),
+          "publisher_group_id": src.lower().replace(" ", "_"),
+      })
+
+    clustered = tracker.cluster_and_deduplicate_articles(candidate_articles)
+    payload = tracker.build_complete_payload(clustered)
+    top_stories = payload["top_stories"]
+
+    self.assertLessEqual(len(top_stories), 18, "Total curated updates must be capped at 12-18 (max 18)")
+    self.assertGreaterEqual(len(top_stories), 12, "Should target 12-18 curated updates")
+
+    # Source Dominance Protection check: OpenAI must not take more than 3 slots
+    openai_count = sum(1 for s in top_stories if "openai" in s.get("source", "").lower() or s.get("publisher_group_id") == "openai")
+    self.assertLessEqual(openai_count, 3, "OpenAI must not dominate the feed (max 2-3 with Tier 1 exception)")
+
+    # arXiv must not dominate the feed (max 2)
+    arxiv_count = sum(1 for s in top_stories if "arxiv" in s.get("source", "").lower() or s.get("publisher_group_id") == "cornell_arxiv")
+    self.assertLessEqual(arxiv_count, 2, "arXiv must not dominate the feed (max 2)")
+
+  def test_strengthened_clustering_merges_announcements_reports_and_commentary(self):
+    """Verifies that an official announcement, news reporting, and commentary on the same launch cluster together."""
+    articles = [
+        {
+            "title": "Anthropic introduces Claude 3.7 Sonnet with hybrid reasoning",
+            "summary": "Official announcement of Claude 3.7 Sonnet model with hybrid thinking mode.",
+            "link": "https://www.anthropic.com/news/claude-3-7-sonnet",
+            "source": "Anthropic Official News",
+            "source_id": "anthropic_news",
+            "source_type": "official",
+            "trust_tier": 1,
+            "is_official": True,
+            "publisher_id": "anthropic",
+            "publisher_group_id": "anthropic",
+            "published": "Nov 04, 10:00 UTC",
+        },
+        {
+            "title": "Anthropic launches Claude 3.7 Sonnet featuring hybrid reasoning architecture",
+            "summary": "Independent coverage of Anthropic's new flagship Claude 3.7 Sonnet model.",
+            "link": "https://techcrunch.com/2026/11/04/anthropic-claude-3-7-sonnet",
+            "source": "TechCrunch AI",
+            "source_id": "techcrunch_ai",
+            "source_type": "publication",
+            "trust_tier": 2,
+            "is_official": False,
+            "publisher_id": "techcrunch",
+            "publisher_group_id": "techcrunch",
+            "published": "Nov 04, 11:30 UTC",
+        },
+        {
+            "title": "Reflections on Claude 3.7 Sonnet and hybrid reasoning in developer tools",
+            "summary": "Opinion and practitioner commentary analyzing Claude 3.7 Sonnet coding abilities.",
+            "link": "https://simonwillison.net/2026/Nov/4/claude-37-sonnet/",
+            "source": "Simon Willison Weblog",
+            "source_id": "simon_willison",
+            "source_type": "practitioner",
+            "trust_tier": 4,
+            "is_official": False,
+            "publisher_id": "simon_willison",
+            "publisher_group_id": "simon_willison",
+            "published": "Nov 04, 13:00 UTC",
+        },
+    ]
+
+    clustered = tracker.cluster_and_deduplicate_articles(articles)
+    self.assertEqual(len(clustered), 1, "Official announcement, reporting, and commentary must merge into 1 cluster")
+
+    lead = clustered[0]
+    self.assertTrue(lead["is_official"], "Tier 1 official primary announcement must lead the cluster")
+    self.assertEqual(lead["source"], "Anthropic Official News")
+    self.assertEqual(len(lead["related_sources"]), 2, "Both supporting sources must be preserved in related_sources")
+    self.assertEqual(lead["independent_publisher_count"], 2, "Only Tier 1 and Tier 2 should count toward independent publishers")
+
+  def test_developer_trends_limit_and_spike_filter(self):
+    """Verifies that developer trends are limited to 5-8 repositories and filter spam/botting."""
+    from pipeline.github_collector import collect_github_developer_trends
+    # Dummy mock response with 15 repos including spam and zero-fork spikes
+    fake_items = [
+        {"full_name": "ai-legit/agent-core", "name": "agent-core", "stargazers_count": 5000, "forks_count": 800, "description": "AI agent framework for production", "topics": ["ai", "ai-agent"]},
+        {"full_name": "spam/crypto-airdrop", "name": "crypto-airdrop", "stargazers_count": 9999, "forks_count": 500, "description": "Free crypto airdrop bot", "topics": ["crypto", "token"]},
+        {"full_name": "fake/star-buyer", "name": "star-buyer", "stargazers_count": 10000, "forks_count": 2, "description": "Artificial star spiked repository", "topics": ["ai"]},
+    ]
+    for i in range(10):
+      fake_items.append({
+          "full_name": f"legit/repo-{i}",
+          "name": f"repo-{i}",
+          "stargazers_count": 1000 + i * 100,
+          "forks_count": 200 + i * 20,
+          "description": f"Legitimate AI framework {i}",
+          "topics": ["llm", "rag"],
+      })
+
+    class FakeResp:
+      def __init__(self, data):
+        self.data = json.dumps(data).encode("utf-8")
+        self.status = 200
+        self.headers = {}
+      def read(self):
+        return self.data
+      def __enter__(self):
+        return self
+      def __exit__(self, *args):
+        pass
+
+    with patch("urllib.request.urlopen", return_value=FakeResp({"items": fake_items})):
+      trends = collect_github_developer_trends(limit=8, snapshot_file="/tmp/test_snapshots_dev.json")
+      self.assertLessEqual(len(trends), 8, "Developer trends must be limited to <= 8 repositories")
+      repo_names = [t["repository"] for t in trends]
+      self.assertNotIn("spam/crypto-airdrop", repo_names, "Spam crypto repo must be filtered")
+      self.assertNotIn("fake/star-buyer", repo_names, "Artificial star spike (near-zero forks) must be filtered")
+
 
 if __name__ == "__main__":
   unittest.main()

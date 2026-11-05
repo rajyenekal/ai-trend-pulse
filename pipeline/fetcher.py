@@ -712,6 +712,10 @@ def parse_feed_with_fallback_status(feed_url, timeout=12.0, cache=None):
           " (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
       ),
       "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
   }
 
   cached_entry = cache.get(feed_url) if cache else None
@@ -893,6 +897,109 @@ def fetch_anthropic_official_news(timeout=12.0):
 
 
 # -------------------------------------------------------------
+# LMSYS HTML PAGE ADAPTER
+# -------------------------------------------------------------
+def fetch_lmsys_official_news_with_status(timeout=12.0):
+  """Fetches and parses LMSYS blog posts directly from Next.js server payload."""
+  url = "https://www.lmsys.org/blog"
+  headers = {
+      "User-Agent": (
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+          " (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+      ),
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+  }
+  req = urllib.request.Request(url, headers=headers)
+  with urllib.request.urlopen(req, timeout=timeout) as resp:
+    status_code = getattr(resp, "status", 200)
+    raw_html = resp.read()
+    if resp.headers.get("Content-Encoding") == "gzip" or raw_html.startswith(b"\x1f\x8b"):
+      raw_html = gzip.decompress(raw_html)
+    html_text = raw_html.decode("utf-8", errors="replace")
+
+  pattern = re.compile(
+      r'\{\\?"slug\\?":\\?"([^\\"]+)\\?",\\?"title\\?":\\?"([^\\"]+)\\?"[^}]*?\\?"date\\?":\\?"([^\\"]+)\\?"[^}]*?\\?"excerpt\\?":\\?"([^\\"]+)\\?"'
+  )
+  matches = pattern.findall(html_text)
+  entries = []
+  seen_links = set()
+  for slug, title, dt_str, excerpt in matches:
+    clean_slug = slug.strip()
+    full_url = f"https://www.lmsys.org/blog/{clean_slug}"
+    if full_url in seen_links:
+      continue
+    seen_links.add(full_url)
+    entries.append({
+        "title": html.unescape(title).strip(),
+        "link": full_url,
+        "summary": html.unescape(excerpt).strip(),
+        "published": dt_str.strip(),
+    })
+    if len(entries) >= 20:
+      break
+
+  return entries, status_code
+
+
+def fetch_lmsys_official_news(timeout=12.0):
+  try:
+    entries, _ = fetch_lmsys_official_news_with_status(timeout=timeout)
+    return entries
+  except Exception:
+    return []
+
+
+# -------------------------------------------------------------
+# HUGGING FACE DAILY PAPERS ADAPTER
+# -------------------------------------------------------------
+def fetch_hf_daily_papers_with_status(timeout=12.0):
+  """Fetches curated AI research papers from Hugging Face Daily Papers open API."""
+  url = "https://huggingface.co/api/daily_papers"
+  headers = {
+      "User-Agent": (
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+          " (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+      ),
+      "Accept": "application/json",
+  }
+  req = urllib.request.Request(url, headers=headers)
+  with urllib.request.urlopen(req, timeout=timeout) as resp:
+    status_code = getattr(resp, "status", 200)
+    raw_bytes = resp.read()
+    if resp.headers.get("Content-Encoding") == "gzip" or raw_bytes.startswith(b"\x1f\x8b"):
+      raw_bytes = gzip.decompress(raw_bytes)
+    data = json.loads(raw_bytes.decode("utf-8", errors="replace"))
+
+  entries = []
+  if isinstance(data, list):
+    for it in data[:25]:
+      p = it.get("paper", {})
+      pid = p.get("id")
+      title = p.get("title")
+      if not pid or not title:
+        continue
+      summary = p.get("summary") or ""
+      pub_dt = it.get("publishedAt") or ""
+      entries.append({
+          "title": html.unescape(title).strip(),
+          "link": f"https://huggingface.co/papers/{pid}",
+          "summary": html.unescape(summary).strip(),
+          "published": pub_dt,
+      })
+
+  return entries, status_code
+
+
+def fetch_hf_daily_papers(timeout=12.0):
+  try:
+    entries, _ = fetch_hf_daily_papers_with_status(timeout=timeout)
+    return entries
+  except Exception:
+    return []
+
+
+# -------------------------------------------------------------
 # FETCH WITH RETRY & TELEMETRY
 # -------------------------------------------------------------
 def fetch_source_feed(source, timeout=12.0, cache=None, max_retries=2):
@@ -925,6 +1032,12 @@ def fetch_source_feed(source, timeout=12.0, cache=None, max_retries=2):
     try:
       if fetch_method == "html_page_adapter" and source_id == "anthropic_news":
         entries, status = fetch_anthropic_official_news_with_status(timeout=timeout)
+        health["http_status"] = status
+      elif fetch_method == "html_page_adapter" and source_id == "lmsys_org":
+        entries, status = fetch_lmsys_official_news_with_status(timeout=timeout)
+        health["http_status"] = status
+      elif (fetch_method == "json_api_adapter" or source_id == "hf_daily_papers"):
+        entries, status = fetch_hf_daily_papers_with_status(timeout=timeout)
         health["http_status"] = status
       elif fetch_method == "rsshub":
         from .rsshub_collector import fetch_rsshub_feed

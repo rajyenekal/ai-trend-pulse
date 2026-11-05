@@ -768,25 +768,34 @@ def generate_daily_overview(clustered_stories, now_iso):
         "Frontier AI developments continue accelerating across practical coding assistants, model architectures, and evaluation standards."
     )
 
-  # Select top 10-15 high-signal developments with publisher diversity (max 2 per publisher)
+  # Select top 5-7 genuinely important developments with publisher diversity (target 5-7, max 7)
   top_developments = []
   publisher_counts = {}
-  MAX_TOP_PER_PUB = 2
+  MAX_TOP_PER_PUB = 1
 
   for s in ranked_stories:
-    if len(top_developments) >= 15:
+    if len(top_developments) >= 7:
       break
 
-    art_type = classify_article_type(
-        s.get("title", ""), s.get("summary", ""), s.get("link", ""), s.get("source_type", "publication"), s.get("is_official", False)
-    )
+    pulse_val = s.get("pulse_score", s.get("overall_score", 0.0))
+    # Strictly require pulse_score >= 70.0 and must not be routine minor update or promotional case study
+    if pulse_val < 70.0:
+      continue
+
+    art_type = s.get("article_type")
+    if not art_type:
+      is_off = s.get("is_official", False) or any(k in s.get("source", "").lower() for k in ["official", "deepmind", "openai", "anthropic", "mistral", "aws", "microsoft", "google"])
+      art_type = classify_article_type(
+          s.get("title", ""), s.get("summary", ""), s.get("link", ""), s.get("source_type", "official" if is_off else "publication"), is_off
+      )
     # Strictly exclude single-source vendor case studies and routine minor updates from top developments
-    if art_type in ("case_study_pr", "routine_minor_update") and s.get("independent_source_count", 1) < 3:
+    if art_type in ("case_study_pr", "routine_minor_update", "opinion_commentary") and s.get("independent_source_count", 1) < 2 and not s.get("is_official"):
       continue
 
     src = s.get("source", "")
     pub = PUBLISHER_ORGANIZATION_MAP.get(src, src)
-    if publisher_counts.get(pub, 0) >= MAX_TOP_PER_PUB:
+    # Allow 2nd story from same publisher ONLY if it is an exceptional breakthrough (pulse_score >= 88)
+    if publisher_counts.get(pub, 0) >= MAX_TOP_PER_PUB and pulse_val < 88.0:
       continue
 
     publisher_counts[pub] = publisher_counts.get(pub, 0) + 1
@@ -812,38 +821,9 @@ def generate_daily_overview(clustered_stories, now_iso):
         "why_it_matters": why_sentence,
         "target_audience": audience_info["target"],
         "impact": audience_info["impact"],
-        "score": s.get("pulse_score", s.get("overall_score", 80.0)),
+        "score": pulse_val,
         "score_reasons": s.get("score_reasons", []),
     })
-
-  # Backfill to at least 4 if collection is tiny
-  if len(top_developments) < 4:
-    for s in clustered_stories:
-      if any(d["link"] == s.get("link") for d in top_developments):
-        continue
-      category, _, _ = classify_topic_detailed(s.get("title", ""), s.get("summary", ""))
-      clean_s = sanitize_and_format_summary(s.get("summary", ""), s.get("title", ""))
-      _, what_changed, why_sentence, _ = generate_editorial_trio(s.get("title", ""), clean_s, category)
-      audience_info = generate_audience_impact(s.get("title", ""), clean_s, category)
-      art_type = s.get("article_type", "frontier_launch")
-      sig_badge = s.get("signal_badge") or SIGNAL_BADGE_MAP.get(art_type, "📰 AI Update")
-      top_developments.append({
-          "title": s.get("title", ""),
-          "topic": category,
-          "category": category,
-          "source": s.get("source", ""),
-          "link": s.get("link", ""),
-          "article_type": art_type,
-          "signal_badge": sig_badge,
-          "what_changed": what_changed,
-          "why_it_matters": why_sentence,
-          "target_audience": audience_info["target"],
-          "impact": audience_info["impact"],
-          "score": s.get("pulse_score", s.get("overall_score", 80.0)),
-          "score_reasons": s.get("score_reasons", []),
-      })
-      if len(top_developments) >= 4:
-        break
 
   return {
       "total_developments_today": total_count,
@@ -861,10 +841,10 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
   now_iso = datetime.now(timezone.utc).isoformat()
   daily_overview = generate_daily_overview(clustered_stories, now_iso)
 
-  # 1. Format Top Stories (Dispatches) - capped to top 45 scored stories with publisher diversity and recency
+  # 1. Format Top Stories (Curated Updates) - targeted to 12-18 high-signal updates (max 18) with source diversity
   top_stories = []
   publisher_counts = {}
-  MAX_PER_PUBLISHER = 6
+  MAX_PER_PUBLISHER = 2
 
   try:
     now_dt = datetime.fromisoformat(now_iso.replace("Z", "+00:00")) if now_iso else datetime.now(timezone.utc)
@@ -874,12 +854,22 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
   ranked_stories = sorted(clustered_stories, key=lambda s: compute_recency_score(s, now_dt), reverse=True)
 
   for s in ranked_stories:
-    if len(top_stories) >= 45:
+    if len(top_stories) >= 18:
       break
+
+    pulse_val = s.get("pulse_score", s.get("overall_score", 0.0))
+    # Editorial quality floor: exclude low-signal stories when baseline is met
+    if pulse_val < 65.0 and len(top_stories) >= 12:
+      continue
+
     src = s.get("source", "")
     pub = PUBLISHER_ORGANIZATION_MAP.get(src, src)
-    if publisher_counts.get(pub, 0) >= MAX_PER_PUBLISHER and len(clustered_stories) > 35:
+    # Source Dominance Protection:
+    # Cap at 2 per publisher, but allow a 3rd slot ONLY if pulse_score >= 85 (major Tier 1 announcement or breakthrough)
+    pub_limit = 3 if (pulse_val >= 85.0 and (s.get("is_official") or s.get("trust_tier") == 1)) else MAX_PER_PUBLISHER
+    if publisher_counts.get(pub, 0) >= pub_limit and len(clustered_stories) > 15:
       continue
+
     publisher_counts[pub] = publisher_counts.get(pub, 0) + 1
 
     company = detect_company(s.get("title", ""), s.get("source", ""))
@@ -1224,10 +1214,12 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
     norm_link = normalize_url(s["link"])
     if norm_link in assigned_urls:
       continue
-    # Must be AI Products & Tools, and explicitly reject lawsuits/environmental issues
+    # Must be AI Products & Tools, or tool/platform/assistant keywords, rejecting lawsuits
+    title_lower = s["title"].lower()
     is_tool = (
-        s.get("category") == "AI Products & Tools" and
-        not any(bad in s["title"].lower() for bad in ["lawsuit", "naacp", "sued", "pollution", "court", "judge", "illegal", "protest"])
+        (s.get("category") in ("AI Products & Tools", "AI Applications") or
+         any(k in title_lower for k in ["tool", "agent", "platform", "assistant", "copilot", "app", "bedrock", "sagemaker", "antigravity", "crawl4ai"])) and
+        not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court", "judge", "illegal", "protest"])
     )
     if is_tool:
       ai_tools.append(s)
@@ -1235,16 +1227,31 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
       if len(ai_tools) >= 4:
         break
 
+  # If exclusive assignment left ai_tools empty, draw from top_stories matching tool criteria
+  if not ai_tools:
+    for s in top_stories:
+      title_lower = s["title"].lower()
+      is_tool = (
+          (s.get("category") in ("AI Products & Tools", "AI Applications", "AI News") or
+           any(k in title_lower for k in ["tool", "agent", "platform", "assistant", "copilot", "app", "bedrock", "sagemaker", "antigravity", "crawl4ai"])) and
+          not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court", "judge", "illegal", "protest"])
+      )
+      if is_tool and not any(t["link"] == s["link"] for t in ai_tools):
+        ai_tools.append(s)
+        if len(ai_tools) >= 3:
+          break
+
   # Developer Radar: APIs, SDKs, frameworks, libraries, coding agents, MCP
   dev_radar = []
   for s in top_stories:
     norm_link = normalize_url(s["link"])
     if norm_link in assigned_urls:
       continue
+    title_lower = s["title"].lower()
     is_dev = (
-        s.get("category") in ("AI Products & Tools", "AI Models & Research", "AI Applications") and
-        any(k in s["title"].lower() for k in ["sdk", "api", "code", "agent", "open-source", "weight", "benchmark", "mcp", "library", "framework", "repo", "github", "inference", "developer", "vs code"]) and
-        not any(bad in s["title"].lower() for bad in ["lawsuit", "naacp", "sued", "pollution", "court"])
+        s.get("category") in ("AI Products & Tools", "AI Models & Research", "AI Applications", "AI Infrastructure", "AI News") and
+        any(k in title_lower for k in ["sdk", "api", "code", "agent", "open-source", "open source", "weight", "benchmark", "mcp", "library", "framework", "repo", "github", "inference", "developer", "vs code", "distillation", "sglang", "vllm"]) and
+        not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court"])
     )
     if is_dev:
       dev_radar.append(s)
@@ -1252,22 +1259,49 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
       if len(dev_radar) >= 4:
         break
 
+  # If exclusive assignment left dev_radar empty, draw from top_stories matching dev criteria
+  if not dev_radar:
+    for s in top_stories:
+      title_lower = s["title"].lower()
+      is_dev = (
+          any(k in title_lower for k in ["sdk", "api", "code", "agent", "open-source", "open source", "weight", "benchmark", "mcp", "library", "framework", "repo", "github", "inference", "developer", "distillation", "cloud"]) and
+          not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court"])
+      )
+      if is_dev and not any(r["link"] == s["link"] for r in dev_radar):
+        dev_radar.append(s)
+        if len(dev_radar) >= 3:
+          break
+
   # Research & Safety: safety, alignment, security, policy, governance, preprints
   research_safety = []
   for s in top_stories:
     norm_link = normalize_url(s["link"])
     if norm_link in assigned_urls:
       continue
+    title_lower = s["title"].lower()
     is_research = (
         s.get("category") in ("AI Security & Safety", "AI Policy & Regulation", "AI Models & Research") or
         s.get("trust_tier") in (3, 4) or
-        any(k in s["title"].lower() for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark", "risk", "security", "copyright", "red team", "misalignment", "model spec"])
+        any(k in title_lower for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark", "risk", "security", "copyright", "red team", "misalignment", "model spec", "defense"])
     )
     if is_research:
       research_safety.append(s)
       assigned_urls.add(norm_link)
       if len(research_safety) >= 4:
         break
+
+  # Fallback for research_safety if empty
+  if not research_safety:
+    for s in top_stories:
+      title_lower = s["title"].lower()
+      is_research = (
+          s.get("category") in ("AI Security & Safety", "AI Policy & Regulation", "AI Models & Research") or
+          any(k in title_lower for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "benchmark", "risk", "security", "defense"])
+      )
+      if is_research and not any(r["link"] == s["link"] for r in research_safety):
+        research_safety.append(s)
+        if len(research_safety) >= 3:
+          break
 
   # Trending: Stories with corroborated multi-outlet coverage (independent_source_count > 1) or high overall score
   trending = []

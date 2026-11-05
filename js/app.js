@@ -71,10 +71,15 @@ export function reRenderDevelopments() {
   if (!state.data) return;
   const filtered = getFilteredStories(state.data.top_stories || []);
 
+  // When viewing default unfiltered feed ("All Intelligence" and no search query),
+  // avoid repeating the top 5 stories already showcased in the Bento Grid directly above
+  const isDefaultView = state.activeTopic === 'all' && state.activeSection === 'all' && !state.searchQuery;
+  const displayItems = (isDefaultView && filtered.length > 5) ? filtered.slice(5) : filtered;
+
   if (state.activeView === 'wire') {
-    renderCompactWire(filtered);
+    renderCompactWire(displayItems);
   } else {
-    renderEditorialCards(filtered);
+    renderEditorialCards(displayItems);
   }
 
   // Update view mode toggle active states
@@ -259,10 +264,18 @@ export function handleSortChange(sortValue) {
 // -------------------------------------------------------------
 // 2B. STORY ACTION HANDLERS & IN-APP READER DISPATCHES
 // -------------------------------------------------------------
+export function openReaderForBento(idx, e) {
+  if (e) e.preventDefault();
+  const item = state.data?.top_stories?.[idx];
+  if (item) openReaderView(item);
+}
+
 export function openReaderForTrend(idx, e) {
   if (e) e.preventDefault();
   const filtered = getFilteredStories(state.data?.top_stories || []);
-  const item = filtered[idx] || state.data?.top_stories?.[idx] || state.data?.trends?.[idx];
+  const isDefaultView = state.activeTopic === 'all' && state.activeSection === 'all' && !state.searchQuery;
+  const displayItems = (isDefaultView && filtered.length > 5) ? filtered.slice(5) : filtered;
+  const item = displayItems[idx] || filtered[idx] || state.data?.top_stories?.[idx] || state.data?.trends?.[idx];
   if (item) openReaderView(item);
 }
 
@@ -305,7 +318,9 @@ export function openReaderForDailyItem(idx, e) {
 
 export function handleSaveTrend(idx, btn) {
   const filtered = getFilteredStories(state.data?.top_stories || []);
-  const item = filtered[idx] || state.data?.top_stories?.[idx];
+  const isDefaultView = state.activeTopic === 'all' && state.activeSection === 'all' && !state.searchQuery;
+  const displayItems = (isDefaultView && filtered.length > 5) ? filtered.slice(5) : filtered;
+  const item = displayItems[idx] || filtered[idx] || state.data?.top_stories?.[idx];
   if (!item) return;
   const url = (item.evidence_urls && item.evidence_urls[0]) || item.link || '#';
   const isSaved = toggleSaveItem(item.title, item.source, url, item.company, item);
@@ -331,7 +346,9 @@ export function handleSaveCurated(sectionType, idx, btn) {
 
 export function handleCopyTrend(idx, btn) {
   const filtered = getFilteredStories(state.data?.top_stories || []);
-  const item = filtered[idx] || state.data?.top_stories?.[idx];
+  const isDefaultView = state.activeTopic === 'all' && state.activeSection === 'all' && !state.searchQuery;
+  const displayItems = (isDefaultView && filtered.length > 5) ? filtered.slice(5) : filtered;
+  const item = displayItems[idx] || filtered[idx] || state.data?.top_stories?.[idx];
   if (!item) return;
   const text = `${item.title}\n\n${item.what_changed || item.summary || ''}\n\nWhy it matters: ${item.why_it_matters || ''}\nSource: ${item.source}`;
   if (navigator?.clipboard?.writeText) {
@@ -606,6 +623,7 @@ if (typeof window !== 'undefined') {
   window.formatIST = formatIST;
 
   // Story action handlers & reader dispatches
+  window.openReaderForBento = openReaderForBento;
   window.openReaderForTrend = openReaderForTrend;
   window.openReaderForDispatch = openReaderForDispatch;
   window.openReaderForCurated = openReaderForCurated;

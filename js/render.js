@@ -333,7 +333,7 @@ export function renderTop5Bento(stories) {
 
       <div class="bento-grid">
         <!-- Lead Hero Bento Card -->
-        <article class="bento-card bento-hero" onclick="openReaderForTrend(0, event)">
+        <article class="bento-card bento-hero" onclick="openReaderForBento(0, event)">
           <div class="bento-hero-media">
             <img src="${escapeHTML(heroImgUrl)}" alt="${escapeHTML(hero.title)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(heroTopic)}') : '';" />
             <span class="media-illustration-tag" aria-hidden="true">Illustration</span>
@@ -370,7 +370,7 @@ export function renderTop5Bento(stories) {
                 <span>•</span>
                 <span>⏱ ${escapeHTML(heroReadTime)}</span>
               </div>
-              <button class="btn-read-deep-dive" onclick="openReaderForTrend(0, event)">
+              <button class="btn-read-deep-dive" onclick="openReaderForBento(0, event)">
                 <span>Read Deep Dive</span>
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
@@ -388,7 +388,7 @@ export function renderTop5Bento(stories) {
     const subRelTime = formatRelativeTime(item.published_at || item.published);
 
     html += `
-      <article class="bento-card bento-subcard" onclick="openReaderForTrend(${idx + 1}, event)">
+      <article class="bento-card bento-subcard" onclick="openReaderForBento(${idx + 1}, event)">
         <div>
           <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; margin-bottom:6px;">
             <span class="badge-signal" style="font-size:0.68rem; padding:2px 6px;">${escapeHTML(item.signal_badge || '📰 AI Update')}</span>
@@ -884,7 +884,7 @@ export function renderDeveloperTrends(data) {
     return;
   }
 
-  container.innerHTML = filtered.slice(0, 12).map((repo, idx) => {
+  container.innerHTML = filtered.slice(0, 8).map((repo, idx) => {
     const starsFmt = formatCompactNumber(repo.stars || 0);
     const forksFmt = formatCompactNumber(repo.forks || 0);
     const scoreVal = Number(repo.developer_trend_score || 0).toFixed(1);

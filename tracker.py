@@ -62,6 +62,10 @@ from pipeline.fetcher import (
     parse_feed_with_fallback,
     fetch_anthropic_official_news_with_status,
     fetch_anthropic_official_news,
+    fetch_lmsys_official_news_with_status,
+    fetch_lmsys_official_news,
+    fetch_hf_daily_papers_with_status,
+    fetch_hf_daily_papers,
     fetch_source_feed,
     collect_fresh_news,
 )
