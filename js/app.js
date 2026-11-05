@@ -101,6 +101,24 @@ export function renderCompleteUI(data) {
   if (!data) return;
   state.data = data;
 
+  // Proactively clear lingering skeleton cards across all containers so placeholders never hang
+  const skeletonContainers = [
+    'developer-trends-container',
+    'ai-tools-container',
+    'dev-radar-container',
+    'research-safety-container',
+    'stories-container',
+    'developments-container',
+    'bento-container'
+  ];
+  skeletonContainers.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      const skeletons = el.querySelectorAll('.skeleton-card');
+      skeletons.forEach(s => s.remove());
+    }
+  });
+
   // 1. Compute category counts across top_stories
   const counts = {};
   CANONICAL_CATEGORIES.forEach(c => { counts[c] = 0; });

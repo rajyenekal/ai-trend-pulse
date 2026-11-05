@@ -718,7 +718,7 @@ export function renderEditorialCards(items) {
 }
 
 // -------------------------------------------------------------
-// 8. RENDERING MONITORED DISPATCHES FEED
+// 8. RENDERING MONITORED DISPATCHES FEED (HIGH-DENSITY WIRE)
 // -------------------------------------------------------------
 export function renderDispatches(items) {
   const container = document.getElementById('stories-container');
@@ -730,46 +730,39 @@ export function renderDispatches(items) {
   }
 
   let html = '';
-  items.slice(0, 45).forEach((item, idx) => {
+  items.slice(0, 30).forEach((item, idx) => {
     const relTime = formatRelativeTime(item.published_at || item.published);
     const topic = item.category || item.topic || 'AI News';
     const isSaved = isItemSaved(item.title);
     const primaryUrl = item.link || '#';
     const tierBadgeHTML = getTierBadgeHTML(item.source, item.tier || item.trust_tier);
-    const company = item.company || 'default';
-    const imgUrl = getTopicImageUrl(topic, item.image || item.image_url, company);
+    const signalBadge = cleanSignalBadge(item.signal_badge || 'Verified Intelligence');
 
     html += `
-      <li class="story-item" data-dispatch-idx="${idx}">
-        <div class="story-item-media">
-          <img src="${escapeHTML(imgUrl)}" alt="${escapeHTML(item.title)}" loading="lazy" onerror="this.onerror=null;this.src=window.getTopicFallbackSVG ? window.getTopicFallbackSVG('${escapeHTML(topic)}') : '';" />
-        </div>
-        <div class="story-item-main">
-          <div class="story-item-header">
-            <span class="badge-signal" style="font-size:0.7rem;">${escapeHTML(cleanSignalBadge(item.signal_badge || 'Verified Intelligence'))}</span>
+      <li class="story-item dispatch-wire-row" data-dispatch-idx="${idx}">
+        <div class="dispatch-wire-time font-mono">${escapeHTML(relTime)}</div>
+        <div class="dispatch-wire-main">
+          <div class="dispatch-wire-header">
+            <span class="badge-signal font-mono" style="font-size:0.68rem; padding:1px 6px;">${escapeHTML(signalBadge)}</span>
             ${tierBadgeHTML}
-            <span class="badge-card-topic" style="font-size:0.7rem;">${escapeHTML(topic)}</span>
-            <span style="font-size:0.74rem; color:var(--text-muted); margin-left:auto;">${escapeHTML(relTime)}</span>
+            <span class="badge-card-topic font-mono" style="font-size:0.68rem; padding:1px 6px;">${escapeHTML(topic)}</span>
+            <span class="dispatch-wire-source font-mono">${escapeHTML(item.source)}</span>
           </div>
-          <h4 class="story-title font-serif">
+          <h4 class="story-title dispatch-wire-title font-serif">
             <a href="${escapeHTML(primaryUrl)}" onclick="openReaderForDispatch(${idx}, event)">${escapeHTML(item.title)}</a>
           </h4>
-          <p class="story-summary">${escapeHTML(item.what_changed || item.summary || '')}</p>
-          <div class="story-footer">
-            <span class="story-source">${escapeHTML(item.source)}</span>
-            <div class="story-actions">
-              <button class="btn-read-deep-dive" style="padding:4px 10px; font-size:0.75rem;" onclick="openReaderForDispatch(${idx}, event)">
-                <span>Read</span>
-                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <button class="btn-action-icon ${isSaved ? 'saved' : ''}" style="width:28px; height:28px;" onclick="handleSaveDispatch(${idx}, this)" aria-label="Save story" title="Save">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-              </button>
-              <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" style="width:28px; height:28px;" title="Original Article">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-          </div>
+        </div>
+        <div class="dispatch-wire-actions">
+          <button class="btn-read-deep-dive" style="padding:4px 10px; font-size:0.75rem;" onclick="openReaderForDispatch(${idx}, event)" aria-label="Read full dispatch">
+            <span>Read</span>
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-action-icon ${isSaved ? 'saved' : ''}" style="width:28px; height:28px;" onclick="handleSaveDispatch(${idx}, this)" aria-label="Save story" title="Save">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+          <a href="${escapeHTML(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="btn-action-icon" style="width:28px; height:28px;" title="Original Article">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
         </div>
       </li>
     `;
@@ -1052,53 +1045,26 @@ export function renderDailyOverview(overview, data) {
   }
 
   if (catchMeUpContainer) {
-    const topDevs = ov.top_developments || (data?.top_stories || []).slice(0, 4);
-    catchMeUpContainer.innerHTML = topDevs.map((dev, idx) => {
+    const topDevs = ov.top_developments || (data?.top_stories || []).slice(0, 3);
+    catchMeUpContainer.innerHTML = topDevs.slice(0, 3).map((dev, idx) => {
       const topic = dev.category || dev.topic || 'AI News';
-      const score = dev.score ? Math.round(dev.score) : (dev.pulse_score ? Math.round(dev.pulse_score) : null);
       const signalBadge = cleanSignalBadge(dev.signal_badge || 'Breakthrough');
-      const whatChanged = dev.what_changed || dev.one_line_explanation || dev.summary || '';
-      const whyItMatters = dev.why_it_matters || dev.impact || '';
-      const targetAudience = dev.target_audience ? dev.target_audience.replace(/^For\s+/i, '') : null;
+      const cleanTitle = (dev.title || '').replace(/^announcing\s+/i, '');
+      const rawText = dev.what_changed || dev.one_line_explanation || dev.summary || '';
+      const cleanSummary = rawText ? (rawText.split(/(?<=[.!?])\s+/)[0] || rawText) : '';
 
       return `
-        <article class="glance-card catch-me-up-item" onclick="openReaderForDailyItem(${idx}, event)">
-          <div class="glance-card-top">
-            <div class="glance-card-badge-group">
-              <span class="glance-card-num font-mono">0${idx + 1}</span>
-              <span class="badge-signal" style="font-size:0.7rem; padding:2px 7px;">${escapeHTML(signalBadge)}</span>
-              ${score ? `<span class="score-pill font-mono" style="font-size:0.7rem; padding:2px 6px;">Pulse ${score}</span>` : ''}
-            </div>
-            <span class="glance-source font-mono">${escapeHTML(dev.source || 'Verified Source')}</span>
+        <article class="glance-card glance-digest-item" onclick="openReaderForDailyItem(${idx}, event)">
+          <div class="glance-digest-header">
+            <span class="glance-digest-num font-mono">0${idx + 1}</span>
+            <span class="badge-signal font-mono" style="font-size:0.68rem; padding:1px 6px;">${escapeHTML(signalBadge)}</span>
+            <span class="glance-digest-topic font-mono">${escapeHTML(topic)}</span>
+            <span class="glance-digest-source font-mono">${escapeHTML(dev.source || 'Verified Source')}</span>
           </div>
-
-          <h3 class="glance-headline font-serif">
-            <a href="${escapeHTML(dev.link || '#')}" onclick="openReaderForDailyItem(${idx}, event)">${escapeHTML(dev.title || '')}</a>
+          <h3 class="glance-digest-headline font-serif">
+            <a href="${escapeHTML(dev.link || '#')}" onclick="openReaderForDailyItem(${idx}, event)">${escapeHTML(cleanTitle)}</a>
           </h3>
-
-          <p class="glance-summary">${escapeHTML(whatChanged)}</p>
-
-          ${whyItMatters ? `
-            <div class="glance-why-box">
-              <div class="glance-why-label">
-                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                <span>Why It Matters</span>
-              </div>
-              <p class="glance-why-text">${escapeHTML(whyItMatters)}</p>
-            </div>
-          ` : ''}
-
-          <div class="glance-card-footer">
-            ${targetAudience ? `
-              <span class="glance-audience-tag">
-                For ${escapeHTML(targetAudience)}
-              </span>
-            ` : `<span></span>`}
-            <button class="glance-action-btn" onclick="openReaderForDailyItem(${idx}, event)" aria-label="Read briefing">
-              <span>Read Briefing</span>
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
+          <p class="glance-digest-summary">${escapeHTML(cleanSummary)}</p>
         </article>
       `;
     }).join('');

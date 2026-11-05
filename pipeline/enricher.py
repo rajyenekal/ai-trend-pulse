@@ -1479,8 +1479,11 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
 
   ranked_stories = sorted(clustered_stories, key=lambda s: compute_recency_score(s, now_dt), reverse=True)
 
+  # Reserve slots for curated domain sections (ai_tools, dev_radar, research_safety) so each section gets distinct non-overlapping stories
+  max_top_stories = min(18, max(12, len(clustered_stories) - 5)) if len(clustered_stories) >= 17 else 18
+
   for s in ranked_stories:
-    if len(top_stories) >= 18:
+    if len(top_stories) >= max_top_stories:
       break
 
     pulse_val = s.get("pulse_score", s.get("overall_score", 0.0))
@@ -1736,47 +1739,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
         })
 
   # 3. Purpose-driven curated domain sections with cross-section exclusivity (Issue 11, 16)
-  # AI Tools: select distinct practical tool developments from ranked_stories (not already in top_stories)
-  ai_tools = []
-  for s in ranked_stories:
-    norm_link = normalize_url(s["link"])
-    if norm_link in assigned_urls:
-      continue
-    title_lower = s["title"].lower()
-    is_tool = (
-        (s.get("category") in ("AI Products & Tools", "AI Applications", "Developer Tools", "Consumer AI") or
-         any(k in title_lower for k in ["tool", "agent", "platform", "assistant", "copilot", "app", "bedrock", "sagemaker", "antigravity", "crawl4ai"])) and
-        not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court", "judge", "illegal", "protest"])
-    )
-    if is_tool:
-      story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(ai_tools), now_iso, output_articles_dir=output_articles_dir)
-      ai_tools.append(story_obj)
-      written_article_files.add(fname)
-      assigned_urls.add(norm_link)
-      if len(ai_tools) >= 4:
-        break
-
-  # If exclusive assignment left ai_tools empty, draw from remaining ranked_stories matching tool criteria
-  if not ai_tools:
-    for s in ranked_stories:
-      norm_link = normalize_url(s["link"])
-      if norm_link in assigned_urls:
-        continue
-      title_lower = s["title"].lower()
-      is_tool = (
-          (s.get("category") in ("AI Products & Tools", "AI Applications", "AI News", "Developer Tools", "Consumer AI") or
-           any(k in title_lower for k in ["tool", "agent", "platform", "assistant", "copilot", "app", "bedrock", "sagemaker", "antigravity", "crawl4ai"])) and
-          not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court", "judge", "illegal", "protest"])
-      )
-      if is_tool:
-        story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(ai_tools), now_iso, output_articles_dir=output_articles_dir)
-        ai_tools.append(story_obj)
-        written_article_files.add(fname)
-        assigned_urls.add(norm_link)
-        if len(ai_tools) >= 3:
-          break
-
-  # Developer Radar: APIs, SDKs, frameworks, coding agents, infrastructure
+  # Developer Radar: APIs, SDKs, frameworks, coding agents, developer infrastructure
   dev_radar = []
   for s in ranked_stories:
     norm_link = normalize_url(s["link"])
@@ -1784,35 +1747,37 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
       continue
     title_lower = s["title"].lower()
     is_dev = (
-        s.get("category") in ("AI Products & Tools", "AI Models & Research", "AI Applications", "AI Infrastructure", "AI News", "Developer Tools", "AI Agents", "Open Source AI") and
-        any(k in title_lower for k in ["sdk", "api", "code", "agent", "open-source", "open source", "weight", "benchmark", "mcp", "library", "framework", "repo", "github", "inference", "developer", "vs code", "distillation", "sglang", "vllm"]) and
+        (s.get("category") in ("AI Products & Tools", "AI Models & Research", "AI Applications", "AI Infrastructure", "AI News", "Developer Tools", "AI Agents", "Open Source AI") or
+         any(k in title_lower for k in ["sdk", "api", "code", "coding", "agent", "open-source", "open source", "weight", "benchmark", "mcp", "library", "framework", "repo", "github", "inference", "developer", "vs code", "distillation", "sglang", "vllm", "conductor", "voice", "aws"])) and
         not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court"])
     )
     if is_dev:
-      story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(ai_tools) + len(dev_radar), now_iso, output_articles_dir=output_articles_dir)
+      story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(dev_radar), now_iso, output_articles_dir=output_articles_dir)
       dev_radar.append(story_obj)
       written_article_files.add(fname)
       assigned_urls.add(norm_link)
-      if len(dev_radar) >= 4:
+      if len(dev_radar) >= 2:
         break
 
-  if not dev_radar:
-    for s in ranked_stories:
-      norm_link = normalize_url(s["link"])
-      if norm_link in assigned_urls:
-        continue
-      title_lower = s["title"].lower()
-      is_dev = (
-          any(k in title_lower for k in ["sdk", "api", "code", "agent", "open-source", "open source", "weight", "benchmark", "mcp", "library", "framework", "repo", "github", "inference", "developer", "distillation", "cloud"]) and
-          not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court"])
-      )
-      if is_dev:
-        story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(ai_tools) + len(dev_radar), now_iso, output_articles_dir=output_articles_dir)
-        dev_radar.append(story_obj)
-        written_article_files.add(fname)
-        assigned_urls.add(norm_link)
-        if len(dev_radar) >= 3:
-          break
+  # AI Tools: select distinct practical tool developments from ranked_stories
+  ai_tools = []
+  for s in ranked_stories:
+    norm_link = normalize_url(s["link"])
+    if norm_link in assigned_urls:
+      continue
+    title_lower = s["title"].lower()
+    is_tool = (
+        (s.get("category") in ("AI Products & Tools", "AI Applications", "Developer Tools", "Consumer AI", "AI Agents") or
+         any(k in title_lower for k in ["tool", "agent", "platform", "assistant", "copilot", "app", "bedrock", "sagemaker", "antigravity", "crawl4ai", "voice", "images", "devrev", "planning"])) and
+        not any(bad in title_lower for bad in ["lawsuit", "naacp", "sued", "pollution", "court", "judge", "illegal", "protest"])
+    )
+    if is_tool:
+      story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(dev_radar) + len(ai_tools), now_iso, output_articles_dir=output_articles_dir)
+      ai_tools.append(story_obj)
+      written_article_files.add(fname)
+      assigned_urls.add(norm_link)
+      if len(ai_tools) >= 2:
+        break
 
   # Research & Safety: safety, alignment, preprints, governance
   research_safety = []
@@ -1824,7 +1789,7 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
     is_research = (
         s.get("category") in ("AI Security & Safety", "AI Policy & Regulation", "AI Models & Research", "AI Safety", "AI Policy", "AI Research", "Frontier Models") or
         s.get("trust_tier") in (3, 4) or
-        any(k in title_lower for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark", "risk", "security", "copyright", "red team", "misalignment", "model spec", "defense"])
+        any(k in title_lower for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "frontier", "benchmark", "risk", "security", "copyright", "red team", "misalignment", "model spec", "defense", "watermark", "benefit", "announcements"])
     )
     if is_research:
       story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(ai_tools) + len(dev_radar) + len(research_safety), now_iso, output_articles_dir=output_articles_dir)
@@ -1842,14 +1807,15 @@ def build_complete_payload(clustered_stories, ai_briefing=None, source_health_su
       title_lower = s["title"].lower()
       is_research = (
           s.get("category") in ("AI Security & Safety", "AI Policy & Regulation", "AI Models & Research", "AI Safety", "AI Policy", "AI Research", "Frontier Models") or
-          any(k in title_lower for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "benchmark", "risk", "security", "defense"])
+          any(k in title_lower for k in ["safety", "alignment", "paper", "arxiv", "eval", "policy", "governance", "benchmark", "risk", "security", "defense", "watermark", "benefit", "announcements"])
       )
       if is_research:
         story_obj, fname = format_and_store_article_record(s, len(top_stories) + len(ai_tools) + len(dev_radar) + len(research_safety), now_iso, output_articles_dir=output_articles_dir)
         research_safety.append(story_obj)
         written_article_files.add(fname)
         assigned_urls.add(norm_link)
-        if len(research_safety) >= 3:
+        if len(research_safety) >= 2:
+          break
           break
 
   # Safe article lifecycle management: remove stale/orphan article files not in written_article_files (Issue 12, 15)
