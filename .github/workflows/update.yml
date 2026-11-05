@@ -10,6 +10,7 @@ on:
       - main
     paths-ignore:
       - 'data.json'
+      - 'data.js'
       - 'README.md'
       - 'DATA_PIPELINE.md'
       - '.gitignore'
@@ -126,8 +127,12 @@ jobs:
 
           if [ "$SHOULD_COMMIT" = "YES" ]; then
             git add data.json
+            [ -f data.js ] && git add data.js
             if ! git diff --staged --quiet; then
               git commit -m "Auto-update AI Trends [editorial delta]"
+              # Clean any residual untracked or unstaged working tree changes before rebase
+              git checkout -- . 2>/dev/null || true
+              git clean -fd 2>/dev/null || true
               git pull --rebase origin main
               git push
             else
