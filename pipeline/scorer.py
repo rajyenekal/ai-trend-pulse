@@ -121,28 +121,42 @@ def classify_article_type(title, summary="", link="", source_type="", is_officia
       "regulation", "legislation", "lawsuit", "sues", "sued", "court", "copyright",
       "antitrust", "eu ai act", "executive order", "ftc", "doj", "senate", "congress",
       "ban", "compliance", "standards body", "treaty", "legal challenge", "regulators",
-      "clean air act", "opt out of scraping", "opt-out of scraping", "scraping standard"
+      "clean air act", "opt out of scraping", "opt-out of scraping", "scraping standard",
+      "licensing dispute", "licensing battle", "copyright infringement", "intellectual property"
   ]
   if any(k in combined for k in policy_keywords):
     return "policy_regulation"
 
-  # 5. Research Papers & Preprints (arXiv, BAIR, academic source_type, or explicitly marked papers)
+  # 5. Opinion, Editorial Commentary & Analysis (Checked before open source to catch ecosystem commentary)
+  commentary_patterns = [
+      r"\bopinion\b", r"\bop-ed\b", r"\beditorial\b", r"\bwhy\s+i\s+think\b",
+      r"\bthe\s+case\s+for\b", r"\bperspective:\b", r"\bcommentary:\b", r"\bcolumn:\b",
+      r"\binterview\b", r"\bpodcast\b", r"why\s+open\s+source\b", r"the\s+state\s+of\s+open\s+source\b",
+      r"is\s+open\s+source\b", r"what\s+.+\s+means\s+for\s+open\s+source\b"
+  ]
+  if any(re.search(pat, t_low) for pat in commentary_patterns):
+    return "opinion_commentary"
+  if source_type in ("community", "practitioner") or "simonwillison.net" in u_low or "importai" in u_low:
+    return "opinion_commentary"
+
+  # 6. Research Papers & Preprints (arXiv, BAIR, academic source_type, or explicitly marked papers)
   if "arxiv.org" in u_low or "bair.berkeley.edu" in u_low or source_type == "research":
     return "research_paper"
-  if any(k in t_low for k in ["paper", "preprint", "empirical study"]):
+  if any(k in t_low for k in ["paper:", "preprint", "empirical study", "arxiv preprint", "novel benchmark"]):
     return "research_paper"
 
-  # 6. Open-Source & Open-Weight Releases
-  os_keywords = [
-      "open weight", "open-weight", "open source", "open-source", "weights released",
-      "weights available", "apache 2.0", "mit license", "github repo", "hugging face",
-      "huggingface.co", "model weights", "checkpoint", "ollama", "vllm", "gguf",
-      "finetuning", "fine-tuned", "open release", "open computer use"
+  # 7. Actual Open-Source & Open-Weight Model Releases (Requires concrete model weights/code release)
+  os_release_keywords = [
+      "open weight", "open-weight", "weights released", "weights available",
+      "open source model", "open-source model", "releases weights", "releases open model",
+      "weights on hugging face", "hf.co/models", "apache 2.0 model", "mit licensed model",
+      "checkpoint released", "model checkpoint", "gguf weights", "safetensors",
+      "open weights", "open-weights", "weights now available", "open-sources weights"
   ]
-  if any(k in combined for k in os_keywords):
+  if any(k in combined for k in os_release_keywords):
     return "open_source_release"
 
-  # 7. Frontier Foundation Model Launches & World Simulation Milestones
+  # 8. Frontier Foundation Model Launches & World Simulation Milestones
   frontier_models = [
       "gpt-5", "gpt-4.5", "gpt-4", "o1", "o3", "o4", "claude 3.7", "claude 4", "gemini 2",
       "gemini 3", "gemini 4", "deepseek-v3", "deepseek-r1", "llama 4", "qwen 2.5", "qwen 3",
@@ -154,34 +168,32 @@ def classify_article_type(title, summary="", link="", source_type="", is_officia
   if any(k in t_low for k in ["unveils new model", "releases new model", "next-generation model", "next frontier model"]):
     return "frontier_launch"
 
-  # 8. Developer SDK / API Updates / Runtimes / Protocols
+  # 9. Developer SDK / API Updates / Runtimes / Protocols
   sdk_keywords = [
       "api", "sdk", "endpoint", "pricing", "rate limit", "developer platform",
       "token pricing", "cli", "function calling", "tool use", "mcp server",
       "model context protocol", "dev kit", "playground", "developer tools",
       "python library", "node library", "rest api", "session endpoints",
-      "agentcore runtime", "voice agent sdk", "agent skills"
+      "agentcore runtime", "voice agent sdk", "agent skills", "evals framework"
   ]
-  if any(k in t_low for k in ["api", "sdk", "pricing", "developer", "mcp", "endpoint", "tool use", "agent skills"]):
+  if any(k in t_low for k in ["api", "sdk", "pricing", "developer", "mcp", "endpoint", "tool use", "agent skills", "cli"]):
     return "sdk_api_update"
   if any(k in combined for k in ["pricing drop", "price cut", "api release", "sdk update", "mcp protocol", "session endpoints", "runtime session"]):
     return "sdk_api_update"
 
-  # 9. Opinion, Commentary, Routine Minor Patches
+  # 10. Routine Minor Patches
   if re.search(r"\bv?\d+\.\d+\.[1-9][a-z0-9]*\b", t_low):
     return "routine_minor_update"
-  if source_type in ("community", "practitioner") or "simonwillison.net" in u_low or "importai" in u_low:
-    return "opinion_commentary"
-  if any(k in t_low for k in ["opinion", "why i think", "essay", "speculation", "editorial"]):
-    return "opinion_commentary"
 
-  # Contextual Fallback for Official Blogs: Never blind frontier_launch
+  # Contextual Fallback for Official Blogs: Differentiate product vs developer vs research
   if is_official:
-    if any(k in combined for k in ["agent", "runtime", "tool", "sdk", "api", "endpoint"]):
+    if any(k in combined for k in ["gpt", "claude", "gemini", "search", "canvas", "voice mode", "introducing", "announcing", "model", "capabilities"]):
+      return "frontier_launch"
+    if any(k in combined for k in ["agent", "runtime", "tool", "sdk", "api", "endpoint", "eval"]):
       return "sdk_api_update"
-    if any(k in combined for k in ["collaborat", "partner", "program", "initiative", "support"]):
+    if any(k in combined for k in ["collaborat", "partner", "program", "initiative", "support", "community"]):
       return "opinion_commentary"
-    return "sdk_api_update"
+    return "frontier_launch"
 
   return "opinion_commentary"
 
@@ -612,9 +624,14 @@ def classify_impact_level(pulse_score, article_type="", is_official=False, is_br
   - Notable: Meaningful developer tool, domain application, or verified ecosystem update (score < 74)
   """
   score = float(pulse_score or 70.0)
-  if is_breakthrough or score >= 84.0 or article_type == "frontier_model_release":
+
+  # Minor updates or promotional case studies never qualify as Breakthrough or Major
+  if article_type in ("case_study_pr", "routine_minor_update"):
+    return "Notable"
+
+  if is_breakthrough or score >= 84.0 or (score >= 82.0 and article_type in ("frontier_launch", "open_source_release")):
     return "Breakthrough"
-  elif score >= 74.0 or is_official:
+  elif score >= 74.0 or (score >= 70.0 and is_official and article_type in ("frontier_launch", "sdk_api_update", "research_paper")):
     return "Major"
   else:
     return "Notable"

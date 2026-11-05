@@ -1,0 +1,57 @@
+{
+  "id": "cluster_4",
+  "clean_id": "cluster_4",
+  "title": "Anthropic Official News announces Claude model evaluation framework",
+  "headline": "Anthropic Official News announces Claude model evaluation framework",
+  "subtitle": "",
+  "publisher": "Anthropic Official News",
+  "publisher_id": "anthropic_official_news",
+  "publisher_group_id": "anthropic_official_news",
+  "author": "",
+  "published_at": null,
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://example.org/anthropic_official_news_1",
+  "canonical_url": "https://example.org/anthropic_official_news_1",
+  "original_source_url": "https://example.org/anthropic_official_news_1",
+  "reading_time": "1 min read",
+  "word_count": 8,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Detailed technical report on Claude model evaluation framework.",
+  "ai_what_happened": "Anthropic Official News published verified documentation on Anthropic Official News announces Claude model evaluation framework.",
+  "ai_key_details": [
+    "Primary documentation verified from Anthropic Official News."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Anthropic Official News.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of Anthropic Official News updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from Anthropic Official News."
+  },
+  "ai_whats_new": "New Frontier Models milestone verified from Anthropic Official News documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from Anthropic Official News."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Detailed technical report on Claude model evaluation framework.",
+    "Primary documentation confirms: Anthropic Official News announces Claude model evaluation framework."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

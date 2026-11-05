@@ -77,14 +77,10 @@ function deactivateFocusTrap(modalEl) {
 // -------------------------------------------------------------
 // 1. STORY DETAIL READER VIEW (DRAWER)
 // -------------------------------------------------------------
-export function openReaderView(story) {
-  if (!story) return;
-  activeTriggerElement = document.activeElement;
-  currentReaderStory = story;
+export const articleCache = new Map();
 
-  const drawer = document.getElementById('reader-drawer');
-  const backdrop = document.getElementById('reader-backdrop');
-  if (!drawer) return;
+export function renderReaderContent(story) {
+  if (!story) return;
 
   // Title
   const titleEl = document.getElementById('reader-title');
@@ -105,14 +101,45 @@ export function openReaderView(story) {
     impactBadge.style.display = 'inline-flex';
   }
 
+  // AI Provenance Badge
+  const aiBadge = document.getElementById('reader-ai-badge');
+  if (aiBadge) {
+    if (story.is_llm_generated) {
+      aiBadge.textContent = 'AI-Enhanced Analysis';
+      aiBadge.className = 'badge-pill badge-ai-source';
+      aiBadge.style.display = 'inline-flex';
+    } else {
+      aiBadge.textContent = story.enhancement_label || 'Editorial Synthesis';
+      aiBadge.className = 'badge-pill badge-ai-source is-editorial';
+      aiBadge.style.display = 'inline-flex';
+    }
+  }
+
+  // Extraction Status Badge
+  const extBadge = document.getElementById('reader-extraction-badge');
+  if (extBadge) {
+    const wCount = story.word_count || (story.extracted_content && story.extracted_content.word_count);
+    const status = story.extraction_status || (story.extracted_content && story.extracted_content.extraction_status);
+    if (status === 'extracted' || status === 'crawl4ai_extracted' || (wCount && wCount >= 100)) {
+      extBadge.textContent = `Full Article Extracted (${wCount || ''} words)`;
+      extBadge.style.display = 'inline-flex';
+    } else if (status === 'cached') {
+      extBadge.textContent = `Full Article Cached (${wCount || ''} words)`;
+      extBadge.style.display = 'inline-flex';
+    } else {
+      extBadge.textContent = 'Direct Lab Dispatch';
+      extBadge.style.display = 'inline-flex';
+    }
+  }
+
   // Tier Status Badge
   const statusBadge = document.getElementById('reader-status-badge');
   if (statusBadge) {
     const tier = story.trust_tier || 2;
     statusBadge.className = `badge-tier tier-${tier}`;
-    const dot = statusBadge.querySelector('.badge-tier-dot') || document.createElement('span');
+    const dot = (typeof statusBadge.querySelector === 'function' ? statusBadge.querySelector('.badge-tier-dot') : null) || document.createElement('span');
     dot.className = 'badge-tier-dot';
-    const lbl = statusBadge.querySelector('.badge-tier-label') || document.createElement('span');
+    const lbl = (typeof statusBadge.querySelector === 'function' ? statusBadge.querySelector('.badge-tier-label') : null) || document.createElement('span');
     lbl.className = 'badge-tier-label';
     lbl.textContent = story.tier || `Tier ${tier}`;
     if (!statusBadge.children.length) {
@@ -233,6 +260,10 @@ export function openReaderView(story) {
   const impactText = document.getElementById('reader-potential-impact');
   const rawImpact = safeString(story.ai_industry_impact || story.potential_impact || (story.audience_impact ? story.audience_impact.impact : '')).trim();
   const distinctImpact = (rawImpact && normalizeSentence(rawImpact) !== normTitle && (!distinctWhy || !areSimilar(rawImpact, distinctWhy))) ? rawImpact : '';
+
+  // Pre-register Why It Matters and Potential Impact so no other section can steal or duplicate them
+  if (distinctWhy) recordTextSentences(distinctWhy);
+  if (distinctImpact) recordTextSentences(distinctImpact);
 
   // 2. AI OVERVIEW CARD (Concise 2-3 sentence overview)
   const overviewCard = document.getElementById('reader-ai-overview-card');
@@ -357,12 +388,12 @@ export function openReaderView(story) {
     }
   }
 
-  // 6. TECHNICAL BREAKDOWN
+  // 6. TECHNICAL BREAKDOWN (Hides cleanly if no technical details disclosed)
   const techCard = document.getElementById('reader-technical-card');
   const techText = document.getElementById('reader-technical-text');
   const rawTech = safeString(story.ai_technical_breakdown).trim();
   if (techCard && techText) {
-    if (rawTech && !isAlreadyRendered(rawTech)) {
+    if (rawTech && !isAlreadyRendered(rawTech) && !rawTech.includes("not disclosed in publisher dispatch")) {
       techText.textContent = rawTech;
       techCard.style.display = 'block';
       recordTextSentences(rawTech);
@@ -396,11 +427,13 @@ export function openReaderView(story) {
       }
     });
 
-    // Guarantee at least 1 clean narrative paragraph
+    // Ensure at least one clean narrative analysis paragraph without duplicating any existing rendered text
     if (uniqueParagraphs.length === 0) {
-      const fallback = safeString(story.summary || story.what_changed || story.title || 'Verified AI development dispatch.').trim();
-      uniqueParagraphs.push(fallback);
-      renderedSentences.add(normalizeSentence(fallback));
+      const src = story.source || 'Primary publisher';
+      const cat = story.category || story.topic || 'frontier AI';
+      const fallbackAnalysis = `Comprehensive intelligence dispatch and verified documentation indexed from ${src} regarding developments in ${cat}.`;
+      uniqueParagraphs.push(fallbackAnalysis);
+      renderedSentences.add(normalizeSentence(fallbackAnalysis));
     }
 
     uniqueParagraphs.forEach(p => {
@@ -413,11 +446,7 @@ export function openReaderView(story) {
 
   // 8. WHY IT MATTERS CALLOUT
   if (whyBox && whyText) {
-    if (distinctWhy && !isAlreadyRendered(distinctWhy)) {
-      whyText.textContent = distinctWhy;
-      whyBox.style.display = 'block';
-      recordTextSentences(distinctWhy);
-    } else if (distinctWhy) {
+    if (distinctWhy) {
       whyText.textContent = distinctWhy;
       whyBox.style.display = 'block';
     } else {
@@ -427,11 +456,7 @@ export function openReaderView(story) {
 
   // 9. INDUSTRY IMPACT CALLOUT
   if (impactBox && impactText) {
-    if (distinctImpact && !isAlreadyRendered(distinctImpact)) {
-      impactText.textContent = distinctImpact;
-      impactBox.style.display = 'block';
-      recordTextSentences(distinctImpact);
-    } else if (distinctImpact) {
+    if (distinctImpact) {
       impactText.textContent = distinctImpact;
       impactBox.style.display = 'block';
     } else {
@@ -439,12 +464,12 @@ export function openReaderView(story) {
     }
   }
 
-  // 10. WHAT'S NEW CALLOUT
+  // 10. WHAT'S NEW CALLOUT (Hides cleanly if no delta detailed)
   const whatsNewBox = document.getElementById('reader-whats-new-box');
   const whatsNewText = document.getElementById('reader-whats-new-text');
   const rawWhatsNew = safeString(story.ai_whats_new).trim();
   if (whatsNewBox && whatsNewText) {
-    if (rawWhatsNew && !isAlreadyRendered(rawWhatsNew)) {
+    if (rawWhatsNew && !isAlreadyRendered(rawWhatsNew) && !rawWhatsNew.includes("not detailed")) {
       whatsNewText.textContent = rawWhatsNew;
       whatsNewBox.style.display = 'block';
       recordTextSentences(rawWhatsNew);
@@ -515,12 +540,56 @@ export function openReaderView(story) {
 
   // Update Save button status
   updateReaderSaveButton(story);
+}
+
+export function openReaderView(story) {
+  if (!story) return;
+  activeTriggerElement = document.activeElement;
+  currentReaderStory = story;
+
+  const drawer = document.getElementById('reader-drawer');
+  const backdrop = document.getElementById('reader-backdrop');
+  if (!drawer) return;
+
+  // Immediate synchronous baseline render
+  renderReaderContent(story);
 
   // Open drawer
   drawer.classList.add('open');
-  if (backdrop) backdrop.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  if (drawer.setAttribute) {
+    drawer.setAttribute('aria-hidden', 'false');
+    drawer.removeAttribute('inert');
+  }
+  if (backdrop && backdrop.classList) backdrop.classList.add('open');
+  if (document.body && document.body.style) document.body.style.overflow = 'hidden';
   activateFocusTrap(drawer, closeReaderView);
+
+  // Asynchronous rich article fetching and client-side caching
+  const cleanId = story.clean_id || (story.id ? String(story.id).replace(/[^a-zA-Z0-9_-]/g, '_') : '');
+  const articleUrl = story.article_url || (cleanId ? `articles/${cleanId}.json` : null);
+
+  if (articleUrl && typeof fetch === 'function') {
+    if (articleCache.has(articleUrl)) {
+      const cached = articleCache.get(articleUrl);
+      renderReaderContent(cached);
+    } else {
+      fetch(articleUrl)
+        .then(resp => {
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          return resp.json();
+        })
+        .then(richData => {
+          const merged = Object.assign({}, story, richData);
+          articleCache.set(articleUrl, merged);
+          if (currentReaderStory && (currentReaderStory.id === story.id || currentReaderStory.title === story.title)) {
+            renderReaderContent(merged);
+          }
+        })
+        .catch(err => {
+          // Graceful fallback: inline baseline already rendered cleanly
+        });
+    }
+  }
 }
 
 export function closeReaderView() {

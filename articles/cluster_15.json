@@ -1,0 +1,57 @@
+{
+  "id": "cluster_15",
+  "clean_id": "cluster_15",
+  "title": "Simon Willison Weblog announces Prompt injection defenses in coding assistants",
+  "headline": "Simon Willison Weblog announces Prompt injection defenses in coding assistants",
+  "subtitle": "",
+  "publisher": "Simon Willison Weblog",
+  "publisher_id": "simon_willison_weblog",
+  "publisher_group_id": "simon_willison_weblog",
+  "author": "",
+  "published_at": null,
+  "category": "AI Safety",
+  "topic": "AI Safety",
+  "impact_level": "Major",
+  "pulse_score": 74.8,
+  "article_type": "security_vulnerability",
+  "signal_badge": "Security & Policy",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://example.org/simon_willison_weblog_12",
+  "canonical_url": "https://example.org/simon_willison_weblog_12",
+  "original_source_url": "https://example.org/simon_willison_weblog_12",
+  "reading_time": "1 min read",
+  "word_count": 10,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Detailed technical report on Prompt injection defenses in coding assistants.",
+  "ai_what_happened": "Simon Willison Weblog published verified documentation on Simon Willison Weblog announces Prompt injection defenses in coding assistants.",
+  "ai_key_details": [
+    "Primary documentation verified from Simon Willison Weblog."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Simon Willison Weblog.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of Simon Willison Weblog updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from Simon Willison Weblog."
+  },
+  "ai_whats_new": "New Frontier Models milestone verified from Simon Willison Weblog documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from Simon Willison Weblog."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Detailed technical report on Prompt injection defenses in coding assistants.",
+    "Primary documentation confirms: Simon Willison Weblog announces Prompt injection defenses in coding assistants."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

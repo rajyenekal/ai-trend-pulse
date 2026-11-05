@@ -1,0 +1,57 @@
+{
+  "id": "story_1",
+  "clean_id": "story_1",
+  "title": "AWS Bedrock Model Evaluation Service",
+  "headline": "AWS Bedrock Model Evaluation Service",
+  "subtitle": "",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "",
+  "publisher_group_id": "",
+  "author": "",
+  "published_at": null,
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Major",
+  "pulse_score": 76.0,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/bedrock-eval/",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/bedrock-eval/",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/bedrock-eval/",
+  "reading_time": "1 min read",
+  "word_count": 5,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Amazon announced automated Bedrock evaluations.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on AWS Bedrock Model Evaluation Service.",
+  "ai_key_details": [
+    "Primary documentation verified from AWS Machine Learning."
+  ],
+  "ai_why_it_matters": "Advances Developer Tools capabilities through verified disclosures from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of AWS Machine Learning updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Developer Tools.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from AWS Machine Learning."
+  },
+  "ai_whats_new": "New Developer Tools milestone verified from AWS Machine Learning documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Developer Tools.",
+    "Primary documentation available from AWS Machine Learning."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Amazon announced automated Bedrock evaluations.",
+    "Official development released and documented by AWS Machine Learning."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

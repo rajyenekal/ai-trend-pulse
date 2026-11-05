@@ -128,6 +128,7 @@ jobs:
           if [ "$SHOULD_COMMIT" = "YES" ]; then
             git add data.json
             [ -f data.js ] && git add data.js
+            [ -d articles ] && git add articles
             if ! git diff --staged --quiet; then
               git commit -m "Auto-update AI Trends [editorial delta]"
               # Clean any residual untracked or unstaged working tree changes before rebase

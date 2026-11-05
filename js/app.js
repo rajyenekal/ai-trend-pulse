@@ -35,6 +35,7 @@ import {
 
 import {
   openReaderView,
+  renderReaderContent,
   closeReaderView,
   openSavedDrawer,
   closeSavedDrawer,
@@ -634,6 +635,7 @@ if (typeof window !== 'undefined') {
   window.syncFilterControlsUI = syncFilterControlsUI;
   window.handleSortChange = handleSortChange;
   window.openReaderView = openReaderView;
+  window.renderReaderContent = renderReaderContent;
   window.closeReaderView = closeReaderView;
   window.openMethodologyModal = openMethodologyModal;
   window.closeMethodologyModal = closeMethodologyModal;

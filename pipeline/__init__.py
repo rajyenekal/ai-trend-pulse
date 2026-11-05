@@ -72,6 +72,8 @@ from .extractor import (
     fetch_raw_html,
     extract_article_content,
     extract_articles_batch,
+    compute_extraction_telemetry,
+    is_safe_public_url,
 )
 
 from .developer_scorer import (

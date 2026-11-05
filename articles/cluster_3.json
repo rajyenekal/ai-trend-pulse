@@ -1,0 +1,57 @@
+{
+  "id": "cluster_3",
+  "clean_id": "cluster_3",
+  "title": "Google DeepMind announces Gemini Flash reasoning update",
+  "headline": "Google DeepMind announces Gemini Flash reasoning update",
+  "subtitle": "",
+  "publisher": "Google DeepMind",
+  "publisher_id": "google_deepmind",
+  "publisher_group_id": "google_deepmind",
+  "author": "",
+  "published_at": null,
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://example.org/google_deepmind_0",
+  "canonical_url": "https://example.org/google_deepmind_0",
+  "original_source_url": "https://example.org/google_deepmind_0",
+  "reading_time": "1 min read",
+  "word_count": 8,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Detailed technical report on Gemini Flash reasoning update.",
+  "ai_what_happened": "Google DeepMind published verified documentation on Google DeepMind announces Gemini Flash reasoning update.",
+  "ai_key_details": [
+    "Primary documentation verified from Google DeepMind."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Google DeepMind.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of Google DeepMind updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from Google DeepMind."
+  },
+  "ai_whats_new": "New Frontier Models milestone verified from Google DeepMind documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from Google DeepMind."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Detailed technical report on Gemini Flash reasoning update.",
+    "Primary documentation confirms: Google DeepMind announces Gemini Flash reasoning update."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

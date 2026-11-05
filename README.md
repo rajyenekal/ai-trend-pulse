@@ -103,11 +103,31 @@ $$\text{Pulse Score} = 0.30 \times \text{Importance} + 0.20 \times \text{Audienc
 
 ---
 
-## 📱 In-App Reader View & Story Deep Dive
+## 📱 In-App Reader View & Per-Article Static Delivery
 
-- Sliding drawer on desktop (720px width), full-screen on mobile (`<= 640px`).
-- 12-item structured layout displaying topic badge, trust tier badge, impact level badge, reading time, headline, author, pub date, featured image, AI Overview card, Key Takeaways, What Happened, Key Details & Facts, Technical Breakdown, Why It Matters, Industry Impact, What's New, Epistemic Limitations, and prominent "Read on [Source] ↗" button.
-- Instantaneous 0ms initial state hydration from `data.js` ensures zero-skeleton initial paint.
+- **Per-Article Static Delivery**: Individual enriched article documents are generated at `articles/{clean_id}.json`, keeping the homepage bundle (`data.json`) ultra-fast while providing complete, structured article dossiers on click.
+- **Client-Side In-Memory Cache**: `drawer.js` maintains an in-memory `articleCache` map for sub-millisecond reader reopening and graceful offline fallback.
+- **Sliding Drawer & Mobile Sheet**: Responsive sliding drawer on desktop (720px width), full-screen reading mode on mobile (`<= 640px`).
+- **AI Provenance & Extraction Badges**: Real-time provenance pills (`AI-Enhanced Analysis` vs. `Editorial Synthesis`) and extraction status indicators (`Full Article Extracted (N words)`).
+- **Strict Cross-Section Deduplication**: Absolute uniqueness engine prevents any sentence from repeating across AI Overview, Key Takeaways, Verified Facts, What Happened, Technical Breakdown, Detailed Analysis, Why It Matters, or Potential Impact. Empty or undisclosed sections hide cleanly without filler.
+- **Instant 0ms Initial State Hydration**: Pre-bundled `data.js` executes synchronously before application initialization, guaranteeing zero-skeleton initial paint.
+
+---
+
+## 🔒 Security, Telemetry & Pipeline Auditing (v2.2 Production Audit)
+
+1. **SSRF Protection (`is_safe_public_url`)**:
+   - Resolves target hostnames and blocks RFC 1918 private IPv4 subnets (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`).
+   - Blocks loopback interfaces (`127.0.0.0/8`, `::1`), link-local metadata endpoints (`169.254.169.254` for AWS/GCP/Azure instance metadata), and multicast ranges.
+2. **Extraction Candidate Prioritization**:
+   - Selects candidate articles for full-body extraction according to editorial priority: `(pulse_score, -trust_tier, is_official)` taking the top 25 highest-signal stories.
+3. **Genuine AI Enhancement & Factual Grounding**:
+   - Optional Gemini Flash LLM integration (`gemini-2.5-flash`, `gemini-2.0-flash`) with low temperature (0.2), strict grounding on extracted article body, and JSON schema enforcement.
+   - Transparent fallback to deterministic `Editorial Synthesis` when API quotas are exceeded or unconfigured, with explicit `is_llm_generated: false` provenance.
+4. **Extraction & Ingestion Telemetry**:
+   - Tracks operational metrics: `extraction_attempts`, `successful_full_body_extractions`, `cached_content`, `rss_only_fallbacks`, `blocked_pages`, `missing_content`, `average_extracted_word_count`, `ai_enhancement_success`, and `ai_fallback_usage`.
+5. **Zero Boilerplate Guarantee**:
+   - Eradication of canned template strings across all pipeline generation stages. Missing technical metrics are explicitly noted as undisclosed rather than hallucinated.
 
 ---
 

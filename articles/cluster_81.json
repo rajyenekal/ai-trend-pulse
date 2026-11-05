@@ -1,0 +1,57 @@
+{
+  "id": "cluster_81",
+  "clean_id": "cluster_81",
+  "title": "Anthropic's text watermark is easy to bypass on several older Claude models",
+  "headline": "Anthropic's text watermark is easy to bypass on several older Claude models",
+  "subtitle": "",
+  "publisher": "The Decoder",
+  "publisher_id": "the_decoder",
+  "publisher_group_id": "the_decoder",
+  "author": "",
+  "published_at": "2026-11-04T19:03:55+00:00",
+  "category": "AI Policy",
+  "topic": "AI Policy",
+  "impact_level": "Notable",
+  "pulse_score": 70.2,
+  "article_type": "policy_regulation",
+  "signal_badge": "Security & Policy",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://the-decoder.com/anthropics-text-watermark-is-easy-to-bypass-on-several-older-claude-models",
+  "canonical_url": "https://the-decoder.com/anthropics-text-watermark-is-easy-to-bypass-on-several-older-claude-models",
+  "original_source_url": "https://the-decoder.com/anthropics-text-watermark-is-easy-to-bypass-on-several-older-claude-models",
+  "reading_time": "1 min read",
+  "word_count": 42,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Anthropic is rolling out text watermarks to four more Claude models ahead of the EU AI Act's December deadline. But on older models like Claude Opus 4.6 and Sonnet 4.6, API users can disable the watermark by changing a single sampling parameter.",
+  "ai_what_happened": "Anthropic's response to the loophole?",
+  "ai_key_details": [
+    "Primary documentation verified from The Decoder."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from The Decoder.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of The Decoder updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from The Decoder."
+  },
+  "ai_whats_new": "New Frontier Models milestone verified from The Decoder documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from The Decoder."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Anthropic is rolling out text watermarks to four more Claude models ahead of the EU AI Act's December deadline.",
+    "But on older models like Claude Opus 4.6 and Sonnet 4.6, API users can disable the watermark by changing a single sampling parameter."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

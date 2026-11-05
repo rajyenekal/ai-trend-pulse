@@ -1,0 +1,57 @@
+{
+  "id": "cluster_72",
+  "clean_id": "cluster_72",
+  "title": "Open source AI is booming. Hugging Face explains who profits.",
+  "headline": "Open source AI is booming. Hugging Face explains who profits.",
+  "subtitle": "",
+  "publisher": "TechCrunch AI",
+  "publisher_id": "techcrunch",
+  "publisher_group_id": "techcrunch",
+  "author": "",
+  "published_at": "2026-11-04T19:30:04+00:00",
+  "category": "Open Source AI",
+  "topic": "Open Source AI",
+  "impact_level": "Breakthrough",
+  "pulse_score": 84.6,
+  "article_type": "open_source_release",
+  "signal_badge": "Open Weights",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
+  "canonical_url": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
+  "original_source_url": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits",
+  "reading_time": "1 min read",
+  "word_count": 39,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value?",
+  "ai_what_happened": "TechCrunch AI published verified documentation on Open source AI is booming. Hugging Face explains who profits..",
+  "ai_key_details": [
+    "Primary documentation verified from TechCrunch AI."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from TechCrunch AI.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of TechCrunch AI updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from TechCrunch AI."
+  },
+  "ai_whats_new": "New Frontier Models milestone verified from TechCrunch AI documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from TechCrunch AI."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility.",
+    "But as increasingly capable models become more freely available, how do companies capture value?"
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

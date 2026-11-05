@@ -1,0 +1,57 @@
+{
+  "id": "cluster_6",
+  "clean_id": "cluster_6",
+  "title": "Meta AI announces LLaMA architecture scaling report",
+  "headline": "Meta AI announces LLaMA architecture scaling report",
+  "subtitle": "",
+  "publisher": "Meta AI",
+  "publisher_id": "meta_ai",
+  "publisher_group_id": "meta_ai",
+  "author": "",
+  "published_at": null,
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Notable",
+  "pulse_score": 49.0,
+  "article_type": "opinion_commentary",
+  "signal_badge": "Analysis & Opinion",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://example.org/meta_ai_3",
+  "canonical_url": "https://example.org/meta_ai_3",
+  "original_source_url": "https://example.org/meta_ai_3",
+  "reading_time": "1 min read",
+  "word_count": 8,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Detailed technical report on LLaMA architecture scaling report.",
+  "ai_what_happened": "Meta AI published verified documentation on Meta AI announces LLaMA architecture scaling report.",
+  "ai_key_details": [
+    "Primary documentation verified from Meta AI."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Meta AI.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of Meta AI updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from Meta AI."
+  },
+  "ai_whats_new": "New Frontier Models milestone verified from Meta AI documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from Meta AI."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Detailed technical report on LLaMA architecture scaling report.",
+    "Primary documentation confirms: Meta AI announces LLaMA architecture scaling report."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

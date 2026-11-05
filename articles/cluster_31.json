@@ -1,0 +1,57 @@
+{
+  "id": "cluster_31",
+  "clean_id": "cluster_31",
+  "title": "Agentic cheminformatics with Google Antigravity",
+  "headline": "Agentic cheminformatics with Google Antigravity",
+  "subtitle": "",
+  "publisher": "Google DeepMind",
+  "publisher_id": "google_deepmind",
+  "publisher_group_id": "google",
+  "author": "",
+  "published_at": "2026-11-03T11:31:49+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
+  "canonical_url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
+  "original_source_url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
+  "reading_time": "1 min read",
+  "word_count": 19,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+  "ai_what_happened": "Google DeepMind published verified documentation on Agentic cheminformatics with Google Antigravity.",
+  "ai_key_details": [
+    "Primary documentation verified from Google DeepMind."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Google DeepMind.",
+  "ai_technical_breakdown": "Technical specifications not disclosed in publisher dispatch.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of Google DeepMind updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from Google DeepMind."
+  },
+  "ai_whats_new": "New Frontier Models milestone verified from Google DeepMind documentation.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from Google DeepMind."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+    "Official development released and documented by Google DeepMind."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

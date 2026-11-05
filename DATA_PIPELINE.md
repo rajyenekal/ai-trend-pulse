@@ -256,16 +256,28 @@ The final payload written to `data.json` adheres to the comprehensive production
   "sources_monitored": 25,
   "source_health_summary": {
     "status": "healthy",
-    "configured_sources_count": 25,
-    "enabled_sources_count": 25,
-    "successful_fetches_count": 25,
+    "configured_sources_count": 10,
+    "enabled_sources_count": 10,
+    "successful_fetches_count": 10,
     "failed_fetches_count": 0,
-    "fresh_articles_accepted_count": 45
+    "fresh_articles_accepted_count": 92
+  },
+  "extraction_telemetry": {
+    "extraction_attempts": 17,
+    "successful_full_body_extractions": 5,
+    "cached_content": 3,
+    "rss_only_fallbacks": 12,
+    "blocked_pages": 0,
+    "missing_content": 0,
+    "average_extracted_word_count": 1560.6,
+    "ai_enhancement_success": 0,
+    "ai_fallback_usage": 17
   },
   "source_health_details": [...],
   "top_stories": [
     {
-      "article_id": "art_openai_123456789abc",
+      "article_id": "cluster_1",
+      "article_url": "articles/cluster_1.json",
       "title": "Headline",
       "summary": "Plain English summary",
       "reported_facts": ["Fact 1", "Fact 2"],
@@ -317,7 +329,7 @@ The final payload written to `data.json` adheres to the comprehensive production
 ## 🔄 Automated Execution (GitHub Actions)
 
 The pipeline is automated via `.github/workflows/update.yml`:
-- **Schedule**: Executes on an hourly cron (`0 * * * *`).
+- **Schedule**: Executes twice per hour (`17,47 * * * *`).
 - **Trigger**: Also supports manual triggers via `workflow_dispatch`.
 - **Steps**:
   1. Checkouts repository.
@@ -325,4 +337,4 @@ The pipeline is automated via `.github/workflows/update.yml`:
   3. Installs dependencies (`pip install -r requirements.txt`).
   4. Runs backend data refresh (`python3 tracker.py`).
   5. Executes automated test suite (`npm test`).
-  6. Commits and pushes updated `data.json` if changes are detected.
+  6. Commits and pushes updated `data.json`, `data.js`, and `articles/` static files if changes are detected.

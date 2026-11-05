@@ -1,0 +1,61 @@
+{
+  "id": "cluster_29",
+  "clean_id": "cluster_29",
+  "title": "Distillation Defenses",
+  "headline": "Distillation Defenses",
+  "subtitle": "",
+  "publisher": "Anthropic Official News",
+  "publisher_id": "anthropic",
+  "publisher_group_id": "anthropic",
+  "author": "",
+  "published_at": null,
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 92.0,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://www.anthropic.com/news/distillation-defenses",
+  "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
+  "original_source_url": "https://www.anthropic.com/news/distillation-defenses",
+  "reading_time": "9 min read",
+  "word_count": 1920,
+  "extraction_status": "cached",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "In recent months, we\u2019ve made substantial progress on reducing the effectiveness of distillation attacks on Claude using new methods, as we outline in this blog. Early evidence suggests that these methods have reduced the amount of data harvested by distillers by around 90 to 99%.",
+  "ai_what_happened": "Distillation attacks are covert, industrial-scale campaigns to extract the capabilities of one model and replicate them in another, without the authorization of the original model\u2019s developers.",
+  "ai_key_details": [
+    "They are often conducted using networks of fraudulent accounts.",
+    "These attacks allow companies to mimic frontier capabilities for a fraction of the development time and cost.",
+    "Zhipu, for example, distilled the cyber capabilities of leading US models during the development of GLM-5.3.",
+    "The US Center for Advancing Innovation and Standards for Super Intelligence (CAISSI) has since assessed GLM-5.3 to be the most cyber-capable open-weights model released to date."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Anthropic Official News.",
+  "ai_technical_breakdown": "First, distillation enables companies to build models that approach the capability frontier, but which have, in practice, been released without proportionally robust safeguards.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of Anthropic Official News updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from Anthropic Official News."
+  },
+  "ai_whats_new": "Distillers found ways around the first safeguards we built.",
+  "ai_key_takeaways": [
+    "As we wrote in September, this method has been used extensively to help overseas AI laboratories keep pace with US companies.",
+    "We\u2019re concerned about illicit distillation for two reasons.",
+    "This means that distilled models could be used to cause significant harm in areas like biology and cybersecurity."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Official news announcement from Anthropic: Distillation Defenses.",
+    "Official development released and documented by Anthropic Official News."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

@@ -1,0 +1,60 @@
+{
+  "id": "cluster_33",
+  "clean_id": "cluster_33",
+  "title": "Gemini 4 Carbon: Our next frontier model",
+  "headline": "Gemini 4 Carbon: Our next frontier model",
+  "subtitle": "",
+  "publisher": "Google DeepMind",
+  "publisher_id": "google_deepmind",
+  "publisher_group_id": "google",
+  "author": "",
+  "published_at": "2026-10-28T11:30:58+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 96.3,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
+  "canonical_url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
+  "original_source_url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
+  "reading_time": "4 min read",
+  "word_count": 973,
+  "extraction_status": "cached",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Gemini 4 Carbon: our next frontier model Today, we\u2019re announcing the next frontier model: Gemini 4 Carbon, our strongest model with state-of-the-art cybersecurity and long horizon capabilities. Carbon ranks #1 on the recently updated v5.0 of Artificial Analysis Intelligence Index at 59.",
+  "ai_what_happened": "It shows significant gains across coding and agentic tasks as well as across key capabilities critical for cybersecurity defense, landing a firm lead in SEC-bench Pro (88.2%) for finding vulnerabilities, ExploitGym (54.8%) for exploitation, and CWE-bench (71.0%) for patching.",
+  "ai_key_details": [
+    "On internal benchmarks, Carbon drives a strong uplift in generating secure code, and in live coding environments with our own teams it shows reduced misalignment and fabrication rates.",
+    "Building on Gemini 4 Argon, which was launched two weeks ago, Carbon illustrates the pace at which we\u2019re pushing the frontier forward.",
+    "Gemini 4 Carbon will launch at the same introductory price 1 as Argon at $2 per million input tokens and $10 per million output tokens, with cached input tokens priced at 95% off input token price.",
+    "Carbon achieves a state-of-the-art 88.2% on SEC-bench Pro, autonomously uncovering complex flaws buried in real-world software."
+  ],
+  "ai_why_it_matters": "Advances Frontier Models capabilities through verified disclosures from Google DeepMind.",
+  "ai_technical_breakdown": "Our researchers and models are working hand in hand to advance capabilities faster, while strengthening our safeguards in tandem.",
+  "ai_industry_impact": {
+    "Developers": "Enables integration of Google DeepMind updates into engineering workflows.",
+    "Enterprises": "Informs infrastructure decisions and deployment evaluation for Frontier Models.",
+    "Researchers": "Provides reproducible reference points and capability disclosures from Google DeepMind."
+  },
+  "ai_whats_new": "- Validating risk through exploitation: To prioritize which vulnerabilities to remediate first or remediate at all, cyber defenders increasingly rely on models to check which vulnerabilities are exploitable.",
+  "ai_key_takeaways": [
+    "We're taking a deliberate approach to rollout and are actively engaged in the U.S.",
+    "government\u2019s voluntary process for pre-release model testing.",
+    "Starting this week, we will make Carbon available to a subset of cyber defenders and will gradually phase access to additional trusted partners through our Fairwind Program."
+  ],
+  "ai_limitations": "Findings reflect initial publisher reporting; independent replication and production benchmarks remain ongoing.",
+  "reported_facts": [
+    "Official development released and documented by Google DeepMind."
+  ],
+  "sections": [],
+  "paragraphs": [],
+  "corroborating_sources": []
+}

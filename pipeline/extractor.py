@@ -11,6 +11,7 @@ import gzip
 import hashlib
 import html
 import io
+import ipaddress
 import json
 import logging
 import os
@@ -98,10 +99,80 @@ def compute_content_hash(text):
   return hashlib.sha256(norm_text.encode("utf-8")).hexdigest()[:16]
 
 
+def is_safe_public_url(url: str) -> tuple[bool, str]:
+  """Validates URL to block requests to localhost, private IP ranges (RFC 1918),
+  link-local (169.254.0.0/16), loopback (127.0.0.0/8), multicast, and non-public IPs.
+  Prevents Server-Side Request Forgery (SSRF).
+  Returns (is_safe: bool, reason: str).
+  """
+  if not url or not isinstance(url, str):
+    return False, "Empty or invalid URL"
+  try:
+    parsed = urllib.parse.urlparse(url)
+  except Exception as e:
+    return False, f"URL parse error: {e}"
+
+  if parsed.scheme.lower() not in ("http", "https"):
+    return False, f"Unsupported scheme: {parsed.scheme}"
+
+  hostname = parsed.hostname
+  if not hostname:
+    return False, "Missing hostname"
+
+  lower_host = hostname.lower()
+  if lower_host in ("localhost", "127.0.0.1", "::1", "0.0.0.0") or lower_host.endswith((".local", ".internal", ".localhost", ".corp", ".lan")):
+    return False, f"Prohibited internal host: {hostname}"
+
+  # If hostname is an explicit IP literal, check immediately
+  try:
+    ip_literal = ipaddress.ip_address(lower_host)
+    if (
+        ip_literal.is_private or
+        ip_literal.is_loopback or
+        ip_literal.is_link_local or
+        ip_literal.is_reserved or
+        ip_literal.is_multicast or
+        ip_literal.is_unspecified
+    ):
+      return False, f"Prohibited private/loopback IP address: {lower_host}"
+  except ValueError:
+    pass
+
+  # Attempt DNS resolution check for domain names
+  try:
+    addr_info = socket.getaddrinfo(hostname, None)
+    for family, socktype, proto, canonname, sockaddr in addr_info:
+      ip_str = sockaddr[0]
+      try:
+        ip_obj = ipaddress.ip_address(ip_str)
+        if (
+            ip_obj.is_private or
+            ip_obj.is_loopback or
+            ip_obj.is_link_local or
+            ip_obj.is_reserved or
+            ip_obj.is_multicast or
+            ip_obj.is_unspecified
+        ):
+          return False, f"Resolved IP {ip_str} is non-public/private"
+      except ValueError:
+        return False, f"Invalid resolved IP: {ip_str}"
+  except (socket.gaierror, socket.herror):
+    # Proceed to HTTP request which will handle DNS failure gracefully
+    pass
+  except Exception as e:
+    logger.debug("DNS check error for %s: %s", hostname, e)
+
+  return True, "OK"
+
+
 def fetch_raw_html(url, timeout=DEFAULT_EXTRACTION_TIMEOUT):
   """Fetches raw HTML for a webpage with strict timeouts, standard headers, and gzip decompression.
   Returns: (html_str: str | None, status_code: int | None, error_message: str | None)
   """
+  is_safe, reason = is_safe_public_url(url)
+  if not is_safe:
+    return None, None, f"SSRF Blocked: {reason}"
+
   req = urllib.request.Request(
       url,
       headers={
@@ -342,7 +413,11 @@ def extract_article_content(
       cached_record = cache.get(url)
     if cached_record and isinstance(cached_record, dict) and cached_record.get("text"):
       cached_copy = dict(cached_record)
-      cached_copy["extraction_status"] = "cached"
+      orig_status = cached_record.get("extraction_status", "")
+      if orig_status in ("fallback_summary", "fetch_failed", "cached_fallback", "invalid_url", "ssrf_blocked"):
+        cached_copy["extraction_status"] = "cached_fallback"
+      else:
+        cached_copy["extraction_status"] = "cached"
       return cached_copy
 
   # 2. Check if Trafilatura is available
@@ -376,6 +451,18 @@ def extract_article_content(
   html_str, http_status, err_msg = fetch_raw_html(url, timeout=timeout)
   if not html_str:
     c_hash = compute_content_hash(fallback_text)
+    if err_msg and "SSRF Blocked" in err_msg:
+      ext_status = "ssrf_blocked"
+    elif not fallback_text:
+      if http_status in (401, 403) or (err_msg and any(w in err_msg.lower() for w in ("cloudflare", "forbidden", "access denied", "blocked"))):
+        ext_status = "blocked_page"
+      elif http_status == 404:
+        ext_status = "missing_content"
+      else:
+        ext_status = "fetch_failed"
+    else:
+      ext_status = "fallback_summary"
+
     record = {
         "url": url,
         "headline": None,
@@ -391,7 +478,7 @@ def extract_article_content(
         "word_count": len(fallback_text.split()),
         "reading_time": f"{max(1, len(fallback_text.split()) // 200)} min read",
         "content_hash": c_hash,
-        "extraction_status": "fetch_failed" if not fallback_text else "fallback_summary",
+        "extraction_status": ext_status,
         "extracted_at": now_iso,
         "content_length": len(fallback_text),
         "error": err_msg,
@@ -521,28 +608,102 @@ def extract_articles_batch(
     for future in concurrent.futures.as_completed(future_to_art):
       try:
         art, rec = future.result()
-        art["full_text"] = rec.get("text") or rec.get("full_text") or ""
-        art["extraction_status"] = rec.get("extraction_status", "unknown")
+        full_text = rec.get("text") or rec.get("full_text") or ""
+        sections = rec.get("sections") or []
+        paragraphs = rec.get("paragraphs") or []
+        word_count = rec.get("word_count") or len(full_text.split())
+        reading_time = rec.get("reading_time") or f"{max(1, word_count // 200)} min read"
+        ext_status = rec.get("extraction_status", "unknown")
+        c_hash = rec.get("content_hash", "")
+
+        art["full_text"] = full_text
+        art["text"] = full_text
+        art["sections"] = sections
+        art["paragraphs"] = paragraphs
+        art["word_count"] = word_count
+        art["reading_time"] = reading_time
+        art["extraction_status"] = ext_status
+        art["content_hash"] = c_hash
+
         art["extracted_content"] = {
             "headline": rec.get("headline") or art.get("title"),
             "subtitle": rec.get("subtitle"),
             "author": rec.get("author"),
             "published_date": rec.get("published_date") or art.get("published_at"),
             "featured_image": rec.get("featured_image") or art.get("image"),
-            "word_count": rec.get("word_count", 0),
-            "reading_time": rec.get("reading_time", "2 min read"),
-            "content_hash": rec.get("content_hash", ""),
-            "extraction_status": rec.get("extraction_status", "unknown"),
-            "sections_count": len(rec.get("sections", [])),
+            "text": full_text,
+            "full_text": full_text,
+            "paragraphs": paragraphs,
+            "sections": sections,
+            "word_count": word_count,
+            "reading_time": reading_time,
+            "content_hash": c_hash,
+            "extraction_status": ext_status,
+            "sections_count": len(sections),
         }
         # Retain top-level image if extractor found high-quality og:image
         if rec.get("featured_image") and not art.get("image"):
           art["image"] = rec["featured_image"]
-        if rec.get("reading_time"):
-          art["reading_time"] = rec["reading_time"]
+        if reading_time:
+          art["reading_time"] = reading_time
         results.append((art, rec))
       except Exception as e:
         logger.warning("Batch extraction task error: %s", e)
 
   save_article_cache(cache)
   return articles
+
+
+def compute_extraction_telemetry(articles):
+  """Computes operational extraction quality metrics across a batch of processed articles.
+  Guarantees: cached fallback summaries are NEVER counted as successful full article extractions.
+  """
+  telemetry = {
+      "extraction_attempts": len(articles or []),
+      "successful_full_body_extractions": 0,
+      "cached_content": 0,
+      "rss_only_fallbacks": 0,
+      "blocked_pages": 0,
+      "missing_content": 0,
+      "average_extracted_word_count": 0,
+      "ai_enhancement_success": 0,
+      "ai_fallback_usage": 0,
+  }
+
+  total_words_successful = 0
+  for art in articles or []:
+    stat = art.get("extraction_status", "")
+    w_count = art.get("word_count", 0)
+
+    if stat in ("extracted", "crawl4ai_extracted"):
+      telemetry["successful_full_body_extractions"] += 1
+      total_words_successful += w_count
+    elif stat == "cached":
+      telemetry["cached_content"] += 1
+      telemetry["successful_full_body_extractions"] += 1
+      total_words_successful += w_count
+    elif stat in ("fallback_summary", "cached_fallback"):
+      telemetry["rss_only_fallbacks"] += 1
+    elif stat in ("blocked_page", "ssrf_blocked"):
+      telemetry["blocked_pages"] += 1
+    elif stat in ("missing_content", "fetch_failed"):
+      telemetry["missing_content"] += 1
+    else:
+      if w_count >= 150:
+        telemetry["successful_full_body_extractions"] += 1
+        total_words_successful += w_count
+      else:
+        telemetry["rss_only_fallbacks"] += 1
+
+    if art.get("is_llm_generated"):
+      telemetry["ai_enhancement_success"] += 1
+    else:
+      telemetry["ai_fallback_usage"] += 1
+
+  if telemetry["successful_full_body_extractions"] > 0:
+    telemetry["average_extracted_word_count"] = round(
+        total_words_successful / telemetry["successful_full_body_extractions"], 1
+    )
+
+  return telemetry
+
