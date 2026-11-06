@@ -24,7 +24,7 @@
   "original_source_url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore",
   "reading_time": "8 min read",
   "word_count": 1768,
-  "extraction_status": "extracted",
+  "extraction_status": "cached",
   "content_hash": "df9a0348bed88fcc",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
