@@ -1,66 +1,66 @@
 {
   "id": "cluster_3",
   "clean_id": "cluster_3",
-  "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
-  "headline": "Daybreak Red is now available in AWS GovCloud (US-East)",
+  "title": "GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
+  "headline": "GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-04T07:00:00+00:00",
+  "published_at": "2026-11-05T09:00:00+00:00",
   "category": "AI Safety",
   "topic": "AI Safety",
-  "impact_level": "Breakthrough",
-  "pulse_score": 89.6,
-  "article_type": "frontier_launch",
-  "signal_badge": "Frontier Launch",
+  "impact_level": "Major",
+  "pulse_score": 77.2,
+  "article_type": "security_vulnerability",
+  "signal_badge": "Security & Policy",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/daybreak-red-aws-govcloud",
-  "canonical_url": "https://openai.com/index/daybreak-red-aws-govcloud",
-  "original_source_url": "https://openai.com/index/daybreak-red-aws-govcloud",
+  "url": "https://openai.com/index/introducing-gpt-6-cyber",
+  "canonical_url": "https://openai.com/index/introducing-gpt-6-cyber",
+  "original_source_url": "https://openai.com/index/introducing-gpt-6-cyber",
   "reading_time": "1 min read",
   "word_count": 19,
-  "extraction_status": "cached_fallback",
+  "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-  "ai_what_happened": "OpenAI News published verified documentation on Daybreak Red is now available in AWS GovCloud (US-East).",
+  "ai_overview": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+  "ai_what_happened": "OpenAI News published verified documentation on GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Daybreak Red is now available in AWS GovCloud (US-East) from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Daybreak Red is now available in AWS GovCloud (US-East); full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Daybreak Red is now available in AWS GovCloud (US-East) capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Daybreak Red is now available in AWS GovCloud (US-East) as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
+    "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-  "full_text": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
+  "text": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+  "full_text": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
+      "content": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
     }
   ],
   "paragraphs": [
-    "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work."
+    "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
   ],
   "corroborating_sources": []
 }

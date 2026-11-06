@@ -1,0 +1,66 @@
+{
+  "id": "cluster_80",
+  "clean_id": "cluster_80",
+  "title": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model",
+  "headline": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model",
+  "subtitle": "",
+  "publisher": "The Decoder",
+  "publisher_id": "the_decoder",
+  "publisher_group_id": "the_decoder",
+  "author": "",
+  "published_at": "2026-11-05T17:56:41+00:00",
+  "category": "Open Source AI",
+  "topic": "Open Source AI",
+  "impact_level": "Breakthrough",
+  "pulse_score": 84.3,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://the-decoder.com/baidu-releases-ernie-5-5-flash-base-with-280-billion-parameters-as-an-open-source-foundation-model",
+  "canonical_url": "https://the-decoder.com/baidu-releases-ernie-5-5-flash-base-with-280-billion-parameters-as-an-open-source-foundation-model",
+  "original_source_url": "https://the-decoder.com/baidu-releases-ernie-5-5-flash-base-with-280-billion-parameters-as-an-open-source-foundation-model",
+  "reading_time": "1 min read",
+  "word_count": 27,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Baidu releases ERNIE 5.5 Flash Base: a 280-billion-parameter MoE model pre-trained on 33.5 trillion tokens, shipped deliberately without fine-tuning, so developers can take it wherever they want.",
+  "ai_what_happened": "The Decoder published verified documentation on Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model.",
+  "ai_key_details": [
+    "Primary documentation verified from The Decoder."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model from The Decoder.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model capabilities from The Decoder directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
+  },
+  "ai_whats_new": "Delivers Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model as documented in verified primary release notes from The Decoder.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from The Decoder."
+  ],
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
+  "reported_facts": [
+    "Baidu releases ERNIE 5.5 Flash Base: a 280-billion-parameter MoE model pre-trained on 33.5 trillion tokens, shipped deliberately without fine-tuning, so developers can take it wherever they want.",
+    "Official development released and documented by The Decoder."
+  ],
+  "text": "Baidu releases ERNIE 5.5 Flash Base: a 280-billion-parameter MoE model pre-trained on 33.5 trillion tokens, shipped deliberately without fine-tuning, so developers can take it wherever they want.",
+  "full_text": "Baidu releases ERNIE 5.5 Flash Base: a 280-billion-parameter MoE model pre-trained on 33.5 trillion tokens, shipped deliberately without fine-tuning, so developers can take it wherever they want.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Baidu releases ERNIE 5.5 Flash Base: a 280-billion-parameter MoE model pre-trained on 33.5 trillion tokens, shipped deliberately without fine-tuning, so developers can take it wherever they want."
+    }
+  ],
+  "paragraphs": [
+    "Baidu releases ERNIE 5.5 Flash Base: a 280-billion-parameter MoE model pre-trained on 33.5 trillion tokens, shipped deliberately without fine-tuning, so developers can take it wherever they want."
+  ],
+  "corroborating_sources": []
+}
