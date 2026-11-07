@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "data_status": "fresh",
-  "generated_at": "2026-11-07T20:21:33.171349+00:00",
-  "last_successful_update": "2026-11-07T20:21:33.171349+00:00",
-  "last_attempt_at": "2026-11-07T20:21:33.171349+00:00",
+  "generated_at": "2026-11-07T23:45:48.863461+00:00",
+  "last_successful_update": "2026-11-07T23:45:48.863461+00:00",
+  "last_attempt_at": "2026-11-07T23:45:48.863461+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
     "total_developments_today": 83,
-    "last_updated": "2026-11-07T20:21:33.171349+00:00",
+    "last_updated": "2026-11-07T23:45:48.863461+00:00",
     "briefing_text": "Today's AI developments span Open Source AI, AI Agents, and Frontier Models. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
     "top_developments": [
       {
@@ -281,19 +281,19 @@
       ]
     }
   ],
-  "takeaway": "Leading AI laboratories are releasing next-generation models and multimodal tools while expanding enterprise and government deployment pathways. Concurrently, providers are reinforcing governance frameworks and deploying defensive measures against unauthorized model distillation.",
+  "takeaway": "Leading AI developers are pairing the launch of specialized frontier models and multimodal world simulators with hardened model-defense techniques. Concurrently, providers are deploying cybersecurity-tuned models into secure government cloud environments and structuring long-term public benefit initiatives.",
   "trends": [
     {
-      "title": "Google DeepMind Debuts Gemini 4 Carbon and Genie 4 World Simulator",
+      "title": "Google DeepMind Announces Gemini 4 Carbon and Interactive World Simulator Genie 4",
       "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
       "trend_type": "emerging_theme",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
-      "theme_relationship": "Both releases highlight Google DeepMind's concurrent focus on high-capability reasoning/cybersecurity models alongside real-time multimodal environment simulations.",
+      "theme_relationship": "Google DeepMind is expanding frontier model capabilities across both analytical cybersecurity benchmarks and interactive real-time multimodal generation.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Gemini 4 Carbon ranks first on the Artificial Analysis Intelligence Index v5.0 with a score of 59 and provides enhanced capabilities in cybersecurity and coding.",
+          "text": "Gemini 4 Carbon ranks first on the Artificial Analysis Intelligence Index v5.0 with demonstrated gains in coding and cybersecurity tasks.",
           "evidence": [
             {
               "article_id": "art_deepmind_blog_cd55b15fd1b5",
@@ -304,7 +304,7 @@
               "trust_tier": 1,
               "is_official": true,
               "source_type": "official",
-              "supporting_excerpt": "Carbon ranks #1 on the recently updated v5.0 of Artificial Analysis Intelligence Index at 59.",
+              "supporting_excerpt": "Carbon ranks #1 on the recently updated v5.0 of Artificial Analysis Intelligence Index at 59. It shows significant gains across coding and agentic tasks as well as across key capabilities critical for cyber",
               "text_verified": false
             }
           ],
@@ -313,7 +313,7 @@
         },
         {
           "claim_id": "claim_2",
-          "text": "Genie 4 generates real-time interactive simulations incorporating ambient noise, dialogue, and music simultaneously.",
+          "text": "Genie 4 is natively multimodal and generates interactive dialogue, ambient noise, and music simultaneously with the simulated environment.",
           "evidence": [
             {
               "article_id": "art_deepmind_blog_b64b7ac92f07",
@@ -342,7 +342,7 @@
           "trust_tier": 1,
           "is_official": true,
           "source_type": "official",
-          "supporting_excerpt": "Carbon ranks #1 on the recently updated v5.0 of Artificial Analysis Intelligence Index at 59.",
+          "supporting_excerpt": "Carbon ranks #1 on the recently updated v5.0 of Artificial Analysis Intelligence Index at 59. It shows significant gains across coding and agentic tasks as well as across key capabilities critical for cyber",
           "text_verified": false
         },
         {
@@ -358,10 +358,10 @@
           "text_verified": false
         }
       ],
-      "what_happened": "Google DeepMind announced Gemini 4 Carbon, a frontier model focused on cybersecurity and long-horizon tasks, alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of generating real-time interactive dialogue and audio.",
-      "what_changed": "Google DeepMind announced Gemini 4 Carbon, a frontier model focused on cybersecurity and long-horizon tasks, alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of generating real-time interactive dialogue and audio.",
-      "why_it_matters": "The releases advance both autonomous agent security benchmarks and native multimodal world-building simulations.",
-      "who_affected": "Developers, Enterprises, and AI Practitioners",
+      "what_happened": "Google DeepMind introduced Gemini 4 Carbon, a frontier model with cybersecurity and long-horizon capabilities that leads benchmark rankings, alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of real-time interactive generation.",
+      "what_changed": "Google DeepMind introduced Gemini 4 Carbon, a frontier model with cybersecurity and long-horizon capabilities that leads benchmark rankings, alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of real-time interactive generation.",
+      "why_it_matters": "The parallel releases advance both agentic cyber problem-solving and real-time generation of interactive 3D environments with synchronized dialogue and audio.",
+      "who_affected": "Developers",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -385,9 +385,7 @@
       "company": "google",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Developers",
-        "Enterprises",
-        "Ai Practitioners"
+        "Developers"
       ],
       "audience_impact": {
         "target": "For businesses & compliance teams",
@@ -401,19 +399,19 @@
       "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Google DeepMind announced Gemini 4 Carbon, a frontier model focused on cybersecurity and long-horizon tasks, alongside Genie 4, a multimodal world simulation model capable of generating real-time interactive dialogue and audio.",
-        "The releases advance both autonomous agent security benchmarks and native multimodal world-building simulations."
+        "Google DeepMind introduced Gemini 4 Carbon, a frontier model with cybersecurity and long-horizon capabilities that leads benchmark rankings, alongside Genie 4, a multimodal world simulation model capable of real-time interactive generation.",
+        "The parallel releases advance both agentic cyber problem-solving and real-time generation of interactive 3D environments with synchronized dialogue and audio."
       ],
-      "detailed_analysis": "Google DeepMind announced Gemini 4 Carbon, a frontier model focused on cybersecurity and long-horizon tasks, alongside Genie 4, a multimodal world simulation model capable of generating real-time interactive dialogue and audio.",
+      "detailed_analysis": "Google DeepMind introduced Gemini 4 Carbon, a frontier model with cybersecurity and long-horizon capabilities that leads benchmark rankings, alongside Genie 4, a multimodal world simulation model capable of real-time interactive generation.",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Google DeepMind Debuts Gemini 4 Carbon and Genie 4 World Simulator",
+      "image_alt": "Visual representation for Google DeepMind Announces Gemini 4 Carbon and Interactive World Simulator Genie 4",
       "image_type": "official_asset",
       "image_credit": "Google announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Anthropic Introduces Defenses Against Model Distillation Attacks",
+      "title": "Anthropic Implements Defenses Mitigating Model Distillation Harvesting by Up to 99%",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "trend_type": "single_development",
       "article_type": "security_vulnerability",
@@ -422,7 +420,7 @@
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Anthropic's newly deployed methods cut unauthorized distillation data harvesting from Claude by 90 to 99 percent.",
+          "text": "New defensive methods have decreased the volume of model data harvested by distillers from Claude by 90 to 99 percent.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_e5f202a1f983",
@@ -455,18 +453,18 @@
           "text_verified": false
         }
       ],
-      "what_happened": "Anthropic developed defense techniques that reduced data harvested by unauthorized model distillers by an estimated 90 to 99 percent.",
-      "what_changed": "Anthropic developed defense techniques that reduced data harvested by unauthorized model distillers by an estimated 90 to 99 percent.",
-      "why_it_matters": "Mitigating distillation protects proprietary model capabilities from being extracted and replicated by external entities at an industrial scale.",
-      "who_affected": "AI Practitioners and Enterprises",
+      "what_happened": "Anthropic developed defensive techniques that have reduced data harvested from Claude via covert distillation attacks by 90% to 99%.",
+      "what_changed": "Anthropic developed defensive techniques that have reduced data harvested from Claude via covert distillation attacks by 90% to 99%.",
+      "why_it_matters": "Mitigating distillation attacks limits unauthorized actors from replicating proprietary frontier model capabilities without bearing foundational training costs.",
+      "who_affected": "AI Practitioners",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
       "potential_impact": "Impacts roadmap decisions across Frontier Models.",
       "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
       "source": "Anthropic Official News",
       "tier": "Official Lab",
       "status": "official_announcement",
@@ -480,8 +478,7 @@
       "company": "anthropic",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Ai Practitioners",
-        "Enterprises"
+        "Ai Practitioners"
       ],
       "audience_impact": {
         "target": "For practitioners & teams",
@@ -495,28 +492,28 @@
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "Anthropic developed defense techniques that reduced data harvested by unauthorized model distillers by an estimated 90 to 99 percent.",
-        "Mitigating distillation protects proprietary model capabilities from being extracted and replicated by external entities at an industrial scale."
+        "Anthropic developed defensive techniques that have reduced data harvested from Claude via covert distillation attacks by 90% to 99%.",
+        "Mitigating distillation attacks limits unauthorized actors from replicating proprietary frontier model capabilities without bearing foundational training costs."
       ],
-      "detailed_analysis": "Anthropic developed defense techniques that reduced data harvested by unauthorized model distillers by an estimated 90 to 99 percent.",
+      "detailed_analysis": "Anthropic developed defensive techniques that have reduced data harvested from Claude via covert distillation attacks by 90% to 99%.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Introduces Defenses Against Model Distillation Attacks",
+      "image_alt": "Visual representation for Anthropic Implements Defenses Mitigating Model Distillation Harvesting by Up to 99%",
       "image_type": "official_asset",
       "image_credit": "Anthropic announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "OpenAI Expands Specialized Models and Tools to Enterprise and Government Environments",
+      "title": "OpenAI Launches Daybreak Red with GPT-5.6 Cyber on AWS GovCloud",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
-      "trend_type": "emerging_theme",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "theme_relationship": "OpenAI is demonstrating rapid distribution of specialized model variants across cloud infrastructure, enterprise support applications, and multimodal media generation.",
+      "trend_type": "single_development",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "theme_relationship": null,
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Daybreak Red provides approved AWS GovCloud customers access to GPT-5.6 Cyber for authorized cybersecurity operations via Amazon Bedrock.",
+          "text": "Daybreak Red delivers GPT-5.6 Cyber to authorized customers in AWS GovCloud (US-East) through Amazon Bedrock.",
           "evidence": [
             {
               "article_id": "art_openai_news_eb4b148db5e4",
@@ -528,46 +525,6 @@
               "is_official": true,
               "source_type": "official",
               "supporting_excerpt": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
-              "text_verified": true
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
-        {
-          "claim_id": "claim_2",
-          "text": "Images 2.6 introduces faster image generation, GIF creation, and updated API controls across OpenAI platforms.",
-          "evidence": [
-            {
-              "article_id": "art_openai_news_e82ae0918aeb",
-              "canonical_url": "https://openai.com/index/introducing-images-2-6",
-              "publisher_id": "openai",
-              "publisher_group_id": "openai",
-              "source_name": "OpenAI News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
-              "text_verified": true
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
-        {
-          "claim_id": "claim_3",
-          "text": "DevRev deployed GPT-6.1 Sol to balance reasoning latency and costs within its automated enterprise self-service systems.",
-          "evidence": [
-            {
-              "article_id": "art_openai_news_49e8809fb20f",
-              "canonical_url": "https://openai.com/index/devrev-enterprise-self-service",
-              "publisher_id": "openai",
-              "publisher_group_id": "openai",
-              "source_name": "OpenAI News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
               "text_verified": true
             }
           ],
@@ -587,98 +544,69 @@
           "source_type": "official",
           "supporting_excerpt": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
           "text_verified": true
-        },
-        {
-          "article_id": "art_openai_news_e82ae0918aeb",
-          "canonical_url": "https://openai.com/index/introducing-images-2-6",
-          "publisher_id": "openai",
-          "publisher_group_id": "openai",
-          "source_name": "OpenAI News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
-          "text_verified": true
-        },
-        {
-          "article_id": "art_openai_news_49e8809fb20f",
-          "canonical_url": "https://openai.com/index/devrev-enterprise-self-service",
-          "publisher_id": "openai",
-          "publisher_group_id": "openai",
-          "source_name": "OpenAI News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
-          "text_verified": true
         }
       ],
-      "what_happened": "OpenAI launched Daybreak Red with GPT-5.6 Cyber in AWS GovCloud, rolled out Images 2.6 across its APIs, and supported enterprise deployments powered by GPT-6 variants.",
-      "what_changed": "OpenAI launched Daybreak Red with GPT-5.6 Cyber in AWS GovCloud, rolled out Images 2.6 across its APIs, and supported enterprise deployments powered by GPT-6 variants.",
-      "why_it_matters": "These rollouts broaden access to compliant cybersecurity tooling for public sector agencies and expand production AI tooling for commercial developers.",
-      "who_affected": "Developers and Enterprises",
+      "what_happened": "OpenAI deployed Daybreak Red to AWS GovCloud (US-East) via Amazon Bedrock to provide approved customers with GPT-5.6 Cyber for authorized cybersecurity tasks.",
+      "what_changed": "OpenAI deployed Daybreak Red to AWS GovCloud (US-East) via Amazon Bedrock to provide approved customers with GPT-5.6 Cyber for authorized cybersecurity tasks.",
+      "why_it_matters": "This deployment brings specialized frontier cybersecurity models directly into regulated government cloud environments for defense and security workflows.",
+      "who_affected": "Enterprises",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "potential_impact": "Impacts roadmap decisions across Developer Tools.",
-      "category": "Developer Tools",
-      "category_confidence": 0.9,
-      "category_rationale": "Matched developer tooling, software SDK release, IDE extension, or API capability",
+      "potential_impact": "Impacts roadmap decisions across AI Safety.",
+      "category": "AI Safety",
+      "category_confidence": 0.95,
+      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
       "source": "OpenAI News",
       "tier": "Official Lab",
-      "status": "emerging_theme",
+      "status": "official_announcement",
       "evidence_article_ids": [
-        "art_openai_news_eb4b148db5e4",
-        "art_openai_news_e82ae0918aeb",
-        "art_openai_news_49e8809fb20f"
+        "art_openai_news_eb4b148db5e4"
       ],
       "evidence_urls": [
-        "https://openai.com/index/daybreak-red-aws-govcloud",
-        "https://openai.com/index/introducing-images-2-6",
-        "https://openai.com/index/devrev-enterprise-self-service"
+        "https://openai.com/index/daybreak-red-aws-govcloud"
       ],
-      "topic": "Developer Tools",
+      "topic": "AI Safety",
       "company": "openai",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Developers",
         "Enterprises"
       ],
       "audience_impact": {
-        "target": "For enterprise operators",
-        "impact": "Demonstrates practical operational automation and procurement pathways using Openai."
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
       },
-      "target_audience": "For enterprise operators",
-      "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai.",
       "claim_corroboration": 1,
-      "trend_signal_diversity": 3,
-      "evidence_status": "emerging_theme",
-      "evidence_label": "Emerging Theme (3 Signals Across Labs)",
+      "trend_signal_diversity": 1,
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI launched Daybreak Red with GPT-5.6 Cyber in AWS GovCloud, rolled out Images 2.6 across its APIs, and supported enterprise deployments powered by GPT-6 variants.",
-        "These rollouts broaden access to compliant cybersecurity tooling for public sector agencies and expand production AI tooling for commercial developers."
+        "OpenAI deployed Daybreak Red to AWS GovCloud (US-East) via Amazon Bedrock to provide approved customers with GPT-5.6 Cyber for authorized cybersecurity tasks.",
+        "This deployment brings specialized frontier cybersecurity models directly into regulated government cloud environments for defense and security workflows."
       ],
-      "detailed_analysis": "OpenAI launched Daybreak Red with GPT-5.6 Cyber in AWS GovCloud, rolled out Images 2.6 across its APIs, and supported enterprise deployments powered by GPT-6 variants.",
+      "detailed_analysis": "OpenAI deployed Daybreak Red to AWS GovCloud (US-East) via Amazon Bedrock to provide approved customers with GPT-5.6 Cyber for authorized cybersecurity tasks.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for OpenAI Expands Specialized Models and Tools to Enterprise and Government Environments",
+      "image_alt": "Visual representation for OpenAI Launches Daybreak Red with GPT-5.6 Cyber on AWS GovCloud",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Anthropic Expands Corporate Governance, Public Benefit Commitments, and Scientific Partnerships",
+      "title": "Anthropic Establishes Public Benefit Fund and Expands AI for Science Partnerships",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "trend_type": "emerging_theme",
       "article_type": "policy_regulation",
       "signal_badge": "Security & Policy",
-      "theme_relationship": "Anthropic is aligning its governance structure, public benefit share allocations, and academic programs to direct model access and oversight toward long-term public benefit.",
+      "theme_relationship": "Anthropic is aligning its corporate equity growth with broader societal benefit while expanding direct compute access to academic and scientific research institutions.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Anthropic is committing an initial 5% stake to its Public Benefit Fund, with provisions to increase the allocation as company valuation grows.",
+          "text": "Anthropic is committing 5% of its shares to the new wholly owned Anthropic Public Benefit Fund, with potential scaling as the company's valuation rises.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_a4f7bd1fdab9",
@@ -698,27 +626,7 @@
         },
         {
           "claim_id": "claim_2",
-          "text": "Dr. Christopher Stubbs joined Anthropic's Long-Term Benefit Trust, bringing scientific expertise from observational cosmology and precision measurement.",
-          "evidence": [
-            {
-              "article_id": "art_anthropic_news_1bfb19c38bdd",
-              "canonical_url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
-              "publisher_id": "anthropic",
-              "publisher_group_id": "anthropic",
-              "source_name": "Anthropic Official News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic\u2019s Long-Term Benefit Trust.",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
-        {
-          "claim_id": "claim_3",
-          "text": "Anthropic highlighted partnerships with 20 scientific foundations and institutions under its AI for Science initiative providing free Claude credits.",
+          "text": "Anthropic expanded its AI for Science program across 20 foundations and research groups to provide free Claude credits for high-impact projects.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_b7b14fbfed23",
@@ -729,7 +637,7 @@
               "trust_tier": 1,
               "is_official": true,
               "source_type": "official",
-              "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program",
+              "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program, which gives free Claude credits to researchers working on high-impact scientific projects.",
               "text_verified": false
             }
           ],
@@ -751,18 +659,6 @@
           "text_verified": false
         },
         {
-          "article_id": "art_anthropic_news_1bfb19c38bdd",
-          "canonical_url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
-          "publisher_id": "anthropic",
-          "publisher_group_id": "anthropic",
-          "source_name": "Anthropic Official News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic\u2019s Long-Term Benefit Trust.",
-          "text_verified": false
-        },
-        {
           "article_id": "art_anthropic_news_b7b14fbfed23",
           "canonical_url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
           "publisher_id": "anthropic",
@@ -771,14 +667,14 @@
           "trust_tier": 1,
           "is_official": true,
           "source_type": "official",
-          "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program",
+          "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program, which gives free Claude credits to researchers working on high-impact scientific projects.",
           "text_verified": false
         }
       ],
-      "what_happened": "Anthropic committed 5 percent of its shares to an Anthropic Public Benefit Fund, added Dr. Christopher Stubbs to its Long-Term Benefit Trust, and expanded scientific grants and calls for life sciences research.",
-      "what_changed": "Anthropic committed 5 percent of its shares to an Anthropic Public Benefit Fund, added Dr. Christopher Stubbs to its Long-Term Benefit Trust, and expanded scientific grants and calls for life sciences research.",
-      "why_it_matters": "The structural allocations establish enforceable ties between corporate valuation growth and public benefit funding while broadening scientific research access to Claude.",
-      "who_affected": "AI Practitioners and Enterprises",
+      "what_happened": "Anthropic committed five percent of company shares to a newly created Public Benefit Fund and expanded its AI for Science initiative to partner with twenty research institutions globally.",
+      "what_changed": "Anthropic committed five percent of company shares to a newly created Public Benefit Fund and expanded its AI for Science initiative to partner with twenty research institutions globally.",
+      "why_it_matters": "These initiatives formalize structural mechanisms to redirect corporate valuation gains into public benefit while granting researchers free compute to accelerate scientific discovery.",
+      "who_affected": "AI Practitioners",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -792,40 +688,37 @@
       "status": "emerging_theme",
       "evidence_article_ids": [
         "art_anthropic_news_a4f7bd1fdab9",
-        "art_anthropic_news_1bfb19c38bdd",
         "art_anthropic_news_b7b14fbfed23"
       ],
       "evidence_urls": [
         "https://www.anthropic.com/news/public-benefit-fund",
-        "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
         "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
       ],
       "topic": "Frontier Models",
       "company": "anthropic",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Ai Practitioners",
-        "Enterprises"
+        "Ai Practitioners"
       ],
       "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic."
+        "target": "For enterprise operators",
+        "impact": "Demonstrates practical operational automation and procurement pathways using Anthropic."
       },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic.",
+      "target_audience": "For enterprise operators",
+      "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Anthropic.",
       "claim_corroboration": 1,
-      "trend_signal_diversity": 3,
+      "trend_signal_diversity": 2,
       "evidence_status": "emerging_theme",
-      "evidence_label": "Emerging Theme (3 Signals Across Labs)",
+      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Anthropic committed 5 percent of its shares to an Anthropic Public Benefit Fund, added Dr. Christopher Stubbs to its Long-Term Benefit Trust, and expanded scientific grants and calls for life sciences research.",
-        "The structural allocations establish enforceable ties between corporate valuation growth and public benefit funding while broadening scientific research access to Claude."
+        "Anthropic committed five percent of company shares to a newly created Public Benefit Fund and expanded its AI for Science initiative to partner with twenty research institutions globally.",
+        "These initiatives formalize structural mechanisms to redirect corporate valuation gains into public benefit while granting researchers free compute to accelerate scientific discovery."
       ],
-      "detailed_analysis": "Anthropic committed 5 percent of its shares to an Anthropic Public Benefit Fund, added Dr. Christopher Stubbs to its Long-Term Benefit Trust, and expanded scientific grants and calls for life sciences research.",
+      "detailed_analysis": "Anthropic committed five percent of company shares to a newly created Public Benefit Fund and expanded its AI for Science initiative to partner with twenty research institutions globally.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Expands Corporate Governance, Public Benefit Commitments, and Scientific Partnerships",
+      "image_alt": "Visual representation for Anthropic Establishes Public Benefit Fund and Expands AI for Science Partnerships",
       "image_type": "official_asset",
       "image_credit": "Anthropic announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
@@ -904,7 +797,7 @@
       "is_official": false,
       "published": "Nov 07, 15:35 UTC",
       "published_at": "2026-11-07T15:35:50+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking",
       "image": "https://the-decoder.com/wp-content/uploads/2026/10/cyber_kraken-1200x670.png",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/cyber_kraken-1200x670.png",
@@ -927,7 +820,7 @@
       "audience_impact_statement": "Provides open weights and accessible tools for self-hosted frontier AI implementations.",
       "importance_score": 85,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1022,7 +915,7 @@
       "is_official": false,
       "published": "Nov 06, 19:47 UTC",
       "published_at": "2026-11-06T19:47:04+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model",
       "image": "https://the-decoder.com/wp-content/uploads/2026/11/ricurisve_intelligence.png",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/ricurisve_intelligence.png",
@@ -1141,7 +1034,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1256,7 +1149,7 @@
       "is_official": true,
       "published": "Nov 05, 17:00 UTC",
       "published_at": "2026-11-05T17:00:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://openai.com/index/australian-universities-ai-native-graduates",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1370,7 +1263,7 @@
       "is_official": true,
       "published": "Nov 05, 08:00 UTC",
       "published_at": "2026-11-05T08:00:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://openai.com/index/merge-builds-with-openai",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1489,7 +1382,7 @@
       "is_official": true,
       "published": "Nov 05, 18:06 UTC",
       "published_at": "2026-11-05T18:06:43+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/30/ML-20598-featured-image.png",
       "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/30/ML-20598-featured-image.png",
@@ -1604,7 +1497,7 @@
       "is_official": true,
       "published": "Nov 06, 18:01 UTC",
       "published_at": "2026-11-06T18:01:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1720,7 +1613,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1838,7 +1731,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -1952,7 +1845,7 @@
       "is_official": false,
       "published": "Nov 06, 15:54 UTC",
       "published_at": "2026-11-06T15:54:47+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2067,7 +1960,7 @@
       "is_official": false,
       "published": "Nov 07, 15:50 UTC",
       "published_at": "2026-11-07T15:50:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -2090,7 +1983,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Verge.",
       "importance_score": 80,
       "relevance_score": 70,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -2181,7 +2074,7 @@
       "is_official": true,
       "published": "Nov 04, 07:00 UTC",
       "published_at": "2026-11-04T07:00:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2294,7 +2187,7 @@
       "is_official": true,
       "published": "Nov 05, 17:05 UTC",
       "published_at": "2026-11-05T17:05:16+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2410,7 +2303,7 @@
       "is_official": true,
       "published": "Nov 03, 17:01 UTC",
       "published_at": "2026-11-03T17:01:49+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2524,7 +2417,7 @@
       "is_official": false,
       "published": "Nov 05, 18:00 UTC",
       "published_at": "2026-11-05T18:00:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2640,7 +2533,7 @@
       "is_official": true,
       "published": "Oct 28, 17:00 UTC",
       "published_at": "2026-10-28T17:00:58+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2757,7 +2650,7 @@
       "is_official": true,
       "published": "Nov 06, 17:13 UTC",
       "published_at": "2026-11-06T17:13:13+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2872,7 +2765,7 @@
       "is_official": true,
       "published": "Nov 06, 17:09 UTC",
       "published_at": "2026-11-06T17:09:23+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3028,13 +2921,13 @@
       "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
       "original_source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
       "word_count": 20,
-      "extraction_status": "fallback_summary",
+      "extraction_status": "cached_fallback",
       "content_hash": "0b8a3b876117dc40",
       "extracted_content": {
         "headline": "Measuring how AI agents handle everyday wet-lab science",
         "word_count": 20,
         "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
+        "extraction_status": "cached_fallback",
         "sections_count": 1
       },
       "reported_facts": [
@@ -3061,7 +2954,7 @@
       "is_official": true,
       "published": "Nov 06, 00:00 UTC",
       "published_at": "2026-11-06T00:00:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3175,7 +3068,7 @@
       "is_official": true,
       "published": "Nov 06, 17:34 UTC",
       "published_at": "2026-11-06T17:34:45+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3223,6 +3116,122 @@
     }
   ],
   "research_safety": [
+    {
+      "id": "cluster_24",
+      "article_id": "cluster_24",
+      "article_url": "articles/cluster_24.json",
+      "publisher_id": "anthropic",
+      "publisher_group_id": "anthropic",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Christopher Stubbs Joins Long Term Benefit Trust",
+      "one_liner": "Official news announcement from Anthropic: Christopher Stubbs Joins Long Term Benefit Trust.",
+      "summary": "Official news announcement from Anthropic: Christopher Stubbs Joins Long Term Benefit Trust.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic\u2019s Long-Term Benefit Trust. He brings to the Trust decades of scientific expertise across observational cosmology and precision measurement.",
+      "ai_what_happened": "He has also advised the US government on national security and arms control.",
+      "ai_key_details": [
+        "\u201cI am honored to join Anthropic\u2019s Long-Term Benefit Trust and to help the company deliver on its public benefit mission,\u201d said Stubbs.",
+        "\u201cI use AI tools in my research every day and see what they make possible, and as an educator I have confronted some of the hard questions they raise."
+      ],
+      "ai_why_it_matters": "\u201cHelping the world build powerful AI safely and making sure it meaningfully improves people\u2019s lives both depend on a deep understanding of science and on leading with integrity,\u201d added Neil Buddy Shah, Chair of the Long-Term Benefit Trust.",
+      "ai_technical_breakdown": "More recently, he\u2019s written about how to keep AI-assisted research reproducible when models can give different answers to the same question.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Christopher Stubbs Joins Long Term Benefit Trust capabilities from Anthropic Official News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Anthropic Official News."
+      },
+      "ai_whats_new": "In 1998, as a member of the High-Z Supernova Search Team, he helped discover the accelerating expansion of the universe, work that later earned the team the Breakthrough Prize in Fundamental Physics.",
+      "ai_key_takeaways": [
+        "As a grandfather, I want to help ensure that AI is developed and deployed for the long-term benefit of humanity.\u201d Stubbs is the Samuel C.",
+        "Moncher Professor of Physics and of Astronomy at Harvard, where he served as Dean of Science from 2018 to 2024.",
+        "He was also the inaugural project scientist for what is now the Vera C."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
+      "word_count": 608,
+      "extraction_status": "cached",
+      "content_hash": "ede1a46f39718958",
+      "extracted_content": {
+        "headline": "Christopher Stubbs Joins Long Term Benefit Trust",
+        "word_count": 608,
+        "reading_time": "3 min read",
+        "extraction_status": "cached",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Official news announcement from Anthropic: Christopher Stubbs Joins Long Term Benefit Trust.",
+        "Official development released and documented by Anthropic Official News."
+      ],
+      "what_changed": "Official news announcement from Anthropic: Christopher Stubbs Joins Long Term Benefit Trust.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Anthropic.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "Anthropic Official News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Recent",
+      "published_at": null,
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
+      "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
+      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "image_alt": "Visual representation for Christopher Stubbs Joins Long Term Benefit Trust",
+      "image_type": "source_media",
+      "image_credit": "Source publication",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "anthropic",
+      "reading_time": "3 min read",
+      "key_points": [
+        "Official news announcement from Anthropic: Christopher Stubbs Joins Long Term Benefit Trust."
+      ],
+      "detailed_analysis": "Official news announcement from Anthropic: Christopher Stubbs Joins Long Term Benefit Trust.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 50,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "Recent",
+      "latest_updated_at": "Recent",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
     {
       "id": "cluster_5",
       "article_id": "cluster_5",
@@ -3291,7 +3300,7 @@
       "is_official": true,
       "published": "Nov 05, 09:00 UTC",
       "published_at": "2026-11-05T09:00:00+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://openai.com/index/introducing-gpt-6-cyber",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3404,7 +3413,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3517,7 +3526,7 @@
       "is_official": true,
       "published": "Nov 05, 19:35 UTC",
       "published_at": "2026-11-05T19:35:16+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
+      "last_fetched_at": "2026-11-07T23:45:48.863461+00:00",
       "link": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -3560,120 +3569,6 @@
       ],
       "first_published_at": "2026-11-05T19:35:16+00:00",
       "latest_updated_at": "2026-11-05T19:35:16+00:00",
-      "eligible_for_top_developments": false,
-      "eligible_for_briefing": false,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_45",
-      "article_id": "cluster_45",
-      "article_url": "articles/cluster_45.json",
-      "publisher_id": "huggingface",
-      "publisher_group_id": "huggingface",
-      "article_type": "research_paper",
-      "signal_badge": "Research Paper",
-      "impact_level": "Notable",
-      "title": "ToyBlocks: A controlled world for robot learning and evaluation",
-      "one_liner": "ToyBlocks: A controlled world for robot learning and evaluation.",
-      "summary": "ToyBlocks: A controlled world for robot learning and evaluation.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "ToyBlocks: A controlled world for robot learning and evaluation.",
-      "ai_what_happened": "Hugging Face Blog published verified documentation on ToyBlocks: A controlled world for robot learning and evaluation.",
-      "ai_key_details": [
-        "Primary documentation verified from Hugging Face Blog."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for ToyBlocks: A controlled world for robot learning and evaluation from Hugging Face Blog.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for ToyBlocks: A controlled world for robot learning and evaluation; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate ToyBlocks: A controlled world for robot learning and evaluation capabilities from Hugging Face Blog directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Hugging Face Blog."
-      },
-      "ai_whats_new": "Delivers ToyBlocks: A controlled world for robot learning and evaluation as documented in verified primary release notes from Hugging Face Blog.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from Hugging Face Blog."
-      ],
-      "ai_limitations": "Preprint & open research status: Technical claims and evaluation baselines from Hugging Face Blog have not completed formal peer review or broad independent reproduction.",
-      "original_source_url": "https://huggingface.co/blog/allenai/toyblocks",
-      "word_count": 9,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "ToyBlocks: A controlled world for robot learning and evaluation",
-        "word_count": 9,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Official development released and documented by Hugging Face Blog."
-      ],
-      "what_changed": "ToyBlocks: A controlled world for robot learning and evaluation.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Huggingface.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Huggingface may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "Hugging Face Blog",
-      "tier": "Open Research",
-      "trust_tier": 3,
-      "is_official": true,
-      "published": "Nov 06, 14:00 UTC",
-      "published_at": "2026-11-06T14:00:48+00:00",
-      "last_fetched_at": "2026-11-07T20:21:33.171349+00:00",
-      "link": "https://huggingface.co/blog/allenai/toyblocks",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for ToyBlocks: A controlled world for robot learning and evaluation",
-      "image_type": "official_asset",
-      "image_credit": "Huggingface announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "huggingface",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Strategic development announced in Frontier Models."
-      ],
-      "detailed_analysis": "ToyBlocks: A controlled world for robot learning and evaluation.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Huggingface workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Huggingface workflows.",
-      "importance_score": 45,
-      "relevance_score": 95,
-      "freshness_score": 70,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 57.9,
-      "overall_score": 57.9,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Empirical research preprint / benchmark evaluation (+15 impact)",
-        "- Routine uncorroborated preprint without verifiable breakthrough signals (-20 research quality)",
-        "+ Official primary lab source (100 authority)",
-        "- [uncorroborated_arxiv_cap] Single-source routine research preprint capped at 64.0 ceiling"
-      ],
-      "first_published_at": "2026-11-06T14:00:48+00:00",
-      "latest_updated_at": "2026-11-06T14:00:48+00:00",
       "eligible_for_top_developments": false,
       "eligible_for_briefing": false,
       "related_sources": [],
@@ -3824,8 +3719,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 261464,
-      "forks": 57972,
+      "stars": 261500,
+      "forks": 57997,
       "language": "Python",
       "topics": [
         "ai",
@@ -3841,8 +3736,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-07T20:19:09Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "updated_at": "2026-11-07T23:44:55Z",
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3850,8 +3745,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 80906,
-      "forks": 14898,
+      "stars": 80938,
+      "forks": 14904,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3867,8 +3762,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-07T17:57:37Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "updated_at": "2026-11-07T21:43:34Z",
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3876,8 +3771,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 67710,
-      "forks": 55975,
+      "stars": 67726,
+      "forks": 55984,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3894,7 +3789,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
       "updated_at": "2026-11-07T14:28:11Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     },
     {
       "repository": "zhayujie/CowAgent",
@@ -3902,7 +3797,7 @@
       "owner": "zhayujie",
       "url": "https://github.com/zhayujie/CowAgent",
       "description": "Open-source personal AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
-      "stars": 47829,
+      "stars": 47832,
       "forks": 10420,
       "language": "Python",
       "topics": [
@@ -3920,7 +3815,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2022-08-07T08:33:41Z",
       "updated_at": "2026-11-07T04:56:19Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     },
     {
       "repository": "open-webui/open-webui",
@@ -3928,8 +3823,8 @@
       "owner": "open-webui",
       "url": "https://github.com/open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 158025,
-      "forks": 22972,
+      "stars": 158035,
+      "forks": 22971,
       "language": "Svelte",
       "topics": [
         "ai",
@@ -3946,7 +3841,7 @@
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2023-10-06T22:08:27Z",
       "updated_at": "2026-11-07T17:05:55Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     },
     {
       "repository": "langchain-ai/langchain",
@@ -3954,8 +3849,8 @@
       "owner": "langchain-ai",
       "url": "https://github.com/langchain-ai/langchain",
       "description": "The agent engineering platform.",
-      "stars": 149169,
-      "forks": 25091,
+      "stars": 149176,
+      "forks": 25088,
       "language": "Python",
       "topics": [
         "agents",
@@ -3971,8 +3866,8 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2022-10-17T02:58:36Z",
-      "updated_at": "2026-11-07T09:18:20Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "updated_at": "2026-11-07T23:37:03Z",
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3980,8 +3875,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 440631,
-      "forks": 109036,
+      "stars": 440958,
+      "forks": 109108,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3997,34 +3892,34 @@
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-07T20:20:12Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "updated_at": "2026-11-07T22:49:08Z",
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     },
     {
-      "repository": "affaan-m/ECC",
-      "name": "ECC",
-      "owner": "affaan-m",
-      "url": "https://github.com/affaan-m/ECC",
-      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 299080,
-      "forks": 44184,
-      "language": "JavaScript",
+      "repository": "n8n-io/n8n",
+      "name": "n8n",
+      "owner": "n8n-io",
+      "url": "https://github.com/n8n-io/n8n",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "stars": 209772,
+      "forks": 61396,
+      "language": "TypeScript",
       "topics": [
-        "ai-agents",
-        "anthropic",
-        "claude",
-        "claude-code",
-        "developer-tools",
-        "llm"
+        "ai",
+        "apis",
+        "automation",
+        "cli",
+        "data-flow",
+        "development"
       ],
-      "license": "MIT",
+      "license": "NOASSERTION",
       "stars_gained_24h": null,
       "stars_gained_7d": null,
       "developer_trend_score": 75.0,
       "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
-      "created_at": "2026-01-18T00:51:51Z",
-      "updated_at": "2026-11-06T21:21:50Z",
-      "collected_at": "2026-11-07T20:21:30.344651+00:00"
+      "created_at": "2019-06-22T09:24:21Z",
+      "updated_at": "2026-11-07T23:26:47Z",
+      "collected_at": "2026-11-07T23:45:41.210020+00:00"
     }
   ],
   "source_health_summary": {
@@ -4035,7 +3930,7 @@
     "failed_fetches_count": 0,
     "valid_empty_sources_count": 0,
     "total_articles_received": 2464,
-    "rejected_by_relevance_count": 7,
+    "rejected_by_relevance_count": 9,
     "rejected_by_freshness_count": 1000,
     "fresh_articles_accepted_count": 89,
     "unique_article_count": 89
@@ -4044,8 +3939,8 @@
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-07T20:16:49.432158+00:00",
-      "last_success_at": "2026-11-07T20:16:49.432158+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.177172+00:00",
+      "last_success_at": "2026-11-07T23:43:00.177172+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1368,
@@ -4056,8 +3951,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-07T20:16:49.432860+00:00",
-      "last_success_at": "2026-11-07T20:16:49.432860+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.178044+00:00",
+      "last_success_at": "2026-11-07T23:43:00.178044+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -4068,8 +3963,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-07T20:16:49.433219+00:00",
-      "last_success_at": "2026-11-07T20:16:49.433219+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.178576+00:00",
+      "last_success_at": "2026-11-07T23:43:00.178576+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -4080,8 +3975,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-07T20:16:49.433629+00:00",
-      "last_success_at": "2026-11-07T20:16:49.433629+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.179097+00:00",
+      "last_success_at": "2026-11-07T23:43:00.179097+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -4092,8 +3987,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-07T20:16:49.434105+00:00",
-      "last_success_at": "2026-11-07T20:16:49.434105+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.180023+00:00",
+      "last_success_at": "2026-11-07T23:43:00.180023+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 20,
@@ -4104,8 +3999,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-07T20:16:49.438118+00:00",
-      "last_success_at": "2026-11-07T20:16:49.438118+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.183444+00:00",
+      "last_success_at": "2026-11-07T23:43:00.183444+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 899,
@@ -4116,8 +4011,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-07T20:16:49.440250+00:00",
-      "last_success_at": "2026-11-07T20:16:49.440250+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.185442+00:00",
+      "last_success_at": "2026-11-07T23:43:00.185442+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -4128,8 +4023,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-07T20:16:49.444884+00:00",
-      "last_success_at": "2026-11-07T20:16:49.444884+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.188453+00:00",
+      "last_success_at": "2026-11-07T23:43:00.188453+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -4140,8 +4035,8 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-07T20:16:49.445452+00:00",
-      "last_success_at": "2026-11-07T20:16:49.445452+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.198345+00:00",
+      "last_success_at": "2026-11-07T23:43:00.198345+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4152,10 +4047,10 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-07T20:16:49.445942+00:00",
-      "last_success_at": "2026-11-07T20:16:49.445942+00:00",
+      "last_attempt_at": "2026-11-07T23:43:00.199913+00:00",
+      "last_success_at": "2026-11-07T23:43:00.199913+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 10,
       "error_type": null,
