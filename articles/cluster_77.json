@@ -1,6 +1,6 @@
 {
-  "id": "cluster_75",
-  "clean_id": "cluster_75",
+  "id": "cluster_77",
+  "clean_id": "cluster_77",
   "title": "The gap between open and closed AI models in cyber capabilities keeps shrinking",
   "headline": "The gap between open and closed AI models in cyber capabilities keeps shrinking",
   "subtitle": "",
@@ -24,7 +24,7 @@
   "original_source_url": "https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking",
   "reading_time": "2 min read",
   "word_count": 498,
-  "extraction_status": "extracted",
+  "extraction_status": "cached",
   "content_hash": "8e14a95e7e15b34c",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
