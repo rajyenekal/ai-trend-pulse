@@ -24,7 +24,7 @@
   "original_source_url": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai",
   "reading_time": "16 min read",
   "word_count": 3269,
-  "extraction_status": "extracted",
+  "extraction_status": "cached",
   "content_hash": "7129ca9e72e9024c",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",

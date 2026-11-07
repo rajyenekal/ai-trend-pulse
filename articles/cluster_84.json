@@ -1,6 +1,6 @@
 {
-  "id": "cluster_79",
-  "clean_id": "cluster_79",
+  "id": "cluster_84",
+  "clean_id": "cluster_84",
   "title": "Thinking Machines' Inkling 2 Small claims top spot among western open-weight models",
   "headline": "Thinking Machines' Inkling 2 Small claims top spot among western open-weight models",
   "subtitle": "",
@@ -24,7 +24,7 @@
   "original_source_url": "https://the-decoder.com/thinking-machines-inkling-2-small-claims-top-spot-among-western-open-weight-models",
   "reading_time": "4 min read",
   "word_count": 871,
-  "extraction_status": "extracted",
+  "extraction_status": "cached",
   "content_hash": "b5676a1d30cfbd8c",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
