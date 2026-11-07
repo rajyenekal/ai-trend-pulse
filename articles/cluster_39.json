@@ -1,0 +1,66 @@
+{
+  "id": "cluster_39",
+  "clean_id": "cluster_39",
+  "title": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore \u2013 Part 2",
+  "headline": "Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore \u2013 Part 2",
+  "subtitle": "",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "aws",
+  "publisher_group_id": "amazon",
+  "author": "",
+  "published_at": "2026-11-06T17:09:23+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2",
+  "reading_time": "1 min read",
+  "word_count": 8,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "In Part 1 you built one governed agent.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore \u2013 Part 2.",
+  "ai_key_details": [
+    "Primary documentation verified from AWS Machine Learning."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore \u2013 Part 2 from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore \u2013 Part 2; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore \u2013 Part 2 capabilities from AWS Machine Learning directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+  },
+  "ai_whats_new": "Delivers Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore \u2013 Part 2 as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from AWS Machine Learning."
+  ],
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "reported_facts": [
+    "In Part 1 you built one governed agent.",
+    "Official development released and documented by AWS Machine Learning."
+  ],
+  "text": "In Part 1 you built one governed agent.",
+  "full_text": "In Part 1 you built one governed agent.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "In Part 1 you built one governed agent."
+    }
+  ],
+  "paragraphs": [
+    "In Part 1 you built one governed agent."
+  ],
+  "corroborating_sources": []
+}

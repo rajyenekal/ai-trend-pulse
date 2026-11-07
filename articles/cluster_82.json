@@ -1,66 +1,69 @@
 {
   "id": "cluster_82",
   "clean_id": "cluster_82",
-  "title": "Meta buys AI coding startup Conductor as big tech races to lock in developers",
-  "headline": "Meta buys AI coding startup Conductor as big tech races to lock in developers",
+  "title": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model",
+  "headline": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model",
   "subtitle": "",
   "publisher": "The Decoder",
   "publisher_id": "the_decoder",
   "publisher_group_id": "the_decoder",
   "author": "",
-  "published_at": "2026-11-05T15:01:09+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
-  "impact_level": "Major",
-  "pulse_score": 76.7,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "published_at": "2026-11-05T17:56:41+00:00",
+  "category": "Open Source AI",
+  "topic": "Open Source AI",
+  "impact_level": "Breakthrough",
+  "pulse_score": 84.3,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
   "trust_tier": 2,
   "tier": "Independent Journalism",
   "is_official": false,
-  "image": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers",
-  "canonical_url": "https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers",
-  "original_source_url": "https://the-decoder.com/meta-buys-ai-coding-startup-conductor-as-big-tech-races-to-lock-in-developers",
+  "image": "https://the-decoder.com/wp-content/uploads/2026/11/ernie_logo.png",
+  "url": "https://the-decoder.com/baidu-releases-ernie-5-5-flash-base-with-280-billion-parameters-as-an-open-source-foundation-model",
+  "canonical_url": "https://the-decoder.com/baidu-releases-ernie-5-5-flash-base-with-280-billion-parameters-as-an-open-source-foundation-model",
+  "original_source_url": "https://the-decoder.com/baidu-releases-ernie-5-5-flash-base-with-280-billion-parameters-as-an-open-source-foundation-model",
   "reading_time": "1 min read",
-  "word_count": 36,
-  "extraction_status": "fallback_summary",
-  "content_hash": "",
+  "word_count": 196,
+  "extraction_status": "extracted",
+  "content_hash": "19316c97a6443da3",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May.",
-  "ai_what_happened": "The Decoder published verified documentation on Meta buys AI coding startup Conductor as big tech races to lock in developers.",
+  "ai_overview": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model Baidu's AI development is still alive, but most of the work is on you. The Chinese company has released ERNIE-5.5-Flash-Base, an open foundation model that ships deliberately without fine-tuning or post-training.",
+  "ai_what_happened": "Developers are expected to decide for themselves where to take the model.",
   "ai_key_details": [
-    "Primary documentation verified from The Decoder."
+    "A post-trained version is supposed to follow.",
+    "ERNIE 5.5 uses a mixture-of-experts architecture with 280 billion parameters, 14 billion of which are active per input.",
+    "The model was pre-trained on 33.5 trillion tokens with a training context of up to 128,000 tokens, though it's designed to support a context of up to one million tokens during fine-tuning and inference.",
+    "In benchmarks for reasoning, code, and long-context tasks, the model competes with similarly sized open foundation models like DeepSeek V4 Flash or MiMo V2.5, according to Baidu."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Meta buys AI coding startup Conductor as big tech races to lock in developers from The Decoder.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Meta buys AI coding startup Conductor as big tech races to lock in developers; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model from The Decoder.",
+  "ai_technical_breakdown": "The weights are available on Hugging Face in FP8 and BF16.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Meta buys AI coding startup Conductor as big tech races to lock in developers capabilities from The Decoder directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model capabilities from The Decoder directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
   },
-  "ai_whats_new": "Delivers Meta buys AI coding startup Conductor as big tech races to lock in developers as documented in verified primary release notes from The Decoder.",
+  "ai_whats_new": "AI News Without the Hype \u2013 Curated by Humans Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from The Decoder."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
   "reported_facts": [
-    "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once.",
-    "On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May."
+    "Baidu releases ERNIE 5.5 Flash Base: a 280-billion-parameter MoE model pre-trained on 33.5 trillion tokens, shipped deliberately without fine-tuning, so developers can take it wherever they want.",
+    "Official development released and documented by The Decoder."
   ],
-  "text": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May.",
-  "full_text": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May.",
+  "text": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model\nBaidu's AI development is still alive, but most of the work is on you. The Chinese company has released ERNIE-5.5-Flash-Base, an open foundation model that ships deliberately without fine-tuning or post-training. Developers are expected to decide for themselves where to take the model. A post-trained version is supposed to follow.\nERNIE 5.5 uses a mixture-of-experts architecture with 280 billion parameters, 14 billion of which are active per input. The model was pre-trained on 33.5 trillion tokens with a training context of up to 128,000 tokens, though it's designed to support a context of up to one million tokens during fine-tuning and inference.\nIn benchmarks for reasoning, code, and long-context tasks, the model competes with similarly sized open foundation models like DeepSeek V4 Flash or MiMo V2.5, according to Baidu. The weights are available on Hugging Face in FP8 and BF16.\nAI News Without the Hype \u2013 Curated by Humans\nSubscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section.\nSubscribe now",
+  "full_text": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model\nBaidu's AI development is still alive, but most of the work is on you. The Chinese company has released ERNIE-5.5-Flash-Base, an open foundation model that ships deliberately without fine-tuning or post-training. Developers are expected to decide for themselves where to take the model. A post-trained version is supposed to follow.\nERNIE 5.5 uses a mixture-of-experts architecture with 280 billion parameters, 14 billion of which are active per input. The model was pre-trained on 33.5 trillion tokens with a training context of up to 128,000 tokens, though it's designed to support a context of up to one million tokens during fine-tuning and inference.\nIn benchmarks for reasoning, code, and long-context tasks, the model competes with similarly sized open foundation models like DeepSeek V4 Flash or MiMo V2.5, according to Baidu. The weights are available on Hugging Face in FP8 and BF16.\nAI News Without the Hype \u2013 Curated by Humans\nSubscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section.\nSubscribe now",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May."
+      "content": "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model Baidu's AI development is still alive, but most of the work is on you. The Chinese company has released ERNIE-5.5-Flash-Base, an open foundation model that ships deliberately without fine-tuning or post-training. Developers are expected to decide for themselves where to take the model. A post-trained version is supposed to follow. ERNIE 5.5 uses a mixture-of-experts architecture with 280 billion parameters, 14 billion of which are active per input. The model was pre-trained on 33.5 trillion tokens with a training context of up to 128,000 tokens, though it's designed to support a context of up to one million tokens during fine-tuning and inference. In benchmarks for reasoning, code, and long-context tasks, the model competes with similarly sized open foundation models like DeepSeek V4 Flash or MiMo V2.5, according to Baidu. The weights are available on Hugging Face in FP8 and BF16. AI News Without the Hype \u2013 Curated by Humans Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section. Subscribe now"
     }
   ],
   "paragraphs": [
-    "Meta is acquiring AI coding startup Conductor, which lets developers control multiple AI coding agents at once. On the same day, OpenAI announced plans to acquire Pierre Computer, and Anthropic already bought Stainless back in May."
+    "Baidu releases ERNIE 5.5 Flash Base with 280 billion parameters as an open-source foundation model Baidu's AI development is still alive, but most of the work is on you. The Chinese company has released ERNIE-5.5-Flash-Base, an open foundation model that ships deliberately without fine-tuning or post-training. Developers are expected to decide for themselves where to take the model. A post-trained version is supposed to follow. ERNIE 5.5 uses a mixture-of-experts architecture with 280 billion parameters, 14 billion of which are active per input. The model was pre-trained on 33.5 trillion tokens with a training context of up to 128,000 tokens, though it's designed to support a context of up to one million tokens during fine-tuning and inference. In benchmarks for reasoning, code, and long-context tasks, the model competes with similarly sized open foundation models like DeepSeek V4 Flash or MiMo V2.5, according to Baidu. The weights are available on Hugging Face in FP8 and BF16. AI News Without the Hype \u2013 Curated by Humans Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section. Subscribe now"
   ],
   "corroborating_sources": []
 }
