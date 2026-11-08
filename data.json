@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "data_status": "fresh",
-  "generated_at": "2026-11-08T02:47:00.156347+00:00",
-  "last_successful_update": "2026-11-08T02:47:00.156347+00:00",
-  "last_attempt_at": "2026-11-08T02:47:00.156347+00:00",
+  "generated_at": "2026-11-08T09:38:26.067594+00:00",
+  "last_successful_update": "2026-11-08T09:38:26.067594+00:00",
+  "last_attempt_at": "2026-11-08T09:38:26.067594+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
     "total_developments_today": 82,
-    "last_updated": "2026-11-08T02:47:00.156347+00:00",
+    "last_updated": "2026-11-08T09:38:26.067594+00:00",
     "briefing_text": "Today's AI developments span Open Source AI, AI Agents, and Frontier Models. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
     "top_developments": [
       {
@@ -281,19 +281,19 @@
       ]
     }
   ],
-  "takeaway": "Leading AI labs are prioritizing advanced security and specialized deployment architectures alongside next-generation frontier modeling. Frontier developments highlight fortified model protections, sovereign cloud integrations, and structured public-benefit governance alongside advancements in world simulation and multimodal capabilities.",
+  "takeaway": "Leading AI laboratories are advancing frontier foundational models and simulation capabilities while deploying specialized solutions to highly regulated enterprise and public sector environments. Concurrently, providers are intensifying defensive measures against model distillation and expanding research partnerships across scientific disciplines.",
   "trends": [
     {
-      "title": "Google DeepMind Advances Frontier Capabilities with Gemini 4 Carbon and Genie 4",
+      "title": "Google DeepMind Announces Frontier Model Gemini 4 Carbon and World Simulator Genie 4",
       "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
       "trend_type": "emerging_theme",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
-      "theme_relationship": "DeepMind is concurrently driving frontier reasoning and cybersecurity performance in text-based agent models alongside interactive multimodal physics and world simulation.",
+      "theme_relationship": "Both announcements represent Google DeepMind's dual push in scaling next-generation foundation models for agentic cyber workflows and multimodal world simulation.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Gemini 4 Carbon ranks number one on version 5.0 of the Artificial Analysis Intelligence Index with an index score of 59.",
+          "text": "Gemini 4 Carbon ranks number 1 on the Artificial Analysis Intelligence Index v5.0 with a score of 59 and offers enhanced cybersecurity capabilities.",
           "evidence": [
             {
               "article_id": "art_deepmind_blog_cd55b15fd1b5",
@@ -313,7 +313,7 @@
         },
         {
           "claim_id": "claim_2",
-          "text": "Genie 4 provides natively multimodal interactive world simulation that generates audio, ambient sound, and dialogue simultaneously with virtual environments.",
+          "text": "Genie 4 is natively multimodal and generates audio, ambient noises, and interactive dialogue simultaneously with visual world simulations.",
           "evidence": [
             {
               "article_id": "art_deepmind_blog_b64b7ac92f07",
@@ -358,10 +358,10 @@
           "text_verified": false
         }
       ],
-      "what_happened": "Google DeepMind unveiled Gemini 4 Carbon, featuring top-ranked cybersecurity and action-taking capabilities, alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of real-time audio and visual generation.",
-      "what_changed": "Google DeepMind unveiled Gemini 4 Carbon, featuring top-ranked cybersecurity and action-taking capabilities, alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of real-time audio and visual generation.",
-      "why_it_matters": "The releases push frontier capabilities into specialized domains including interactive world-building and hardened cybersecurity defense.",
-      "who_affected": "Developers, Enterprises, and AI Practitioners",
+      "what_happened": "Google DeepMind introduced Gemini 4 Carbon with top-ranked intelligence and cybersecurity capabilities alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of generating real-time interactive environments.",
+      "what_changed": "Google DeepMind introduced Gemini 4 Carbon with top-ranked intelligence and cybersecurity capabilities alongside Genie 4, a multimodal (text, image, audio) world simulation model capable of generating real-time interactive environments.",
+      "why_it_matters": "The releases advance both autonomous cyber-defense problem solving and interactive, physically grounded generative environments for AI systems.",
+      "who_affected": "Developers and AI Practitioners",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -386,7 +386,6 @@
       "reading_time": "1 min read",
       "audience_pills": [
         "Developers",
-        "Enterprises",
         "Ai Practitioners"
       ],
       "audience_impact": {
@@ -401,19 +400,19 @@
       "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Google DeepMind unveiled Gemini 4 Carbon, featuring top-ranked cybersecurity and agentic capabilities, alongside Genie 4, a multimodal world simulation model capable of real-time audio and visual generation.",
-        "The releases push frontier capabilities into specialized domains including interactive world-building and hardened cybersecurity defense."
+        "Google DeepMind introduced Gemini 4 Carbon with top-ranked intelligence and cybersecurity capabilities alongside Genie 4, a multimodal world simulation model capable of generating real-time interactive environments.",
+        "The releases advance both autonomous cyber-defense problem solving and interactive, physically grounded generative environments for AI systems."
       ],
-      "detailed_analysis": "Google DeepMind unveiled Gemini 4 Carbon, featuring top-ranked cybersecurity and agentic capabilities, alongside Genie 4, a multimodal world simulation model capable of real-time audio and visual generation.",
+      "detailed_analysis": "Google DeepMind introduced Gemini 4 Carbon with top-ranked intelligence and cybersecurity capabilities alongside Genie 4, a multimodal world simulation model capable of generating real-time interactive environments.",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Google DeepMind Advances Frontier Capabilities with Gemini 4 Carbon and Genie 4",
+      "image_alt": "Visual representation for Google DeepMind Announces Frontier Model Gemini 4 Carbon and World Simulator Genie 4",
       "image_type": "official_asset",
       "image_credit": "Google announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Anthropic Develops Defenses to Thwart Model Distillation Attacks",
+      "title": "Anthropic Deploys Defensive Techniques to Mitigate Model Distillation Extraction",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "trend_type": "single_development",
       "article_type": "security_vulnerability",
@@ -421,8 +420,8 @@
       "theme_relationship": null,
       "claims": [
         {
-          "claim_id": "claim_3",
-          "text": "Anthropic's newly deployed methods have curtailed data extraction by model distillers by 90 to 99 percent.",
+          "claim_id": "claim_1",
+          "text": "New defensive methods implemented by Anthropic have reduced data harvested by distillers by 90 to 99 percent.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_e5f202a1f983",
@@ -455,9 +454,9 @@
           "text_verified": false
         }
       ],
-      "what_happened": "Anthropic introduced defense mechanisms that mitigate covert distillation campaigns aimed at extracting proprietary capabilities from Claude models.",
-      "what_changed": "Anthropic introduced defense mechanisms that mitigate covert distillation campaigns aimed at extracting proprietary capabilities from Claude models.",
-      "why_it_matters": "Preventing model extraction protects frontier intellectual property and deters malicious or unauthorized model replication.",
+      "what_happened": "Anthropic introduced defense mechanisms that reduced data harvested by unauthorized model distillation campaigns by an estimated 90% to 99%.",
+      "what_changed": "Anthropic introduced defense mechanisms that reduced data harvested by unauthorized model distillation campaigns by an estimated 90% to 99%.",
+      "why_it_matters": "Distillation extraction threatens proprietary model advantages, making defense against large-scale replication vital for frontier model developers.",
       "who_affected": "AI Practitioners and Enterprises",
       "affected_stakeholders": [
         "Developers",
@@ -465,8 +464,8 @@
       ],
       "potential_impact": "Impacts roadmap decisions across Frontier Models.",
       "category": "Frontier Models",
-      "category_confidence": 0.9,
-      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
       "source": "Anthropic Official News",
       "tier": "Official Lab",
       "status": "official_announcement",
@@ -495,19 +494,19 @@
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "Anthropic introduced defense mechanisms that mitigate covert distillation campaigns aimed at extracting proprietary capabilities from Claude models.",
-        "Preventing model extraction protects frontier intellectual property and deters malicious or unauthorized model replication."
+        "Anthropic introduced defense mechanisms that reduced data harvested by unauthorized model distillation campaigns by an estimated 90% to 99%.",
+        "Distillation extraction threatens proprietary model advantages, making defense against large-scale replication vital for frontier model developers."
       ],
-      "detailed_analysis": "Anthropic introduced defense mechanisms that mitigate covert distillation campaigns aimed at extracting proprietary capabilities from Claude models.",
+      "detailed_analysis": "Anthropic introduced defense mechanisms that reduced data harvested by unauthorized model distillation campaigns by an estimated 90% to 99%.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Develops Defenses to Thwart Model Distillation Attacks",
+      "image_alt": "Visual representation for Anthropic Deploys Defensive Techniques to Mitigate Model Distillation Extraction",
       "image_type": "official_asset",
       "image_credit": "Anthropic announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "OpenAI Launches Daybreak Red with GPT-5.6 Cyber for AWS GovCloud",
+      "title": "OpenAI Deploys GPT-5.6 Cyber to AWS GovCloud for Authorized Security Operations",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "trend_type": "single_development",
       "article_type": "frontier_launch",
@@ -515,8 +514,8 @@
       "theme_relationship": null,
       "claims": [
         {
-          "claim_id": "claim_4",
-          "text": "Daybreak Red introduces GPT-5.6 Cyber into AWS GovCloud (US-East) through Amazon Bedrock for sanctioned cybersecurity workflows.",
+          "claim_id": "claim_1",
+          "text": "Daybreak Red provides GPT-5.6 Cyber to approved clients in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity applications.",
           "evidence": [
             {
               "article_id": "art_openai_news_eb4b148db5e4",
@@ -549,10 +548,10 @@
           "text_verified": true
         }
       ],
-      "what_happened": "OpenAI made Daybreak Red accessible via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber to approved government customers.",
-      "what_changed": "OpenAI made Daybreak Red accessible via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber to approved government customers.",
-      "why_it_matters": "The integration provides high-compliance public sector environments with specialized models explicitly targeted at authorized cybersecurity missions.",
-      "who_affected": "Enterprises and Developers",
+      "what_happened": "OpenAI made Daybreak Red available via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber capabilities to approved public sector customers.",
+      "what_changed": "OpenAI made Daybreak Red available via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber capabilities to approved public sector customers.",
+      "why_it_matters": "Frontier AI capabilities for sensitive cybersecurity operations are becoming accessible within compliant cloud enclaves designed for government workloads.",
+      "who_affected": "Enterprises",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -574,43 +573,42 @@
       "company": "openai",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Enterprises",
-        "Developers"
+        "Enterprises"
       ],
       "audience_impact": {
-        "target": "For enterprise operators",
-        "impact": "Demonstrates practical operational automation and procurement pathways using Openai."
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
       },
-      "target_audience": "For enterprise operators",
-      "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 1,
       "evidence_status": "official_announcement",
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI made Daybreak Red accessible via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber to approved government customers.",
-        "The integration provides high-compliance public sector environments with specialized models explicitly targeted at authorized cybersecurity missions."
+        "OpenAI made Daybreak Red available via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber capabilities to approved public sector customers.",
+        "Frontier AI capabilities for sensitive cybersecurity operations are becoming accessible within compliant cloud enclaves designed for government workloads."
       ],
-      "detailed_analysis": "OpenAI made Daybreak Red accessible via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber to approved government customers.",
+      "detailed_analysis": "OpenAI made Daybreak Red available via Amazon Bedrock in AWS GovCloud (US-East) to deliver GPT-5.6 Cyber capabilities to approved public sector customers.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for OpenAI Launches Daybreak Red with GPT-5.6 Cyber for AWS GovCloud",
+      "image_alt": "Visual representation for OpenAI Deploys GPT-5.6 Cyber to AWS GovCloud for Authorized Security Operations",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Anthropic Expands Corporate Governance and Scientific Grant Programs",
+      "title": "Anthropic Expands Scientific Research Programs and Corporate Public Benefit Structures",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "trend_type": "emerging_theme",
       "article_type": "policy_regulation",
       "signal_badge": "Security & Policy",
-      "theme_relationship": "Anthropic is aligning its governance and capital structure with public interest oversight while directly funding global scientific research initiatives.",
+      "theme_relationship": "Anthropic is aligning its governance and model compute allocation towards global research, establishing long-term public benefit funding alongside dedicated scientific partnerships.",
       "claims": [
         {
-          "claim_id": "claim_5",
-          "text": "Anthropic has committed an initial 5% of corporate equity to the Public Benefit Fund, with potential 2% additions tied to increments in valuation.",
+          "claim_id": "claim_1",
+          "text": "Anthropic has committed 5 percent of its shares to the Anthropic Public Benefit Fund, with provisions to increase the stake as corporate valuation rises.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_a4f7bd1fdab9",
@@ -629,8 +627,8 @@
           "verification_status": "official_announcement"
         },
         {
-          "claim_id": "claim_6",
-          "text": "Anthropic expanded its AI for Science program to partner with 20 international scientific foundations and research institutions using free Claude credits.",
+          "claim_id": "claim_2",
+          "text": "Anthropic expanded its AI for Science initiative to 20 international scientific foundations and research groups by providing free Claude credits.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_b7b14fbfed23",
@@ -675,10 +673,10 @@
           "text_verified": false
         }
       ],
-      "what_happened": "Anthropic pledged corporate equity toward a new Public Benefit Fund and expanded its AI for Science initiative across 20 global research institutions.",
-      "what_changed": "Anthropic pledged corporate equity toward a new Public Benefit Fund and expanded its AI for Science initiative across 20 global research institutions.",
-      "why_it_matters": "Institutionalizing equity contributions and providing computing grants binds company valuation directly to public interest funding and basic scientific inquiry.",
-      "who_affected": "Enterprises and AI Practitioners",
+      "what_happened": "Anthropic expanded its AI for Science initiative to 20 partner institutions and committed an initial 5% of company shares to a newly created Public Benefit Fund.",
+      "what_changed": "Anthropic expanded its AI for Science initiative to 20 partner institutions and committed an initial 5% of company shares to a newly created Public Benefit Fund.",
+      "why_it_matters": "Providing free compute credits to research groups and binding equity to public benefit objectives solidifies institutional support for non-commercial scientific discovery.",
+      "who_affected": "AI Practitioners and Enterprises",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -702,30 +700,158 @@
       "company": "anthropic",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Enterprises",
-        "Ai Practitioners"
+        "Ai Practitioners",
+        "Enterprises"
       ],
       "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic."
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Anthropic."
       },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic.",
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Anthropic.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 2,
       "evidence_status": "emerging_theme",
       "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Anthropic pledged corporate equity toward a new Public Benefit Fund and expanded its AI for Science initiative across 20 global research institutions.",
-        "Institutionalizing equity contributions and providing computing grants binds company valuation directly to public interest funding and basic scientific inquiry."
+        "Anthropic expanded its AI for Science initiative to 20 partner institutions and committed an initial 5% of company shares to a newly created Public Benefit Fund.",
+        "Providing free compute credits to research groups and binding equity to public benefit objectives solidifies institutional support for non-commercial scientific discovery."
       ],
-      "detailed_analysis": "Anthropic pledged corporate equity toward a new Public Benefit Fund and expanded its AI for Science initiative across 20 global research institutions.",
+      "detailed_analysis": "Anthropic expanded its AI for Science initiative to 20 partner institutions and committed an initial 5% of company shares to a newly created Public Benefit Fund.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Expands Corporate Governance and Scientific Grant Programs",
+      "image_alt": "Visual representation for Anthropic Expands Scientific Research Programs and Corporate Public Benefit Structures",
       "image_type": "official_asset",
       "image_credit": "Anthropic announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "OpenAI Upgrades Multimodal Generation and Expands Enterprise Integrations Across Industries",
+      "link": "https://openai.com/index/introducing-images-2-6",
+      "trend_type": "emerging_theme",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "theme_relationship": "OpenAI is iteratively updating multimodal core tools while expanding real-world enterprise deployments across customer service, code maintenance, and higher education.",
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "Images 2.6 introduces faster image synthesis, GIF generation, precise editing, and expanded API controls across OpenAI platforms.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_e82ae0918aeb",
+              "canonical_url": "https://openai.com/index/introducing-images-2-6",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_2",
+          "text": "DevRev uses GPT-6.1 Sol to power its Computer and Operator systems to balance enterprise service speed, reasoning, and cost.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_49e8809fb20f",
+              "canonical_url": "https://openai.com/index/devrev-enterprise-self-service",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "art_openai_news_e82ae0918aeb",
+          "canonical_url": "https://openai.com/index/introducing-images-2-6",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
+          "text_verified": true
+        },
+        {
+          "article_id": "art_openai_news_49e8809fb20f",
+          "canonical_url": "https://openai.com/index/devrev-enterprise-self-service",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+          "text_verified": true
+        }
+      ],
+      "what_happened": "OpenAI launched Images 2.6 with accelerated generation and editing controls while enterprise partners like Merge and DevRev deployed GPT-6-tier models for engineering and self-service operations.",
+      "what_changed": "OpenAI launched Images 2.6 with accelerated generation and editing controls while enterprise partners like Merge and DevRev deployed GPT-6-tier models for engineering and self-service operations.",
+      "why_it_matters": "Upgrades to media generation tools and specialized frontier models enable organizations to automate end-to-end operational pipelines from software review to customer support.",
+      "who_affected": "Developers and Enterprises",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
+      "category": "Frontier Models",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "status": "emerging_theme",
+      "evidence_article_ids": [
+        "art_openai_news_e82ae0918aeb",
+        "art_openai_news_49e8809fb20f"
+      ],
+      "evidence_urls": [
+        "https://openai.com/index/introducing-images-2-6",
+        "https://openai.com/index/devrev-enterprise-self-service"
+      ],
+      "topic": "Frontier Models",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Developers",
+        "Enterprises"
+      ],
+      "audience_impact": {
+        "target": "For enterprise operators",
+        "impact": "Demonstrates practical operational automation and procurement pathways using Openai."
+      },
+      "target_audience": "For enterprise operators",
+      "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 2,
+      "evidence_status": "emerging_theme",
+      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
+      "independent_source_count": 1,
+      "key_points": [
+        "OpenAI launched Images 2.6 with accelerated generation and editing controls while enterprise partners like Merge and DevRev deployed GPT-6-tier models for engineering and self-service operations.",
+        "Upgrades to media generation tools and specialized frontier models enable organizations to automate end-to-end operational pipelines from software review to customer support."
+      ],
+      "detailed_analysis": "OpenAI launched Images 2.6 with accelerated generation and editing controls while enterprise partners like Merge and DevRev deployed GPT-6-tier models for engineering and self-service operations.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for OpenAI Upgrades Multimodal Generation and Expands Enterprise Integrations Across Industries",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     }
   ],
@@ -802,7 +928,7 @@
       "is_official": false,
       "published": "Nov 07, 15:35 UTC",
       "published_at": "2026-11-07T15:35:50+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking",
       "image": "https://the-decoder.com/wp-content/uploads/2026/10/cyber_kraken-1200x670.png",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/cyber_kraken-1200x670.png",
@@ -920,7 +1046,7 @@
       "is_official": false,
       "published": "Nov 06, 19:47 UTC",
       "published_at": "2026-11-06T19:47:04+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://the-decoder.com/ripple-65b-preview-delivers-strong-agentic-coding-results-as-a-fully-apache-2-0-open-us-model",
       "image": "https://the-decoder.com/wp-content/uploads/2026/11/ricurisve_intelligence.png",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/ricurisve_intelligence.png",
@@ -943,7 +1069,7 @@
       "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
       "importance_score": 85,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1039,7 +1165,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1154,7 +1280,7 @@
       "is_official": true,
       "published": "Nov 05, 17:00 UTC",
       "published_at": "2026-11-05T17:00:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://openai.com/index/australian-universities-ai-native-graduates",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1195,121 +1321,6 @@
       ],
       "first_published_at": "2026-11-05T17:00:00+00:00",
       "latest_updated_at": "2026-11-05T17:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_6",
-      "article_id": "cluster_6",
-      "article_url": "articles/cluster_6.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Merge builds product and business tools with OpenAI technology",
-      "one_liner": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
-      "summary": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
-      "ai_what_happened": "OpenAI News published verified documentation on Merge builds product and business tools with OpenAI technology.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Merge builds product and business tools with OpenAI technology from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Merge builds product and business tools with OpenAI technology; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Merge builds product and business tools with OpenAI technology capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers Merge builds product and business tools with OpenAI technology as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://openai.com/index/merge-builds-with-openai",
-      "word_count": 27,
-      "extraction_status": "cached_fallback",
-      "content_hash": "53a47fd79036600d",
-      "extracted_content": {
-        "headline": "Merge builds product and business tools with OpenAI technology",
-        "word_count": 27,
-        "reading_time": "1 min read",
-        "extraction_status": "cached_fallback",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.",
-        "Its teams also use AI to plan executive dinners and prepare sales updates."
-      ],
-      "what_changed": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.",
-      "why_it_matters": "Its teams also use AI to plan executive dinners and prepare sales updates.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.9,
-      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
-      "topic": "Frontier Models",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 05, 08:00 UTC",
-      "published_at": "2026-11-05T08:00:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
-      "link": "https://openai.com/index/merge-builds-with-openai",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Merge builds product and business tools with OpenAI technology",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.",
-        "Its teams also use AI to plan executive dinners and prepare sales updates."
-      ],
-      "detailed_analysis": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.\n\nIts teams also use AI to plan executive dinners and prepare sales updates.",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-05T08:00:00+00:00",
-      "latest_updated_at": "2026-11-05T08:00:00+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
       "related_sources": [],
@@ -1387,7 +1398,7 @@
       "is_official": true,
       "published": "Nov 05, 18:06 UTC",
       "published_at": "2026-11-05T18:06:43+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/30/ML-20598-featured-image.png",
       "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/30/ML-20598-featured-image.png",
@@ -1502,7 +1513,7 @@
       "is_official": true,
       "published": "Nov 06, 18:01 UTC",
       "published_at": "2026-11-06T18:01:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1524,7 +1535,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1618,7 +1629,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1736,7 +1747,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -1850,7 +1861,7 @@
       "is_official": false,
       "published": "Nov 06, 15:54 UTC",
       "published_at": "2026-11-06T15:54:47+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1873,7 +1884,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1965,7 +1976,7 @@
       "is_official": false,
       "published": "Nov 07, 15:50 UTC",
       "published_at": "2026-11-07T15:50:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -2079,7 +2090,7 @@
       "is_official": true,
       "published": "Nov 04, 07:00 UTC",
       "published_at": "2026-11-04T07:00:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://openai.com/index/daybreak-red-aws-govcloud",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2192,7 +2203,7 @@
       "is_official": true,
       "published": "Nov 05, 17:05 UTC",
       "published_at": "2026-11-05T17:05:16+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2235,6 +2246,121 @@
       "latest_updated_at": "2026-11-05T17:05:16+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_6",
+      "article_id": "cluster_6",
+      "article_url": "articles/cluster_6.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Merge builds product and business tools with OpenAI technology",
+      "one_liner": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
+      "summary": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
+      "ai_what_happened": "OpenAI News published verified documentation on Merge builds product and business tools with OpenAI technology.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Merge builds product and business tools with OpenAI technology from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Merge builds product and business tools with OpenAI technology; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Merge builds product and business tools with OpenAI technology capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers Merge builds product and business tools with OpenAI technology as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://openai.com/index/merge-builds-with-openai",
+      "word_count": 27,
+      "extraction_status": "cached_fallback",
+      "content_hash": "53a47fd79036600d",
+      "extracted_content": {
+        "headline": "Merge builds product and business tools with OpenAI technology",
+        "word_count": 27,
+        "reading_time": "1 min read",
+        "extraction_status": "cached_fallback",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.",
+        "Its teams also use AI to plan executive dinners and prepare sales updates."
+      ],
+      "what_changed": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.",
+      "why_it_matters": "Its teams also use AI to plan executive dinners and prepare sales updates.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "topic": "Frontier Models",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 05, 08:00 UTC",
+      "published_at": "2026-11-05T08:00:00+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
+      "link": "https://openai.com/index/merge-builds-with-openai",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Merge builds product and business tools with OpenAI technology",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.",
+        "Its teams also use AI to plan executive dinners and prepare sales updates."
+      ],
+      "detailed_analysis": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing.\n\nIts teams also use AI to plan executive dinners and prepare sales updates.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 25,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-05T08:00:00+00:00",
+      "latest_updated_at": "2026-11-05T08:00:00+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
       "related_sources": [],
       "covered_by_sources_count": 1
     },
@@ -2308,7 +2434,7 @@
       "is_official": true,
       "published": "Nov 03, 17:01 UTC",
       "published_at": "2026-11-03T17:01:49+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2422,7 +2548,7 @@
       "is_official": false,
       "published": "Nov 05, 18:00 UTC",
       "published_at": "2026-11-05T18:00:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2538,7 +2664,7 @@
       "is_official": true,
       "published": "Oct 28, 17:00 UTC",
       "published_at": "2026-10-28T17:00:58+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2655,7 +2781,7 @@
       "is_official": true,
       "published": "Nov 06, 17:09 UTC",
       "published_at": "2026-11-06T17:09:23+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2677,7 +2803,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -2842,7 +2968,7 @@
       "is_official": true,
       "published": "Nov 06, 00:00 UTC",
       "published_at": "2026-11-06T00:00:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2958,7 +3084,7 @@
       "is_official": true,
       "published": "Nov 06, 17:34 UTC",
       "published_at": "2026-11-06T17:34:45+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2980,7 +3106,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3072,7 +3198,7 @@
       "is_official": true,
       "published": "Nov 06, 17:13 UTC",
       "published_at": "2026-11-06T17:13:13+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3095,7 +3221,7 @@
       "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Amazon.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3191,7 +3317,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3234,119 +3360,6 @@
       "latest_updated_at": "Recent",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_5",
-      "article_id": "cluster_5",
-      "article_url": "articles/cluster_5.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "security_vulnerability",
-      "signal_badge": "Security & Policy",
-      "impact_level": "Major",
-      "title": "GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
-      "one_liner": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
-      "summary": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
-      "ai_what_happened": "OpenAI News published verified documentation on GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://openai.com/index/introducing-gpt-6-cyber",
-      "word_count": 19,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
-        "word_count": 19,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
-      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Safety",
-      "category_confidence": 0.95,
-      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
-      "topic": "AI Safety",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 05, 09:00 UTC",
-      "published_at": "2026-11-05T09:00:00+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
-      "link": "https://openai.com/index/introducing-gpt-6-cyber",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
-      ],
-      "detailed_analysis": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
-      "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
-      },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai.",
-      "importance_score": 80,
-      "relevance_score": 95,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 77.2,
-      "overall_score": 77.2,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Material security vulnerability development (+30 impact)",
-        "+ Official primary lab source (100 authority)"
-      ],
-      "first_published_at": "2026-11-05T09:00:00+00:00",
-      "latest_updated_at": "2026-11-05T09:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
     },
@@ -3418,7 +3431,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3459,6 +3472,119 @@
       ],
       "first_published_at": "Recent",
       "latest_updated_at": "Recent",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_5",
+      "article_id": "cluster_5",
+      "article_url": "articles/cluster_5.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "security_vulnerability",
+      "signal_badge": "Security & Policy",
+      "impact_level": "Major",
+      "title": "GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
+      "one_liner": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "summary": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "ai_what_happened": "OpenAI News published verified documentation on GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://openai.com/index/introducing-gpt-6-cyber",
+      "word_count": 19,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
+        "word_count": 19,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Safety",
+      "category_confidence": 0.95,
+      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
+      "topic": "AI Safety",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 05, 09:00 UTC",
+      "published_at": "2026-11-05T09:00:00+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
+      "link": "https://openai.com/index/introducing-gpt-6-cyber",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for GPT\u20116 Cyber: Advancing the frontier of aligned cybersecurity agents",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope."
+      ],
+      "detailed_analysis": "Introducing GPT\u20116 Cyber, OpenAI\u2019s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "audience_impact": {
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
+      },
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai.",
+      "importance_score": 80,
+      "relevance_score": 95,
+      "freshness_score": 25,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 77.2,
+      "overall_score": 77.2,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Material security vulnerability development (+30 impact)",
+        "+ Official primary lab source (100 authority)"
+      ],
+      "first_published_at": "2026-11-05T09:00:00+00:00",
+      "latest_updated_at": "2026-11-05T09:00:00+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
       "related_sources": [],
@@ -3531,7 +3657,7 @@
       "is_official": true,
       "published": "Nov 05, 19:35 UTC",
       "published_at": "2026-11-05T19:35:16+00:00",
-      "last_fetched_at": "2026-11-08T02:47:00.156347+00:00",
+      "last_fetched_at": "2026-11-08T09:38:26.067594+00:00",
       "link": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -3724,8 +3850,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 261532,
-      "forks": 58031,
+      "stars": 261590,
+      "forks": 58077,
       "language": "Python",
       "topics": [
         "ai",
@@ -3736,13 +3862,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": null,
+      "stars_gained_24h": 278,
       "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+278); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-08T02:46:56Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
+      "updated_at": "2026-11-08T09:34:50Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3750,8 +3876,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 80955,
-      "forks": 14909,
+      "stars": 81007,
+      "forks": 14921,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3762,13 +3888,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": null,
+      "stars_gained_24h": 208,
       "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+208); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-07T21:43:34Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
+      "updated_at": "2026-11-08T05:59:28Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3776,8 +3902,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 67792,
-      "forks": 56010,
+      "stars": 67922,
+      "forks": 56067,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3788,91 +3914,13 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": null,
+      "stars_gained_24h": 256,
       "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+256); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
-      "updated_at": "2026-11-07T14:28:11Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
-    },
-    {
-      "repository": "zhayujie/CowAgent",
-      "name": "CowAgent",
-      "owner": "zhayujie",
-      "url": "https://github.com/zhayujie/CowAgent",
-      "description": "Open-source personal AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
-      "stars": 47831,
-      "forks": 10421,
-      "language": "Python",
-      "topics": [
-        "ai",
-        "ai-agent",
-        "ai-agents",
-        "chatgpt-on-wechat",
-        "claude",
-        "claude-code"
-      ],
-      "license": "MIT",
-      "stars_gained_24h": null,
-      "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
-      "created_at": "2022-08-07T08:33:41Z",
-      "updated_at": "2026-11-07T04:56:19Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
-    },
-    {
-      "repository": "open-webui/open-webui",
-      "name": "open-webui",
-      "owner": "open-webui",
-      "url": "https://github.com/open-webui/open-webui",
-      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 158050,
-      "forks": 22977,
-      "language": "Svelte",
-      "topics": [
-        "ai",
-        "llm",
-        "llm-ui",
-        "llm-webui",
-        "llms",
-        "mcp"
-      ],
-      "license": "NOASSERTION",
-      "stars_gained_24h": null,
-      "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
-      "created_at": "2023-10-06T22:08:27Z",
-      "updated_at": "2026-11-08T02:34:06Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
-    },
-    {
-      "repository": "langchain-ai/langchain",
-      "name": "langchain",
-      "owner": "langchain-ai",
-      "url": "https://github.com/langchain-ai/langchain",
-      "description": "The agent engineering platform.",
-      "stars": 149179,
-      "forks": 25088,
-      "language": "Python",
-      "topics": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "anthropic",
-        "chatgpt",
-        "deepagents"
-      ],
-      "license": "MIT",
-      "stars_gained_24h": null,
-      "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
-      "created_at": "2022-10-17T02:58:36Z",
-      "updated_at": "2026-11-07T23:47:46Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
+      "updated_at": "2026-11-08T08:26:05Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3880,8 +3928,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 441247,
-      "forks": 109173,
+      "stars": 442012,
+      "forks": 109318,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3892,39 +3940,117 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": null,
+      "stars_gained_24h": 2956,
       "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+2956); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-08T02:18:25Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
+      "updated_at": "2026-11-08T07:16:34Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
     },
     {
-      "repository": "n8n-io/n8n",
-      "name": "n8n",
-      "owner": "n8n-io",
-      "url": "https://github.com/n8n-io/n8n",
-      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 209780,
-      "forks": 61399,
+      "repository": "paperclipai/paperclip",
+      "name": "paperclip",
+      "owner": "paperclipai",
+      "url": "https://github.com/paperclipai/paperclip",
+      "description": "The open-source app everyone uses to manage agents at work",
+      "stars": 112132,
+      "forks": 18597,
       "language": "TypeScript",
       "topics": [
+        "acpx",
+        "agent-orchestration",
+        "agent-skills",
+        "agentic-ai",
+        "ai-agents",
+        "ai-engineering"
+      ],
+      "license": "MIT",
+      "stars_gained_24h": 298,
+      "stars_gained_7d": null,
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+298); Active commit activity in the last 24h.",
+      "created_at": "2026-03-02T15:01:51Z",
+      "updated_at": "2026-11-08T09:35:56Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
+    },
+    {
+      "repository": "f/prompts.chat",
+      "name": "prompts.chat",
+      "owner": "f",
+      "url": "https://github.com/f/prompts.chat",
+      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
+      "stars": 176361,
+      "forks": 22488,
+      "language": "MDX",
+      "topics": [
         "ai",
-        "apis",
-        "automation",
-        "cli",
-        "data-flow",
-        "development"
+        "artificial-intelligence",
+        "awesome-list",
+        "chatgpt",
+        "chatgpt-prompts",
+        "claude"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": null,
+      "stars_gained_24h": 244,
       "stars_gained_7d": null,
-      "developer_trend_score": 75.0,
-      "score_explanation": "Growth baseline accumulating (historical window pending); Active commit activity in the last 24h.",
-      "created_at": "2019-06-22T09:24:21Z",
-      "updated_at": "2026-11-08T02:33:06Z",
-      "collected_at": "2026-11-08T02:46:57.446196+00:00"
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+244); Active commit activity in the last 24h.",
+      "created_at": "2022-12-05T13:54:13Z",
+      "updated_at": "2026-11-08T07:36:39Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
+    },
+    {
+      "repository": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "stars": 158077,
+      "forks": 22982,
+      "language": "Svelte",
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp"
+      ],
+      "license": "NOASSERTION",
+      "stars_gained_24h": 99,
+      "stars_gained_7d": null,
+      "developer_trend_score": 99.9,
+      "score_explanation": "Rapid 24h adoption (+99 stars); Active commit activity in the last 24h.",
+      "created_at": "2023-10-06T22:08:27Z",
+      "updated_at": "2026-11-08T09:38:14Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
+    },
+    {
+      "repository": "The-PR-Agent/pr-agent",
+      "name": "pr-agent",
+      "owner": "The-PR-Agent",
+      "url": "https://github.com/The-PR-Agent/pr-agent",
+      "description": "\ud83d\ude80 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+      "stars": 15510,
+      "forks": 2144,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "anthropic",
+        "code-review",
+        "coding-assistant",
+        "devtools",
+        "ollama"
+      ],
+      "license": "MIT",
+      "stars_gained_24h": 153,
+      "stars_gained_7d": null,
+      "developer_trend_score": 99.7,
+      "score_explanation": "Breakout 24h star growth (+153); Active commit activity in the last 24h.",
+      "created_at": "2023-07-05T21:02:15Z",
+      "updated_at": "2026-11-07T22:35:28Z",
+      "collected_at": "2026-11-08T09:38:23.721075+00:00"
     }
   ],
   "source_health_summary": {
@@ -3944,8 +4070,8 @@
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-08T02:44:54.145732+00:00",
-      "last_success_at": "2026-11-08T02:44:54.145732+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.722929+00:00",
+      "last_success_at": "2026-11-08T09:35:16.722929+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1368,
@@ -3956,8 +4082,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-08T02:44:54.146408+00:00",
-      "last_success_at": "2026-11-08T02:44:54.146408+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.723679+00:00",
+      "last_success_at": "2026-11-08T09:35:16.723679+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -3968,8 +4094,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-08T02:44:54.146779+00:00",
-      "last_success_at": "2026-11-08T02:44:54.146779+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.724068+00:00",
+      "last_success_at": "2026-11-08T09:35:16.724068+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -3980,8 +4106,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-08T02:44:54.147076+00:00",
-      "last_success_at": "2026-11-08T02:44:54.147076+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.724447+00:00",
+      "last_success_at": "2026-11-08T09:35:16.724447+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -3992,8 +4118,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-08T02:44:54.147377+00:00",
-      "last_success_at": "2026-11-08T02:44:54.147377+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.724935+00:00",
+      "last_success_at": "2026-11-08T09:35:16.724935+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 20,
@@ -4004,8 +4130,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-08T02:44:54.151720+00:00",
-      "last_success_at": "2026-11-08T02:44:54.151720+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.725684+00:00",
+      "last_success_at": "2026-11-08T09:35:16.725684+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 899,
@@ -4016,8 +4142,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-08T02:44:54.153164+00:00",
-      "last_success_at": "2026-11-08T02:44:54.153164+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.730340+00:00",
+      "last_success_at": "2026-11-08T09:35:16.730340+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -4028,8 +4154,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-08T02:44:54.153417+00:00",
-      "last_success_at": "2026-11-08T02:44:54.153417+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.737634+00:00",
+      "last_success_at": "2026-11-08T09:35:16.737634+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -4040,8 +4166,8 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-08T02:44:54.156535+00:00",
-      "last_success_at": "2026-11-08T02:44:54.156535+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.740392+00:00",
+      "last_success_at": "2026-11-08T09:35:16.740392+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 20,
@@ -4052,8 +4178,8 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-08T02:44:54.156993+00:00",
-      "last_success_at": "2026-11-08T02:44:54.156993+00:00",
+      "last_attempt_at": "2026-11-08T09:35:16.740898+00:00",
+      "last_success_at": "2026-11-08T09:35:16.740898+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
