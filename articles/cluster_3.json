@@ -1,14 +1,14 @@
 {
   "id": "cluster_3",
   "clean_id": "cluster_3",
-  "title": "Work at the Frontier: AI\u2019s effect on freelance work",
-  "headline": "Work at the Frontier: AI\u2019s effect on freelance work",
+  "title": "Closing the AI guidance gap in education",
+  "headline": "Closing the AI guidance gap in education",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-10T07:00:00+00:00",
+  "published_at": "2026-11-10T09:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/ai-effect-on-freelance-work",
-  "canonical_url": "https://openai.com/index/ai-effect-on-freelance-work",
-  "original_source_url": "https://openai.com/index/ai-effect-on-freelance-work",
+  "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+  "canonical_url": "https://openai.com/index/closing-ai-guidance-gap-education",
+  "original_source_url": "https://openai.com/index/closing-ai-guidance-gap-education",
   "reading_time": "1 min read",
-  "word_count": 24,
-  "extraction_status": "fallback_summary",
-  "content_hash": "40e2ca8833c35809",
+  "word_count": 18,
+  "extraction_status": "cached_fallback",
+  "content_hash": "bf24e829161b3276",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-  "ai_what_happened": "OpenAI News published verified documentation on Work at the Frontier: AI\u2019s effect on freelance work.",
+  "ai_overview": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
+  "ai_what_happened": "OpenAI News published verified documentation on Closing the AI guidance gap in education.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Work at the Frontier: AI\u2019s effect on freelance work from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Work at the Frontier: AI\u2019s effect on freelance work; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Closing the AI guidance gap in education from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Closing the AI guidance gap in education; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Work at the Frontier: AI\u2019s effect on freelance work capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Closing the AI guidance gap in education capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Work at the Frontier: AI\u2019s effect on freelance work as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Closing the AI guidance gap in education as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+    "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-  "full_text": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+  "text": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
+  "full_text": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects."
+      "content": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning."
     }
   ],
   "paragraphs": [
-    "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects."
+    "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning."
   ],
   "corroborating_sources": []
 }

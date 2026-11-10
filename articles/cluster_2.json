@@ -1,14 +1,14 @@
 {
   "id": "cluster_2",
   "clean_id": "cluster_2",
-  "title": "Closing the AI guidance gap in education",
-  "headline": "Closing the AI guidance gap in education",
+  "title": "Introducing Businesses in ChatGPT",
+  "headline": "Introducing Businesses in ChatGPT",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-10T09:00:00+00:00",
+  "published_at": "2026-11-10T10:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/closing-ai-guidance-gap-education",
-  "canonical_url": "https://openai.com/index/closing-ai-guidance-gap-education",
-  "original_source_url": "https://openai.com/index/closing-ai-guidance-gap-education",
+  "url": "https://openai.com/index/introducing-businesses-chatgpt",
+  "canonical_url": "https://openai.com/index/introducing-businesses-chatgpt",
+  "original_source_url": "https://openai.com/index/introducing-businesses-chatgpt",
   "reading_time": "1 min read",
-  "word_count": 18,
+  "word_count": 19,
   "extraction_status": "fallback_summary",
-  "content_hash": "bf24e829161b3276",
+  "content_hash": "f064f7110e9b4a14",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
-  "ai_what_happened": "OpenAI News published verified documentation on Closing the AI guidance gap in education.",
+  "ai_overview": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
+  "ai_what_happened": "OpenAI News published verified documentation on Introducing Businesses in ChatGPT.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Closing the AI guidance gap in education from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Closing the AI guidance gap in education; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Businesses in ChatGPT from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Businesses in ChatGPT; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Closing the AI guidance gap in education capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Businesses in ChatGPT capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Closing the AI guidance gap in education as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Introducing Businesses in ChatGPT as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
+    "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
-  "full_text": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
+  "text": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
+  "full_text": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning."
+      "content": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT."
     }
   ],
   "paragraphs": [
-    "New ThinkYoung research and lessons from OpenAI\u2019s EMEA education partnerships on supporting teachers, AI literacy, and independent learning."
+    "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT."
   ],
   "corroborating_sources": []
 }

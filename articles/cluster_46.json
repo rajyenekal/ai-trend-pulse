@@ -1,8 +1,8 @@
 {
   "id": "cluster_46",
   "clean_id": "cluster_46",
-  "title": "Pay for Hugging Face Hub with your Google Cloud Account",
-  "headline": "Pay for Hugging Face Hub with your Google Cloud Account",
+  "title": "Decision Models in Hugging Face",
+  "headline": "Decision Models in Hugging Face",
   "subtitle": "",
   "publisher": "Hugging Face Blog",
   "publisher_id": "huggingface",
@@ -18,30 +18,30 @@
   "trust_tier": 3,
   "tier": "Open Research",
   "is_official": true,
-  "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://huggingface.co/blog/hub-gcp-marketplace",
-  "canonical_url": "https://huggingface.co/blog/hub-gcp-marketplace",
-  "original_source_url": "https://huggingface.co/blog/hub-gcp-marketplace",
+  "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://huggingface.co/blog/decision",
+  "canonical_url": "https://huggingface.co/blog/decision",
+  "original_source_url": "https://huggingface.co/blog/decision",
   "reading_time": "1 min read",
-  "word_count": 10,
+  "word_count": 5,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Pay for Hugging Face Hub with your Google Cloud Account.",
-  "ai_what_happened": "Hugging Face Blog published verified documentation on Pay for Hugging Face Hub with your Google Cloud Account.",
+  "ai_overview": "Decision Models in Hugging Face.",
+  "ai_what_happened": "Hugging Face Blog published verified documentation on Decision Models in Hugging Face.",
   "ai_key_details": [
     "Primary documentation verified from Hugging Face Blog."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Pay for Hugging Face Hub with your Google Cloud Account from Hugging Face Blog.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for Pay for Hugging Face Hub with your Google Cloud Account; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Decision Models in Hugging Face from Hugging Face Blog.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for Decision Models in Hugging Face; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Pay for Hugging Face Hub with your Google Cloud Account capabilities from Hugging Face Blog directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Decision Models in Hugging Face capabilities from Hugging Face Blog directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Hugging Face Blog."
   },
-  "ai_whats_new": "Delivers Pay for Hugging Face Hub with your Google Cloud Account as documented in verified primary release notes from Hugging Face Blog.",
+  "ai_whats_new": "Delivers Decision Models in Hugging Face as documented in verified primary release notes from Hugging Face Blog.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from Hugging Face Blog."
@@ -50,16 +50,16 @@
   "reported_facts": [
     "Official development released and documented by Hugging Face Blog."
   ],
-  "text": "Pay for Hugging Face Hub with your Google Cloud Account.",
-  "full_text": "Pay for Hugging Face Hub with your Google Cloud Account.",
+  "text": "Decision Models in Hugging Face.",
+  "full_text": "Decision Models in Hugging Face.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Pay for Hugging Face Hub with your Google Cloud Account."
+      "content": "Decision Models in Hugging Face."
     }
   ],
   "paragraphs": [
-    "Pay for Hugging Face Hub with your Google Cloud Account."
+    "Decision Models in Hugging Face."
   ],
   "corroborating_sources": []
 }
