@@ -1,0 +1,66 @@
+{
+  "id": "cluster_1",
+  "clean_id": "cluster_1",
+  "title": "ChatGPT Enterprise now available in AWS Marketplace",
+  "headline": "ChatGPT Enterprise now available in AWS Marketplace",
+  "subtitle": "",
+  "publisher": "OpenAI News",
+  "publisher_id": "openai",
+  "publisher_group_id": "openai",
+  "author": "",
+  "published_at": "2026-11-09T19:00:00+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+  "canonical_url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+  "original_source_url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+  "reading_time": "1 min read",
+  "word_count": 19,
+  "extraction_status": "fallback_summary",
+  "content_hash": "0ccfa2aa1de9e4d2",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+  "ai_what_happened": "OpenAI News published verified documentation on ChatGPT Enterprise now available in AWS Marketplace.",
+  "ai_key_details": [
+    "Primary documentation verified from OpenAI News."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for ChatGPT Enterprise now available in AWS Marketplace from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for ChatGPT Enterprise now available in AWS Marketplace; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate ChatGPT Enterprise now available in AWS Marketplace capabilities from OpenAI News directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+  },
+  "ai_whats_new": "Delivers ChatGPT Enterprise now available in AWS Marketplace as documented in verified primary release notes from OpenAI News.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from OpenAI News."
+  ],
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "reported_facts": [
+    "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+    "Official development released and documented by OpenAI News."
+  ],
+  "text": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+  "full_text": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+  "sections": [
+    {
+      "heading": "Summary",
+      "content": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships."
+    }
+  ],
+  "paragraphs": [
+    "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships."
+  ],
+  "corroborating_sources": []
+}

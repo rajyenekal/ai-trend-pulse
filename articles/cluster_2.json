@@ -1,66 +1,66 @@
 {
   "id": "cluster_2",
   "clean_id": "cluster_2",
-  "title": "Measuring how AI agents handle everyday wet-lab science",
-  "headline": "Measuring how AI agents handle everyday wet-lab science",
+  "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+  "headline": "Control Room: A central system to track and stop model workloads across our research infrastructure",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-06T00:00:00+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
-  "impact_level": "Major",
-  "pulse_score": 79.0,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "published_at": "2026-11-09T13:00:00+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
-  "canonical_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
-  "original_source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+  "url": "https://openai.com/index/control-room",
+  "canonical_url": "https://openai.com/index/control-room",
+  "original_source_url": "https://openai.com/index/control-room",
   "reading_time": "1 min read",
-  "word_count": 20,
-  "extraction_status": "cached_fallback",
-  "content_hash": "0b8a3b876117dc40",
+  "word_count": 23,
+  "extraction_status": "fallback_summary",
+  "content_hash": "5da16e7b03ee0fe9",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
-  "ai_what_happened": "OpenAI News published verified documentation on Measuring how AI agents handle everyday wet-lab science.",
+  "ai_overview": "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+  "ai_what_happened": "OpenAI News published verified documentation on Control Room: A central system to track and stop model workloads across our research infrastructure.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Measuring how AI agents handle everyday wet-lab science from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Measuring how AI agents handle everyday wet-lab science; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Control Room: A central system to track and stop model workloads across our research infrastructure from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Control Room: A central system to track and stop model workloads across our research infrastructure; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Measuring how AI agents handle everyday wet-lab science capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Control Room: A central system to track and stop model workloads across our research infrastructure capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Measuring how AI agents handle everyday wet-lab science as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Control Room: A central system to track and stop model workloads across our research infrastructure as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+    "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
-  "full_text": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+  "text": "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+  "full_text": "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science."
+      "content": "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise."
     }
   ],
   "paragraphs": [
-    "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science."
+    "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise."
   ],
   "corroborating_sources": []
 }
