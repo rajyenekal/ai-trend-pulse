@@ -1,0 +1,66 @@
+{
+  "id": "cluster_41",
+  "clean_id": "cluster_41",
+  "title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+  "headline": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+  "subtitle": "",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "aws",
+  "publisher_group_id": "amazon",
+  "author": "",
+  "published_at": "2026-11-06T18:01:00+00:00",
+  "category": "AI Infrastructure",
+  "topic": "AI Infrastructure",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints",
+  "reading_time": "1 min read",
+  "word_count": 38,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints.",
+  "ai_key_details": [
+    "Primary documentation verified from AWS Machine Learning."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints capabilities from AWS Machine Learning directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+  },
+  "ai_whats_new": "Delivers SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from AWS Machine Learning."
+  ],
+  "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
+  "reported_facts": [
+    "Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+    "Official development released and documented by AWS Machine Learning."
+  ],
+  "text": "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+  "full_text": "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator."
+    }
+  ],
+  "paragraphs": [
+    "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator."
+  ],
+  "corroborating_sources": []
+}

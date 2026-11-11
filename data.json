@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "data_status": "fresh",
-  "generated_at": "2026-11-10T23:30:29.404030+00:00",
-  "last_successful_update": "2026-11-10T23:30:29.404030+00:00",
-  "last_attempt_at": "2026-11-10T23:30:29.404030+00:00",
+  "generated_at": "2026-11-11T03:11:56.211526+00:00",
+  "last_successful_update": "2026-11-11T03:11:56.211526+00:00",
+  "last_attempt_at": "2026-11-11T03:11:56.211526+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
-    "total_developments_today": 77,
-    "last_updated": "2026-11-10T23:30:29.404030+00:00",
+    "total_developments_today": 75,
+    "last_updated": "2026-11-11T03:11:56.211526+00:00",
     "briefing_text": "Today's AI developments center on AI Agents alongside notable updates in Frontier Models. Teams are prioritizing benchmark accuracy, automated workflows, and system guardrails.",
     "top_developments": [
       {
@@ -72,22 +72,21 @@
         ]
       },
       {
-        "title": "Introducing Claude Fable 5.2 on AWS",
-        "topic": "Frontier Models",
-        "category": "Frontier Models",
+        "title": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+        "topic": "Developer Tools",
+        "category": "Developer Tools",
         "source": "AWS Machine Learning",
-        "link": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws",
+        "link": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock",
         "article_type": "frontier_launch",
         "signal_badge": "Frontier Launch",
-        "what_changed": "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS.",
-        "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from AWS.",
-        "target_audience": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
+        "what_changed": "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock.",
+        "why_it_matters": "Advances Developer Tools capabilities through verified primary disclosures from frontier labs.",
+        "target_audience": "For developers",
+        "impact": "Expands programmatic API endpoints and tooling integrations available for frontier AI.",
         "score": 86.8,
         "score_reasons": [
           "+ Frontier foundation model milestone (+40 impact)",
           "+ Official primary lab source (100 authority)",
-          "+ Corroborated by 3 independent publishers (+15 evidence)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
         ]
       },
@@ -211,22 +210,21 @@
       ]
     },
     {
-      "title": "Introducing Claude Fable 5.2 on AWS",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
+      "title": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+      "topic": "Developer Tools",
+      "category": "Developer Tools",
       "source": "AWS Machine Learning",
-      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
-      "what_changed": "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from AWS.",
-      "target_audience": "For practitioners & teams",
-      "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
+      "what_changed": "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock.",
+      "why_it_matters": "Advances Developer Tools capabilities through verified primary disclosures from frontier labs.",
+      "target_audience": "For developers",
+      "impact": "Expands programmatic API endpoints and tooling integrations available for frontier AI.",
       "score": 86.8,
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
-        "+ Corroborated by 3 independent publishers (+15 evidence)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ]
     },
@@ -287,10 +285,10 @@
       ]
     }
   ],
-  "takeaway": "Leading AI labs are deploying advanced frontier models and rigorous governance mechanisms targeting enterprise security, formal code verification, and model protection. Concurrently, major providers are formalizing corporate structures and public offerings while releasing tools to drive direct business integration.",
+  "takeaway": "Leading AI laboratories are releasing next-generation models with advanced agentic and security capabilities while simultaneously fortifying their operational safety, intellectual property, and enterprise governance frameworks. Frontier deployments like Gemini 4 Carbon and novel formal verification tools contrast with critical defensive controls against distillation attacks and unmonitored model workloads.",
   "trends": [
     {
-      "title": "Google DeepMind Launches Gemini 4 Carbon with Focus on Cybersecurity",
+      "title": "Google DeepMind Launches and Deploys Frontier Model Gemini 4 Carbon",
       "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
       "trend_type": "single_development",
       "article_type": "frontier_launch",
@@ -299,7 +297,7 @@
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Gemini 4 Carbon ranks first on version 5.0 of the Artificial Analysis Intelligence Index with a score of 59.",
+          "text": "Gemini 4 Carbon ranks number one on the updated v5.0 Artificial Analysis Intelligence Index at a score of 59.",
           "evidence": [
             {
               "article_id": "art_deepmind_blog_cd55b15fd1b5",
@@ -319,7 +317,7 @@
         },
         {
           "claim_id": "claim_2",
-          "text": "Gemini 4 Carbon is available to developers, enterprises, scientists, and consumers following an initial release to cybersecurity defenders.",
+          "text": "Gemini 4 Carbon is available to developers, enterprises, scientists, and consumers with frontier capabilities in cybersecurity and agentic workflows.",
           "evidence": [
             {
               "article_id": "art_deepmind_blog_19f0e8c5f2d3",
@@ -330,7 +328,7 @@
               "trust_tier": 1,
               "is_official": true,
               "source_type": "official",
-              "supporting_excerpt": "Today, we\u2019re making Gemini 4 Carbon available to developers, enterprises, scientists, and consumers.",
+              "supporting_excerpt": "Today, we\u2019re making Gemini 4 Carbon available to developers, enterprises, scientists, and consumers. Carbon is our strongest model with frontier performance in cybersecurity capabilities and long-horizon agentic workflows",
               "text_verified": false
             }
           ],
@@ -360,14 +358,14 @@
           "trust_tier": 1,
           "is_official": true,
           "source_type": "official",
-          "supporting_excerpt": "Today, we\u2019re making Gemini 4 Carbon available to developers, enterprises, scientists, and consumers.",
+          "supporting_excerpt": "Today, we\u2019re making Gemini 4 Carbon available to developers, enterprises, scientists, and consumers. Carbon is our strongest model with frontier performance in cybersecurity capabilities and long-horizon agentic workflows",
           "text_verified": false
         }
       ],
-      "what_happened": "Google DeepMind released Gemini 4 Carbon to developers, enterprises, and scientists, highlighting its performance on cybersecurity, coding, and long-horizon tasks.",
-      "what_changed": "Google DeepMind released Gemini 4 Carbon to developers, enterprises, and scientists, highlighting its performance on cybersecurity, coding, and long-horizon tasks.",
-      "why_it_matters": "The release delivers specialized capabilities for complex agentic workflows and advanced defensive cybersecurity applications.",
-      "who_affected": "Developers, Enterprises, and AI Practitioners",
+      "what_happened": "Google DeepMind announced and made generally available Gemini 4 Carbon, a frontier model featuring state-of-the-art cybersecurity capabilities and long-horizon action-taking task performance.",
+      "what_changed": "Google DeepMind announced and made generally available Gemini 4 Carbon, a frontier model featuring state-of-the-art cybersecurity capabilities and long-horizon action-taking task performance.",
+      "why_it_matters": "The model demonstrates benchmark-topping performance across software engineering and complex reasoning, ranking #1 on the Artificial Analysis Intelligence Index v5.0.",
+      "who_affected": "Developers, Enterprises, AI Practitioners, and Consumers",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -393,7 +391,8 @@
       "audience_pills": [
         "Developers",
         "Enterprises",
-        "Ai Practitioners"
+        "Ai Practitioners",
+        "Consumers"
       ],
       "audience_impact": {
         "target": "For businesses & compliance teams",
@@ -407,28 +406,28 @@
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "Google DeepMind released Gemini 4 Carbon to developers, enterprises, and scientists, highlighting its performance on cybersecurity, coding, and long-horizon tasks.",
-        "The release delivers specialized capabilities for complex agentic workflows and advanced defensive cybersecurity applications."
+        "Google DeepMind announced and made generally available Gemini 4 Carbon, a frontier model featuring state-of-the-art cybersecurity capabilities and long-horizon agentic task performance.",
+        "The model demonstrates benchmark-topping performance across software engineering and complex reasoning, ranking #1 on the Artificial Analysis Intelligence Index v5.0."
       ],
-      "detailed_analysis": "Google DeepMind released Gemini 4 Carbon to developers, enterprises, and scientists, highlighting its performance on cybersecurity, coding, and long-horizon tasks.",
+      "detailed_analysis": "Google DeepMind announced and made generally available Gemini 4 Carbon, a frontier model featuring state-of-the-art cybersecurity capabilities and long-horizon agentic task performance.",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Google DeepMind Launches Gemini 4 Carbon with Focus on Cybersecurity",
+      "image_alt": "Visual representation for Google DeepMind Launches and Deploys Frontier Model Gemini 4 Carbon",
       "image_type": "official_asset",
       "image_credit": "Google announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Frontier Labs Develop Frameworks for Formal Code Verification and Distillation Defense",
+      "title": "Google DeepMind Verifies Signal Cryptographic Protocol Using AlphaProof Code",
       "link": "https://deepmind.google/blog/introducing-alphaproof-code",
-      "trend_type": "emerging_theme",
-      "article_type": "security_vulnerability",
-      "signal_badge": "Security & Policy",
-      "theme_relationship": "Both Google DeepMind and Anthropic are introducing specialized technical defenses, ranging from formal mathematical verification of software to countermeasures against model distillation harvesting.",
+      "trend_type": "single_development",
+      "article_type": "research_paper",
+      "signal_badge": "Research Paper",
+      "theme_relationship": null,
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "AlphaProof Code formally verified the code of Signal's cryptographic protocol using an agentic framework.",
+          "text": "Researchers built an agentic framework that formally verified the code of the Signal cryptographic protocol.",
           "evidence": [
             {
               "article_id": "art_deepmind_blog_613a7ae420cb",
@@ -439,16 +438,90 @@
               "trust_tier": 1,
               "is_official": true,
               "source_type": "official",
-              "supporting_excerpt": "How Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
+              "supporting_excerpt": "Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
               "text_verified": false
             }
           ],
           "claim_corroboration": 1,
           "verification_status": "official_announcement"
-        },
+        }
+      ],
+      "evidence_objects": [
         {
-          "claim_id": "claim_2",
-          "text": "Anthropic's new methods have reduced data harvested by distillation attacks by approximately 90 to 99 percent.",
+          "article_id": "art_deepmind_blog_613a7ae420cb",
+          "canonical_url": "https://deepmind.google/blog/introducing-alphaproof-code",
+          "publisher_id": "google_deepmind",
+          "publisher_group_id": "google",
+          "source_name": "Google DeepMind",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
+          "text_verified": false
+        }
+      ],
+      "what_happened": "Google DeepMind researchers developed AlphaProof Code, an action-taking framework that successfully formally verified the code of Signal's cryptographic protocol.",
+      "what_changed": "Google DeepMind researchers developed AlphaProof Code, an action-taking framework that successfully formally verified the code of Signal's cryptographic protocol.",
+      "why_it_matters": "Formally verifying cryptographic protocols provides rigorous mathematical guarantees against implementation vulnerabilities in mission-critical secure communication systems.",
+      "who_affected": "Developers and AI Practitioners",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Impacts roadmap decisions across AI Agents.",
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "source": "Google DeepMind",
+      "tier": "Independent Journalism",
+      "status": "official_announcement",
+      "evidence_article_ids": [
+        "art_deepmind_blog_613a7ae420cb"
+      ],
+      "evidence_urls": [
+        "https://deepmind.google/blog/introducing-alphaproof-code"
+      ],
+      "topic": "AI Agents",
+      "company": "google",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Developers",
+        "Ai Practitioners"
+      ],
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Google."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Google.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "key_points": [
+        "Google DeepMind researchers developed AlphaProof Code, an agentic framework that successfully formally verified the code of Signal's cryptographic protocol.",
+        "Formally verifying cryptographic protocols provides rigorous mathematical guarantees against implementation vulnerabilities in mission-critical secure communication systems."
+      ],
+      "detailed_analysis": "Google DeepMind researchers developed AlphaProof Code, an agentic framework that successfully formally verified the code of Signal's cryptographic protocol.",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Google DeepMind Verifies Signal Cryptographic Protocol Using AlphaProof Code",
+      "image_type": "official_asset",
+      "image_credit": "Google announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Anthropic Implements Defenses Against Model Distillation Attacks",
+      "link": "https://www.anthropic.com/news/distillation-defenses",
+      "trend_type": "single_development",
+      "article_type": "security_vulnerability",
+      "signal_badge": "Security & Policy",
+      "theme_relationship": null,
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "Anthropic's new methods have reduced data harvested by distillation campaigns by an estimated 90% to 99%.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_e5f202a1f983",
@@ -469,18 +542,6 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "art_deepmind_blog_613a7ae420cb",
-          "canonical_url": "https://deepmind.google/blog/introducing-alphaproof-code",
-          "publisher_id": "google_deepmind",
-          "publisher_group_id": "google",
-          "source_name": "Google DeepMind",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "How Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
-          "text_verified": false
-        },
-        {
           "article_id": "art_anthropic_news_e5f202a1f983",
           "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
           "publisher_id": "anthropic",
@@ -493,199 +554,68 @@
           "text_verified": false
         }
       ],
-      "what_happened": "DeepMind developed AlphaProof Code to formally verify cryptographic protocols, while Anthropic introduced defenses that cut model distillation harvesting by 90 to 99 percent.",
-      "what_changed": "DeepMind developed AlphaProof Code to formally verify cryptographic protocols, while Anthropic introduced defenses that cut model distillation harvesting by 90 to 99 percent.",
-      "why_it_matters": "Strengthening software verification and protecting proprietary weights mitigates structural vulnerabilities in deployed critical software and IP extraction risks.",
-      "who_affected": "Developers, Enterprises, and AI Practitioners",
+      "what_happened": "Anthropic developed novel defensive techniques to counter covert distillation attacks aimed at scraping Claude's capabilities.",
+      "what_changed": "Anthropic developed novel defensive techniques to counter covert distillation attacks aimed at scraping Claude's capabilities.",
+      "why_it_matters": "Early results indicate these defenses reduce data harvested by distillers by 90 to 99 percent, protecting frontier model intellectual property.",
+      "who_affected": "AI Practitioners and Enterprises",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
       "potential_impact": "Impacts roadmap decisions across Frontier Models.",
       "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "source": "Google DeepMind, Anthropic Official News",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "source": "Anthropic Official News",
       "tier": "Official Lab",
-      "status": "emerging_theme",
+      "status": "official_announcement",
       "evidence_article_ids": [
-        "art_deepmind_blog_613a7ae420cb",
         "art_anthropic_news_e5f202a1f983"
       ],
       "evidence_urls": [
-        "https://deepmind.google/blog/introducing-alphaproof-code",
         "https://www.anthropic.com/news/distillation-defenses"
       ],
       "topic": "Frontier Models",
       "company": "anthropic",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Developers",
-        "Enterprises",
-        "Ai Practitioners"
+        "Ai Practitioners",
+        "Enterprises"
       ],
       "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Anthropic."
+        "target": "For creators & publishers",
+        "impact": "Clarifies copyright boundaries, training opt-outs, and content licensing practices involving Anthropic."
       },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Anthropic.",
+      "target_audience": "For creators & publishers",
+      "audience_impact_statement": "Clarifies copyright boundaries, training opt-outs, and content licensing practices involving Anthropic.",
       "claim_corroboration": 1,
-      "trend_signal_diversity": 2,
-      "evidence_status": "emerging_theme",
-      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
+      "trend_signal_diversity": 1,
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "DeepMind developed AlphaProof Code to formally verify cryptographic protocols, while Anthropic introduced defenses that cut model distillation harvesting by 90 to 99 percent.",
-        "Strengthening software verification and protecting proprietary weights mitigates structural vulnerabilities in deployed critical software and IP extraction risks."
+        "Anthropic developed novel defensive techniques to counter covert distillation attacks aimed at scraping Claude's capabilities.",
+        "Early results indicate these defenses reduce data harvested by distillers by 90 to 99 percent, protecting frontier model intellectual property."
       ],
-      "detailed_analysis": "DeepMind developed AlphaProof Code to formally verify cryptographic protocols, while Anthropic introduced defenses that cut model distillation harvesting by 90 to 99 percent.",
+      "detailed_analysis": "Anthropic developed novel defensive techniques to counter covert distillation attacks aimed at scraping Claude's capabilities.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Frontier Labs Develop Frameworks for Formal Code Verification and Distillation Defense",
+      "image_alt": "Visual representation for Anthropic Implements Defenses Against Model Distillation Attacks",
       "image_type": "official_asset",
       "image_credit": "Anthropic announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Anthropic Initiates IPO Roadshow and Expands Public Benefit Commitments",
-      "link": "https://www.anthropic.com/news/roadshow-launch",
-      "trend_type": "emerging_theme",
-      "article_type": "policy_regulation",
-      "signal_badge": "Security & Policy",
-      "theme_relationship": "Anthropic is aligning its financial capitalization through a proposed public offering with formal governance and public benefit equity allocations.",
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "Anthropic launched a roadshow for a proposed offering consisting of 825,000,000 shares of Class A common stock.",
-          "evidence": [
-            {
-              "article_id": "art_anthropic_news_cc8c672cf033",
-              "canonical_url": "https://www.anthropic.com/news/roadshow-launch",
-              "publisher_id": "anthropic",
-              "publisher_group_id": "anthropic",
-              "source_name": "Anthropic Official News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "The proposed offering consists of 825,000,000 shares of Class A common stock. Of these, 801,351,354 shares are being offered by Anthropic and 23,648,646 shares are being offered by certain existing stockholders.",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
-        {
-          "claim_id": "claim_2",
-          "text": "Subject to stockholder approval, Anthropic is committing 5 percent of its shares to the Anthropic Public Benefit Fund, with potential 2 percent additions tied to company valuation gains.",
-          "evidence": [
-            {
-              "article_id": "art_anthropic_news_a4f7bd1fdab9",
-              "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
-              "publisher_id": "anthropic",
-              "publisher_group_id": "anthropic",
-              "source_name": "Anthropic Official News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_anthropic_news_cc8c672cf033",
-          "canonical_url": "https://www.anthropic.com/news/roadshow-launch",
-          "publisher_id": "anthropic",
-          "publisher_group_id": "anthropic",
-          "source_name": "Anthropic Official News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "The proposed offering consists of 825,000,000 shares of Class A common stock. Of these, 801,351,354 shares are being offered by Anthropic and 23,648,646 shares are being offered by certain existing stockholders.",
-          "text_verified": false
-        },
-        {
-          "article_id": "art_anthropic_news_a4f7bd1fdab9",
-          "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
-          "publisher_id": "anthropic",
-          "publisher_group_id": "anthropic",
-          "source_name": "Anthropic Official News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
-          "text_verified": false
-        }
-      ],
-      "what_happened": "Anthropic launched a roadshow for its proposed initial public offering of Class A common stock and committed an initial 5 percent of shares to the Anthropic Public Benefit Fund.",
-      "what_changed": "Anthropic launched a roadshow for its proposed initial public offering of Class A common stock and committed an initial 5 percent of shares to the Anthropic Public Benefit Fund.",
-      "why_it_matters": "These actions establish a corporate structure where commercial capital expansion is tied to long-term public benefit trust governance.",
-      "who_affected": "Enterprises and AI Practitioners",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Impacts roadmap decisions across AI Business.",
-      "category": "AI Business",
-      "category_confidence": 0.92,
-      "category_rationale": "Matched institutional capital raises, startup valuation, earnings report, or M&A transaction",
-      "source": "Anthropic Official News",
-      "tier": "Official Lab",
-      "status": "emerging_theme",
-      "evidence_article_ids": [
-        "art_anthropic_news_cc8c672cf033",
-        "art_anthropic_news_a4f7bd1fdab9"
-      ],
-      "evidence_urls": [
-        "https://www.anthropic.com/news/roadshow-launch",
-        "https://www.anthropic.com/news/public-benefit-fund"
-      ],
-      "topic": "AI Business",
-      "company": "anthropic",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Enterprises",
-        "Ai Practitioners"
-      ],
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 2,
-      "evidence_status": "emerging_theme",
-      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
-      "independent_source_count": 1,
-      "key_points": [
-        "Anthropic launched a roadshow for its proposed initial public offering of Class A common stock and committed an initial 5 percent of shares to the Anthropic Public Benefit Fund.",
-        "These actions establish a corporate structure where commercial capital expansion is tied to long-term public benefit trust governance."
-      ],
-      "detailed_analysis": "Anthropic launched a roadshow for its proposed initial public offering of Class A common stock and committed an initial 5 percent of shares to the Anthropic Public Benefit Fund.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Initiates IPO Roadshow and Expands Public Benefit Commitments",
-      "image_type": "official_asset",
-      "image_credit": "Anthropic announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "OpenAI Implements Control Room to Monitor and Terminate Model Workloads",
+      "title": "OpenAI Deploys Centralized 'Control Room' System to Track and Halt Model Workloads",
       "link": "https://openai.com/index/control-room",
       "trend_type": "single_development",
-      "article_type": "security_vulnerability",
-      "signal_badge": "Security & Policy",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
       "theme_relationship": null,
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "OpenAI's Control Room system tracks model workloads across research infrastructure and can halt them during safety or security events.",
+          "text": "Control Room tracks workloads across OpenAI's research infrastructure and can rapidly stop them if safety or security concerns occur.",
           "evidence": [
             {
               "article_id": "art_openai_news_b2dfd7bb20c5",
@@ -696,7 +626,7 @@
               "trust_tier": 1,
               "is_official": true,
               "source_type": "official",
-              "supporting_excerpt": "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+              "supporting_excerpt": "OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
               "text_verified": true
             }
           ],
@@ -714,14 +644,14 @@
           "trust_tier": 1,
           "is_official": true,
           "source_type": "official",
-          "supporting_excerpt": "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+          "supporting_excerpt": "OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
           "text_verified": true
         }
       ],
-      "what_happened": "OpenAI unveiled Control Room, an infrastructure system designed to track research model workloads and quickly stop them if safety or security issues occur.",
-      "what_changed": "OpenAI unveiled Control Room, an infrastructure system designed to track research model workloads and quickly stop them if safety or security issues occur.",
-      "why_it_matters": "Centralized execution controls allow organizations running large compute clusters to enforce safety interventions in real time across active training runs.",
-      "who_affected": "AI Practitioners and Enterprises",
+      "what_happened": "OpenAI established Control Room, a centralized operational infrastructure designed to monitor model workloads and terminate them when safety or security risks arise.",
+      "what_changed": "OpenAI established Control Room, a centralized operational infrastructure designed to monitor model workloads and terminate them when safety or security risks arise.",
+      "why_it_matters": "Centralized execution control enables rapid intervention across research infrastructure to mitigate automated or unexpected model security threats.",
+      "who_affected": "AI Practitioners and Developers",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -744,7 +674,7 @@
       "reading_time": "1 min read",
       "audience_pills": [
         "Ai Practitioners",
-        "Enterprises"
+        "Developers"
       ],
       "audience_impact": {
         "target": "For businesses & compliance teams",
@@ -758,28 +688,121 @@
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI unveiled Control Room, an infrastructure system designed to track research model workloads and quickly stop them if safety or security issues occur.",
-        "Centralized execution controls allow organizations running large compute clusters to enforce safety interventions in real time across active training runs."
+        "OpenAI established Control Room, a centralized operational infrastructure designed to monitor model workloads and terminate them when safety or security risks arise.",
+        "Centralized execution control enables rapid intervention across research infrastructure to mitigate automated or unexpected model security threats."
       ],
-      "detailed_analysis": "OpenAI unveiled Control Room, an infrastructure system designed to track research model workloads and quickly stop them if safety or security issues occur.",
+      "detailed_analysis": "OpenAI established Control Room, a centralized operational infrastructure designed to monitor model workloads and terminate them when safety or security risks arise.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for OpenAI Implements Control Room to Monitor and Terminate Model Workloads",
+      "image_alt": "Visual representation for OpenAI Deploys Centralized 'Control Room' System to Track and Halt Model Workloads",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "OpenAI Expands Direct Enterprise Commercialization with Businesses in ChatGPT",
-      "link": "https://openai.com/index/introducing-businesses-chatgpt",
+      "title": "Anthropic Establishes Public Benefit Fund and Commits Initial Five Percent Equity",
+      "link": "https://www.anthropic.com/news/public-benefit-fund",
       "trend_type": "single_development",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
+      "article_type": "policy_regulation",
+      "signal_badge": "Security & Policy",
       "theme_relationship": null,
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "OpenAI introduced Businesses in ChatGPT to enable organizations to manage presence, gain insights, and convert interest into actions.",
+          "text": "Anthropic is committing 5% of its shares to the newly formed Public Benefit Fund with potential discretionary additions as valuation increases.",
+          "evidence": [
+            {
+              "article_id": "art_anthropic_news_a4f7bd1fdab9",
+              "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
+              "publisher_id": "anthropic",
+              "publisher_group_id": "anthropic",
+              "source_name": "Anthropic Official News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
+              "text_verified": false
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "art_anthropic_news_a4f7bd1fdab9",
+          "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
+          "publisher_id": "anthropic",
+          "publisher_group_id": "anthropic",
+          "source_name": "Anthropic Official News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
+          "text_verified": false
+        }
+      ],
+      "what_happened": "Anthropic announced the creation of the Public Benefit Fund and committed an initial 5% of company shares, subject to stockholder approval.",
+      "what_changed": "Anthropic announced the creation of the Public Benefit Fund and committed an initial 5% of company shares, subject to stockholder approval.",
+      "why_it_matters": "The fund structure scales Anthropic's equity contribution upward as the firm's valuation grows, formalizing corporate governance dedicated to broad societal benefit.",
+      "who_affected": "Enterprises",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "source": "Anthropic Official News",
+      "tier": "Official Lab",
+      "status": "official_announcement",
+      "evidence_article_ids": [
+        "art_anthropic_news_a4f7bd1fdab9"
+      ],
+      "evidence_urls": [
+        "https://www.anthropic.com/news/public-benefit-fund"
+      ],
+      "topic": "Frontier Models",
+      "company": "anthropic",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Enterprises"
+      ],
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Anthropic."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Anthropic.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "key_points": [
+        "Anthropic announced the creation of the Public Benefit Fund and committed an initial 5% of company shares, subject to stockholder approval.",
+        "The fund structure scales Anthropic's equity contribution upward as the firm's valuation grows, formalizing corporate governance dedicated to broad societal benefit."
+      ],
+      "detailed_analysis": "Anthropic announced the creation of the Public Benefit Fund and committed an initial 5% of company shares, subject to stockholder approval.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Anthropic Establishes Public Benefit Fund and Commits Initial Five Percent Equity",
+      "image_type": "official_asset",
+      "image_credit": "Anthropic announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "OpenAI Expands Commercial Capabilities with Businesses in ChatGPT and Enterprise Integrations",
+      "link": "https://openai.com/index/introducing-businesses-chatgpt",
+      "trend_type": "emerging_theme",
+      "article_type": "case_study_pr",
+      "signal_badge": "Case Study",
+      "theme_relationship": "OpenAI is pairing dedicated business profile tooling directly within ChatGPT with expanding enterprise adoption across software development, historical search, and operational workflows.",
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "OpenAI introduced Businesses in ChatGPT to let companies manage their information, view presence insights, and convert interest into action.",
           "evidence": [
             {
               "article_id": "art_openai_news_dfad2937edb6",
@@ -791,6 +814,46 @@
               "is_official": true,
               "source_type": "official",
               "supporting_excerpt": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_2",
+          "text": "CodeRabbit leverages OpenAI models and Codex to ship 20 times more software with the same engineering staff.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_01fe84d41372",
+              "canonical_url": "https://openai.com/index/coderabbit-codex-daybreak",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_3",
+          "text": "Kuken Industries reduced drawing retrieval time from nearly an hour to 4.5 minutes using the OpenAI API.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_6343a635a5e7",
+              "canonical_url": "https://openai.com/index/kuken",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
               "text_verified": true
             }
           ],
@@ -810,12 +873,36 @@
           "source_type": "official",
           "supporting_excerpt": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
           "text_verified": true
+        },
+        {
+          "article_id": "art_openai_news_01fe84d41372",
+          "canonical_url": "https://openai.com/index/coderabbit-codex-daybreak",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+          "text_verified": true
+        },
+        {
+          "article_id": "art_openai_news_6343a635a5e7",
+          "canonical_url": "https://openai.com/index/kuken",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
+          "text_verified": true
         }
       ],
-      "what_happened": "OpenAI introduced Businesses in ChatGPT to let companies manage their profile data and track user interactions directly within the platform.",
-      "what_changed": "OpenAI introduced Businesses in ChatGPT to let companies manage their profile data and track user interactions directly within the platform.",
-      "why_it_matters": "Enabling commercial profiles inside conversational interfaces turns conversational AI into a direct merchant discovery and conversion channel.",
-      "who_affected": "Enterprises and Consumers",
+      "what_happened": "OpenAI launched Businesses in ChatGPT while enterprise adopters such as Merge, CodeRabbit, and Kuken Industries demonstrated measurable productivity gains across development and maintenance workflows.",
+      "what_changed": "OpenAI launched Businesses in ChatGPT while enterprise adopters such as Merge, CodeRabbit, and Kuken Industries demonstrated measurable productivity gains across development and maintenance workflows.",
+      "why_it_matters": "Commercial tools and API integrations are moving beyond generic chat to specialized business presence, software acceleration, and fast retrieval of legacy documentation.",
+      "who_affected": "Enterprises and Developers",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -826,19 +913,23 @@
       "category_rationale": "General frontier AI development or ecosystem milestone",
       "source": "OpenAI News",
       "tier": "Official Lab",
-      "status": "official_announcement",
+      "status": "emerging_theme",
       "evidence_article_ids": [
-        "art_openai_news_dfad2937edb6"
+        "art_openai_news_dfad2937edb6",
+        "art_openai_news_01fe84d41372",
+        "art_openai_news_6343a635a5e7"
       ],
       "evidence_urls": [
-        "https://openai.com/index/introducing-businesses-chatgpt"
+        "https://openai.com/index/introducing-businesses-chatgpt",
+        "https://openai.com/index/coderabbit-codex-daybreak",
+        "https://openai.com/index/kuken"
       ],
       "topic": "Frontier Models",
       "company": "openai",
       "reading_time": "1 min read",
       "audience_pills": [
         "Enterprises",
-        "Consumers"
+        "Developers"
       ],
       "audience_impact": {
         "target": "For enterprise operators",
@@ -847,18 +938,18 @@
       "target_audience": "For enterprise operators",
       "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
       "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
+      "trend_signal_diversity": 3,
+      "evidence_status": "emerging_theme",
+      "evidence_label": "Emerging Theme (3 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI introduced Businesses in ChatGPT to let companies manage their profile data and track user interactions directly within the platform.",
-        "Enabling commercial profiles inside conversational interfaces turns conversational AI into a direct merchant discovery and conversion channel."
+        "OpenAI launched Businesses in ChatGPT while enterprise adopters such as Merge, CodeRabbit, and Kuken Industries demonstrated measurable productivity gains across development and maintenance workflows.",
+        "Commercial tools and API integrations are moving beyond generic chat to specialized business presence, software acceleration, and fast retrieval of legacy documentation."
       ],
-      "detailed_analysis": "OpenAI introduced Businesses in ChatGPT to let companies manage their profile data and track user interactions directly within the platform.",
+      "detailed_analysis": "OpenAI launched Businesses in ChatGPT while enterprise adopters such as Merge, CodeRabbit, and Kuken Industries demonstrated measurable productivity gains across development and maintenance workflows.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for OpenAI Expands Direct Enterprise Commercialization with Businesses in ChatGPT",
+      "image_alt": "Visual representation for OpenAI Expands Commercial Capabilities with Businesses in ChatGPT and Enterprise Integrations",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
@@ -935,7 +1026,7 @@
       "is_official": true,
       "published": "Nov 10, 12:02 UTC",
       "published_at": "2026-11-10T12:02:28+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://deepmind.google/blog/introducing-alphaproof-code",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1053,7 +1144,7 @@
       "is_official": true,
       "published": "Nov 10, 16:03 UTC",
       "published_at": "2026-11-10T16:03:47+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
@@ -1150,9 +1241,9 @@
       "covered_by_sources_count": 5
     },
     {
-      "id": "cluster_2",
-      "article_id": "cluster_2",
-      "article_url": "articles/cluster_2.json",
+      "id": "cluster_3",
+      "article_id": "cluster_3",
+      "article_url": "articles/cluster_3.json",
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "frontier_launch",
@@ -1184,13 +1275,13 @@
       "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
       "original_source_url": "https://openai.com/index/introducing-businesses-chatgpt",
       "word_count": 19,
-      "extraction_status": "fallback_summary",
+      "extraction_status": "cached_fallback",
       "content_hash": "f064f7110e9b4a14",
       "extracted_content": {
         "headline": "Introducing Businesses in ChatGPT",
         "word_count": 19,
         "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
+        "extraction_status": "cached_fallback",
         "sections_count": 1
       },
       "reported_facts": [
@@ -1217,7 +1308,7 @@
       "is_official": true,
       "published": "Nov 10, 10:00 UTC",
       "published_at": "2026-11-10T10:00:00+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://openai.com/index/introducing-businesses-chatgpt",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1314,9 +1405,9 @@
       "covered_by_sources_count": 5
     },
     {
-      "id": "cluster_3",
-      "article_id": "cluster_3",
-      "article_url": "articles/cluster_3.json",
+      "id": "cluster_4",
+      "article_id": "cluster_4",
+      "article_url": "articles/cluster_4.json",
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "frontier_launch",
@@ -1381,7 +1472,7 @@
       "is_official": true,
       "published": "Nov 10, 09:00 UTC",
       "published_at": "2026-11-10T09:00:00+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://openai.com/index/closing-ai-guidance-gap-education",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1403,7 +1494,7 @@
       "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 85,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1428,9 +1519,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_4",
-      "article_id": "cluster_4",
-      "article_url": "articles/cluster_4.json",
+      "id": "cluster_5",
+      "article_id": "cluster_5",
+      "article_url": "articles/cluster_5.json",
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "frontier_launch",
@@ -1495,7 +1586,7 @@
       "is_official": true,
       "published": "Nov 10, 07:00 UTC",
       "published_at": "2026-11-10T07:00:00+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://openai.com/index/ai-effect-on-freelance-work",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1517,7 +1608,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 85,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1542,6 +1633,222 @@
       "covered_by_sources_count": 1
     },
     {
+      "id": "cluster_36",
+      "article_id": "cluster_36",
+      "article_url": "articles/cluster_36.json",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+      "one_liner": "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock. Learn how to get started through the OpenAI-compatible Chat Completions, Responses, and Converse APIs, optimize model reasoning with explicit prompt caching, and use the model as a coding assistant in OpenCode.",
+      "summary": "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock. Learn how to get started through the OpenAI-compatible Chat Completions, Responses, and Converse APIs, optimize model reasoning with explicit prompt caching, and use the model as a coding assistant in OpenCode.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Artificial Intelligence Introducing Kimi K3.1 Pro on Amazon Bedrock Kimi K3.1 Pro Highspeed from Moonshot AI is now available on Amazon Bedrock. Part of Moonshot AI\u2019s new K3.1 series, it\u2019s a post-trained version of Kimi K3 with the same 3T-class open-weight architecture and 1-million-token context window, trained with substantially more post-training compute.",
+      "ai_what_happened": "According to Moonshot AI, that extra training targets long-horizon agentic work and fewer factual errors.",
+      "ai_key_details": [
+        "It also improves professional tasks such as financial modeling and office documents, and coding for game engines, 3D scenes, and computer-aided design (CAD) scripts.",
+        "Kimi K3.1 Pro Highspeed generates output tokens at a higher rate and Moonshot AI reports 2\u20133 times the speed of Kimi K3.1 Pro.",
+        "- Python 3.11 or later, with the OpenAI SDK, aws-bedrock-token-generator, and boto3 installed (pip install -U openai aws-bedrock-token-generator boto3).",
+        "- A prompt_cache_breakpoint must follow at least 256 tokens of stable content."
+      ],
+      "ai_why_it_matters": "Kimi K3.1 Pro Highspeed uses the same endpoint, APIs, and features as Kimi K3 on Amazon Bedrock.",
+      "ai_technical_breakdown": "If you already build with Kimi K3, you can try it by changing the model ID in your existing code.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Kimi K3.1 Pro on Amazon Bedrock capabilities from AWS Machine Learning directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+      },
+      "ai_whats_new": "It\u2019s well suited to workloads where cost efficiency is a higher priority than response time, such as model evaluations, content summarization, and background tasks in agentic workflows.",
+      "ai_key_takeaways": [
+        "Kimi K3.1 Pro Highspeed supports tool calling, structured output, configurable reasoning, image input, and streaming.",
+        "You can adopt Kimi K3.1 Pro Highspeed without changing your security posture.",
+        "Your data is processed within the AWS data boundary, isn\u2019t shared with Moonshot AI, and isn\u2019t used to train the model."
+      ],
+      "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock",
+      "word_count": 1283,
+      "extraction_status": "extracted",
+      "content_hash": "79cd27d49b85c432",
+      "extracted_content": {
+        "headline": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+        "word_count": 1283,
+        "reading_time": "6 min read",
+        "extraction_status": "extracted",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock.",
+        "Learn how to get started through the OpenAI-compatible Chat Completions, Responses, and Converse APIs, optimize inference with explicit prompt caching, and use the model as a coding assistant in OpenCode."
+      ],
+      "what_changed": "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock.",
+      "why_it_matters": "Advances Developer Tools capabilities through verified primary disclosures from Amazon.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Developer Tools",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched developer tooling, software SDK release, IDE extension, or API capability",
+      "topic": "Developer Tools",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 11, 01:07 UTC",
+      "published_at": "2026-11-11T01:07:19+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/02/ML-22229-featured-image.png",
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/02/ML-22229-featured-image.png",
+      "image_alt": "Visual representation for Introducing Kimi K3.1 Pro on Amazon Bedrock",
+      "image_type": "source_media",
+      "image_credit": "Source publication",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "amazon",
+      "reading_time": "6 min read",
+      "key_points": [
+        "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock.",
+        "Learn how to get started through the OpenAI-compatible Chat Completions, Responses, and Converse APIs, optimize model reasoning with explicit prompt caching, and use the model as a coding assistant in OpenCode."
+      ],
+      "detailed_analysis": "Kimi K3.1 Pro from Moonshot AI is now available on Amazon Bedrock.\n\nLearn how to get started through the OpenAI-compatible Chat Completions, Responses, and Converse APIs, optimize model reasoning with explicit prompt caching, and use the model as a coding assistant in OpenCode.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Expands programmatic API endpoints and tooling integrations available for Amazon."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Expands programmatic API endpoints and tooling integrations available for Amazon.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 100,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-11T01:07:19+00:00",
+      "latest_updated_at": "2026-11-10T16:59:43+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search",
+          "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
+          "article_id": "art_aws_ml_blog_a3e1a25bf355",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore",
+          "title": "The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations",
+          "article_id": "art_aws_ml_blog_0bd4b7bd34c4",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake",
+          "title": "Amazon Bedrock tokenomics data lake",
+          "article_id": "art_aws_ml_blog_9a54ab55f20e",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/single-shot-and-agentic-retrieval-with-amazon-bedrock-managed-knowledge-base",
+          "title": "Single-shot and agentic retrieval with Amazon Bedrock Managed Knowledge Base",
+          "article_id": "art_aws_ml_blog_ef55b7b699ee",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/pluggable-agentic-ai-framework-a-seven-layer-composable-enterprise-agentic-ai-reference-architecture-on-amazon-bedrock-agentcore",
+          "title": "Pluggable Agentic AI Framework: A seven-layer composable enterprise agentic AI reference architecture on Amazon Bedrock AgentCore",
+          "article_id": "art_aws_ml_blog_6daccaf23d3e",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/how-crossnokaye-grounds-physical-ai-with-amazon-bedrock-agentcore",
+          "title": "How CrossnoKaye grounds physical AI with Amazon Bedrock AgentCore",
+          "article_id": "art_aws_ml_blog_419dd8904d79",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/autonomous-treasury-agents-how-trovata-built-an-ai-native-solution-on-amazon-bedrock-and-agentcore",
+          "title": "Autonomous treasury agents: How Trovata built an AI-native solution on Amazon Bedrock and AgentCore",
+          "article_id": "art_aws_ml_blog_9b71b6425ef0",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore",
+          "title": "How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore",
+          "article_id": "art_aws_ml_blog_4179bb188dc4",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        }
+      ],
+      "covered_by_sources_count": 9
+    },
+    {
       "id": "cluster_38",
       "article_id": "cluster_38",
       "article_url": "articles/cluster_38.json",
@@ -1556,37 +1863,33 @@
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Artificial Intelligence Introducing Claude Fable 5.2 on AWS Today, we are announcing the availability of Claude Fable 5.2 and Claude Mythos 5.2 on Amazon Bedrock and Claude Platform on AWS. Claude Fable 5.2 is Anthropic\u2019s most capable generally available model for technical work that raises the bar in coding and the sciences.",
-      "ai_what_happened": "Claude Mythos 5.2 is available through Anthropic\u2019s verification programs for advanced work in cyber security and life sciences.",
+      "ai_overview": "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS. Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Introducing Claude Fable 5.2 on AWS.",
       "ai_key_details": [
-        "In this post, we cover what\u2019s new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with the model on Amazon Bedrock.",
-        "Why Claude Fable 5.2 Fable 5.2 raises the bar on the hardest problems in coding, math, and science.",
-        "In Anthropic\u2019s alignment testing, Mythos 5.2 hallucinates less, completes tasks more reliably, surfaces important information more consistently, and self-reports issues more honestly than Opus 5.5, Sonnet 5.5, and Mythos 5.1.",
-        "Anthropic expects Fable 5.2 to behave similarly."
+        "Primary documentation verified from AWS Machine Learning."
       ],
-      "ai_why_it_matters": "It interprets prompts, iterates, catches its own errors, and optimizes as it goes.",
-      "ai_technical_breakdown": "Claude Fable 5.2 and Mythos 5.2 use cases Where Fable 5.2 fits: - Agentic coding across large, multi-repository codebases.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Claude Fable 5.2 on AWS from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Claude Fable 5.2 on AWS; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
         "Developers": "Enables engineers to integrate Claude Fable 5.2 on AWS capabilities from AWS Machine Learning directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
         "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
       },
-      "ai_whats_new": "- Scientific research from new analytical methods to formal mathematical proofs.",
+      "ai_whats_new": "Delivers Introducing Claude Fable 5.2 on AWS as documented in verified primary release notes from AWS Machine Learning.",
       "ai_key_takeaways": [
-        "It takes on ambiguous, multi-step work, verifies its own output, and can run unattended for hours to days.",
-        "If a cyber security query is declined, you can retry it on Opus 4.8, and if a biology query is declined, you can retry it on Opus 5.",
-        "On Amazon Bedrock, the retry is your code\u2019s job, not an automatic switch."
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from AWS Machine Learning."
       ],
-      "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
       "original_source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws",
-      "word_count": 1131,
-      "extraction_status": "cached",
-      "content_hash": "5c71eb2e18a030a4",
+      "word_count": 43,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
       "extracted_content": {
         "headline": "Introducing Claude Fable 5.2 on AWS",
-        "word_count": 1131,
-        "reading_time": "5 min read",
-        "extraction_status": "cached",
+        "word_count": 43,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
@@ -1613,16 +1916,16 @@
       "is_official": true,
       "published": "Nov 09, 20:04 UTC",
       "published_at": "2026-11-09T20:04:37+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws",
-      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/09/ML-22025-featured-image.png",
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/09/ML-22025-featured-image.png",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for Introducing Claude Fable 5.2 on AWS",
-      "image_type": "source_media",
-      "image_credit": "Source publication",
+      "image_type": "official_asset",
+      "image_credit": "Anthropic announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "company": "anthropic",
-      "reading_time": "5 min read",
+      "reading_time": "1 min read",
       "key_points": [
         "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS.",
         "Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock."
@@ -1766,7 +2069,7 @@
       "is_official": true,
       "published": "Nov 09, 20:01 UTC",
       "published_at": "2026-11-09T20:01:20+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-super-vl-is-now-available-in-amazon-sagemaker-jumpstart",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -1808,121 +2111,6 @@
       ],
       "first_published_at": "2026-11-09T20:01:20+00:00",
       "latest_updated_at": "2026-11-09T20:01:20+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_40",
-      "article_id": "cluster_40",
-      "article_url": "articles/cluster_40.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Professional work deserves professional tools. Meet AWS Quick.",
-      "one_liner": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving. AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
-      "summary": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving. AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving. AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Professional work deserves professional tools. Meet AWS Quick..",
-      "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Professional work deserves professional tools. Meet AWS Quick from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Professional work deserves professional tools. Meet AWS Quick; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Professional work deserves professional tools. Meet AWS Quick capabilities from AWS Machine Learning directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
-      },
-      "ai_whats_new": "Delivers Professional work deserves professional tools. Meet AWS Quick as documented in verified primary release notes from AWS Machine Learning.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/professional-work-deserves-professional-tools-meet-aws-quick",
-      "word_count": 49,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "Professional work deserves professional tools. Meet AWS Quick.",
-        "word_count": 49,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.",
-        "AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on."
-      ],
-      "what_changed": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 09, 18:43 UTC",
-      "published_at": "2026-11-09T18:43:30+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/professional-work-deserves-professional-tools-meet-aws-quick",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Professional work deserves professional tools. Meet AWS Quick.",
-      "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.",
-        "AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on."
-      ],
-      "detailed_analysis": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.\n\nAWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
-      "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
-      },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 70,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-09T18:43:30+00:00",
-      "latest_updated_at": "2026-11-09T18:43:30+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
       "related_sources": [],
@@ -2000,7 +2188,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2117,7 +2305,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -2235,7 +2423,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -2282,9 +2470,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_64",
-      "article_id": "cluster_64",
-      "article_url": "articles/cluster_64.json",
+      "id": "cluster_62",
+      "article_id": "cluster_62",
+      "article_url": "articles/cluster_62.json",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
       "article_type": "policy_regulation",
@@ -2349,7 +2537,7 @@
       "is_official": false,
       "published": "Nov 10, 19:03 UTC",
       "published_at": "2026-11-10T19:03:52+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://techcrunch.com/2026/11/10/psi-is-trying-to-make-a-business-out-of-ai-driven-scientific-discovery",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -2371,7 +2559,7 @@
       "audience_impact_statement": "Signals legal exposure, compliance requirements, and regulatory scrutiny facing Techcrunch deployments.",
       "importance_score": 80,
       "relevance_score": 70,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -2395,9 +2583,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_50",
-      "article_id": "cluster_50",
-      "article_url": "articles/cluster_50.json",
+      "id": "cluster_48",
+      "article_id": "cluster_48",
+      "article_url": "articles/cluster_48.json",
       "publisher_id": "mit_tech_review",
       "publisher_group_id": "mit",
       "article_type": "policy_regulation",
@@ -2462,7 +2650,7 @@
       "is_official": false,
       "published": "Nov 09, 17:05 UTC",
       "published_at": "2026-11-09T17:05:43+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://www.technologyreview.com/2026/11/09/1148182/nancy-pelosis-replacement-is-ready-to-regulate-ai",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -2579,7 +2767,7 @@
       "is_official": true,
       "published": "Oct 28, 17:00 UTC",
       "published_at": "2026-10-28T17:00:58+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2628,121 +2816,6 @@
     }
   ],
   "ai_tools": [
-    {
-      "id": "cluster_37",
-      "article_id": "cluster_37",
-      "article_url": "articles/cluster_37.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "impact_level": "Major",
-      "title": "How skills and agents work in AWS Quick",
-      "one_liner": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
-      "summary": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on How skills and agents work in AWS Quick.",
-      "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for How skills and agents work in AWS Quick from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for How skills and agents work in AWS Quick; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate How skills and agents work in AWS Quick capabilities from AWS Machine Learning directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
-      },
-      "ai_whats_new": "Delivers How skills and agents work in AWS Quick as documented in verified primary release notes from AWS Machine Learning.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
-      "word_count": 55,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "How skills and agents work in AWS Quick",
-        "word_count": 55,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.",
-        "This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them."
-      ],
-      "what_changed": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 10, 00:21 UTC",
-      "published_at": "2026-11-10T00:21:34+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for How skills and agents work in AWS Quick",
-      "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.",
-        "This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them."
-      ],
-      "detailed_analysis": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.\n\nThis post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
-      "importance_score": 75,
-      "relevance_score": 95,
-      "freshness_score": 70,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 79.0,
-      "overall_score": 79.0,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Actionable developer SDK / runtime tooling (+25 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
-      ],
-      "first_published_at": "2026-11-10T00:21:34+00:00",
-      "latest_updated_at": "2026-11-10T00:21:34+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": false,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
     {
       "id": "cluster_22",
       "article_id": "cluster_22",
@@ -2811,7 +2884,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2856,172 +2929,173 @@
       "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
-    }
-  ],
-  "dev_radar": [
+    },
     {
-      "id": "cluster_6",
-      "article_id": "cluster_6",
-      "article_url": "articles/cluster_6.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "CodeRabbit scales agentic software development and ships 20x more",
-      "one_liner": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
-      "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+      "id": "cluster_41",
+      "article_id": "cluster_41",
+      "article_url": "articles/cluster_41.json",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "impact_level": "Major",
+      "title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+      "one_liner": "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+      "summary": "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
-      "ai_what_happened": "OpenAI News published verified documentation on CodeRabbit scales agentic software development and ships 20x more.",
+      "ai_overview": "Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints.",
       "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
+        "Primary documentation verified from AWS Machine Learning."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for CodeRabbit scales agentic software development and ships 20x more from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for CodeRabbit scales agentic software development and ships 20x more; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate CodeRabbit scales agentic software development and ships 20x more capabilities from OpenAI News directly into technical workflows.",
+        "Developers": "Enables engineers to integrate SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints capabilities from AWS Machine Learning directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
       },
-      "ai_whats_new": "Delivers CodeRabbit scales agentic software development and ships 20x more as documented in verified primary release notes from OpenAI News.",
+      "ai_whats_new": "Delivers SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints as documented in verified primary release notes from AWS Machine Learning.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
+        "Primary documentation available from AWS Machine Learning."
       ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://openai.com/index/coderabbit-codex-daybreak",
-      "word_count": 23,
-      "extraction_status": "cached_fallback",
-      "content_hash": "c90f1b6125aeb635",
+      "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints",
+      "word_count": 38,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
       "extracted_content": {
-        "headline": "CodeRabbit scales agentic software development and ships 20x more",
-        "word_count": 23,
+        "headline": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+        "word_count": 38,
         "reading_time": "1 min read",
-        "extraction_status": "cached_fallback",
+        "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
-        "Official development released and documented by OpenAI News."
+        "Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+        "Official development released and documented by AWS Machine Learning."
       ],
-      "what_changed": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Openai.",
+      "what_changed": "Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
+      "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
       "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
+        "Infrastructure Architects",
+        "DevOps Engineers",
+        "Hardware Procurement"
       ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "potential_impact": "Analytical Projection: Compute scaling from Amazon may influence production latency profiles and hardware utilization benchmarks.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "OpenAI News",
+      "category": "AI Infrastructure",
+      "category_confidence": 0.92,
+      "category_rationale": "Matched hardware architecture, silicon accelerators, data center systems, or compute energy grid",
+      "topic": "AI Infrastructure",
+      "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "trust_tier": 1,
       "is_official": true,
-      "published": "Nov 09, 08:00 UTC",
-      "published_at": "2026-11-09T08:00:00+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
-      "link": "https://openai.com/index/coderabbit-codex-daybreak",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for CodeRabbit scales agentic software development and ships 20x more",
+      "published": "Nov 06, 18:01 UTC",
+      "published_at": "2026-11-06T18:01:00+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
       "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
+      "image_credit": "Amazon announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team."
+        "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator."
       ],
-      "detailed_analysis": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+      "detailed_analysis": "Amazon SageMaker model reasoning now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator.",
       "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
       },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
-      "importance_score": 90,
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
+      "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 50,
+      "freshness_score": 25,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
       "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
+      "pulse_score": 79.0,
+      "overall_score": 79.0,
       "confidence_label": "high",
       "evidence_status": "official_announcement",
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "independent_publisher_count": 1,
       "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Actionable developer SDK / runtime tooling (+25 impact)",
         "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
       ],
-      "first_published_at": "2026-11-09T08:00:00+00:00",
-      "latest_updated_at": "2026-11-09T08:00:00+00:00",
+      "first_published_at": "2026-11-06T18:01:00+00:00",
+      "latest_updated_at": "2026-11-06T18:01:00+00:00",
       "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
+      "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
-    },
+    }
+  ],
+  "dev_radar": [
     {
-      "id": "cluster_36",
-      "article_id": "cluster_36",
-      "article_url": "articles/cluster_36.json",
+      "id": "cluster_40",
+      "article_id": "cluster_40",
+      "article_url": "articles/cluster_40.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "impact_level": "Major",
-      "title": "The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations",
-      "one_liner": "When you deploy an agent, whether it is working is really several questions: did it finish the task, stay on topic, leak data, or skip steps?",
-      "summary": "When you deploy an agent, whether it is working is really several questions: did it finish the task, stay on topic, leak data, or skip steps?",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Professional work deserves professional tools. Meet AWS Quick.",
+      "one_liner": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving. AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
+      "summary": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving. AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "When you deploy an agent, whether it is working is really several questions: did it finish the task, stay on topic, leak data, or skip steps?",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations.",
+      "ai_overview": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving. AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Professional work deserves professional tools. Meet AWS Quick..",
       "ai_key_details": [
         "Primary documentation verified from AWS Machine Learning."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Professional work deserves professional tools. Meet AWS Quick from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Professional work deserves professional tools. Meet AWS Quick; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations capabilities from AWS Machine Learning directly into technical workflows.",
+        "Developers": "Enables engineers to integrate Professional work deserves professional tools. Meet AWS Quick capabilities from AWS Machine Learning directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
         "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
       },
-      "ai_whats_new": "Delivers The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_whats_new": "Delivers Professional work deserves professional tools. Meet AWS Quick as documented in verified primary release notes from AWS Machine Learning.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
         "Primary documentation available from AWS Machine Learning."
       ],
       "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore",
-      "word_count": 26,
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/professional-work-deserves-professional-tools-meet-aws-quick",
+      "word_count": 49,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations",
-        "word_count": 26,
+        "headline": "Professional work deserves professional tools. Meet AWS Quick.",
+        "word_count": 49,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "When you deploy an agent, whether it is working is really several questions: did it finish the task, stay on topic, leak data, or skip steps?",
-        "Official development released and documented by AWS Machine Learning."
+        "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.",
+        "AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on."
       ],
-      "what_changed": "When you deploy an agent, whether it is working is really several questions: did it finish the task, stay on topic, leak data, or skip steps?",
+      "what_changed": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.",
       "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
       "affected_stakeholders": [
         "Developers",
@@ -3039,22 +3113,138 @@
       "tier": "Official Lab",
       "trust_tier": 1,
       "is_official": true,
-      "published": "Nov 10, 22:35 UTC",
-      "published_at": "2026-11-10T22:35:03+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore",
+      "published": "Nov 09, 18:43 UTC",
+      "published_at": "2026-11-09T18:43:30+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/professional-work-deserves-professional-tools-meet-aws-quick",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations",
+      "image_alt": "Visual representation for Professional work deserves professional tools. Meet AWS Quick.",
       "image_type": "official_asset",
       "image_credit": "Amazon announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "When you deploy an agent, whether it is working is really several questions: did it finish the task, stay on topic, leak data, or skip steps?"
+        "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.",
+        "AWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on."
       ],
-      "detailed_analysis": "When you deploy an agent, whether it is working is really several questions: did it finish the task, stay on topic, leak data, or skip steps?",
+      "detailed_analysis": "Introducing AWS Quick, formerly Amazon Quick, and the debut of our first brand campaign celebrating teams who keep business moving.\n\nAWS Quick is the AI workspace built only for work, where teams use AI agents to research, analyze, and act across the data and applications they already rely on.",
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 70,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-09T18:43:30+00:00",
+      "latest_updated_at": "2026-11-09T18:43:30+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_37",
+      "article_id": "cluster_37",
+      "article_url": "articles/cluster_37.json",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "impact_level": "Major",
+      "title": "How skills and agents work in AWS Quick",
+      "one_liner": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
+      "summary": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on How skills and agents work in AWS Quick.",
+      "ai_key_details": [
+        "Primary documentation verified from AWS Machine Learning."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for How skills and agents work in AWS Quick from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for How skills and agents work in AWS Quick; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate How skills and agents work in AWS Quick capabilities from AWS Machine Learning directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+      },
+      "ai_whats_new": "Delivers How skills and agents work in AWS Quick as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from AWS Machine Learning."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
+      "word_count": 55,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "How skills and agents work in AWS Quick",
+        "word_count": 55,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.",
+        "This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them."
+      ],
+      "what_changed": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "topic": "AI Agents",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 10, 00:21 UTC",
+      "published_at": "2026-11-10T00:21:34+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for How skills and agents work in AWS Quick",
+      "image_type": "official_asset",
+      "image_credit": "Amazon announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+      "company": "amazon",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.",
+        "This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them."
+      ],
+      "detailed_analysis": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.\n\nThis post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
@@ -3063,7 +3253,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3080,85 +3270,12 @@
         "+ Official primary lab source (100 authority)",
         "+ Direct developer actionability / runnable tooling (90 actionability)"
       ],
-      "first_published_at": "2026-11-10T22:35:03+00:00",
-      "latest_updated_at": "2026-11-10T16:59:43+00:00",
+      "first_published_at": "2026-11-10T00:21:34+00:00",
+      "latest_updated_at": "2026-11-10T00:21:34+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
-      "related_sources": [
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake",
-          "title": "Amazon Bedrock tokenomics data lake",
-          "article_id": "art_aws_ml_blog_9a54ab55f20e",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        },
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/single-shot-and-agentic-retrieval-with-amazon-bedrock-managed-knowledge-base",
-          "title": "Single-shot and agentic retrieval with Amazon Bedrock Managed Knowledge Base",
-          "article_id": "art_aws_ml_blog_ef55b7b699ee",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        },
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/pluggable-agentic-ai-framework-a-seven-layer-composable-enterprise-agentic-ai-reference-architecture-on-amazon-bedrock-agentcore",
-          "title": "Pluggable Agentic AI Framework: A seven-layer composable enterprise agentic AI reference architecture on Amazon Bedrock AgentCore",
-          "article_id": "art_aws_ml_blog_6daccaf23d3e",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        },
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/how-crossnokaye-grounds-physical-ai-with-amazon-bedrock-agentcore",
-          "title": "How CrossnoKaye grounds physical AI with Amazon Bedrock AgentCore",
-          "article_id": "art_aws_ml_blog_419dd8904d79",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        },
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/autonomous-treasury-agents-how-trovata-built-an-ai-native-solution-on-amazon-bedrock-and-agentcore",
-          "title": "Autonomous treasury agents: How Trovata built an AI-native solution on Amazon Bedrock and AgentCore",
-          "article_id": "art_aws_ml_blog_9b71b6425ef0",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        },
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore",
-          "title": "How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore",
-          "article_id": "art_aws_ml_blog_4179bb188dc4",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        }
-      ],
-      "covered_by_sources_count": 7
+      "related_sources": [],
+      "covered_by_sources_count": 1
     }
   ],
   "research_safety": [
@@ -3232,7 +3349,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3346,7 +3463,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3393,9 +3510,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_45",
-      "article_id": "cluster_45",
-      "article_url": "articles/cluster_45.json",
+      "id": "cluster_43",
+      "article_id": "cluster_43",
+      "article_url": "articles/cluster_43.json",
       "publisher_id": "huggingface",
       "publisher_group_id": "huggingface",
       "article_type": "research_paper",
@@ -3459,7 +3576,7 @@
       "is_official": true,
       "published": "Nov 10, 00:00 UTC",
       "published_at": "2026-11-10T00:00:00+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://huggingface.co/blog/hub-gcp-marketplace",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -3507,9 +3624,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_46",
-      "article_id": "cluster_46",
-      "article_url": "articles/cluster_46.json",
+      "id": "cluster_44",
+      "article_id": "cluster_44",
+      "article_url": "articles/cluster_44.json",
       "publisher_id": "huggingface",
       "publisher_group_id": "huggingface",
       "article_type": "research_paper",
@@ -3573,7 +3690,7 @@
       "is_official": true,
       "published": "Nov 10, 00:00 UTC",
       "published_at": "2026-11-10T00:00:00+00:00",
-      "last_fetched_at": "2026-11-10T23:30:29.404030+00:00",
+      "last_fetched_at": "2026-11-11T03:11:56.211526+00:00",
       "link": "https://huggingface.co/blog/decision",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3763,8 +3880,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 262437,
-      "forks": 58641,
+      "stars": 262486,
+      "forks": 58686,
       "language": "Python",
       "topics": [
         "ai",
@@ -3775,13 +3892,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 341,
-      "stars_gained_7d": 2190,
+      "stars_gained_24h": 390,
+      "stars_gained_7d": 2203,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+341); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+390); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-10T23:25:38Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "updated_at": "2026-11-11T03:11:32Z",
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3789,8 +3906,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 81736,
-      "forks": 15017,
+      "stars": 81775,
+      "forks": 15018,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3801,13 +3918,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 237,
-      "stars_gained_7d": 1886,
+      "stars_gained_24h": 276,
+      "stars_gained_7d": 1874,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+237); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+276); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-10T20:47:24Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "updated_at": "2026-11-11T01:34:11Z",
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3815,8 +3932,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 69547,
-      "forks": 56670,
+      "stars": 69593,
+      "forks": 56702,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3827,13 +3944,13 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": 617,
-      "stars_gained_7d": 2044,
+      "stars_gained_24h": 663,
+      "stars_gained_7d": 2080,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+617); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+663); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
       "updated_at": "2026-11-10T11:51:09Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3841,8 +3958,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 449875,
-      "forks": 110742,
+      "stars": 450317,
+      "forks": 110813,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3853,13 +3970,13 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 2728,
-      "stars_gained_7d": 22945,
+      "stars_gained_24h": 3170,
+      "stars_gained_7d": 22775,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+2728); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+3170); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-10T23:24:30Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "updated_at": "2026-11-11T02:44:25Z",
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     },
     {
       "repository": "langgenius/dify",
@@ -3867,8 +3984,8 @@
       "owner": "langgenius",
       "url": "https://github.com/langgenius/dify",
       "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
-      "stars": 160884,
-      "forks": 25444,
+      "stars": 160910,
+      "forks": 25451,
       "language": "Python",
       "topics": [
         "agent",
@@ -3879,13 +3996,13 @@
         "automation"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 101,
-      "stars_gained_7d": 541,
+      "stars_gained_24h": 127,
+      "stars_gained_7d": 554,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+101); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+127); Active commit activity in the last 24h.",
       "created_at": "2023-04-12T07:40:24Z",
-      "updated_at": "2026-11-10T19:51:13Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "updated_at": "2026-11-11T03:07:04Z",
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -3893,8 +4010,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 112937,
-      "forks": 18738,
+      "stars": 112969,
+      "forks": 18742,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -3905,13 +4022,13 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 285,
-      "stars_gained_7d": 2123,
+      "stars_gained_24h": 317,
+      "stars_gained_7d": 2109,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+285); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+317); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-10T23:22:12Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "updated_at": "2026-11-11T03:10:32Z",
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     },
     {
       "repository": "The-PR-Agent/pr-agent",
@@ -3919,8 +4036,8 @@
       "owner": "The-PR-Agent",
       "url": "https://github.com/The-PR-Agent/pr-agent",
       "description": "\ud83d\ude80 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
-      "stars": 15871,
-      "forks": 2169,
+      "stars": 15888,
+      "forks": 2171,
       "language": "Python",
       "topics": [
         "ai",
@@ -3931,39 +4048,39 @@
         "ollama"
       ],
       "license": "MIT",
-      "stars_gained_24h": 131,
-      "stars_gained_7d": 1430,
+      "stars_gained_24h": 148,
+      "stars_gained_7d": 1432,
       "developer_trend_score": 99.7,
-      "score_explanation": "Breakout 24h star growth (+131); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+148); Active commit activity in the last 24h.",
       "created_at": "2023-07-05T21:02:15Z",
-      "updated_at": "2026-11-10T20:23:30Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "updated_at": "2026-11-11T01:00:18Z",
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     },
     {
-      "repository": "open-webui/open-webui",
-      "name": "open-webui",
-      "owner": "open-webui",
-      "url": "https://github.com/open-webui/open-webui",
-      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 158324,
-      "forks": 23021,
-      "language": "Svelte",
+      "repository": "f/prompts.chat",
+      "name": "prompts.chat",
+      "owner": "f",
+      "url": "https://github.com/f/prompts.chat",
+      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
+      "stars": 176852,
+      "forks": 22559,
+      "language": "MDX",
       "topics": [
         "ai",
-        "llm",
-        "llm-ui",
-        "llm-webui",
-        "llms",
-        "mcp"
+        "artificial-intelligence",
+        "awesome-list",
+        "chatgpt",
+        "chatgpt-prompts",
+        "claude"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 86,
-      "stars_gained_7d": 640,
-      "developer_trend_score": 98.3,
-      "score_explanation": "Rapid 24h adoption (+86 stars); Active commit activity in the last 24h.",
-      "created_at": "2023-10-06T22:08:27Z",
-      "updated_at": "2026-11-10T14:59:31Z",
-      "collected_at": "2026-11-10T23:30:25.406662+00:00"
+      "stars_gained_24h": 97,
+      "stars_gained_7d": 1114,
+      "developer_trend_score": 99.6,
+      "score_explanation": "Rapid 24h adoption (+97 stars); Active commit activity in the last 24h.",
+      "created_at": "2022-12-05T13:54:13Z",
+      "updated_at": "2026-11-10T14:05:26Z",
+      "collected_at": "2026-11-11T03:11:53.364290+00:00"
     }
   ],
   "source_health_summary": {
@@ -3973,7 +4090,7 @@
     "successful_fetches_count": 10,
     "failed_fetches_count": 0,
     "valid_empty_sources_count": 0,
-    "total_articles_received": 2475,
+    "total_articles_received": 2476,
     "rejected_by_relevance_count": 3,
     "rejected_by_freshness_count": 999,
     "fresh_articles_accepted_count": 94,
@@ -3983,11 +4100,11 @@
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-10T23:28:05.227906+00:00",
-      "last_success_at": "2026-11-10T23:28:05.227906+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.067980+00:00",
+      "last_success_at": "2026-11-11T03:07:12.067980+00:00",
       "fetch_status": "success",
       "http_status": 200,
-      "articles_received": 1376,
+      "articles_received": 1377,
       "articles_accepted": 15,
       "error_type": null,
       "error_message": null
@@ -3995,8 +4112,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-10T23:28:05.228509+00:00",
-      "last_success_at": "2026-11-10T23:28:05.228509+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.068936+00:00",
+      "last_success_at": "2026-11-11T03:07:12.068936+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -4007,8 +4124,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-10T23:28:05.228824+00:00",
-      "last_success_at": "2026-11-10T23:28:05.228824+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.069478+00:00",
+      "last_success_at": "2026-11-11T03:07:12.069478+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -4019,8 +4136,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-10T23:28:05.229204+00:00",
-      "last_success_at": "2026-11-10T23:28:05.229204+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.069998+00:00",
+      "last_success_at": "2026-11-11T03:07:12.069998+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -4031,8 +4148,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-10T23:28:05.229568+00:00",
-      "last_success_at": "2026-11-10T23:28:05.229568+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.070522+00:00",
+      "last_success_at": "2026-11-11T03:07:12.070522+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4043,8 +4160,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-10T23:28:05.230249+00:00",
-      "last_success_at": "2026-11-10T23:28:05.230249+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.071587+00:00",
+      "last_success_at": "2026-11-11T03:07:12.071587+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 902,
@@ -4055,10 +4172,10 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-10T23:28:05.235183+00:00",
-      "last_success_at": "2026-11-10T23:28:05.235183+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.074990+00:00",
+      "last_success_at": "2026-11-11T03:07:12.074990+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 3,
       "error_type": null,
@@ -4067,8 +4184,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-10T23:28:05.238447+00:00",
-      "last_success_at": "2026-11-10T23:28:05.238447+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.077875+00:00",
+      "last_success_at": "2026-11-11T03:07:12.077875+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -4079,8 +4196,8 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-10T23:28:05.238707+00:00",
-      "last_success_at": "2026-11-10T23:28:05.238707+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.091355+00:00",
+      "last_success_at": "2026-11-11T03:07:12.091355+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4091,10 +4208,10 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-10T23:28:05.239001+00:00",
-      "last_success_at": "2026-11-10T23:28:05.239001+00:00",
+      "last_attempt_at": "2026-11-11T03:07:12.091929+00:00",
+      "last_success_at": "2026-11-11T03:07:12.091929+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 10,
       "error_type": null,
@@ -4104,11 +4221,11 @@
   "extraction_telemetry": {
     "extraction_attempts": 14,
     "successful_full_body_extractions": 7,
-    "cached_content": 7,
+    "cached_content": 6,
     "rss_only_fallbacks": 7,
     "blocked_pages": 0,
     "missing_content": 0,
-    "average_extracted_word_count": 1051.0,
+    "average_extracted_word_count": 1072.7,
     "ai_enhancement_success": 0,
     "ai_fallback_usage": 14
   }
