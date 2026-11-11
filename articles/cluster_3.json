@@ -1,66 +1,66 @@
 {
   "id": "cluster_3",
   "clean_id": "cluster_3",
-  "title": "Introducing Businesses in ChatGPT",
-  "headline": "Introducing Businesses in ChatGPT",
+  "title": "Helping caregivers use AI in everyday life",
+  "headline": "Helping caregivers use AI in everyday life",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-10T10:00:00+00:00",
+  "published_at": "2026-11-10T12:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
-  "pulse_score": 86.8,
+  "pulse_score": 82.0,
   "article_type": "frontier_launch",
   "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/introducing-businesses-chatgpt",
-  "canonical_url": "https://openai.com/index/introducing-businesses-chatgpt",
-  "original_source_url": "https://openai.com/index/introducing-businesses-chatgpt",
+  "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+  "canonical_url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+  "original_source_url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
   "reading_time": "1 min read",
-  "word_count": 19,
-  "extraction_status": "cached_fallback",
-  "content_hash": "f064f7110e9b4a14",
+  "word_count": 23,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
-  "ai_what_happened": "OpenAI News published verified documentation on Introducing Businesses in ChatGPT.",
+  "ai_overview": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
+  "ai_what_happened": "OpenAI News published verified documentation on Helping caregivers use AI in everyday life.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Businesses in ChatGPT from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Businesses in ChatGPT; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Helping caregivers use AI in everyday life from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Helping caregivers use AI in everyday life; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Businesses in ChatGPT capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Helping caregivers use AI in everyday life capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Introducing Businesses in ChatGPT as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Helping caregivers use AI in everyday life as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
-    "Official development released and documented by OpenAI News."
+    "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S.",
+    "cities, helping them build practical AI skills for everyday life."
   ],
-  "text": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
-  "full_text": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
+  "text": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
+  "full_text": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
   "sections": [
     {
-      "heading": "Summary",
-      "content": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT."
+      "heading": "Main Context",
+      "content": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life."
     }
   ],
   "paragraphs": [
-    "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT."
+    "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life."
   ],
   "corroborating_sources": []
 }

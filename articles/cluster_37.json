@@ -1,66 +1,66 @@
 {
   "id": "cluster_37",
   "clean_id": "cluster_37",
-  "title": "How skills and agents work in AWS Quick",
-  "headline": "How skills and agents work in AWS Quick",
+  "title": "Introducing Claude Fable 5.2 on AWS",
+  "headline": "Introducing Claude Fable 5.2 on AWS",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-10T00:21:34+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
-  "impact_level": "Major",
-  "pulse_score": 79.0,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "published_at": "2026-11-09T20:04:37+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
-  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick",
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws",
   "reading_time": "1 min read",
-  "word_count": 55,
+  "word_count": 43,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on How skills and agents work in AWS Quick.",
+  "ai_overview": "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS. Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Introducing Claude Fable 5.2 on AWS.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for How skills and agents work in AWS Quick from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for How skills and agents work in AWS Quick; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Claude Fable 5.2 on AWS from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Claude Fable 5.2 on AWS; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate How skills and agents work in AWS Quick capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Claude Fable 5.2 on AWS capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers How skills and agents work in AWS Quick as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Introducing Claude Fable 5.2 on AWS as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills.",
-    "This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them."
+    "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS.",
+    "Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock."
   ],
-  "text": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
-  "full_text": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them.",
+  "text": "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS. Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock.",
+  "full_text": "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS. Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them."
+      "content": "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS. Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock."
     }
   ],
   "paragraphs": [
-    "Repeatable tasks like status updates, release notes, and ticket creation can be encoded in AWS Quick through agents and skills. This post covers how agents, skills, and your data fit together in AWS Quick, how to build and share skills for your team, and how the official catalog and custom agents help you use them."
+    "Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS. Learn what's new in both models, why Fable 5.2 matters for your technical workloads, and how to get started building with it on Amazon Bedrock."
   ],
   "corroborating_sources": []
 }
