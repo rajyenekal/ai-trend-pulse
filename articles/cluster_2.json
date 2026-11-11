@@ -24,7 +24,7 @@
   "original_source_url": "https://openai.com/index/chatgpt-plus-for-veterans",
   "reading_time": "1 min read",
   "word_count": 26,
-  "extraction_status": "fallback_summary",
+  "extraction_status": "cached_fallback",
   "content_hash": "d33dff22661614f4",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",

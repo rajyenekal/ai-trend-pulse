@@ -1,0 +1,66 @@
+{
+  "id": "cluster_41",
+  "clean_id": "cluster_41",
+  "title": "NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart",
+  "headline": "NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart",
+  "subtitle": "",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "aws",
+  "publisher_group_id": "amazon",
+  "author": "",
+  "published_at": "2026-11-09T20:01:20+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-super-vl-is-now-available-in-amazon-sagemaker-jumpstart",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-super-vl-is-now-available-in-amazon-sagemaker-jumpstart",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-super-vl-is-now-available-in-amazon-sagemaker-jumpstart",
+  "reading_time": "1 min read",
+  "word_count": 50,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "NVIDIA Nemotron 3.5 Super VL, a 120B-parameter multimodal vision-language model, is now available in Amazon SageMaker JumpStart. Deploy the NVFP4 or BF16 variant in a few steps, then run text, image, and video inference for document intelligence, computer-use agents, and multimodal agentic workloads.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart.",
+  "ai_key_details": [
+    "Primary documentation verified from AWS Machine Learning."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart capabilities from AWS Machine Learning directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+  },
+  "ai_whats_new": "Delivers NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from AWS Machine Learning."
+  ],
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "reported_facts": [
+    "NVIDIA Nemotron 3.5 Super VL, a 120B-parameter multimodal vision-language model, is now available in Amazon SageMaker JumpStart.",
+    "Deploy the NVFP4 or BF16 variant in a few steps, then run text, image, and video inference for document intelligence, computer-use agents, and multimodal agentic workloads."
+  ],
+  "text": "NVIDIA Nemotron 3.5 Super VL, a 120B-parameter multimodal (text, image, audio) vision-language model, is now available in Amazon SageMaker JumpStart. Deploy the NVFP4 or BF16 variant in a few steps, then run text, image, and video model reasoning for document intelligence, computer-use agents, and multimodal (text, image, audio) action-taking workloads.",
+  "full_text": "NVIDIA Nemotron 3.5 Super VL, a 120B-parameter multimodal (text, image, audio) vision-language model, is now available in Amazon SageMaker JumpStart. Deploy the NVFP4 or BF16 variant in a few steps, then run text, image, and video model reasoning for document intelligence, computer-use agents, and multimodal (text, image, audio) action-taking workloads.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "NVIDIA Nemotron 3.5 Super VL, a 120B-parameter multimodal (text, image, audio) vision-language model, is now available in Amazon SageMaker JumpStart. Deploy the NVFP4 or BF16 variant in a few steps, then run text, image, and video model reasoning for document intelligence, computer-use agents, and multimodal (text, image, audio) action-taking workloads."
+    }
+  ],
+  "paragraphs": [
+    "NVIDIA Nemotron 3.5 Super VL, a 120B-parameter multimodal (text, image, audio) vision-language model, is now available in Amazon SageMaker JumpStart. Deploy the NVFP4 or BF16 variant in a few steps, then run text, image, and video model reasoning for document intelligence, computer-use agents, and multimodal (text, image, audio) action-taking workloads."
+  ],
+  "corroborating_sources": []
+}
