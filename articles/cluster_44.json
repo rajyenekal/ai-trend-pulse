@@ -1,0 +1,66 @@
+{
+  "id": "cluster_44",
+  "clean_id": "cluster_44",
+  "title": "Introducing usage-based pricing for Amazon SageMaker AI bidirectional streaming",
+  "headline": "Introducing usage-based pricing for Amazon SageMaker AI bidirectional streaming",
+  "subtitle": "",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "aws",
+  "publisher_group_id": "amazon",
+  "author": "",
+  "published_at": "2026-11-11T15:10:23+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming",
+  "reading_time": "1 min read",
+  "word_count": 41,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "AWS Marketplace now supports usage-based metering for Amazon SageMaker bidirectional streaming inference, so model providers can charge for what customers actually consume during a live stream. Deepgram is the launch partner, bringing usage-based speech-to-text and text-to-speech billing to AWS Marketplace.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Introducing usage-based pricing for Amazon SageMaker AI bidirectional streaming.",
+  "ai_key_details": [
+    "Primary documentation verified from AWS Machine Learning."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for usage-based pricing for Amazon SageMaker AI bidirectional streaming from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for usage-based pricing for Amazon SageMaker AI bidirectional streaming; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate usage-based pricing for Amazon SageMaker AI bidirectional streaming capabilities from AWS Machine Learning directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+  },
+  "ai_whats_new": "Delivers Introducing usage-based pricing for Amazon SageMaker AI bidirectional streaming as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from AWS Machine Learning."
+  ],
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "reported_facts": [
+    "AWS Marketplace now supports usage-based metering for Amazon SageMaker bidirectional streaming inference, so model providers can charge for what customers actually consume during a live stream.",
+    "Deepgram is the launch partner, bringing usage-based speech-to-text and text-to-speech billing to AWS Marketplace."
+  ],
+  "text": "AWS Marketplace now supports usage-based metering for Amazon SageMaker bidirectional streaming model reasoning, so model providers can charge for what customers actually consume during a live stream. Deepgram is the launch partner, bringing usage-based speech-to-text and text-to-speech billing to AWS Marketplace.",
+  "full_text": "AWS Marketplace now supports usage-based metering for Amazon SageMaker bidirectional streaming model reasoning, so model providers can charge for what customers actually consume during a live stream. Deepgram is the launch partner, bringing usage-based speech-to-text and text-to-speech billing to AWS Marketplace.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "AWS Marketplace now supports usage-based metering for Amazon SageMaker bidirectional streaming model reasoning, so model providers can charge for what customers actually consume during a live stream. Deepgram is the launch partner, bringing usage-based speech-to-text and text-to-speech billing to AWS Marketplace."
+    }
+  ],
+  "paragraphs": [
+    "AWS Marketplace now supports usage-based metering for Amazon SageMaker bidirectional streaming model reasoning, so model providers can charge for what customers actually consume during a live stream. Deepgram is the launch partner, bringing usage-based speech-to-text and text-to-speech billing to AWS Marketplace."
+  ],
+  "corroborating_sources": []
+}

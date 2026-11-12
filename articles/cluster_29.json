@@ -24,7 +24,7 @@
   "original_source_url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease",
   "reading_time": "8 min read",
   "word_count": 1673,
-  "extraction_status": "extracted",
+  "extraction_status": "cached",
   "content_hash": "9a280e7979fd896c",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
