@@ -1,66 +1,66 @@
 {
   "id": "cluster_38",
   "clean_id": "cluster_38",
-  "title": "ICYMI: What landed for AI builders in October 2026",
-  "headline": "ICYMI: What landed for AI builders in October 2026",
+  "title": "Run agents securely and efficiently with the next generation AgentCore runtime",
+  "headline": "Run agents securely and efficiently with the next generation AgentCore runtime",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-11T22:26:40+00:00",
+  "published_at": "2026-11-12T17:59:59+00:00",
   "category": "AI Agents",
   "topic": "AI Agents",
-  "impact_level": "Breakthrough",
-  "pulse_score": 86.8,
-  "article_type": "frontier_launch",
-  "signal_badge": "Frontier Launch",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-october-2026",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-october-2026",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-october-2026",
+  "url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
   "reading_time": "1 min read",
-  "word_count": 36,
+  "word_count": 22,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "A recap of the major Amazon Bedrock, Amazon Bedrock AgentCore, and Strands updates from October 2026: new models to match each task, updates that keep agents available and grounded, and clearer cost reporting for AI builders.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on ICYMI: What landed for AI builders in October 2026.",
+  "ai_overview": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Run agents securely and efficiently with the next generation AgentCore runtime.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for ICYMI: What landed for AI builders in October 2026 from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for ICYMI: What landed for AI builders in October 2026; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Run agents securely and efficiently with the next generation AgentCore runtime from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Run agents securely and efficiently with the next generation AgentCore runtime; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate ICYMI: What landed for AI builders in October 2026 capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Run agents securely and efficiently with the next generation AgentCore runtime capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers ICYMI: What landed for AI builders in October 2026 as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Run agents securely and efficiently with the next generation AgentCore runtime as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
   "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "A recap of the major Amazon Bedrock, Amazon Bedrock AgentCore, and Strands updates from October 2026: new models to match each task, updates that keep agents available and grounded, and clearer cost reporting for AI builders.",
+    "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
     "Official development released and documented by AWS Machine Learning."
   ],
-  "text": "A recap of the major Amazon Bedrock, Amazon Bedrock AgentCore, and Strands updates from October 2026: new models to match each task, updates that keep agents available and grounded, and clearer cost reporting for AI builders.",
-  "full_text": "A recap of the major Amazon Bedrock, Amazon Bedrock AgentCore, and Strands updates from October 2026: new models to match each task, updates that keep agents available and grounded, and clearer cost reporting for AI builders.",
+  "text": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
+  "full_text": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "A recap of the major Amazon Bedrock, Amazon Bedrock AgentCore, and Strands updates from October 2026: new models to match each task, updates that keep agents available and grounded, and clearer cost reporting for AI builders."
+      "content": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute."
     }
   ],
   "paragraphs": [
-    "A recap of the major Amazon Bedrock, Amazon Bedrock AgentCore, and Strands updates from October 2026: new models to match each task, updates that keep agents available and grounded, and clearer cost reporting for AI builders."
+    "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute."
   ],
   "corroborating_sources": []
 }
