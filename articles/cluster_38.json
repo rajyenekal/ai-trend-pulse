@@ -1,14 +1,14 @@
 {
   "id": "cluster_38",
   "clean_id": "cluster_38",
-  "title": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
-  "headline": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
+  "title": "OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures",
+  "headline": "OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-13T19:35:35+00:00",
+  "published_at": "2026-11-13T21:53:40+00:00",
   "category": "AI Infrastructure",
   "topic": "AI Infrastructure",
   "impact_level": "Breakthrough",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
+  "url": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures",
   "reading_time": "1 min read",
-  "word_count": 38,
+  "word_count": 45,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Learn how AssemblyAI runs cost-optimized speech-to-text inference at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot.",
+  "ai_overview": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account. The post covers asynchronous inference, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
   "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
   "reported_facts": [
-    "Learn how AssemblyAI runs cost-optimized speech-to-text inference at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
-    "Official development released and documented by AWS Machine Learning."
+    "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account.",
+    "The post covers asynchronous inference, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost."
   ],
-  "text": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
-  "full_text": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
+  "text": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account. The post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost.",
+  "full_text": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account. The post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions."
+      "content": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account. The post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost."
     }
   ],
   "paragraphs": [
-    "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions."
+    "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account. The post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost."
   ],
   "corroborating_sources": []
 }

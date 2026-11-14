@@ -1,16 +1,16 @@
 {
   "id": "cluster_40",
   "clean_id": "cluster_40",
-  "title": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
-  "headline": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
+  "title": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
+  "headline": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-12T22:03:34+00:00",
-  "category": "Open Source AI",
-  "topic": "Open Source AI",
+  "published_at": "2026-11-13T18:01:15+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
   "impact_level": "Breakthrough",
   "pulse_score": 86.8,
   "article_type": "frontier_launch",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
+  "url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture",
   "reading_time": "1 min read",
-  "word_count": 40,
+  "word_count": 15,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Deploy frontier AI models on AWS Trainium with SGLang-Neuron.",
+  "ai_overview": "Amazon SageMaker HyperPod Data Capture records live inference inputs and outputs to Amazon S3.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Deploy frontier AI models on AWS Trainium with SGLang-Neuron from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Deploy frontier AI models on AWS Trainium with SGLang-Neuron; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Deploy frontier AI models on AWS Trainium with SGLang-Neuron capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Deploy frontier AI models on AWS Trainium with SGLang-Neuron as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
   "reported_facts": [
-    "SGLang-Neuron is now publicly available through an AWS Deep Learning Container.",
-    "With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
+    "Amazon SageMaker HyperPod Data Capture records live inference inputs and outputs to Amazon S3.",
+    "Official development released and documented by AWS Machine Learning."
   ],
-  "text": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
-  "full_text": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
+  "text": "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3.",
+  "full_text": "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
+      "content": "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3."
     }
   ],
   "paragraphs": [
-    "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
+    "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3."
   ],
   "corroborating_sources": []
 }
