@@ -1,66 +1,66 @@
 {
   "id": "cluster_40",
   "clean_id": "cluster_40",
-  "title": "From prototype to production: Engineering agents with Agent DLC",
-  "headline": "From prototype to production: Engineering agents with Agent DLC",
+  "title": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
+  "headline": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-12T15:38:47+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
-  "impact_level": "Major",
-  "pulse_score": 79.0,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "published_at": "2026-11-12T22:03:34+00:00",
+  "category": "Open Source AI",
+  "topic": "Open Source AI",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/from-prototype-to-production-engineering-agents-with-agent-dlc",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/from-prototype-to-production-engineering-agents-with-agent-dlc",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/from-prototype-to-production-engineering-agents-with-agent-dlc",
+  "url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
   "reading_time": "1 min read",
-  "word_count": 25,
+  "word_count": 40,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Agents stall between demo and release when teams lack a repeatable way to measure how good an agent is and whether the last change helped.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on From prototype to production: Engineering agents with Agent DLC.",
+  "ai_overview": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Deploy frontier AI models on AWS Trainium with SGLang-Neuron.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for From prototype to production: Engineering agents with Agent DLC from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for From prototype to production: Engineering agents with Agent DLC; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Deploy frontier AI models on AWS Trainium with SGLang-Neuron from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Deploy frontier AI models on AWS Trainium with SGLang-Neuron; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate From prototype to production: Engineering agents with Agent DLC capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Deploy frontier AI models on AWS Trainium with SGLang-Neuron capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers From prototype to production: Engineering agents with Agent DLC as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Deploy frontier AI models on AWS Trainium with SGLang-Neuron as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "Agents stall between demo and release when teams lack a repeatable way to measure how good an agent is and whether the last change helped.",
-    "Official development released and documented by AWS Machine Learning."
+    "SGLang-Neuron is now publicly available through an AWS Deep Learning Container.",
+    "With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
   ],
-  "text": "Agents stall between demo and release when teams lack a repeatable way to measure how good an agent is and whether the last change helped.",
-  "full_text": "Agents stall between demo and release when teams lack a repeatable way to measure how good an agent is and whether the last change helped.",
+  "text": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
+  "full_text": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Agents stall between demo and release when teams lack a repeatable way to measure how good an agent is and whether the last change helped."
+      "content": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
     }
   ],
   "paragraphs": [
-    "Agents stall between demo and release when teams lack a repeatable way to measure how good an agent is and whether the last change helped."
+    "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
   ],
   "corroborating_sources": []
 }

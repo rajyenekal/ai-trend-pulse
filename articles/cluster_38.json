@@ -1,66 +1,66 @@
 {
   "id": "cluster_38",
   "clean_id": "cluster_38",
-  "title": "Run agents securely and efficiently with the next generation AgentCore runtime",
-  "headline": "Run agents securely and efficiently with the next generation AgentCore runtime",
+  "title": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
+  "headline": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-12T17:59:59+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
-  "impact_level": "Major",
-  "pulse_score": 79.0,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "published_at": "2026-11-13T19:35:35+00:00",
+  "category": "AI Infrastructure",
+  "topic": "AI Infrastructure",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime",
+  "url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
   "reading_time": "1 min read",
-  "word_count": 22,
+  "word_count": 38,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Run agents securely and efficiently with the next generation AgentCore runtime.",
+  "ai_overview": "Learn how AssemblyAI runs cost-optimized speech-to-text inference at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Run agents securely and efficiently with the next generation AgentCore runtime from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Run agents securely and efficiently with the next generation AgentCore runtime; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Run agents securely and efficiently with the next generation AgentCore runtime capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Run agents securely and efficiently with the next generation AgentCore runtime as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
   "reported_facts": [
-    "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
+    "Learn how AssemblyAI runs cost-optimized speech-to-text inference at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
     "Official development released and documented by AWS Machine Learning."
   ],
-  "text": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
-  "full_text": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute.",
+  "text": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
+  "full_text": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute."
+      "content": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions."
     }
   ],
   "paragraphs": [
-    "AI agents now run multi-step workloads for hours and act on behalf of users, raising the bar for secure, scalable agent compute."
+    "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions."
   ],
   "corroborating_sources": []
 }

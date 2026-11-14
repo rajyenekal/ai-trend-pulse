@@ -1,66 +1,66 @@
 {
   "id": "cluster_39",
   "clean_id": "cluster_39",
-  "title": "Build composable, interoperable multi-agent systems with A2A on AWS",
-  "headline": "Build composable, interoperable multi-agent systems with A2A on AWS",
+  "title": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
+  "headline": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-12T15:42:21+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
-  "impact_level": "Major",
-  "pulse_score": 79.0,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "published_at": "2026-11-13T18:01:15+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/build-composable-interoperable-multi-agent-systems-with-a2a-on-aws",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/build-composable-interoperable-multi-agent-systems-with-a2a-on-aws",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/build-composable-interoperable-multi-agent-systems-with-a2a-on-aws",
+  "url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture",
   "reading_time": "1 min read",
-  "word_count": 13,
+  "word_count": 15,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Build a composable, interoperable multi-agent system on AWS with the Agent-to-Agent (A2A) protocol.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Build composable, interoperable multi-agent systems with A2A on AWS.",
+  "ai_overview": "Amazon SageMaker HyperPod Data Capture records live inference inputs and outputs to Amazon S3.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Build composable, interoperable multi-agent systems with A2A on AWS from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Build composable, interoperable multi-agent systems with A2A on AWS; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Build composable, interoperable multi-agent systems with A2A on AWS capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Build composable, interoperable multi-agent systems with A2A on AWS as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
   "reported_facts": [
-    "Build a composable, interoperable multi-agent system on AWS with the Agent-to-Agent (A2A) protocol.",
+    "Amazon SageMaker HyperPod Data Capture records live inference inputs and outputs to Amazon S3.",
     "Official development released and documented by AWS Machine Learning."
   ],
-  "text": "Build a composable, interoperable multi-agent system on AWS with the Agent-to-Agent (A2A) protocol.",
-  "full_text": "Build a composable, interoperable multi-agent system on AWS with the Agent-to-Agent (A2A) protocol.",
+  "text": "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3.",
+  "full_text": "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Build a composable, interoperable multi-agent system on AWS with the Agent-to-Agent (A2A) protocol."
+      "content": "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3."
     }
   ],
   "paragraphs": [
-    "Build a composable, interoperable multi-agent system on AWS with the Agent-to-Agent (A2A) protocol."
+    "Amazon SageMaker HyperPod Data Capture records live model reasoning inputs and outputs to Amazon S3."
   ],
   "corroborating_sources": []
 }
