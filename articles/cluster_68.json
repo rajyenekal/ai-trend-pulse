@@ -1,0 +1,66 @@
+{
+  "id": "cluster_68",
+  "clean_id": "cluster_68",
+  "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+  "headline": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+  "subtitle": "",
+  "publisher": "The Decoder",
+  "publisher_id": "the_decoder",
+  "publisher_group_id": "the_decoder",
+  "author": "",
+  "published_at": "2026-11-14T09:45:45+00:00",
+  "category": "Open Source AI",
+  "topic": "Open Source AI",
+  "impact_level": "Breakthrough",
+  "pulse_score": 84.6,
+  "article_type": "open_source_release",
+  "signal_badge": "Open Weights",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+  "canonical_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+  "original_source_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+  "reading_time": "1 min read",
+  "word_count": 38,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+  "ai_what_happened": "It can't yet plan complex action sequences on its own, though.",
+  "ai_key_details": [
+    "Primary documentation verified from The Decoder."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Runway's open-source Praxis-1 turns video AI into a robot controller from The Decoder.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Runway's open-source Praxis-1 turns video AI into a robot controller; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Runway's open-source Praxis-1 turns video AI into a robot controller capabilities from The Decoder directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
+  },
+  "ai_whats_new": "Delivers Runway's open-source Praxis-1 turns video AI into a robot controller as documented in verified primary release notes from The Decoder.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from The Decoder."
+  ],
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
+  "reported_facts": [
+    "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+    "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
+  ],
+  "text": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+  "full_text": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
+    }
+  ],
+  "paragraphs": [
+    "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
+  ],
+  "corroborating_sources": []
+}

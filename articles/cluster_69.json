@@ -1,16 +1,16 @@
 {
   "id": "cluster_69",
   "clean_id": "cluster_69",
-  "title": "Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails",
-  "headline": "Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails",
+  "title": "Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls",
+  "headline": "Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls",
   "subtitle": "",
   "publisher": "The Decoder",
   "publisher_id": "the_decoder",
   "publisher_group_id": "the_decoder",
   "author": "",
-  "published_at": "2026-11-13T15:53:49+00:00",
-  "category": "Frontier Models",
-  "topic": "Frontier Models",
+  "published_at": "2026-11-13T18:01:53+00:00",
+  "category": "AI Business",
+  "topic": "AI Business",
   "impact_level": "Notable",
   "pulse_score": 70.2,
   "article_type": "policy_regulation",
@@ -18,49 +18,49 @@
   "trust_tier": 2,
   "tier": "Independent Journalism",
   "is_official": false,
-  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails",
-  "canonical_url": "https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails",
-  "original_source_url": "https://the-decoder.com/nearly-70-percent-of-us-agencies-use-generative-ai-and-unions-are-finally-catching-up-with-guardrails",
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls",
+  "canonical_url": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls",
+  "original_source_url": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls",
   "reading_time": "1 min read",
-  "word_count": 37,
+  "word_count": 23,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "US public-sector unions are increasingly pushing through protections against AI surveillance and automated firings. In Oakland, a strike vote forced retraining programs instead of layoffs, and a transport union in Ohio won veto power over autonomous vehicles.",
-  "ai_what_happened": "California banned so-called bossware.",
+  "ai_overview": "Chinese investors are shut out of Anthropic's IPO, Bloomberg reports. Banks are rejecting buy orders from mainland China and Hong Kong, citing U.S.",
+  "ai_what_happened": "export control rules known as ITAR.",
   "ai_key_details": [
-    "Primary documentation verified from The Decoder."
+    "Similar restrictions applied during SpaceX's IPO, and Anthropic's products aren't available in either region anyway."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails from The Decoder.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls from The Decoder.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails capabilities from The Decoder directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls capabilities from The Decoder directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
   },
-  "ai_whats_new": "Delivers Nearly 70 percent of US agencies use generative AI, and unions are finally catching up with guardrails as documented in verified primary release notes from The Decoder.",
+  "ai_whats_new": "Delivers Banks bar Chinese and Hong Kong investors from Anthropic IPO over US export controls as documented in verified primary release notes from The Decoder.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from The Decoder."
   ],
   "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
   "reported_facts": [
-    "US public-sector unions are increasingly pushing through protections against AI surveillance and automated firings.",
-    "In Oakland, a strike vote forced retraining programs instead of layoffs, and a transport union in Ohio won veto power over autonomous vehicles."
+    "Chinese investors are shut out of Anthropic's IPO, Bloomberg reports.",
+    "Banks are rejecting buy orders from mainland China and Hong Kong, citing U.S."
   ],
-  "text": "US public-sector unions are increasingly pushing through protections against AI surveillance and automated firings. In Oakland, a strike vote forced retraining programs instead of layoffs, and a transport union in Ohio won veto power over autonomous vehicles.",
-  "full_text": "US public-sector unions are increasingly pushing through protections against AI surveillance and automated firings. In Oakland, a strike vote forced retraining programs instead of layoffs, and a transport union in Ohio won veto power over autonomous vehicles.",
+  "text": "Chinese investors are shut out of Anthropic's IPO, Bloomberg reports. Banks are rejecting buy orders from mainland China and Hong Kong, citing U.S.",
+  "full_text": "Chinese investors are shut out of Anthropic's IPO, Bloomberg reports. Banks are rejecting buy orders from mainland China and Hong Kong, citing U.S.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "US public-sector unions are increasingly pushing through protections against AI surveillance and automated firings. In Oakland, a strike vote forced retraining programs instead of layoffs, and a transport union in Ohio won veto power over autonomous vehicles."
+      "content": "Chinese investors are shut out of Anthropic's IPO, Bloomberg reports. Banks are rejecting buy orders from mainland China and Hong Kong, citing U.S."
     }
   ],
   "paragraphs": [
-    "US public-sector unions are increasingly pushing through protections against AI surveillance and automated firings. In Oakland, a strike vote forced retraining programs instead of layoffs, and a transport union in Ohio won veto power over autonomous vehicles."
+    "Chinese investors are shut out of Anthropic's IPO, Bloomberg reports. Banks are rejecting buy orders from mainland China and Hong Kong, citing U.S."
   ],
   "corroborating_sources": []
 }
