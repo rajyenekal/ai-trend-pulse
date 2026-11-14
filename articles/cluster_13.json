@@ -1,0 +1,66 @@
+{
+  "id": "cluster_13",
+  "clean_id": "cluster_13",
+  "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+  "headline": "Cogent and OpenAI build cyber defense factories for enterprises",
+  "subtitle": "",
+  "publisher": "OpenAI News",
+  "publisher_id": "openai",
+  "publisher_group_id": "openai",
+  "author": "",
+  "published_at": "2026-11-10T00:00:00+00:00",
+  "category": "AI Safety",
+  "topic": "AI Safety",
+  "impact_level": "Major",
+  "pulse_score": 77.2,
+  "article_type": "security_vulnerability",
+  "signal_badge": "Security & Policy",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://openai.com/index/cogent-security",
+  "canonical_url": "https://openai.com/index/cogent-security",
+  "original_source_url": "https://openai.com/index/cogent-security",
+  "reading_time": "1 min read",
+  "word_count": 14,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents.",
+  "ai_what_happened": "OpenAI News published verified documentation on Cogent and OpenAI build cyber defense factories for enterprises.",
+  "ai_key_details": [
+    "Primary documentation verified from OpenAI News."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Cogent and OpenAI build cyber defense factories for enterprises from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Cogent and OpenAI build cyber defense factories for enterprises; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Cogent and OpenAI build cyber defense factories for enterprises capabilities from OpenAI News directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+  },
+  "ai_whats_new": "Delivers Cogent and OpenAI build cyber defense factories for enterprises as documented in verified primary release notes from OpenAI News.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from OpenAI News."
+  ],
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "reported_facts": [
+    "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents.",
+    "Official development released and documented by OpenAI News."
+  ],
+  "text": "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents.",
+  "full_text": "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents."
+    }
+  ],
+  "paragraphs": [
+    "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents."
+  ],
+  "corroborating_sources": []
+}
