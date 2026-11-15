@@ -1,35 +1,16 @@
 {
   "schema_version": 2,
-  "data_status": "fresh",
-  "generated_at": "2026-11-15T02:49:30.107886+00:00",
-  "last_successful_update": "2026-11-15T02:49:30.107886+00:00",
-  "last_attempt_at": "2026-11-15T02:49:30.107886+00:00",
+  "data_status": "source_linked",
+  "generated_at": "2026-11-15T09:58:16.866298+00:00",
+  "last_successful_update": "2026-11-15T09:58:16.866298+00:00",
+  "last_attempt_at": "2026-11-15T09:58:16.866298+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
     "total_developments_today": 70,
-    "last_updated": "2026-11-15T02:49:30.107886+00:00",
-    "briefing_text": "Today's AI developments span Open Source AI, AI Agents, and Frontier Models. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
+    "last_updated": "2026-11-15T09:58:16.866298+00:00",
+    "briefing_text": "Today's AI developments span AI Agents, Frontier Models, and AI Infrastructure. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
     "top_developments": [
-      {
-        "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
-        "topic": "Open Source AI",
-        "category": "Open Source AI",
-        "source": "The Decoder",
-        "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
-        "article_type": "open_source_release",
-        "signal_badge": "Open Weights",
-        "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-        "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
-        "target_audience": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-        "score": 84.6,
-        "score_reasons": [
-          "+ Open-weights / open-source capability release (+35 impact)",
-          "+ Independent technology journalism desk (85 authority)",
-          "+ Direct developer actionability / runnable tooling (90 actionability)"
-        ]
-      },
       {
         "title": "Introducing ChatGPT Wallet",
         "topic": "AI Agents",
@@ -87,6 +68,25 @@
           "+ Official primary lab source (100 authority)",
           "+ Corroborated by 3 independent publishers (+15 evidence)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+        ]
+      },
+      {
+        "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+        "topic": "Open Source AI",
+        "category": "Open Source AI",
+        "source": "The Decoder",
+        "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+        "article_type": "open_source_release",
+        "signal_badge": "Open Weights",
+        "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+        "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
+        "target_audience": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+        "score": 84.6,
+        "score_reasons": [
+          "+ Open-weights / open-source capability release (+35 impact)",
+          "+ Independent technology journalism desk (85 authority)",
+          "+ Direct developer actionability / runnable tooling (90 actionability)"
         ]
       },
       {
@@ -152,25 +152,6 @@
   },
   "top_developments": [
     {
-      "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
-      "topic": "Open Source AI",
-      "category": "Open Source AI",
-      "source": "The Decoder",
-      "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
-      "article_type": "open_source_release",
-      "signal_badge": "Open Weights",
-      "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-      "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
-      "target_audience": "For developers",
-      "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-      "score": 84.6,
-      "score_reasons": [
-        "+ Open-weights / open-source capability release (+35 impact)",
-        "+ Independent technology journalism desk (85 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
-      ]
-    },
-    {
       "title": "Introducing ChatGPT Wallet",
       "topic": "AI Agents",
       "category": "AI Agents",
@@ -227,6 +208,25 @@
         "+ Official primary lab source (100 authority)",
         "+ Corroborated by 3 independent publishers (+15 evidence)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ]
+    },
+    {
+      "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+      "topic": "Open Source AI",
+      "category": "Open Source AI",
+      "source": "The Decoder",
+      "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+      "article_type": "open_source_release",
+      "signal_badge": "Open Weights",
+      "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+      "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
+      "target_audience": "For developers",
+      "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+      "score": 84.6,
+      "score_reasons": [
+        "+ Open-weights / open-source capability release (+35 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
       ]
     },
     {
@@ -289,347 +289,144 @@
       ]
     }
   ],
-  "takeaway": "Leading AI laboratories are rolling out next-generation model tiers and formal verification agents while fortifying intellectual property and enterprise transactional infrastructure. Concurrently, major providers are formalizing long-term governance commitments through public benefit structures and research partnerships.",
+  "takeaway": "Frontier research labs and independent publications report accelerating momentum across reasoning architectures, developer agents, and regulatory compliance standards.",
   "trends": [
     {
-      "title": "Google DeepMind Releases Gemini 4 Carbon and Hydrogen Model Family",
-      "link": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
-      "trend_type": "emerging_theme",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "theme_relationship": "DeepMind has expanded its Gemini 4 lineup with both high-reasoning frontier models and rapid-execution variants for varied computational demands.",
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "Gemini 4 Carbon is available to developers, enterprises, scientists, and consumers with frontier performance in cybersecurity and agentic workflows.",
-          "evidence": [
-            {
-              "article_id": "art_deepmind_blog_19f0e8c5f2d3",
-              "canonical_url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
-              "publisher_id": "google_deepmind",
-              "publisher_group_id": "google",
-              "source_name": "Google DeepMind",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Today, we\u2019re making Gemini 4 Carbon available to developers, enterprises, scientists, and consumers. Carbon is our strongest model with frontier performance in cybersecurity capabilities and long-horizon agentic workflows",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
-        {
-          "claim_id": "claim_2",
-          "text": "Gemini 4 Hydrogen is engineered for fast execution in coding and agentic workflows alongside frontier reasoning models Carbon and Argon.",
-          "evidence": [
-            {
-              "article_id": "art_deepmind_blog_aa1634b043db",
-              "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
-              "publisher_id": "google_deepmind",
-              "publisher_group_id": "google",
-              "source_name": "Google DeepMind",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "While our frontier models, Gemini 4 Carbon and Gemini 4 Argon, excel at deep, long-horizon reasoning on your hardest problems, Hydrogen is built for rapid execution across diver",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_deepmind_blog_19f0e8c5f2d3",
-          "canonical_url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
-          "publisher_id": "google_deepmind",
-          "publisher_group_id": "google",
-          "source_name": "Google DeepMind",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Today, we\u2019re making Gemini 4 Carbon available to developers, enterprises, scientists, and consumers. Carbon is our strongest model with frontier performance in cybersecurity capabilities and long-horizon agentic workflows",
-          "text_verified": false
-        },
-        {
-          "article_id": "art_deepmind_blog_aa1634b043db",
-          "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
-          "publisher_id": "google_deepmind",
-          "publisher_group_id": "google",
-          "source_name": "Google DeepMind",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "While our frontier models, Gemini 4 Carbon and Gemini 4 Argon, excel at deep, long-horizon reasoning on your hardest problems, Hydrogen is built for rapid execution across diver",
-          "text_verified": false
-        }
-      ],
-      "what_happened": "Google DeepMind made Gemini 4 Carbon broadly available for complex workflows and introduced Gemini 4 Hydrogen targeted at fast everyday coding and agent execution.",
-      "what_changed": "Google DeepMind made Gemini 4 Carbon broadly available for complex workflows and introduced Gemini 4 Hydrogen targeted at fast everyday coding and agent execution.",
-      "why_it_matters": "Differentiating models by task latency and reasoning depth allows organizations to balance high-assurance problem-solving with cost-effective, rapid execution.",
-      "who_affected": "Developers, Enterprises, and AI Practitioners",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Impacts roadmap decisions across AI Agents.",
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "source": "Google DeepMind",
-      "tier": "Independent Journalism",
-      "status": "emerging_theme",
-      "evidence_article_ids": [
-        "art_deepmind_blog_19f0e8c5f2d3",
-        "art_deepmind_blog_aa1634b043db"
-      ],
-      "evidence_urls": [
-        "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
-        "https://deepmind.google/blog/introducing-gemini-4-hydrogen"
-      ],
-      "topic": "AI Agents",
-      "company": "google",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Developers",
-        "Enterprises",
-        "Ai Practitioners"
-      ],
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Google."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Google.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 2,
-      "evidence_status": "emerging_theme",
-      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
-      "independent_source_count": 1,
-      "key_points": [
-        "Google DeepMind made Gemini 4 Carbon broadly available for complex workflows and introduced Gemini 4 Hydrogen targeted at fast everyday coding and agent execution.",
-        "Differentiating models by task latency and reasoning depth allows organizations to balance high-assurance problem-solving with cost-effective, rapid execution."
-      ],
-      "detailed_analysis": "Google DeepMind made Gemini 4 Carbon broadly available for complex workflows and introduced Gemini 4 Hydrogen targeted at fast everyday coding and agent execution.",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Google DeepMind Releases Gemini 4 Carbon and Hydrogen Model Family",
-      "image_type": "official_asset",
-      "image_credit": "Google announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Google DeepMind Introduces AlphaProof Code for Formal Cryptographic Verification",
-      "link": "https://deepmind.google/blog/introducing-alphaproof-code",
-      "trend_type": "single_development",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "theme_relationship": null,
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "AlphaProof Code's agentic framework achieved the formal verification of Signal's cryptographic protocol code.",
-          "evidence": [
-            {
-              "article_id": "art_deepmind_blog_613a7ae420cb",
-              "canonical_url": "https://deepmind.google/blog/introducing-alphaproof-code",
-              "publisher_id": "google_deepmind",
-              "publisher_group_id": "google",
-              "source_name": "Google DeepMind",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "How Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_deepmind_blog_613a7ae420cb",
-          "canonical_url": "https://deepmind.google/blog/introducing-alphaproof-code",
-          "publisher_id": "google_deepmind",
-          "publisher_group_id": "google",
-          "source_name": "Google DeepMind",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "How Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
-          "text_verified": false
-        }
-      ],
-      "what_happened": "Google DeepMind built an action-taking framework called AlphaProof Code to formally verify complex software, demonstrating success on the Signal cryptographic protocol.",
-      "what_changed": "Google DeepMind built an action-taking framework called AlphaProof Code to formally verify complex software, demonstrating success on the Signal cryptographic protocol.",
-      "why_it_matters": "Automating mathematical and formal proof verification addresses critical software security vulnerabilities in high-stakes cryptographic implementations.",
-      "who_affected": "Developers and AI Practitioners",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Impacts roadmap decisions across AI Agents.",
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "source": "Google DeepMind",
-      "tier": "Independent Journalism",
-      "status": "official_announcement",
-      "evidence_article_ids": [
-        "art_deepmind_blog_613a7ae420cb"
-      ],
-      "evidence_urls": [
-        "https://deepmind.google/blog/introducing-alphaproof-code"
-      ],
-      "topic": "AI Agents",
-      "company": "google",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Developers",
-        "Ai Practitioners"
-      ],
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Google."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Google.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "key_points": [
-        "Google DeepMind built an agentic framework called AlphaProof Code to formally verify complex software, demonstrating success on the Signal cryptographic protocol.",
-        "Automating mathematical and formal proof verification addresses critical software security vulnerabilities in high-stakes cryptographic implementations."
-      ],
-      "detailed_analysis": "Google DeepMind built an agentic framework called AlphaProof Code to formally verify complex software, demonstrating success on the Signal cryptographic protocol.",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Google DeepMind Introduces AlphaProof Code for Formal Cryptographic Verification",
-      "image_type": "official_asset",
-      "image_credit": "Google announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Anthropic Deploys Distillation Defenses to Shield Proprietary Model Data",
-      "link": "https://www.anthropic.com/news/distillation-defenses",
-      "trend_type": "single_development",
-      "article_type": "security_vulnerability",
-      "signal_badge": "Security & Policy",
-      "theme_relationship": null,
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "New defensive methods have cut data harvested from Claude by distillers by an estimated 90% to 99%.",
-          "evidence": [
-            {
-              "article_id": "art_anthropic_news_e5f202a1f983",
-              "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
-              "publisher_id": "anthropic",
-              "publisher_group_id": "anthropic",
-              "source_name": "Anthropic Official News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Early evidence suggests that these methods have reduced the amount of data harvested by distillers by around 90 to 99%.",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_anthropic_news_e5f202a1f983",
-          "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
-          "publisher_id": "anthropic",
-          "publisher_group_id": "anthropic",
-          "source_name": "Anthropic Official News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Early evidence suggests that these methods have reduced the amount of data harvested by distillers by around 90 to 99%.",
-          "text_verified": false
-        }
-      ],
-      "what_happened": "Anthropic developed defensive techniques that reduce data harvesting from unauthorized model distillation campaigns by 90 to 99 percent.",
-      "what_changed": "Anthropic developed defensive techniques that reduce data harvesting from unauthorized model distillation campaigns by 90 to 99 percent.",
-      "why_it_matters": "Distillation defenses protect proprietary frontier weights and behavior from being covertly duplicated by industrial competitors.",
-      "who_affected": "Enterprises and AI Practitioners",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "source": "Anthropic Official News",
-      "tier": "Official Lab",
-      "status": "official_announcement",
-      "evidence_article_ids": [
-        "art_anthropic_news_e5f202a1f983"
-      ],
-      "evidence_urls": [
-        "https://www.anthropic.com/news/distillation-defenses"
-      ],
-      "topic": "Frontier Models",
-      "company": "anthropic",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Enterprises",
-        "Ai Practitioners"
-      ],
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "key_points": [
-        "Anthropic developed defensive techniques that reduce data harvesting from unauthorized model distillation campaigns by 90 to 99 percent.",
-        "Distillation defenses protect proprietary frontier weights and behavior from being covertly duplicated by industrial competitors."
-      ],
-      "detailed_analysis": "Anthropic developed defensive techniques that reduce data harvesting from unauthorized model distillation campaigns by 90 to 99 percent.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Deploys Distillation Defenses to Shield Proprietary Model Data",
-      "image_type": "official_asset",
-      "image_credit": "Anthropic announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "OpenAI Introduces Native Wallet to Enable Agentic Purchasing",
+      "title": "Introducing ChatGPT Wallet",
       "link": "https://openai.com/index/introducing-chatgpt-wallet",
       "trend_type": "single_development",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "theme_relationship": null,
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 4,
+      "independent_publisher_count": 4,
+      "published_at": "2026-11-13T15:00:00+00:00",
+      "first_published_at": "2026-11-13T15:00:00+00:00",
+      "latest_updated_at": "2026-11-13T18:55:21+00:00",
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ Corroborated by 4 independent publishers (+15 evidence)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "ChatGPT Wallet provides an authorized payment path for agents in ChatGPT Work, Codex, and dots using existing card protections.",
+          "text": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
           "evidence": [
             {
-              "article_id": "art_openai_news_efccee7eaef5",
+              "article_id": "cluster_1",
               "canonical_url": "https://openai.com/index/introducing-chatgpt-wallet",
               "publisher_id": "openai",
               "publisher_group_id": "openai",
               "source_name": "OpenAI News",
               "trust_tier": 1,
               "is_official": true,
-              "source_type": "official",
               "supporting_excerpt": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 4,
+          "verification_status": "independently_corroborated"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "cluster_1",
+          "canonical_url": "https://openai.com/index/introducing-chatgpt-wallet",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "supporting_excerpt": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+          "text_verified": true
+        }
+      ],
+      "what_happened": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+      "what_changed": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Openai.",
+      "reported_facts": [
+        "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "who_affected": "Developers, Enterprise Decision Makers",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "status": "official_claim",
+      "evidence_article_ids": [
+        "cluster_1"
+      ],
+      "evidence_urls": [
+        "https://openai.com/index/introducing-chatgpt-wallet"
+      ],
+      "topic": "AI Agents",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
+      "evidence_status": "independently_corroborated",
+      "evidence_label": "Official announcement + 3 independent reports",
+      "independent_source_count": 4,
+      "key_points": [
+        "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections."
+      ],
+      "detailed_analysis": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Introducing ChatGPT Wallet",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+      "link": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
+      "trend_type": "single_development",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 1,
+      "independent_publisher_count": 1,
+      "published_at": "2026-11-13T23:22:09+00:00",
+      "first_published_at": "2026-11-13T23:22:09+00:00",
+      "latest_updated_at": "2026-11-13T23:22:09+00:00",
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+          "evidence": [
+            {
+              "article_id": "cluster_36",
+              "canonical_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
+              "publisher_id": "aws",
+              "publisher_group_id": "amazon",
+              "source_name": "AWS Machine Learning",
+              "trust_tier": 1,
+              "is_official": true,
+              "supporting_excerpt": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
               "text_verified": true
             }
           ],
@@ -639,113 +436,313 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "art_openai_news_efccee7eaef5",
-          "canonical_url": "https://openai.com/index/introducing-chatgpt-wallet",
-          "publisher_id": "openai",
-          "publisher_group_id": "openai",
-          "source_name": "OpenAI News",
+          "article_id": "cluster_36",
+          "canonical_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_name": "AWS Machine Learning",
           "trust_tier": 1,
           "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+          "supporting_excerpt": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
           "text_verified": true
         }
       ],
-      "what_happened": "OpenAI introduced ChatGPT Wallet to permit agents operating within ChatGPT Work, Codex, and dots to execute purchases with user approval.",
-      "what_changed": "OpenAI introduced ChatGPT Wallet to permit agents operating within ChatGPT Work, Codex, and dots to execute purchases with user approval.",
-      "why_it_matters": "Direct integration of payment infrastructure into autonomous agents enables end-to-end commercial operations while retaining existing cardholder safeguards.",
-      "who_affected": "Consumers, Developers, and Enterprises",
+      "what_happened": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+      "what_changed": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+      "why_it_matters": "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes.",
+      "reported_facts": [
+        "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+        "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes."
+      ],
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "potential_impact": "Impacts roadmap decisions across AI Agents.",
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "source": "OpenAI News",
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "who_affected": "Developers, Enterprise Decision Makers",
+      "source": "AWS Machine Learning",
       "tier": "Official Lab",
-      "status": "official_announcement",
+      "status": "official_claim",
       "evidence_article_ids": [
-        "art_openai_news_efccee7eaef5"
+        "cluster_36"
       ],
       "evidence_urls": [
-        "https://openai.com/index/introducing-chatgpt-wallet"
+        "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1"
       ],
-      "topic": "AI Agents",
-      "company": "openai",
-      "reading_time": "1 min read",
+      "topic": "Frontier Models",
+      "company": "amazon",
+      "reading_time": "15 min read",
       "audience_pills": [
-        "Consumers",
         "Developers",
-        "Enterprises"
+        "Enterprise Decision Makers"
       ],
       "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon."
       },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon.",
       "evidence_status": "official_announcement",
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI introduced ChatGPT Wallet to permit agents operating within ChatGPT Work, Codex, and dots to execute purchases with user approval.",
-        "Direct integration of payment infrastructure into autonomous agents enables end-to-end commercial operations while retaining existing cardholder safeguards."
+        "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+        "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes."
       ],
-      "detailed_analysis": "OpenAI introduced ChatGPT Wallet to permit agents operating within ChatGPT Work, Codex, and dots to execute purchases with user approval.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for OpenAI Introduces Native Wallet to Enable Agentic Purchasing",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
+      "detailed_analysis": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.\n\nThis post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/10/ML-21878-featured-image.png",
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/10/ML-21878-featured-image.png",
+      "image_alt": "Visual representation for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+      "image_type": "source_media",
+      "image_credit": "Source publication",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Anthropic Commits Equity to Public Benefit Fund Ahead of IPO Roadshow",
-      "link": "https://www.anthropic.com/news/public-benefit-fund",
-      "trend_type": "emerging_theme",
-      "article_type": "policy_regulation",
-      "signal_badge": "Security & Policy",
-      "theme_relationship": "Anthropic pairs corporate public-benefit commitments with preparations for public listing through an equity allocation fund and its IPO roadshow launch.",
+      "title": "Introducing Gemini 4 Hydrogen",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
+      "trend_type": "single_development",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 3,
+      "independent_publisher_count": 3,
+      "published_at": "2026-11-12T18:00:50+00:00",
+      "first_published_at": "2026-11-12T18:00:50+00:00",
+      "latest_updated_at": "2026-11-12T21:55:32+00:00",
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ Corroborated by 3 independent publishers (+15 evidence)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Anthropic is committing an initial 5% of shares to the Anthropic Public Benefit Fund, with discretionary 2% additions tied to valuation increases.",
+          "text": "Introducing Gemini 4 Hydrogen.",
           "evidence": [
             {
-              "article_id": "art_anthropic_news_a4f7bd1fdab9",
-              "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
-              "publisher_id": "anthropic",
-              "publisher_group_id": "anthropic",
-              "source_name": "Anthropic Official News",
+              "article_id": "cluster_29",
+              "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
+              "publisher_id": "google_deepmind",
+              "publisher_group_id": "google",
+              "source_name": "Google DeepMind",
               "trust_tier": 1,
               "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
-              "text_verified": false
+              "supporting_excerpt": "Introducing Gemini 4 Hydrogen.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 3,
+          "verification_status": "independently_corroborated"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "cluster_29",
+          "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
+          "publisher_id": "google_deepmind",
+          "publisher_group_id": "google",
+          "source_name": "Google DeepMind",
+          "trust_tier": 1,
+          "is_official": true,
+          "supporting_excerpt": "Introducing Gemini 4 Hydrogen.",
+          "text_verified": true
+        }
+      ],
+      "what_happened": "Introducing Gemini 4 Hydrogen.",
+      "what_changed": "Introducing Gemini 4 Hydrogen.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
+      "reported_facts": [
+        "Official development released and documented by Google DeepMind."
+      ],
+      "potential_impact": "Analytical Projection: Developments from Google may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "category": "Frontier Models",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "who_affected": "Developers, Enterprise Decision Makers",
+      "source": "Google DeepMind",
+      "tier": "Official Lab",
+      "status": "official_claim",
+      "evidence_article_ids": [
+        "cluster_29"
+      ],
+      "evidence_urls": [
+        "https://deepmind.google/blog/introducing-gemini-4-hydrogen"
+      ],
+      "topic": "Frontier Models",
+      "company": "google",
+      "reading_time": "7 min read",
+      "audience_pills": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
+      "evidence_status": "independently_corroborated",
+      "evidence_label": "Official announcement + 2 independent reports",
+      "independent_source_count": 3,
+      "key_points": [
+        "Strategic development announced in Frontier Models."
+      ],
+      "detailed_analysis": "Introducing Gemini 4 Hydrogen.",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
+      "image_alt": "Visual representation for Introducing Gemini 4 Hydrogen",
+      "image_type": "source_media",
+      "image_credit": "Source publication",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+      "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+      "trend_type": "single_development",
+      "article_type": "open_source_release",
+      "signal_badge": "Open Weights",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 1,
+      "independent_publisher_count": 1,
+      "published_at": "2026-11-14T09:45:45+00:00",
+      "first_published_at": "2026-11-14T09:45:45+00:00",
+      "latest_updated_at": "2026-11-14T09:45:45+00:00",
+      "score_reasons": [
+        "+ Open-weights / open-source capability release (+35 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+          "evidence": [
+            {
+              "article_id": "cluster_69",
+              "canonical_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+              "publisher_id": "the_decoder",
+              "publisher_group_id": "the_decoder",
+              "source_name": "The Decoder",
+              "trust_tier": 2,
+              "is_official": false,
+              "supporting_excerpt": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+              "text_verified": true
             }
           ],
           "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
+          "verification_status": "single_source"
+        }
+      ],
+      "evidence_objects": [
         {
-          "claim_id": "claim_2",
-          "text": "Anthropic has launched the roadshow for an IPO offering 825,000,000 shares of Class A common stock.",
+          "article_id": "cluster_69",
+          "canonical_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+          "publisher_id": "the_decoder",
+          "publisher_group_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust_tier": 2,
+          "is_official": false,
+          "supporting_excerpt": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+          "text_verified": true
+        }
+      ],
+      "what_happened": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+      "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+      "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
+      "reported_facts": [
+        "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+        "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
+      ],
+      "potential_impact": "Analytical Projection: Developments from engineering may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "category": "Open Source AI",
+      "category_confidence": 0.93,
+      "category_rationale": "Matched open weights release, open-source model repository, or self-hosted runtime tooling",
+      "who_affected": "Developers, Enterprise Decision Makers",
+      "source": "The Decoder",
+      "tier": "Independent Journalism",
+      "status": "source_linked",
+      "evidence_article_ids": [
+        "cluster_69"
+      ],
+      "evidence_urls": [
+        "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller"
+      ],
+      "topic": "Open Source AI",
+      "company": "default",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
+      "independent_source_count": 1,
+      "key_points": [
+        "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+        "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
+      ],
+      "detailed_analysis": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.\n\nThe model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Runway's open-source Praxis-1 turns video AI into a robot controller",
+      "image_type": "category_fallback",
+      "image_credit": "Open Source AI curation",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Distillation Defenses",
+      "link": "https://www.anthropic.com/news/distillation-defenses",
+      "trend_type": "single_development",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 1,
+      "independent_publisher_count": 1,
+      "published_at": null,
+      "first_published_at": "Recent",
+      "latest_updated_at": "Recent",
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Demonstrable technical significance: distillation (+8 tech)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "Official news announcement from Anthropic: Distillation Defenses.",
           "evidence": [
             {
-              "article_id": "art_anthropic_news_cc8c672cf033",
-              "canonical_url": "https://www.anthropic.com/news/roadshow-launch",
+              "article_id": "cluster_28",
+              "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
               "publisher_id": "anthropic",
               "publisher_group_id": "anthropic",
               "source_name": "Anthropic Official News",
               "trust_tier": 1,
               "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock. The proposed offering consists of 825,000,000 shares of Class A common stock.",
-              "text_verified": false
+              "supporting_excerpt": "Official news announcement from Anthropic: Distillation Defenses.",
+              "text_verified": true
             }
           ],
           "claim_corroboration": 1,
@@ -754,59 +751,49 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "art_anthropic_news_a4f7bd1fdab9",
-          "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
+          "article_id": "cluster_28",
+          "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
           "publisher_id": "anthropic",
           "publisher_group_id": "anthropic",
           "source_name": "Anthropic Official News",
           "trust_tier": 1,
           "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
-          "text_verified": false
-        },
-        {
-          "article_id": "art_anthropic_news_cc8c672cf033",
-          "canonical_url": "https://www.anthropic.com/news/roadshow-launch",
-          "publisher_id": "anthropic",
-          "publisher_group_id": "anthropic",
-          "source_name": "Anthropic Official News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock. The proposed offering consists of 825,000,000 shares of Class A common stock.",
-          "text_verified": false
+          "supporting_excerpt": "Official news announcement from Anthropic: Distillation Defenses.",
+          "text_verified": true
         }
       ],
-      "what_happened": "Anthropic pledged 5% of company shares to a dedicated Public Benefit Fund and initiated the roadshow for an initial public offering of 825 million Class A common shares.",
-      "what_changed": "Anthropic pledged 5% of company shares to a dedicated Public Benefit Fund and initiated the roadshow for an initial public offering of 825 million Class A common shares.",
-      "why_it_matters": "The parallel moves balance institutional governance and public-benefit covenants with access to public capital markets.",
-      "who_affected": "Enterprises and Consumers",
+      "what_happened": "Official news announcement from Anthropic: Distillation Defenses.",
+      "what_changed": "Official news announcement from Anthropic: Distillation Defenses.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Anthropic.",
+      "reported_facts": [
+        "Official news announcement from Anthropic: Distillation Defenses.",
+        "Official development released and documented by Anthropic Official News."
+      ],
+      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "potential_impact": "Impacts roadmap decisions across AI Business.",
-      "category": "AI Business",
-      "category_confidence": 0.92,
-      "category_rationale": "Matched institutional capital raises, startup valuation, earnings report, or M&A transaction",
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "who_affected": "Developers, Enterprise Decision Makers",
       "source": "Anthropic Official News",
       "tier": "Official Lab",
-      "status": "emerging_theme",
+      "status": "official_claim",
       "evidence_article_ids": [
-        "art_anthropic_news_a4f7bd1fdab9",
-        "art_anthropic_news_cc8c672cf033"
+        "cluster_28"
       ],
       "evidence_urls": [
-        "https://www.anthropic.com/news/public-benefit-fund",
-        "https://www.anthropic.com/news/roadshow-launch"
+        "https://www.anthropic.com/news/distillation-defenses"
       ],
-      "topic": "AI Business",
+      "topic": "Frontier Models",
       "company": "anthropic",
-      "reading_time": "1 min read",
+      "reading_time": "9 min read",
       "audience_pills": [
-        "Enterprises",
-        "Consumers"
+        "Developers",
+        "Enterprise Decision Makers"
       ],
       "audience_impact": {
         "target": "For practitioners & teams",
@@ -814,140 +801,22 @@
       },
       "target_audience": "For practitioners & teams",
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 2,
-      "evidence_status": "emerging_theme",
-      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "Anthropic pledged 5% of company shares to a dedicated Public Benefit Fund and initiated the roadshow for an initial public offering of 825 million Class A common shares.",
-        "The parallel moves balance institutional governance and public-benefit covenants with access to public capital markets."
+        "Official news announcement from Anthropic: Distillation Defenses."
       ],
-      "detailed_analysis": "Anthropic pledged 5% of company shares to a dedicated Public Benefit Fund and initiated the roadshow for an initial public offering of 825 million Class A common shares.",
+      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Commits Equity to Public Benefit Fund Ahead of IPO Roadshow",
+      "image_alt": "Visual representation for Distillation Defenses",
       "image_type": "official_asset",
       "image_credit": "Anthropic announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80"
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "top_stories": [
-    {
-      "id": "cluster_69",
-      "article_id": "cluster_69",
-      "article_url": "articles/cluster_69.json",
-      "publisher_id": "the_decoder",
-      "publisher_group_id": "the_decoder",
-      "article_type": "open_source_release",
-      "signal_badge": "Open Weights",
-      "impact_level": "Breakthrough",
-      "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
-      "one_liner": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
-      "summary": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
-      "ai_what_happened": "It can't yet plan complex action sequences on its own, though.",
-      "ai_key_details": [
-        "Primary documentation verified from The Decoder."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Runway's open-source Praxis-1 turns video AI into a robot controller from The Decoder.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Runway's open-source Praxis-1 turns video AI into a robot controller; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Runway's open-source Praxis-1 turns video AI into a robot controller capabilities from The Decoder directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
-      },
-      "ai_whats_new": "Delivers Runway's open-source Praxis-1 turns video AI into a robot controller as documented in verified primary release notes from The Decoder.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from The Decoder."
-      ],
-      "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
-      "original_source_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
-      "word_count": 38,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "Runway's open-source Praxis-1 turns video AI into a robot controller",
-        "word_count": 38,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-        "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
-      ],
-      "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-      "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from engineering may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Open Source AI",
-      "category_confidence": 0.93,
-      "category_rationale": "Matched open weights release, open-source model repository, or self-hosted runtime tooling",
-      "topic": "Open Source AI",
-      "source": "The Decoder",
-      "tier": "Independent Journalism",
-      "trust_tier": 2,
-      "is_official": false,
-      "published": "Nov 14, 09:45 UTC",
-      "published_at": "2026-11-14T09:45:45+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
-      "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Runway's open-source Praxis-1 turns video AI into a robot controller",
-      "image_type": "category_fallback",
-      "image_credit": "Open Source AI curation",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "default",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-        "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
-      ],
-      "detailed_analysis": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.\n\nThe model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-      "importance_score": 85,
-      "relevance_score": 95,
-      "freshness_score": 85,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 85,
-      "confidence_score": 85,
-      "pulse_score": 84.6,
-      "overall_score": 84.6,
-      "confidence_label": "medium",
-      "evidence_status": "single_source",
-      "evidence_label": "Single-Source Report",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Open-weights / open-source capability release (+35 impact)",
-        "+ Independent technology journalism desk (85 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
-      ],
-      "first_published_at": "2026-11-14T09:45:45+00:00",
-      "latest_updated_at": "2026-11-14T09:45:45+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
     {
       "id": "cluster_1",
       "article_id": "cluster_1",
@@ -1016,7 +885,7 @@
       "is_official": true,
       "published": "Nov 13, 15:00 UTC",
       "published_at": "2026-11-13T15:00:00+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://openai.com/index/introducing-chatgpt-wallet",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1038,7 +907,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 95,
       "popularity_score": 95,
       "source_quality_score": 100,
@@ -1182,7 +1051,7 @@
       "is_official": true,
       "published": "Nov 13, 23:22 UTC",
       "published_at": "2026-11-13T23:22:09+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/10/ML-21878-featured-image.png",
       "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/10/ML-21878-featured-image.png",
@@ -1301,7 +1170,7 @@
       "is_official": true,
       "published": "Nov 13, 22:30 UTC",
       "published_at": "2026-11-13T22:30:12+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/11/ML-22318-featured-image.png",
       "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/11/ML-22318-featured-image.png",
@@ -1502,7 +1371,7 @@
       "is_official": true,
       "published": "Nov 13, 21:53 UTC",
       "published_at": "2026-11-13T21:53:40+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1525,7 +1394,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1620,7 +1489,7 @@
       "is_official": true,
       "published": "Nov 12, 18:00 UTC",
       "published_at": "2026-11-12T18:00:50+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
@@ -1691,6 +1560,121 @@
         }
       ],
       "covered_by_sources_count": 3
+    },
+    {
+      "id": "cluster_69",
+      "article_id": "cluster_69",
+      "article_url": "articles/cluster_69.json",
+      "publisher_id": "the_decoder",
+      "publisher_group_id": "the_decoder",
+      "article_type": "open_source_release",
+      "signal_badge": "Open Weights",
+      "impact_level": "Breakthrough",
+      "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+      "one_liner": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+      "summary": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+      "ai_what_happened": "It can't yet plan complex action sequences on its own, though.",
+      "ai_key_details": [
+        "Primary documentation verified from The Decoder."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Runway's open-source Praxis-1 turns video AI into a robot controller from The Decoder.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Runway's open-source Praxis-1 turns video AI into a robot controller; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Runway's open-source Praxis-1 turns video AI into a robot controller capabilities from The Decoder directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
+      },
+      "ai_whats_new": "Delivers Runway's open-source Praxis-1 turns video AI into a robot controller as documented in verified primary release notes from The Decoder.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from The Decoder."
+      ],
+      "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
+      "original_source_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+      "word_count": 38,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+        "word_count": 38,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+        "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
+      ],
+      "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+      "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from engineering may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Open Source AI",
+      "category_confidence": 0.93,
+      "category_rationale": "Matched open weights release, open-source model repository, or self-hosted runtime tooling",
+      "topic": "Open Source AI",
+      "source": "The Decoder",
+      "tier": "Independent Journalism",
+      "trust_tier": 2,
+      "is_official": false,
+      "published": "Nov 14, 09:45 UTC",
+      "published_at": "2026-11-14T09:45:45+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
+      "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Runway's open-source Praxis-1 turns video AI into a robot controller",
+      "image_type": "category_fallback",
+      "image_credit": "Open Source AI curation",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "default",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
+        "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
+      ],
+      "detailed_analysis": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.\n\nThe model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+      "importance_score": 85,
+      "relevance_score": 95,
+      "freshness_score": 70,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 85,
+      "confidence_score": 85,
+      "pulse_score": 84.6,
+      "overall_score": 84.6,
+      "confidence_label": "medium",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Open-weights / open-source capability release (+35 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
+      ],
+      "first_published_at": "2026-11-14T09:45:45+00:00",
+      "latest_updated_at": "2026-11-14T09:45:45+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
     },
     {
       "id": "cluster_28",
@@ -1764,7 +1748,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1879,7 +1863,7 @@
       "is_official": false,
       "published": "Nov 12, 18:39 UTC",
       "published_at": "2026-11-12T18:39:23+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -1995,7 +1979,7 @@
       "is_official": true,
       "published": "Nov 10, 12:02 UTC",
       "published_at": "2026-11-10T12:02:28+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://deepmind.google/blog/introducing-alphaproof-code",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2112,7 +2096,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -2230,7 +2214,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -2347,7 +2331,7 @@
       "is_official": true,
       "published": "Nov 10, 16:03 UTC",
       "published_at": "2026-11-10T16:03:47+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
@@ -2474,7 +2458,7 @@
       "is_official": true,
       "published": "Nov 12, 00:00 UTC",
       "published_at": "2026-11-12T00:00:00+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://openai.com/index/children-first-declaration",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2589,7 +2573,7 @@
       "is_official": true,
       "published": "Nov 11, 08:00 UTC",
       "published_at": "2026-11-11T08:00:00+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://openai.com/index/chatgpt-plus-for-veterans",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2704,7 +2688,7 @@
       "is_official": false,
       "published": "Nov 13, 18:40 UTC",
       "published_at": "2026-11-13T18:40:30+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -2726,7 +2710,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Nvidia.",
       "importance_score": 80,
       "relevance_score": 70,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -2817,7 +2801,7 @@
       "is_official": false,
       "published": "Nov 13, 18:01 UTC",
       "published_at": "2026-11-13T18:01:53+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://the-decoder.com/banks-bar-chinese-and-hong-kong-investors-from-anthropic-ipo-over-us-export-controls",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2840,7 +2824,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Anthropic.",
       "importance_score": 80,
       "relevance_score": 70,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -2933,7 +2917,7 @@
       "is_official": true,
       "published": "Nov 13, 18:01 UTC",
       "published_at": "2026-11-13T18:01:15+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2955,7 +2939,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3047,7 +3031,7 @@
       "is_official": true,
       "published": "Nov 12, 19:29 UTC",
       "published_at": "2026-11-12T19:29:55+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/tokenomics-at-scale-track-and-cap-amazon-bedrock-spend-per-iam-principal-with-cur-2-0-and-aws-budgets",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3164,7 +3148,7 @@
       "is_official": true,
       "published": "Nov 13, 19:35 UTC",
       "published_at": "2026-11-13T19:35:35+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3186,7 +3170,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3278,7 +3262,7 @@
       "is_official": true,
       "published": "Nov 12, 22:03 UTC",
       "published_at": "2026-11-12T22:03:34+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3397,7 +3381,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3438,120 +3422,6 @@
       ],
       "first_published_at": "Recent",
       "latest_updated_at": "Recent",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_12",
-      "article_id": "cluster_12",
-      "article_url": "articles/cluster_12.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Work at the Frontier: AI\u2019s effect on freelance work",
-      "one_liner": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-      "summary": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-      "ai_what_happened": "OpenAI News published verified documentation on Work at the Frontier: AI\u2019s effect on freelance work.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Work at the Frontier: AI\u2019s effect on freelance work from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Work at the Frontier: AI\u2019s effect on freelance work; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Work at the Frontier: AI\u2019s effect on freelance work capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers Work at the Frontier: AI\u2019s effect on freelance work as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://openai.com/index/ai-effect-on-freelance-work",
-      "word_count": 24,
-      "extraction_status": "cached_fallback",
-      "content_hash": "40e2ca8833c35809",
-      "extracted_content": {
-        "headline": "Work at the Frontier: AI\u2019s effect on freelance work",
-        "word_count": 24,
-        "reading_time": "1 min read",
-        "extraction_status": "cached_fallback",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 10, 07:00 UTC",
-      "published_at": "2026-11-10T07:00:00+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
-      "link": "https://openai.com/index/ai-effect-on-freelance-work",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Work at the Frontier: AI\u2019s effect on freelance work",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects."
-      ],
-      "detailed_analysis": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-      "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
-      },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 25,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-10T07:00:00+00:00",
-      "latest_updated_at": "2026-11-10T07:00:00+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
       "related_sources": [],
@@ -3625,7 +3495,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3668,6 +3538,120 @@
       "latest_updated_at": "Recent",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_12",
+      "article_id": "cluster_12",
+      "article_url": "articles/cluster_12.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Work at the Frontier: AI\u2019s effect on freelance work",
+      "one_liner": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+      "summary": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+      "ai_what_happened": "OpenAI News published verified documentation on Work at the Frontier: AI\u2019s effect on freelance work.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Work at the Frontier: AI\u2019s effect on freelance work from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Work at the Frontier: AI\u2019s effect on freelance work; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Work at the Frontier: AI\u2019s effect on freelance work capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers Work at the Frontier: AI\u2019s effect on freelance work as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+      "original_source_url": "https://openai.com/index/ai-effect-on-freelance-work",
+      "word_count": 24,
+      "extraction_status": "cached_fallback",
+      "content_hash": "40e2ca8833c35809",
+      "extracted_content": {
+        "headline": "Work at the Frontier: AI\u2019s effect on freelance work",
+        "word_count": 24,
+        "reading_time": "1 min read",
+        "extraction_status": "cached_fallback",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 10, 07:00 UTC",
+      "published_at": "2026-11-10T07:00:00+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
+      "link": "https://openai.com/index/ai-effect-on-freelance-work",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Work at the Frontier: AI\u2019s effect on freelance work",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects."
+      ],
+      "detailed_analysis": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 25,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-10T07:00:00+00:00",
+      "latest_updated_at": "2026-11-10T07:00:00+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
       "related_sources": [],
       "covered_by_sources_count": 1
     },
@@ -3738,7 +3722,7 @@
       "is_official": true,
       "published": "Nov 13, 18:00 UTC",
       "published_at": "2026-11-13T18:00:39+00:00",
-      "last_fetched_at": "2026-11-15T02:49:30.107886+00:00",
+      "last_fetched_at": "2026-11-15T09:58:16.866298+00:00",
       "link": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3760,7 +3744,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Huggingface workflows.",
       "importance_score": 45,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3788,73 +3772,6 @@
   ],
   "trending": [],
   "pulse_items": [
-    {
-      "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
-      "topic": "Open Source AI",
-      "category": "Open Source AI",
-      "article_type": "open_source_release",
-      "signal_badge": "Open Weights",
-      "company": "default",
-      "published": "Nov 14, 09:45 UTC",
-      "published_at": "2026-11-14T09:45:45+00:00",
-      "first_published_at": "2026-11-14T09:45:45+00:00",
-      "latest_updated_at": "2026-11-14T09:45:45+00:00",
-      "what_happened": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-      "what_changed": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-      "one_liner": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
-      "summary": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
-      "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
-      "potential_impact": "Analytical Projection: Developments from engineering may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.\n\nThe model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark.",
-      "key_points": [
-        "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license.",
-        "The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark."
-      ],
-      "link": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
-      "source": "The Decoder",
-      "tier": "Independent Journalism",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Introducing ChatGPT Wallet",
-      "topic": "AI Agents",
-      "category": "AI Agents",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "company": "openai",
-      "published": "Nov 13, 15:00 UTC",
-      "published_at": "2026-11-13T15:00:00+00:00",
-      "first_published_at": "2026-11-13T15:00:00+00:00",
-      "latest_updated_at": "2026-11-13T18:55:21+00:00",
-      "what_happened": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
-      "what_changed": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
-      "one_liner": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
-      "summary": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Openai.",
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
-      "key_points": [
-        "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections."
-      ],
-      "link": "https://openai.com/index/introducing-chatgpt-wallet",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
-      },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
-    },
     {
       "title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
       "topic": "Frontier Models",
@@ -3922,6 +3839,73 @@
       "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Nvidia.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/11/ML-22318-featured-image.png",
       "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/11/ML-22318-featured-image.png"
+    },
+    {
+      "title": "OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures",
+      "topic": "AI Infrastructure",
+      "category": "AI Infrastructure",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "company": "amazon",
+      "published": "Nov 13, 21:53 UTC",
+      "published_at": "2026-11-13T21:53:40+00:00",
+      "first_published_at": "2026-11-13T21:53:40+00:00",
+      "latest_updated_at": "2026-11-13T21:53:40+00:00",
+      "what_happened": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account.",
+      "what_changed": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account.",
+      "one_liner": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account. The post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost.",
+      "summary": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account. The post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost.",
+      "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
+      "potential_impact": "Analytical Projection: Compute scaling from Amazon may influence production latency profiles and hardware utilization benchmarks.",
+      "detailed_analysis": "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account.\n\nThe post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost.",
+      "key_points": [
+        "Deploy OpenFold3-preview from Amazon SageMaker JumpStart to predict 3D structures of proteins, DNA, RNA, and ligand complexes in your own AWS account.",
+        "The post covers asynchronous model reasoning, multi-GPU parallelism, bringing your own MSAs for accuracy and privacy, and scaling to zero to reduce cost."
+      ],
+      "link": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Introducing Gemini 4 Hydrogen",
+      "topic": "Frontier Models",
+      "category": "Frontier Models",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "company": "google",
+      "published": "Nov 12, 18:00 UTC",
+      "published_at": "2026-11-12T18:00:50+00:00",
+      "first_published_at": "2026-11-12T18:00:50+00:00",
+      "latest_updated_at": "2026-11-12T21:55:32+00:00",
+      "what_happened": "Introducing Gemini 4 Hydrogen.",
+      "what_changed": "Introducing Gemini 4 Hydrogen.",
+      "one_liner": "Introducing Gemini 4 Hydrogen.",
+      "summary": "Introducing Gemini 4 Hydrogen.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
+      "potential_impact": "Analytical Projection: Developments from Google may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "Introducing Gemini 4 Hydrogen.",
+      "key_points": [
+        "Strategic development announced in Frontier Models."
+      ],
+      "link": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
+      "source": "Google DeepMind",
+      "tier": "Official Lab",
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg"
     }
   ],
   "developer_trends": [
@@ -3931,8 +3915,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 263425,
-      "forks": 59376,
+      "stars": 263497,
+      "forks": 59392,
       "language": "Python",
       "topics": [
         "ai",
@@ -3943,13 +3927,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 203,
-      "stars_gained_7d": 1893,
+      "stars_gained_24h": 231,
+      "stars_gained_7d": 1907,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+203); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+231); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-15T02:30:53Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
+      "updated_at": "2026-11-15T09:15:34Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3957,8 +3941,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 82604,
-      "forks": 15130,
+      "stars": 82648,
+      "forks": 15135,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3969,13 +3953,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 200,
-      "stars_gained_7d": 1649,
+      "stars_gained_24h": 211,
+      "stars_gained_7d": 1641,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+200); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+211); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-15T02:24:47Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
+      "updated_at": "2026-11-15T09:39:55Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3983,8 +3967,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 72277,
-      "forks": 57490,
+      "stars": 72348,
+      "forks": 57516,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3995,13 +3979,13 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": 704,
-      "stars_gained_7d": 4485,
+      "stars_gained_24h": 487,
+      "stars_gained_7d": 4426,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+704); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+487); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
-      "updated_at": "2026-11-14T14:48:39Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
+      "updated_at": "2026-11-15T08:27:24Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -4009,8 +3993,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 460036,
-      "forks": 112752,
+      "stars": 460687,
+      "forks": 112881,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -4021,13 +4005,39 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 2407,
-      "stars_gained_7d": 18789,
+      "stars_gained_24h": 2534,
+      "stars_gained_7d": 18675,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+2407); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+2534); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-15T02:34:53Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
+      "updated_at": "2026-11-15T09:58:12Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "stars": 303428,
+      "forks": 44733,
+      "language": "JavaScript",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm"
+      ],
+      "license": "MIT",
+      "stars_gained_24h": 870,
+      "stars_gained_7d": 4069,
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+870); Active commit activity in the last 24h.",
+      "created_at": "2026-01-18T00:51:51Z",
+      "updated_at": "2026-11-15T06:48:46Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
     },
     {
       "repository": "n8n-io/n8n",
@@ -4035,8 +4045,8 @@
       "owner": "n8n-io",
       "url": "https://github.com/n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 210520,
-      "forks": 61517,
+      "stars": 210557,
+      "forks": 61527,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -4047,13 +4057,13 @@
         "development"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 107,
-      "stars_gained_7d": 740,
+      "stars_gained_24h": 126,
+      "stars_gained_7d": 755,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+107); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+126); Active commit activity in the last 24h.",
       "created_at": "2019-06-22T09:24:21Z",
-      "updated_at": "2026-11-15T02:36:24Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
+      "updated_at": "2026-11-15T03:47:55Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -4061,8 +4071,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 113955,
-      "forks": 18904,
+      "stars": 114005,
+      "forks": 18910,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -4073,13 +4083,13 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 262,
-      "stars_gained_7d": 1908,
+      "stars_gained_24h": 257,
+      "stars_gained_7d": 1873,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+262); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+257); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-15T02:46:28Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
+      "updated_at": "2026-11-15T09:56:32Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
     },
     {
       "repository": "f/prompts.chat",
@@ -4087,8 +4097,8 @@
       "owner": "f",
       "url": "https://github.com/f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
-      "stars": 177387,
-      "forks": 22612,
+      "stars": 177459,
+      "forks": 22620,
       "language": "MDX",
       "topics": [
         "ai",
@@ -4099,39 +4109,13 @@
         "claude"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 295,
-      "stars_gained_7d": 1125,
+      "stars_gained_24h": 317,
+      "stars_gained_7d": 1098,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+295); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+317); Active commit activity in the last 24h.",
       "created_at": "2022-12-05T13:54:13Z",
-      "updated_at": "2026-11-14T07:10:54Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
-    },
-    {
-      "repository": "open-webui/open-webui",
-      "name": "open-webui",
-      "owner": "open-webui",
-      "url": "https://github.com/open-webui/open-webui",
-      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 158669,
-      "forks": 23071,
-      "language": "Svelte",
-      "topics": [
-        "ai",
-        "llm",
-        "llm-ui",
-        "llm-webui",
-        "llms",
-        "mcp"
-      ],
-      "license": "NOASSERTION",
-      "stars_gained_24h": 84,
-      "stars_gained_7d": 619,
-      "developer_trend_score": 98.1,
-      "score_explanation": "Rapid 24h adoption (+84 stars); Active commit activity in the last 24h.",
-      "created_at": "2023-10-06T22:08:27Z",
-      "updated_at": "2026-11-14T16:17:23Z",
-      "collected_at": "2026-11-15T02:49:27.240897+00:00"
+      "updated_at": "2026-11-15T07:04:27Z",
+      "collected_at": "2026-11-15T09:58:13.928627+00:00"
     }
   ],
   "source_health_summary": {
@@ -4151,8 +4135,8 @@
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-15T02:45:05.826424+00:00",
-      "last_success_at": "2026-11-15T02:45:05.826424+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.104646+00:00",
+      "last_success_at": "2026-11-15T09:58:09.104646+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1387,
@@ -4163,8 +4147,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-15T02:45:05.827003+00:00",
-      "last_success_at": "2026-11-15T02:45:05.827003+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.105268+00:00",
+      "last_success_at": "2026-11-15T09:58:09.105268+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -4175,8 +4159,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-15T02:45:05.827296+00:00",
-      "last_success_at": "2026-11-15T02:45:05.827296+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.105586+00:00",
+      "last_success_at": "2026-11-15T09:58:09.105586+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -4187,8 +4171,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-15T02:45:05.827639+00:00",
-      "last_success_at": "2026-11-15T02:45:05.827639+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.105952+00:00",
+      "last_success_at": "2026-11-15T09:58:09.105952+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -4199,8 +4183,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-15T02:45:05.828059+00:00",
-      "last_success_at": "2026-11-15T02:45:05.828059+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.106564+00:00",
+      "last_success_at": "2026-11-15T09:58:09.106564+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 20,
@@ -4211,8 +4195,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-15T02:45:05.833256+00:00",
-      "last_success_at": "2026-11-15T02:45:05.833256+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.108570+00:00",
+      "last_success_at": "2026-11-15T09:58:09.108570+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 907,
@@ -4223,8 +4207,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-15T02:45:05.833606+00:00",
-      "last_success_at": "2026-11-15T02:45:05.833606+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.110577+00:00",
+      "last_success_at": "2026-11-15T09:58:09.110577+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -4235,10 +4219,10 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-15T02:45:05.834167+00:00",
-      "last_success_at": "2026-11-15T02:45:05.834167+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.112580+00:00",
+      "last_success_at": "2026-11-15T09:58:09.112580+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 6,
       "error_type": null,
@@ -4247,10 +4231,10 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-15T02:45:05.834417+00:00",
-      "last_success_at": "2026-11-15T02:45:05.834417+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.115267+00:00",
+      "last_success_at": "2026-11-15T09:58:09.115267+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 20,
       "articles_accepted": 14,
       "error_type": null,
@@ -4259,10 +4243,10 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-15T02:45:05.835178+00:00",
-      "last_success_at": "2026-11-15T02:45:05.835178+00:00",
+      "last_attempt_at": "2026-11-15T09:58:09.116204+00:00",
+      "last_success_at": "2026-11-15T09:58:09.116204+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 9,
       "error_type": null,
