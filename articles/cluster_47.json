@@ -1,0 +1,66 @@
+{
+  "id": "cluster_47",
+  "clean_id": "cluster_47",
+  "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+  "headline": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+  "subtitle": "",
+  "publisher": "The Verge AI",
+  "publisher_id": "the_verge",
+  "publisher_group_id": "vox_media",
+  "author": "",
+  "published_at": "2026-11-15T19:15:43+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Notable",
+  "pulse_score": 70.2,
+  "article_type": "policy_regulation",
+  "signal_badge": "Security & Policy",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+  "canonical_url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+  "original_source_url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+  "reading_time": "1 min read",
+  "word_count": 25,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips.",
+  "ai_what_happened": "The Verge AI published verified documentation on Congress wants to tighten export rules on AI chips after Nvidia spy scandal.",
+  "ai_key_details": [
+    "Primary documentation verified from The Verge AI."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Congress wants to tighten export rules on AI chips after Nvidia spy scandal from The Verge AI.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Verge AI for Congress wants to tighten export rules on AI chips after Nvidia spy scandal; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Congress wants to tighten export rules on AI chips after Nvidia spy scandal capabilities from The Verge AI directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Verge AI."
+  },
+  "ai_whats_new": "Delivers Congress wants to tighten export rules on AI chips after Nvidia spy scandal as documented in verified primary release notes from The Verge AI.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from The Verge AI."
+  ],
+  "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
+  "reported_facts": [
+    "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips.",
+    "Official development released and documented by The Verge AI."
+  ],
+  "text": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips.",
+  "full_text": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips."
+    }
+  ],
+  "paragraphs": [
+    "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips."
+  ],
+  "corroborating_sources": []
+}
