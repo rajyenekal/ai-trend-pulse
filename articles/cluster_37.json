@@ -1,16 +1,16 @@
 {
   "id": "cluster_37",
   "clean_id": "cluster_37",
-  "title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
-  "headline": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
+  "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
+  "headline": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-13T22:30:12+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
+  "published_at": "2026-11-16T17:29:29+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
   "impact_level": "Breakthrough",
   "pulse_score": 86.8,
   "article_type": "frontier_launch",
@@ -18,49 +18,49 @@
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
-  "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
   "reading_time": "1 min read",
-  "word_count": 54,
+  "word_count": 12,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard.",
+  "ai_overview": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.",
-    "In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines."
+    "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+    "Official development released and documented by AWS Machine Learning."
   ],
-  "text": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
-  "full_text": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
+  "text": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+  "full_text": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines."
+      "content": "Legacy mainframe Assembler applications are costly to maintain and hard to staff."
     }
   ],
   "paragraphs": [
-    "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines."
+    "Legacy mainframe Assembler applications are costly to maintain and hard to staff."
   ],
   "corroborating_sources": []
 }

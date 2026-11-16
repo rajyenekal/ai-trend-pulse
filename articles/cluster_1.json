@@ -1,66 +1,66 @@
 {
   "id": "cluster_1",
   "clean_id": "cluster_1",
-  "title": "A step toward defining the Standard Model on a lattice",
-  "headline": "A step toward defining the Standard Model on a lattice",
+  "title": "Broadening access to AI for scientists",
+  "headline": "Broadening access to AI for scientists",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-15T22:00:01+00:00",
+  "published_at": "2026-11-16T17:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
-  "pulse_score": 86.8,
+  "pulse_score": 93.5,
   "article_type": "frontier_launch",
   "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/step-toward-defining-the-standard-model",
-  "canonical_url": "https://openai.com/index/step-toward-defining-the-standard-model",
-  "original_source_url": "https://openai.com/index/step-toward-defining-the-standard-model",
+  "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+  "canonical_url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+  "original_source_url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
   "reading_time": "1 min read",
-  "word_count": 22,
-  "extraction_status": "cached_fallback",
-  "content_hash": "58b07772f37cf5d3",
+  "word_count": 19,
+  "extraction_status": "fallback_summary",
+  "content_hash": "ce6a17accab016a4",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
-  "ai_what_happened": "OpenAI News published verified documentation on A step toward defining the Standard Model on a lattice.",
+  "ai_overview": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+  "ai_what_happened": "OpenAI News published verified documentation on Broadening access to AI for scientists.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for A step toward defining the Standard Model on a lattice from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for A step toward defining the Standard Model on a lattice; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Broadening access to AI for scientists from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Broadening access to AI for scientists; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate A step toward defining the Standard Model on a lattice capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Broadening access to AI for scientists capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers A step toward defining the Standard Model on a lattice as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Broadening access to AI for scientists as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+    "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
-  "full_text": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+  "text": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+  "full_text": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof."
+      "content": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models."
     }
   ],
   "paragraphs": [
-    "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof."
+    "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models."
   ],
   "corroborating_sources": []
 }
