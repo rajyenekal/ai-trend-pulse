@@ -1,14 +1,14 @@
 {
   "id": "cluster_40",
   "clean_id": "cluster_40",
-  "title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
-  "headline": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+  "title": "Getting AI out of the demo and into businesses globally",
+  "headline": "Getting AI out of the demo and into businesses globally",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-13T23:22:09+00:00",
+  "published_at": "2026-11-17T19:05:22+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -19,48 +19,49 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
+  "url": "https://aws.amazon.com/blogs/machine-learning/getting-ai-out-of-the-demo-and-into-businesses-globally",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/getting-ai-out-of-the-demo-and-into-businesses-globally",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/getting-ai-out-of-the-demo-and-into-businesses-globally",
   "reading_time": "1 min read",
-  "word_count": 48,
+  "word_count": 20,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1.",
+  "ai_overview": "Most enterprises have AI that works in a demo but stalls before production. AWS Forward Deployed Engineering closes that gap.",
+  "ai_what_happened": "AWS engineers embed with customer teams to take high-value workflows to production in 45-day sprints, leaving a foundation, workflows, and governance the customer owns.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Getting AI out of the demo and into businesses globally from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Getting AI out of the demo and into businesses globally; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Getting AI out of the demo and into businesses globally capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Getting AI out of the demo and into businesses globally as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
-    "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes."
+    "Most enterprises have AI that works in a demo but stalls before production.",
+    "AWS Forward Deployed Engineering closes that gap.",
+    "AWS engineers embed with customer teams to take high-value workflows to production in 45-day sprints, leaving a foundation, workflows, and governance the customer owns."
   ],
-  "text": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
-  "full_text": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
+  "text": "Most enterprises have AI that works in a demo but stalls before production. AWS Forward Deployed Engineering closes that gap.",
+  "full_text": "Most enterprises have AI that works in a demo but stalls before production. AWS Forward Deployed Engineering closes that gap.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes."
+      "content": "Most enterprises have AI that works in a demo but stalls before production. AWS Forward Deployed Engineering closes that gap."
     }
   ],
   "paragraphs": [
-    "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes."
+    "Most enterprises have AI that works in a demo but stalls before production. AWS Forward Deployed Engineering closes that gap."
   ],
   "corroborating_sources": []
 }

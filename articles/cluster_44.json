@@ -1,65 +1,66 @@
 {
   "id": "cluster_44",
   "clean_id": "cluster_44",
-  "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
-  "headline": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+  "title": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
+  "headline": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
   "subtitle": "",
-  "publisher": "Hugging Face Blog",
-  "publisher_id": "huggingface",
-  "publisher_group_id": "huggingface",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "aws",
+  "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-16T00:00:00+00:00",
-  "category": "Open Source AI",
-  "topic": "Open Source AI",
-  "impact_level": "Notable",
-  "pulse_score": 57.9,
-  "article_type": "research_paper",
-  "signal_badge": "Research Paper",
-  "trust_tier": 3,
-  "tier": "Open Research",
+  "published_at": "2026-11-16T21:53:46+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
+  "trust_tier": 1,
+  "tier": "Official Lab",
   "is_official": true,
-  "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://huggingface.co/blog/openrouter",
-  "canonical_url": "https://huggingface.co/blog/openrouter",
-  "original_source_url": "https://huggingface.co/blog/openrouter",
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
   "reading_time": "1 min read",
-  "word_count": 13,
+  "word_count": 41,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Hugging Face and OpenRouter join forces to make open-weight models easy to run.",
-  "ai_what_happened": "Hugging Face Blog published verified documentation on Hugging Face and OpenRouter join forces to make open-weight models easy to run.",
+  "ai_overview": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing.",
   "ai_key_details": [
-    "Primary documentation verified from Hugging Face Blog."
+    "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Hugging Face and OpenRouter join forces to make open-weight models easy to run from Hugging Face Blog.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for Hugging Face and OpenRouter join forces to make open-weight models easy to run; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Hugging Face and OpenRouter join forces to make open-weight models easy to run capabilities from Hugging Face Blog directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Hugging Face Blog."
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Hugging Face and OpenRouter join forces to make open-weight models easy to run as documented in verified primary release notes from Hugging Face Blog.",
+  "ai_whats_new": "Delivers Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
-    "Primary documentation available from Hugging Face Blog."
+    "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Preprint & open research status: Technical claims and evaluation baselines from Hugging Face Blog have not completed formal peer review or broad independent reproduction.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "Official development released and documented by Hugging Face Blog."
+    "Multi-agent coordination is a distributed systems problem, not a model problem.",
+    "This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
   ],
-  "text": "Hugging Face and OpenRouter join forces to make open-weight models easy to run.",
-  "full_text": "Hugging Face and OpenRouter join forces to make open-weight models easy to run.",
+  "text": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
+  "full_text": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Hugging Face and OpenRouter join forces to make open-weight models easy to run."
+      "content": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
     }
   ],
   "paragraphs": [
-    "Hugging Face and OpenRouter join forces to make open-weight models easy to run."
+    "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
   ],
   "corroborating_sources": []
 }
