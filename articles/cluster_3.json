@@ -1,66 +1,66 @@
 {
   "id": "cluster_3",
   "clean_id": "cluster_3",
-  "title": "Science at the Frontier: How scientists use ChatGPT",
-  "headline": "Science at the Frontier: How scientists use ChatGPT",
+  "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+  "headline": "Strengthening the fight against online child sexual abuse with new tools and support",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-16T12:00:00+00:00",
+  "published_at": "2026-11-16T17:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
-  "impact_level": "Breakthrough",
-  "pulse_score": 86.8,
-  "article_type": "frontier_launch",
-  "signal_badge": "Frontier Launch",
+  "impact_level": "Major",
+  "pulse_score": 77.2,
+  "article_type": "security_vulnerability",
+  "signal_badge": "Security & Policy",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/science-at-the-frontier",
-  "canonical_url": "https://openai.com/index/science-at-the-frontier",
-  "original_source_url": "https://openai.com/index/science-at-the-frontier",
+  "url": "https://openai.com/index/strengthening-online-child-safety",
+  "canonical_url": "https://openai.com/index/strengthening-online-child-safety",
+  "original_source_url": "https://openai.com/index/strengthening-online-child-safety",
   "reading_time": "1 min read",
-  "word_count": 21,
-  "extraction_status": "cached_fallback",
-  "content_hash": "e159f14d9d884220",
+  "word_count": 19,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
-  "ai_what_happened": "OpenAI News published verified documentation on Science at the Frontier: How scientists use ChatGPT.",
+  "ai_overview": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
+  "ai_what_happened": "OpenAI News published verified documentation on Strengthening the fight against online child sexual abuse with new tools and support.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Science at the Frontier: How scientists use ChatGPT from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Science at the Frontier: How scientists use ChatGPT; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Strengthening the fight against online child sexual abuse with new tools and support from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Strengthening the fight against online child sexual abuse with new tools and support; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Science at the Frontier: How scientists use ChatGPT capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Strengthening the fight against online child sexual abuse with new tools and support capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Science at the Frontier: How scientists use ChatGPT as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Strengthening the fight against online child sexual abuse with new tools and support as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "Explore how more than 1,800 scientists use ChatGPT in research.",
-    "See findings on daily workflows, reported productivity, and expectations for discovery."
+    "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
+    "Official development released and documented by OpenAI News."
   ],
-  "text": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
-  "full_text": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
+  "text": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
+  "full_text": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
   "sections": [
     {
-      "heading": "Summary",
-      "content": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery."
+      "heading": "Main Context",
+      "content": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse."
     }
   ],
   "paragraphs": [
-    "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery."
+    "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse."
   ],
   "corroborating_sources": []
 }

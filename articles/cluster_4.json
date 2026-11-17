@@ -1,14 +1,14 @@
 {
   "id": "cluster_4",
   "clean_id": "cluster_4",
-  "title": "LVMH\u2019s Media Division announces strategic partnership with OpenAI",
-  "headline": "LVMH\u2019s Media Division announces strategic partnership with OpenAI",
+  "title": "Science at the Frontier: How scientists use ChatGPT",
+  "headline": "Science at the Frontier: How scientists use ChatGPT",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-16T09:00:00+00:00",
+  "published_at": "2026-11-16T12:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/lvmh-media-division-partnership",
-  "canonical_url": "https://openai.com/index/lvmh-media-division-partnership",
-  "original_source_url": "https://openai.com/index/lvmh-media-division-partnership",
+  "url": "https://openai.com/index/science-at-the-frontier",
+  "canonical_url": "https://openai.com/index/science-at-the-frontier",
+  "original_source_url": "https://openai.com/index/science-at-the-frontier",
   "reading_time": "1 min read",
   "word_count": 21,
   "extraction_status": "cached_fallback",
-  "content_hash": "0e85005a788cf1e3",
+  "content_hash": "e159f14d9d884220",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "LVMH\u2019s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.",
-  "ai_what_happened": "OpenAI News published verified documentation on LVMH\u2019s Media Division announces strategic partnership with OpenAI.",
+  "ai_overview": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
+  "ai_what_happened": "OpenAI News published verified documentation on Science at the Frontier: How scientists use ChatGPT.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for LVMH\u2019s Media Division announces strategic partnership with OpenAI from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for LVMH\u2019s Media Division announces strategic partnership with OpenAI; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Science at the Frontier: How scientists use ChatGPT from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Science at the Frontier: How scientists use ChatGPT; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate LVMH\u2019s Media Division announces strategic partnership with OpenAI capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Science at the Frontier: How scientists use ChatGPT capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers LVMH\u2019s Media Division announces strategic partnership with OpenAI as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Science at the Frontier: How scientists use ChatGPT as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "LVMH\u2019s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.",
-    "Official development released and documented by OpenAI News."
+    "Explore how more than 1,800 scientists use ChatGPT in research.",
+    "See findings on daily workflows, reported productivity, and expectations for discovery."
   ],
-  "text": "LVMH\u2019s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.",
-  "full_text": "LVMH\u2019s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.",
+  "text": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
+  "full_text": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "LVMH\u2019s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT."
+      "content": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery."
     }
   ],
   "paragraphs": [
-    "LVMH\u2019s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT."
+    "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery."
   ],
   "corroborating_sources": []
 }
