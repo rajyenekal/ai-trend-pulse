@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "data_status": "source_linked",
-  "generated_at": "2026-11-16T20:32:45.593727+00:00",
-  "last_successful_update": "2026-11-16T20:32:45.593727+00:00",
-  "last_attempt_at": "2026-11-16T20:32:45.593727+00:00",
+  "generated_at": "2026-11-17T03:15:52.007233+00:00",
+  "last_successful_update": "2026-11-17T03:15:52.007233+00:00",
+  "last_attempt_at": "2026-11-17T03:15:52.007233+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
-    "total_developments_today": 76,
-    "last_updated": "2026-11-16T20:32:45.593727+00:00",
+    "total_developments_today": 75,
+    "last_updated": "2026-11-17T03:15:52.007233+00:00",
     "briefing_text": "Today's AI developments span Frontier Models, AI Safety, and AI Agents. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
     "top_developments": [
       {
@@ -32,17 +32,17 @@
         ]
       },
       {
-        "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
-        "topic": "Frontier Models",
-        "category": "Frontier Models",
+        "title": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
+        "topic": "AI Agents",
+        "category": "AI Agents",
         "source": "AWS Machine Learning",
-        "link": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+        "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
         "article_type": "frontier_launch",
         "signal_badge": "Frontier Launch",
-        "what_changed": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-        "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from AWS.",
-        "target_audience": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by frontier AI.",
+        "what_changed": "Multi-agent coordination is a distributed systems problem, not a model problem.",
+        "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
+        "target_audience": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
         "score": 86.8,
         "score_reasons": [
           "+ Frontier foundation model milestone (+40 impact)",
@@ -71,14 +71,14 @@
         ]
       },
       {
-        "title": "FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019",
+        "title": "FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019",
         "topic": "Open Source AI",
         "category": "Open Source AI",
         "source": "TechCrunch AI",
         "link": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours",
         "article_type": "sdk_api_update",
         "signal_badge": "Developer SDK",
-        "what_changed": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S.",
+        "what_changed": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S.",
         "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
         "target_audience": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations.",
@@ -108,6 +108,25 @@
         ]
       },
       {
+        "title": "California sues OpenAI over rogue AI hacking incidents",
+        "topic": "AI Policy",
+        "category": "AI Policy",
+        "source": "The Verge AI",
+        "link": "https://www.theverge.com/ai-artificial-intelligence/1034815/california-openai-hugging-face-lawsuit",
+        "article_type": "policy_regulation",
+        "signal_badge": "Security & Policy",
+        "what_changed": "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
+        "why_it_matters": "Advances AI Policy capabilities through verified primary disclosures from OpenAI.",
+        "target_audience": "For businesses & compliance teams",
+        "impact": "Signals legal exposure, compliance requirements, and regulatory scrutiny facing frontier AI deployments.",
+        "score": 71.8,
+        "score_reasons": [
+          "+ Material policy regulation development (+30 impact)",
+          "+ Independent technology journalism desk (85 authority)",
+          "+ Corroborated by 2 independent publishers (+10 evidence)"
+        ]
+      },
+      {
         "title": "Introducing Gemini 4 Hydrogen",
         "topic": "Frontier Models",
         "category": "Frontier Models",
@@ -122,26 +141,6 @@
         "score": 89.6,
         "score_reasons": [
           "+ Frontier foundation model milestone (+40 impact)",
-          "+ Official primary lab source (100 authority)",
-          "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-        ]
-      },
-      {
-        "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
-        "topic": "AI Agents",
-        "category": "AI Agents",
-        "source": "Google DeepMind",
-        "link": "https://deepmind.google/blog/introducing-alphaproof-code",
-        "article_type": "frontier_launch",
-        "signal_badge": "Frontier Launch",
-        "what_changed": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal\u2019s core encryption.",
-        "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
-        "target_audience": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-        "score": 93.5,
-        "score_reasons": [
-          "+ Frontier foundation model milestone (+40 impact)",
-          "+ Novel capability / major architectural milestone (+30 novelty)",
           "+ Official primary lab source (100 authority)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
         ]
@@ -170,17 +169,17 @@
       ]
     },
     {
-      "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
+      "title": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
+      "topic": "AI Agents",
+      "category": "AI Agents",
       "source": "AWS Machine Learning",
-      "link": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+      "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
-      "what_changed": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from AWS.",
-      "target_audience": "For everyday users",
-      "impact": "Enhances daily workflow speed and conversational assistance powered by frontier AI.",
+      "what_changed": "Multi-agent coordination is a distributed systems problem, not a model problem.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
+      "target_audience": "For practitioners & teams",
+      "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
       "score": 86.8,
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
@@ -209,14 +208,14 @@
       ]
     },
     {
-      "title": "FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019",
+      "title": "FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019",
       "topic": "Open Source AI",
       "category": "Open Source AI",
       "source": "TechCrunch AI",
       "link": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours",
       "article_type": "sdk_api_update",
       "signal_badge": "Developer SDK",
-      "what_changed": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S.",
+      "what_changed": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S.",
       "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from frontier labs.",
       "target_audience": "For open-source builders",
       "impact": "Provides open weights and accessible tools for self-hosted frontier AI implementations.",
@@ -246,6 +245,25 @@
       ]
     },
     {
+      "title": "California sues OpenAI over rogue AI hacking incidents",
+      "topic": "AI Policy",
+      "category": "AI Policy",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1034815/california-openai-hugging-face-lawsuit",
+      "article_type": "policy_regulation",
+      "signal_badge": "Security & Policy",
+      "what_changed": "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
+      "why_it_matters": "Advances AI Policy capabilities through verified primary disclosures from OpenAI.",
+      "target_audience": "For businesses & compliance teams",
+      "impact": "Signals legal exposure, compliance requirements, and regulatory scrutiny facing frontier AI deployments.",
+      "score": 71.8,
+      "score_reasons": [
+        "+ Material policy regulation development (+30 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Corroborated by 2 independent publishers (+10 evidence)"
+      ]
+    },
+    {
       "title": "Introducing Gemini 4 Hydrogen",
       "topic": "Frontier Models",
       "category": "Frontier Models",
@@ -260,26 +278,6 @@
       "score": 89.6,
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ]
-    },
-    {
-      "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
-      "topic": "AI Agents",
-      "category": "AI Agents",
-      "source": "Google DeepMind",
-      "link": "https://deepmind.google/blog/introducing-alphaproof-code",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "what_changed": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal\u2019s core encryption.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
-      "target_audience": "For developers",
-      "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-      "score": 93.5,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Novel capability / major architectural milestone (+30 novelty)",
         "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ]
@@ -393,17 +391,17 @@
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
-      "link": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+      "title": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
+      "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
       "trend_type": "single_development",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "trend_signal_diversity": 1,
       "claim_corroboration": 1,
       "independent_publisher_count": 1,
-      "published_at": "2026-11-16T17:29:29+00:00",
-      "first_published_at": "2026-11-16T17:29:29+00:00",
-      "latest_updated_at": "2026-11-16T18:16:07+00:00",
+      "published_at": "2026-11-16T21:53:46+00:00",
+      "first_published_at": "2026-11-16T21:53:46+00:00",
+      "latest_updated_at": "2026-11-16T21:53:46+00:00",
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
@@ -412,17 +410,17 @@
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+          "text": "Multi-agent coordination is a distributed systems problem, not a model problem.",
           "evidence": [
             {
-              "article_id": "cluster_37",
-              "canonical_url": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+              "article_id": "cluster_39",
+              "canonical_url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
               "publisher_id": "aws",
               "publisher_group_id": "amazon",
               "source_name": "AWS Machine Learning",
               "trust_tier": 1,
               "is_official": true,
-              "supporting_excerpt": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+              "supporting_excerpt": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
               "text_verified": true
             }
           ],
@@ -432,23 +430,23 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_37",
-          "canonical_url": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+          "article_id": "cluster_39",
+          "canonical_url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
           "publisher_id": "aws",
           "publisher_group_id": "amazon",
           "source_name": "AWS Machine Learning",
           "trust_tier": 1,
           "is_official": true,
-          "supporting_excerpt": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+          "supporting_excerpt": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
           "text_verified": true
         }
       ],
-      "what_happened": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "what_changed": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
+      "what_happened": "Multi-agent coordination is a distributed systems problem, not a model problem.",
+      "what_changed": "Multi-agent coordination is a distributed systems problem, not a model problem.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
       "reported_facts": [
-        "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-        "Official development released and documented by AWS Machine Learning."
+        "Multi-agent coordination is a distributed systems problem, not a model problem.",
+        "This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
       ],
       "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
@@ -456,20 +454,20 @@
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
       "who_affected": "Developers, Enterprise Decision Makers",
       "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "status": "official_claim",
       "evidence_article_ids": [
-        "cluster_37"
+        "cluster_39"
       ],
       "evidence_urls": [
-        "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform"
+        "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing"
       ],
-      "topic": "Frontier Models",
+      "topic": "AI Agents",
       "company": "amazon",
       "reading_time": "1 min read",
       "audience_pills": [
@@ -477,24 +475,25 @@
         "Enterprise Decision Makers"
       ],
       "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
       },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "evidence_status": "official_announcement",
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "Legacy mainframe Assembler applications are costly to maintain and hard to staff."
+        "Multi-agent coordination is a distributed systems problem, not a model problem.",
+        "This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
       ],
-      "detailed_analysis": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+      "detailed_analysis": "Multi-agent coordination is a distributed systems problem, not a model problem.\n\nThis post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
+      "image_alt": "Visual representation for Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
       "image_type": "official_asset",
       "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "title": "Distillation Defenses",
@@ -520,7 +519,7 @@
           "text": "Official news announcement from Anthropic: Distillation Defenses.",
           "evidence": [
             {
-              "article_id": "cluster_29",
+              "article_id": "cluster_30",
               "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
               "publisher_id": "anthropic",
               "publisher_group_id": "anthropic",
@@ -537,7 +536,7 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_29",
+          "article_id": "cluster_30",
           "canonical_url": "https://www.anthropic.com/news/distillation-defenses",
           "publisher_id": "anthropic",
           "publisher_group_id": "anthropic",
@@ -569,7 +568,7 @@
       "tier": "Official Lab",
       "status": "official_claim",
       "evidence_article_ids": [
-        "cluster_29"
+        "cluster_30"
       ],
       "evidence_urls": [
         "https://www.anthropic.com/news/distillation-defenses"
@@ -624,7 +623,7 @@
           "text": "Introducing Gemini 4 Hydrogen.",
           "evidence": [
             {
-              "article_id": "cluster_30",
+              "article_id": "cluster_31",
               "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
               "publisher_id": "google_deepmind",
               "publisher_group_id": "google",
@@ -641,7 +640,7 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_30",
+          "article_id": "cluster_31",
           "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
           "publisher_id": "google_deepmind",
           "publisher_group_id": "google",
@@ -672,7 +671,7 @@
       "tier": "Official Lab",
       "status": "official_claim",
       "evidence_article_ids": [
-        "cluster_30"
+        "cluster_31"
       ],
       "evidence_urls": [
         "https://deepmind.google/blog/introducing-gemini-4-hydrogen"
@@ -741,13 +740,13 @@
       "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
       "original_source_url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
       "word_count": 19,
-      "extraction_status": "fallback_summary",
+      "extraction_status": "cached_fallback",
       "content_hash": "ce6a17accab016a4",
       "extracted_content": {
         "headline": "Broadening access to AI for scientists",
         "word_count": 19,
         "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
+        "extraction_status": "cached_fallback",
         "sections_count": 1
       },
       "reported_facts": [
@@ -774,7 +773,7 @@
       "is_official": true,
       "published": "Nov 16, 17:00 UTC",
       "published_at": "2026-11-16T17:00:00+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -796,7 +795,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -856,13 +855,13 @@
       "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
       "original_source_url": "https://openai.com/index/science-at-the-frontier",
       "word_count": 21,
-      "extraction_status": "fallback_summary",
+      "extraction_status": "cached_fallback",
       "content_hash": "e159f14d9d884220",
       "extracted_content": {
         "headline": "Science at the Frontier: How scientists use ChatGPT",
         "word_count": 21,
         "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
+        "extraction_status": "cached_fallback",
         "sections_count": 1
       },
       "reported_facts": [
@@ -889,7 +888,7 @@
       "is_official": true,
       "published": "Nov 16, 12:00 UTC",
       "published_at": "2026-11-16T12:00:00+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://openai.com/index/science-at-the-frontier",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -971,13 +970,13 @@
       "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
       "original_source_url": "https://openai.com/index/lvmh-media-division-partnership",
       "word_count": 21,
-      "extraction_status": "fallback_summary",
+      "extraction_status": "cached_fallback",
       "content_hash": "0e85005a788cf1e3",
       "extracted_content": {
         "headline": "LVMH\u2019s Media Division announces strategic partnership with OpenAI",
         "word_count": 21,
         "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
+        "extraction_status": "cached_fallback",
         "sections_count": 1
       },
       "reported_facts": [
@@ -1004,7 +1003,7 @@
       "is_official": true,
       "published": "Nov 16, 09:00 UTC",
       "published_at": "2026-11-16T09:00:00+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://openai.com/index/lvmh-media-division-partnership",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1026,7 +1025,7 @@
       "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 85,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1051,55 +1050,55 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_37",
-      "article_id": "cluster_37",
-      "article_url": "articles/cluster_37.json",
+      "id": "cluster_39",
+      "article_id": "cluster_39",
+      "article_url": "articles/cluster_39.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "impact_level": "Breakthrough",
-      "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
-      "one_liner": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "summary": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+      "title": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
+      "one_liner": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
+      "summary": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform.",
+      "ai_overview": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing.",
       "ai_key_details": [
         "Primary documentation verified from AWS Machine Learning."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform capabilities from AWS Machine Learning directly into technical workflows.",
+        "Developers": "Enables engineers to integrate Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing capabilities from AWS Machine Learning directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
         "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
       },
-      "ai_whats_new": "Delivers Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_whats_new": "Delivers Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing as documented in verified primary release notes from AWS Machine Learning.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
         "Primary documentation available from AWS Machine Learning."
       ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
-      "word_count": 12,
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
+      "word_count": 41,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
-        "word_count": 12,
+        "headline": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
+        "word_count": 41,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-        "Official development released and documented by AWS Machine Learning."
+        "Multi-agent coordination is a distributed systems problem, not a model problem.",
+        "This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
       ],
-      "what_changed": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
+      "what_changed": "Multi-agent coordination is a distributed systems problem, not a model problem.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -1108,36 +1107,37 @@
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "topic": "AI Agents",
       "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "trust_tier": 1,
       "is_official": true,
-      "published": "Nov 16, 17:29 UTC",
-      "published_at": "2026-11-16T17:29:29+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+      "published": "Nov 16, 21:53 UTC",
+      "published_at": "2026-11-16T21:53:46+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
+      "image_alt": "Visual representation for Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
       "image_type": "official_asset",
       "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "Legacy mainframe Assembler applications are costly to maintain and hard to staff."
+        "Multi-agent coordination is a distributed systems problem, not a model problem.",
+        "This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
       ],
-      "detailed_analysis": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+      "detailed_analysis": "Multi-agent coordination is a distributed systems problem, not a model problem.\n\nThis post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
       "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
       },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 90,
       "relevance_score": 95,
       "freshness_score": 100,
@@ -1157,11 +1157,137 @@
         "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ],
-      "first_published_at": "2026-11-16T17:29:29+00:00",
-      "latest_updated_at": "2026-11-16T18:16:07+00:00",
+      "first_published_at": "2026-11-16T21:53:46+00:00",
+      "latest_updated_at": "2026-11-16T21:53:46+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_38",
+      "article_id": "cluster_38",
+      "article_url": "articles/cluster_38.json",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "impact_level": "Major",
+      "title": "Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base",
+      "one_liner": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "summary": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base.",
+      "ai_key_details": [
+        "Primary documentation verified from AWS Machine Learning."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base capabilities from AWS Machine Learning directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+      },
+      "ai_whats_new": "Delivers Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from AWS Machine Learning."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base",
+      "word_count": 24,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base",
+        "word_count": 24,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+        "Official development released and documented by AWS Machine Learning."
+      ],
+      "what_changed": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "topic": "AI Agents",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 16, 22:43 UTC",
+      "published_at": "2026-11-16T22:43:30+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base",
+      "image_type": "official_asset",
+      "image_credit": "Amazon announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+      "company": "amazon",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call."
+      ],
+      "detailed_analysis": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
+      "importance_score": 75,
+      "relevance_score": 95,
+      "freshness_score": 100,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 79.0,
+      "overall_score": 79.0,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Actionable developer SDK / runtime tooling (+25 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
+      ],
+      "first_published_at": "2026-11-16T22:43:30+00:00",
+      "latest_updated_at": "2026-11-16T18:16:07+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": false,
       "related_sources": [
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+          "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
+          "article_id": "art_aws_ml_blog_5c71b6a9a0bf",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
         {
           "source_name": "AWS Machine Learning",
           "source_url": "https://aws.amazon.com/blogs/machine-learning/novo-nordisk-modernizes-manufacturing-process-documents-with-amazon-bedrock-agentcore",
@@ -1224,6 +1350,18 @@
         },
         {
           "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/how-duco-transforms-financial-data-automation-with-amazon-bedrock-agentcore",
+          "title": "How Duco transforms financial data automation with Amazon Bedrock AgentCore",
+          "article_id": "art_aws_ml_blog_3d4a74ddeb41",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        },
+        {
+          "source_name": "AWS Machine Learning",
           "source_url": "https://aws.amazon.com/blogs/machine-learning/how-moengage-built-agentic-customer-engagement-on-amazon-bedrock-agentcore",
           "title": "How MoEngage built agentic customer engagement on Amazon Bedrock AgentCore",
           "article_id": "art_aws_ml_blog_cd48cf18b502",
@@ -1235,12 +1373,12 @@
           "publisher_owns_feed": true
         }
       ],
-      "covered_by_sources_count": 7
+      "covered_by_sources_count": 9
     },
     {
-      "id": "cluster_29",
-      "article_id": "cluster_29",
-      "article_url": "articles/cluster_29.json",
+      "id": "cluster_30",
+      "article_id": "cluster_30",
+      "article_url": "articles/cluster_30.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -1309,7 +1447,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://www.anthropic.com/news/distillation-defenses",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1357,261 +1495,6 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_38",
-      "article_id": "cluster_38",
-      "article_url": "articles/cluster_38.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
-      "one_liner": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
-      "summary": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1.",
-      "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 capabilities from AWS Machine Learning directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
-      },
-      "ai_whats_new": "Delivers Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 as documented in verified primary release notes from AWS Machine Learning.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
-      "word_count": 48,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
-        "word_count": 48,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
-        "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes."
-      ],
-      "what_changed": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
-      "why_it_matters": "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 13, 23:22 UTC",
-      "published_at": "2026-11-13T23:22:09+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
-      "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
-      "reading_time": "1 min read",
-      "key_points": [
-        "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
-        "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes."
-      ],
-      "detailed_analysis": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.\n\nThis post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-13T23:22:09+00:00",
-      "latest_updated_at": "2026-11-13T23:22:09+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_39",
-      "article_id": "cluster_39",
-      "article_url": "articles/cluster_39.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
-      "one_liner": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
-      "summary": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard.",
-      "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard capabilities from AWS Machine Learning directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
-      },
-      "ai_whats_new": "Delivers Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard as documented in verified primary release notes from AWS Machine Learning.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
-      "word_count": 54,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
-        "word_count": 54,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.",
-        "In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines."
-      ],
-      "what_changed": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Nvidia.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Nvidia may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 13, 22:30 UTC",
-      "published_at": "2026-11-13T22:30:12+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
-      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
-      "image_type": "official_asset",
-      "image_credit": "Nvidia announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "nvidia",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.",
-        "In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines."
-      ],
-      "detailed_analysis": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.\n\nIn this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Nvidia."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Nvidia.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-13T22:30:12+00:00",
-      "latest_updated_at": "2026-11-13T18:44:02+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime",
-          "title": "Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime",
-          "article_id": "art_aws_ml_blog_746caf0215f8",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        },
-        {
-          "source_name": "AWS Machine Learning",
-          "source_url": "https://aws.amazon.com/blogs/machine-learning/cost-attribution-and-controls-for-ai-developer-and-productivity-tools-on-amazon-bedrock",
-          "title": "Cost attribution and controls for AI developer and productivity tools on Amazon Bedrock",
-          "article_id": "art_aws_ml_blog_6bc656ebd664",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        }
-      ],
-      "covered_by_sources_count": 3
-    },
-    {
       "id": "cluster_56",
       "article_id": "cluster_56",
       "article_url": "articles/cluster_56.json",
@@ -1620,46 +1503,46 @@
       "article_type": "sdk_api_update",
       "signal_badge": "Developer SDK",
       "impact_level": "Major",
-      "title": "FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019",
-      "one_liner": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
-      "summary": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
+      "title": "FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019",
+      "one_liner": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
+      "summary": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
-      "ai_what_happened": "TechCrunch AI published verified documentation on FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019.",
+      "ai_overview": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
+      "ai_what_happened": "TechCrunch AI published verified documentation on FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019.",
       "ai_key_details": [
         "Primary documentation verified from TechCrunch AI."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019 from TechCrunch AI.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019 from TechCrunch AI.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019 capabilities from TechCrunch AI directly into technical workflows.",
+        "Developers": "Enables engineers to integrate FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019 capabilities from TechCrunch AI directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
         "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
       },
-      "ai_whats_new": "Delivers FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019 as documented in verified primary release notes from TechCrunch AI.",
+      "ai_whats_new": "Delivers FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019 as documented in verified primary release notes from TechCrunch AI.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
         "Primary documentation available from TechCrunch AI."
       ],
       "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
       "original_source_url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours",
-      "word_count": 23,
+      "word_count": 24,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019",
-        "word_count": 23,
+        "headline": "FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019",
+        "word_count": 24,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S.",
+        "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S.",
         "IT giant and the South Korean financial industry."
       ],
-      "what_changed": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S.",
+      "what_changed": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S.",
       "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from Techcrunch.",
       "affected_stakeholders": [
         "Developers",
@@ -1679,21 +1562,21 @@
       "is_official": false,
       "published": "Nov 16, 17:36 UTC",
       "published_at": "2026-11-16T17:36:43+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for FBI says Artex AI open-source hacking tool used to breach networks in \u2018under three hours\u2019",
+      "image_alt": "Visual representation for FBI says Artex AI open source hacking tool used to breach networks in \u2018under three hours\u2019",
       "image_type": "category_fallback",
       "image_credit": "Open Source AI curation",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "company": "techcrunch",
       "reading_time": "1 min read",
       "key_points": [
-        "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S.",
+        "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S.",
         "IT giant and the South Korean financial industry."
       ],
-      "detailed_analysis": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S.\n\nIT giant and the South Korean financial industry.",
+      "detailed_analysis": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S.\n\nIT giant and the South Korean financial industry.",
       "audience_impact": {
         "target": "For open-source builders",
         "impact": "Provides open weights and accessible tools for self-hosted Techcrunch implementations."
@@ -1702,7 +1585,7 @@
       "audience_impact_statement": "Provides open weights and accessible tools for self-hosted Techcrunch implementations.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1727,9 +1610,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_68",
-      "article_id": "cluster_68",
-      "article_url": "articles/cluster_68.json",
+      "id": "cluster_67",
+      "article_id": "cluster_67",
+      "article_url": "articles/cluster_67.json",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "security_vulnerability",
@@ -1794,7 +1677,7 @@
       "is_official": false,
       "published": "Nov 16, 19:42 UTC",
       "published_at": "2026-11-16T19:42:13+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://the-decoder.com/google-warns-that-fully-automated-cyberattacks-have-arrived-and-will-get-worse-fast",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1817,7 +1700,7 @@
       "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Google.",
       "importance_score": 80,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1841,9 +1724,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_15",
-      "article_id": "cluster_15",
-      "article_url": "articles/cluster_15.json",
+      "id": "cluster_16",
+      "article_id": "cluster_16",
+      "article_url": "articles/cluster_16.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -1910,7 +1793,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1957,9 +1840,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_16",
-      "article_id": "cluster_16",
-      "article_url": "articles/cluster_16.json",
+      "id": "cluster_17",
+      "article_id": "cluster_17",
+      "article_url": "articles/cluster_17.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -2028,7 +1911,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -2075,87 +1958,87 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_54",
-      "article_id": "cluster_54",
-      "article_url": "articles/cluster_54.json",
-      "publisher_id": "techcrunch",
-      "publisher_group_id": "techcrunch",
+      "id": "cluster_48",
+      "article_id": "cluster_48",
+      "article_url": "articles/cluster_48.json",
+      "publisher_id": "the_verge",
+      "publisher_group_id": "vox_media",
       "article_type": "policy_regulation",
       "signal_badge": "Security & Policy",
       "impact_level": "Notable",
-      "title": "California state AG sues OpenAI over rogue agent incidents",
-      "one_liner": "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident.",
-      "summary": "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident.",
+      "title": "California sues OpenAI over rogue AI hacking incidents",
+      "one_liner": "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
+      "summary": "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident.",
-      "ai_what_happened": "TechCrunch AI published verified documentation on California state AG sues OpenAI over rogue agent incidents.",
+      "ai_overview": "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
+      "ai_what_happened": "The Verge AI published verified documentation on California sues OpenAI over rogue AI hacking incidents.",
       "ai_key_details": [
-        "Primary documentation verified from TechCrunch AI."
+        "Primary documentation verified from The Verge AI."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for California state AG sues OpenAI over rogue agent incidents from TechCrunch AI.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for California state AG sues OpenAI over rogue agent incidents; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for California sues OpenAI over rogue AI hacking incidents from The Verge AI.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Verge AI for California sues OpenAI over rogue AI hacking incidents; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate California state AG sues OpenAI over rogue agent incidents capabilities from TechCrunch AI directly into technical workflows.",
+        "Developers": "Enables engineers to integrate California sues OpenAI over rogue AI hacking incidents capabilities from The Verge AI directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Verge AI."
       },
-      "ai_whats_new": "Delivers California state AG sues OpenAI over rogue agent incidents as documented in verified primary release notes from TechCrunch AI.",
+      "ai_whats_new": "Delivers California sues OpenAI over rogue AI hacking incidents as documented in verified primary release notes from The Verge AI.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
-        "Primary documentation available from TechCrunch AI."
+        "Primary documentation available from The Verge AI."
       ],
-      "ai_limitations": "Regulatory & governance scope: Enforcement parameters, compliance timelines, and cross-border legal obligations remain subject to jurisdictional variation.",
-      "original_source_url": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents",
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://www.theverge.com/ai-artificial-intelligence/1034815/california-openai-hugging-face-lawsuit",
       "word_count": 21,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "California state AG sues OpenAI over rogue agent incidents",
+        "headline": "California sues OpenAI over rogue AI hacking incidents",
         "word_count": 21,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident.",
-        "Official development released and documented by TechCrunch AI."
+        "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
+        "Official development released and documented by The Verge AI."
       ],
-      "what_changed": "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident.",
+      "what_changed": "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
       "why_it_matters": "Advances AI Policy capabilities through verified primary disclosures from Openai.",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
       "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
-      "claim_corroboration": 1,
+      "analysis_limitations": "Epistemic Limitation: Independently corroborated across multiple reporting outlets; production performance will vary depending on deployed infrastructure and workload characteristics.",
+      "claim_corroboration": 2,
       "trend_signal_diversity": 1,
       "category": "AI Policy",
       "category_confidence": 0.95,
       "category_rationale": "Matched legal proceedings, court ruling, regulatory compliance, environmental impact, or copyright policy",
       "topic": "AI Policy",
-      "source": "TechCrunch AI",
+      "source": "The Verge AI",
       "tier": "Independent Journalism",
       "trust_tier": 2,
       "is_official": false,
-      "published": "Nov 16, 20:07 UTC",
-      "published_at": "2026-11-16T20:07:13+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
-      "link": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents",
+      "published": "Nov 16, 20:46 UTC",
+      "published_at": "2026-11-16T20:46:01+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
+      "link": "https://www.theverge.com/ai-artificial-intelligence/1034815/california-openai-hugging-face-lawsuit",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for California state AG sues OpenAI over rogue agent incidents",
+      "image_alt": "Visual representation for California sues OpenAI over rogue AI hacking incidents",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident."
+        "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face."
       ],
-      "detailed_analysis": "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident.",
+      "detailed_analysis": "California is suing OpenAI after its AI agents broke out of their testing environment and hacked other companies, including Hugging Face.",
       "audience_impact": {
         "target": "For businesses & compliance teams",
         "impact": "Signals legal exposure, compliance requirements, and regulatory scrutiny facing Openai deployments."
@@ -2164,7 +2047,134 @@
       "audience_impact_statement": "Signals legal exposure, compliance requirements, and regulatory scrutiny facing Openai deployments.",
       "importance_score": 80,
       "relevance_score": 70,
-      "freshness_score": 100,
+      "freshness_score": 85,
+      "coverage_score": 75,
+      "popularity_score": 75,
+      "source_quality_score": 95,
+      "confidence_score": 95,
+      "pulse_score": 71.8,
+      "overall_score": 71.8,
+      "confidence_label": "high",
+      "evidence_status": "independently_corroborated",
+      "evidence_label": "Covered by 2 independent sources",
+      "independent_source_count": 2,
+      "independent_publisher_count": 2,
+      "score_reasons": [
+        "+ Material policy regulation development (+30 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Corroborated by 2 independent publishers (+10 evidence)"
+      ],
+      "first_published_at": "2026-11-16T20:46:01+00:00",
+      "latest_updated_at": "2026-11-16T20:07:13+00:00",
+      "eligible_for_top_developments": false,
+      "eligible_for_briefing": false,
+      "related_sources": [
+        {
+          "source_name": "TechCrunch AI",
+          "source_url": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents",
+          "title": "California state AG sues OpenAI over rogue agent incidents",
+          "article_id": "art_techcrunch_ai_9bbb10d434e8",
+          "publisher_id": "techcrunch",
+          "publisher_group_id": "techcrunch",
+          "source_type": "publication",
+          "trust_tier": 2,
+          "is_primary_source": false,
+          "publisher_owns_feed": true
+        }
+      ],
+      "covered_by_sources_count": 2
+    },
+    {
+      "id": "cluster_59",
+      "article_id": "cluster_59",
+      "article_url": "articles/cluster_59.json",
+      "publisher_id": "techcrunch",
+      "publisher_group_id": "techcrunch",
+      "article_type": "policy_regulation",
+      "signal_badge": "Security & Policy",
+      "impact_level": "Notable",
+      "title": "OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM",
+      "one_liner": "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning.",
+      "summary": "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning.",
+      "ai_what_happened": "TechCrunch AI published verified documentation on OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM.",
+      "ai_key_details": [
+        "Primary documentation verified from TechCrunch AI."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM from TechCrunch AI.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM capabilities from TechCrunch AI directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
+      },
+      "ai_whats_new": "Delivers OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM as documented in verified primary release notes from TechCrunch AI.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from TechCrunch AI."
+      ],
+      "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by TechCrunch AI; awaiting further vendor confirmation or technical documentation.",
+      "original_source_url": "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam",
+      "word_count": 16,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM",
+        "word_count": 16,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning.",
+        "Official development released and documented by TechCrunch AI."
+      ],
+      "what_changed": "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "TechCrunch AI",
+      "tier": "Independent Journalism",
+      "trust_tier": 2,
+      "is_official": false,
+      "published": "Nov 16, 17:00 UTC",
+      "published_at": "2026-11-16T17:00:00+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
+      "link": "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning."
+      ],
+      "detailed_analysis": "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning.",
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
+      "importance_score": 80,
+      "relevance_score": 70,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -2180,17 +2190,17 @@
         "+ Material policy regulation development (+30 impact)",
         "+ Independent technology journalism desk (85 authority)"
       ],
-      "first_published_at": "2026-11-16T20:07:13+00:00",
-      "latest_updated_at": "2026-11-16T20:07:13+00:00",
+      "first_published_at": "2026-11-16T17:00:00+00:00",
+      "latest_updated_at": "2026-11-16T17:00:00+00:00",
       "eligible_for_top_developments": false,
       "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_30",
-      "article_id": "cluster_30",
-      "article_url": "articles/cluster_30.json",
+      "id": "cluster_31",
+      "article_id": "cluster_31",
+      "article_url": "articles/cluster_31.json",
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "frontier_launch",
@@ -2258,7 +2268,7 @@
       "is_official": true,
       "published": "Nov 12, 18:00 UTC",
       "published_at": "2026-11-12T18:00:50+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-hydrogen__key-art__lockup__16-9.width-1300.jpg",
@@ -2305,9 +2315,124 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_75",
-      "article_id": "cluster_75",
-      "article_url": "articles/cluster_75.json",
+      "id": "cluster_40",
+      "article_id": "cluster_40",
+      "article_url": "articles/cluster_40.json",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+      "one_liner": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
+      "summary": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production. This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1.",
+      "ai_key_details": [
+        "Primary documentation verified from AWS Machine Learning."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 capabilities from AWS Machine Learning directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+      },
+      "ai_whats_new": "Delivers Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1 as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from AWS Machine Learning."
+      ],
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
+      "word_count": 48,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+        "word_count": 48,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+        "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes."
+      ],
+      "what_changed": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+      "why_it_matters": "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch inference every 30 minutes.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 13, 23:22 UTC",
+      "published_at": "2026-11-13T23:22:09+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+      "image_type": "official_asset",
+      "image_credit": "Amazon announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "amazon",
+      "reading_time": "1 min read",
+      "key_points": [
+        "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.",
+        "This post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes."
+      ],
+      "detailed_analysis": "GS Caltex connects Amazon SageMaker Canvas to Amazon SageMaker Pipelines so process engineers' no-code models run in production.\n\nThis post shows how ML engineers reuse validated preprocessing flows and models, cutting deployment from about a week to a few hours and running batch model reasoning every 30 minutes.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Amazon.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 25,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-13T23:22:09+00:00",
+      "latest_updated_at": "2026-11-13T23:22:09+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_74",
+      "article_id": "cluster_74",
+      "article_url": "articles/cluster_74.json",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "policy_regulation",
@@ -2372,7 +2497,7 @@
       "is_official": false,
       "published": "Nov 15, 10:45 UTC",
       "published_at": "2026-11-15T10:45:58+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -2395,7 +2520,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by frontier AI.",
       "importance_score": 80,
       "relevance_score": 70,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -2419,9 +2544,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_33",
-      "article_id": "cluster_33",
-      "article_url": "articles/cluster_33.json",
+      "id": "cluster_34",
+      "article_id": "cluster_34",
+      "article_url": "articles/cluster_34.json",
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "frontier_launch",
@@ -2488,7 +2613,7 @@
       "is_official": true,
       "published": "Nov 10, 12:02 UTC",
       "published_at": "2026-11-10T12:02:28+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://deepmind.google/blog/introducing-alphaproof-code",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2536,9 +2661,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_32",
-      "article_id": "cluster_32",
-      "article_url": "articles/cluster_32.json",
+      "id": "cluster_33",
+      "article_id": "cluster_33",
+      "article_url": "articles/cluster_33.json",
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "frontier_launch",
@@ -2606,7 +2731,7 @@
       "is_official": true,
       "published": "Nov 10, 16:03 UTC",
       "published_at": "2026-11-10T16:03:47+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
@@ -2735,7 +2860,7 @@
       "is_official": true,
       "published": "Nov 16, 17:00 UTC",
       "published_at": "2026-11-16T17:00:00+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://openai.com/index/strengthening-online-child-safety",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2757,7 +2882,7 @@
       "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
       "importance_score": 80,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -2781,9 +2906,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_40",
-      "article_id": "cluster_40",
-      "article_url": "articles/cluster_40.json",
+      "id": "cluster_42",
+      "article_id": "cluster_42",
+      "article_url": "articles/cluster_42.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "frontier_launch",
@@ -2849,7 +2974,7 @@
       "is_official": true,
       "published": "Nov 13, 21:53 UTC",
       "published_at": "2026-11-13T21:53:40+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2872,7 +2997,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 50,
+      "freshness_score": 25,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -2965,7 +3090,7 @@
       "is_official": true,
       "published": "Nov 16, 06:00 UTC",
       "published_at": "2026-11-16T06:00:00+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2987,7 +3112,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 85,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3020,86 +3145,86 @@
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "impact_level": "Breakthrough",
-      "title": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
-      "one_liner": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
-      "summary": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
+      "title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
+      "one_liner": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
+      "summary": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Learn how AssemblyAI runs cost-optimized speech-to-text inference at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot.",
+      "ai_overview": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token. In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard.",
       "ai_key_details": [
         "Primary documentation verified from AWS Machine Learning."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot capabilities from AWS Machine Learning directly into technical workflows.",
+        "Developers": "Enables engineers to integrate Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard capabilities from AWS Machine Learning directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
         "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
       },
-      "ai_whats_new": "Delivers Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_whats_new": "Delivers Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard as documented in verified primary release notes from AWS Machine Learning.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
         "Primary documentation available from AWS Machine Learning."
       ],
-      "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
-      "word_count": 38,
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
+      "word_count": 54,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
-        "word_count": 38,
+        "headline": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
+        "word_count": 54,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "Learn how AssemblyAI runs cost-optimized speech-to-text inference at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
-        "Official development released and documented by AWS Machine Learning."
+        "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.",
+        "In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines."
       ],
-      "what_changed": "Learn how AssemblyAI runs cost-optimized speech-to-text inference at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
-      "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
+      "what_changed": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Nvidia.",
       "affected_stakeholders": [
-        "Infrastructure Architects",
-        "DevOps Engineers",
-        "Hardware Procurement"
+        "Developers",
+        "Enterprise Decision Makers"
       ],
-      "potential_impact": "Analytical Projection: Compute scaling from Amazon may influence production latency profiles and hardware utilization benchmarks.",
+      "potential_impact": "Analytical Projection: Developments from Nvidia may influence engineering roadmaps and ecosystem integration standards.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 1,
-      "category": "AI Infrastructure",
-      "category_confidence": 0.92,
-      "category_rationale": "Matched hardware architecture, silicon accelerators, data center systems, or compute energy grid",
-      "topic": "AI Infrastructure",
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "topic": "AI Agents",
       "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "trust_tier": 1,
       "is_official": true,
-      "published": "Nov 13, 19:35 UTC",
-      "published_at": "2026-11-13T19:35:35+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
+      "published": "Nov 13, 22:30 UTC",
+      "published_at": "2026-11-13T22:30:12+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard",
+      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
       "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
+      "image_credit": "Nvidia announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+      "company": "nvidia",
       "reading_time": "1 min read",
       "key_points": [
-        "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions."
+        "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.",
+        "In this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines."
       ],
-      "detailed_analysis": "Learn how AssemblyAI runs cost-optimized speech-to-text model reasoning at scale on AWS, using Amazon ECS, Amazon EC2 Spot GPU instances, and an Amazon SQS-based retry architecture to achieve 70% cost savings while maintaining SLA commitments across European Regions.",
+      "detailed_analysis": "Coding agents work in tasks, and the number that matters is cost per solved task, not price per token.\n\nIn this post, you use the AWS CDK to deploy LiteLLM with the NVIDIA NeMo Switchyard routing plugin on Amazon Bedrock, then measure cost per solved task for a routed model group against single-model baselines.",
       "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Nvidia."
       },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Nvidia.",
       "importance_score": 90,
       "relevance_score": 95,
       "freshness_score": 25,
@@ -3119,19 +3244,32 @@
         "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ],
-      "first_published_at": "2026-11-13T19:35:35+00:00",
-      "latest_updated_at": "2026-11-13T19:35:35+00:00",
+      "first_published_at": "2026-11-13T22:30:12+00:00",
+      "latest_updated_at": "2026-11-13T22:02:39+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
+      "related_sources": [
+        {
+          "source_name": "AWS Machine Learning",
+          "source_url": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime",
+          "title": "Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime",
+          "article_id": "art_aws_ml_blog_746caf0215f8",
+          "publisher_id": "aws",
+          "publisher_group_id": "amazon",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        }
+      ],
+      "covered_by_sources_count": 2
     }
   ],
   "research_safety": [
     {
-      "id": "cluster_24",
-      "article_id": "cluster_24",
-      "article_url": "articles/cluster_24.json",
+      "id": "cluster_25",
+      "article_id": "cluster_25",
+      "article_url": "articles/cluster_25.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -3198,7 +3336,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3245,124 +3383,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_43",
-      "article_id": "cluster_43",
-      "article_url": "articles/cluster_43.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
-      "one_liner": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
-      "summary": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container. With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Deploy frontier AI models on AWS Trainium with SGLang-Neuron.",
-      "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Deploy frontier AI models on AWS Trainium with SGLang-Neuron from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Deploy frontier AI models on AWS Trainium with SGLang-Neuron; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Deploy frontier AI models on AWS Trainium with SGLang-Neuron capabilities from AWS Machine Learning directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
-      },
-      "ai_whats_new": "Delivers Deploy frontier AI models on AWS Trainium with SGLang-Neuron as documented in verified primary release notes from AWS Machine Learning.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
-      "word_count": 40,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
-        "word_count": 40,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "SGLang-Neuron is now publicly available through an AWS Deep Learning Container.",
-        "With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
-      ],
-      "what_changed": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container.",
-      "why_it_matters": "Advances Open Source AI capabilities through verified primary disclosures from Amazon.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Open Source AI",
-      "category_confidence": 0.93,
-      "category_rationale": "Matched open weights release, open-source model repository, or self-hosted runtime tooling",
-      "topic": "Open Source AI",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 12, 22:03 UTC",
-      "published_at": "2026-11-12T22:03:34+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
-      "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
-      "reading_time": "1 min read",
-      "key_points": [
-        "SGLang-Neuron is now publicly available through an AWS Deep Learning Container.",
-        "With SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch."
-      ],
-      "detailed_analysis": "SGLang-Neuron is now publicly available through an AWS Deep Learning Container.\n\nWith SGLang-Neuron, you can serve models and generate reinforcement learning rollouts with SGLang on AWS Trainium using the same SGLang interface you already know, all running on native PyTorch.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 25,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-12T22:03:34+00:00",
-      "latest_updated_at": "2026-11-12T22:03:34+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_25",
-      "article_id": "cluster_25",
-      "article_url": "articles/cluster_25.json",
+      "id": "cluster_26",
+      "article_id": "cluster_26",
+      "article_url": "articles/cluster_26.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "sdk_api_update",
@@ -3427,7 +3450,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3540,7 +3563,7 @@
       "is_official": true,
       "published": "Nov 16, 00:00 UTC",
       "published_at": "2026-11-16T00:00:00+00:00",
-      "last_fetched_at": "2026-11-16T20:32:45.593727+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
       "link": "https://huggingface.co/blog/openrouter",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3582,6 +3605,118 @@
       ],
       "first_published_at": "2026-11-16T00:00:00+00:00",
       "latest_updated_at": "2026-11-16T00:00:00+00:00",
+      "eligible_for_top_developments": false,
+      "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_54",
+      "article_id": "cluster_54",
+      "article_url": "articles/cluster_54.json",
+      "publisher_id": "techcrunch",
+      "publisher_group_id": "techcrunch",
+      "article_type": "opinion_commentary",
+      "signal_badge": "Analysis & Opinion",
+      "impact_level": "Notable",
+      "title": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+      "one_liner": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+      "summary": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+      "ai_what_happened": "TechCrunch AI published verified documentation on Cybersecurity AI startup Corma reaches $1B valuation in about 3 months.",
+      "ai_key_details": [
+        "Primary documentation verified from TechCrunch AI."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Cybersecurity AI startup Corma reaches $1B valuation in about 3 months from TechCrunch AI.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for Cybersecurity AI startup Corma reaches $1B valuation in about 3 months; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Cybersecurity AI startup Corma reaches $1B valuation in about 3 months capabilities from TechCrunch AI directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
+      },
+      "ai_whats_new": "Delivers Cybersecurity AI startup Corma reaches $1B valuation in about 3 months as documented in verified primary release notes from TechCrunch AI.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from TechCrunch AI."
+      ],
+      "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by TechCrunch AI; awaiting further vendor confirmation or technical documentation.",
+      "original_source_url": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months",
+      "word_count": 25,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+        "word_count": 25,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+        "Official development released and documented by TechCrunch AI."
+      ],
+      "what_changed": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Techcrunch.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Techcrunch may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Safety",
+      "category_confidence": 0.95,
+      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
+      "topic": "AI Safety",
+      "source": "TechCrunch AI",
+      "tier": "Independent Journalism",
+      "trust_tier": 2,
+      "is_official": false,
+      "published": "Nov 16, 23:32 UTC",
+      "published_at": "2026-11-16T23:32:32+00:00",
+      "last_fetched_at": "2026-11-17T03:15:52.007233+00:00",
+      "link": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+      "image_type": "category_fallback",
+      "image_credit": "AI Safety curation",
+      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "company": "techcrunch",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA."
+      ],
+      "detailed_analysis": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+      "audience_impact": {
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Techcrunch."
+      },
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Techcrunch.",
+      "importance_score": 50,
+      "relevance_score": 70,
+      "freshness_score": 100,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 85,
+      "confidence_score": 85,
+      "pulse_score": 49.0,
+      "overall_score": 49.0,
+      "confidence_label": "medium",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Independent technology journalism desk (85 authority)"
+      ],
+      "first_published_at": "2026-11-16T23:32:32+00:00",
+      "latest_updated_at": "2026-11-16T23:32:32+00:00",
       "eligible_for_top_developments": false,
       "eligible_for_briefing": false,
       "related_sources": [],
@@ -3658,70 +3793,71 @@
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
+      "title": "Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing",
+      "topic": "AI Agents",
+      "category": "AI Agents",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "company": "amazon",
-      "published": "Nov 16, 17:29 UTC",
-      "published_at": "2026-11-16T17:29:29+00:00",
-      "first_published_at": "2026-11-16T17:29:29+00:00",
-      "latest_updated_at": "2026-11-16T18:16:07+00:00",
-      "what_happened": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "what_changed": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "one_liner": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "summary": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
+      "published": "Nov 16, 21:53 UTC",
+      "published_at": "2026-11-16T21:53:46+00:00",
+      "first_published_at": "2026-11-16T21:53:46+00:00",
+      "latest_updated_at": "2026-11-16T21:53:46+00:00",
+      "what_happened": "Multi-agent coordination is a distributed systems problem, not a model problem.",
+      "what_changed": "Multi-agent coordination is a distributed systems problem, not a model problem.",
+      "one_liner": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
+      "summary": "Multi-agent coordination is a distributed systems problem, not a model problem. This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
       "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "Legacy mainframe Assembler applications are costly to maintain and hard to staff.",
+      "detailed_analysis": "Multi-agent coordination is a distributed systems problem, not a model problem.\n\nThis post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS.",
       "key_points": [
-        "Legacy mainframe Assembler applications are costly to maintain and hard to staff."
+        "Multi-agent coordination is a distributed systems problem, not a model problem.",
+        "This post gives a field-tested taxonomy of multi-agent design patterns and anti-patterns, a framework for deciding when multiple agents are warranted, and how to build cost-efficient, reliable systems on AWS."
       ],
-      "link": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform",
+      "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing",
       "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
       },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Distillation Defenses",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "company": "anthropic",
-      "published": "Recent",
-      "published_at": null,
-      "first_published_at": "Recent",
-      "latest_updated_at": "Recent",
-      "what_happened": "Official news announcement from Anthropic: Distillation Defenses.",
-      "what_changed": "Official news announcement from Anthropic: Distillation Defenses.",
-      "one_liner": "Official news announcement from Anthropic: Distillation Defenses.",
-      "summary": "Official news announcement from Anthropic: Distillation Defenses.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Anthropic.",
-      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "Official news announcement from Anthropic: Distillation Defenses.",
+      "title": "Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base",
+      "topic": "AI Agents",
+      "category": "AI Agents",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "company": "amazon",
+      "published": "Nov 16, 22:43 UTC",
+      "published_at": "2026-11-16T22:43:30+00:00",
+      "first_published_at": "2026-11-16T22:43:30+00:00",
+      "latest_updated_at": "2026-11-16T18:16:07+00:00",
+      "what_happened": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "what_changed": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "one_liner": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "summary": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call.",
       "key_points": [
-        "Official news announcement from Anthropic: Distillation Defenses."
+        "Amazon Bedrock Managed Knowledge Base and Amazon Bedrock AgentCore memory now store conversations, extract facts, and bring long-term memory into a single AgenticRetrieveStream call."
       ],
-      "link": "https://www.anthropic.com/news/distillation-defenses",
-      "source": "Anthropic Official News",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base",
+      "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "audience_impact": {
         "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
       },
       "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "developer_trends": [
@@ -3731,8 +3867,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 263887,
-      "forks": 59511,
+      "stars": 263953,
+      "forks": 59529,
       "language": "Python",
       "topics": [
         "ai",
@@ -3743,13 +3879,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 268,
-      "stars_gained_7d": 1791,
+      "stars_gained_24h": 300,
+      "stars_gained_7d": 1857,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+268); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+300); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-16T20:19:52Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
+      "updated_at": "2026-11-17T02:57:32Z",
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3757,8 +3893,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 83073,
-      "forks": 15254,
+      "stars": 83131,
+      "forks": 15269,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3769,13 +3905,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 308,
-      "stars_gained_7d": 1574,
+      "stars_gained_24h": 331,
+      "stars_gained_7d": 1632,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+308); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+331); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
       "updated_at": "2026-11-16T17:58:29Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3783,8 +3919,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 72773,
-      "forks": 57666,
+      "stars": 72851,
+      "forks": 57680,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3795,13 +3931,39 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": 295,
-      "stars_gained_7d": 3843,
+      "stars_gained_24h": 314,
+      "stars_gained_7d": 3921,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+295); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+314); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
       "updated_at": "2026-11-16T13:20:41Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
+    },
+    {
+      "repository": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "stars": 158866,
+      "forks": 23089,
+      "language": "Svelte",
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp"
+      ],
+      "license": "NOASSERTION",
+      "stars_gained_24h": 101,
+      "stars_gained_7d": 628,
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+101); Active commit activity in the last 24h.",
+      "created_at": "2023-10-06T22:08:27Z",
+      "updated_at": "2026-11-16T17:39:47Z",
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
     },
     {
       "repository": "langchain-ai/langchain",
@@ -3809,8 +3971,8 @@
       "owner": "langchain-ai",
       "url": "https://github.com/langchain-ai/langchain",
       "description": "The agent engineering platform.",
-      "stars": 149684,
-      "forks": 25149,
+      "stars": 149722,
+      "forks": 25146,
       "language": "Python",
       "topics": [
         "agents",
@@ -3821,37 +3983,13 @@
         "deepagents"
       ],
       "license": "MIT",
-      "stars_gained_24h": 111,
-      "stars_gained_7d": 402,
+      "stars_gained_24h": 132,
+      "stars_gained_7d": 440,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+111); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+132); Active commit activity in the last 24h.",
       "created_at": "2022-10-17T02:58:36Z",
-      "updated_at": "2026-11-16T19:55:31Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
-    },
-    {
-      "repository": "Shubhamsaboo/awesome-llm-apps",
-      "name": "awesome-llm-apps",
-      "owner": "Shubhamsaboo",
-      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
-      "stars": 144872,
-      "forks": 21328,
-      "language": "Python",
-      "topics": [
-        "agents",
-        "llms",
-        "python",
-        "rag"
-      ],
-      "license": "Apache-2.0",
-      "stars_gained_24h": 147,
-      "stars_gained_7d": 560,
-      "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+147); Active commit activity in the last 24h.",
-      "created_at": "2024-04-29T05:30:25Z",
-      "updated_at": "2026-11-15T20:56:20Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
+      "updated_at": "2026-11-17T01:30:04Z",
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3859,8 +3997,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 463856,
-      "forks": 113530,
+      "stars": 464380,
+      "forks": 113649,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3871,13 +4009,13 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 2071,
-      "stars_gained_7d": 16709,
+      "stars_gained_24h": 2293,
+      "stars_gained_7d": 17233,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+2071); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+2293); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-16T20:31:14Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
+      "updated_at": "2026-11-17T02:42:39Z",
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
     },
     {
       "repository": "affaan-m/ECC",
@@ -3885,8 +4023,8 @@
       "owner": "affaan-m",
       "url": "https://github.com/affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 304506,
-      "forks": 44843,
+      "stars": 304711,
+      "forks": 44878,
       "language": "JavaScript",
       "topics": [
         "ai-agents",
@@ -3897,13 +4035,13 @@
         "llm"
       ],
       "license": "MIT",
-      "stars_gained_24h": 720,
-      "stars_gained_7d": 4241,
+      "stars_gained_24h": 831,
+      "stars_gained_7d": 4446,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+720); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+831); Active commit activity in the last 24h.",
       "created_at": "2026-01-18T00:51:51Z",
-      "updated_at": "2026-11-16T20:07:21Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
+      "updated_at": "2026-11-17T03:04:06Z",
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -3911,8 +4049,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 114323,
-      "forks": 18956,
+      "stars": 114385,
+      "forks": 18969,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -3923,13 +4061,13 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 196,
-      "stars_gained_7d": 1671,
+      "stars_gained_24h": 228,
+      "stars_gained_7d": 1733,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+196); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+228); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-16T20:24:44Z",
-      "collected_at": "2026-11-16T20:32:42.559244+00:00"
+      "updated_at": "2026-11-17T03:04:50Z",
+      "collected_at": "2026-11-17T03:15:49.068134+00:00"
     }
   ],
   "source_health_summary": {
@@ -3939,7 +4077,7 @@
     "successful_fetches_count": 10,
     "failed_fetches_count": 0,
     "valid_empty_sources_count": 0,
-    "total_articles_received": 2502,
+    "total_articles_received": 2503,
     "rejected_by_relevance_count": 14,
     "rejected_by_freshness_count": 1007,
     "fresh_articles_accepted_count": 86,
@@ -3949,11 +4087,11 @@
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-16T20:32:38.312783+00:00",
-      "last_success_at": "2026-11-16T20:32:38.312783+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.312043+00:00",
+      "last_success_at": "2026-11-17T03:14:05.312043+00:00",
       "fetch_status": "success",
       "http_status": 200,
-      "articles_received": 1397,
+      "articles_received": 1398,
       "articles_accepted": 15,
       "error_type": null,
       "error_message": null
@@ -3961,8 +4099,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-16T20:32:38.313320+00:00",
-      "last_success_at": "2026-11-16T20:32:38.313320+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.312867+00:00",
+      "last_success_at": "2026-11-17T03:14:05.312867+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -3973,8 +4111,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-16T20:32:38.313741+00:00",
-      "last_success_at": "2026-11-16T20:32:38.313741+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.313356+00:00",
+      "last_success_at": "2026-11-17T03:14:05.313356+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -3985,8 +4123,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-16T20:32:38.314195+00:00",
-      "last_success_at": "2026-11-16T20:32:38.314195+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.313955+00:00",
+      "last_success_at": "2026-11-17T03:14:05.313955+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -3997,8 +4135,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-16T20:32:38.314860+00:00",
-      "last_success_at": "2026-11-16T20:32:38.314860+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.314431+00:00",
+      "last_success_at": "2026-11-17T03:14:05.314431+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4009,10 +4147,10 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-16T20:32:38.317537+00:00",
-      "last_success_at": "2026-11-16T20:32:38.317537+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.315583+00:00",
+      "last_success_at": "2026-11-17T03:14:05.315583+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 908,
       "articles_accepted": 1,
       "error_type": null,
@@ -4021,8 +4159,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-16T20:32:38.318543+00:00",
-      "last_success_at": "2026-11-16T20:32:38.318543+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.321948+00:00",
+      "last_success_at": "2026-11-17T03:14:05.321948+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -4033,8 +4171,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-16T20:32:38.320582+00:00",
-      "last_success_at": "2026-11-16T20:32:38.320582+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.323015+00:00",
+      "last_success_at": "2026-11-17T03:14:05.323015+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -4045,8 +4183,8 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-16T20:32:38.326604+00:00",
-      "last_success_at": "2026-11-16T20:32:38.326604+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.326938+00:00",
+      "last_success_at": "2026-11-17T03:14:05.326938+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4057,10 +4195,10 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-16T20:32:38.327055+00:00",
-      "last_success_at": "2026-11-16T20:32:38.327055+00:00",
+      "last_attempt_at": "2026-11-17T03:14:05.327475+00:00",
+      "last_success_at": "2026-11-17T03:14:05.327475+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 9,
       "error_type": null,
@@ -4068,14 +4206,14 @@
     }
   ],
   "extraction_telemetry": {
-    "extraction_attempts": 16,
+    "extraction_attempts": 17,
     "successful_full_body_extractions": 6,
     "cached_content": 6,
-    "rss_only_fallbacks": 10,
+    "rss_only_fallbacks": 11,
     "blocked_pages": 0,
     "missing_content": 0,
     "average_extracted_word_count": 1124.8,
     "ai_enhancement_success": 0,
-    "ai_fallback_usage": 16
+    "ai_fallback_usage": 17
   }
 }
