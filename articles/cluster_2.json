@@ -1,66 +1,66 @@
 {
   "id": "cluster_2",
   "clean_id": "cluster_2",
-  "title": "Strengthening NATO and allied cyber defenses with AI",
-  "headline": "Strengthening NATO and allied cyber defenses with AI",
+  "title": "Introducing GPT-6.2 Astra and Sol",
+  "headline": "Introducing GPT-6.2 Astra and Sol",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-17T00:00:00+00:00",
-  "category": "AI Safety",
-  "topic": "AI Safety",
-  "impact_level": "Major",
-  "pulse_score": 77.2,
-  "article_type": "security_vulnerability",
-  "signal_badge": "Security & Policy",
+  "published_at": "2026-11-17T17:45:00+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Breakthrough",
+  "pulse_score": 86.8,
+  "article_type": "frontier_launch",
+  "signal_badge": "Frontier Launch",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
-  "canonical_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
-  "original_source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+  "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+  "canonical_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+  "original_source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
   "reading_time": "1 min read",
-  "word_count": 22,
-  "extraction_status": "fallback_summary",
-  "content_hash": "",
+  "word_count": 24,
+  "extraction_status": "cached_fallback",
+  "content_hash": "2e09695da77c5b23",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
-  "ai_what_happened": "OpenAI News published verified documentation on Strengthening NATO and allied cyber defenses with AI.",
+  "ai_overview": "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+  "ai_what_happened": "OpenAI News published verified documentation on Introducing GPT-6.2 Astra and Sol.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Strengthening NATO and allied cyber defenses with AI from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Strengthening NATO and allied cyber defenses with AI; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for GPT-6.2 Astra and Sol from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for GPT-6.2 Astra and Sol; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Strengthening NATO and allied cyber defenses with AI capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate GPT-6.2 Astra and Sol capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Strengthening NATO and allied cyber defenses with AI as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Introducing GPT-6.2 Astra and Sol as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
   "reported_facts": [
-    "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
+    "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
-  "full_text": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
+  "text": "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+  "full_text": "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
   "sections": [
     {
-      "heading": "Main Context",
-      "content": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems."
+      "heading": "Summary",
+      "content": "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API."
     }
   ],
   "paragraphs": [
-    "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems."
+    "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API."
   ],
   "corroborating_sources": []
 }
