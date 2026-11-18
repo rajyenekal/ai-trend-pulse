@@ -1,14 +1,14 @@
 {
   "id": "cluster_3",
   "clean_id": "cluster_3",
-  "title": "Introducing OpenAI for Chile",
-  "headline": "Introducing OpenAI for Chile",
+  "title": "Introducing ChatGPT for Sales",
+  "headline": "Introducing ChatGPT for Sales",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-17T00:00:00+00:00",
+  "published_at": "2026-11-17T08:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/introducing-openai-for-chile",
-  "canonical_url": "https://openai.com/index/introducing-openai-for-chile",
-  "original_source_url": "https://openai.com/index/introducing-openai-for-chile",
+  "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+  "canonical_url": "https://openai.com/index/introducing-chatgpt-for-sales",
+  "original_source_url": "https://openai.com/index/introducing-chatgpt-for-sales",
   "reading_time": "1 min read",
-  "word_count": 23,
+  "word_count": 26,
   "extraction_status": "fallback_summary",
-  "content_hash": "73392955caaedcc0",
+  "content_hash": "33da6b3c9638fd1a",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
-  "ai_what_happened": "OpenAI News published verified documentation on Introducing OpenAI for Chile.",
+  "ai_overview": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
+  "ai_what_happened": "OpenAI News published verified documentation on Introducing ChatGPT for Sales.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for OpenAI for Chile from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for OpenAI for Chile; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for ChatGPT for Sales from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for ChatGPT for Sales; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate OpenAI for Chile capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate ChatGPT for Sales capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Introducing OpenAI for Chile as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Introducing ChatGPT for Sales as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+    "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
-  "full_text": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+  "text": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
+  "full_text": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications."
+      "content": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward."
     }
   ],
   "paragraphs": [
-    "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications."
+    "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward."
   ],
   "corroborating_sources": []
 }

@@ -1,6 +1,6 @@
 {
-  "id": "cluster_50",
-  "clean_id": "cluster_50",
+  "id": "cluster_52",
+  "clean_id": "cluster_52",
   "title": "California sues OpenAI over rogue AI hacking incidents",
   "headline": "California sues OpenAI over rogue AI hacking incidents",
   "subtitle": "",
@@ -12,7 +12,7 @@
   "category": "AI Policy",
   "topic": "AI Policy",
   "impact_level": "Notable",
-  "pulse_score": 71.8,
+  "pulse_score": 70.2,
   "article_type": "policy_regulation",
   "signal_badge": "Security & Policy",
   "trust_tier": 2,
