@@ -1,14 +1,14 @@
 {
   "id": "cluster_1",
   "clean_id": "cluster_1",
-  "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
-  "headline": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+  "title": "Inside the Codex sandbox",
+  "headline": "Inside the Codex sandbox",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-18T00:00:00+00:00",
+  "published_at": "2026-11-18T08:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
-  "canonical_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
-  "original_source_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+  "url": "https://openai.com/index/inside-the-codex-sandbox",
+  "canonical_url": "https://openai.com/index/inside-the-codex-sandbox",
+  "original_source_url": "https://openai.com/index/inside-the-codex-sandbox",
   "reading_time": "1 min read",
   "word_count": 22,
   "extraction_status": "fallback_summary",
-  "content_hash": "cafba75467bbe165",
+  "content_hash": "6614a682b3026a18",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Le Groupe Figaro and OpenAI partner to bring Le Figaro\u2019s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
-  "ai_what_happened": "OpenAI News published verified documentation on Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT.",
+  "ai_overview": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+  "ai_what_happened": "OpenAI News published verified documentation on Inside the Codex sandbox.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Inside the Codex sandbox from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Inside the Codex sandbox; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Inside the Codex sandbox capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Inside the Codex sandbox as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
   "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
   "reported_facts": [
-    "Le Groupe Figaro and OpenAI partner to bring Le Figaro\u2019s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+    "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "Le Groupe Figaro and OpenAI partner to bring Le Figaro\u2019s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
-  "full_text": "Le Groupe Figaro and OpenAI partner to bring Le Figaro\u2019s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+  "text": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+  "full_text": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "Le Groupe Figaro and OpenAI partner to bring Le Figaro\u2019s journalism to ChatGPT through summaries and excerpts, with links to original stories."
+      "content": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows."
     }
   ],
   "paragraphs": [
-    "Le Groupe Figaro and OpenAI partner to bring Le Figaro\u2019s journalism to ChatGPT through summaries and excerpts, with links to original stories."
+    "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows."
   ],
   "corroborating_sources": []
 }

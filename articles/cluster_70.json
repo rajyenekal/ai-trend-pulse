@@ -1,66 +1,66 @@
 {
   "id": "cluster_70",
   "clean_id": "cluster_70",
-  "title": "OpenAI opens its cybersecurity tool Daybreak to NATO and European governments",
-  "headline": "OpenAI opens its cybersecurity tool Daybreak to NATO and European governments",
+  "title": "More banks say customers using AI agents are on their own \u2014 even if they get hacked",
+  "headline": "More banks say customers using AI agents are on their own \u2014 even if they get hacked",
   "subtitle": "",
-  "publisher": "The Decoder",
-  "publisher_id": "the_decoder",
-  "publisher_group_id": "the_decoder",
+  "publisher": "TechCrunch AI",
+  "publisher_id": "techcrunch",
+  "publisher_group_id": "techcrunch",
   "author": "",
-  "published_at": "2026-11-17T15:02:03+00:00",
-  "category": "AI Safety",
-  "topic": "AI Safety",
-  "impact_level": "Major",
-  "pulse_score": 74.8,
-  "article_type": "security_vulnerability",
+  "published_at": "2026-11-18T17:32:10+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Notable",
+  "pulse_score": 70.2,
+  "article_type": "policy_regulation",
   "signal_badge": "Security & Policy",
   "trust_tier": 2,
   "tier": "Independent Journalism",
   "is_official": false,
-  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://the-decoder.com/openai-opens-its-cybersecurity-tool-daybreak-to-nato-and-european-governments",
-  "canonical_url": "https://the-decoder.com/openai-opens-its-cybersecurity-tool-daybreak-to-nato-and-european-governments",
-  "original_source_url": "https://the-decoder.com/openai-opens-its-cybersecurity-tool-daybreak-to-nato-and-european-governments",
+  "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked",
+  "canonical_url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked",
+  "original_source_url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked",
   "reading_time": "1 min read",
-  "word_count": 34,
+  "word_count": 16,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "OpenAI is opening its cybersecurity tool Daybreak to NATO and several European governments, including Germany, France, and Poland. The EU's cybersecurity agency ENISA has already used it to find real vulnerabilities in EU software.",
-  "ai_what_happened": "The Decoder published verified documentation on OpenAI opens its cybersecurity tool Daybreak to NATO and European governments.",
+  "ai_overview": "Citi is the latest major financial institution to put the breaks on personal finance AI agents.",
+  "ai_what_happened": "TechCrunch AI published verified documentation on More banks say customers using AI agents are on their own \u2014 even if they get hacked.",
   "ai_key_details": [
-    "Primary documentation verified from The Decoder."
+    "Primary documentation verified from TechCrunch AI."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for OpenAI opens its cybersecurity tool Daybreak to NATO and European governments from The Decoder.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for OpenAI opens its cybersecurity tool Daybreak to NATO and European governments; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for More banks say customers using AI agents are on their own \u2014 even if they get hacked from TechCrunch AI.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for More banks say customers using AI agents are on their own \u2014 even if they get hacked; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate OpenAI opens its cybersecurity tool Daybreak to NATO and European governments capabilities from The Decoder directly into technical workflows.",
+    "Developers": "Enables engineers to integrate More banks say customers using AI agents are on their own \u2014 even if they get hacked capabilities from TechCrunch AI directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
   },
-  "ai_whats_new": "Delivers OpenAI opens its cybersecurity tool Daybreak to NATO and European governments as documented in verified primary release notes from The Decoder.",
+  "ai_whats_new": "Delivers More banks say customers using AI agents are on their own \u2014 even if they get hacked as documented in verified primary release notes from TechCrunch AI.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
-    "Primary documentation available from The Decoder."
+    "Primary documentation available from TechCrunch AI."
   ],
   "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "OpenAI is opening its cybersecurity tool Daybreak to NATO and several European governments, including Germany, France, and Poland.",
-    "The EU's cybersecurity agency ENISA has already used it to find real vulnerabilities in EU software."
+    "Citi is the latest major financial institution to put the breaks on personal finance AI agents.",
+    "Official development released and documented by TechCrunch AI."
   ],
-  "text": "OpenAI is opening its cybersecurity tool Daybreak to NATO and several European governments, including Germany, France, and Poland. The EU's cybersecurity agency ENISA has already used it to find real vulnerabilities in EU software.",
-  "full_text": "OpenAI is opening its cybersecurity tool Daybreak to NATO and several European governments, including Germany, France, and Poland. The EU's cybersecurity agency ENISA has already used it to find real vulnerabilities in EU software.",
+  "text": "Citi is the latest major financial institution to put the breaks on personal finance AI agents.",
+  "full_text": "Citi is the latest major financial institution to put the breaks on personal finance AI agents.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "OpenAI is opening its cybersecurity tool Daybreak to NATO and several European governments, including Germany, France, and Poland. The EU's cybersecurity agency ENISA has already used it to find real vulnerabilities in EU software."
+      "content": "Citi is the latest major financial institution to put the breaks on personal finance AI agents."
     }
   ],
   "paragraphs": [
-    "OpenAI is opening its cybersecurity tool Daybreak to NATO and several European governments, including Germany, France, and Poland. The EU's cybersecurity agency ENISA has already used it to find real vulnerabilities in EU software."
+    "Citi is the latest major financial institution to put the breaks on personal finance AI agents."
   ],
   "corroborating_sources": []
 }
