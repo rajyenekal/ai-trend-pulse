@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "data_status": "source_linked",
-  "generated_at": "2026-11-19T02:04:05.317793+00:00",
-  "last_successful_update": "2026-11-19T02:04:05.317793+00:00",
-  "last_attempt_at": "2026-11-19T02:04:05.317793+00:00",
+  "data_status": "fresh",
+  "generated_at": "2026-11-19T10:30:38.877589+00:00",
+  "last_successful_update": "2026-11-19T10:30:38.877589+00:00",
+  "last_attempt_at": "2026-11-19T10:30:38.877589+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
-    "total_developments_today": 83,
-    "last_updated": "2026-11-19T02:04:05.317793+00:00",
-    "briefing_text": "Today's AI developments span Frontier Models, AI Agents, and AI Safety. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
+    "total_developments_today": 84,
+    "last_updated": "2026-11-19T10:30:38.877589+00:00",
+    "briefing_text": "Today's AI updates focus primarily on Frontier Models with verified releases and technical evaluations from primary industry sources.",
     "top_developments": [
       {
         "title": "Introducing Gemini 4 Neon",
@@ -28,25 +28,6 @@
           "+ Frontier foundation model milestone (+40 impact)",
           "+ Official primary lab source (100 authority)",
           "+ Corroborated by 2 independent publishers (+10 evidence)",
-          "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-        ]
-      },
-      {
-        "title": "The Silent Consensus",
-        "topic": "Frontier Models",
-        "category": "Frontier Models",
-        "source": "OpenAI News",
-        "link": "https://openai.com/index/the-silent-consensus",
-        "article_type": "frontier_launch",
-        "signal_badge": "Frontier Launch",
-        "what_changed": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-        "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
-        "target_audience": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
-        "score": 86.8,
-        "score_reasons": [
-          "+ Frontier foundation model milestone (+40 impact)",
-          "+ Official primary lab source (100 authority)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
         ]
       },
@@ -144,6 +125,26 @@
           "+ Official primary lab source (100 authority)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
         ]
+      },
+      {
+        "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+        "topic": "AI Agents",
+        "category": "AI Agents",
+        "source": "Google DeepMind",
+        "link": "https://deepmind.google/blog/introducing-alphaproof-code",
+        "article_type": "frontier_launch",
+        "signal_badge": "Frontier Launch",
+        "what_changed": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal\u2019s core encryption.",
+        "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
+        "target_audience": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+        "score": 93.5,
+        "score_reasons": [
+          "+ Frontier foundation model milestone (+40 impact)",
+          "+ Novel capability / major architectural milestone (+30 novelty)",
+          "+ Official primary lab source (100 authority)",
+          "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+        ]
       }
     ]
   },
@@ -165,25 +166,6 @@
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
         "+ Corroborated by 2 independent publishers (+10 evidence)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ]
-    },
-    {
-      "title": "The Silent Consensus",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
-      "source": "OpenAI News",
-      "link": "https://openai.com/index/the-silent-consensus",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "what_changed": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
-      "target_audience": "For practitioners & teams",
-      "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
-      "score": 86.8,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ]
     },
@@ -281,145 +263,364 @@
         "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ]
-    }
-  ],
-  "takeaway": "Frontier research labs and independent publications report accelerating momentum across reasoning architectures, developer agents, and regulatory compliance standards.",
-  "trends": [
+    },
     {
-      "title": "Introducing Gemini 4 Neon",
-      "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
-      "trend_type": "single_development",
+      "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+      "topic": "AI Agents",
+      "category": "AI Agents",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/introducing-alphaproof-code",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
-      "trend_signal_diversity": 1,
-      "claim_corroboration": 2,
-      "independent_publisher_count": 2,
-      "published_at": "2026-11-18T21:35:43+00:00",
-      "first_published_at": "2026-11-18T21:35:43+00:00",
-      "latest_updated_at": "2026-11-18T21:03:23+00:00",
+      "what_changed": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal\u2019s core encryption.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
+      "target_audience": "For developers",
+      "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+      "score": 93.5,
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
+        "+ Novel capability / major architectural milestone (+30 novelty)",
         "+ Official primary lab source (100 authority)",
-        "+ Corroborated by 2 independent publishers (+10 evidence)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
+      ]
+    }
+  ],
+  "takeaway": "Leading AI laboratories are releasing next-generation frontier model families such as OpenAI's GPT-6.2 and Google DeepMind's Gemini 4 line, demonstrating enhanced capabilities in agentic tasks, software verification, and hardware design. Simultaneously, providers are expanding institutional governance, security sandboxing, and targeted access programs across academic and public sectors.",
+  "trends": [
+    {
+      "title": "Frontier AI Releases Target Advanced Engineering, Hardware, and Enterprise Workflows",
+      "link": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "trend_type": "emerging_theme",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "theme_relationship": "OpenAI and Google DeepMind have concurrently deployed new flagship model families designed for complex coding, computer use, chip optimization, and agentic reasoning.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Introducing Gemini 4 Neon.",
+          "text": "OpenAI introduced GPT-6.2 Astra and Sol with improved professional outputs, computer use, and coding across ChatGPT Work, Codex, and API offerings.",
           "evidence": [
             {
-              "article_id": "cluster_28",
+              "article_id": "art_openai_news_320d01228916",
+              "canonical_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_2",
+          "text": "OpenAI models advanced chip design by optimizing circuits for Jalape\u00f1o silicon and improving RISC-V core architectures.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_bab94cea911e",
+              "canonical_url": "https://openai.com/index/advancing-chip-design-with-our-models",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "OpenAI models optimized circuits used in Jalape\u00f1o silicon and improved RISC\u2011V core designs, showing progress in AI-assisted chip design with GPT\u20116 Astra.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_3",
+          "text": "Google DeepMind made Gemini 4 Carbon available for long-horizon agentic workflows, software engineering, and cybersecurity capabilities.",
+          "evidence": [
+            {
+              "article_id": "art_deepmind_blog_19f0e8c5f2d3",
+              "canonical_url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
+              "publisher_id": "google_deepmind",
+              "publisher_group_id": "google",
+              "source_name": "Google DeepMind",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Carbon is our strongest model with frontier performance in cybersecurity capabilities and long-horizon agentic workflows across complex knowledge work, software engineering, and scientific reasoning.",
+              "text_verified": false
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_4",
+          "text": "Google DeepMind unveiled Gemini 4 Neon, achieving a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level.",
+          "evidence": [
+            {
+              "article_id": "art_deepmind_blog_637178126dd4",
               "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
               "publisher_id": "google_deepmind",
               "publisher_group_id": "google",
               "source_name": "Google DeepMind",
               "trust_tier": 1,
               "is_official": true,
-              "supporting_excerpt": "Introducing Gemini 4 Neon.",
-              "text_verified": true
+              "source_type": "official",
+              "supporting_excerpt": "Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower m",
+              "text_verified": false
             }
           ],
-          "claim_corroboration": 2,
-          "verification_status": "independently_corroborated"
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
         }
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_28",
+          "article_id": "art_openai_news_320d01228916",
+          "canonical_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+          "text_verified": true
+        },
+        {
+          "article_id": "art_openai_news_bab94cea911e",
+          "canonical_url": "https://openai.com/index/advancing-chip-design-with-our-models",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "OpenAI models optimized circuits used in Jalape\u00f1o silicon and improved RISC\u2011V core designs, showing progress in AI-assisted chip design with GPT\u20116 Astra.",
+          "text_verified": true
+        },
+        {
+          "article_id": "art_deepmind_blog_19f0e8c5f2d3",
+          "canonical_url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
+          "publisher_id": "google_deepmind",
+          "publisher_group_id": "google",
+          "source_name": "Google DeepMind",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Carbon is our strongest model with frontier performance in cybersecurity capabilities and long-horizon agentic workflows across complex knowledge work, software engineering, and scientific reasoning.",
+          "text_verified": false
+        },
+        {
+          "article_id": "art_deepmind_blog_637178126dd4",
           "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
           "publisher_id": "google_deepmind",
           "publisher_group_id": "google",
           "source_name": "Google DeepMind",
           "trust_tier": 1,
           "is_official": true,
-          "supporting_excerpt": "Introducing Gemini 4 Neon.",
-          "text_verified": true
+          "source_type": "official",
+          "supporting_excerpt": "Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower m",
+          "text_verified": false
         }
       ],
-      "what_happened": "Introducing Gemini 4 Neon.",
-      "what_changed": "Introducing Gemini 4 Neon.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
-      "reported_facts": [
-        "Official development released and documented by Google DeepMind."
+      "what_happened": "OpenAI released GPT-6.2 Astra and Sol while Google DeepMind launched Gemini 4 Carbon and Gemini 4 Neon for complex engineering and reasoning workloads.",
+      "what_changed": "OpenAI released GPT-6.2 Astra and Sol while Google DeepMind launched Gemini 4 Carbon and Gemini 4 Neon for complex engineering and reasoning workloads.",
+      "why_it_matters": "These frontier updates reflect an industry-wide pivot toward automating multi-step agentic workflows and specialized domain applications such as silicon design.",
+      "who_affected": "Developers, Enterprises, and AI Practitioners",
+      "affected_stakeholders": [
+        "Infrastructure Architects",
+        "DevOps Engineers",
+        "Hardware Procurement"
       ],
-      "potential_impact": "Analytical Projection: Developments from Google may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "potential_impact": "Impacts roadmap decisions across AI Infrastructure.",
+      "category": "AI Infrastructure",
+      "category_confidence": 0.92,
+      "category_rationale": "Matched hardware architecture, silicon accelerators, data center systems, or compute energy grid",
+      "source": "OpenAI and Google DeepMind",
+      "tier": "Official Lab",
+      "status": "emerging_theme",
+      "evidence_article_ids": [
+        "art_openai_news_320d01228916",
+        "art_openai_news_bab94cea911e",
+        "art_deepmind_blog_19f0e8c5f2d3",
+        "art_deepmind_blog_637178126dd4"
+      ],
+      "evidence_urls": [
+        "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+        "https://openai.com/index/advancing-chip-design-with-our-models",
+        "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
+        "https://deepmind.google/blog/introducing-gemini-4-neon"
+      ],
+      "topic": "AI Infrastructure",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Developers",
+        "Enterprises",
+        "Ai Practitioners"
+      ],
+      "audience_impact": {
+        "target": "For enterprise operators",
+        "impact": "Demonstrates practical operational automation and procurement pathways using Openai."
+      },
+      "target_audience": "For enterprise operators",
+      "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 4,
+      "evidence_status": "emerging_theme",
+      "evidence_label": "Emerging Theme (4 Signals Across Labs)",
+      "independent_source_count": 1,
+      "key_points": [
+        "OpenAI released GPT-6.2 Astra and Sol while Google DeepMind launched Gemini 4 Carbon and Gemini 4 Neon for complex engineering and reasoning workloads.",
+        "These frontier updates reflect an industry-wide pivot toward automating multi-step agentic workflows and specialized domain applications such as silicon design."
+      ],
+      "detailed_analysis": "OpenAI released GPT-6.2 Astra and Sol while Google DeepMind launched Gemini 4 Carbon and Gemini 4 Neon for complex engineering and reasoning workloads.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Frontier AI Releases Target Advanced Engineering, Hardware, and Enterprise Workflows",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Google DeepMind Formally Verifies Cryptographic Software with AlphaProof Code",
+      "link": "https://deepmind.google/blog/introducing-alphaproof-code",
+      "trend_type": "single_development",
+      "article_type": "research_paper",
+      "signal_badge": "Research Paper",
+      "theme_relationship": null,
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "AlphaProof Code used an agentic framework to formally verify the code of Signal's cryptographic protocol.",
+          "evidence": [
+            {
+              "article_id": "art_deepmind_blog_613a7ae420cb",
+              "canonical_url": "https://deepmind.google/blog/introducing-alphaproof-code",
+              "publisher_id": "google_deepmind",
+              "publisher_group_id": "google",
+              "source_name": "Google DeepMind",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "How Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
+              "text_verified": false
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "art_deepmind_blog_613a7ae420cb",
+          "canonical_url": "https://deepmind.google/blog/introducing-alphaproof-code",
+          "publisher_id": "google_deepmind",
+          "publisher_group_id": "google",
+          "source_name": "Google DeepMind",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "How Google DeepMind researchers built a new agentic framework that formally verified the code of Signal\u2019s cryptographic protocol \u2014 long considered to be a grand security challenge",
+          "text_verified": false
+        }
+      ],
+      "what_happened": "Google DeepMind introduced AlphaProof Code, an action-taking framework that successfully completed the formal verification of the Signal cryptographic protocol.",
+      "what_changed": "Google DeepMind introduced AlphaProof Code, an action-taking framework that successfully completed the formal verification of the Signal cryptographic protocol.",
+      "why_it_matters": "Applying agentic AI to mathematically verify critical communications infrastructure addresses software vulnerability challenges at scale.",
+      "who_affected": "Developers and AI Practitioners",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "category": "Frontier Models",
-      "category_confidence": 0.9,
-      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
-      "who_affected": "Developers, Enterprise Decision Makers",
+      "potential_impact": "Impacts roadmap decisions across AI Agents.",
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
       "source": "Google DeepMind",
-      "tier": "Official Lab",
-      "status": "official_claim",
+      "tier": "Independent Journalism",
+      "status": "official_announcement",
       "evidence_article_ids": [
-        "cluster_28"
+        "art_deepmind_blog_613a7ae420cb"
       ],
       "evidence_urls": [
-        "https://deepmind.google/blog/introducing-gemini-4-neon"
+        "https://deepmind.google/blog/introducing-alphaproof-code"
       ],
-      "topic": "Frontier Models",
+      "topic": "AI Agents",
       "company": "google",
-      "reading_time": "8 min read",
+      "reading_time": "1 min read",
       "audience_pills": [
         "Developers",
-        "Enterprise Decision Makers"
+        "Ai Practitioners"
       ],
       "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Google."
       },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
-      "evidence_status": "independently_corroborated",
-      "evidence_label": "Official announcement + 1 independent reports",
-      "independent_source_count": 2,
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Google.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
       "key_points": [
-        "Strategic development announced in Frontier Models."
+        "Google DeepMind introduced AlphaProof Code, an agentic framework that successfully completed the formal verification of the Signal cryptographic protocol.",
+        "Applying agentic AI to mathematically verify critical communications infrastructure addresses software vulnerability challenges at scale."
       ],
-      "detailed_analysis": "Introducing Gemini 4 Neon.",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
-      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
-      "image_alt": "Visual representation for Introducing Gemini 4 Neon",
-      "image_type": "source_media",
-      "image_credit": "Source publication",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+      "detailed_analysis": "Google DeepMind introduced AlphaProof Code, an agentic framework that successfully completed the formal verification of the Signal cryptographic protocol.",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Google DeepMind Formally Verifies Cryptographic Software with AlphaProof Code",
+      "image_type": "official_asset",
+      "image_credit": "Google announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "The Silent Consensus",
-      "link": "https://openai.com/index/the-silent-consensus",
-      "trend_type": "single_development",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "trend_signal_diversity": 1,
-      "claim_corroboration": 1,
-      "independent_publisher_count": 1,
-      "published_at": "2026-11-18T10:00:00+00:00",
-      "first_published_at": "2026-11-18T10:00:00+00:00",
-      "latest_updated_at": "2026-11-18T10:00:00+00:00",
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
+      "title": "Strengthening Risk Management and Sandboxed Execution for Autonomous Agents",
+      "link": "https://openai.com/index/inside-the-codex-sandbox",
+      "trend_type": "emerging_theme",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "theme_relationship": "OpenAI detailed its multi-layered approach to governing autonomous coding agents through local system sandboxing and end-to-end frontier safety pipelines.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+          "text": "The Codex sandbox executes commands on local host machines while strictly enforcing user-controlled filesystem and network constraints across macOS, Linux, and Windows.",
           "evidence": [
             {
-              "article_id": "cluster_1",
-              "canonical_url": "https://openai.com/index/the-silent-consensus",
+              "article_id": "art_openai_news_37979092b9c5",
+              "canonical_url": "https://openai.com/index/inside-the-codex-sandbox",
               "publisher_id": "openai",
               "publisher_group_id": "openai",
               "source_name": "OpenAI News",
               "trust_tier": 1,
               "is_official": true,
-              "supporting_excerpt": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+              "source_type": "official",
+              "supporting_excerpt": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_2",
+          "text": "OpenAI manages frontier AI risks through a lifecycle comprising model alignment, sandboxing, blocking safeguards, and operational monitoring.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_7b3dd79c04c7",
+              "canonical_url": "https://openai.com/index/managing-frontier-ai-risk",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
               "text_verified": true
             }
           ],
@@ -429,49 +630,59 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_1",
-          "canonical_url": "https://openai.com/index/the-silent-consensus",
+          "article_id": "art_openai_news_37979092b9c5",
+          "canonical_url": "https://openai.com/index/inside-the-codex-sandbox",
           "publisher_id": "openai",
           "publisher_group_id": "openai",
           "source_name": "OpenAI News",
           "trust_tier": 1,
           "is_official": true,
-          "supporting_excerpt": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+          "source_type": "official",
+          "supporting_excerpt": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+          "text_verified": true
+        },
+        {
+          "article_id": "art_openai_news_7b3dd79c04c7",
+          "canonical_url": "https://openai.com/index/managing-frontier-ai-risk",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
           "text_verified": true
         }
       ],
-      "what_happened": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "what_changed": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "reported_facts": [
-        "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "what_happened": "OpenAI outlined its system boundary enforcement via the Codex sandbox alongside broader training-to-deployment risk mitigation practices.",
+      "what_changed": "OpenAI outlined its system boundary enforcement via the Codex sandbox alongside broader training-to-deployment risk mitigation practices.",
+      "why_it_matters": "Enforcing OS-level network and filesystem boundaries is essential to safely running autonomous coding agents on developer workstations and enterprise infrastructure.",
+      "who_affected": "Developers and Enterprises",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "who_affected": "Developers, Enterprise Decision Makers",
-      "source": "OpenAI News",
+      "potential_impact": "Impacts roadmap decisions across AI Agents.",
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "source": "OpenAI",
       "tier": "Official Lab",
-      "status": "official_claim",
+      "status": "emerging_theme",
       "evidence_article_ids": [
-        "cluster_1"
+        "art_openai_news_37979092b9c5",
+        "art_openai_news_7b3dd79c04c7"
       ],
       "evidence_urls": [
-        "https://openai.com/index/the-silent-consensus"
+        "https://openai.com/index/inside-the-codex-sandbox",
+        "https://openai.com/index/managing-frontier-ai-risk"
       ],
-      "topic": "Frontier Models",
+      "topic": "AI Agents",
       "company": "openai",
       "reading_time": "1 min read",
       "audience_pills": [
         "Developers",
-        "Enterprise Decision Makers"
+        "Enterprises"
       ],
       "audience_impact": {
         "target": "For practitioners & teams",
@@ -479,51 +690,65 @@
       },
       "target_audience": "For practitioners & teams",
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 2,
+      "evidence_status": "emerging_theme",
+      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions."
+        "OpenAI outlined its system boundary enforcement via the Codex sandbox alongside broader training-to-deployment risk mitigation practices.",
+        "Enforcing OS-level network and filesystem boundaries is essential to safely running autonomous coding agents on developer workstations and enterprise infrastructure."
       ],
-      "detailed_analysis": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "detailed_analysis": "OpenAI outlined its system boundary enforcement via the Codex sandbox alongside broader training-to-deployment risk mitigation practices.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for The Silent Consensus",
+      "image_alt": "Visual representation for Strengthening Risk Management and Sandboxed Execution for Autonomous Agents",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization",
-      "link": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
-      "trend_type": "single_development",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "trend_signal_diversity": 1,
-      "claim_corroboration": 1,
-      "independent_publisher_count": 1,
-      "published_at": "2026-11-19T00:15:58+00:00",
-      "first_published_at": "2026-11-19T00:15:58+00:00",
-      "latest_updated_at": "2026-11-19T00:15:58+00:00",
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
+      "title": "Expansion of Global Public Sector and Scientific Access Initiatives",
+      "link": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+      "trend_type": "emerging_theme",
+      "article_type": "case_study_pr",
+      "signal_badge": "Case Study",
+      "theme_relationship": "Frontier AI providers are forging partnerships with national governments and expanding academic grant programs to democratize access to advanced models.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
+          "text": "OpenAI expanded its academic program to grant 200,000 global researchers free access to frontier models.",
           "evidence": [
             {
-              "article_id": "cluster_35",
-              "canonical_url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
-              "publisher_id": "aws",
-              "publisher_group_id": "amazon",
-              "source_name": "AWS Machine Learning",
+              "article_id": "art_openai_news_27d88b8086fe",
+              "canonical_url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
               "trust_tier": 1,
               "is_official": true,
-              "supporting_excerpt": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
+              "source_type": "official",
+              "supporting_excerpt": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_2",
+          "text": "OpenAI and the Government of Chile partnered to advance responsible public-sector AI adoption and support local startup tool development.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_48e88515d6f7",
+              "canonical_url": "https://openai.com/index/introducing-openai-for-chile",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
               "text_verified": true
             }
           ],
@@ -533,103 +758,126 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_35",
-          "canonical_url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
-          "publisher_id": "aws",
-          "publisher_group_id": "amazon",
-          "source_name": "AWS Machine Learning",
+          "article_id": "art_openai_news_27d88b8086fe",
+          "canonical_url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
           "trust_tier": 1,
           "is_official": true,
-          "supporting_excerpt": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
+          "source_type": "official",
+          "supporting_excerpt": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+          "text_verified": true
+        },
+        {
+          "article_id": "art_openai_news_48e88515d6f7",
+          "canonical_url": "https://openai.com/index/introducing-openai-for-chile",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
           "text_verified": true
         }
       ],
-      "what_happened": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
-      "what_changed": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
-      "why_it_matters": "This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
-      "reported_facts": [
-        "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
-        "This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started."
-      ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "what_happened": "OpenAI expanded free frontier model access to 200,000 academic researchers worldwide and launched an adoption partnership with the Government of Chile.",
+      "what_changed": "OpenAI expanded free frontier model access to 200,000 academic researchers worldwide and launched an adoption partnership with the Government of Chile.",
+      "why_it_matters": "These initiatives broaden public-interest access to advanced systems while developing regional infrastructure and administrative digital literacy.",
+      "who_affected": "AI Practitioners and Enterprises",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
+      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
       "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "who_affected": "Developers, Enterprise Decision Makers",
-      "source": "AWS Machine Learning",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "source": "OpenAI",
       "tier": "Official Lab",
-      "status": "official_claim",
+      "status": "emerging_theme",
       "evidence_article_ids": [
-        "cluster_35"
+        "art_openai_news_27d88b8086fe",
+        "art_openai_news_48e88515d6f7"
       ],
       "evidence_urls": [
-        "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization"
+        "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+        "https://openai.com/index/introducing-openai-for-chile"
       ],
       "topic": "Frontier Models",
-      "company": "amazon",
+      "company": "openai",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Developers",
-        "Enterprise Decision Makers"
+        "Ai Practitioners",
+        "Enterprises"
       ],
       "audience_impact": {
-        "target": "For AI researchers",
-        "impact": "Advances research methodologies and empirical evaluations for Amazon architectures."
+        "target": "For enterprise operators",
+        "impact": "Demonstrates practical operational automation and procurement pathways using Openai."
       },
-      "target_audience": "For AI researchers",
-      "audience_impact_statement": "Advances research methodologies and empirical evaluations for Amazon architectures.",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
+      "target_audience": "For enterprise operators",
+      "audience_impact_statement": "Demonstrates practical operational automation and procurement pathways using Openai.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 2,
+      "evidence_status": "emerging_theme",
+      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
-        "This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started."
+        "OpenAI expanded free frontier model access to 200,000 academic researchers worldwide and launched an adoption partnership with the Government of Chile.",
+        "These initiatives broaden public-interest access to advanced systems while developing regional infrastructure and administrative digital literacy."
       ],
-      "detailed_analysis": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).\n\nThis post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization",
+      "detailed_analysis": "OpenAI expanded free frontier model access to 200,000 academic researchers worldwide and launched an adoption partnership with the Government of Chile.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Expansion of Global Public Sector and Scientific Access Initiatives",
       "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
+      "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Announcements",
-      "link": "https://www.anthropic.com/news/announcements",
-      "trend_type": "single_development",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "trend_signal_diversity": 1,
-      "claim_corroboration": 1,
-      "independent_publisher_count": 1,
-      "published_at": null,
-      "first_published_at": "Recent",
-      "latest_updated_at": "Recent",
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
+      "title": "Anthropic Establishes Public Benefit Equity Allocations and Expands Governance Trust",
+      "link": "https://www.anthropic.com/news/public-benefit-fund",
+      "trend_type": "emerging_theme",
+      "article_type": "policy_regulation",
+      "signal_badge": "Security & Policy",
+      "theme_relationship": "Anthropic updated its corporate structure by committing equity to a public benefit fund and appointing scientific leadership to its governance trust.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Official news announcement from Anthropic: Announcements.",
+          "text": "Anthropic committed 5% of its shares to a new Public Benefit Fund, with provisions to allocate an additional 2% for every 50% valuation gain above baseline.",
           "evidence": [
             {
-              "article_id": "cluster_13",
+              "article_id": "art_anthropic_news_a4f7bd1fdab9",
+              "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
+              "publisher_id": "anthropic",
+              "publisher_group_id": "anthropic",
+              "source_name": "Anthropic Official News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
+              "text_verified": false
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        },
+        {
+          "claim_id": "claim_2",
+          "text": "Dr. Christopher Stubbs joined Anthropic's Long-Term Benefit Trust to contribute experimental physics and precision measurement expertise.",
+          "evidence": [
+            {
+              "article_id": "art_anthropic_news_9b994dd4f2c6",
               "canonical_url": "https://www.anthropic.com/news/announcements",
               "publisher_id": "anthropic",
               "publisher_group_id": "anthropic",
               "source_name": "Anthropic Official News",
               "trust_tier": 1,
               "is_official": true,
-              "supporting_excerpt": "Official news announcement from Anthropic: Announcements.",
-              "text_verified": true
+              "source_type": "official",
+              "supporting_excerpt": "Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic\u2019s Long-Term Benefit Trust.",
+              "text_verified": false
             }
           ],
           "claim_corroboration": 1,
@@ -638,68 +886,81 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_13",
+          "article_id": "art_anthropic_news_a4f7bd1fdab9",
+          "canonical_url": "https://www.anthropic.com/news/public-benefit-fund",
+          "publisher_id": "anthropic",
+          "publisher_group_id": "anthropic",
+          "source_name": "Anthropic Official News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Subject to stockholder approval, 5% of Anthropic\u2019s shares will be committed today, with an additional 2% added at the board\u2019s discretion for every 50% increase in the company\u2019s value above a set baseline.",
+          "text_verified": false
+        },
+        {
+          "article_id": "art_anthropic_news_9b994dd4f2c6",
           "canonical_url": "https://www.anthropic.com/news/announcements",
           "publisher_id": "anthropic",
           "publisher_group_id": "anthropic",
           "source_name": "Anthropic Official News",
           "trust_tier": 1,
           "is_official": true,
-          "supporting_excerpt": "Official news announcement from Anthropic: Announcements.",
-          "text_verified": true
+          "source_type": "official",
+          "supporting_excerpt": "Dr. Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard University, has joined Anthropic\u2019s Long-Term Benefit Trust.",
+          "text_verified": false
         }
       ],
-      "what_happened": "Official news announcement from Anthropic: Announcements.",
-      "what_changed": "Official news announcement from Anthropic: Announcements.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Anthropic.",
-      "reported_facts": [
-        "Official news announcement from Anthropic: Announcements.",
-        "Official development released and documented by Anthropic Official News."
-      ],
-      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "what_happened": "Anthropic committed an initial 5% stake to a Public Benefit Fund and appointed physicist Dr. Christopher Stubbs to its Long-Term Benefit Trust.",
+      "what_changed": "Anthropic committed an initial 5% stake to a Public Benefit Fund and appointed physicist Dr. Christopher Stubbs to its Long-Term Benefit Trust.",
+      "why_it_matters": "Tying equity distribution directly to corporate valuation growth institutionalizes public benefit commitments as frontier labs scale commercially.",
+      "who_affected": "Enterprises and AI Practitioners",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
+      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
       "category": "Frontier Models",
       "category_confidence": 0.7,
       "category_rationale": "General frontier AI development or ecosystem milestone",
-      "who_affected": "Developers, Enterprise Decision Makers",
       "source": "Anthropic Official News",
       "tier": "Official Lab",
-      "status": "official_claim",
+      "status": "emerging_theme",
       "evidence_article_ids": [
-        "cluster_13"
+        "art_anthropic_news_a4f7bd1fdab9",
+        "art_anthropic_news_9b994dd4f2c6"
       ],
       "evidence_urls": [
+        "https://www.anthropic.com/news/public-benefit-fund",
         "https://www.anthropic.com/news/announcements"
       ],
       "topic": "Frontier Models",
       "company": "anthropic",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Developers",
-        "Enterprise Decision Makers"
+        "Enterprises",
+        "Ai Practitioners"
       ],
       "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic."
       },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 2,
+      "evidence_status": "emerging_theme",
+      "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Official news announcement from Anthropic: Announcements."
+        "Anthropic committed an initial 5% stake to a Public Benefit Fund and appointed physicist Dr. Christopher Stubbs to its Long-Term Benefit Trust.",
+        "Tying equity distribution directly to corporate valuation growth institutionalizes public benefit commitments as frontier labs scale commercially."
       ],
-      "detailed_analysis": "Official news announcement from Anthropic: Announcements.",
-      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "image_alt": "Visual representation for Announcements",
-      "image_type": "source_media",
-      "image_credit": "Source publication",
+      "detailed_analysis": "Anthropic committed an initial 5% stake to a Public Benefit Fund and appointed physicist Dr. Christopher Stubbs to its Long-Term Benefit Trust.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Anthropic Establishes Public Benefit Equity Allocations and Expands Governance Trust",
+      "image_type": "official_asset",
+      "image_credit": "Anthropic announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     }
   ],
@@ -743,13 +1004,13 @@
       "ai_limitations": "Regulatory & governance scope: Enforcement parameters, compliance timelines, and cross-border legal obligations remain subject to jurisdictional variation.",
       "original_source_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
       "word_count": 1617,
-      "extraction_status": "extracted",
+      "extraction_status": "cached",
       "content_hash": "794604ccbd73c9ed",
       "extracted_content": {
         "headline": "Introducing Gemini 4 Neon",
         "word_count": 1617,
         "reading_time": "8 min read",
-        "extraction_status": "extracted",
+        "extraction_status": "cached",
         "sections_count": 1
       },
       "reported_facts": [
@@ -775,7 +1036,7 @@
       "is_official": true,
       "published": "Nov 18, 21:35 UTC",
       "published_at": "2026-11-18T21:35:43+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
@@ -797,7 +1058,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
       "importance_score": 100,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 75,
       "popularity_score": 75,
       "source_quality_score": 100,
@@ -848,348 +1109,6 @@
       "covered_by_sources_count": 3
     },
     {
-      "id": "cluster_1",
-      "article_id": "cluster_1",
-      "article_url": "articles/cluster_1.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "The Silent Consensus",
-      "one_liner": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "summary": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "ai_what_happened": "OpenAI News published verified documentation on The Silent Consensus.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for The Silent Consensus from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for The Silent Consensus; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate The Silent Consensus capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers The Silent Consensus as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://openai.com/index/the-silent-consensus",
-      "word_count": 25,
-      "extraction_status": "cached_fallback",
-      "content_hash": "7395c286ac72e565",
-      "extracted_content": {
-        "headline": "The Silent Consensus",
-        "word_count": 25,
-        "reading_time": "1 min read",
-        "extraction_status": "cached_fallback",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 18, 10:00 UTC",
-      "published_at": "2026-11-18T10:00:00+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
-      "link": "https://openai.com/index/the-silent-consensus",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for The Silent Consensus",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions."
-      ],
-      "detailed_analysis": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 85,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-18T10:00:00+00:00",
-      "latest_updated_at": "2026-11-18T10:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_2",
-      "article_id": "cluster_2",
-      "article_url": "articles/cluster_2.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Research acceleration: The jagged frontier",
-      "one_liner": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "summary": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "ai_what_happened": "OpenAI News published verified documentation on Research acceleration: The jagged frontier.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Research acceleration: The jagged frontier from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Research acceleration: The jagged frontier; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Research acceleration: The jagged frontier capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers Research acceleration: The jagged frontier as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://openai.com/index/research-acceleration-jagged-frontier",
-      "word_count": 21,
-      "extraction_status": "fallback_summary",
-      "content_hash": "b971921262aabb8b",
-      "extracted_content": {
-        "headline": "Research acceleration: The jagged frontier",
-        "word_count": 21,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 18, 08:00 UTC",
-      "published_at": "2026-11-18T08:00:00+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
-      "link": "https://openai.com/index/research-acceleration-jagged-frontier",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Research acceleration: The jagged frontier",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement."
-      ],
-      "detailed_analysis": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 70,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-18T08:00:00+00:00",
-      "latest_updated_at": "2026-11-18T08:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_4",
-      "article_id": "cluster_4",
-      "article_url": "articles/cluster_4.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Inside the Codex sandbox",
-      "one_liner": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "summary": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "ai_what_happened": "OpenAI News published verified documentation on Inside the Codex sandbox.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Inside the Codex sandbox from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Inside the Codex sandbox; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Inside the Codex sandbox capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers Inside the Codex sandbox as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://openai.com/index/inside-the-codex-sandbox",
-      "word_count": 22,
-      "extraction_status": "cached_fallback",
-      "content_hash": "6614a682b3026a18",
-      "extracted_content": {
-        "headline": "Inside the Codex sandbox",
-        "word_count": 22,
-        "reading_time": "1 min read",
-        "extraction_status": "cached_fallback",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 18, 08:00 UTC",
-      "published_at": "2026-11-18T08:00:00+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
-      "link": "https://openai.com/index/inside-the-codex-sandbox",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Inside the Codex sandbox",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows."
-      ],
-      "detailed_analysis": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 70,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-18T08:00:00+00:00",
-      "latest_updated_at": "2026-11-18T08:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
       "id": "cluster_29",
       "article_id": "cluster_29",
       "article_url": "articles/cluster_29.json",
@@ -1226,13 +1145,13 @@
       "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
       "original_source_url": "https://deepmind.google/blog/genie-4-is-now-available",
       "word_count": 730,
-      "extraction_status": "extracted",
+      "extraction_status": "cached",
       "content_hash": "34de5c4bfda06c0b",
       "extracted_content": {
         "headline": "Genie 4 is now available",
         "word_count": 730,
         "reading_time": "3 min read",
-        "extraction_status": "extracted",
+        "extraction_status": "cached",
         "sections_count": 1
       },
       "reported_facts": [
@@ -1258,7 +1177,7 @@
       "is_official": true,
       "published": "Nov 18, 18:13 UTC",
       "published_at": "2026-11-18T18:13:42+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://deepmind.google/blog/genie-4-is-now-available",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png",
@@ -1386,7 +1305,7 @@
       "is_official": true,
       "published": "Nov 19, 00:15 UTC",
       "published_at": "2026-11-19T00:15:58+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1409,7 +1328,7 @@
       "audience_impact_statement": "Advances research methodologies and empirical evaluations for Amazon architectures.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1501,7 +1420,7 @@
       "is_official": true,
       "published": "Nov 18, 23:58 UTC",
       "published_at": "2026-11-18T23:58:22+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/exa-boosts-embedding-throughput-by-50-to-index-billions-of-documents-on-aws-ai-chips",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1523,7 +1442,7 @@
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1615,7 +1534,7 @@
       "is_official": true,
       "published": "Nov 18, 23:03 UTC",
       "published_at": "2026-11-18T23:03:29+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-workload-recovery-and-expanded-infrastructure-checks-on-amazon-sagemaker-hyperpod",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1638,7 +1557,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1657,6 +1576,349 @@
       ],
       "first_published_at": "2026-11-18T23:03:29+00:00",
       "latest_updated_at": "2026-11-18T23:03:29+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_11",
+      "article_id": "cluster_11",
+      "article_url": "articles/cluster_11.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Broadening access to AI for scientists",
+      "one_liner": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+      "summary": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+      "ai_what_happened": "OpenAI News published verified documentation on Broadening access to AI for scientists.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Broadening access to AI for scientists from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Broadening access to AI for scientists; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Broadening access to AI for scientists capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers Broadening access to AI for scientists as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+      "original_source_url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+      "word_count": 19,
+      "extraction_status": "cached_fallback",
+      "content_hash": "ce6a17accab016a4",
+      "extracted_content": {
+        "headline": "Broadening access to AI for scientists",
+        "word_count": 19,
+        "reading_time": "1 min read",
+        "extraction_status": "cached_fallback",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 16, 17:00 UTC",
+      "published_at": "2026-11-16T17:00:00+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
+      "link": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Broadening access to AI for scientists",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models."
+      ],
+      "detailed_analysis": "We\u2019re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 50,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 93.5,
+      "overall_score": 93.5,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Novel capability / major architectural milestone (+30 novelty)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-16T17:00:00+00:00",
+      "latest_updated_at": "2026-11-16T17:00:00+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_1",
+      "article_id": "cluster_1",
+      "article_url": "articles/cluster_1.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "The Silent Consensus",
+      "one_liner": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "summary": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "ai_what_happened": "OpenAI News published verified documentation on The Silent Consensus.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for The Silent Consensus from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for The Silent Consensus; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate The Silent Consensus capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers The Silent Consensus as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+      "original_source_url": "https://openai.com/index/the-silent-consensus",
+      "word_count": 25,
+      "extraction_status": "cached_fallback",
+      "content_hash": "7395c286ac72e565",
+      "extracted_content": {
+        "headline": "The Silent Consensus",
+        "word_count": 25,
+        "reading_time": "1 min read",
+        "extraction_status": "cached_fallback",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 18, 10:00 UTC",
+      "published_at": "2026-11-18T10:00:00+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
+      "link": "https://openai.com/index/the-silent-consensus",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for The Silent Consensus",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions."
+      ],
+      "detailed_analysis": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 70,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-18T10:00:00+00:00",
+      "latest_updated_at": "2026-11-18T10:00:00+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_2",
+      "article_id": "cluster_2",
+      "article_url": "articles/cluster_2.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Research acceleration: The jagged frontier",
+      "one_liner": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+      "summary": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+      "ai_what_happened": "OpenAI News published verified documentation on Research acceleration: The jagged frontier.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Research acceleration: The jagged frontier from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Research acceleration: The jagged frontier; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Research acceleration: The jagged frontier capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers Research acceleration: The jagged frontier as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "word_count": 21,
+      "extraction_status": "cached_fallback",
+      "content_hash": "b971921262aabb8b",
+      "extracted_content": {
+        "headline": "Research acceleration: The jagged frontier",
+        "word_count": 21,
+        "reading_time": "1 min read",
+        "extraction_status": "cached_fallback",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Agents",
+      "category_confidence": 0.94,
+      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
+      "topic": "AI Agents",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 18, 08:00 UTC",
+      "published_at": "2026-11-18T08:00:00+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
+      "link": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Research acceleration: The jagged frontier",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement."
+      ],
+      "detailed_analysis": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 70,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-18T08:00:00+00:00",
+      "latest_updated_at": "2026-11-18T08:00:00+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
       "related_sources": [],
@@ -1730,7 +1992,7 @@
       "is_official": false,
       "published": "Nov 18, 19:56 UTC",
       "published_at": "2026-11-18T19:56:39+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://techcrunch.com/2026/11/18/snapchat-now-lets-developers-build-ar-lenses-with-ai-coding-assistants-like-claude-code-and-cursor",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1844,7 +2106,7 @@
       "is_official": false,
       "published": "Nov 18, 15:44 UTC",
       "published_at": "2026-11-18T15:44:02+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://www.theverge.com/ai-artificial-intelligence/1036549/nvidia-amd-earnings-fall-2026-chips-pause-frontier-models",
       "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
@@ -1866,7 +2128,7 @@
       "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Verge.",
       "importance_score": 80,
       "relevance_score": 95,
-      "freshness_score": 85,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1959,7 +2221,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -2077,7 +2339,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -2193,7 +2455,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://www.anthropic.com/news/features",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -2307,7 +2569,7 @@
       "is_official": false,
       "published": "Nov 18, 17:32 UTC",
       "published_at": "2026-11-18T17:32:10+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
@@ -2422,7 +2684,7 @@
       "is_official": true,
       "published": "Nov 10, 12:02 UTC",
       "published_at": "2026-11-10T12:02:28+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://deepmind.google/blog/introducing-alphaproof-code",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2539,7 +2801,7 @@
       "is_official": true,
       "published": "Nov 18, 22:31 UTC",
       "published_at": "2026-11-18T22:31:04+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-sagemaker-jumpstart-model-leaderboard",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2562,7 +2824,7 @@
       "audience_impact_statement": "Advances research methodologies and empirical evaluations for Amazon architectures.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -2654,7 +2916,7 @@
       "is_official": true,
       "published": "Nov 18, 20:53 UTC",
       "published_at": "2026-11-18T20:53:41+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/private-certificate-authority-support-in-amazon-bedrock-agentcore-identity",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2676,7 +2938,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -2807,7 +3069,7 @@
       "is_official": true,
       "published": "Nov 18, 20:13 UTC",
       "published_at": "2026-11-18T20:13:18+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/how-salesforce-is-advancing-global-scale-model-serving-with-cross-region-inference-routing-in-amazon-sagemaker-ai",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2830,7 +3092,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -2922,7 +3184,7 @@
       "is_official": true,
       "published": "Nov 17, 23:33 UTC",
       "published_at": "2026-11-17T23:33:26+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/managed-nvidia-dynamo-on-amazon-sagemaker-hyperpod-inference",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80",
@@ -2971,120 +3233,6 @@
     }
   ],
   "research_safety": [
-    {
-      "id": "cluster_5",
-      "article_id": "cluster_5",
-      "article_url": "articles/cluster_5.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Managing frontier AI risk: From training to deployment",
-      "one_liner": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-      "summary": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-      "ai_what_happened": "OpenAI News published verified documentation on Managing frontier AI risk: From training to deployment.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Managing frontier AI risk: From training to deployment from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Managing frontier AI risk: From training to deployment; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Managing frontier AI risk: From training to deployment capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers Managing frontier AI risk: From training to deployment as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://openai.com/index/managing-frontier-ai-risk",
-      "word_count": 20,
-      "extraction_status": "cached_fallback",
-      "content_hash": "4c9f596de08a1723",
-      "extracted_content": {
-        "headline": "Managing frontier AI risk: From training to deployment",
-        "word_count": 20,
-        "reading_time": "1 min read",
-        "extraction_status": "cached_fallback",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Safety",
-      "category_confidence": 0.95,
-      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
-      "topic": "AI Safety",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 18, 06:00 UTC",
-      "published_at": "2026-11-18T06:00:00+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
-      "link": "https://openai.com/index/managing-frontier-ai-risk",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Managing frontier AI risk: From training to deployment",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring."
-      ],
-      "detailed_analysis": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-      "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai."
-      },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Openai.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 70,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-18T06:00:00+00:00",
-      "latest_updated_at": "2026-11-18T06:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
     {
       "id": "cluster_23",
       "article_id": "cluster_23",
@@ -3155,7 +3303,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3269,7 +3417,7 @@
       "is_official": true,
       "published": "Nov 17, 00:00 UTC",
       "published_at": "2026-11-17T00:00:00+00:00",
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3382,7 +3530,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-19T02:04:05.317793+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3427,108 +3575,156 @@
       "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_47",
+      "article_id": "cluster_47",
+      "article_url": "articles/cluster_47.json",
+      "publisher_id": "huggingface",
+      "publisher_group_id": "huggingface",
+      "article_type": "research_paper",
+      "signal_badge": "Research Paper",
+      "impact_level": "Notable",
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "one_liner": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency.",
+      "summary": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency.",
+      "ai_what_happened": "Hugging Face Blog published verified documentation on DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency.",
+      "ai_key_details": [
+        "Primary documentation verified from Hugging Face Blog."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency from Hugging Face Blog.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency capabilities from Hugging Face Blog directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Hugging Face Blog."
+      },
+      "ai_whats_new": "Delivers DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency as documented in verified primary release notes from Hugging Face Blog.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from Hugging Face Blog."
+      ],
+      "ai_limitations": "Preprint & open research status: Technical claims and evaluation baselines from Hugging Face Blog have not completed formal peer review or broad independent reproduction.",
+      "original_source_url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "word_count": 7,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+        "word_count": 7,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Official development released and documented by Hugging Face Blog."
+      ],
+      "what_changed": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Huggingface.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Huggingface may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "Hugging Face Blog",
+      "tier": "Open Research",
+      "trust_tier": 3,
+      "is_official": true,
+      "published": "Nov 18, 19:54 UTC",
+      "published_at": "2026-11-18T19:54:56+00:00",
+      "last_fetched_at": "2026-11-19T10:30:38.877589+00:00",
+      "link": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "image_type": "official_asset",
+      "image_credit": "Huggingface announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "huggingface",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Strategic development announced in Frontier Models."
+      ],
+      "detailed_analysis": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Huggingface workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Huggingface workflows.",
+      "importance_score": 45,
+      "relevance_score": 95,
+      "freshness_score": 85,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 57.9,
+      "overall_score": 57.9,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Empirical research preprint / benchmark evaluation (+15 impact)",
+        "- Routine uncorroborated preprint without verifiable breakthrough signals (-20 research quality)",
+        "+ Official primary lab source (100 authority)",
+        "- [uncorroborated_arxiv_cap] Single-source routine research preprint capped at 64.0 ceiling"
+      ],
+      "first_published_at": "2026-11-18T19:54:56+00:00",
+      "latest_updated_at": "2026-11-18T19:54:56+00:00",
+      "eligible_for_top_developments": false,
+      "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
     }
   ],
   "trending": [],
   "pulse_items": [
     {
-      "title": "The Silent Consensus",
+      "title": "Introducing Gemini 4 Neon",
       "topic": "Frontier Models",
       "category": "Frontier Models",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
-      "company": "openai",
-      "published": "Nov 18, 10:00 UTC",
-      "published_at": "2026-11-18T10:00:00+00:00",
-      "first_published_at": "2026-11-18T10:00:00+00:00",
-      "latest_updated_at": "2026-11-18T10:00:00+00:00",
-      "what_happened": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "what_changed": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "one_liner": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "summary": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "company": "google",
+      "published": "Nov 18, 21:35 UTC",
+      "published_at": "2026-11-18T21:35:43+00:00",
+      "first_published_at": "2026-11-18T21:35:43+00:00",
+      "latest_updated_at": "2026-11-18T21:03:23+00:00",
+      "what_happened": "Introducing Gemini 4 Neon.",
+      "what_changed": "Introducing Gemini 4 Neon.",
+      "one_liner": "Introducing Gemini 4 Neon.",
+      "summary": "Introducing Gemini 4 Neon.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
+      "potential_impact": "Analytical Projection: Developments from Google may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "Introducing Gemini 4 Neon.",
       "key_points": [
-        "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions."
+        "Strategic development announced in Frontier Models."
       ],
-      "link": "https://openai.com/index/the-silent-consensus",
-      "source": "OpenAI News",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
+      "source": "Google DeepMind",
       "tier": "Official Lab",
       "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
       },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Research acceleration: The jagged frontier",
-      "topic": "AI Agents",
-      "category": "AI Agents",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "company": "openai",
-      "published": "Nov 18, 08:00 UTC",
-      "published_at": "2026-11-18T08:00:00+00:00",
-      "first_published_at": "2026-11-18T08:00:00+00:00",
-      "latest_updated_at": "2026-11-18T08:00:00+00:00",
-      "what_happened": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "what_changed": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "one_liner": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "summary": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Openai.",
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
-      "key_points": [
-        "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement."
-      ],
-      "link": "https://openai.com/index/research-acceleration-jagged-frontier",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
-      },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Inside the Codex sandbox",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "company": "openai",
-      "published": "Nov 18, 08:00 UTC",
-      "published_at": "2026-11-18T08:00:00+00:00",
-      "first_published_at": "2026-11-18T08:00:00+00:00",
-      "latest_updated_at": "2026-11-18T08:00:00+00:00",
-      "what_happened": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "what_changed": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "one_liner": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "summary": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "key_points": [
-        "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows."
-      ],
-      "link": "https://openai.com/index/inside-the-codex-sandbox",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png"
     },
     {
       "title": "Genie 4 is now available",
@@ -3562,6 +3758,73 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Google workflows.",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png"
+    },
+    {
+      "title": "Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization",
+      "topic": "Frontier Models",
+      "category": "Frontier Models",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "company": "amazon",
+      "published": "Nov 19, 00:15 UTC",
+      "published_at": "2026-11-19T00:15:58+00:00",
+      "first_published_at": "2026-11-19T00:15:58+00:00",
+      "latest_updated_at": "2026-11-19T00:15:58+00:00",
+      "what_happened": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
+      "what_changed": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
+      "one_liner": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
+      "summary": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
+      "why_it_matters": "This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).\n\nThis post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
+      "key_points": [
+        "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
+        "This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started."
+      ],
+      "link": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "audience_impact": {
+        "target": "For AI researchers",
+        "impact": "Advances research methodologies and empirical evaluations for Amazon architectures."
+      },
+      "target_audience": "For AI researchers",
+      "audience_impact_statement": "Advances research methodologies and empirical evaluations for Amazon architectures.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Exa boosts embedding throughput by 50% to index billions of documents on AWS AI chips",
+      "topic": "Frontier Models",
+      "category": "Frontier Models",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "company": "amazon",
+      "published": "Nov 18, 23:58 UTC",
+      "published_at": "2026-11-18T23:58:22+00:00",
+      "first_published_at": "2026-11-18T23:58:22+00:00",
+      "latest_updated_at": "2026-11-18T23:58:22+00:00",
+      "what_happened": "Exa's neural search engine is backed by an in-house vector database, so the unit economics of embedding tens of billions of web documents drive the business.",
+      "what_changed": "Exa's neural search engine is backed by an in-house vector database, so the unit economics of embedding tens of billions of web documents drive the business.",
+      "one_liner": "Exa's neural search engine is backed by an in-house vector database, so the unit economics of embedding tens of billions of web documents drive the business.",
+      "summary": "Exa's neural search engine is backed by an in-house vector database, so the unit economics of embedding tens of billions of web documents drive the business.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "Exa's neural search engine is backed by an in-house vector database, so the unit economics of embedding tens of billions of web documents drive the business.",
+      "key_points": [
+        "Exa's neural search engine is backed by an in-house vector database, so the unit economics of embedding tens of billions of web documents drive the business."
+      ],
+      "link": "https://aws.amazon.com/blogs/machine-learning/exa-boosts-embedding-throughput-by-50-to-index-billions-of-documents-on-aws-ai-chips",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "developer_trends": [
@@ -3571,8 +3834,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 264510,
-      "forks": 59715,
+      "stars": 264614,
+      "forks": 59747,
       "language": "Python",
       "topics": [
         "ai",
@@ -3583,13 +3846,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 256,
-      "stars_gained_7d": 1770,
+      "stars_gained_24h": 241,
+      "stars_gained_7d": 1794,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+256); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+241); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-19T01:51:47Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
+      "updated_at": "2026-11-19T10:12:53Z",
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3597,8 +3860,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 83571,
-      "forks": 15322,
+      "stars": 83659,
+      "forks": 15333,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3609,13 +3872,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 191,
-      "stars_gained_7d": 1567,
+      "stars_gained_24h": 205,
+      "stars_gained_7d": 1591,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+191); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+205); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-19T01:48:49Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
+      "updated_at": "2026-11-19T10:28:53Z",
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3623,8 +3886,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 73362,
-      "forks": 57896,
+      "stars": 73439,
+      "forks": 57929,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3635,13 +3898,13 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": 236,
-      "stars_gained_7d": 3103,
+      "stars_gained_24h": 190,
+      "stars_gained_7d": 2642,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+236); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+190); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
       "updated_at": "2026-11-18T15:38:50Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3649,8 +3912,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 468377,
-      "forks": 114495,
+      "stars": 469045,
+      "forks": 114633,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3661,13 +3924,13 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 1837,
-      "stars_gained_7d": 15606,
+      "stars_gained_24h": 1693,
+      "stars_gained_7d": 15423,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+1837); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+1693); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-19T01:57:21Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
+      "updated_at": "2026-11-19T09:02:12Z",
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
     },
     {
       "repository": "n8n-io/n8n",
@@ -3675,8 +3938,8 @@
       "owner": "n8n-io",
       "url": "https://github.com/n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 211118,
-      "forks": 61569,
+      "stars": 211341,
+      "forks": 61582,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -3687,13 +3950,13 @@
         "development"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 200,
-      "stars_gained_7d": 898,
+      "stars_gained_24h": 509,
+      "stars_gained_7d": 1090,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+200); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+509); Active commit activity in the last 24h.",
       "created_at": "2019-06-22T09:24:21Z",
-      "updated_at": "2026-11-19T02:02:48Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
+      "updated_at": "2026-11-19T10:28:37Z",
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -3701,8 +3964,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 114822,
-      "forks": 19067,
+      "stars": 114922,
+      "forks": 19084,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -3713,13 +3976,39 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 225,
-      "stars_gained_7d": 1626,
+      "stars_gained_24h": 233,
+      "stars_gained_7d": 1670,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+225); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+233); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-19T02:00:03Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
+      "updated_at": "2026-11-19T10:02:50Z",
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
+    },
+    {
+      "repository": "f/prompts.chat",
+      "name": "prompts.chat",
+      "owner": "f",
+      "url": "https://github.com/f/prompts.chat",
+      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
+      "stars": 177865,
+      "forks": 22678,
+      "language": "MDX",
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "awesome-list",
+        "chatgpt",
+        "chatgpt-prompts",
+        "claude"
+      ],
+      "license": "NOASSERTION",
+      "stars_gained_24h": 84,
+      "stars_gained_7d": 914,
+      "developer_trend_score": 98.1,
+      "score_explanation": "Rapid 24h adoption (+84 stars); Active commit activity in the last 24h.",
+      "created_at": "2022-12-05T13:54:13Z",
+      "updated_at": "2026-11-19T07:07:20Z",
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
     },
     {
       "repository": "open-webui/open-webui",
@@ -3727,8 +4016,8 @@
       "owner": "open-webui",
       "url": "https://github.com/open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 159051,
-      "forks": 23110,
+      "stars": 159072,
+      "forks": 23108,
       "language": "Svelte",
       "topics": [
         "ai",
@@ -3739,39 +4028,13 @@
         "mcp"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 81,
-      "stars_gained_7d": 632,
-      "developer_trend_score": 97.7,
-      "score_explanation": "Rapid 24h adoption (+81 stars); Active commit activity in the last 24h.",
+      "stars_gained_24h": 70,
+      "stars_gained_7d": 623,
+      "developer_trend_score": 96.4,
+      "score_explanation": "Rapid 24h adoption (+70 stars); Active commit activity in the last 24h.",
       "created_at": "2023-10-06T22:08:27Z",
       "updated_at": "2026-11-18T20:54:11Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
-    },
-    {
-      "repository": "langgenius/dify",
-      "name": "dify",
-      "owner": "langgenius",
-      "url": "https://github.com/langgenius/dify",
-      "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
-      "stars": 161451,
-      "forks": 25527,
-      "language": "Python",
-      "topics": [
-        "agent",
-        "agentic-ai",
-        "agentic-framework",
-        "agentic-workflow",
-        "ai",
-        "automation"
-      ],
-      "license": "NOASSERTION",
-      "stars_gained_24h": 68,
-      "stars_gained_7d": 456,
-      "developer_trend_score": 96.2,
-      "score_explanation": "Rapid 24h adoption (+68 stars); Active commit activity in the last 24h.",
-      "created_at": "2023-04-12T07:40:24Z",
-      "updated_at": "2026-11-19T01:56:21Z",
-      "collected_at": "2026-11-19T02:04:02.741334+00:00"
+      "collected_at": "2026-11-19T10:30:36.243851+00:00"
     }
   ],
   "source_health_summary": {
@@ -3782,17 +4045,17 @@
     "failed_fetches_count": 0,
     "valid_empty_sources_count": 0,
     "total_articles_received": 2523,
-    "rejected_by_relevance_count": 15,
+    "rejected_by_relevance_count": 14,
     "rejected_by_freshness_count": 1004,
-    "fresh_articles_accepted_count": 93,
-    "unique_article_count": 93
+    "fresh_articles_accepted_count": 94,
+    "unique_article_count": 94
   },
   "source_health_details": [
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-19T02:03:58.244631+00:00",
-      "last_success_at": "2026-11-19T02:03:58.244631+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.154305+00:00",
+      "last_success_at": "2026-11-19T10:27:54.154305+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1413,
@@ -3803,8 +4066,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-19T02:03:58.245289+00:00",
-      "last_success_at": "2026-11-19T02:03:58.245289+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.154941+00:00",
+      "last_success_at": "2026-11-19T10:27:54.154941+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 26,
@@ -3815,8 +4078,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-19T02:03:58.245739+00:00",
-      "last_success_at": "2026-11-19T02:03:58.245739+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.155370+00:00",
+      "last_success_at": "2026-11-19T10:27:54.155370+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -3827,8 +4090,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-19T02:03:58.246199+00:00",
-      "last_success_at": "2026-11-19T02:03:58.246199+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.155763+00:00",
+      "last_success_at": "2026-11-19T10:27:54.155763+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -3839,8 +4102,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-19T02:03:58.246808+00:00",
-      "last_success_at": "2026-11-19T02:03:58.246808+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.156370+00:00",
+      "last_success_at": "2026-11-19T10:27:54.156370+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -3851,8 +4114,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-19T02:03:58.250556+00:00",
-      "last_success_at": "2026-11-19T02:03:58.250556+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.159466+00:00",
+      "last_success_at": "2026-11-19T10:27:54.159466+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 913,
@@ -3863,8 +4126,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-19T02:03:58.251551+00:00",
-      "last_success_at": "2026-11-19T02:03:58.251551+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.161425+00:00",
+      "last_success_at": "2026-11-19T10:27:54.161425+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -3875,8 +4138,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-19T02:03:58.256351+00:00",
-      "last_success_at": "2026-11-19T02:03:58.256351+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.164709+00:00",
+      "last_success_at": "2026-11-19T10:27:54.164709+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -3887,8 +4150,8 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-19T02:03:58.257608+00:00",
-      "last_success_at": "2026-11-19T02:03:58.257608+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.166154+00:00",
+      "last_success_at": "2026-11-19T10:27:54.166154+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -3899,12 +4162,12 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-19T02:03:58.258411+00:00",
-      "last_success_at": "2026-11-19T02:03:58.258411+00:00",
+      "last_attempt_at": "2026-11-19T10:27:54.166924+00:00",
+      "last_success_at": "2026-11-19T10:27:54.166924+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
-      "articles_accepted": 9,
+      "articles_accepted": 10,
       "error_type": null,
       "error_message": null
     }
@@ -3912,7 +4175,7 @@
   "extraction_telemetry": {
     "extraction_attempts": 15,
     "successful_full_body_extractions": 6,
-    "cached_content": 4,
+    "cached_content": 6,
     "rss_only_fallbacks": 9,
     "blocked_pages": 0,
     "missing_content": 0,
