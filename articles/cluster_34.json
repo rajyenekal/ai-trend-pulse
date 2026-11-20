@@ -1,66 +1,66 @@
 {
   "id": "cluster_34",
   "clean_id": "cluster_34",
-  "title": "Optimize AI economics on Amazon Bedrock with Accenture\u2019s sequenced approach",
-  "headline": "Optimize AI economics on Amazon Bedrock with Accenture\u2019s sequenced approach",
+  "title": "Use Kimi Code CLI with models on Amazon Bedrock",
+  "headline": "Use Kimi Code CLI with models on Amazon Bedrock",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-19T18:48:55+00:00",
-  "category": "Frontier Models",
-  "topic": "Frontier Models",
-  "impact_level": "Breakthrough",
-  "pulse_score": 86.8,
-  "article_type": "frontier_launch",
-  "signal_badge": "Frontier Launch",
+  "published_at": "2026-11-20T00:33:30+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/optimize-ai-economics-on-amazon-bedrock-with-accentures-sequenced-approach",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/optimize-ai-economics-on-amazon-bedrock-with-accentures-sequenced-approach",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/optimize-ai-economics-on-amazon-bedrock-with-accentures-sequenced-approach",
+  "url": "https://aws.amazon.com/blogs/machine-learning/use-kimi-code-cli-with-models-on-amazon-bedrock",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/use-kimi-code-cli-with-models-on-amazon-bedrock",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/use-kimi-code-cli-with-models-on-amazon-bedrock",
   "reading_time": "1 min read",
-  "word_count": 46,
+  "word_count": 54,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "As enterprises scale AI on Amazon Bedrock, token spend can grow even as per-token prices fall. This post walks through six composable optimization levers, shows how Accenture applied them across four client engagements, and recommends a sequence for cutting AI token spend on your own workloads.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Optimize AI economics on Amazon Bedrock with Accenture\u2019s sequenced approach.",
+  "ai_overview": "Kimi Code CLI v2.7.0 adds a native Amazon Bedrock provider, so you can connect the open source coding agent to models like Kimi K3.1 Pro using your standard AWS credential chain (named profiles or SSO) instead of a separate API key. This post shows how to configure the provider and send your first request.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Use Kimi Code CLI with models on Amazon Bedrock.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Optimize AI economics on Amazon Bedrock with Accenture\u2019s sequenced approach from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Optimize AI economics on Amazon Bedrock with Accenture\u2019s sequenced approach; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Use Kimi Code CLI with models on Amazon Bedrock from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Use Kimi Code CLI with models on Amazon Bedrock; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Optimize AI economics on Amazon Bedrock with Accenture\u2019s sequenced approach capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Use Kimi Code CLI with models on Amazon Bedrock capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Optimize AI economics on Amazon Bedrock with Accenture\u2019s sequenced approach as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Use Kimi Code CLI with models on Amazon Bedrock as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "As enterprises scale AI on Amazon Bedrock, token spend can grow even as per-token prices fall.",
-    "This post walks through six composable optimization levers, shows how Accenture applied them across four client engagements, and recommends a sequence for cutting AI token spend on your own workloads."
+    "Kimi Code CLI v2.7.0 adds a native Amazon Bedrock provider, so you can connect the open source coding agent to models like Kimi K3.1 Pro using your standard AWS credential chain (named profiles or SSO) instead of a separate API key.",
+    "This post shows how to configure the provider and send your first request."
   ],
-  "text": "As enterprises scale AI on Amazon Bedrock, token spend can grow even as per-token prices fall. This post walks through six composable optimization levers, shows how Accenture applied them across four client engagements, and recommends a sequence for cutting AI token spend on your own workloads.",
-  "full_text": "As enterprises scale AI on Amazon Bedrock, token spend can grow even as per-token prices fall. This post walks through six composable optimization levers, shows how Accenture applied them across four client engagements, and recommends a sequence for cutting AI token spend on your own workloads.",
+  "text": "Kimi Code CLI v2.7.0 adds a native Amazon Bedrock provider, so you can connect the open source coding agent to models like Kimi K3.1 Pro using your standard AWS credential chain (named profiles or SSO) instead of a separate API key. This post shows how to configure the provider and send your first request.",
+  "full_text": "Kimi Code CLI v2.7.0 adds a native Amazon Bedrock provider, so you can connect the open source coding agent to models like Kimi K3.1 Pro using your standard AWS credential chain (named profiles or SSO) instead of a separate API key. This post shows how to configure the provider and send your first request.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "As enterprises scale AI on Amazon Bedrock, token spend can grow even as per-token prices fall. This post walks through six composable optimization levers, shows how Accenture applied them across four client engagements, and recommends a sequence for cutting AI token spend on your own workloads."
+      "content": "Kimi Code CLI v2.7.0 adds a native Amazon Bedrock provider, so you can connect the open source coding agent to models like Kimi K3.1 Pro using your standard AWS credential chain (named profiles or SSO) instead of a separate API key. This post shows how to configure the provider and send your first request."
     }
   ],
   "paragraphs": [
-    "As enterprises scale AI on Amazon Bedrock, token spend can grow even as per-token prices fall. This post walks through six composable optimization levers, shows how Accenture applied them across four client engagements, and recommends a sequence for cutting AI token spend on your own workloads."
+    "Kimi Code CLI v2.7.0 adds a native Amazon Bedrock provider, so you can connect the open source coding agent to models like Kimi K3.1 Pro using your standard AWS credential chain (named profiles or SSO) instead of a separate API key. This post shows how to configure the provider and send your first request."
   ],
   "corroborating_sources": []
 }

@@ -1,14 +1,14 @@
 {
   "id": "cluster_4",
   "clean_id": "cluster_4",
-  "title": "Inside the Codex sandbox",
-  "headline": "Inside the Codex sandbox",
+  "title": "Explore the Codex Security Plugin",
+  "headline": "Explore the Codex Security Plugin",
   "subtitle": "",
   "publisher": "OpenAI News",
   "publisher_id": "openai",
   "publisher_group_id": "openai",
   "author": "",
-  "published_at": "2026-11-18T08:00:00+00:00",
+  "published_at": "2026-11-19T00:00:00+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Breakthrough",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://openai.com/index/inside-the-codex-sandbox",
-  "canonical_url": "https://openai.com/index/inside-the-codex-sandbox",
-  "original_source_url": "https://openai.com/index/inside-the-codex-sandbox",
+  "url": "https://openai.com/business/learn/codex-security-plugin-demo",
+  "canonical_url": "https://openai.com/business/learn/codex-security-plugin-demo",
+  "original_source_url": "https://openai.com/business/learn/codex-security-plugin-demo",
   "reading_time": "1 min read",
-  "word_count": 22,
-  "extraction_status": "cached_fallback",
-  "content_hash": "6614a682b3026a18",
+  "word_count": 25,
+  "extraction_status": "fallback_summary",
+  "content_hash": "9abe6cb390359f8d",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-  "ai_what_happened": "OpenAI News published verified documentation on Inside the Codex sandbox.",
+  "ai_overview": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+  "ai_what_happened": "OpenAI News published verified documentation on Explore the Codex Security Plugin.",
   "ai_key_details": [
     "Primary documentation verified from OpenAI News."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Inside the Codex sandbox from OpenAI News.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Inside the Codex sandbox; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Explore the Codex Security Plugin from OpenAI News.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Explore the Codex Security Plugin; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Inside the Codex sandbox capabilities from OpenAI News directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Explore the Codex Security Plugin capabilities from OpenAI News directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
   },
-  "ai_whats_new": "Delivers Inside the Codex sandbox as documented in verified primary release notes from OpenAI News.",
+  "ai_whats_new": "Delivers Explore the Codex Security Plugin as documented in verified primary release notes from OpenAI News.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from OpenAI News."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+    "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
     "Official development released and documented by OpenAI News."
   ],
-  "text": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-  "full_text": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+  "text": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+  "full_text": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
   "sections": [
     {
       "heading": "Summary",
-      "content": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows."
+      "content": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording."
     }
   ],
   "paragraphs": [
-    "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows."
+    "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording."
   ],
   "corroborating_sources": []
 }

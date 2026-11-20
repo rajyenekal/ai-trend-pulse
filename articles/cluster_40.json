@@ -1,66 +1,66 @@
 {
   "id": "cluster_40",
   "clean_id": "cluster_40",
-  "title": "Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization",
-  "headline": "Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization",
+  "title": "From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League",
+  "headline": "From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-19T00:15:58+00:00",
-  "category": "Frontier Models",
-  "topic": "Frontier Models",
-  "impact_level": "Breakthrough",
-  "pulse_score": 86.8,
-  "article_type": "frontier_launch",
-  "signal_badge": "Frontier Launch",
+  "published_at": "2026-11-19T18:26:22+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization",
+  "url": "https://aws.amazon.com/blogs/machine-learning/from-learning-to-leaderboard-how-cisco-upskilled-1200-engineers-in-agentic-ai-with-aws-ai-league",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/from-learning-to-leaderboard-how-cisco-upskilled-1200-engineers-in-agentic-ai-with-aws-ai-league",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/from-learning-to-leaderboard-how-cisco-upskilled-1200-engineers-in-agentic-ai-with-aws-ai-league",
   "reading_time": "1 min read",
-  "word_count": 44,
+  "word_count": 38,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization.",
+  "ai_overview": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT).",
-    "This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started."
+    "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building.",
+    "A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026."
   ],
-  "text": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
-  "full_text": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
+  "text": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026.",
+  "full_text": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started."
+      "content": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026."
     }
   ],
   "paragraphs": [
-    "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started."
+    "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026."
   ],
   "corroborating_sources": []
 }

@@ -1,0 +1,66 @@
+{
+  "id": "cluster_36",
+  "clean_id": "cluster_36",
+  "title": "Run your whole selling business in AWS Quick",
+  "headline": "Run your whole selling business in AWS Quick",
+  "subtitle": "",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "aws",
+  "publisher_group_id": "amazon",
+  "author": "",
+  "published_at": "2026-11-19T22:16:22+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/run-your-whole-selling-business-in-aws-quick",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/run-your-whole-selling-business-in-aws-quick",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/run-your-whole-selling-business-in-aws-quick",
+  "reading_time": "1 min read",
+  "word_count": 35,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Most sellers do not need another AI product to learn. They need the tools and information they already use brought together, so they can see what is happening in their business and act on it.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Run your whole selling business in AWS Quick.",
+  "ai_key_details": [
+    "Primary documentation verified from AWS Machine Learning."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Run your whole selling business in AWS Quick from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Run your whole selling business in AWS Quick; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate Run your whole selling business in AWS Quick capabilities from AWS Machine Learning directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+  },
+  "ai_whats_new": "Delivers Run your whole selling business in AWS Quick as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from AWS Machine Learning."
+  ],
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "reported_facts": [
+    "Most sellers do not need another AI product to learn.",
+    "They need the tools and information they already use brought together, so they can see what is happening in their business and act on it."
+  ],
+  "text": "Most sellers do not need another AI product to learn. They need the tools and information they already use brought together, so they can see what is happening in their business and act on it.",
+  "full_text": "Most sellers do not need another AI product to learn. They need the tools and information they already use brought together, so they can see what is happening in their business and act on it.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Most sellers do not need another AI product to learn. They need the tools and information they already use brought together, so they can see what is happening in their business and act on it."
+    }
+  ],
+  "paragraphs": [
+    "Most sellers do not need another AI product to learn. They need the tools and information they already use brought together, so they can see what is happening in their business and act on it."
+  ],
+  "corroborating_sources": []
+}
