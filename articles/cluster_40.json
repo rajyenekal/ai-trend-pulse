@@ -1,66 +1,66 @@
 {
   "id": "cluster_40",
   "clean_id": "cluster_40",
-  "title": "From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League",
-  "headline": "From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League",
+  "title": "How the BMW Group governs hundreds of agents across thousands of developers",
+  "headline": "How the BMW Group governs hundreds of agents across thousands of developers",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-19T18:26:22+00:00",
+  "published_at": "2026-11-19T22:20:23+00:00",
   "category": "AI Agents",
   "topic": "AI Agents",
-  "impact_level": "Major",
-  "pulse_score": 79.0,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "impact_level": "Notable",
+  "pulse_score": 72.5,
+  "article_type": "policy_regulation",
+  "signal_badge": "Security & Policy",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/from-learning-to-leaderboard-how-cisco-upskilled-1200-engineers-in-agentic-ai-with-aws-ai-league",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/from-learning-to-leaderboard-how-cisco-upskilled-1200-engineers-in-agentic-ai-with-aws-ai-league",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/from-learning-to-leaderboard-how-cisco-upskilled-1200-engineers-in-agentic-ai-with-aws-ai-league",
+  "url": "https://aws.amazon.com/blogs/machine-learning/how-the-bmw-group-governs-hundreds-of-agents-across-thousands-of-developers",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/how-the-bmw-group-governs-hundreds-of-agents-across-thousands-of-developers",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/how-the-bmw-group-governs-hundreds-of-agents-across-thousands-of-developers",
   "reading_time": "1 min read",
-  "word_count": 38,
+  "word_count": 41,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League.",
+  "ai_overview": "When hundreds of agents serve thousands of developers, governance cannot be an afterthought. The BMW Group shares the practices and patterns its R&D teams use to build, govern, and operate AI agents at enterprise scale without sacrificing speed, quality, or compliance.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on How the BMW Group governs hundreds of agents across thousands of developers.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for How the BMW Group governs hundreds of agents across thousands of developers from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for How the BMW Group governs hundreds of agents across thousands of developers; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate How the BMW Group governs hundreds of agents across thousands of developers capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers From learning to leaderboard: How Cisco upskilled 1,200 engineers in agentic AI with AWS AI League as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers How the BMW Group governs hundreds of agents across thousands of developers as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "Regulatory & governance scope: Enforcement parameters, compliance timelines, and cross-border legal obligations remain subject to jurisdictional variation.",
   "reported_facts": [
-    "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building.",
-    "A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026."
+    "When hundreds of agents serve thousands of developers, governance cannot be an afterthought.",
+    "The BMW Group shares the practices and patterns its R&D teams use to build, govern, and operate AI agents at enterprise scale without sacrificing speed, quality, or compliance."
   ],
-  "text": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026.",
-  "full_text": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026.",
+  "text": "When hundreds of agents serve thousands of developers, governance cannot be an afterthought. The BMW Group shares the practices and patterns its R&D teams use to build, govern, and operate AI agents at enterprise scale without sacrificing speed, quality, or compliance.",
+  "full_text": "When hundreds of agents serve thousands of developers, governance cannot be an afterthought. The BMW Group shares the practices and patterns its R&D teams use to build, govern, and operate AI agents at enterprise scale without sacrificing speed, quality, or compliance.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026."
+      "content": "When hundreds of agents serve thousands of developers, governance cannot be an afterthought. The BMW Group shares the practices and patterns its R&D teams use to build, govern, and operate AI agents at enterprise scale without sacrificing speed, quality, or compliance."
     }
   ],
   "paragraphs": [
-    "Cisco and AWS used Cisco Transformation Fest and AWS AI League to turn hands-on AI learning into a culture of building. A Cisco engineer won the 2025 AWS AI League global title and 1,200 engineers competed in 2026."
+    "When hundreds of agents serve thousands of developers, governance cannot be an afterthought. The BMW Group shares the practices and patterns its R&D teams use to build, govern, and operate AI agents at enterprise scale without sacrificing speed, quality, or compliance."
   ],
   "corroborating_sources": []
 }
