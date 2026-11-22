@@ -1,16 +1,35 @@
 {
   "schema_version": 2,
   "data_status": "source_linked",
-  "generated_at": "2026-11-22T17:14:14.656940+00:00",
-  "last_successful_update": "2026-11-22T17:14:14.656940+00:00",
-  "last_attempt_at": "2026-11-22T17:14:14.656940+00:00",
+  "generated_at": "2026-11-22T22:30:55.246255+00:00",
+  "last_successful_update": "2026-11-22T22:30:55.246255+00:00",
+  "last_attempt_at": "2026-11-22T22:30:55.246255+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
-    "total_developments_today": 72,
-    "last_updated": "2026-11-22T17:14:14.656940+00:00",
-    "briefing_text": "Today's AI developments span AI Safety, Frontier Models, and AI Infrastructure. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
+    "total_developments_today": 70,
+    "last_updated": "2026-11-22T22:30:55.246255+00:00",
+    "briefing_text": "Today's AI developments center on Frontier Models alongside notable updates in AI Safety. Teams are prioritizing benchmark accuracy, automated workflows, and system guardrails.",
     "top_developments": [
+      {
+        "title": "Perplexity and Intelligence",
+        "topic": "Frontier Models",
+        "category": "Frontier Models",
+        "source": "OpenAI News",
+        "link": "https://openai.com/index/perplexity-and-intelligence",
+        "article_type": "frontier_launch",
+        "signal_badge": "Frontier Launch",
+        "what_changed": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+        "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
+        "target_audience": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+        "score": 86.8,
+        "score_reasons": [
+          "+ Frontier foundation model milestone (+40 impact)",
+          "+ Official primary lab source (100 authority)",
+          "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+        ]
+      },
       {
         "title": "Combatting adversarial distillation",
         "topic": "AI Safety",
@@ -48,6 +67,25 @@
           "+ Frontier foundation model milestone (+40 impact)",
           "+ Official primary lab source (100 authority)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+        ]
+      },
+      {
+        "title": "Binding of Isaac developer removes AI music from Repentance Plus",
+        "topic": "Frontier Models",
+        "category": "Frontier Models",
+        "source": "The Verge AI",
+        "link": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music",
+        "article_type": "sdk_api_update",
+        "signal_badge": "Developer SDK",
+        "what_changed": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music.",
+        "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
+        "target_audience": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+        "score": 76.7,
+        "score_reasons": [
+          "+ Actionable developer SDK / runtime tooling (+25 impact)",
+          "+ Independent technology journalism desk (85 authority)",
+          "+ Direct developer actionability / runnable tooling (90 actionability)"
         ]
       },
       {
@@ -104,51 +142,32 @@
         "score_reasons": [
           "+ Frontier foundation model milestone (+40 impact)",
           "+ Official primary lab source (100 authority)",
-          "+ Corroborated by 3 independent publishers (+15 evidence)",
-          "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-        ]
-      },
-      {
-        "title": "These tech outages are giving Y2K, AI agent style",
-        "topic": "AI Safety",
-        "category": "AI Safety",
-        "source": "TechCrunch AI",
-        "link": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style",
-        "article_type": "policy_regulation",
-        "signal_badge": "Security & Policy",
-        "what_changed": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence?",
-        "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from frontier labs.",
-        "target_audience": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI.",
-        "score": 70.2,
-        "score_reasons": [
-          "+ Material policy regulation development (+30 impact)",
-          "+ Independent technology journalism desk (85 authority)"
-        ]
-      },
-      {
-        "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
-        "topic": "AI Agents",
-        "category": "AI Agents",
-        "source": "Google DeepMind",
-        "link": "https://deepmind.google/blog/introducing-alphaproof-code",
-        "article_type": "frontier_launch",
-        "signal_badge": "Frontier Launch",
-        "what_changed": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal\u2019s core encryption.",
-        "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
-        "target_audience": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-        "score": 93.5,
-        "score_reasons": [
-          "+ Frontier foundation model milestone (+40 impact)",
-          "+ Novel capability / major architectural milestone (+30 novelty)",
-          "+ Official primary lab source (100 authority)",
+          "+ Corroborated by 2 independent publishers (+10 evidence)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
         ]
       }
     ]
   },
   "top_developments": [
+    {
+      "title": "Perplexity and Intelligence",
+      "topic": "Frontier Models",
+      "category": "Frontier Models",
+      "source": "OpenAI News",
+      "link": "https://openai.com/index/perplexity-and-intelligence",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "what_changed": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
+      "target_audience": "For developers",
+      "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+      "score": 86.8,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ]
+    },
     {
       "title": "Combatting adversarial distillation",
       "topic": "AI Safety",
@@ -186,6 +205,25 @@
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ]
+    },
+    {
+      "title": "Binding of Isaac developer removes AI music from Repentance Plus",
+      "topic": "Frontier Models",
+      "category": "Frontier Models",
+      "source": "The Verge AI",
+      "link": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "what_changed": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
+      "target_audience": "For developers",
+      "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
+      "score": 76.7,
+      "score_reasons": [
+        "+ Actionable developer SDK / runtime tooling (+25 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
       ]
     },
     {
@@ -242,45 +280,7 @@
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
-        "+ Corroborated by 3 independent publishers (+15 evidence)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ]
-    },
-    {
-      "title": "These tech outages are giving Y2K, AI agent style",
-      "topic": "AI Safety",
-      "category": "AI Safety",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style",
-      "article_type": "policy_regulation",
-      "signal_badge": "Security & Policy",
-      "what_changed": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence?",
-      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from frontier labs.",
-      "target_audience": "For businesses & compliance teams",
-      "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI.",
-      "score": 70.2,
-      "score_reasons": [
-        "+ Material policy regulation development (+30 impact)",
-        "+ Independent technology journalism desk (85 authority)"
-      ]
-    },
-    {
-      "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
-      "topic": "AI Agents",
-      "category": "AI Agents",
-      "source": "Google DeepMind",
-      "link": "https://deepmind.google/blog/introducing-alphaproof-code",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "what_changed": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal\u2019s core encryption.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from frontier labs.",
-      "target_audience": "For developers",
-      "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with frontier AI.",
-      "score": 93.5,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Novel capability / major architectural milestone (+30 novelty)",
-        "+ Official primary lab source (100 authority)",
+        "+ Corroborated by 2 independent publishers (+10 evidence)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ]
     }
@@ -288,37 +288,36 @@
   "takeaway": "Frontier research labs and independent publications report accelerating momentum across reasoning architectures, developer agents, and regulatory compliance standards.",
   "trends": [
     {
-      "title": "Combatting adversarial distillation",
-      "link": "https://openai.com/index/combatting-adversarial-distillation",
+      "title": "Perplexity and Intelligence",
+      "link": "https://openai.com/index/perplexity-and-intelligence",
       "trend_type": "single_development",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "trend_signal_diversity": 1,
       "claim_corroboration": 1,
       "independent_publisher_count": 1,
-      "published_at": "2026-11-20T10:00:00+00:00",
-      "first_published_at": "2026-11-20T10:00:00+00:00",
-      "latest_updated_at": "2026-11-20T10:00:00+00:00",
+      "published_at": "2026-11-22T00:00:00+00:00",
+      "first_published_at": "2026-11-22T00:00:00+00:00",
+      "latest_updated_at": "2026-11-22T00:00:00+00:00",
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
-        "+ Demonstrable technical significance: distillation (+8 tech)",
         "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ],
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+          "text": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
           "evidence": [
             {
               "article_id": "cluster_1",
-              "canonical_url": "https://openai.com/index/combatting-adversarial-distillation",
+              "canonical_url": "https://openai.com/index/perplexity-and-intelligence",
               "publisher_id": "openai",
               "publisher_group_id": "openai",
               "source_name": "OpenAI News",
               "trust_tier": 1,
               "is_official": true,
-              "supporting_excerpt": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+              "supporting_excerpt": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
               "text_verified": true
             }
           ],
@@ -329,21 +328,21 @@
       "evidence_objects": [
         {
           "article_id": "cluster_1",
-          "canonical_url": "https://openai.com/index/combatting-adversarial-distillation",
+          "canonical_url": "https://openai.com/index/perplexity-and-intelligence",
           "publisher_id": "openai",
           "publisher_group_id": "openai",
           "source_name": "OpenAI News",
           "trust_tier": 1,
           "is_official": true,
-          "supporting_excerpt": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+          "supporting_excerpt": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
           "text_verified": true
         }
       ],
-      "what_happened": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
-      "what_changed": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
-      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Openai.",
+      "what_happened": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "what_changed": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
       "reported_facts": [
-        "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+        "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
         "Official development released and documented by OpenAI News."
       ],
       "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
@@ -352,9 +351,9 @@
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "category": "AI Safety",
-      "category_confidence": 0.95,
-      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
       "who_affected": "Developers, Enterprise Decision Makers",
       "source": "OpenAI News",
       "tier": "Official Lab",
@@ -363,34 +362,34 @@
         "cluster_1"
       ],
       "evidence_urls": [
-        "https://openai.com/index/combatting-adversarial-distillation"
+        "https://openai.com/index/perplexity-and-intelligence"
       ],
-      "topic": "AI Safety",
+      "topic": "Frontier Models",
       "company": "openai",
-      "reading_time": "9 min read",
+      "reading_time": "7 min read",
       "audience_pills": [
         "Developers",
         "Enterprise Decision Makers"
       ],
       "audience_impact": {
-        "target": "For AI researchers & safety teams",
-        "impact": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models."
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
       },
-      "target_audience": "For AI researchers & safety teams",
-      "audience_impact_statement": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models.",
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
       "evidence_status": "official_announcement",
       "evidence_label": "Official Announcement",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction."
+        "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities."
       ],
-      "detailed_analysis": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
-      "image": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
-      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
-      "image_alt": "Visual representation for Combatting adversarial distillation",
+      "detailed_analysis": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
+      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
+      "image_alt": "Visual representation for Perplexity and Intelligence",
       "image_type": "source_media",
       "image_credit": "Source publication",
-      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "title": "Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm",
@@ -415,7 +414,7 @@
           "text": "Amazon SageMaker HyperPod now offers managed cluster extensions for observability and user management, bringing declarative, API- and console-driven configuration to the software running on Slurm cluster nodes.",
           "evidence": [
             {
-              "article_id": "cluster_36",
+              "article_id": "cluster_37",
               "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
               "publisher_id": "aws",
               "publisher_group_id": "amazon",
@@ -432,7 +431,7 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_36",
+          "article_id": "cluster_37",
           "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
           "publisher_id": "aws",
           "publisher_group_id": "amazon",
@@ -464,7 +463,7 @@
       "tier": "Official Lab",
       "status": "official_claim",
       "evidence_article_ids": [
-        "cluster_36"
+        "cluster_37"
       ],
       "evidence_urls": [
         "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm"
@@ -519,7 +518,7 @@
           "text": "Official news announcement from Anthropic: Announcements.",
           "evidence": [
             {
-              "article_id": "cluster_13",
+              "article_id": "cluster_14",
               "canonical_url": "https://www.anthropic.com/news/announcements",
               "publisher_id": "anthropic",
               "publisher_group_id": "anthropic",
@@ -536,7 +535,7 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_13",
+          "article_id": "cluster_14",
           "canonical_url": "https://www.anthropic.com/news/announcements",
           "publisher_id": "anthropic",
           "publisher_group_id": "anthropic",
@@ -568,7 +567,7 @@
       "tier": "Official Lab",
       "status": "official_claim",
       "evidence_article_ids": [
-        "cluster_13"
+        "cluster_14"
       ],
       "evidence_urls": [
         "https://www.anthropic.com/news/announcements"
@@ -607,15 +606,15 @@
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "trend_signal_diversity": 1,
-      "claim_corroboration": 3,
-      "independent_publisher_count": 3,
+      "claim_corroboration": 2,
+      "independent_publisher_count": 2,
       "published_at": "2026-11-18T21:35:43+00:00",
       "first_published_at": "2026-11-18T21:35:43+00:00",
-      "latest_updated_at": "2026-11-19T18:09:11+00:00",
+      "latest_updated_at": "2026-11-20T12:30:47+00:00",
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
-        "+ Corroborated by 3 independent publishers (+15 evidence)",
+        "+ Corroborated by 2 independent publishers (+10 evidence)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ],
       "claims": [
@@ -624,7 +623,7 @@
           "text": "Introducing Gemini 4 Neon.",
           "evidence": [
             {
-              "article_id": "cluster_28",
+              "article_id": "cluster_29",
               "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
               "publisher_id": "google_deepmind",
               "publisher_group_id": "google",
@@ -635,13 +634,13 @@
               "text_verified": true
             }
           ],
-          "claim_corroboration": 3,
+          "claim_corroboration": 2,
           "verification_status": "independently_corroborated"
         }
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_28",
+          "article_id": "cluster_29",
           "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
           "publisher_id": "google_deepmind",
           "publisher_group_id": "google",
@@ -672,7 +671,7 @@
       "tier": "Official Lab",
       "status": "official_claim",
       "evidence_article_ids": [
-        "cluster_28"
+        "cluster_29"
       ],
       "evidence_urls": [
         "https://deepmind.google/blog/introducing-gemini-4-neon"
@@ -691,8 +690,8 @@
       "target_audience": "For everyday users",
       "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
       "evidence_status": "independently_corroborated",
-      "evidence_label": "Official announcement + 2 independent reports",
-      "independent_source_count": 3,
+      "evidence_label": "Official announcement + 1 independent reports",
+      "independent_source_count": 2,
       "key_points": [
         "Strategic development announced in Frontier Models."
       ],
@@ -710,6 +709,124 @@
       "id": "cluster_1",
       "article_id": "cluster_1",
       "article_url": "articles/cluster_1.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Perplexity and Intelligence",
+      "one_liner": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "From afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly harnessing the intelligence coming from a much simpler and less interpretable process: training a compressor (or, equivalently(opens in a new window), predictor) on a very large corpus of data.1 I believe tracking the pace of progress on training better compressors is key to understanding the arc of advances in AI.",
+      "ai_what_happened": "In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards.",
+      "ai_key_details": [
+        "As a first step, I provide more transparency into pretraining progress at OpenAI.",
+        "Publishing our internal perplexity measurements took some consideration; it gives competitors a clearer picture of where we stand, but that concern is outweighed by the urgency of establishing shared(opens in a new window) safety measures across the industry.",
+        "The plot opening this blog post shows how this metric evolved for our models starting with GPT\u20113.5.",
+        "GPT\u20113.5, at a log-perplexity of ~0.99 on our current main evaluation dataset, was capable of fluent conversation and formed the basis for the original ChatGPT."
+      ],
+      "ai_why_it_matters": "Having experienced that allows us to extrapolate\u2014such a sudden transformation is plausible in deep learning research too.",
+      "ai_technical_breakdown": "A simplified, but fundamentally informative, view of AI development is that first, one builds a large computer, then uses it to pretrain a model (compressor) on a large unstructured dataset, then applies a variety of techniques\u2014like prompting, finetuning or reinforcement learning\u2014in different contexts to elicit the latent capabilities of that model.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Perplexity and Intelligence capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Setting the new perplexity state-of-the-art on older datasets4, GPT\u20112 was arguably the first model capable of consistently formulating coherent paragraphs of text.",
+      "ai_key_takeaways": [
+        "We at OpenAI hope for this to be a step towards building a shared scientific basis for future pacing efforts.",
+        "Algorithmic progress can blur the distinction between training phases, but we can still separate the creation of the AI with hard-to-predict emergent capabilities (which I earlier dubbed \u201can alien mind\u201d) and the subsequent targeted elicitation.",
+        "The primary way we measure progress on this key \u201cintelligence substrate\u201d has remained remarkably constant over the years\u2014we have been tracking the perplexity of the models on a held-out dataset.2, 3 Perplexity measures how well a model predicts the next token on average; lower perplexity means better predictions."
+      ],
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+      "original_source_url": "https://openai.com/index/perplexity-and-intelligence",
+      "word_count": 1482,
+      "extraction_status": "extracted",
+      "content_hash": "3d4e1f386f382eb1",
+      "extracted_content": {
+        "headline": "Perplexity and Intelligence",
+        "word_count": 1482,
+        "reading_time": "7 min read",
+        "extraction_status": "extracted",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 22, 00:00 UTC",
+      "published_at": "2026-11-22T00:00:00+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
+      "link": "https://openai.com/index/perplexity-and-intelligence",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
+      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
+      "image_alt": "Visual representation for Perplexity and Intelligence",
+      "image_type": "source_media",
+      "image_credit": "Source publication",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "7 min read",
+      "key_points": [
+        "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities."
+      ],
+      "detailed_analysis": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 70,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-22T00:00:00+00:00",
+      "latest_updated_at": "2026-11-22T00:00:00+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_2",
+      "article_id": "cluster_2",
+      "article_url": "articles/cluster_2.json",
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "frontier_launch",
@@ -778,7 +895,7 @@
       "is_official": true,
       "published": "Nov 20, 10:00 UTC",
       "published_at": "2026-11-20T10:00:00+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://openai.com/index/combatting-adversarial-distillation",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
@@ -826,9 +943,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_36",
-      "article_id": "cluster_36",
-      "article_url": "articles/cluster_36.json",
+      "id": "cluster_37",
+      "article_id": "cluster_37",
+      "article_url": "articles/cluster_37.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "frontier_launch",
@@ -893,7 +1010,7 @@
       "is_official": true,
       "published": "Nov 20, 23:07 UTC",
       "published_at": "2026-11-20T23:07:03+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -953,123 +1070,9 @@
       "covered_by_sources_count": 2
     },
     {
-      "id": "cluster_39",
-      "article_id": "cluster_39",
-      "article_url": "articles/cluster_39.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
-      "one_liner": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "summary": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Announcing Amazon Textract Insights: Verifiable generative AI for documents.",
-      "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Amazon Textract Insights: Verifiable generative AI for documents from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Amazon Textract Insights: Verifiable generative AI for documents; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Amazon Textract Insights: Verifiable generative AI for documents capabilities from AWS Machine Learning directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
-      },
-      "ai_whats_new": "Delivers Announcing Amazon Textract Insights: Verifiable generative AI for documents as documented in verified primary release notes from AWS Machine Learning.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
-      "word_count": 16,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
-        "word_count": 16,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-        "Official development released and documented by AWS Machine Learning."
-      ],
-      "what_changed": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 20, 20:22 UTC",
-      "published_at": "2026-11-20T20:22:00+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Announcing Amazon Textract Insights: Verifiable generative AI for documents",
-      "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract."
-      ],
-      "detailed_analysis": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-20T20:22:00+00:00",
-      "latest_updated_at": "2026-11-20T20:22:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_3",
-      "article_id": "cluster_3",
-      "article_url": "articles/cluster_3.json",
+      "id": "cluster_4",
+      "article_id": "cluster_4",
+      "article_url": "articles/cluster_4.json",
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "frontier_launch",
@@ -1138,7 +1141,7 @@
       "is_official": true,
       "published": "Nov 20, 00:00 UTC",
       "published_at": "2026-11-20T00:00:00+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://openai.com/index/introducing-medchembench",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/37ZvKdwVigsgJ7G3FMr4Nb/12854063a79d19d63278704bf54e3010/introducing-medchembench-social.png?w=1600&h=900&fit=fill",
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/37ZvKdwVigsgJ7G3FMr4Nb/12854063a79d19d63278704bf54e3010/introducing-medchembench-social.png?w=1600&h=900&fit=fill",
@@ -1188,6 +1191,120 @@
       "id": "cluster_40",
       "article_id": "cluster_40",
       "article_url": "articles/cluster_40.json",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
+      "one_liner": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "summary": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Announcing Amazon Textract Insights: Verifiable generative AI for documents.",
+      "ai_key_details": [
+        "Primary documentation verified from AWS Machine Learning."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Amazon Textract Insights: Verifiable generative AI for documents from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Amazon Textract Insights: Verifiable generative AI for documents; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Amazon Textract Insights: Verifiable generative AI for documents capabilities from AWS Machine Learning directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+      },
+      "ai_whats_new": "Delivers Announcing Amazon Textract Insights: Verifiable generative AI for documents as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from AWS Machine Learning."
+      ],
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
+      "word_count": 16,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
+        "word_count": 16,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+        "Official development released and documented by AWS Machine Learning."
+      ],
+      "what_changed": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 20, 20:22 UTC",
+      "published_at": "2026-11-20T20:22:00+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Announcing Amazon Textract Insights: Verifiable generative AI for documents",
+      "image_type": "official_asset",
+      "image_credit": "Amazon announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "amazon",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract."
+      ],
+      "detailed_analysis": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 50,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-20T20:22:00+00:00",
+      "latest_updated_at": "2026-11-20T20:22:00+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_41",
+      "article_id": "cluster_41",
+      "article_url": "articles/cluster_41.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "frontier_launch",
@@ -1253,7 +1370,7 @@
       "is_official": true,
       "published": "Nov 20, 00:34 UTC",
       "published_at": "2026-11-20T00:34:07+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -1300,9 +1417,124 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_67",
-      "article_id": "cluster_67",
-      "article_url": "articles/cluster_67.json",
+      "id": "cluster_50",
+      "article_id": "cluster_50",
+      "article_url": "articles/cluster_50.json",
+      "publisher_id": "the_verge",
+      "publisher_group_id": "vox_media",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "impact_level": "Major",
+      "title": "Binding of Isaac developer removes AI music from Repentance Plus",
+      "one_liner": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music. Reddit user ShweetsStuff discovered the songs used during a Grand Theft Auto-themed section.",
+      "summary": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music. Reddit user ShweetsStuff discovered the songs used during a Grand Theft Auto-themed section.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music. Reddit user ShweetsStuff discovered the songs used during a Grand Theft Auto-themed section.",
+      "ai_what_happened": "The Verge AI published verified documentation on Binding of Isaac developer removes AI music from Repentance Plus.",
+      "ai_key_details": [
+        "Primary documentation verified from The Verge AI."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Binding of Isaac developer removes AI music from Repentance Plus from The Verge AI.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Verge AI for Binding of Isaac developer removes AI music from Repentance Plus; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Binding of Isaac developer removes AI music from Repentance Plus capabilities from The Verge AI directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Verge AI."
+      },
+      "ai_whats_new": "Delivers Binding of Isaac developer removes AI music from Repentance Plus as documented in verified primary release notes from The Verge AI.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from The Verge AI."
+      ],
+      "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Verge AI; awaiting further vendor confirmation or technical documentation.",
+      "original_source_url": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music",
+      "word_count": 43,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "Binding of Isaac developer removes AI music from Repentance Plus",
+        "word_count": 43,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music.",
+        "Reddit user ShweetsStuff discovered the songs used during a Grand Theft Auto-themed section."
+      ],
+      "what_changed": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Verge.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Verge may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "The Verge AI",
+      "tier": "Independent Journalism",
+      "trust_tier": 2,
+      "is_official": false,
+      "published": "Nov 22, 17:25 UTC",
+      "published_at": "2026-11-22T17:25:20+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
+      "link": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Binding of Isaac developer removes AI music from Repentance Plus",
+      "image_type": "category_fallback",
+      "image_credit": "Frontier Models curation",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "verge",
+      "reading_time": "1 min read",
+      "key_points": [
+        "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music.",
+        "Reddit user ShweetsStuff discovered the songs used during a Grand Theft Auto-themed section."
+      ],
+      "detailed_analysis": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music.\n\nReddit user ShweetsStuff discovered the songs used during a Grand Theft Auto-themed section.",
+      "audience_impact": {
+        "target": "For developers",
+        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Verge."
+      },
+      "target_audience": "For developers",
+      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Verge.",
+      "importance_score": 75,
+      "relevance_score": 95,
+      "freshness_score": 100,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 85,
+      "confidence_score": 85,
+      "pulse_score": 76.7,
+      "overall_score": 76.7,
+      "confidence_label": "medium",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Actionable developer SDK / runtime tooling (+25 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
+      ],
+      "first_published_at": "2026-11-22T17:25:20+00:00",
+      "latest_updated_at": "2026-11-22T17:25:20+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_65",
+      "article_id": "cluster_65",
+      "article_url": "articles/cluster_65.json",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "sdk_api_update",
@@ -1367,7 +1599,7 @@
       "is_official": false,
       "published": "Nov 22, 14:20 UTC",
       "published_at": "2026-11-22T14:20:28+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
@@ -1390,7 +1622,7 @@
       "audience_impact_statement": "Expands programmatic API endpoints and tooling integrations available for frontier AI.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1415,9 +1647,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_69",
-      "article_id": "cluster_69",
-      "article_url": "articles/cluster_69.json",
+      "id": "cluster_67",
+      "article_id": "cluster_67",
+      "article_url": "articles/cluster_67.json",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "security_vulnerability",
@@ -1482,7 +1714,7 @@
       "is_official": false,
       "published": "Nov 22, 12:07 UTC",
       "published_at": "2026-11-22T12:07:56+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users",
       "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
@@ -1504,7 +1736,7 @@
       "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI.",
       "importance_score": 80,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1528,9 +1760,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_13",
-      "article_id": "cluster_13",
-      "article_url": "articles/cluster_13.json",
+      "id": "cluster_14",
+      "article_id": "cluster_14",
+      "article_url": "articles/cluster_14.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -1597,7 +1829,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1644,9 +1876,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_14",
-      "article_id": "cluster_14",
-      "article_url": "articles/cluster_14.json",
+      "id": "cluster_15",
+      "article_id": "cluster_15",
+      "article_url": "articles/cluster_15.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -1715,7 +1947,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -1762,9 +1994,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_15",
-      "article_id": "cluster_15",
-      "article_url": "articles/cluster_15.json",
+      "id": "cluster_16",
+      "article_id": "cluster_16",
+      "article_url": "articles/cluster_16.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -1831,7 +2063,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://www.anthropic.com/news/features",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1878,9 +2110,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_28",
-      "article_id": "cluster_28",
-      "article_url": "articles/cluster_28.json",
+      "id": "cluster_29",
+      "article_id": "cluster_29",
+      "article_url": "articles/cluster_29.json",
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "frontier_launch",
@@ -1936,7 +2168,7 @@
       ],
       "potential_impact": "Analytical Projection: Developments from Google may influence engineering roadmaps and ecosystem integration standards.",
       "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 3,
+      "claim_corroboration": 2,
       "trend_signal_diversity": 1,
       "category": "Frontier Models",
       "category_confidence": 0.9,
@@ -1948,7 +2180,7 @@
       "is_official": true,
       "published": "Nov 18, 21:35 UTC",
       "published_at": "2026-11-18T21:35:43+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
@@ -1971,25 +2203,25 @@
       "importance_score": 100,
       "relevance_score": 95,
       "freshness_score": 25,
-      "coverage_score": 85,
-      "popularity_score": 85,
+      "coverage_score": 75,
+      "popularity_score": 75,
       "source_quality_score": 100,
       "confidence_score": 100,
       "pulse_score": 89.6,
       "overall_score": 89.6,
       "confidence_label": "high",
       "evidence_status": "independently_corroborated",
-      "evidence_label": "Official announcement + 2 independent reports",
-      "independent_source_count": 3,
-      "independent_publisher_count": 3,
+      "evidence_label": "Official announcement + 1 independent reports",
+      "independent_source_count": 2,
+      "independent_publisher_count": 2,
       "score_reasons": [
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
-        "+ Corroborated by 3 independent publishers (+15 evidence)",
+        "+ Corroborated by 2 independent publishers (+10 evidence)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
       ],
       "first_published_at": "2026-11-18T21:35:43+00:00",
-      "latest_updated_at": "2026-11-19T18:09:11+00:00",
+      "latest_updated_at": "2026-11-20T12:30:47+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
       "related_sources": [
@@ -2016,153 +2248,14 @@
           "trust_tier": 2,
           "is_primary_source": false,
           "publisher_owns_feed": true
-        },
-        {
-          "source_name": "TechCrunch AI",
-          "source_url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you",
-          "title": "Google gives Gemini the ability to use your Mac for you",
-          "article_id": "art_techcrunch_ai_5d74687f0236",
-          "publisher_id": "techcrunch",
-          "publisher_group_id": "techcrunch",
-          "source_type": "publication",
-          "trust_tier": 2,
-          "is_primary_source": false,
-          "publisher_owns_feed": true
         }
       ],
-      "covered_by_sources_count": 4
+      "covered_by_sources_count": 3
     },
     {
-      "id": "cluster_5",
-      "article_id": "cluster_5",
-      "article_url": "articles/cluster_5.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Explore the Codex Security Plugin",
-      "one_liner": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
-      "summary": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
-      "ai_what_happened": "OpenAI News published verified documentation on Explore the Codex Security Plugin.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Explore the Codex Security Plugin from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Explore the Codex Security Plugin; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Explore the Codex Security Plugin capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers Explore the Codex Security Plugin as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://openai.com/business/learn/codex-security-plugin-demo",
-      "word_count": 25,
-      "extraction_status": "cached_fallback",
-      "content_hash": "9abe6cb390359f8d",
-      "extracted_content": {
-        "headline": "Explore the Codex Security Plugin",
-        "word_count": 25,
-        "reading_time": "1 min read",
-        "extraction_status": "cached_fallback",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 19, 00:00 UTC",
-      "published_at": "2026-11-19T00:00:00+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
-      "link": "https://openai.com/business/learn/codex-security-plugin-demo",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Explore the Codex Security Plugin",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording."
-      ],
-      "detailed_analysis": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 25,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-19T00:00:00+00:00",
-      "latest_updated_at": "2026-11-18T08:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [
-        {
-          "source_name": "OpenAI News",
-          "source_url": "https://openai.com/index/inside-the-codex-sandbox",
-          "title": "Inside the Codex sandbox",
-          "article_id": "art_openai_news_37979092b9c5",
-          "publisher_id": "openai",
-          "publisher_group_id": "openai",
-          "source_type": "official",
-          "trust_tier": 1,
-          "is_primary_source": true,
-          "publisher_owns_feed": true
-        }
-      ],
-      "covered_by_sources_count": 2
-    },
-    {
-      "id": "cluster_29",
-      "article_id": "cluster_29",
-      "article_url": "articles/cluster_29.json",
+      "id": "cluster_30",
+      "article_id": "cluster_30",
+      "article_url": "articles/cluster_30.json",
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "frontier_launch",
@@ -2174,35 +2267,33 @@
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Genie 4 is now available Earlier this year we introduced Project Genie, an experimental research prototype that lets you generate and explore interactive worlds. Early testers told us they wanted deeper control over what happens inside those worlds, and easier ways to build and share them.",
-      "ai_what_happened": "So today, we are rolling out a new Project Genie experience to eligible Google AI Ultra subscribers, making these worlds far more responsive, creative, and social.",
+      "ai_overview": "Genie 4 is now available. Verified technical reporting from Google DeepMind.",
+      "ai_what_happened": "Google DeepMind published verified documentation on Genie 4 is now available.",
       "ai_key_details": [
-        "This update unlocks first-time access to Genie 4, new upgrades to Genie 3, the Project Genie agent which helps users build their vision, and a community gallery to discover, explore, and remix worlds.",
-        "Project Genie brings together our most advanced world models alongside our Gemini models, empowering you to generate, step inside, and shape worlds directly from your browser."
+        "Primary documentation verified from Google DeepMind."
       ],
       "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Genie 4 is now available from Google DeepMind.",
-      "ai_technical_breakdown": "Experience Genie 4 in Project Genie With Genie 4, our most realistic and interactive world model yet, you can now prompt mid-session to change the world you created.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Google DeepMind for Genie 4 is now available; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
         "Developers": "Enables engineers to integrate Genie 4 is now available capabilities from Google DeepMind directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
         "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Google DeepMind."
       },
-      "ai_whats_new": "Just type a new prompt while you navigate your world and you can edit your environments in real time.",
+      "ai_whats_new": "Delivers Genie 4 is now available as documented in verified primary release notes from Google DeepMind.",
       "ai_key_takeaways": [
-        "Shift the weather, drop in a character, or redirect the action.",
-        "For the first time, Genie 4 pairs these visuals with real-time native audio that adapts as the scene unfolds, from ambient soundscapes to character dialogue.",
-        "Discover new Genie 3 capabilities While Genie 4 delivers our highest-fidelity visuals, physics, and native audio, Genie 3 remains available in Project Genie\u2019s model picker when you want longer runs or panorama-seeded spaces."
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from Google DeepMind."
       ],
-      "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
       "original_source_url": "https://deepmind.google/blog/genie-4-is-now-available",
-      "word_count": 730,
-      "extraction_status": "cached",
-      "content_hash": "34de5c4bfda06c0b",
+      "word_count": 5,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
       "extracted_content": {
         "headline": "Genie 4 is now available",
-        "word_count": 730,
-        "reading_time": "3 min read",
-        "extraction_status": "cached",
+        "word_count": 5,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
@@ -2228,16 +2319,16 @@
       "is_official": true,
       "published": "Nov 18, 18:13 UTC",
       "published_at": "2026-11-18T18:13:42+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://deepmind.google/blog/genie-4-is-now-available",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png",
-      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_alt": "Visual representation for Genie 4 is now available",
-      "image_type": "source_media",
-      "image_credit": "Source publication",
+      "image_type": "official_asset",
+      "image_credit": "Google announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "company": "google",
-      "reading_time": "3 min read",
+      "reading_time": "1 min read",
       "key_points": [
         "Strategic development announced in Frontier Models."
       ],
@@ -2289,236 +2380,9 @@
       "covered_by_sources_count": 2
     },
     {
-      "id": "cluster_62",
-      "article_id": "cluster_62",
-      "article_url": "articles/cluster_62.json",
-      "publisher_id": "techcrunch",
-      "publisher_group_id": "techcrunch",
-      "article_type": "policy_regulation",
-      "signal_badge": "Security & Policy",
-      "impact_level": "Notable",
-      "title": "These tech outages are giving Y2K, AI agent style",
-      "one_liner": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say.",
-      "summary": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say.",
-      "ai_what_happened": "TechCrunch AI published verified documentation on These tech outages are giving Y2K, AI agent style.",
-      "ai_key_details": [
-        "Primary documentation verified from TechCrunch AI."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for These tech outages are giving Y2K, AI agent style from TechCrunch AI.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for These tech outages are giving Y2K, AI agent style; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate These tech outages are giving Y2K, AI agent style capabilities from TechCrunch AI directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
-      },
-      "ai_whats_new": "Delivers These tech outages are giving Y2K, AI agent style as documented in verified primary release notes from TechCrunch AI.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from TechCrunch AI."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style",
-      "word_count": 27,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "These tech outages are giving Y2K, AI agent style",
-        "word_count": 27,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence?",
-        "There's actually likely something deeper going on, cybersecurity experts say."
-      ],
-      "what_changed": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence?",
-      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Techcrunch.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Techcrunch may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Safety",
-      "category_confidence": 0.95,
-      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
-      "topic": "AI Safety",
-      "source": "TechCrunch AI",
-      "tier": "Independent Journalism",
-      "trust_tier": 2,
-      "is_official": false,
-      "published": "Nov 19, 21:42 UTC",
-      "published_at": "2026-11-19T21:42:31+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
-      "link": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style",
-      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for These tech outages are giving Y2K, AI agent style",
-      "image_type": "category_fallback",
-      "image_credit": "AI Safety curation",
-      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-      "company": "techcrunch",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence?",
-        "There's actually likely something deeper going on, cybersecurity experts say."
-      ],
-      "detailed_analysis": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence?\n\nThere's actually likely something deeper going on, cybersecurity experts say.",
-      "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Techcrunch."
-      },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Techcrunch.",
-      "importance_score": 80,
-      "relevance_score": 70,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 85,
-      "confidence_score": 85,
-      "pulse_score": 70.2,
-      "overall_score": 70.2,
-      "confidence_label": "medium",
-      "evidence_status": "single_source",
-      "evidence_label": "Single-Source Report",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Material policy regulation development (+30 impact)",
-        "+ Independent technology journalism desk (85 authority)"
-      ],
-      "first_published_at": "2026-11-19T21:42:31+00:00",
-      "latest_updated_at": "2026-11-19T21:42:31+00:00",
-      "eligible_for_top_developments": false,
-      "eligible_for_briefing": false,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_65",
-      "article_id": "cluster_65",
-      "article_url": "articles/cluster_65.json",
-      "publisher_id": "techcrunch",
-      "publisher_group_id": "techcrunch",
-      "article_type": "policy_regulation",
-      "signal_badge": "Security & Policy",
-      "impact_level": "Notable",
-      "title": "Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "one_liner": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
-      "summary": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
-      "ai_what_happened": "TechCrunch AI published verified documentation on Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says.",
-      "ai_key_details": [
-        "Primary documentation verified from TechCrunch AI."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says from TechCrunch AI.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says capabilities from TechCrunch AI directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
-      },
-      "ai_whats_new": "Delivers Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says as documented in verified primary release notes from TechCrunch AI.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from TechCrunch AI."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says",
-      "word_count": 36,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-        "word_count": 36,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
-        "Official development released and documented by TechCrunch AI."
-      ],
-      "what_changed": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Meta.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Meta may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "TechCrunch AI",
-      "tier": "Independent Journalism",
-      "trust_tier": 2,
-      "is_official": false,
-      "published": "Nov 19, 17:38 UTC",
-      "published_at": "2026-11-19T17:38:40+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
-      "link": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says",
-      "image": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Meta\u2019s AI agent Muse is mixing up conversations and could be exposing private data, report says",
-      "image_type": "official_asset",
-      "image_credit": "Meta announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "meta",
-      "reading_time": "1 min read",
-      "key_points": [
-        "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them."
-      ],
-      "detailed_analysis": "In some of these instances, employees said Muse surfaced messages about childcare requests they never made, career advice they never asked for, product orders they never placed, and bank account balances that didn't belong to them.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Meta workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Meta workflows.",
-      "importance_score": 80,
-      "relevance_score": 70,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 85,
-      "confidence_score": 85,
-      "pulse_score": 70.2,
-      "overall_score": 70.2,
-      "confidence_label": "medium",
-      "evidence_status": "single_source",
-      "evidence_label": "Single-Source Report",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Material policy regulation development (+30 impact)",
-        "+ Independent technology journalism desk (85 authority)"
-      ],
-      "first_published_at": "2026-11-19T17:38:40+00:00",
-      "latest_updated_at": "2026-11-19T17:38:40+00:00",
-      "eligible_for_top_developments": false,
-      "eligible_for_briefing": false,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_32",
-      "article_id": "cluster_32",
-      "article_url": "articles/cluster_32.json",
+      "id": "cluster_33",
+      "article_id": "cluster_33",
+      "article_url": "articles/cluster_33.json",
       "publisher_id": "google_deepmind",
       "publisher_group_id": "google",
       "article_type": "frontier_launch",
@@ -2585,7 +2449,7 @@
       "is_official": true,
       "published": "Nov 10, 12:02 UTC",
       "published_at": "2026-11-10T12:02:28+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://deepmind.google/blog/introducing-alphaproof-code",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2635,9 +2499,9 @@
   ],
   "ai_tools": [
     {
-      "id": "cluster_37",
-      "article_id": "cluster_37",
-      "article_url": "articles/cluster_37.json",
+      "id": "cluster_38",
+      "article_id": "cluster_38",
+      "article_url": "articles/cluster_38.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
@@ -2702,7 +2566,7 @@
       "is_official": true,
       "published": "Nov 20, 22:35 UTC",
       "published_at": "2026-11-20T22:35:24+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2750,9 +2614,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_41",
-      "article_id": "cluster_41",
-      "article_url": "articles/cluster_41.json",
+      "id": "cluster_42",
+      "article_id": "cluster_42",
+      "article_url": "articles/cluster_42.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
@@ -2817,7 +2681,7 @@
       "is_official": true,
       "published": "Nov 20, 00:33 UTC",
       "published_at": "2026-11-20T00:33:30+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/use-kimi-code-cli-with-models-on-amazon-bedrock",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2880,9 +2744,9 @@
   ],
   "dev_radar": [
     {
-      "id": "cluster_34",
-      "article_id": "cluster_34",
-      "article_url": "articles/cluster_34.json",
+      "id": "cluster_35",
+      "article_id": "cluster_35",
+      "article_url": "articles/cluster_35.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
@@ -2947,7 +2811,7 @@
       "is_official": true,
       "published": "Nov 21, 01:06 UTC",
       "published_at": "2026-11-21T01:06:42+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2995,9 +2859,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_35",
-      "article_id": "cluster_35",
-      "article_url": "articles/cluster_35.json",
+      "id": "cluster_36",
+      "article_id": "cluster_36",
+      "article_url": "articles/cluster_36.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "sdk_api_update",
@@ -3062,7 +2926,7 @@
       "is_official": true,
       "published": "Nov 21, 00:14 UTC",
       "published_at": "2026-11-21T00:14:26+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3112,9 +2976,9 @@
   ],
   "research_safety": [
     {
-      "id": "cluster_24",
-      "article_id": "cluster_24",
-      "article_url": "articles/cluster_24.json",
+      "id": "cluster_25",
+      "article_id": "cluster_25",
+      "article_url": "articles/cluster_25.json",
       "publisher_id": "anthropic",
       "publisher_group_id": "anthropic",
       "article_type": "frontier_launch",
@@ -3181,7 +3045,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3228,9 +3092,136 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_10",
-      "article_id": "cluster_10",
-      "article_url": "articles/cluster_10.json",
+      "id": "cluster_9",
+      "article_id": "cluster_9",
+      "article_url": "articles/cluster_9.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Explore the Codex Security Plugin",
+      "one_liner": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "summary": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "ai_what_happened": "OpenAI News published verified documentation on Explore the Codex Security Plugin.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Explore the Codex Security Plugin from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Explore the Codex Security Plugin; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Explore the Codex Security Plugin capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers Explore the Codex Security Plugin as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://openai.com/business/learn/codex-security-plugin-demo",
+      "word_count": 25,
+      "extraction_status": "cached_fallback",
+      "content_hash": "9abe6cb390359f8d",
+      "extracted_content": {
+        "headline": "Explore the Codex Security Plugin",
+        "word_count": 25,
+        "reading_time": "1 min read",
+        "extraction_status": "cached_fallback",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 19, 00:00 UTC",
+      "published_at": "2026-11-19T00:00:00+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
+      "link": "https://openai.com/business/learn/codex-security-plugin-demo",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Explore the Codex Security Plugin",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording."
+      ],
+      "detailed_analysis": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 25,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-19T00:00:00+00:00",
+      "latest_updated_at": "2026-11-18T08:00:00+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [
+        {
+          "source_name": "OpenAI News",
+          "source_url": "https://openai.com/index/inside-the-codex-sandbox",
+          "title": "Inside the Codex sandbox",
+          "article_id": "art_openai_news_37979092b9c5",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_type": "official",
+          "trust_tier": 1,
+          "is_primary_source": true,
+          "publisher_owns_feed": true
+        }
+      ],
+      "covered_by_sources_count": 2
+    },
+    {
+      "id": "cluster_11",
+      "article_id": "cluster_11",
+      "article_url": "articles/cluster_11.json",
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "frontier_launch",
@@ -3295,7 +3286,7 @@
       "is_official": true,
       "published": "Nov 18, 08:00 UTC",
       "published_at": "2026-11-18T08:00:00+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://openai.com/index/research-acceleration-jagged-frontier",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3342,9 +3333,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_11",
-      "article_id": "cluster_11",
-      "article_url": "articles/cluster_11.json",
+      "id": "cluster_12",
+      "article_id": "cluster_12",
+      "article_url": "articles/cluster_12.json",
       "publisher_id": "openai",
       "publisher_group_id": "openai",
       "article_type": "frontier_launch",
@@ -3409,7 +3400,7 @@
       "is_official": true,
       "published": "Nov 18, 06:00 UTC",
       "published_at": "2026-11-18T06:00:00+00:00",
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
+      "last_fetched_at": "2026-11-22T22:30:55.246255+00:00",
       "link": "https://openai.com/index/managing-frontier-ai-risk",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3454,124 +3445,43 @@
       "eligible_for_briefing": true,
       "related_sources": [],
       "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_25",
-      "article_id": "cluster_25",
-      "article_url": "articles/cluster_25.json",
-      "publisher_id": "anthropic",
-      "publisher_group_id": "anthropic",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "impact_level": "Major",
-      "title": "An Update On Independent Evaluators",
-      "one_liner": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
-      "summary": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
-      "ai_what_happened": "Anthropic Official News published verified documentation on An Update On Independent Evaluators.",
-      "ai_key_details": [
-        "Primary documentation verified from Anthropic Official News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for An Update On Independent Evaluators from Anthropic Official News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Anthropic Official News for An Update On Independent Evaluators; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate An Update On Independent Evaluators capabilities from Anthropic Official News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Anthropic Official News."
-      },
-      "ai_whats_new": "Delivers An Update On Independent Evaluators as documented in verified primary release notes from Anthropic Official News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from Anthropic Official News."
-      ],
-      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
-      "original_source_url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-      "word_count": 10,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "An Update On Independent Evaluators",
-        "word_count": 10,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Official news announcement from Anthropic: An Update On Independent Evaluators.",
-        "Official development released and documented by Anthropic Official News."
-      ],
-      "what_changed": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Anthropic.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "Anthropic Official News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Recent",
-      "published_at": null,
-      "last_fetched_at": "2026-11-22T17:14:14.656940+00:00",
-      "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for An Update On Independent Evaluators",
-      "image_type": "official_asset",
-      "image_credit": "Anthropic announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "anthropic",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Official news announcement from Anthropic: An Update On Independent Evaluators."
-      ],
-      "detailed_analysis": "Official news announcement from Anthropic: An Update On Independent Evaluators.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "importance_score": 75,
-      "relevance_score": 95,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 79.0,
-      "overall_score": 79.0,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Actionable developer SDK / runtime tooling (+25 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
-      ],
-      "first_published_at": "Recent",
-      "latest_updated_at": "Recent",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": false,
-      "related_sources": [],
-      "covered_by_sources_count": 1
     }
   ],
   "trending": [],
   "pulse_items": [
+    {
+      "title": "Combatting adversarial distillation",
+      "topic": "AI Safety",
+      "category": "AI Safety",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "company": "openai",
+      "published": "Nov 20, 10:00 UTC",
+      "published_at": "2026-11-20T10:00:00+00:00",
+      "first_published_at": "2026-11-20T10:00:00+00:00",
+      "latest_updated_at": "2026-11-20T10:00:00+00:00",
+      "what_happened": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "what_changed": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "one_liner": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "summary": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Openai.",
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "key_points": [
+        "OpenAI\u2019s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction."
+      ],
+      "link": "https://openai.com/index/combatting-adversarial-distillation",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "audience_impact": {
+        "target": "For AI researchers & safety teams",
+        "impact": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models."
+      },
+      "target_audience": "For AI researchers & safety teams",
+      "audience_impact_statement": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models.",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
+      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill"
+    },
     {
       "title": "Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm",
       "topic": "Frontier Models",
@@ -3602,39 +3512,6 @@
       },
       "target_audience": "For developers",
       "audience_impact_statement": "Expands programmatic API endpoints and tooling integrations available for Amazon.",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "company": "amazon",
-      "published": "Nov 20, 20:22 UTC",
-      "published_at": "2026-11-20T20:22:00+00:00",
-      "first_published_at": "2026-11-20T20:22:00+00:00",
-      "latest_updated_at": "2026-11-20T20:22:00+00:00",
-      "what_happened": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "what_changed": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "one_liner": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "summary": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
-      "key_points": [
-        "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract."
-      ],
-      "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
     },
@@ -3672,27 +3549,27 @@
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/37ZvKdwVigsgJ7G3FMr4Nb/12854063a79d19d63278704bf54e3010/introducing-medchembench-social.png?w=1600&h=900&fit=fill"
     },
     {
-      "title": "Amazon SageMaker Inference: 2026 launches in review, part 2",
-      "topic": "AI Infrastructure",
-      "category": "AI Infrastructure",
+      "title": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
+      "topic": "Frontier Models",
+      "category": "Frontier Models",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "company": "amazon",
-      "published": "Nov 20, 00:34 UTC",
-      "published_at": "2026-11-20T00:34:07+00:00",
-      "first_published_at": "2026-11-20T00:34:07+00:00",
-      "latest_updated_at": "2026-11-20T00:34:07+00:00",
-      "what_happened": "This second installment reviews 13 more Amazon SageMaker AI inference launches from 2026, spanning configuration recommendations, fitting more models onto each GPU, serving models too large for one instance, cross-Region routing, and post-launch tuning, bringing the year's total to 26.",
-      "what_changed": "This second installment reviews 13 more Amazon SageMaker AI inference launches from 2026, spanning configuration recommendations, fitting more models onto each GPU, serving models too large for one instance, cross-Region routing, and post-launch tuning, bringing the year's total to 26.",
-      "one_liner": "This second installment reviews 13 more Amazon SageMaker AI model reasoning launches from 2026, spanning configuration recommendations, fitting more models onto each GPU, serving models too large for one instance, cross-Region routing, and post-launch tuning, bringing the year's total to 26.",
-      "summary": "This second installment reviews 13 more Amazon SageMaker AI model reasoning launches from 2026, spanning configuration recommendations, fitting more models onto each GPU, serving models too large for one instance, cross-Region routing, and post-launch tuning, bringing the year's total to 26.",
-      "why_it_matters": "Expands compute capacity or improves inference efficiency, lowering latency and hardware hosting costs.",
-      "potential_impact": "Analytical Projection: Compute scaling from Amazon may influence production latency profiles and hardware utilization benchmarks.",
-      "detailed_analysis": "This second installment reviews 13 more Amazon SageMaker AI model reasoning launches from 2026, spanning configuration recommendations, fitting more models onto each GPU, serving models too large for one instance, cross-Region routing, and post-launch tuning, bringing the year's total to 26.",
+      "published": "Nov 20, 20:22 UTC",
+      "published_at": "2026-11-20T20:22:00+00:00",
+      "first_published_at": "2026-11-20T20:22:00+00:00",
+      "latest_updated_at": "2026-11-20T20:22:00+00:00",
+      "what_happened": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "what_changed": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "one_liner": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "summary": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Amazon.",
+      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract.",
       "key_points": [
-        "This second installment reviews 13 more Amazon SageMaker AI model reasoning launches from 2026, spanning configuration recommendations, fitting more models onto each GPU, serving models too large for one instance, cross-Region routing, and post-launch tuning, bringing the year's total to 26."
+        "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract."
       ],
-      "link": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2",
+      "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
       "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "audience_impact": {
@@ -3712,8 +3589,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 265353,
-      "forks": 59994,
+      "stars": 265417,
+      "forks": 60010,
       "language": "Python",
       "topics": [
         "ai",
@@ -3724,13 +3601,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 220,
-      "stars_gained_7d": 1768,
+      "stars_gained_24h": 237,
+      "stars_gained_7d": 1798,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+220); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+237); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-22T15:53:18Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "updated_at": "2026-11-22T22:24:48Z",
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3738,8 +3615,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 84156,
-      "forks": 15400,
+      "stars": 84210,
+      "forks": 15413,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3750,13 +3627,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 141,
-      "stars_gained_7d": 1431,
+      "stars_gained_24h": 166,
+      "stars_gained_7d": 1445,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+141); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+166); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-22T17:09:47Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "updated_at": "2026-11-22T20:57:59Z",
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3764,8 +3641,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 473766,
-      "forks": 115540,
+      "stars": 474009,
+      "forks": 115585,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3776,13 +3653,13 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 1404,
-      "stars_gained_7d": 12360,
+      "stars_gained_24h": 1348,
+      "stars_gained_7d": 12224,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+1404); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+1348); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-22T17:13:42Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "updated_at": "2026-11-22T22:30:33Z",
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     },
     {
       "repository": "n8n-io/n8n",
@@ -3790,8 +3667,8 @@
       "owner": "n8n-io",
       "url": "https://github.com/n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 211795,
-      "forks": 61621,
+      "stars": 211832,
+      "forks": 61625,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -3802,13 +3679,13 @@
         "development"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 195,
-      "stars_gained_7d": 1230,
+      "stars_gained_24h": 186,
+      "stars_gained_7d": 1227,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+195); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+186); Active commit activity in the last 24h.",
       "created_at": "2019-06-22T09:24:21Z",
-      "updated_at": "2026-11-22T17:01:25Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "updated_at": "2026-11-22T22:11:27Z",
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -3816,8 +3693,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 115882,
-      "forks": 19236,
+      "stars": 115954,
+      "forks": 19256,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -3828,13 +3705,13 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 268,
-      "stars_gained_7d": 1793,
+      "stars_gained_24h": 290,
+      "stars_gained_7d": 1827,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+268); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+290); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-22T16:10:52Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "updated_at": "2026-11-22T18:32:27Z",
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     },
     {
       "repository": "f/prompts.chat",
@@ -3842,8 +3719,8 @@
       "owner": "f",
       "url": "https://github.com/f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
-      "stars": 178265,
-      "forks": 22731,
+      "stars": 178277,
+      "forks": 22730,
       "language": "MDX",
       "topics": [
         "ai",
@@ -3854,13 +3731,13 @@
         "claude"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 116,
-      "stars_gained_7d": 738,
-      "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+116); Active commit activity in the last 24h.",
+      "stars_gained_24h": 99,
+      "stars_gained_7d": 723,
+      "developer_trend_score": 99.9,
+      "score_explanation": "Rapid 24h adoption (+99 stars); Active commit activity in the last 24h.",
       "created_at": "2022-12-05T13:54:13Z",
       "updated_at": "2026-11-22T03:13:47Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     },
     {
       "repository": "FlorianBruniaux/claude-code-ultimate-guide",
@@ -3868,8 +3745,8 @@
       "owner": "FlorianBruniaux",
       "url": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide",
       "description": "The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quizzes, and production-ready templates. 430K+ lines.",
-      "stars": 6729,
-      "forks": 855,
+      "stars": 6967,
+      "forks": 869,
       "language": "Python",
       "topics": [
         "agentic-coding",
@@ -3880,13 +3757,13 @@
         "anthropic"
       ],
       "license": "CC-BY-SA-4.0",
-      "stars_gained_24h": 229,
-      "stars_gained_7d": 283,
-      "developer_trend_score": 98.4,
-      "score_explanation": "Breakout 24h star growth (+229); Active commit activity in the last 24h.",
+      "stars_gained_24h": 456,
+      "stars_gained_7d": 519,
+      "developer_trend_score": 98.5,
+      "score_explanation": "Breakout 24h star growth (+456); Active commit activity in the last 24h.",
       "created_at": "2026-01-09T13:42:10Z",
-      "updated_at": "2026-11-22T09:29:26Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "updated_at": "2026-11-22T17:57:17Z",
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3894,8 +3771,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 73703,
-      "forks": 58061,
+      "stars": 73709,
+      "forks": 58064,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3906,13 +3783,13 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": 81,
-      "stars_gained_7d": 1262,
-      "developer_trend_score": 97.7,
-      "score_explanation": "Rapid 24h adoption (+81 stars); Active commit activity in the last 24h.",
+      "stars_gained_24h": 76,
+      "stars_gained_7d": 1231,
+      "developer_trend_score": 97.1,
+      "score_explanation": "Rapid 24h adoption (+76 stars); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
       "updated_at": "2026-11-22T03:22:02Z",
-      "collected_at": "2026-11-22T17:14:11.826158+00:00"
+      "collected_at": "2026-11-22T22:30:52.556566+00:00"
     }
   ],
   "source_health_summary": {
@@ -3922,21 +3799,21 @@
     "successful_fetches_count": 10,
     "failed_fetches_count": 0,
     "valid_empty_sources_count": 0,
-    "total_articles_received": 2534,
+    "total_articles_received": 2535,
     "rejected_by_relevance_count": 12,
-    "rejected_by_freshness_count": 1018,
-    "fresh_articles_accepted_count": 84,
-    "unique_article_count": 84
+    "rejected_by_freshness_count": 1022,
+    "fresh_articles_accepted_count": 80,
+    "unique_article_count": 80
   },
   "source_health_details": [
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-22T17:13:01.836228+00:00",
-      "last_success_at": "2026-11-22T17:13:01.836228+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.079332+00:00",
+      "last_success_at": "2026-11-22T22:30:43.079332+00:00",
       "fetch_status": "success",
       "http_status": 200,
-      "articles_received": 1421,
+      "articles_received": 1422,
       "articles_accepted": 15,
       "error_type": null,
       "error_message": null
@@ -3944,8 +3821,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-22T17:13:01.837163+00:00",
-      "last_success_at": "2026-11-22T17:13:01.837163+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.080055+00:00",
+      "last_success_at": "2026-11-22T22:30:43.080055+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 27,
@@ -3956,8 +3833,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-22T17:13:01.837722+00:00",
-      "last_success_at": "2026-11-22T17:13:01.837722+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.080522+00:00",
+      "last_success_at": "2026-11-22T22:30:43.080522+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -3968,8 +3845,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-22T17:13:01.838437+00:00",
-      "last_success_at": "2026-11-22T17:13:01.838437+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.080872+00:00",
+      "last_success_at": "2026-11-22T22:30:43.080872+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -3980,8 +3857,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-22T17:13:01.839348+00:00",
-      "last_success_at": "2026-11-22T17:13:01.839348+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.081563+00:00",
+      "last_success_at": "2026-11-22T22:30:43.081563+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -3992,8 +3869,8 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-22T17:13:01.842848+00:00",
-      "last_success_at": "2026-11-22T17:13:01.842848+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.084168+00:00",
+      "last_success_at": "2026-11-22T22:30:43.084168+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 915,
@@ -4004,8 +3881,8 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-22T17:13:01.843827+00:00",
-      "last_success_at": "2026-11-22T17:13:01.843827+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.085098+00:00",
+      "last_success_at": "2026-11-22T22:30:43.085098+00:00",
       "fetch_status": "success",
       "http_status": 304,
       "articles_received": 10,
@@ -4016,34 +3893,34 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-22T17:13:01.847736+00:00",
-      "last_success_at": "2026-11-22T17:13:01.847736+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.087095+00:00",
+      "last_success_at": "2026-11-22T22:30:43.087095+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
-      "articles_accepted": 5,
+      "articles_accepted": 6,
       "error_type": null,
       "error_message": null
     },
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-22T17:13:01.851367+00:00",
-      "last_success_at": "2026-11-22T17:13:01.851367+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.091075+00:00",
+      "last_success_at": "2026-11-22T22:30:43.091075+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
-      "articles_accepted": 14,
+      "articles_accepted": 9,
       "error_type": null,
       "error_message": null
     },
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-22T17:13:01.852703+00:00",
-      "last_success_at": "2026-11-22T17:13:01.852703+00:00",
+      "last_attempt_at": "2026-11-22T22:30:43.092969+00:00",
+      "last_success_at": "2026-11-22T22:30:43.092969+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 9,
       "error_type": null,
@@ -4051,14 +3928,14 @@
     }
   ],
   "extraction_telemetry": {
-    "extraction_attempts": 16,
+    "extraction_attempts": 15,
     "successful_full_body_extractions": 8,
-    "cached_content": 8,
-    "rss_only_fallbacks": 8,
+    "cached_content": 7,
+    "rss_only_fallbacks": 7,
     "blocked_pages": 0,
     "missing_content": 0,
-    "average_extracted_word_count": 869.1,
+    "average_extracted_word_count": 963.1,
     "ai_enhancement_success": 0,
-    "ai_fallback_usage": 16
+    "ai_fallback_usage": 15
   }
 }

@@ -1,14 +1,14 @@
 {
   "id": "cluster_35",
   "clean_id": "cluster_35",
-  "title": "Cut self-hosted LLM cost and latency with the distributed KV caching agent skill",
-  "headline": "Cut self-hosted LLM cost and latency with the distributed KV caching agent skill",
+  "title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
+  "headline": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
   "publisher_group_id": "amazon",
   "author": "",
-  "published_at": "2026-11-21T00:14:26+00:00",
+  "published_at": "2026-11-21T01:06:42+00:00",
   "category": "AI Agents",
   "topic": "AI Agents",
   "impact_level": "Major",
@@ -19,48 +19,48 @@
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill",
-  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill",
-  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill",
+  "url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
   "reading_time": "1 min read",
-  "word_count": 38,
+  "word_count": 55,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut inference cost by up to 40% and time to first token by up to 80%.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Cut self-hosted LLM cost and latency with the distributed KV caching agent skill.",
+  "ai_overview": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on New in AWS Quick: More capable flows, an updated web experience, and agents that work together.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Cut self-hosted LLM cost and latency with the distributed KV caching agent skill from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Cut self-hosted LLM cost and latency with the distributed KV caching agent skill; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for New in AWS Quick: More capable flows, an updated web experience, and agents that work together from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for New in AWS Quick: More capable flows, an updated web experience, and agents that work together; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Cut self-hosted LLM cost and latency with the distributed KV caching agent skill capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate New in AWS Quick: More capable flows, an updated web experience, and agents that work together capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Cut self-hosted LLM cost and latency with the distributed KV caching agent skill as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers New in AWS Quick: More capable flows, an updated web experience, and agents that work together as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."
   ],
-  "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn.",
-    "Distributed KV caching with Amazon ElastiCache can cut inference cost by up to 40% and time to first token by up to 80%."
+    "AWS Quick is the AI workspace built only for work.",
+    "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
   ],
-  "text": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%.",
-  "full_text": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%.",
+  "text": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
+  "full_text": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%."
+      "content": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
     }
   ],
   "paragraphs": [
-    "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%."
+    "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
   ],
   "corroborating_sources": []
 }

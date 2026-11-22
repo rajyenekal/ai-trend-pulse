@@ -1,66 +1,66 @@
 {
   "id": "cluster_67",
   "clean_id": "cluster_67",
-  "title": "Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog",
-  "headline": "Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog",
+  "title": "Security researchers show how cheap AI inference providers steal keys and snoop on users",
+  "headline": "Security researchers show how cheap AI inference providers steal keys and snoop on users",
   "subtitle": "",
   "publisher": "The Decoder",
   "publisher_id": "the_decoder",
   "publisher_group_id": "the_decoder",
   "author": "",
-  "published_at": "2026-11-22T14:20:28+00:00",
-  "category": "AI Agents",
-  "topic": "AI Agents",
+  "published_at": "2026-11-22T12:07:56+00:00",
+  "category": "AI Safety",
+  "topic": "AI Safety",
   "impact_level": "Major",
-  "pulse_score": 76.7,
-  "article_type": "sdk_api_update",
-  "signal_badge": "Developer SDK",
+  "pulse_score": 74.8,
+  "article_type": "security_vulnerability",
+  "signal_badge": "Security & Policy",
   "trust_tier": 2,
   "tier": "Independent Journalism",
   "is_official": false,
-  "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog",
-  "canonical_url": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog",
-  "original_source_url": "https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog",
+  "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users",
+  "canonical_url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users",
+  "original_source_url": "https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users",
   "reading_time": "1 min read",
-  "word_count": 31,
+  "word_count": 39,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results.",
-  "ai_what_happened": "The Decoder published verified documentation on Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog.",
+  "ai_overview": "Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests.",
+  "ai_what_happened": "The Decoder published verified documentation on Security researchers show how cheap AI inference providers steal keys and snoop on users.",
   "ai_key_details": [
     "Primary documentation verified from The Decoder."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog from The Decoder.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Security researchers show how cheap AI inference providers steal keys and snoop on users from The Decoder.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Security researchers show how cheap AI inference providers steal keys and snoop on users; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog capabilities from The Decoder directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Security researchers show how cheap AI inference providers steal keys and snoop on users capabilities from The Decoder directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
   },
-  "ai_whats_new": "Delivers Perplexity's new Monitor API turns web search from a one-off query into a nonstop watchdog as documented in verified primary release notes from The Decoder.",
+  "ai_whats_new": "Delivers Security researchers show how cheap AI inference providers steal keys and snoop on users as documented in verified primary release notes from The Decoder.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from The Decoder."
   ],
-  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
   "reported_facts": [
-    "Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur.",
-    "Its own decision model filters out unimportant results."
+    "Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests.",
+    "Official development released and documented by The Decoder."
   ],
-  "text": "Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results.",
-  "full_text": "Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results.",
+  "text": "Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests.",
+  "full_text": "Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results."
+      "content": "Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests."
     }
   ],
   "paragraphs": [
-    "Perplexity is launching a Monitor API that searches the web on a schedule and alerts agents via webhook only when relevant changes occur. Its own decision model filters out unimportant results."
+    "Security researchers at Dragos used two million fake AI requests to uncover serious vulnerabilities in the AI supply chain, finding at least three compromised providers, hundreds of stolen AWS keys, and marketplace resellers who were simply reading customer requests."
   ],
   "corroborating_sources": []
 }
