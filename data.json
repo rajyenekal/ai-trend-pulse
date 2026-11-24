@@ -1,16 +1,34 @@
 {
   "schema_version": 2,
   "data_status": "source_linked",
-  "generated_at": "2026-11-24T00:59:10.226927+00:00",
-  "last_successful_update": "2026-11-24T00:59:10.226927+00:00",
-  "last_attempt_at": "2026-11-24T00:59:10.226927+00:00",
+  "generated_at": "2026-11-24T11:19:39.758143+00:00",
+  "last_successful_update": "2026-11-24T11:19:39.758143+00:00",
+  "last_attempt_at": "2026-11-24T11:19:39.758143+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
     "total_developments_today": 73,
-    "last_updated": "2026-11-24T00:59:10.226927+00:00",
+    "last_updated": "2026-11-24T11:19:39.758143+00:00",
     "briefing_text": "Today's AI developments span Frontier Models, Open Source AI, and AI Agents. Research and engineering teams are focusing on verifiable model evaluations, practical agentic workflows, and production reliability.",
     "top_developments": [
+      {
+        "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+        "topic": "Frontier Models",
+        "category": "Frontier Models",
+        "source": "The Decoder",
+        "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
+        "article_type": "frontier_launch",
+        "signal_badge": "Frontier Launch",
+        "what_changed": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+        "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from OpenAI.",
+        "target_audience": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
+        "score": 84.3,
+        "score_reasons": [
+          "+ Frontier foundation model milestone (+40 impact)",
+          "+ Independent technology journalism desk (85 authority)"
+        ]
+      },
       {
         "title": "Connected intelligence for in-house legal",
         "topic": "Frontier Models",
@@ -28,24 +46,6 @@
           "+ Frontier foundation model milestone (+40 impact)",
           "+ Official primary lab source (100 authority)",
           "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-        ]
-      },
-      {
-        "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
-        "topic": "Frontier Models",
-        "category": "Frontier Models",
-        "source": "The Decoder",
-        "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-        "article_type": "frontier_launch",
-        "signal_badge": "Frontier Launch",
-        "what_changed": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-        "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from OpenAI.",
-        "target_audience": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
-        "score": 84.3,
-        "score_reasons": [
-          "+ Frontier foundation model milestone (+40 impact)",
-          "+ Independent technology journalism desk (85 authority)"
         ]
       },
       {
@@ -68,6 +68,25 @@
         ]
       },
       {
+        "title": "Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
+        "topic": "AI Safety",
+        "category": "AI Safety",
+        "source": "AWS Machine Learning",
+        "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+        "article_type": "sdk_api_update",
+        "signal_badge": "Developer SDK",
+        "what_changed": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+        "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Anthropic.",
+        "target_audience": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI.",
+        "score": 79.0,
+        "score_reasons": [
+          "+ Actionable developer SDK / runtime tooling (+25 impact)",
+          "+ Official primary lab source (100 authority)",
+          "+ Direct developer actionability / runnable tooling (90 actionability)"
+        ]
+      },
+      {
         "title": "AI data centers throw another wrench into chaotic UN climate talks",
         "topic": "Frontier Models",
         "category": "Frontier Models",
@@ -77,25 +96,6 @@
         "signal_badge": "Developer SDK",
         "what_changed": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
         "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
-        "target_audience": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
-        "score": 76.7,
-        "score_reasons": [
-          "+ Actionable developer SDK / runtime tooling (+25 impact)",
-          "+ Independent technology journalism desk (85 authority)",
-          "+ Direct developer actionability / runnable tooling (90 actionability)"
-        ]
-      },
-      {
-        "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-        "topic": "AI Business",
-        "category": "AI Business",
-        "source": "TechCrunch AI",
-        "link": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
-        "article_type": "sdk_api_update",
-        "signal_badge": "Developer SDK",
-        "what_changed": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-        "why_it_matters": "Advances AI Business capabilities through verified primary disclosures from Anthropic.",
         "target_audience": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
         "score": 76.7,
@@ -148,6 +148,24 @@
   },
   "top_developments": [
     {
+      "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+      "topic": "Frontier Models",
+      "category": "Frontier Models",
+      "source": "The Decoder",
+      "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "what_changed": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from OpenAI.",
+      "target_audience": "For practitioners & teams",
+      "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
+      "score": 84.3,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Independent technology journalism desk (85 authority)"
+      ]
+    },
+    {
       "title": "Connected intelligence for in-house legal",
       "topic": "Frontier Models",
       "category": "Frontier Models",
@@ -164,24 +182,6 @@
         "+ Frontier foundation model milestone (+40 impact)",
         "+ Official primary lab source (100 authority)",
         "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ]
-    },
-    {
-      "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
-      "source": "The Decoder",
-      "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "what_changed": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from OpenAI.",
-      "target_audience": "For practitioners & teams",
-      "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
-      "score": 84.3,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Independent technology journalism desk (85 authority)"
       ]
     },
     {
@@ -204,6 +204,25 @@
       ]
     },
     {
+      "title": "Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
+      "topic": "AI Safety",
+      "category": "AI Safety",
+      "source": "AWS Machine Learning",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "what_changed": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Anthropic.",
+      "target_audience": "For businesses & compliance teams",
+      "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for frontier AI.",
+      "score": 79.0,
+      "score_reasons": [
+        "+ Actionable developer SDK / runtime tooling (+25 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
+      ]
+    },
+    {
       "title": "AI data centers throw another wrench into chaotic UN climate talks",
       "topic": "Frontier Models",
       "category": "Frontier Models",
@@ -213,25 +232,6 @@
       "signal_badge": "Developer SDK",
       "what_changed": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
       "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from frontier labs.",
-      "target_audience": "For practitioners & teams",
-      "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
-      "score": 76.7,
-      "score_reasons": [
-        "+ Actionable developer SDK / runtime tooling (+25 impact)",
-        "+ Independent technology journalism desk (85 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
-      ]
-    },
-    {
-      "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-      "topic": "AI Business",
-      "category": "AI Business",
-      "source": "TechCrunch AI",
-      "link": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "what_changed": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-      "why_it_matters": "Advances AI Business capabilities through verified primary disclosures from Anthropic.",
       "target_audience": "For practitioners & teams",
       "impact": "Offers new practical efficiencies and tooling options for frontier AI workflows.",
       "score": 76.7,
@@ -283,6 +283,109 @@
   ],
   "takeaway": "Frontier research labs and independent publications report accelerating momentum across reasoning architectures, developer agents, and regulatory compliance standards.",
   "trends": [
+    {
+      "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+      "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
+      "trend_type": "single_development",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "trend_signal_diversity": 1,
+      "claim_corroboration": 1,
+      "independent_publisher_count": 1,
+      "published_at": "2026-11-23T15:13:03+00:00",
+      "first_published_at": "2026-11-23T15:13:03+00:00",
+      "latest_updated_at": "2026-11-23T15:13:03+00:00",
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Independent technology journalism desk (85 authority)"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+          "evidence": [
+            {
+              "article_id": "cluster_69",
+              "canonical_url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
+              "publisher_id": "the_decoder",
+              "publisher_group_id": "the_decoder",
+              "source_name": "The Decoder",
+              "trust_tier": 2,
+              "is_official": false,
+              "supporting_excerpt": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+              "text_verified": true
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "single_source"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "cluster_69",
+          "canonical_url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
+          "publisher_id": "the_decoder",
+          "publisher_group_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust_tier": 2,
+          "is_official": false,
+          "supporting_excerpt": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+          "text_verified": true
+        }
+      ],
+      "what_happened": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+      "what_changed": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "reported_facts": [
+        "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+        "Official development released and documented by The Decoder."
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "who_affected": "Developers, Enterprise Decision Makers",
+      "source": "The Decoder",
+      "tier": "Independent Journalism",
+      "status": "source_linked",
+      "evidence_article_ids": [
+        "cluster_69"
+      ],
+      "evidence_urls": [
+        "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model"
+      ],
+      "topic": "Frontier Models",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
+      "independent_source_count": 1,
+      "key_points": [
+        "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters."
+      ],
+      "detailed_analysis": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
     {
       "title": "Connected intelligence for in-house legal",
       "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
@@ -385,109 +488,6 @@
       "image_alt": "Visual representation for Connected intelligence for in-house legal",
       "image_type": "source_media",
       "image_credit": "Source publication",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
-      "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-      "trend_type": "single_development",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "trend_signal_diversity": 1,
-      "claim_corroboration": 1,
-      "independent_publisher_count": 1,
-      "published_at": "2026-11-23T15:13:03+00:00",
-      "first_published_at": "2026-11-23T15:13:03+00:00",
-      "latest_updated_at": "2026-11-23T15:13:03+00:00",
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Independent technology journalism desk (85 authority)"
-      ],
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-          "evidence": [
-            {
-              "article_id": "cluster_69",
-              "canonical_url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-              "publisher_id": "the_decoder",
-              "publisher_group_id": "the_decoder",
-              "source_name": "The Decoder",
-              "trust_tier": 2,
-              "is_official": false,
-              "supporting_excerpt": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-              "text_verified": true
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "single_source"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "cluster_69",
-          "canonical_url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-          "publisher_id": "the_decoder",
-          "publisher_group_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust_tier": 2,
-          "is_official": false,
-          "supporting_excerpt": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-          "text_verified": true
-        }
-      ],
-      "what_happened": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-      "what_changed": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "reported_facts": [
-        "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-        "Official development released and documented by The Decoder."
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "who_affected": "Developers, Enterprise Decision Makers",
-      "source": "The Decoder",
-      "tier": "Independent Journalism",
-      "status": "source_linked",
-      "evidence_article_ids": [
-        "cluster_69"
-      ],
-      "evidence_urls": [
-        "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model"
-      ],
-      "topic": "Frontier Models",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "evidence_status": "single_source",
-      "evidence_label": "Single-Source Report",
-      "independent_source_count": 1,
-      "key_points": [
-        "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters."
-      ],
-      "detailed_analysis": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
@@ -617,7 +617,7 @@
           "text": "Amazon SageMaker HyperPod now offers managed cluster extensions for observability and user management, bringing declarative, API- and console-driven configuration to the software running on Slurm cluster nodes.",
           "evidence": [
             {
-              "article_id": "cluster_39",
+              "article_id": "cluster_40",
               "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
               "publisher_id": "aws",
               "publisher_group_id": "amazon",
@@ -634,7 +634,7 @@
       ],
       "evidence_objects": [
         {
-          "article_id": "cluster_39",
+          "article_id": "cluster_40",
           "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
           "publisher_id": "aws",
           "publisher_group_id": "amazon",
@@ -666,7 +666,7 @@
       "tier": "Official Lab",
       "status": "official_claim",
       "evidence_article_ids": [
-        "cluster_39"
+        "cluster_40"
       ],
       "evidence_urls": [
         "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm"
@@ -804,120 +804,6 @@
   ],
   "top_stories": [
     {
-      "id": "cluster_2",
-      "article_id": "cluster_2",
-      "article_url": "articles/cluster_2.json",
-      "publisher_id": "openai",
-      "publisher_group_id": "openai",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Connected intelligence for in-house legal",
-      "one_liner": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-      "summary": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Connected intelligence for in-house legal Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-      "ai_what_happened": "OpenAI News published verified documentation on Connected intelligence for in-house legal.",
-      "ai_key_details": [
-        "Primary documentation verified from OpenAI News."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Connected intelligence for in-house legal from OpenAI News.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Connected intelligence for in-house legal; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Connected intelligence for in-house legal capabilities from OpenAI News directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
-      },
-      "ai_whats_new": "Delivers Connected intelligence for in-house legal as documented in verified primary release notes from OpenAI News.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from OpenAI News."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-      "word_count": 40,
-      "extraction_status": "extracted",
-      "content_hash": "2cf14caea558802e",
-      "extracted_content": {
-        "headline": "Connected intelligence for in-house legal",
-        "word_count": 40,
-        "reading_time": "1 min read",
-        "extraction_status": "extracted",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-        "Official development released and documented by OpenAI News."
-      ],
-      "what_changed": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.7,
-      "category_rationale": "General frontier AI development or ecosystem milestone",
-      "topic": "Frontier Models",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 23, 08:00 UTC",
-      "published_at": "2026-11-23T08:00:00+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
-      "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-      "image": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill",
-      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill",
-      "image_alt": "Visual representation for Connected intelligence for in-house legal",
-      "image_type": "source_media",
-      "image_credit": "Source publication",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel."
-      ],
-      "detailed_analysis": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "importance_score": 90,
-      "relevance_score": 95,
-      "freshness_score": 85,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 86.8,
-      "overall_score": 86.8,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-23T08:00:00+00:00",
-      "latest_updated_at": "2026-11-23T08:00:00+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
       "id": "cluster_69",
       "article_id": "cluster_69",
       "article_url": "articles/cluster_69.json",
@@ -985,7 +871,7 @@
       "is_official": false,
       "published": "Nov 23, 15:13 UTC",
       "published_at": "2026-11-23T15:13:03+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1007,7 +893,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
       "importance_score": 90,
       "relevance_score": 95,
-      "freshness_score": 85,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1025,6 +911,120 @@
       ],
       "first_published_at": "2026-11-23T15:13:03+00:00",
       "latest_updated_at": "2026-11-23T15:13:03+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_2",
+      "article_id": "cluster_2",
+      "article_url": "articles/cluster_2.json",
+      "publisher_id": "openai",
+      "publisher_group_id": "openai",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Connected intelligence for in-house legal",
+      "one_liner": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "summary": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Connected intelligence for in-house legal Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "ai_what_happened": "OpenAI News published verified documentation on Connected intelligence for in-house legal.",
+      "ai_key_details": [
+        "Primary documentation verified from OpenAI News."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Connected intelligence for in-house legal from OpenAI News.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by OpenAI News for Connected intelligence for in-house legal; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Connected intelligence for in-house legal capabilities from OpenAI News directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by OpenAI News."
+      },
+      "ai_whats_new": "Delivers Connected intelligence for in-house legal as documented in verified primary release notes from OpenAI News.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from OpenAI News."
+      ],
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "word_count": 40,
+      "extraction_status": "cached",
+      "content_hash": "2cf14caea558802e",
+      "extracted_content": {
+        "headline": "Connected intelligence for in-house legal",
+        "word_count": 40,
+        "reading_time": "1 min read",
+        "extraction_status": "cached",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+        "Official development released and documented by OpenAI News."
+      ],
+      "what_changed": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.7,
+      "category_rationale": "General frontier AI development or ecosystem milestone",
+      "topic": "Frontier Models",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 23, 08:00 UTC",
+      "published_at": "2026-11-23T08:00:00+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
+      "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill",
+      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill",
+      "image_alt": "Visual representation for Connected intelligence for in-house legal",
+      "image_type": "source_media",
+      "image_credit": "Source publication",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel."
+      ],
+      "detailed_analysis": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
+      "importance_score": 90,
+      "relevance_score": 95,
+      "freshness_score": 70,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 86.8,
+      "overall_score": 86.8,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-23T08:00:00+00:00",
+      "latest_updated_at": "2026-11-23T08:00:00+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
       "related_sources": [],
@@ -1098,7 +1098,7 @@
       "is_official": true,
       "published": "Nov 23, 21:20 UTC",
       "published_at": "2026-11-23T21:20:00+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://openai.com/index/introducing-shirudo",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1120,7 +1120,7 @@
       "audience_impact_statement": "Provides open weights and accessible tools for self-hosted Openai implementations.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1212,7 +1212,7 @@
       "is_official": true,
       "published": "Nov 23, 16:59 UTC",
       "published_at": "2026-11-23T16:59:40+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1234,7 +1234,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Google workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 85,
+      "freshness_score": 70,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -1253,6 +1253,120 @@
       ],
       "first_published_at": "2026-11-23T16:59:40+00:00",
       "latest_updated_at": "2026-11-23T16:59:40+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_37",
+      "article_id": "cluster_37",
+      "article_url": "articles/cluster_37.json",
+      "publisher_id": "aws",
+      "publisher_group_id": "amazon",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "impact_level": "Major",
+      "title": "Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
+      "one_liner": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "summary": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls.",
+      "ai_key_details": [
+        "Primary documentation verified from AWS Machine Learning."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls capabilities from AWS Machine Learning directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+      },
+      "ai_whats_new": "Delivers Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from AWS Machine Learning."
+      ],
+      "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+      "word_count": 20,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
+        "word_count": 20,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+        "Official development released and documented by AWS Machine Learning."
+      ],
+      "what_changed": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Anthropic.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Safety",
+      "category_confidence": 0.95,
+      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
+      "topic": "AI Safety",
+      "source": "AWS Machine Learning",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 24, 05:01 UTC",
+      "published_at": "2026-11-24T05:01:14+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
+      "image_type": "official_asset",
+      "image_credit": "Anthropic announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "company": "anthropic",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs."
+      ],
+      "detailed_analysis": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "audience_impact": {
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic."
+      },
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic.",
+      "importance_score": 75,
+      "relevance_score": 95,
+      "freshness_score": 85,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 79.0,
+      "overall_score": 79.0,
+      "confidence_label": "high",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Actionable developer SDK / runtime tooling (+25 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
+      ],
+      "first_published_at": "2026-11-24T05:01:14+00:00",
+      "latest_updated_at": "2026-11-24T05:01:14+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
       "related_sources": [],
@@ -1330,7 +1444,7 @@
       "is_official": true,
       "published": "Nov 22, 00:00 UTC",
       "published_at": "2026-11-22T00:00:00+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://openai.com/index/perplexity-and-intelligence",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
@@ -1444,7 +1558,7 @@
       "is_official": false,
       "published": "Nov 23, 21:09 UTC",
       "published_at": "2026-11-23T21:09:37+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -1466,7 +1580,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Verge workflows.",
       "importance_score": 75,
       "relevance_score": 95,
-      "freshness_score": 100,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1485,120 +1599,6 @@
       ],
       "first_published_at": "2026-11-23T21:09:37+00:00",
       "latest_updated_at": "2026-11-23T21:09:37+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": false,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_61",
-      "article_id": "cluster_61",
-      "article_url": "articles/cluster_61.json",
-      "publisher_id": "techcrunch",
-      "publisher_group_id": "techcrunch",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "impact_level": "Major",
-      "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-      "one_liner": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-      "summary": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-      "ai_what_happened": "TechCrunch AI published verified documentation on How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO.",
-      "ai_key_details": [
-        "Primary documentation verified from TechCrunch AI."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO from TechCrunch AI.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO capabilities from TechCrunch AI directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
-      },
-      "ai_whats_new": "Delivers How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO as documented in verified primary release notes from TechCrunch AI.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from TechCrunch AI."
-      ],
-      "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by TechCrunch AI; awaiting further vendor confirmation or technical documentation.",
-      "original_source_url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
-      "word_count": 13,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-        "word_count": 13,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-        "Official development released and documented by TechCrunch AI."
-      ],
-      "what_changed": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-      "why_it_matters": "Advances AI Business capabilities through verified primary disclosures from Anthropic.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Business",
-      "category_confidence": 0.92,
-      "category_rationale": "Matched institutional capital raises, startup valuation, earnings report, or M&A transaction",
-      "topic": "AI Business",
-      "source": "TechCrunch AI",
-      "tier": "Independent Journalism",
-      "trust_tier": 2,
-      "is_official": false,
-      "published": "Nov 23, 01:25 UTC",
-      "published_at": "2026-11-23T01:25:53+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
-      "link": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-      "image_type": "official_asset",
-      "image_credit": "Anthropic announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
-      "company": "anthropic",
-      "reading_time": "1 min read",
-      "key_points": [
-        "Three significant backers share what gave them conviction to bet billions on Anthropic."
-      ],
-      "detailed_analysis": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-      "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
-      },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
-      "importance_score": 75,
-      "relevance_score": 95,
-      "freshness_score": 70,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 85,
-      "confidence_score": 85,
-      "pulse_score": 76.7,
-      "overall_score": 76.7,
-      "confidence_label": "medium",
-      "evidence_status": "single_source",
-      "evidence_label": "Single-Source Report",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Actionable developer SDK / runtime tooling (+25 impact)",
-        "+ Independent technology journalism desk (85 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
-      ],
-      "first_published_at": "2026-11-23T01:25:53+00:00",
-      "latest_updated_at": "2026-11-23T01:25:53+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
       "related_sources": [],
@@ -1674,7 +1674,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1792,7 +1792,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -1908,7 +1908,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.anthropic.com/news/features",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1951,6 +1951,120 @@
       "latest_updated_at": "Recent",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": true,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_61",
+      "article_id": "cluster_61",
+      "article_url": "articles/cluster_61.json",
+      "publisher_id": "techcrunch",
+      "publisher_group_id": "techcrunch",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "impact_level": "Major",
+      "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
+      "one_liner": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
+      "summary": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
+      "ai_what_happened": "TechCrunch AI published verified documentation on How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO.",
+      "ai_key_details": [
+        "Primary documentation verified from TechCrunch AI."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO from TechCrunch AI.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO capabilities from TechCrunch AI directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
+      },
+      "ai_whats_new": "Delivers How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO as documented in verified primary release notes from TechCrunch AI.",
+      "ai_key_takeaways": [
+        "Verified development tracked in Frontier Models.",
+        "Primary documentation available from TechCrunch AI."
+      ],
+      "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by TechCrunch AI; awaiting further vendor confirmation or technical documentation.",
+      "original_source_url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
+      "word_count": 13,
+      "extraction_status": "fallback_summary",
+      "content_hash": "",
+      "extracted_content": {
+        "headline": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
+        "word_count": 13,
+        "reading_time": "1 min read",
+        "extraction_status": "fallback_summary",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Three significant backers share what gave them conviction to bet billions on Anthropic.",
+        "Official development released and documented by TechCrunch AI."
+      ],
+      "what_changed": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
+      "why_it_matters": "Advances AI Business capabilities through verified primary disclosures from Anthropic.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "AI Business",
+      "category_confidence": 0.92,
+      "category_rationale": "Matched institutional capital raises, startup valuation, earnings report, or M&A transaction",
+      "topic": "AI Business",
+      "source": "TechCrunch AI",
+      "tier": "Independent Journalism",
+      "trust_tier": 2,
+      "is_official": false,
+      "published": "Nov 23, 01:25 UTC",
+      "published_at": "2026-11-23T01:25:53+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
+      "link": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
+      "image_type": "official_asset",
+      "image_credit": "Anthropic announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+      "company": "anthropic",
+      "reading_time": "1 min read",
+      "key_points": [
+        "Three significant backers share what gave them conviction to bet billions on Anthropic."
+      ],
+      "detailed_analysis": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
+      "audience_impact": {
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
+      },
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
+      "importance_score": 75,
+      "relevance_score": 95,
+      "freshness_score": 70,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 85,
+      "confidence_score": 85,
+      "pulse_score": 76.7,
+      "overall_score": 76.7,
+      "confidence_label": "medium",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Actionable developer SDK / runtime tooling (+25 impact)",
+        "+ Independent technology journalism desk (85 authority)",
+        "+ Direct developer actionability / runnable tooling (90 actionability)"
+      ],
+      "first_published_at": "2026-11-23T01:25:53+00:00",
+      "latest_updated_at": "2026-11-23T01:25:53+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
     },
@@ -2022,7 +2136,7 @@
       "is_official": false,
       "published": "Nov 23, 18:26 UTC",
       "published_at": "2026-11-23T18:26:47+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
@@ -2136,7 +2250,7 @@
       "is_official": false,
       "published": "Nov 23, 18:47 UTC",
       "published_at": "2026-11-23T18:47:53+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://the-decoder.com/anthropics-appetite-for-compute-is-pushing-xai-toward-a-rent-over-build-strategy",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
@@ -2183,124 +2297,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_37",
-      "article_id": "cluster_37",
-      "article_url": "articles/cluster_37.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "impact_level": "Major",
-      "title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
-      "one_liner": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
-      "summary": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on New in AWS Quick: More capable flows, an updated web experience, and agents that work together.",
-      "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for New in AWS Quick: More capable flows, an updated web experience, and agents that work together from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for New in AWS Quick: More capable flows, an updated web experience, and agents that work together; full reproducible checkpoints and benchmarks remain ongoing.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate New in AWS Quick: More capable flows, an updated web experience, and agents that work together capabilities from AWS Machine Learning directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
-      },
-      "ai_whats_new": "Delivers New in AWS Quick: More capable flows, an updated web experience, and agents that work together as documented in verified primary release notes from AWS Machine Learning.",
-      "ai_key_takeaways": [
-        "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
-      ],
-      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
-      "word_count": 55,
-      "extraction_status": "fallback_summary",
-      "content_hash": "",
-      "extracted_content": {
-        "headline": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
-        "word_count": 55,
-        "reading_time": "1 min read",
-        "extraction_status": "fallback_summary",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "AWS Quick is the AI workspace built only for work.",
-        "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
-      ],
-      "what_changed": "AWS Quick is the AI workspace built only for work.",
-      "why_it_matters": "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 21, 01:06 UTC",
-      "published_at": "2026-11-21T01:06:42+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
-      "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
-      "reading_time": "1 min read",
-      "key_points": [
-        "AWS Quick is the AI workspace built only for work.",
-        "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
-      ],
-      "detailed_analysis": "AWS Quick is the AI workspace built only for work.\n\nToday we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
-      "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
-      },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
-      "importance_score": 75,
-      "relevance_score": 95,
-      "freshness_score": 50,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 79.0,
-      "overall_score": 79.0,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Actionable developer SDK / runtime tooling (+25 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
-      ],
-      "first_published_at": "2026-11-21T01:06:42+00:00",
-      "latest_updated_at": "2026-11-21T01:06:42+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": false,
-      "related_sources": [],
-      "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_39",
-      "article_id": "cluster_39",
-      "article_url": "articles/cluster_39.json",
+      "id": "cluster_40",
+      "article_id": "cluster_40",
+      "article_url": "articles/cluster_40.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "frontier_launch",
@@ -2365,7 +2364,7 @@
       "is_official": true,
       "published": "Nov 20, 23:07 UTC",
       "published_at": "2026-11-20T23:07:03+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2425,9 +2424,9 @@
       "covered_by_sources_count": 2
     },
     {
-      "id": "cluster_42",
-      "article_id": "cluster_42",
-      "article_url": "articles/cluster_42.json",
+      "id": "cluster_43",
+      "article_id": "cluster_43",
+      "article_url": "articles/cluster_43.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "frontier_launch",
@@ -2492,7 +2491,7 @@
       "is_official": true,
       "published": "Nov 20, 20:22 UTC",
       "published_at": "2026-11-20T20:22:00+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -2609,7 +2608,7 @@
       "is_official": true,
       "published": "Nov 18, 21:35 UTC",
       "published_at": "2026-11-18T21:35:43+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
@@ -2737,7 +2736,7 @@
       "is_official": true,
       "published": "Nov 18, 18:13 UTC",
       "published_at": "2026-11-18T18:13:42+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://deepmind.google/blog/genie-4-is-now-available",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png",
       "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/resized_ProjectGenie_Thumbnail_v02.width-1300.png",
@@ -2867,7 +2866,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2922,47 +2921,47 @@
       "article_type": "sdk_api_update",
       "signal_badge": "Developer SDK",
       "impact_level": "Major",
-      "title": "Cut self-hosted LLM cost and latency with the distributed KV caching agent skill",
-      "one_liner": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%.",
-      "summary": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%.",
+      "title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
+      "one_liner": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
+      "summary": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut inference cost by up to 40% and time to first token by up to 80%.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on Cut self-hosted LLM cost and latency with the distributed KV caching agent skill.",
+      "ai_overview": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
+      "ai_what_happened": "AWS Machine Learning published verified documentation on New in AWS Quick: More capable flows, an updated web experience, and agents that work together.",
       "ai_key_details": [
         "Primary documentation verified from AWS Machine Learning."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Cut self-hosted LLM cost and latency with the distributed KV caching agent skill from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for Cut self-hosted LLM cost and latency with the distributed KV caching agent skill; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for New in AWS Quick: More capable flows, an updated web experience, and agents that work together from AWS Machine Learning.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for New in AWS Quick: More capable flows, an updated web experience, and agents that work together; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Cut self-hosted LLM cost and latency with the distributed KV caching agent skill capabilities from AWS Machine Learning directly into technical workflows.",
+        "Developers": "Enables engineers to integrate New in AWS Quick: More capable flows, an updated web experience, and agents that work together capabilities from AWS Machine Learning directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
         "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
       },
-      "ai_whats_new": "Delivers Cut self-hosted LLM cost and latency with the distributed KV caching agent skill as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_whats_new": "Delivers New in AWS Quick: More capable flows, an updated web experience, and agents that work together as documented in verified primary release notes from AWS Machine Learning.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
         "Primary documentation available from AWS Machine Learning."
       ],
-      "ai_limitations": "Hardware & infrastructure bounds: Realized cluster throughput depends on datacenter thermal limits, memory bandwidth, and interconnect topology.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill",
-      "word_count": 38,
+      "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
+      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
+      "word_count": 55,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "Cut self-hosted LLM cost and latency with the distributed KV caching agent skill",
-        "word_count": 38,
+        "headline": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
+        "word_count": 55,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn.",
-        "Distributed KV caching with Amazon ElastiCache can cut inference cost by up to 40% and time to first token by up to 80%."
+        "AWS Quick is the AI workspace built only for work.",
+        "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
       ],
-      "what_changed": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Amazon.",
+      "what_changed": "AWS Quick is the AI workspace built only for work.",
+      "why_it_matters": "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
@@ -2979,29 +2978,29 @@
       "tier": "Official Lab",
       "trust_tier": 1,
       "is_official": true,
-      "published": "Nov 21, 00:14 UTC",
-      "published_at": "2026-11-21T00:14:26+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill",
+      "published": "Nov 21, 01:06 UTC",
+      "published_at": "2026-11-21T01:06:42+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
+      "link": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Cut self-hosted LLM cost and latency with the distributed KV caching agent skill",
+      "image_alt": "Visual representation for New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
       "image_type": "official_asset",
       "image_credit": "Amazon announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
       "company": "amazon",
       "reading_time": "1 min read",
       "key_points": [
-        "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn.",
-        "Distributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%."
+        "AWS Quick is the AI workspace built only for work.",
+        "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
       ],
-      "detailed_analysis": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn.\n\nDistributed KV caching with Amazon ElastiCache can cut model reasoning cost by up to 40% and time to first token by up to 80%.",
+      "detailed_analysis": "AWS Quick is the AI workspace built only for work.\n\nToday we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
       "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Amazon workflows."
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
       },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Amazon workflows.",
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
       "importance_score": 75,
       "relevance_score": 95,
       "freshness_score": 25,
@@ -3021,8 +3020,8 @@
         "+ Official primary lab source (100 authority)",
         "+ Direct developer actionability / runnable tooling (90 actionability)"
       ],
-      "first_published_at": "2026-11-21T00:14:26+00:00",
-      "latest_updated_at": "2026-11-21T00:14:26+00:00",
+      "first_published_at": "2026-11-21T01:06:42+00:00",
+      "latest_updated_at": "2026-11-21T01:06:42+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
       "related_sources": [],
@@ -3102,7 +3101,7 @@
       "is_official": true,
       "published": "Nov 20, 10:00 UTC",
       "published_at": "2026-11-20T10:00:00+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://openai.com/index/combatting-adversarial-distillation",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
@@ -3150,9 +3149,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_43",
-      "article_id": "cluster_43",
-      "article_url": "articles/cluster_43.json",
+      "id": "cluster_44",
+      "article_id": "cluster_44",
+      "article_url": "articles/cluster_44.json",
       "publisher_id": "aws",
       "publisher_group_id": "amazon",
       "article_type": "frontier_launch",
@@ -3218,7 +3217,7 @@
       "is_official": true,
       "published": "Nov 20, 00:34 UTC",
       "published_at": "2026-11-20T00:34:07+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
@@ -3336,7 +3335,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3450,7 +3449,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3563,7 +3562,7 @@
       "is_official": true,
       "published": "Nov 23, 17:20 UTC",
       "published_at": "2026-11-23T17:20:37+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://huggingface.co/blog/allenai/robotrack",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3678,7 +3677,7 @@
       "is_official": true,
       "published": "Nov 19, 00:00 UTC",
       "published_at": "2026-11-19T00:00:00+00:00",
-      "last_fetched_at": "2026-11-24T00:59:10.226927+00:00",
+      "last_fetched_at": "2026-11-24T11:19:39.758143+00:00",
       "link": "https://openai.com/business/learn/codex-security-plugin-demo",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3728,37 +3727,37 @@
   "trending": [],
   "pulse_items": [
     {
-      "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+      "title": "Connected intelligence for in-house legal",
       "topic": "Frontier Models",
       "category": "Frontier Models",
       "article_type": "frontier_launch",
       "signal_badge": "Frontier Launch",
       "company": "openai",
-      "published": "Nov 23, 15:13 UTC",
-      "published_at": "2026-11-23T15:13:03+00:00",
-      "first_published_at": "2026-11-23T15:13:03+00:00",
-      "latest_updated_at": "2026-11-23T15:13:03+00:00",
-      "what_happened": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-      "what_changed": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-      "one_liner": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-      "summary": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+      "published": "Nov 23, 08:00 UTC",
+      "published_at": "2026-11-23T08:00:00+00:00",
+      "first_published_at": "2026-11-23T08:00:00+00:00",
+      "latest_updated_at": "2026-11-23T08:00:00+00:00",
+      "what_happened": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "what_changed": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "one_liner": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "summary": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
       "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
       "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+      "detailed_analysis": "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
       "key_points": [
-        "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters."
+        "Watch OpenAI\u2019s Stacey Wang and Craig Bruney, Mary O\u2019Carroll of LECG, and Cooley\u2019s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel."
       ],
-      "link": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-      "source": "The Decoder",
-      "tier": "Independent Journalism",
+      "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
       "audience_impact": {
         "target": "For practitioners & teams",
         "impact": "Offers new practical efficiencies and tooling options for Openai workflows."
       },
       "target_audience": "For practitioners & teams",
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Openai workflows.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill",
+      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill"
     },
     {
       "title": "OpenAI and Cisco introduce Shirudo",
@@ -3827,37 +3826,37 @@
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Perplexity and Intelligence",
-      "topic": "Frontier Models",
-      "category": "Frontier Models",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "company": "openai",
-      "published": "Nov 22, 00:00 UTC",
-      "published_at": "2026-11-22T00:00:00+00:00",
-      "first_published_at": "2026-11-22T00:00:00+00:00",
-      "latest_updated_at": "2026-11-22T00:00:00+00:00",
-      "what_happened": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
-      "what_changed": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
-      "one_liner": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
-      "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Openai.",
-      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
-      "detailed_analysis": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "title": "Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
+      "topic": "AI Safety",
+      "category": "AI Safety",
+      "article_type": "sdk_api_update",
+      "signal_badge": "Developer SDK",
+      "company": "anthropic",
+      "published": "Nov 24, 05:01 UTC",
+      "published_at": "2026-11-24T05:01:14+00:00",
+      "first_published_at": "2026-11-24T05:01:14+00:00",
+      "latest_updated_at": "2026-11-24T05:01:14+00:00",
+      "what_happened": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "what_changed": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "one_liner": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "summary": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+      "why_it_matters": "Advances AI Safety capabilities through verified primary disclosures from Anthropic.",
+      "potential_impact": "Analytical Projection: Developments from Anthropic may influence engineering roadmaps and ecosystem integration standards.",
+      "detailed_analysis": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
       "key_points": [
-        "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities."
+        "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs."
       ],
-      "link": "https://openai.com/index/perplexity-and-intelligence",
-      "source": "OpenAI News",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+      "source": "AWS Machine Learning",
       "tier": "Official Lab",
       "audience_impact": {
-        "target": "For developers",
-        "impact": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai."
+        "target": "For businesses & compliance teams",
+        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic."
       },
-      "target_audience": "For developers",
-      "audience_impact_statement": "Directly impacts developer workflows, IDE efficiency, and code generation with Openai.",
-      "image": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill",
-      "image_url": "https://images.ctfassets.net/kftzwdyauwt9/6rIIhCRSKrhIfe385Onmcz/aca2d190553c62fd5d49efb5d5ce1eb6/perplexity-and-intelligence-social.png?w=1600&h=900&fit=fill"
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "developer_trends": [
@@ -3867,8 +3866,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 265671,
-      "forks": 60133,
+      "stars": 265765,
+      "forks": 60175,
       "language": "Python",
       "topics": [
         "ai",
@@ -3879,13 +3878,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 210,
-      "stars_gained_7d": 1718,
+      "stars_gained_24h": 195,
+      "stars_gained_7d": 1695,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+210); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+195); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-24T00:56:14Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
+      "updated_at": "2026-11-24T11:19:31Z",
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3893,8 +3892,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 84439,
-      "forks": 15449,
+      "stars": 84515,
+      "forks": 15462,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3905,13 +3904,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 199,
-      "stars_gained_7d": 1308,
+      "stars_gained_24h": 190,
+      "stars_gained_7d": 1313,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+199); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+190); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-23T22:31:24Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
+      "updated_at": "2026-11-24T11:01:09Z",
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3919,8 +3918,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 74000,
-      "forks": 58221,
+      "stars": 74185,
+      "forks": 58343,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3931,13 +3930,13 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": 271,
-      "stars_gained_7d": 1149,
+      "stars_gained_24h": 319,
+      "stars_gained_7d": 1204,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+271); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+319); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
-      "updated_at": "2026-11-23T15:05:29Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
+      "updated_at": "2026-11-24T05:41:00Z",
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3945,8 +3944,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 475611,
-      "forks": 115893,
+      "stars": 476326,
+      "forks": 116018,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3957,39 +3956,13 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 1347,
-      "stars_gained_7d": 11231,
+      "stars_gained_24h": 1359,
+      "stars_gained_7d": 11074,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+1347); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+1359); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-24T00:49:38Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
-    },
-    {
-      "repository": "affaan-m/ECC",
-      "name": "ECC",
-      "owner": "affaan-m",
-      "url": "https://github.com/affaan-m/ECC",
-      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 309586,
-      "forks": 45541,
-      "language": "JavaScript",
-      "topics": [
-        "ai-agents",
-        "anthropic",
-        "claude",
-        "claude-code",
-        "developer-tools",
-        "llm"
-      ],
-      "license": "MIT",
-      "stars_gained_24h": 510,
-      "stars_gained_7d": 4875,
-      "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+510); Active commit activity in the last 24h.",
-      "created_at": "2026-01-18T00:51:51Z",
-      "updated_at": "2026-11-23T04:55:48Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
+      "updated_at": "2026-11-24T11:09:56Z",
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -3997,8 +3970,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 116352,
-      "forks": 19318,
+      "stars": 116549,
+      "forks": 19347,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -4009,13 +3982,13 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 339,
-      "stars_gained_7d": 1967,
+      "stars_gained_24h": 382,
+      "stars_gained_7d": 2082,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+339); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+382); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
-      "updated_at": "2026-11-24T00:57:30Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
+      "updated_at": "2026-11-24T10:00:34Z",
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
     },
     {
       "repository": "FlorianBruniaux/claude-code-ultimate-guide",
@@ -4023,8 +3996,8 @@
       "owner": "FlorianBruniaux",
       "url": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide",
       "description": "The most comprehensive Claude Code guide: agentic workflows, hooks, skills, MCP servers, quizzes, and production-ready templates. 430K+ lines.",
-      "stars": 7261,
-      "forks": 901,
+      "stars": 7317,
+      "forks": 907,
       "language": "Python",
       "topics": [
         "agentic-coding",
@@ -4035,13 +4008,39 @@
         "anthropic"
       ],
       "license": "CC-BY-SA-4.0",
-      "stars_gained_24h": 248,
-      "stars_gained_7d": 801,
+      "stars_gained_24h": 145,
+      "stars_gained_7d": 855,
       "developer_trend_score": 98.5,
-      "score_explanation": "Breakout 24h star growth (+248); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+145); Active commit activity in the last 24h.",
       "created_at": "2026-01-09T13:42:10Z",
       "updated_at": "2026-11-23T15:43:53Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
+    },
+    {
+      "repository": "langgenius/dify",
+      "name": "dify",
+      "owner": "langgenius",
+      "url": "https://github.com/langgenius/dify",
+      "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+      "stars": 161818,
+      "forks": 25547,
+      "language": "Python",
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "ai",
+        "automation"
+      ],
+      "license": "NOASSERTION",
+      "stars_gained_24h": 86,
+      "stars_gained_7d": 470,
+      "developer_trend_score": 98.3,
+      "score_explanation": "Rapid 24h adoption (+86 stars); Active commit activity in the last 24h.",
+      "created_at": "2023-04-12T07:40:24Z",
+      "updated_at": "2026-11-24T11:15:56Z",
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
     },
     {
       "repository": "open-webui/open-webui",
@@ -4049,8 +4048,8 @@
       "owner": "open-webui",
       "url": "https://github.com/open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 159364,
-      "forks": 23128,
+      "stars": 159398,
+      "forks": 23134,
       "language": "Svelte",
       "topics": [
         "ai",
@@ -4062,12 +4061,12 @@
       ],
       "license": "NOASSERTION",
       "stars_gained_24h": 70,
-      "stars_gained_7d": 498,
+      "stars_gained_7d": 493,
       "developer_trend_score": 96.4,
       "score_explanation": "Rapid 24h adoption (+70 stars); Active commit activity in the last 24h.",
       "created_at": "2023-10-06T22:08:27Z",
       "updated_at": "2026-11-23T22:11:40Z",
-      "collected_at": "2026-11-24T00:59:07.311645+00:00"
+      "collected_at": "2026-11-24T11:19:35.457600+00:00"
     }
   ],
   "source_health_summary": {
@@ -4087,8 +4086,8 @@
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-24T00:59:01.985550+00:00",
-      "last_success_at": "2026-11-24T00:59:01.985550+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.708642+00:00",
+      "last_success_at": "2026-11-24T11:02:48.708642+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1425,
@@ -4099,8 +4098,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-24T00:59:01.986108+00:00",
-      "last_success_at": "2026-11-24T00:59:01.986108+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.709614+00:00",
+      "last_success_at": "2026-11-24T11:02:48.709614+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 27,
@@ -4111,8 +4110,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-24T00:59:01.986538+00:00",
-      "last_success_at": "2026-11-24T00:59:01.986538+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.710145+00:00",
+      "last_success_at": "2026-11-24T11:02:48.710145+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -4123,8 +4122,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-24T00:59:01.987026+00:00",
-      "last_success_at": "2026-11-24T00:59:01.987026+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.710754+00:00",
+      "last_success_at": "2026-11-24T11:02:48.710754+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -4135,8 +4134,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-24T00:59:01.987371+00:00",
-      "last_success_at": "2026-11-24T00:59:01.987371+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.711654+00:00",
+      "last_success_at": "2026-11-24T11:02:48.711654+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4147,10 +4146,10 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-24T00:59:01.987715+00:00",
-      "last_success_at": "2026-11-24T00:59:01.987715+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.716081+00:00",
+      "last_success_at": "2026-11-24T11:02:48.716081+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 916,
       "articles_accepted": 2,
       "error_type": null,
@@ -4159,10 +4158,10 @@
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-24T00:59:01.988557+00:00",
-      "last_success_at": "2026-11-24T00:59:01.988557+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.719002+00:00",
+      "last_success_at": "2026-11-24T11:02:48.719002+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 1,
       "error_type": null,
@@ -4171,8 +4170,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-24T00:59:01.993575+00:00",
-      "last_success_at": "2026-11-24T00:59:01.993575+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.722267+00:00",
+      "last_success_at": "2026-11-24T11:02:48.722267+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -4183,8 +4182,8 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-24T00:59:01.996538+00:00",
-      "last_success_at": "2026-11-24T00:59:01.996538+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.726015+00:00",
+      "last_success_at": "2026-11-24T11:02:48.726015+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4195,10 +4194,10 @@
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-24T00:59:01.997939+00:00",
-      "last_success_at": "2026-11-24T00:59:01.997939+00:00",
+      "last_attempt_at": "2026-11-24T11:02:48.727005+00:00",
+      "last_success_at": "2026-11-24T11:02:48.727005+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 8,
       "error_type": null,
@@ -4208,7 +4207,7 @@
   "extraction_telemetry": {
     "extraction_attempts": 17,
     "successful_full_body_extractions": 7,
-    "cached_content": 6,
+    "cached_content": 7,
     "rss_only_fallbacks": 10,
     "blocked_pages": 0,
     "missing_content": 0,
