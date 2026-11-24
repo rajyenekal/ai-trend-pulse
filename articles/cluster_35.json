@@ -1,8 +1,8 @@
 {
-  "id": "cluster_37",
-  "clean_id": "cluster_37",
-  "title": "Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
-  "headline": "Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls",
+  "id": "cluster_35",
+  "clean_id": "cluster_35",
+  "title": "Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models",
+  "headline": "Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models",
   "subtitle": "",
   "publisher": "AWS Machine Learning",
   "publisher_id": "aws",
@@ -30,18 +30,18 @@
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
   "ai_overview": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
-  "ai_what_happened": "AWS Machine Learning published verified documentation on Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models.",
   "ai_key_details": [
     "Primary documentation verified from AWS Machine Learning."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls from AWS Machine Learning.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls capabilities from AWS Machine Learning directly into technical workflows.",
+    "Developers": "Enables engineers to integrate the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models capabilities from AWS Machine Learning directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
   },
-  "ai_whats_new": "Delivers Introducing the Amazon Bedrock Trusted Access API with Anthropic\u2019s Enterprise Frontier Safeguards and Enterprise Data Controls as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_whats_new": "Delivers Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models as documented in verified primary release notes from AWS Machine Learning.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from AWS Machine Learning."

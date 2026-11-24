@@ -1,66 +1,66 @@
 {
   "id": "cluster_56",
   "clean_id": "cluster_56",
-  "title": "Oregon and Virginia sue SpaceX over Grok\u2019s porn deepfakes",
-  "headline": "Oregon and Virginia sue SpaceX over Grok\u2019s porn deepfakes",
+  "title": "AI data centers throw another wrench into chaotic UN climate talks",
+  "headline": "AI data centers throw another wrench into chaotic UN climate talks",
   "subtitle": "",
   "publisher": "The Verge AI",
   "publisher_id": "the_verge",
   "publisher_group_id": "vox_media",
   "author": "",
-  "published_at": "2026-11-23T18:26:47+00:00",
-  "category": "AI Policy",
-  "topic": "AI Policy",
-  "impact_level": "Notable",
-  "pulse_score": 70.2,
-  "article_type": "policy_regulation",
-  "signal_badge": "Security & Policy",
+  "published_at": "2026-11-23T21:09:37+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
+  "impact_level": "Major",
+  "pulse_score": 76.7,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
   "trust_tier": 2,
   "tier": "Independent Journalism",
   "is_official": false,
-  "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit",
-  "canonical_url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit",
-  "original_source_url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
+  "canonical_url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
+  "original_source_url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
   "reading_time": "1 min read",
-  "word_count": 46,
+  "word_count": 18,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safeguards and falsely promoting the safety of its X social media platform and Grok AI features.",
-  "ai_what_happened": "The Verge AI published verified documentation on Oregon and Virginia sue SpaceX over Grok\u2019s porn deepfakes.",
+  "ai_overview": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
+  "ai_what_happened": "The Verge AI published verified documentation on AI data centers throw another wrench into chaotic UN climate talks.",
   "ai_key_details": [
     "Primary documentation verified from The Verge AI."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Oregon and Virginia sue SpaceX over Grok\u2019s porn deepfakes from The Verge AI.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Verge AI for Oregon and Virginia sue SpaceX over Grok\u2019s porn deepfakes; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for AI data centers throw another wrench into chaotic UN climate talks from The Verge AI.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Verge AI for AI data centers throw another wrench into chaotic UN climate talks; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Oregon and Virginia sue SpaceX over Grok\u2019s porn deepfakes capabilities from The Verge AI directly into technical workflows.",
+    "Developers": "Enables engineers to integrate AI data centers throw another wrench into chaotic UN climate talks capabilities from The Verge AI directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Verge AI."
   },
-  "ai_whats_new": "Delivers Oregon and Virginia sue SpaceX over Grok\u2019s porn deepfakes as documented in verified primary release notes from The Verge AI.",
+  "ai_whats_new": "Delivers AI data centers throw another wrench into chaotic UN climate talks as documented in verified primary release notes from The Verge AI.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from The Verge AI."
   ],
-  "ai_limitations": "Regulatory & governance scope: Enforcement parameters, compliance timelines, and cross-border legal obligations remain subject to jurisdictional variation.",
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Verge AI; awaiting further vendor confirmation or technical documentation.",
   "reported_facts": [
-    "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safeguards and falsely promoting the safety of its X social media platform and Grok AI features.",
+    "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
     "Official development released and documented by The Verge AI."
   ],
-  "text": "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safeguards and falsely promoting the safety of its X social media platform and Grok AI features.",
-  "full_text": "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safeguards and falsely promoting the safety of its X social media platform and Grok AI features.",
+  "text": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
+  "full_text": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safeguards and falsely promoting the safety of its X social media platform and Grok AI features."
+      "content": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging."
     }
   ],
   "paragraphs": [
-    "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safeguards and falsely promoting the safety of its X social media platform and Grok AI features."
+    "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging."
   ],
   "corroborating_sources": []
 }

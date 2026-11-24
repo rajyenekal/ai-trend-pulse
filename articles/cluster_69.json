@@ -1,66 +1,66 @@
 {
   "id": "cluster_69",
   "clean_id": "cluster_69",
-  "title": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
-  "headline": "Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model",
+  "title": "Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents",
+  "headline": "Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents",
   "subtitle": "",
   "publisher": "The Decoder",
   "publisher_id": "the_decoder",
   "publisher_group_id": "the_decoder",
   "author": "",
-  "published_at": "2026-11-23T15:13:03+00:00",
-  "category": "Frontier Models",
-  "topic": "Frontier Models",
-  "impact_level": "Breakthrough",
-  "pulse_score": 84.3,
-  "article_type": "frontier_launch",
-  "signal_badge": "Frontier Launch",
+  "published_at": "2026-11-24T19:23:41+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Major",
+  "pulse_score": 76.7,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
   "trust_tier": 2,
   "tier": "Independent Journalism",
   "is_official": false,
   "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-  "canonical_url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
-  "original_source_url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model",
+  "url": "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents",
+  "canonical_url": "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents",
+  "original_source_url": "https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents",
   "reading_time": "1 min read",
-  "word_count": 33,
+  "word_count": 17,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-  "ai_what_happened": "The Decoder published verified documentation on Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model.",
+  "ai_overview": "Two years after launch, Anthropic reports more than 700 million monthly downloads for its MCP interface standard. New features such as background tasks, follow-up questions for users, and file uploads are meant to let Claude work more independently.",
+  "ai_what_happened": "The Decoder published verified documentation on Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents.",
   "ai_key_details": [
     "Primary documentation verified from The Decoder."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model from The Decoder.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents from The Decoder.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model capabilities from The Decoder directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents capabilities from The Decoder directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
   },
-  "ai_whats_new": "Delivers Z.ai follows OpenAI into loop transformer territory with its new 750B flagship model as documented in verified primary release notes from The Decoder.",
+  "ai_whats_new": "Delivers Anthropic tops 700 million monthly MCP SDK downloads and expands the protocol for more autonomous AI agents as documented in verified primary release notes from The Decoder.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from The Decoder."
   ],
-  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
-    "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-    "Official development released and documented by The Decoder."
+    "Two years after launch, Anthropic reports more than 700 million monthly downloads for its MCP interface standard.",
+    "New features such as background tasks, follow-up questions for users, and file uploads are meant to let Claude work more independently."
   ],
-  "text": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
-  "full_text": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters.",
+  "text": "Two years after launch, Anthropic reports more than 700 million monthly downloads for its MCP interface standard.",
+  "full_text": "Two years after launch, Anthropic reports more than 700 million monthly downloads for its MCP interface standard.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters."
+      "content": "Two years after launch, Anthropic reports more than 700 million monthly downloads for its MCP interface standard."
     }
   ],
   "paragraphs": [
-    "Z.ai is moving its flagship GLM-5.4 model to a loop architecture in which 28 layers run twice, which the company says lets the 750-billion-parameter model match models with 2 to 3 trillion parameters."
+    "Two years after launch, Anthropic reports more than 700 million monthly downloads for its MCP interface standard."
   ],
   "corroborating_sources": []
 }
