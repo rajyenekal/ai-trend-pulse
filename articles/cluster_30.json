@@ -1,65 +1,66 @@
 {
   "id": "cluster_30",
   "clean_id": "cluster_30",
-  "title": "Genie 4 is now available",
-  "headline": "Genie 4 is now available",
+  "title": "Finding faster quantum algorithms with agents and formal verification",
+  "headline": "Finding faster quantum algorithms with agents and formal verification",
   "subtitle": "",
   "publisher": "Google DeepMind",
   "publisher_id": "google_deepmind",
   "publisher_group_id": "google",
   "author": "",
-  "published_at": "2026-11-18T18:13:42+00:00",
-  "category": "Frontier Models",
-  "topic": "Frontier Models",
-  "impact_level": "Breakthrough",
-  "pulse_score": 86.8,
-  "article_type": "frontier_launch",
-  "signal_badge": "Frontier Launch",
+  "published_at": "2026-11-23T16:59:40+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
   "trust_tier": 1,
   "tier": "Official Lab",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://deepmind.google/blog/genie-4-is-now-available",
-  "canonical_url": "https://deepmind.google/blog/genie-4-is-now-available",
-  "original_source_url": "https://deepmind.google/blog/genie-4-is-now-available",
+  "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
+  "canonical_url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
+  "original_source_url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
   "reading_time": "1 min read",
-  "word_count": 5,
+  "word_count": 14,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Genie 4 is now available. Verified technical reporting from Google DeepMind.",
-  "ai_what_happened": "Google DeepMind published verified documentation on Genie 4 is now available.",
+  "ai_overview": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+  "ai_what_happened": "Google DeepMind published verified documentation on Finding faster quantum algorithms with agents and formal verification.",
   "ai_key_details": [
     "Primary documentation verified from Google DeepMind."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Genie 4 is now available from Google DeepMind.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Google DeepMind for Genie 4 is now available; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Finding faster quantum algorithms with agents and formal verification from Google DeepMind.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Google DeepMind for Finding faster quantum algorithms with agents and formal verification; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Genie 4 is now available capabilities from Google DeepMind directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Finding faster quantum algorithms with agents and formal verification capabilities from Google DeepMind directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Google DeepMind."
   },
-  "ai_whats_new": "Delivers Genie 4 is now available as documented in verified primary release notes from Google DeepMind.",
+  "ai_whats_new": "Delivers Finding faster quantum algorithms with agents and formal verification as documented in verified primary release notes from Google DeepMind.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from Google DeepMind."
   ],
-  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
   "reported_facts": [
+    "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
     "Official development released and documented by Google DeepMind."
   ],
-  "text": "Genie 4 is now available.",
-  "full_text": "Genie 4 is now available.",
+  "text": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+  "full_text": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Genie 4 is now available."
+      "content": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry."
     }
   ],
   "paragraphs": [
-    "Genie 4 is now available."
+    "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry."
   ],
   "corroborating_sources": []
 }

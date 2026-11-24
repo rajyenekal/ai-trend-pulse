@@ -1,16 +1,16 @@
 {
   "id": "cluster_52",
   "clean_id": "cluster_52",
-  "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-  "headline": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
+  "title": "AI data centers throw another wrench into chaotic UN climate talks",
+  "headline": "AI data centers throw another wrench into chaotic UN climate talks",
   "subtitle": "",
-  "publisher": "TechCrunch AI",
-  "publisher_id": "techcrunch",
-  "publisher_group_id": "techcrunch",
+  "publisher": "The Verge AI",
+  "publisher_id": "the_verge",
+  "publisher_group_id": "vox_media",
   "author": "",
-  "published_at": "2026-11-23T01:25:53+00:00",
-  "category": "AI Business",
-  "topic": "AI Business",
+  "published_at": "2026-11-23T21:09:37+00:00",
+  "category": "Frontier Models",
+  "topic": "Frontier Models",
   "impact_level": "Major",
   "pulse_score": 76.7,
   "article_type": "sdk_api_update",
@@ -18,49 +18,49 @@
   "trust_tier": 2,
   "tier": "Independent Journalism",
   "is_official": false,
-  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
-  "canonical_url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
-  "original_source_url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
+  "canonical_url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
+  "original_source_url": "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
   "reading_time": "1 min read",
-  "word_count": 13,
+  "word_count": 18,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-  "ai_what_happened": "TechCrunch AI published verified documentation on How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO.",
+  "ai_overview": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
+  "ai_what_happened": "The Verge AI published verified documentation on AI data centers throw another wrench into chaotic UN climate talks.",
   "ai_key_details": [
-    "Primary documentation verified from TechCrunch AI."
+    "Primary documentation verified from The Verge AI."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO from TechCrunch AI.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by TechCrunch AI for How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for AI data centers throw another wrench into chaotic UN climate talks from The Verge AI.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Verge AI for AI data centers throw another wrench into chaotic UN climate talks; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO capabilities from TechCrunch AI directly into technical workflows.",
+    "Developers": "Enables engineers to integrate AI data centers throw another wrench into chaotic UN climate talks capabilities from The Verge AI directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by TechCrunch AI."
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Verge AI."
   },
-  "ai_whats_new": "Delivers How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO as documented in verified primary release notes from TechCrunch AI.",
+  "ai_whats_new": "Delivers AI data centers throw another wrench into chaotic UN climate talks as documented in verified primary release notes from The Verge AI.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
-    "Primary documentation available from TechCrunch AI."
+    "Primary documentation available from The Verge AI."
   ],
-  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by TechCrunch AI; awaiting further vendor confirmation or technical documentation.",
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Verge AI; awaiting further vendor confirmation or technical documentation.",
   "reported_facts": [
-    "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-    "Official development released and documented by TechCrunch AI."
+    "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
+    "Official development released and documented by The Verge AI."
   ],
-  "text": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-  "full_text": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
+  "text": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
+  "full_text": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Three significant backers share what gave them conviction to bet billions on Anthropic."
+      "content": "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging."
     }
   ],
   "paragraphs": [
-    "Three significant backers share what gave them conviction to bet billions on Anthropic."
+    "The clean energy revolution hinges on electrifying the entire global economy just as power-hungry data centers are surging."
   ],
   "corroborating_sources": []
 }
