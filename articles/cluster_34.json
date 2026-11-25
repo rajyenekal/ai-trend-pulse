@@ -1,0 +1,66 @@
+{
+  "id": "cluster_34",
+  "clean_id": "cluster_34",
+  "title": "Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models",
+  "headline": "Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models",
+  "subtitle": "",
+  "publisher": "AWS Machine Learning",
+  "publisher_id": "aws",
+  "publisher_group_id": "amazon",
+  "author": "",
+  "published_at": "2026-11-24T05:01:14+00:00",
+  "category": "AI Safety",
+  "topic": "AI Safety",
+  "impact_level": "Major",
+  "pulse_score": 79.0,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
+  "trust_tier": 1,
+  "tier": "Official Lab",
+  "is_official": true,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+  "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+  "original_source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
+  "reading_time": "1 min read",
+  "word_count": 20,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+  "ai_what_happened": "AWS Machine Learning published verified documentation on Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models.",
+  "ai_key_details": [
+    "Primary documentation verified from AWS Machine Learning."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models from AWS Machine Learning.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models capabilities from AWS Machine Learning directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+  },
+  "ai_whats_new": "Delivers Introducing the Amazon Bedrock Trusted Access API, with Enterprise Frontier Safeguards and Enterprise Data Controls for Claude models as documented in verified primary release notes from AWS Machine Learning.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from AWS Machine Learning."
+  ],
+  "ai_limitations": "First-party disclosures: Capability metrics reflect vendor-conducted benchmarks; independent third-party reproduction and long-term production validation remain ongoing.",
+  "reported_facts": [
+    "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+    "Official development released and documented by AWS Machine Learning."
+  ],
+  "text": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+  "full_text": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs."
+    }
+  ],
+  "paragraphs": [
+    "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs."
+  ],
+  "corroborating_sources": []
+}

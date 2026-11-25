@@ -1,6 +1,6 @@
 {
-  "id": "cluster_38",
-  "clean_id": "cluster_38",
+  "id": "cluster_37",
+  "clean_id": "cluster_37",
   "title": "Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm",
   "headline": "Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm",
   "subtitle": "",
@@ -24,7 +24,7 @@
   "original_source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
   "reading_time": "17 min read",
   "word_count": 3582,
-  "extraction_status": "extracted",
+  "extraction_status": "cached",
   "content_hash": "b579da36687b434b",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",

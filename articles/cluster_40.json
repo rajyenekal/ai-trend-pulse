@@ -1,6 +1,6 @@
 {
-  "id": "cluster_41",
-  "clean_id": "cluster_41",
+  "id": "cluster_40",
+  "clean_id": "cluster_40",
   "title": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
   "headline": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
   "subtitle": "",
@@ -24,7 +24,7 @@
   "original_source_url": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
   "reading_time": "7 min read",
   "word_count": 1468,
-  "extraction_status": "extracted",
+  "extraction_status": "cached",
   "content_hash": "3057be42cfbf8a50",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
