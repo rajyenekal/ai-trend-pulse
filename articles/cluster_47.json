@@ -1,16 +1,16 @@
 {
   "id": "cluster_47",
   "clean_id": "cluster_47",
-  "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
-  "headline": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+  "title": "Where scientists draw the line on AI agents",
+  "headline": "Where scientists draw the line on AI agents",
   "subtitle": "",
   "publisher": "Hugging Face Blog",
   "publisher_id": "huggingface",
   "publisher_group_id": "huggingface",
   "author": "",
-  "published_at": "2026-11-24T16:34:13+00:00",
-  "category": "Frontier Models",
-  "topic": "Frontier Models",
+  "published_at": "2026-11-25T18:52:55+00:00",
+  "category": "AI Agents",
+  "topic": "AI Agents",
   "impact_level": "Notable",
   "pulse_score": 57.9,
   "article_type": "research_paper",
@@ -19,29 +19,29 @@
   "tier": "Open Research",
   "is_official": true,
   "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
-  "canonical_url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
-  "original_source_url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+  "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+  "canonical_url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+  "original_source_url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
   "reading_time": "1 min read",
-  "word_count": 11,
+  "word_count": 8,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton.",
-  "ai_what_happened": "Hugging Face Blog published verified documentation on Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton.",
+  "ai_overview": "Where scientists draw the line on AI agents.",
+  "ai_what_happened": "Hugging Face Blog published verified documentation on Where scientists draw the line on AI agents.",
   "ai_key_details": [
     "Primary documentation verified from Hugging Face Blog."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton from Hugging Face Blog.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Where scientists draw the line on AI agents from Hugging Face Blog.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for Where scientists draw the line on AI agents; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton capabilities from Hugging Face Blog directly into technical workflows.",
+    "Developers": "Enables engineers to integrate Where scientists draw the line on AI agents capabilities from Hugging Face Blog directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Hugging Face Blog."
   },
-  "ai_whats_new": "Delivers Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton as documented in verified primary release notes from Hugging Face Blog.",
+  "ai_whats_new": "Delivers Where scientists draw the line on AI agents as documented in verified primary release notes from Hugging Face Blog.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from Hugging Face Blog."
@@ -50,16 +50,16 @@
   "reported_facts": [
     "Official development released and documented by Hugging Face Blog."
   ],
-  "text": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton.",
-  "full_text": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton.",
+  "text": "Where scientists draw the line on AI agents.",
+  "full_text": "Where scientists draw the line on AI agents.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton."
+      "content": "Where scientists draw the line on AI agents."
     }
   ],
   "paragraphs": [
-    "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton."
+    "Where scientists draw the line on AI agents."
   ],
   "corroborating_sources": []
 }
