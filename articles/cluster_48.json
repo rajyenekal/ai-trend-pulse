@@ -1,14 +1,14 @@
 {
   "id": "cluster_48",
   "clean_id": "cluster_48",
-  "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
-  "headline": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+  "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+  "headline": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
   "subtitle": "",
   "publisher": "Hugging Face Blog",
   "publisher_id": "huggingface",
   "publisher_group_id": "huggingface",
   "author": "",
-  "published_at": "2026-11-26T05:05:36+00:00",
+  "published_at": "2026-11-26T11:37:17+00:00",
   "category": "Frontier Models",
   "topic": "Frontier Models",
   "impact_level": "Notable",
@@ -18,30 +18,30 @@
   "trust_tier": 3,
   "tier": "Open Research",
   "is_official": true,
-  "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-  "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
-  "canonical_url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
-  "original_source_url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+  "image": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+  "canonical_url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+  "original_source_url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
   "reading_time": "1 min read",
-  "word_count": 12,
+  "word_count": 10,
   "extraction_status": "fallback_summary",
   "content_hash": "",
   "is_llm_generated": false,
   "enhancement_source": "editorial_synthesis",
   "enhancement_label": "Editorial Synthesis",
-  "ai_overview": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference.",
-  "ai_what_happened": "Hugging Face Blog published verified documentation on Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference.",
+  "ai_overview": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon.",
+  "ai_what_happened": "Hugging Face Blog published verified documentation on Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon.",
   "ai_key_details": [
     "Primary documentation verified from Hugging Face Blog."
   ],
-  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference from Hugging Face Blog.",
-  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for the llama.cpp benchmark dashboard for AMD Ryzen and Radeon from Hugging Face Blog.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for the llama.cpp benchmark dashboard for AMD Ryzen and Radeon; full reproducible checkpoints and benchmarks remain ongoing.",
   "ai_industry_impact": {
-    "Developers": "Enables engineers to integrate Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference capabilities from Hugging Face Blog directly into technical workflows.",
+    "Developers": "Enables engineers to integrate the llama.cpp benchmark dashboard for AMD Ryzen and Radeon capabilities from Hugging Face Blog directly into technical workflows.",
     "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
     "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Hugging Face Blog."
   },
-  "ai_whats_new": "Delivers Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference as documented in verified primary release notes from Hugging Face Blog.",
+  "ai_whats_new": "Delivers Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon as documented in verified primary release notes from Hugging Face Blog.",
   "ai_key_takeaways": [
     "Verified development tracked in Frontier Models.",
     "Primary documentation available from Hugging Face Blog."
@@ -50,16 +50,16 @@
   "reported_facts": [
     "Official development released and documented by Hugging Face Blog."
   ],
-  "text": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster model reasoning.",
-  "full_text": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster model reasoning.",
+  "text": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon.",
+  "full_text": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon.",
   "sections": [
     {
       "heading": "Main Context",
-      "content": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster model reasoning."
+      "content": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon."
     }
   ],
   "paragraphs": [
-    "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster model reasoning."
+    "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon."
   ],
   "corroborating_sources": []
 }
