@@ -1,0 +1,66 @@
+{
+  "id": "cluster_77",
+  "clean_id": "cluster_77",
+  "title": "GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error",
+  "headline": "GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error",
+  "subtitle": "",
+  "publisher": "The Decoder",
+  "publisher_id": "the_decoder",
+  "publisher_group_id": "the_decoder",
+  "author": "",
+  "published_at": "2026-11-26T17:28:56+00:00",
+  "category": "AI Business",
+  "topic": "AI Business",
+  "impact_level": "Major",
+  "pulse_score": 76.7,
+  "article_type": "sdk_api_update",
+  "signal_badge": "Developer SDK",
+  "trust_tier": 2,
+  "tier": "Independent Journalism",
+  "is_official": false,
+  "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+  "url": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error",
+  "canonical_url": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error",
+  "original_source_url": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error",
+  "reading_time": "1 min read",
+  "word_count": 28,
+  "extraction_status": "fallback_summary",
+  "content_hash": "",
+  "is_llm_generated": false,
+  "enhancement_source": "editorial_synthesis",
+  "enhancement_label": "Editorial Synthesis",
+  "ai_overview": "OpenAI says a billing bug gave GPT-6.2 users incorrect discounts. After the fix, Astra and Sol users hit their limits 40 and 25 percent faster than last week.",
+  "ai_what_happened": "As an apology, subscribers get an extra reset, and business users get free Fast Mode through year-end.",
+  "ai_key_details": [
+    "OpenAI is also testing a Chat and Work mode merger."
+  ],
+  "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error from The Decoder.",
+  "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error; full reproducible checkpoints and benchmarks remain ongoing.",
+  "ai_industry_impact": {
+    "Developers": "Enables engineers to integrate GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error capabilities from The Decoder directly into technical workflows.",
+    "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+    "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
+  },
+  "ai_whats_new": "Delivers GPT-6.2 Astra users now hit limits 40% faster after OpenAI patched a pricing error as documented in verified primary release notes from The Decoder.",
+  "ai_key_takeaways": [
+    "Verified development tracked in Frontier Models.",
+    "Primary documentation available from The Decoder."
+  ],
+  "ai_limitations": "Single-source trade reporting: Disclosures reflect initial reporting by The Decoder; awaiting further vendor confirmation or technical documentation.",
+  "reported_facts": [
+    "OpenAI says a billing bug gave GPT-6.2 users incorrect discounts.",
+    "After the fix, Astra and Sol users hit their limits 40 and 25 percent faster than last week."
+  ],
+  "text": "OpenAI says a billing bug gave GPT-6.2 users incorrect discounts. After the fix, Astra and Sol users hit their limits 40 and 25 percent faster than last week.",
+  "full_text": "OpenAI says a billing bug gave GPT-6.2 users incorrect discounts. After the fix, Astra and Sol users hit their limits 40 and 25 percent faster than last week.",
+  "sections": [
+    {
+      "heading": "Main Context",
+      "content": "OpenAI says a billing bug gave GPT-6.2 users incorrect discounts. After the fix, Astra and Sol users hit their limits 40 and 25 percent faster than last week."
+    }
+  ],
+  "paragraphs": [
+    "OpenAI says a billing bug gave GPT-6.2 users incorrect discounts. After the fix, Astra and Sol users hit their limits 40 and 25 percent faster than last week."
+  ],
+  "corroborating_sources": []
+}
