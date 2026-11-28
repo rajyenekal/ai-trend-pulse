@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "data_status": "fresh",
-  "generated_at": "2026-11-27T19:06:32.530830+00:00",
-  "last_successful_update": "2026-11-27T19:06:32.530830+00:00",
-  "last_attempt_at": "2026-11-27T19:06:32.530830+00:00",
+  "generated_at": "2026-11-28T02:03:39.515353+00:00",
+  "last_successful_update": "2026-11-28T02:03:39.515353+00:00",
+  "last_attempt_at": "2026-11-28T02:03:39.515353+00:00",
   "update_status": "fresh",
   "timezone": "UTC",
   "daily_overview": {
-    "total_developments_today": 78,
-    "last_updated": "2026-11-27T19:06:32.530830+00:00",
+    "total_developments_today": 75,
+    "last_updated": "2026-11-28T02:03:39.515353+00:00",
     "briefing_text": "Today's AI developments center on Frontier Models alongside notable updates in AI Business. Teams are prioritizing benchmark accuracy, automated workflows, and system guardrails.",
     "top_developments": [
       {
@@ -277,132 +277,19 @@
       ]
     }
   ],
-  "takeaway": "Frontier AI providers are rapidly advancing general models into complex scientific domains like protein design and medicinal chemistry while refining operational architectures for speed and enterprise security. Concurrently, major industry players are navigating commercial milestones like public listings alongside renewed commitments to safety safeguards against adversarial model distillation.",
+  "takeaway": "Leading AI laboratories are rapidly expanding frontier capabilities into scientific discovery and domain-specific reasoning while establishing formal corporate governance and public equity structures. Simultaneously, organizations are confronting new frontier security challenges such as adversarial model distillation alongside traditional deployment safeguards.",
   "trends": [
     {
-      "title": "Google DeepMind Launches Gemini 4 Neon for Fast Frontier Workflows",
-      "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
-      "trend_type": "single_development",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "theme_relationship": "None",
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "Gemini 4 Neon delivers frontier intelligence with fast end-to-end task completion across software engineering and science workflows.",
-          "evidence": [
-            {
-              "article_id": "art_deepmind_blog_637178126dd4",
-              "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
-              "publisher_id": "google_deepmind",
-              "publisher_group_id": "google",
-              "source_name": "Google DeepMind",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Today, we\u2019re introducing Gemini 4 Neon \u2014 bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows.",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        },
-        {
-          "claim_id": "claim_2",
-          "text": "Gemini 4 Neon reached a score of 61 on the Artificial Analysis Intelligence Index.",
-          "evidence": [
-            {
-              "article_id": "art_deepmind_blog_637178126dd4",
-              "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
-              "publisher_id": "google_deepmind",
-              "publisher_group_id": "google",
-              "source_name": "Google DeepMind",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower m",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_deepmind_blog_637178126dd4",
-          "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
-          "publisher_id": "google_deepmind",
-          "publisher_group_id": "google",
-          "source_name": "Google DeepMind",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Today, we\u2019re introducing Gemini 4 Neon \u2014 bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows.",
-          "text_verified": false
-        }
-      ],
-      "what_happened": "Google DeepMind unveiled Gemini 4 Neon, a frontier-class model optimized for rapid task completion across software engineering, science, and knowledge work.",
-      "what_changed": "Google DeepMind unveiled Gemini 4 Neon, a frontier-class model optimized for rapid task completion across software engineering, science, and knowledge work.",
-      "why_it_matters": "The model placed third overall on the Artificial Analysis Intelligence Index with a score of 61 at its highest thinking tier, demonstrating that speed-focused models can rival larger architectures.",
-      "who_affected": "Developers",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
-      "category": "Frontier Models",
-      "category_confidence": 0.9,
-      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
-      "source": "Google DeepMind",
-      "tier": "Independent Journalism",
-      "status": "official_announcement",
-      "evidence_article_ids": [
-        "art_deepmind_blog_637178126dd4"
-      ],
-      "evidence_urls": [
-        "https://deepmind.google/blog/introducing-gemini-4-neon"
-      ],
-      "topic": "Frontier Models",
-      "company": "google",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Developers"
-      ],
-      "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
-      },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "key_points": [
-        "Google DeepMind unveiled Gemini 4 Neon, a frontier-class model optimized for rapid task completion across software engineering, science, and knowledge work.",
-        "The model placed third overall on the Artificial Analysis Intelligence Index with a score of 61 at its highest thinking tier, demonstrating that speed-focused models can rival larger architectures."
-      ],
-      "detailed_analysis": "Google DeepMind unveiled Gemini 4 Neon, a frontier-class model optimized for rapid task completion across software engineering, science, and knowledge work.",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Google DeepMind Launches Gemini 4 Neon for Fast Frontier Workflows",
-      "image_type": "official_asset",
-      "image_credit": "Google announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Frontier Reasoning Models Expand Direct Applications in Chemistry and Biology",
+      "title": "Frontier Models Expand Direct Problem-Solving in Scientific Discovery",
       "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
       "trend_type": "emerging_theme",
       "article_type": "research_paper",
       "signal_badge": "Research Paper",
-      "theme_relationship": "Leading AI laboratories are demonstrating that general reasoning systems can directly design biological structures and evaluate drug candidates without relying on external specialized toolchains.",
+      "theme_relationship": "Multiple top-tier labs are demonstrating frontier AI utility in biological design, chemical screening, astronomy, and institutional scientific research without requiring dedicated specialized tooling.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "GPT-6 models can design new protein shapes and chemical building blocks using only reasoning and code without calling external biology models.",
+          "text": "GPT-6 models can design novel protein structures and sequences solely through reasoning and code generation without specialized biology models.",
           "evidence": [
             {
               "article_id": "art_openai_news_6209af393259",
@@ -422,7 +309,7 @@
         },
         {
           "claim_id": "claim_2",
-          "text": "OpenAI introduced MedChemBench to assess how well AI systems interpret molecular data and recommend prospective drug compounds.",
+          "text": "MedChemBench was launched to evaluate how well AI models interpret molecular structures and select compound candidates in medicinal chemistry.",
           "evidence": [
             {
               "article_id": "art_openai_news_92652905e38a",
@@ -442,7 +329,7 @@
         },
         {
           "claim_id": "claim_3",
-          "text": "Anthropic expanded its AI for Science initiative to 20 international scientific research organizations and foundations.",
+          "text": "Anthropic expanded its AI for Science program to partner with 20 international scientific foundations and research groups.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_b7b14fbfed23",
@@ -453,7 +340,7 @@
               "trust_tier": 1,
               "is_official": true,
               "source_type": "official",
-              "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program",
+              "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program, which gives free Claude credits to researchers working on high-impact scientific projects.",
               "text_verified": false
             }
           ],
@@ -495,23 +382,23 @@
           "trust_tier": 1,
           "is_official": true,
           "source_type": "official",
-          "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program",
+          "supporting_excerpt": "We\u2019re highlighting 20 scientific foundations, institutions, and research groups from around the world that we\u2019ve partnered with in an expansion of our AI for Science program, which gives free Claude credits to researchers working on high-impact scientific projects.",
           "text_verified": false
         }
       ],
-      "what_happened": "OpenAI introduced the MedChemBench benchmark and revealed that its GPT-6 family can autonomously design functional protein structures and chemical sequences.",
-      "what_changed": "OpenAI introduced the MedChemBench benchmark and revealed that its GPT-6 family can autonomously design functional protein structures and chemical sequences.",
-      "why_it_matters": "Empowering general-purpose models to directly design macromolecules and reason over medicinal chemistry candidates eliminates dependency on domain-specific generative tools.",
-      "who_affected": "AI Practitioners",
+      "what_happened": "OpenAI introduced intrinsic protein-design capabilities in its GPT-6 family alongside the MedChemBench evaluation benchmark, while Anthropic expanded its AI for Science initiative across twenty research institutions.",
+      "what_changed": "OpenAI introduced intrinsic protein-design capabilities in its GPT-6 family alongside the MedChemBench evaluation benchmark, while Anthropic expanded its AI for Science initiative across twenty research institutions.",
+      "why_it_matters": "General reasoning models are matching or surpassing specialized biology and chemistry models on complex domain-specific tasks using code and reasoning alone.",
+      "who_affected": "AI Practitioners and Enterprises",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
-      "category": "Frontier Models",
-      "category_confidence": 0.9,
-      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
-      "source": "OpenAI News",
+      "potential_impact": "Impacts roadmap decisions across AI Research.",
+      "category": "AI Research",
+      "category_confidence": 0.88,
+      "category_rationale": "Matched academic preprint, research paper, interpretability study, or foundational training benchmark",
+      "source": "OpenAI News, Anthropic Official News",
       "tier": "Official Lab",
       "status": "emerging_theme",
       "evidence_article_ids": [
@@ -524,11 +411,12 @@
         "https://openai.com/index/introducing-medchembench",
         "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
       ],
-      "topic": "Frontier Models",
+      "topic": "AI Research",
       "company": "openai",
       "reading_time": "1 min read",
       "audience_pills": [
-        "Ai Practitioners"
+        "Ai Practitioners",
+        "Enterprises"
       ],
       "audience_impact": {
         "target": "For AI researchers",
@@ -542,28 +430,214 @@
       "evidence_label": "Emerging Theme (3 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "OpenAI introduced the MedChemBench benchmark and revealed that its GPT-6 family can autonomously design functional protein structures and chemical sequences.",
-        "Empowering general-purpose models to directly design macromolecules and reason over medicinal chemistry candidates eliminates dependency on domain-specific generative tools."
+        "OpenAI introduced intrinsic protein-design capabilities in its GPT-6 family alongside the MedChemBench evaluation benchmark, while Anthropic expanded its AI for Science initiative across twenty research institutions.",
+        "General reasoning models are matching or surpassing specialized biology and chemistry models on complex domain-specific tasks using code and reasoning alone."
       ],
-      "detailed_analysis": "OpenAI introduced the MedChemBench benchmark and revealed that its GPT-6 family can autonomously design functional protein structures and chemical sequences.",
+      "detailed_analysis": "OpenAI introduced intrinsic protein-design capabilities in its GPT-6 family alongside the MedChemBench evaluation benchmark, while Anthropic expanded its AI for Science initiative across twenty research institutions.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Frontier Reasoning Models Expand Direct Applications in Chemistry and Biology",
+      "image_alt": "Visual representation for Frontier Models Expand Direct Problem-Solving in Scientific Discovery",
       "image_type": "official_asset",
       "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Anthropic Completes Public Listing Coupled with Long-Term Governance Pledges",
+      "title": "Google DeepMind Launches Gemini 4 Neon for High-Speed Workflows",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
+      "trend_type": "single_development",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "theme_relationship": "None",
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "Gemini 4 Neon ranks third overall on the Artificial Analysis Intelligence Index with an evaluation score of 61 at its xhigh thinking level.",
+          "evidence": [
+            {
+              "article_id": "art_deepmind_blog_637178126dd4",
+              "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
+              "publisher_id": "google_deepmind",
+              "publisher_group_id": "google",
+              "source_name": "Google DeepMind",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower m",
+              "text_verified": false
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "art_deepmind_blog_637178126dd4",
+          "canonical_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
+          "publisher_id": "google_deepmind",
+          "publisher_group_id": "google",
+          "source_name": "Google DeepMind",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower m",
+          "text_verified": false
+        }
+      ],
+      "what_happened": "Google DeepMind introduced Gemini 4 Neon, targeting rapid end-to-end task execution across software development, scientific, and knowledge workflows.",
+      "what_changed": "Google DeepMind introduced Gemini 4 Neon, targeting rapid end-to-end task execution across software development, scientific, and knowledge workflows.",
+      "why_it_matters": "The model achieved a third-place overall standing on the Artificial Analysis Intelligence Index while prioritizing higher operational throughput.",
+      "who_affected": "Developers",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Impacts roadmap decisions across Frontier Models.",
+      "category": "Frontier Models",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "source": "Google DeepMind",
+      "tier": "Independent Journalism",
+      "status": "official_announcement",
+      "evidence_article_ids": [
+        "art_deepmind_blog_637178126dd4"
+      ],
+      "evidence_urls": [
+        "https://deepmind.google/blog/introducing-gemini-4-neon"
+      ],
+      "topic": "Frontier Models",
+      "company": "google",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Developers"
+      ],
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "key_points": [
+        "Google DeepMind introduced Gemini 4 Neon, targeting rapid end-to-end task execution across software development, scientific, and knowledge workflows.",
+        "The model achieved a third-place overall standing on the Artificial Analysis Intelligence Index while prioritizing higher operational throughput."
+      ],
+      "detailed_analysis": "Google DeepMind introduced Gemini 4 Neon, targeting rapid end-to-end task execution across software development, scientific, and knowledge workflows.",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for Google DeepMind Launches Gemini 4 Neon for High-Speed Workflows",
+      "image_type": "official_asset",
+      "image_credit": "Google announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "OpenAI Highlights Safeguards Against Adversarial Model Distillation",
+      "link": "https://openai.com/index/combatting-adversarial-distillation",
+      "trend_type": "single_development",
+      "article_type": "policy_regulation",
+      "signal_badge": "Security & Policy",
+      "theme_relationship": "None",
+      "claims": [
+        {
+          "claim_id": "claim_1",
+          "text": "Adversarial distillation provides an avenue for external actors to replicate frontier model capabilities while stripping out required safety safeguards.",
+          "evidence": [
+            {
+              "article_id": "art_openai_news_6cac87c7d421",
+              "canonical_url": "https://openai.com/index/combatting-adversarial-distillation",
+              "publisher_id": "openai",
+              "publisher_group_id": "openai",
+              "source_name": "OpenAI News",
+              "trust_tier": 1,
+              "is_official": true,
+              "source_type": "official",
+              "supporting_excerpt": "Adversarial distillation creates a path for bad actors to reproduce these capabilities without appropriate safe",
+              "text_verified": false
+            }
+          ],
+          "claim_corroboration": 1,
+          "verification_status": "official_announcement"
+        }
+      ],
+      "evidence_objects": [
+        {
+          "article_id": "art_openai_news_6cac87c7d421",
+          "canonical_url": "https://openai.com/index/combatting-adversarial-distillation",
+          "publisher_id": "openai",
+          "publisher_group_id": "openai",
+          "source_name": "OpenAI News",
+          "trust_tier": 1,
+          "is_official": true,
+          "source_type": "official",
+          "supporting_excerpt": "Adversarial distillation creates a path for bad actors to reproduce these capabilities without appropriate safe",
+          "text_verified": false
+        }
+      ],
+      "what_happened": "OpenAI published lessons and technical strategies for defending frontier models against unauthorized distillation that bypasses safety protocols.",
+      "what_changed": "OpenAI published lessons and technical strategies for defending frontier models against unauthorized distillation that bypasses safety protocols.",
+      "why_it_matters": "Adversarial distillation poses a systemic risk by enabling downstream actors to replicate advanced capabilities while stripping out critical alignment mitigations.",
+      "who_affected": "AI Practitioners",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Impacts roadmap decisions across AI Safety.",
+      "category": "AI Safety",
+      "category_confidence": 0.95,
+      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
+      "source": "OpenAI News",
+      "tier": "Official Lab",
+      "status": "official_announcement",
+      "evidence_article_ids": [
+        "art_openai_news_6cac87c7d421"
+      ],
+      "evidence_urls": [
+        "https://openai.com/index/combatting-adversarial-distillation"
+      ],
+      "topic": "AI Safety",
+      "company": "openai",
+      "reading_time": "1 min read",
+      "audience_pills": [
+        "Ai Practitioners"
+      ],
+      "audience_impact": {
+        "target": "For AI researchers & safety teams",
+        "impact": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models."
+      },
+      "target_audience": "For AI researchers & safety teams",
+      "audience_impact_statement": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "key_points": [
+        "OpenAI published lessons and technical strategies for defending frontier models against unauthorized distillation that bypasses safety protocols.",
+        "Adversarial distillation poses a systemic risk by enabling downstream actors to replicate advanced capabilities while stripping out critical alignment mitigations."
+      ],
+      "detailed_analysis": "OpenAI published lessons and technical strategies for defending frontier models against unauthorized distillation that bypasses safety protocols.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for OpenAI Highlights Safeguards Against Adversarial Model Distillation",
+      "image_type": "official_asset",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Anthropic Executes Public Offering and Establishes Public Benefit Fund",
       "link": "https://www.anthropic.com/news/ipo-close",
       "trend_type": "emerging_theme",
       "article_type": "policy_regulation",
       "signal_badge": "Security & Policy",
-      "theme_relationship": "Anthropic executed its initial public offering while simultaneously reinforcing its public-benefit commitments through share contributions and independent scientific oversight.",
+      "theme_relationship": "Anthropic paired the pricing and closing of its major initial public offering with governance and equity commitments to a designated Public Benefit Fund.",
       "claims": [
         {
           "claim_id": "claim_1",
-          "text": "Anthropic closed an initial public offering of 1,127,000,000 Class A common shares priced at $83.00 per share.",
+          "text": "Anthropic closed an initial public offering consisting of 1,127,000,000 shares of Class A common stock priced at $83.00 per share.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_4b11daad4414",
@@ -583,7 +657,7 @@
         },
         {
           "claim_id": "claim_2",
-          "text": "Anthropic committed 5% of company shares to the Anthropic Public Benefit Fund, subject to shareholder approval.",
+          "text": "Anthropic committed 5% of its shares to the Anthropic Public Benefit Fund, with provisions to increase the stake as the company's valuation rises.",
           "evidence": [
             {
               "article_id": "art_anthropic_news_a4f7bd1fdab9",
@@ -628,9 +702,9 @@
           "text_verified": false
         }
       ],
-      "what_happened": "Anthropic closed its initial public offering of over 1.1 billion shares at $83.00 per share and committed a 5% equity stake to its Public Benefit Fund.",
-      "what_changed": "Anthropic closed its initial public offering of over 1.1 billion shares at $83.00 per share and committed a 5% equity stake to its Public Benefit Fund.",
-      "why_it_matters": "The move establishes a public market valuation benchmark for dedicated foundation-model developers while testing hybrid corporate governance models tied to public interest.",
+      "what_happened": "Anthropic closed its initial public offering of over 1.1 billion Class A common shares at $83.00 per share while allocating an equity stake to its Public Benefit Fund.",
+      "what_changed": "Anthropic closed its initial public offering of over 1.1 billion Class A common shares at $83.00 per share while allocating an equity stake to its Public Benefit Fund.",
+      "why_it_matters": "The transition to a publicly traded public benefit corporation couples standard public equity markets with structural requirements for broad public benefit and oversight.",
       "who_affected": "Enterprises",
       "affected_stakeholders": [
         "Developers",
@@ -658,120 +732,27 @@
         "Enterprises"
       ],
       "audience_impact": {
-        "target": "For businesses & compliance teams",
-        "impact": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic."
+        "target": "For practitioners & teams",
+        "impact": "Offers new practical efficiencies and tooling options for Anthropic workflows."
       },
-      "target_audience": "For businesses & compliance teams",
-      "audience_impact_statement": "Informs AI risk assessments, safety evaluation standards, and deployment governance for Anthropic.",
+      "target_audience": "For practitioners & teams",
+      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Anthropic workflows.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 2,
       "evidence_status": "emerging_theme",
       "evidence_label": "Emerging Theme (2 Signals Across Labs)",
       "independent_source_count": 1,
       "key_points": [
-        "Anthropic closed its initial public offering of over 1.1 billion shares at $83.00 per share and committed a 5% equity stake to its Public Benefit Fund.",
-        "The move establishes a public market valuation benchmark for dedicated foundation-model developers while testing hybrid corporate governance models tied to public interest."
+        "Anthropic closed its initial public offering of over 1.1 billion Class A common shares at $83.00 per share while allocating an equity stake to its Public Benefit Fund.",
+        "The transition to a publicly traded public benefit corporation couples standard public equity markets with structural requirements for broad public benefit and oversight."
       ],
-      "detailed_analysis": "Anthropic closed its initial public offering of over 1.1 billion shares at $83.00 per share and committed a 5% equity stake to its Public Benefit Fund.",
+      "detailed_analysis": "Anthropic closed its initial public offering of over 1.1 billion Class A common shares at $83.00 per share while allocating an equity stake to its Public Benefit Fund.",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Anthropic Completes Public Listing Coupled with Long-Term Governance Pledges",
+      "image_alt": "Visual representation for Anthropic Executes Public Offering and Establishes Public Benefit Fund",
       "image_type": "official_asset",
       "image_credit": "Anthropic announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "OpenAI Targets Threat of Adversarial Distillation on Model Safeguards",
-      "link": "https://openai.com/index/combatting-adversarial-distillation",
-      "trend_type": "single_development",
-      "article_type": "security_vulnerability",
-      "signal_badge": "Security & Policy",
-      "theme_relationship": "None",
-      "claims": [
-        {
-          "claim_id": "claim_1",
-          "text": "Adversarial distillation enables bad actors to extract frontier AI capabilities without retaining essential safety controls.",
-          "evidence": [
-            {
-              "article_id": "art_openai_news_6cac87c7d421",
-              "canonical_url": "https://openai.com/index/combatting-adversarial-distillation",
-              "publisher_id": "openai",
-              "publisher_group_id": "openai",
-              "source_name": "OpenAI News",
-              "trust_tier": 1,
-              "is_official": true,
-              "source_type": "official",
-              "supporting_excerpt": "Adversarial distillation creates a path for bad actors to reproduce these capabilities without appropriate safe",
-              "text_verified": false
-            }
-          ],
-          "claim_corroboration": 1,
-          "verification_status": "official_announcement"
-        }
-      ],
-      "evidence_objects": [
-        {
-          "article_id": "art_openai_news_6cac87c7d421",
-          "canonical_url": "https://openai.com/index/combatting-adversarial-distillation",
-          "publisher_id": "openai",
-          "publisher_group_id": "openai",
-          "source_name": "OpenAI News",
-          "trust_tier": 1,
-          "is_official": true,
-          "source_type": "official",
-          "supporting_excerpt": "Adversarial distillation creates a path for bad actors to reproduce these capabilities without appropriate safe",
-          "text_verified": false
-        }
-      ],
-      "what_happened": "OpenAI detailed strategic countermeasures to prevent malicious actors from replicating frontier capabilities through adversarial distillation.",
-      "what_changed": "OpenAI detailed strategic countermeasures to prevent malicious actors from replicating frontier capabilities through adversarial distillation.",
-      "why_it_matters": "Distillation attacks present an ongoing safety hazard by allowing third parties to extract advanced model capabilities while intentionally stripping away embedded alignment and safety filters.",
-      "who_affected": "AI Practitioners",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Impacts roadmap decisions across AI Safety.",
-      "category": "AI Safety",
-      "category_confidence": 0.95,
-      "category_rationale": "Matched cybersecurity exploit, model safety vulnerability, alignment eval, or guardrail protocol",
-      "source": "OpenAI News",
-      "tier": "Official Lab",
-      "status": "official_announcement",
-      "evidence_article_ids": [
-        "art_openai_news_6cac87c7d421"
-      ],
-      "evidence_urls": [
-        "https://openai.com/index/combatting-adversarial-distillation"
-      ],
-      "topic": "AI Safety",
-      "company": "openai",
-      "reading_time": "1 min read",
-      "audience_pills": [
-        "Ai Practitioners"
-      ],
-      "audience_impact": {
-        "target": "For AI researchers & safety teams",
-        "impact": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models."
-      },
-      "target_audience": "For AI researchers & safety teams",
-      "audience_impact_statement": "Exposes conversational vulnerability, alignment limits, and unintended persona behaviors in Openai models.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "key_points": [
-        "OpenAI detailed strategic countermeasures to prevent malicious actors from replicating frontier capabilities through adversarial distillation.",
-        "Distillation attacks present an ongoing safety hazard by allowing third parties to extract advanced model capabilities while intentionally stripping away embedded alignment and safety filters."
-      ],
-      "detailed_analysis": "OpenAI detailed strategic countermeasures to prevent malicious actors from replicating frontier capabilities through adversarial distillation.",
-      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for OpenAI Targets Threat of Adversarial Distillation on Model Safeguards",
-      "image_type": "official_asset",
-      "image_credit": "Openai announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "top_stories": [
@@ -845,7 +826,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://www.anthropic.com/news/announcements",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -963,7 +944,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://www.anthropic.com/news/public-benefit-fund",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/85648c93880ac27347f8e6a4008650a65c12ede8-1200x630.jpg",
@@ -1079,7 +1060,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://www.anthropic.com/news/features",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -1126,9 +1107,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_76",
-      "article_id": "cluster_76",
-      "article_url": "articles/cluster_76.json",
+      "id": "cluster_74",
+      "article_id": "cluster_74",
+      "article_url": "articles/cluster_74.json",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "sdk_api_update",
@@ -1193,7 +1174,7 @@
       "is_official": false,
       "published": "Nov 26, 17:28 UTC",
       "published_at": "2026-11-26T17:28:56+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1241,9 +1222,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_77",
-      "article_id": "cluster_77",
-      "article_url": "articles/cluster_77.json",
+      "id": "cluster_75",
+      "article_id": "cluster_75",
+      "article_url": "articles/cluster_75.json",
       "publisher_id": "the_decoder",
       "publisher_group_id": "the_decoder",
       "article_type": "sdk_api_update",
@@ -1308,7 +1289,7 @@
       "is_official": false,
       "published": "Nov 26, 15:45 UTC",
       "published_at": "2026-11-26T15:45:08+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://the-decoder.com/after-openai-and-anthropic-shut-the-door-on-their-data-a-chinese-ai-developer-is-turning-to-google-and-meta-instead",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -1427,7 +1408,7 @@
       "is_official": true,
       "published": "Nov 24, 13:00 UTC",
       "published_at": "2026-11-24T13:00:00+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/Eg5mCwwaA3KqnznOVCh0n/8e6deaef25fd508d9853ff86a95187c1/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities-social.png?w=1600&h=900&fit=fill",
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/Eg5mCwwaA3KqnznOVCh0n/8e6deaef25fd508d9853ff86a95187c1/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities-social.png?w=1600&h=900&fit=fill",
@@ -1546,7 +1527,7 @@
       "is_official": true,
       "published": "Nov 24, 11:00 UTC",
       "published_at": "2026-11-24T11:00:00+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/318YLaAKlMKQFzOdMutjeX/8b6e4e516fd1a7894c97318838f43a0f/searching-for-distant-planets-with-astra-social.png?w=1600&h=900&fit=fill",
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/318YLaAKlMKQFzOdMutjeX/8b6e4e516fd1a7894c97318838f43a0f/searching-for-distant-planets-with-astra-social.png?w=1600&h=900&fit=fill",
@@ -1660,7 +1641,7 @@
       "is_official": true,
       "published": "Nov 23, 08:00 UTC",
       "published_at": "2026-11-23T08:00:00+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill",
       "image_url": "https://images.ctfassets.net/kftzwdyauwt9/40q0vnGDp1zwWuJrVjXtu6/79ebb13b84e11ce1711a27adfd6ffafe/connected-intelligence-for-in-house-legal-cover.png?w=1600&h=900&fit=fill",
@@ -1778,7 +1759,7 @@
       "is_official": true,
       "published": "Nov 24, 13:07 UTC",
       "published_at": "2026-11-24T13:07:53+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -1825,9 +1806,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_56",
-      "article_id": "cluster_56",
-      "article_url": "articles/cluster_56.json",
+      "id": "cluster_55",
+      "article_id": "cluster_55",
+      "article_url": "articles/cluster_55.json",
       "publisher_id": "the_verge",
       "publisher_group_id": "vox_media",
       "article_type": "policy_regulation",
@@ -1892,7 +1873,7 @@
       "is_official": false,
       "published": "Nov 26, 09:54 UTC",
       "published_at": "2026-11-26T09:54:40+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -1915,7 +1896,7 @@
       "audience_impact_statement": "Offers new practical efficiencies and tooling options for Verge workflows.",
       "importance_score": 80,
       "relevance_score": 70,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 85,
@@ -1939,9 +1920,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_66",
-      "article_id": "cluster_66",
-      "article_url": "articles/cluster_66.json",
+      "id": "cluster_65",
+      "article_id": "cluster_65",
+      "article_url": "articles/cluster_65.json",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
       "article_type": "policy_regulation",
@@ -2006,7 +1987,7 @@
       "is_official": false,
       "published": "Nov 25, 18:11 UTC",
       "published_at": "2026-11-25T18:11:46+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -2052,9 +2033,9 @@
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_67",
-      "article_id": "cluster_67",
-      "article_url": "articles/cluster_67.json",
+      "id": "cluster_66",
+      "article_id": "cluster_66",
+      "article_url": "articles/cluster_66.json",
       "publisher_id": "techcrunch",
       "publisher_group_id": "techcrunch",
       "article_type": "policy_regulation",
@@ -2119,7 +2100,7 @@
       "is_official": false,
       "published": "Nov 25, 17:35 UTC",
       "published_at": "2026-11-25T17:35:58+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
@@ -2233,7 +2214,7 @@
       "is_official": true,
       "published": "Nov 23, 16:59 UTC",
       "published_at": "2026-11-23T16:59:40+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
@@ -2347,7 +2328,7 @@
       "is_official": true,
       "published": "Nov 24, 05:01 UTC",
       "published_at": "2026-11-24T05:01:14+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -2390,6 +2371,123 @@
       "latest_updated_at": "2026-11-24T05:01:14+00:00",
       "eligible_for_top_developments": true,
       "eligible_for_briefing": false,
+      "related_sources": [],
+      "covered_by_sources_count": 1
+    },
+    {
+      "id": "cluster_33",
+      "article_id": "cluster_33",
+      "article_url": "articles/cluster_33.json",
+      "publisher_id": "google_deepmind",
+      "publisher_group_id": "google",
+      "article_type": "frontier_launch",
+      "signal_badge": "Frontier Launch",
+      "impact_level": "Breakthrough",
+      "title": "Introducing Gemini 4 Neon",
+      "one_liner": "Introducing Gemini 4 Neon.",
+      "summary": "Introducing Gemini 4 Neon.",
+      "is_llm_generated": false,
+      "enhancement_source": "editorial_synthesis",
+      "enhancement_label": "Editorial Synthesis",
+      "ai_overview": "Introducing Gemini 4 Neon Today, we\u2019re introducing Gemini 4 Neon \u2014 bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower models.",
+      "ai_what_happened": "On the Vals Index, Neon ranks #2 and lands on the Pareto frontier.",
+      "ai_key_details": [
+        "Beyond just pushing on raw model capability, we\u2019re continuing to make our models better to work with, Neon ranks #2 on steerability (adapting cleanly to mid-task user corrections) on the new Agent Arena Index.",
+        "Neon also excels at multi-step instruction following and builds on our ongoing progress to curb fabrication, recording our lowest fabrication rate yet in internal Google Antigravity testing.",
+        "The model is priced at $3 per million input tokens ($0.15 per million cached input tokens, a 95% discount) and $15 per million output tokens, with a 1 million-token context window.",
+        "Neon can synthesize across all of these inputs in a single 1 million-token context window and turns inputs into structured deliverables."
+      ],
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Gemini 4 Neon from Google DeepMind.",
+      "ai_technical_breakdown": "Gemini 4 Neon is rolling out today in the Gemini API in Google AI Studio, Gemini for business (via API and model dropdown), for paid Google AI Pro and Ultra subscribers in Google Antigravity, and for Pro and Ultra subscribers in the Gemini app.",
+      "ai_industry_impact": {
+        "Developers": "Enables engineers to integrate Gemini 4 Neon capabilities from Google DeepMind directly into technical workflows.",
+        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Google DeepMind."
+      },
+      "ai_whats_new": "Finally, it debuts #2 globally with a score of 1336 on Arena's new Agent Arena Index across 4,200+ real-world agent sessions.",
+      "ai_key_takeaways": [
+        "Delivers across enterprise, analytical, and scientific work Enterprise work lives in spreadsheets, PDFs, charts, audio, and video.",
+        "Independent evaluations rank Neon as one of the top models and on benchmarks like the Vals Index, it ranks #2 (70.9%), and reaches #1 on both the Legal Research Bench and Tax Agent Bench.",
+        "Neon also shows strong wins across categories on Surge AI, ranking #1 on most benchmarks across finance, accounting, spreadsheet modeling, and complex constraint following."
+      ],
+      "ai_limitations": "Regulatory & governance scope: Enforcement parameters, compliance timelines, and cross-border legal obligations remain subject to jurisdictional variation.",
+      "original_source_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
+      "word_count": 1617,
+      "extraction_status": "cached",
+      "content_hash": "794604ccbd73c9ed",
+      "extracted_content": {
+        "headline": "Introducing Gemini 4 Neon",
+        "word_count": 1617,
+        "reading_time": "8 min read",
+        "extraction_status": "cached",
+        "sections_count": 1
+      },
+      "reported_facts": [
+        "Official development released and documented by Google DeepMind."
+      ],
+      "what_changed": "Introducing Gemini 4 Neon.",
+      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
+      "affected_stakeholders": [
+        "Developers",
+        "Enterprise Decision Makers"
+      ],
+      "potential_impact": "Analytical Projection: Developments from Google may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "claim_corroboration": 1,
+      "trend_signal_diversity": 1,
+      "category": "Frontier Models",
+      "category_confidence": 0.9,
+      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
+      "topic": "Frontier Models",
+      "source": "Google DeepMind",
+      "tier": "Official Lab",
+      "trust_tier": 1,
+      "is_official": true,
+      "published": "Nov 18, 21:35 UTC",
+      "published_at": "2026-11-18T21:35:43+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
+      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
+      "image_alt": "Visual representation for Introducing Gemini 4 Neon",
+      "image_type": "source_media",
+      "image_credit": "Source publication",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "google",
+      "reading_time": "8 min read",
+      "key_points": [
+        "Strategic development announced in Frontier Models."
+      ],
+      "detailed_analysis": "Introducing Gemini 4 Neon.",
+      "audience_impact": {
+        "target": "For everyday users",
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
+      },
+      "target_audience": "For everyday users",
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
+      "importance_score": 100,
+      "relevance_score": 95,
+      "freshness_score": 25,
+      "coverage_score": 50,
+      "popularity_score": 50,
+      "source_quality_score": 100,
+      "confidence_score": 100,
+      "pulse_score": 89.6,
+      "overall_score": 89.6,
+      "confidence_label": "low",
+      "evidence_status": "official_announcement",
+      "evidence_label": "Official Announcement",
+      "independent_source_count": 1,
+      "independent_publisher_count": 1,
+      "score_reasons": [
+        "+ Frontier foundation model milestone (+40 impact)",
+        "+ Official primary lab source (100 authority)",
+        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
+      ],
+      "first_published_at": "2026-11-18T21:35:43+00:00",
+      "latest_updated_at": "2026-11-18T21:35:43+00:00",
+      "eligible_for_top_developments": true,
+      "eligible_for_briefing": true,
       "related_sources": [],
       "covered_by_sources_count": 1
     },
@@ -2464,7 +2562,7 @@
       "is_official": true,
       "published": "Nov 20, 23:07 UTC",
       "published_at": "2026-11-20T23:07:03+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/l-ml-22428.png",
       "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/l-ml-22428.png",
@@ -2593,7 +2691,7 @@
       "is_official": true,
       "published": "Nov 20, 20:22 UTC",
       "published_at": "2026-11-20T20:22:00+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/18/ML-22308-featured-image.png",
       "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/18/ML-22308-featured-image.png",
@@ -2638,351 +2736,232 @@
       "eligible_for_briefing": true,
       "related_sources": [],
       "covered_by_sources_count": 1
-    },
-    {
-      "id": "cluster_33",
-      "article_id": "cluster_33",
-      "article_url": "articles/cluster_33.json",
-      "publisher_id": "google_deepmind",
-      "publisher_group_id": "google",
-      "article_type": "frontier_launch",
-      "signal_badge": "Frontier Launch",
-      "impact_level": "Breakthrough",
-      "title": "Introducing Gemini 4 Neon",
-      "one_liner": "Introducing Gemini 4 Neon.",
-      "summary": "Introducing Gemini 4 Neon.",
-      "is_llm_generated": false,
-      "enhancement_source": "editorial_synthesis",
-      "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Introducing Gemini 4 Neon Today, we\u2019re introducing Gemini 4 Neon \u2014 bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Neon ranks ahead of comparable models and #3 overall with a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, landing just behind larger, slower models.",
-      "ai_what_happened": "On the Vals Index, Neon ranks #2 and lands on the Pareto frontier.",
-      "ai_key_details": [
-        "Beyond just pushing on raw model capability, we\u2019re continuing to make our models better to work with, Neon ranks #2 on steerability (adapting cleanly to mid-task user corrections) on the new Agent Arena Index.",
-        "Neon also excels at multi-step instruction following and builds on our ongoing progress to curb fabrication, recording our lowest fabrication rate yet in internal Google Antigravity testing.",
-        "The model is priced at $3 per million input tokens ($0.15 per million cached input tokens, a 95% discount) and $15 per million output tokens, with a 1 million-token context window.",
-        "Neon can synthesize across all of these inputs in a single 1 million-token context window and turns inputs into structured deliverables."
-      ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Gemini 4 Neon from Google DeepMind.",
-      "ai_technical_breakdown": "Gemini 4 Neon is rolling out today in the Gemini API in Google AI Studio, Gemini for business (via API and model dropdown), for paid Google AI Pro and Ultra subscribers in Google Antigravity, and for Pro and Ultra subscribers in the Gemini app.",
-      "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Gemini 4 Neon capabilities from Google DeepMind directly into technical workflows.",
-        "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Google DeepMind."
-      },
-      "ai_whats_new": "Finally, it debuts #2 globally with a score of 1336 on Arena's new Agent Arena Index across 4,200+ real-world agent sessions.",
-      "ai_key_takeaways": [
-        "Delivers across enterprise, analytical, and scientific work Enterprise work lives in spreadsheets, PDFs, charts, audio, and video.",
-        "Independent evaluations rank Neon as one of the top models and on benchmarks like the Vals Index, it ranks #2 (70.9%), and reaches #1 on both the Legal Research Bench and Tax Agent Bench.",
-        "Neon also shows strong wins across categories on Surge AI, ranking #1 on most benchmarks across finance, accounting, spreadsheet modeling, and complex constraint following."
-      ],
-      "ai_limitations": "Regulatory & governance scope: Enforcement parameters, compliance timelines, and cross-border legal obligations remain subject to jurisdictional variation.",
-      "original_source_url": "https://deepmind.google/blog/introducing-gemini-4-neon",
-      "word_count": 1617,
-      "extraction_status": "cached",
-      "content_hash": "794604ccbd73c9ed",
-      "extracted_content": {
-        "headline": "Introducing Gemini 4 Neon",
-        "word_count": 1617,
-        "reading_time": "8 min read",
-        "extraction_status": "cached",
-        "sections_count": 1
-      },
-      "reported_facts": [
-        "Official development released and documented by Google DeepMind."
-      ],
-      "what_changed": "Introducing Gemini 4 Neon.",
-      "why_it_matters": "Advances Frontier Models capabilities through verified primary disclosures from Google.",
-      "affected_stakeholders": [
-        "Developers",
-        "Enterprise Decision Makers"
-      ],
-      "potential_impact": "Analytical Projection: Developments from Google may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
-      "claim_corroboration": 1,
-      "trend_signal_diversity": 1,
-      "category": "Frontier Models",
-      "category_confidence": 0.9,
-      "category_rationale": "Matched frontier foundation model release or reasoning benchmark breakthrough",
-      "topic": "Frontier Models",
-      "source": "Google DeepMind",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 18, 21:35 UTC",
-      "published_at": "2026-11-18T21:35:43+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
-      "link": "https://deepmind.google/blog/introducing-gemini-4-neon",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
-      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-neon__blog-header__sm.width-1300.png",
-      "image_alt": "Visual representation for Introducing Gemini 4 Neon",
-      "image_type": "source_media",
-      "image_credit": "Source publication",
-      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "company": "google",
-      "reading_time": "8 min read",
-      "key_points": [
-        "Strategic development announced in Frontier Models."
-      ],
-      "detailed_analysis": "Introducing Gemini 4 Neon.",
-      "audience_impact": {
-        "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Google."
-      },
-      "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Google.",
-      "importance_score": 100,
-      "relevance_score": 95,
-      "freshness_score": 25,
-      "coverage_score": 50,
-      "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 89.6,
-      "overall_score": 89.6,
-      "confidence_label": "low",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
-      "independent_source_count": 1,
-      "independent_publisher_count": 1,
-      "score_reasons": [
-        "+ Frontier foundation model milestone (+40 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ [frontier_launch_tier1] Official frontier foundation model milestone protected floor 82.0"
-      ],
-      "first_published_at": "2026-11-18T21:35:43+00:00",
-      "latest_updated_at": "2026-11-18T21:35:43+00:00",
-      "eligible_for_top_developments": true,
-      "eligible_for_briefing": true,
-      "related_sources": [],
-      "covered_by_sources_count": 1
     }
   ],
   "ai_tools": [
     {
-      "id": "cluster_50",
-      "article_id": "cluster_50",
-      "article_url": "articles/cluster_50.json",
-      "publisher_id": "huggingface",
-      "publisher_group_id": "huggingface",
-      "article_type": "research_paper",
-      "signal_badge": "Research Paper",
+      "id": "cluster_69",
+      "article_id": "cluster_69",
+      "article_url": "articles/cluster_69.json",
+      "publisher_id": "the_decoder",
+      "publisher_group_id": "the_decoder",
+      "article_type": "policy_regulation",
+      "signal_badge": "Security & Policy",
       "impact_level": "Notable",
-      "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
-      "one_liner": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems.",
-      "summary": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems.",
+      "title": "OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers",
+      "one_liner": "OpenAI is suing Apple in a California court, accusing it of trade secret theft and of coercing shared suppliers. The countersuit follows Apple's own lawsuit from the summer.",
+      "summary": "OpenAI is suing Apple in a California court, accusing it of trade secret theft and of coercing shared suppliers. The countersuit follows Apple's own lawsuit from the summer.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems.",
-      "ai_what_happened": "Hugging Face Blog published verified documentation on Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems.",
+      "ai_overview": "OpenAI is suing Apple in a California court, accusing it of trade secret theft and of coercing shared suppliers. The countersuit follows Apple's own lawsuit from the summer.",
+      "ai_what_happened": "Just two years ago, the two companies teamed up to bring ChatGPT to the iPhone.",
       "ai_key_details": [
-        "Primary documentation verified from Hugging Face Blog."
+        "Primary documentation verified from The Decoder."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems from Hugging Face Blog.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by Hugging Face Blog for Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers from The Decoder.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems capabilities from Hugging Face Blog directly into technical workflows.",
+        "Developers": "Enables engineers to integrate OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers capabilities from The Decoder directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by Hugging Face Blog."
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
       },
-      "ai_whats_new": "Delivers Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems as documented in verified primary release notes from Hugging Face Blog.",
+      "ai_whats_new": "Delivers OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers as documented in verified primary release notes from The Decoder.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
-        "Primary documentation available from Hugging Face Blog."
+        "Primary documentation available from The Decoder."
       ],
-      "ai_limitations": "Preprint & open research status: Technical claims and evaluation baselines from Hugging Face Blog have not completed formal peer review or broad independent reproduction.",
-      "original_source_url": "https://huggingface.co/blog/training-swarms",
-      "word_count": 11,
+      "ai_limitations": "Regulatory & governance scope: Enforcement parameters, compliance timelines, and cross-border legal obligations remain subject to jurisdictional variation.",
+      "original_source_url": "https://the-decoder.com/openai-countersues-apple-over-trade-secret-theft-and-alleged-coercion-of-shared-suppliers",
+      "word_count": 28,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
-        "word_count": 11,
+        "headline": "OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers",
+        "word_count": 28,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "Official development released and documented by Hugging Face Blog."
+        "OpenAI is suing Apple in a California court, accusing it of trade secret theft and of coercing shared suppliers.",
+        "The countersuit follows Apple's own lawsuit from the summer."
       ],
-      "what_changed": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems.",
-      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Huggingface.",
+      "what_changed": "OpenAI is suing Apple in a California court, accusing it of trade secret theft and of coercing shared suppliers.",
+      "why_it_matters": "Advances AI Policy capabilities through verified primary disclosures from Openai.",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "potential_impact": "Analytical Projection: Developments from Huggingface may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 1,
-      "category": "AI Agents",
-      "category_confidence": 0.94,
-      "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
-      "topic": "AI Agents",
-      "source": "Hugging Face Blog",
-      "tier": "Open Research",
-      "trust_tier": 3,
-      "is_official": true,
-      "published": "Nov 26, 00:00 UTC",
-      "published_at": "2026-11-26T00:00:00+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
-      "link": "https://huggingface.co/blog/training-swarms",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+      "category": "AI Policy",
+      "category_confidence": 0.95,
+      "category_rationale": "Matched legal proceedings, court ruling, regulatory compliance, environmental impact, or copyright policy",
+      "topic": "AI Policy",
+      "source": "The Decoder",
+      "tier": "Independent Journalism",
+      "trust_tier": 2,
+      "is_official": false,
+      "published": "Nov 27, 19:38 UTC",
+      "published_at": "2026-11-27T19:38:37+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
+      "link": "https://the-decoder.com/openai-countersues-apple-over-trade-secret-theft-and-alleged-coercion-of-shared-suppliers",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for OpenAI countersues Apple over trade secret theft and alleged coercion of shared suppliers",
       "image_type": "official_asset",
-      "image_credit": "Huggingface announcement visual",
-      "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "huggingface",
+      "image_credit": "Openai announcement visual",
+      "image_fallback": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "Strategic development announced in AI Agents."
+        "OpenAI is suing Apple in a California court, accusing it of trade secret theft and of coercing shared suppliers.",
+        "The countersuit follows Apple's own lawsuit from the summer."
       ],
-      "detailed_analysis": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems.",
+      "detailed_analysis": "OpenAI is suing Apple in a California court, accusing it of trade secret theft and of coercing shared suppliers.\n\nThe countersuit follows Apple's own lawsuit from the summer.",
       "audience_impact": {
-        "target": "For practitioners & teams",
-        "impact": "Offers new practical efficiencies and tooling options for Huggingface workflows."
+        "target": "For businesses & compliance teams",
+        "impact": "Signals legal exposure, compliance requirements, and regulatory scrutiny facing Openai deployments."
       },
-      "target_audience": "For practitioners & teams",
-      "audience_impact_statement": "Offers new practical efficiencies and tooling options for Huggingface workflows.",
-      "importance_score": 45,
-      "relevance_score": 95,
-      "freshness_score": 50,
+      "target_audience": "For businesses & compliance teams",
+      "audience_impact_statement": "Signals legal exposure, compliance requirements, and regulatory scrutiny facing Openai deployments.",
+      "importance_score": 80,
+      "relevance_score": 70,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 57.9,
-      "overall_score": 57.9,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
+      "source_quality_score": 85,
+      "confidence_score": 85,
+      "pulse_score": 70.2,
+      "overall_score": 70.2,
+      "confidence_label": "medium",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
       "independent_source_count": 1,
       "independent_publisher_count": 1,
       "score_reasons": [
-        "+ Empirical research preprint / benchmark evaluation (+15 impact)",
-        "- Routine uncorroborated preprint without verifiable breakthrough signals (-20 research quality)",
-        "+ Official primary lab source (100 authority)",
-        "- [uncorroborated_arxiv_cap] Single-source routine research preprint capped at 64.0 ceiling"
+        "+ Material policy regulation development (+30 impact)",
+        "+ Independent technology journalism desk (85 authority)"
       ],
-      "first_published_at": "2026-11-26T00:00:00+00:00",
-      "latest_updated_at": "2026-11-26T00:00:00+00:00",
+      "first_published_at": "2026-11-27T19:38:37+00:00",
+      "latest_updated_at": "2026-11-27T19:38:37+00:00",
       "eligible_for_top_developments": false,
       "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
     },
     {
-      "id": "cluster_36",
-      "article_id": "cluster_36",
-      "article_url": "articles/cluster_36.json",
-      "publisher_id": "aws",
-      "publisher_group_id": "amazon",
-      "article_type": "sdk_api_update",
-      "signal_badge": "Developer SDK",
-      "impact_level": "Major",
-      "title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
-      "one_liner": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
-      "summary": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
+      "id": "cluster_70",
+      "article_id": "cluster_70",
+      "article_url": "articles/cluster_70.json",
+      "publisher_id": "the_decoder",
+      "publisher_group_id": "the_decoder",
+      "article_type": "opinion_commentary",
+      "signal_badge": "Analysis & Opinion",
+      "impact_level": "Notable",
+      "title": "OpenAI is building \"Athena\" data platform to cut down on AI agent guesswork",
+      "one_liner": "OpenAI's data agent in ChatGPT Work still isn't accurate enough. Under the codename \"Athena,\" the company is building a semantic layer that gives agents standardized definitions for business metrics.",
+      "summary": "OpenAI's data agent in ChatGPT Work still isn't accurate enough. Under the codename \"Athena,\" the company is building a semantic layer that gives agents standardized definitions for business metrics.",
       "is_llm_generated": false,
       "enhancement_source": "editorial_synthesis",
       "enhancement_label": "Editorial Synthesis",
-      "ai_overview": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
-      "ai_what_happened": "AWS Machine Learning published verified documentation on New in AWS Quick: More capable flows, an updated web experience, and agents that work together.",
+      "ai_overview": "OpenAI's data agent in ChatGPT Work still isn't accurate enough. Under the codename \"Athena,\" the company is building a semantic layer that gives agents standardized definitions for business metrics.",
+      "ai_what_happened": "The tool could also put OpenAI in direct competition with Snowflake and Databricks.",
       "ai_key_details": [
-        "Primary documentation verified from AWS Machine Learning."
+        "Primary documentation verified from The Decoder."
       ],
-      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for New in AWS Quick: More capable flows, an updated web experience, and agents that work together from AWS Machine Learning.",
-      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by AWS Machine Learning for New in AWS Quick: More capable flows, an updated web experience, and agents that work together; full reproducible checkpoints and benchmarks remain ongoing.",
+      "ai_why_it_matters": "Expands practical capabilities in Frontier Models by delivering verified technical implementation details for OpenAI is building \"Athena\" data platform to cut down on AI agent guesswork from The Decoder.",
+      "ai_technical_breakdown": "Technical architecture reflects primary specifications disclosed by The Decoder for OpenAI is building \"Athena\" data platform to cut down on AI agent guesswork; full reproducible checkpoints and benchmarks remain ongoing.",
       "ai_industry_impact": {
-        "Developers": "Enables engineers to integrate New in AWS Quick: More capable flows, an updated web experience, and agents that work together capabilities from AWS Machine Learning directly into technical workflows.",
+        "Developers": "Enables engineers to integrate OpenAI is building \"Athena\" data platform to cut down on AI agent guesswork capabilities from The Decoder directly into technical workflows.",
         "Enterprises": "Informs procurement, operational automation, and capability deployment choices across Frontier Models.",
-        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by AWS Machine Learning."
+        "Researchers": "Provides reproducible methodology and reference capability disclosures documented by The Decoder."
       },
-      "ai_whats_new": "Delivers New in AWS Quick: More capable flows, an updated web experience, and agents that work together as documented in verified primary release notes from AWS Machine Learning.",
+      "ai_whats_new": "Delivers OpenAI is building \"Athena\" data platform to cut down on AI agent guesswork as documented in verified primary release notes from The Decoder.",
       "ai_key_takeaways": [
         "Verified development tracked in Frontier Models.",
-        "Primary documentation available from AWS Machine Learning."
+        "Primary documentation available from The Decoder."
       ],
       "ai_limitations": "Agentic execution bounds: Multi-step tool reliability depends on prompt context constraints, sandbox isolation, and runtime error recovery.",
-      "original_source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
-      "word_count": 55,
+      "original_source_url": "https://the-decoder.com/openai-is-building-athena-data-platform-to-cut-down-on-ai-agent-guesswork",
+      "word_count": 29,
       "extraction_status": "fallback_summary",
       "content_hash": "",
       "extracted_content": {
-        "headline": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
-        "word_count": 55,
+        "headline": "OpenAI is building \"Athena\" data platform to cut down on AI agent guesswork",
+        "word_count": 29,
         "reading_time": "1 min read",
         "extraction_status": "fallback_summary",
         "sections_count": 1
       },
       "reported_facts": [
-        "AWS Quick is the AI workspace built only for work.",
-        "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
+        "OpenAI's data agent in ChatGPT Work still isn't accurate enough.",
+        "Under the codename \"Athena,\" the company is building a semantic layer that gives agents standardized definitions for business metrics."
       ],
-      "what_changed": "AWS Quick is the AI workspace built only for work.",
-      "why_it_matters": "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
+      "what_changed": "OpenAI's data agent in ChatGPT Work still isn't accurate enough.",
+      "why_it_matters": "Advances AI Agents capabilities through verified primary disclosures from Openai.",
       "affected_stakeholders": [
         "Developers",
         "Enterprise Decision Makers"
       ],
-      "potential_impact": "Analytical Projection: Developments from Amazon may influence engineering roadmaps and ecosystem integration standards.",
-      "analysis_limitations": "Epistemic Limitation: Findings reflect first-party vendor claims and metrics; independent third-party reproduction and benchmark validation remain pending.",
+      "potential_impact": "Analytical Projection: Developments from Openai may influence engineering roadmaps and ecosystem integration standards.",
+      "analysis_limitations": "Epistemic Limitation: Single-source tech trade reporting; awaiting further vendor confirmation, formal technical documentation, or secondary corroboration.",
       "claim_corroboration": 1,
       "trend_signal_diversity": 1,
       "category": "AI Agents",
       "category_confidence": 0.94,
       "category_rationale": "Matched autonomous AI agents, coding agents, tool-use protocols, or multi-agent orchestration",
       "topic": "AI Agents",
-      "source": "AWS Machine Learning",
-      "tier": "Official Lab",
-      "trust_tier": 1,
-      "is_official": true,
-      "published": "Nov 21, 01:06 UTC",
-      "published_at": "2026-11-21T01:06:42+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
-      "link": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image_alt": "Visual representation for New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
+      "source": "The Decoder",
+      "tier": "Independent Journalism",
+      "trust_tier": 2,
+      "is_official": false,
+      "published": "Nov 27, 16:05 UTC",
+      "published_at": "2026-11-27T16:05:23+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
+      "link": "https://the-decoder.com/openai-is-building-athena-data-platform-to-cut-down-on-ai-agent-guesswork",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "image_alt": "Visual representation for OpenAI is building \"Athena\" data platform to cut down on AI agent guesswork",
       "image_type": "official_asset",
-      "image_credit": "Amazon announcement visual",
+      "image_credit": "Openai announcement visual",
       "image_fallback": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      "company": "amazon",
+      "company": "openai",
       "reading_time": "1 min read",
       "key_points": [
-        "AWS Quick is the AI workspace built only for work.",
-        "Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude."
+        "OpenAI's data agent in ChatGPT Work still isn't accurate enough.",
+        "Under the codename \"Athena,\" the company is building a semantic layer that gives agents standardized definitions for business metrics."
       ],
-      "detailed_analysis": "AWS Quick is the AI workspace built only for work.\n\nToday we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads and Amplitude.",
+      "detailed_analysis": "OpenAI's data agent in ChatGPT Work still isn't accurate enough.\n\nUnder the codename \"Athena,\" the company is building a semantic layer that gives agents standardized definitions for business metrics.",
       "audience_impact": {
         "target": "For everyday users",
-        "impact": "Enhances daily workflow speed and conversational assistance powered by Amazon."
+        "impact": "Enhances daily workflow speed and conversational assistance powered by Openai."
       },
       "target_audience": "For everyday users",
-      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Amazon.",
-      "importance_score": 75,
-      "relevance_score": 95,
-      "freshness_score": 25,
+      "audience_impact_statement": "Enhances daily workflow speed and conversational assistance powered by Openai.",
+      "importance_score": 50,
+      "relevance_score": 70,
+      "freshness_score": 85,
       "coverage_score": 50,
       "popularity_score": 50,
-      "source_quality_score": 100,
-      "confidence_score": 100,
-      "pulse_score": 79.0,
-      "overall_score": 79.0,
-      "confidence_label": "high",
-      "evidence_status": "official_announcement",
-      "evidence_label": "Official Announcement",
+      "source_quality_score": 85,
+      "confidence_score": 85,
+      "pulse_score": 49.0,
+      "overall_score": 49.0,
+      "confidence_label": "medium",
+      "evidence_status": "single_source",
+      "evidence_label": "Single-Source Report",
       "independent_source_count": 1,
       "independent_publisher_count": 1,
       "score_reasons": [
-        "+ Actionable developer SDK / runtime tooling (+25 impact)",
-        "+ Official primary lab source (100 authority)",
-        "+ Direct developer actionability / runnable tooling (90 actionability)"
+        "+ Independent technology journalism desk (85 authority)"
       ],
-      "first_published_at": "2026-11-21T01:06:42+00:00",
-      "latest_updated_at": "2026-11-21T01:06:42+00:00",
-      "eligible_for_top_developments": true,
+      "first_published_at": "2026-11-27T16:05:23+00:00",
+      "latest_updated_at": "2026-11-27T16:05:23+00:00",
+      "eligible_for_top_developments": false,
       "eligible_for_briefing": false,
       "related_sources": [],
       "covered_by_sources_count": 1
@@ -3057,7 +3036,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3170,7 +3149,7 @@
       "is_official": true,
       "published": "Nov 26, 11:37 UTC",
       "published_at": "2026-11-26T11:37:17+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
       "image": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&w=1200&q=80",
@@ -3192,7 +3171,7 @@
       "audience_impact_statement": "Provides open weights and accessible tools for self-hosted Meta implementations.",
       "importance_score": 45,
       "relevance_score": 95,
-      "freshness_score": 70,
+      "freshness_score": 50,
       "coverage_score": 50,
       "popularity_score": 50,
       "source_quality_score": 100,
@@ -3289,7 +3268,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
       "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
       "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
@@ -3403,7 +3382,7 @@
       "is_official": true,
       "published": "Recent",
       "published_at": null,
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
@@ -3516,7 +3495,7 @@
       "is_official": true,
       "published": "Nov 27, 00:00 UTC",
       "published_at": "2026-11-27T00:00:00+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://huggingface.co/blog/video-trainium3",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3630,7 +3609,7 @@
       "is_official": true,
       "published": "Nov 26, 05:05 UTC",
       "published_at": "2026-11-26T05:05:36+00:00",
-      "last_fetched_at": "2026-11-27T19:06:32.530830+00:00",
+      "last_fetched_at": "2026-11-28T02:03:39.515353+00:00",
       "link": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
@@ -3821,8 +3800,8 @@
       "owner": "NousResearch",
       "url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 266599,
-      "forks": 60496,
+      "stars": 266600,
+      "forks": 60510,
       "language": "Python",
       "topics": [
         "ai",
@@ -3833,13 +3812,13 @@
         "claude"
       ],
       "license": "MIT",
-      "stars_gained_24h": 206,
-      "stars_gained_7d": 1613,
+      "stars_gained_24h": 207,
+      "stars_gained_7d": 1614,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+206); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+207); Active commit activity in the last 24h.",
       "created_at": "2025-07-22T22:22:28Z",
-      "updated_at": "2026-11-27T19:05:34Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
+      "updated_at": "2026-11-28T01:52:06Z",
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
     },
     {
       "repository": "career-ops-hq/career-ops",
@@ -3847,8 +3826,8 @@
       "owner": "career-ops-hq",
       "url": "https://github.com/career-ops-hq/career-ops",
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "stars": 85202,
-      "forks": 15588,
+      "stars": 85235,
+      "forks": 15591,
       "language": "JavaScript",
       "topics": [
         "agent-skills",
@@ -3859,13 +3838,13 @@
         "career-ops"
       ],
       "license": "MIT",
-      "stars_gained_24h": 133,
-      "stars_gained_7d": 1247,
+      "stars_gained_24h": 166,
+      "stars_gained_7d": 1280,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+133); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+166); Active commit activity in the last 24h.",
       "created_at": "2026-04-04T18:21:18Z",
-      "updated_at": "2026-11-27T14:33:05Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
+      "updated_at": "2026-11-27T19:22:27Z",
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
     },
     {
       "repository": "ZhuLinsen/daily_stock_analysis",
@@ -3873,8 +3852,8 @@
       "owner": "ZhuLinsen",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM \u9a71\u52a8\u7684\u591a\u5e02\u573a\u80a1\u7968\u667a\u80fd\u5206\u6790\u7cfb\u7edf\uff1a\u591a\u6e90\u884c\u60c5\u3001\u5b9e\u65f6\u65b0\u95fb\u3001\u51b3\u7b56\u770b\u677f\u4e0e\u81ea\u52a8\u63a8\u9001\uff0c\u652f\u6301\u96f6\u6210\u672c\u5b9a\u65f6\u8fd0\u884c\u3002  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 75000,
-      "forks": 58861,
+      "stars": 75017,
+      "forks": 58872,
       "language": "Python",
       "topics": [
         "a-stock",
@@ -3885,13 +3864,13 @@
         "quantitative-finance"
       ],
       "license": "MIT",
-      "stars_gained_24h": 188,
-      "stars_gained_7d": 1436,
+      "stars_gained_24h": 205,
+      "stars_gained_7d": 1453,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+188); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+205); Active commit activity in the last 24h.",
       "created_at": "2026-01-10T06:43:20Z",
       "updated_at": "2026-11-27T14:48:17Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
     },
     {
       "repository": "morluto/rea",
@@ -3899,8 +3878,8 @@
       "owner": "morluto",
       "url": "https://github.com/morluto/rea",
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "stars": 480906,
-      "forks": 116805,
+      "stars": 481184,
+      "forks": 116855,
       "language": "TypeScript",
       "topics": [
         "agent-skills",
@@ -3911,13 +3890,13 @@
         "cpp"
       ],
       "license": "MIT",
-      "stars_gained_24h": 1138,
-      "stars_gained_7d": 9436,
+      "stars_gained_24h": 1416,
+      "stars_gained_7d": 9714,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+1138); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+1416); Active commit activity in the last 24h.",
       "created_at": "2026-04-14T00:51:32Z",
-      "updated_at": "2026-11-27T19:06:23Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
+      "updated_at": "2026-11-28T01:09:41Z",
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
     },
     {
       "repository": "paperclipai/paperclip",
@@ -3925,8 +3904,8 @@
       "owner": "paperclipai",
       "url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
-      "stars": 117560,
-      "forks": 19566,
+      "stars": 117616,
+      "forks": 19581,
       "language": "TypeScript",
       "topics": [
         "acpx",
@@ -3937,13 +3916,13 @@
         "ai-engineering"
       ],
       "license": "MIT",
-      "stars_gained_24h": 173,
-      "stars_gained_7d": 2071,
+      "stars_gained_24h": 229,
+      "stars_gained_7d": 2127,
       "developer_trend_score": 100.0,
-      "score_explanation": "Breakout 24h star growth (+173); Active commit activity in the last 24h.",
+      "score_explanation": "Breakout 24h star growth (+229); Active commit activity in the last 24h.",
       "created_at": "2026-03-02T15:01:51Z",
       "updated_at": "2026-11-27T15:21:12Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
     },
     {
       "repository": "f/prompts.chat",
@@ -3951,7 +3930,7 @@
       "owner": "f",
       "url": "https://github.com/f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source \u2014 self-host for your organization with complete privacy.",
-      "stars": 178689,
+      "stars": 178706,
       "forks": 22768,
       "language": "MDX",
       "topics": [
@@ -3963,65 +3942,65 @@
         "claude"
       ],
       "license": "NOASSERTION",
-      "stars_gained_24h": 94,
-      "stars_gained_7d": 663,
-      "developer_trend_score": 99.3,
-      "score_explanation": "Rapid 24h adoption (+94 stars); Active commit activity in the last 24h.",
+      "stars_gained_24h": 111,
+      "stars_gained_7d": 680,
+      "developer_trend_score": 100.0,
+      "score_explanation": "Breakout 24h star growth (+111); Active commit activity in the last 24h.",
       "created_at": "2022-12-05T13:54:13Z",
       "updated_at": "2026-11-27T03:13:20Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
     },
     {
-      "repository": "n8n-io/n8n",
-      "name": "n8n",
-      "owner": "n8n-io",
-      "url": "https://github.com/n8n-io/n8n",
-      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 212389,
-      "forks": 61688,
-      "language": "TypeScript",
-      "topics": [
-        "ai",
-        "apis",
-        "automation",
-        "cli",
-        "data-flow",
-        "development"
-      ],
-      "license": "NOASSERTION",
-      "stars_gained_24h": 82,
-      "stars_gained_7d": 838,
-      "developer_trend_score": 97.8,
-      "score_explanation": "Rapid 24h adoption (+82 stars); Active commit activity in the last 24h.",
-      "created_at": "2019-06-22T09:24:21Z",
-      "updated_at": "2026-11-27T19:01:13Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
-    },
-    {
-      "repository": "Graphify-Labs/graphify",
-      "name": "graphify",
-      "owner": "Graphify-Labs",
-      "url": "https://github.com/Graphify-Labs/graphify",
-      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
-      "stars": 154200,
-      "forks": 14841,
+      "repository": "langgenius/dify",
+      "name": "dify",
+      "owner": "langgenius",
+      "url": "https://github.com/langgenius/dify",
+      "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+      "stars": 162029,
+      "forks": 25566,
       "language": "Python",
       "topics": [
-        "ai-agents",
-        "antigravity",
-        "ast",
-        "claude-code",
-        "code-analysis",
-        "code-search"
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "ai",
+        "automation"
+      ],
+      "license": "NOASSERTION",
+      "stars_gained_24h": 71,
+      "stars_gained_7d": 449,
+      "developer_trend_score": 96.5,
+      "score_explanation": "Rapid 24h adoption (+71 stars); Active commit activity in the last 24h.",
+      "created_at": "2023-04-12T07:40:24Z",
+      "updated_at": "2026-11-28T01:21:05Z",
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
+    },
+    {
+      "repository": "bojieli/ai-agent-book",
+      "name": "ai-agent-book",
+      "owner": "bojieli",
+      "url": "https://github.com/bojieli/ai-agent-book",
+      "description": "\u300a\u6df1\u5165\u7406\u89e3 AI Agent\uff1a\u8bbe\u8ba1\u539f\u7406\u4e0e\u5de5\u7a0b\u5b9e\u8df5\u300b\uff08\u674e\u535a\u6770 \u8457\uff09\u5f00\u6e90\u4e3b\u4ed3\u5e93\uff1a\u5168\u4e66\u6b63\u6587\u3001\u7f16\u8bd1\u7248 PDF \u4e0e\u6309\u7ae0\u914d\u5957\u4ee3\u7801",
+      "stars": 60124,
+      "forks": 7067,
+      "language": "Python",
+      "topics": [
+        "agent",
+        "agent-memory",
+        "ai-agent",
+        "book",
+        "coding-agent",
+        "context-engineering"
       ],
       "license": "Apache-2.0",
-      "stars_gained_24h": 344,
-      "stars_gained_7d": 3028,
+      "stars_gained_24h": 104,
+      "stars_gained_7d": 1198,
       "developer_trend_score": 96.0,
-      "score_explanation": "Breakout 24h star growth (+344); Active commit activity in the last 24h.",
-      "created_at": "2026-04-03T15:49:07Z",
-      "updated_at": "2026-11-27T02:53:36Z",
-      "collected_at": "2026-11-27T19:06:29.857409+00:00"
+      "score_explanation": "Breakout 24h star growth (+104); Active commit activity in the last 24h.",
+      "created_at": "2025-09-09T02:41:44Z",
+      "updated_at": "2026-11-28T01:39:03Z",
+      "collected_at": "2026-11-28T02:03:35.984054+00:00"
     }
   ],
   "source_health_summary": {
@@ -4032,17 +4011,17 @@
     "failed_fetches_count": 0,
     "valid_empty_sources_count": 0,
     "total_articles_received": 2547,
-    "rejected_by_relevance_count": 14,
-    "rejected_by_freshness_count": 1023,
-    "fresh_articles_accepted_count": 81,
-    "unique_article_count": 81
+    "rejected_by_relevance_count": 9,
+    "rejected_by_freshness_count": 1031,
+    "fresh_articles_accepted_count": 78,
+    "unique_article_count": 78
   },
   "source_health_details": [
     {
       "source_id": "openai_news",
       "name": "OpenAI News",
-      "last_attempt_at": "2026-11-27T19:02:26.633596+00:00",
-      "last_success_at": "2026-11-27T19:02:26.633596+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.868512+00:00",
+      "last_success_at": "2026-11-28T02:01:47.868512+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1430,
@@ -4053,8 +4032,8 @@
     {
       "source_id": "anthropic_news",
       "name": "Anthropic Official News",
-      "last_attempt_at": "2026-11-27T19:02:26.634341+00:00",
-      "last_success_at": "2026-11-27T19:02:26.634341+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.869279+00:00",
+      "last_success_at": "2026-11-28T02:01:47.869279+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 27,
@@ -4065,8 +4044,8 @@
     {
       "source_id": "deepmind_blog",
       "name": "Google DeepMind",
-      "last_attempt_at": "2026-11-27T19:02:26.634737+00:00",
-      "last_success_at": "2026-11-27T19:02:26.634737+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.869823+00:00",
+      "last_success_at": "2026-11-28T02:01:47.869823+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 100,
@@ -4077,8 +4056,8 @@
     {
       "source_id": "nvidia_blog",
       "name": "NVIDIA Newsroom",
-      "last_attempt_at": "2026-11-27T19:02:26.635232+00:00",
-      "last_success_at": "2026-11-27T19:02:26.635232+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.870453+00:00",
+      "last_success_at": "2026-11-28T02:01:47.870453+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 1,
@@ -4089,8 +4068,8 @@
     {
       "source_id": "aws_ml_blog",
       "name": "AWS Machine Learning",
-      "last_attempt_at": "2026-11-27T19:02:26.635700+00:00",
-      "last_success_at": "2026-11-27T19:02:26.635700+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.870849+00:00",
+      "last_success_at": "2026-11-28T02:01:47.870849+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 20,
@@ -4101,22 +4080,22 @@
     {
       "source_id": "huggingface_blog",
       "name": "Hugging Face Blog",
-      "last_attempt_at": "2026-11-27T19:02:26.636501+00:00",
-      "last_success_at": "2026-11-27T19:02:26.636501+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.875273+00:00",
+      "last_success_at": "2026-11-28T02:01:47.875273+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 919,
-      "articles_accepted": 7,
+      "articles_accepted": 6,
       "error_type": null,
       "error_message": null
     },
     {
       "source_id": "mit_tech_review",
       "name": "MIT Technology Review",
-      "last_attempt_at": "2026-11-27T19:02:26.643069+00:00",
-      "last_success_at": "2026-11-27T19:02:26.643069+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.877316+00:00",
+      "last_success_at": "2026-11-28T02:01:47.877316+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 10,
       "articles_accepted": 1,
       "error_type": null,
@@ -4125,8 +4104,8 @@
     {
       "source_id": "the_verge_ai",
       "name": "The Verge AI",
-      "last_attempt_at": "2026-11-27T19:02:26.646588+00:00",
-      "last_success_at": "2026-11-27T19:02:26.646588+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.881198+00:00",
+      "last_success_at": "2026-11-28T02:01:47.881198+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
@@ -4137,20 +4116,20 @@
     {
       "source_id": "techcrunch_ai",
       "name": "TechCrunch AI",
-      "last_attempt_at": "2026-11-27T19:02:26.647489+00:00",
-      "last_success_at": "2026-11-27T19:02:26.647489+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.882333+00:00",
+      "last_success_at": "2026-11-28T02:01:47.882333+00:00",
       "fetch_status": "success",
-      "http_status": 200,
+      "http_status": 304,
       "articles_received": 20,
-      "articles_accepted": 10,
+      "articles_accepted": 8,
       "error_type": null,
       "error_message": null
     },
     {
       "source_id": "the_decoder",
       "name": "The Decoder",
-      "last_attempt_at": "2026-11-27T19:02:26.647780+00:00",
-      "last_success_at": "2026-11-27T19:02:26.647780+00:00",
+      "last_attempt_at": "2026-11-28T02:01:47.884749+00:00",
+      "last_success_at": "2026-11-28T02:01:47.884749+00:00",
       "fetch_status": "success",
       "http_status": 200,
       "articles_received": 10,
